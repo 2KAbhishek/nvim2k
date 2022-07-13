@@ -40,7 +40,7 @@ set list           " Highlight non whitespace characters
 set nrformats-=octal " 007 != 010
 set sessionoptions-=options
 set viewoptions-=option
-set cursorline     " Highlight current line
+" set cursorline     " Highlight current line
 set hidden         " Needed for toggleterm
 set undofile       " Enable persistent undo
 setlocal spell spelllang=en " Set spellcheck language to en
@@ -88,7 +88,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
+
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
