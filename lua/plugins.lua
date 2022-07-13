@@ -14,4 +14,6 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = "v2.*"}
   -- diagnostics
   use 'folke/trouble.nvim'
+  -- gitsigns
+  use 'lewis6991/gitsigns.nvim'
 end)
