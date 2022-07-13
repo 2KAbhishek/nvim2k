@@ -12,4 +12,6 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   -- tabline
   use {'akinsho/bufferline.nvim', tag = "v2.*"}
+  -- diagnostics
+  use 'folke/trouble.nvim'
 end)
