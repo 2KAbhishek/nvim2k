@@ -289,6 +289,7 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
 
 " luafile ~/.config/nvim/luacfg/init.lua
+luafile ~/.config/nvim/lua/plugins.lua
 luafile ~/.config/nvim/lua/lsp-installer-rc.lua
 luafile ~/.config/nvim/lua/null-ls-rc.lua
 luafile ~/.config/nvim/lua/cmp-rc.lua
