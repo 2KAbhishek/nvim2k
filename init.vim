@@ -286,14 +286,5 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
-
-" luafile ~/.config/nvim/luacfg/init.lua
 luafile ~/.config/nvim/lua/plugins.lua
-luafile ~/.config/nvim/lua/lsp-installer-rc.lua
-luafile ~/.config/nvim/lua/null-ls-rc.lua
-luafile ~/.config/nvim/lua/cmp-rc.lua
-luafile ~/.config/nvim/lua/treesitter-rc.lua
-luafile ~/.config/nvim/lua/telescope-rc.lua
-luafile ~/.config/nvim/lua/which-key-rc.lua
-luafile ~/.config/nvim/lua/toggleterm-rc.lua
 
