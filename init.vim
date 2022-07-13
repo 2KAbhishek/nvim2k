@@ -289,11 +289,11 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
 
 " luafile ~/.config/nvim/luacfg/init.lua
-luafile ~/.config/nvim/lua/lsp-installer.lua
-luafile ~/.config/nvim/lua/null-ls.lua
-luafile ~/.config/nvim/lua/cmp.lua
-luafile ~/.config/nvim/lua/treesitter.lua
-luafile ~/.config/nvim/lua/telescope.lua
-luafile ~/.config/nvim/lua/which-key.lua
-luafile ~/.config/nvim/lua/toggleterm.lua
+luafile ~/.config/nvim/lua/lsp-installer-rc.lua
+luafile ~/.config/nvim/lua/null-ls-rc.lua
+luafile ~/.config/nvim/lua/cmp-rc.lua
+luafile ~/.config/nvim/lua/treesitter-rc.lua
+luafile ~/.config/nvim/lua/telescope-rc.lua
+luafile ~/.config/nvim/lua/which-key-rc.lua
+luafile ~/.config/nvim/lua/toggleterm-rc.lua
 
