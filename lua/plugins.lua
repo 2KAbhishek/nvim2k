@@ -7,9 +7,9 @@ return require('packer').startup(function(use)
   -- colorscheme
   use 'joshdick/onedark.vim'
   -- statusline
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
+  use 'nvim-lualine/lualine.nvim'
+  -- devicons
+  use 'kyazdani42/nvim-web-devicons'
+  -- tabline
+  use {'akinsho/bufferline.nvim', tag = "v2.*"}
 end)
