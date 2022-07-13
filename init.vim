@@ -64,10 +64,6 @@ endif
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-" appearance
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " lua api
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
