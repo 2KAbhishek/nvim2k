@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
   use "williamboman/nvim-lsp-installer"
   -- LSP diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
+  -- treesitter
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- statusline
   use 'nvim-lualine/lualine.nvim'
   -- devicons
