@@ -65,7 +65,6 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " lua api
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 
 " cmp
@@ -104,7 +103,6 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'folke/which-key.nvim'
 Plug 'github/copilot.vim'
 Plug 'segeljakt/vim-silicon'

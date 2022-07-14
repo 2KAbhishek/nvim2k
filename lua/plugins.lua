@@ -23,6 +23,11 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   -- diagnostics
   use 'folke/trouble.nvim'
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- treesitter refactor
