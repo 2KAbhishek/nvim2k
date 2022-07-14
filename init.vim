@@ -68,11 +68,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 
-" lsp
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-
 " cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
