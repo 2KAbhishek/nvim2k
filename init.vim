@@ -80,8 +80,6 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
@@ -210,16 +208,6 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 1
 let g:indentLine_concealcursor = ""
 
-" NERDTree
-" map \ :NERDTreeToggle<CR>
-" autocmd VimEnter * NERDTree | wincmd p
-nmap <Leader>e : NERDTreeToggle<CR>
-nmap <Leader>E : NERDTreeFind<CR>
-autocmd StdinReadPre * let s:std_in=1
-let NERDTreeMinimalUI = 1
-let NERDTreeShowHidden = 1
-let NERDTreeDirArrows = 1
-
 " One Dark
 let g:onedark_color_overrides = {
 \ "comment_grey": {"gui": "#69747C","cterm": "245", "cterm16": "8"},
@@ -274,4 +262,5 @@ autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
 luafile ~/.config/nvim/lua/plugins.lua
+luafile ~/.config/nvim/lua/keymaps.lua
 
