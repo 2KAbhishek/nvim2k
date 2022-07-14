@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
   }
   -- telescope file browser
   use 'nvim-telescope/telescope-file-browser.nvim'
+  -- telescope fzf syntax
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- treesitter refactor
