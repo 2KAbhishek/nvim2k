@@ -101,7 +101,6 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'folke/which-key.nvim'
 Plug 'github/copilot.vim'
 Plug 'segeljakt/vim-silicon'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

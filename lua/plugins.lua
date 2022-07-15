@@ -10,15 +10,15 @@ return require('packer').startup(function(use)
   -- statusline
   use 'nvim-lualine/lualine.nvim'
   -- tabline
-  use { 'akinsho/bufferline.nvim', tag = "v2.*" }
+  use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
   -- toggleterm
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+  use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }
   -- gitsigns
   use 'lewis6991/gitsigns.nvim'
   -- LSP config
   use 'neovim/nvim-lspconfig'
   -- LSP Installer
-  use "williamboman/nvim-lsp-installer"
+  use 'williamboman/nvim-lsp-installer'
   -- LSP diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
   -- diagnostics
@@ -28,9 +28,9 @@ return require('packer').startup(function(use)
   -- telescope
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
   -- sqlite, required by frecency
-  use "tami5/sqlite.lua"
+  use 'tami5/sqlite.lua'
   -- telescope frecency
-  use "nvim-telescope/telescope-frecency.nvim"
+  use 'nvim-telescope/telescope-frecency.nvim'
   -- telescope file browser
   use 'nvim-telescope/telescope-file-browser.nvim'
   -- telescope fzf syntax
@@ -47,4 +47,6 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-context'
   -- treesitter textobjects
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- which key
+  use 'folke/which-key.nvim'
 end)
