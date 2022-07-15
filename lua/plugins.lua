@@ -23,15 +23,16 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   -- diagnostics
   use 'folke/trouble.nvim'
+  -- plenary
+  use 'nvim-lua/plenary.nvim'
   -- telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
   -- telescope file browser
   use 'nvim-telescope/telescope-file-browser.nvim'
   -- telescope fzf syntax
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  -- telescope emojis
+  use 'nvim-telescope/telescope-symbols.nvim'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- treesitter refactor
