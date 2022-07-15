@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- telescope emojis
   use 'nvim-telescope/telescope-symbols.nvim'
+  -- telescope hop
+  use 'nvim-telescope/telescope-hop.nvim'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- treesitter refactor
