@@ -23,14 +23,19 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   -- diagnostics
   use 'folke/trouble.nvim'
-  -- plenary
+  -- plenary, required by telescope
   use 'nvim-lua/plenary.nvim'
   -- telescope
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+  -- telescope frecency
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = { "tami5/sqlite.lua" }
+  }
   -- telescope file browser
   use 'nvim-telescope/telescope-file-browser.nvim'
   -- telescope fzf syntax
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- telescope emojis
   use 'nvim-telescope/telescope-symbols.nvim'
   -- telescope hop

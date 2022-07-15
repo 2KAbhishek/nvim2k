@@ -11,3 +11,10 @@ vim.api.nvim_set_keymap(
   ":Telescope symbols <cr>",
   { noremap = true }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fr",
+  "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
+  {noremap = true, silent = true}
+)

@@ -135,10 +135,21 @@ telescope.setup {
       -- jump to entry where hoop loop was started from
       reset_selection = true,
     },
+    frecency = {
+      -- db_root = "home/my_username/path/to/db_root",
+      show_scores = false,
+      show_unindexed = true,
+      ignore_patterns = {"*.git/*", "*/tmp/*"},
+      disable_devicons = false,
+      -- workspaces = {
+      --   ["Projects"] = "/home/abhishek/Projects",
+      -- }
+    },
   },
 }
 
 require("telescope").load_extension("hop")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("frecency")
 
