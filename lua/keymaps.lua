@@ -4,3 +4,10 @@ vim.api.nvim_set_keymap(
   ":Telescope file_browser <CR>",
   { noremap = true }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>.",
+  ":Telescope symbols <cr>",
+  { noremap = true }
+)
