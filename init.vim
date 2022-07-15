@@ -86,15 +86,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'github/copilot.vim'
 Plug 'segeljakt/vim-silicon'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-endwise'
-Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-unimpaired'
 " Plug 'subnut/nvim-ghost.nvim', {'do': ':call nvim_ghost#installer#install()'}
 
