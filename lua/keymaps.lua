@@ -9,6 +9,9 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Use jj as escape
+keymap("i", "jj", "<Esc>", opts)
+
 -- Terminal
 keymap("n", "tt", "<cmd>ToggleTerm<cr>", opts)
 keymap("t", "tt", "<cmd>ToggleTerm<cr>", opts)
