@@ -1,49 +1,53 @@
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
 -- Telescope
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>ff",
     "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔎<cr>",
-    { noremap = true, silent = true }
+    opts
 )
 
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>fg",
     "<cmd>Telescope live_grep<cr>",
-    { noremap = true, silent = true }
+    opts
 )
 
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>fb",
     "<cmd>Telescope buffers<cr>",
-    { noremap = true, silent = true }
+    opts
 )
 
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>fh",
     "<cmd>Telescope help_tags<cr>",
-    { noremap = true, silent = true }
+    opts
 )
 
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>fe",
     "<cmd>Telescope file_browser <cr>",
     { noremap = true }
 )
 
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>f.",
     "<cmd>Telescope symbols <cr>",
     { noremap = true }
 )
 
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "<leader>fr",
     "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>",
-    { noremap = true, silent = true }
+    opts
 )
