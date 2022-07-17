@@ -23,7 +23,7 @@ keymap("n", "<leader>W", "<cmd>wq<cr>", opts)
 keymap("n", "<leader>r", "<cmd>source ~/.config/nvim/init.vim <cr>", opts)
 keymap("n", "<leader>z", "<cmd>setlocal spell!<cr>", opts)
 keymap("n", "<leader>G", "<cmd>Git<cr>", opts)
-
+keymap("n", "<leader>i", "<cmd>Format<cr>", opts)
 
 -- Terminal
 keymap("n", "tt", "<cmd>ToggleTerm<cr>", opts)
@@ -80,12 +80,12 @@ keymap(
 )
 
 -- LSP
--- keymap("n", "gd", <cmd>lua vim.lsp.buf.definition()<CR>
--- keymap("n", "gD", <cmd>lua vim.lsp.buf.declaration()<CR>
--- keymap("n", "gr", <cmd>lua vim.lsp.buf.references()<CR>
--- keymap("n", "gi", <cmd>lua vim.lsp.buf.implementation()<CR>
--- keymap("n", "K", <cmd>lua vim.lsp.buf.hover()<CR>
--- keymap("n", "<C-k>", <cmd>lua vim.lsp.buf.signature_help()<CR>
--- keymap("n", "<C-n>", <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
--- keymap("n", "<C-p>", <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
---
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<C-n>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+keymap("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+
