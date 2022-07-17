@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
   -- which key
   use 'folke/which-key.nvim'
 
-    -- Commenting
+    -- commenting
     use 'numToStr/Comment.nvim'
+    -- surround
+    use 'kylechui/nvim-surround'
 end)
