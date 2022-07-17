@@ -96,30 +96,11 @@ Plug 'tpope/vim-unimpaired'
 call plug#end()
 " filetype plugin indent on
 
-" Keybindings
-inoremap jj <Esc>
-let mapleader = ' '
-inoremap <C-W> <C-G>u<C-W>
-inoremap <C-U> <C-G>u<C-U>
-
-" Copy Paste from X11 Clipboard
-vmap <Leader>yy :!xclip -f -sel clip<CR>
-" map <Leader>pp mz:-1r !xclip -o -sel clip<CR>`z
-
 " Drag Visual selections
 vnoremap K xkP`[V`]
 vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
-
-" General
-nmap <leader>Q :qa!<CR>
-nmap <leader>q :bw<CR>
-nmap <leader>w :w<CR>
-nmap <leader>W :wq<CR>
-nmap <leader>r :source ~/.config/nvim/init.vim <CR>
-nmap <leader>z :setlocal spell!<CR>
-nmap <leader>G :Git<CR>
 
 " FZF
 nnoremap <leader>p :Files<Cr>
@@ -220,16 +201,6 @@ let g:silicon['output'] = '~/Pictures/Screenshots/silicon-{time:%Y-%m-%d-%H%M%S}
 
 " Always use terminal background
 highlight Normal guibg=none
-
-" LSP config (the mappings used in the default file don't quite work right)
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 " auto-format
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
