@@ -9,6 +9,10 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Terminal
+keymap("n", "tt", "<cmd>ToggleTerm<cr>", opts)
+keymap("t", "tt", "<cmd>ToggleTerm<cr>", opts)
+
 -- Telescope
 keymap(
     "n",
