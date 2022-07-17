@@ -37,20 +37,9 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Copilot
-  -- use 'github/copilot.vim'
-  use {
-    "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup()
-      end, 100)
-    end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    module = "copilot_cmp",
-  }
+  use 'github/copilot.vim'
+  use 'zbirenbaum/copilot.lua'
+  use 'zbirenbaum/copilot-cmp'
 
   -- cmp
   use 'hrsh7th/cmp-nvim-lsp'
