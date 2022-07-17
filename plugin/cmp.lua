@@ -54,7 +54,7 @@ cmp.setup {
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -106,11 +106,17 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        copilot = "[Copilot]",
       })[entry.source.name]
+      if entry.source.name == "copilot" then
+        vim_item.kind = " "
+        vim_item.kind_hl_group = "CmpItemKindCopilot"
+      end
       return vim_item
     end,
   },
   sources = {
+    { name = "copilot", group_index = 2 },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
@@ -130,3 +136,6 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
+
