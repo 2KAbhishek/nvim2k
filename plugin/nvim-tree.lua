@@ -84,11 +84,11 @@ nvim_tree.setup {
         },
         git = {
           unstaged = "",
-          staged = "S",
+          staged = "+",
           unmerged = "",
           renamed = "➜",
           untracked = "U",
-          deleted = "",
+          deleted = "-",
           ignored = "◌",
         },
       },
