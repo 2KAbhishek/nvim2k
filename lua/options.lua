@@ -41,6 +41,7 @@ local options = {
  vim.cmd([[
      setlocal spell spelllang=en "Set spellcheck language to en
      setlocal spell! "Disable spell checks by default
+     filetype plugin indent on
  ]])
 
 -- set backspace=indent,eol,start
