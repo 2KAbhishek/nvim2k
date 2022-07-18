@@ -61,114 +61,11 @@ if has("autocmd")
     autocmd BufWritePre * %s/\s\+$//e
 endif
 
-" Plugins
-call plug#begin('~/.local/share/nvim/plugged')
-
-" lua api
-Plug 'nvim-lua/popup.nvim'
-
-Plug 'mattn/emmet-vim'
-
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rails'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'godlygeek/tabular'
-Plug 'Yggdroot/indentLine'
-Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'segeljakt/vim-silicon'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-unimpaired'
-" Plug 'subnut/nvim-ghost.nvim', {'do': ':call nvim_ghost#installer#install()'}
-
-
-call plug#end()
-" filetype plugin indent on
-
 " Drag Visual selections
 vnoremap K xkP`[V`]
 vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
-
-" FZF
-nnoremap <leader>p :Files<Cr>
-nnoremap <leader>g :Ag<Cr>
-
-" Airline
-let g:airline_theme='onedark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = "\uE0B0"
-let g:airline_right_sep = "\uE0B2"
-
-" Easymotion
-let g:EasyMotion_smartcase = 1
-
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-
-let g:EasyMotion_startofline = 0
-
-" Easymotion Incsearch
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {
-  \     "\<CR>": '<Over>(easymotion)'
-  \   },
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
-noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
-noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
-
-" Easymotion Inc Fuzzy Search
-function! s:config_easyfuzzymotion(...) abort
-  return extend(copy({
-  \   'converters': [incsearch#config#fuzzyword#converter()],
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> <Leader>/ incsearch#go(<SID>config_easyfuzzymotion())
-
-" Emmet
-let g:user_emmet_leader_key=','
-
-" Incsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
-" IndentLine
-let g:indentLine_conceallevel = 2
-let g:indentLine_char =''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_setColors = 1
-let g:indentLine_concealcursor = ""
 
 " One Dark
 let g:onedark_color_overrides = {
@@ -180,32 +77,8 @@ if !exists('$TMUX')
 endif
 colorscheme onedark
 
-" Silicon
-let g:silicon = {
-      \   'theme':              'OneHalfDark',
-      \   'font':               'FiraCode Nerd Font Mono',
-      \   'background':         '#AAAAFF',
-      \   'shadow-color':       '#555555',
-      \   'line-pad':                   2,
-      \   'pad-horiz':                 80,
-      \   'pad-vert':                 100,
-      \   'shadow-blur-radius':         0,
-      \   'shadow-offset-x':            0,
-      \   'shadow-offset-y':            0,
-      \   'line-number':           v:true,
-      \   'round-corner':          v:true,
-      \   'window-controls':       v:false,
-      \ }
-
-let g:silicon['output'] = '~/Pictures/Screenshots/silicon-{time:%Y-%m-%d-%H%M%S}.png'
-
 " Always use terminal background
 highlight Normal guibg=none
-
-" auto-format
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
 luafile ~/.config/nvim/lua/plugins.lua
 luafile ~/.config/nvim/lua/keymaps.lua
