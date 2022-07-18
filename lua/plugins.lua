@@ -41,6 +41,8 @@ packer.init {
 return require('packer').startup(function(use)
     -- packer can manage itself
     use 'wbthomason/packer.nvim'
+    -- improve load speed
+    use 'lewis6991/impatient.nvim'
 
     -- appearance
     use 'joshdick/onedark.vim'
