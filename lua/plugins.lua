@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
     use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
     use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }
     use 'lewis6991/gitsigns.nvim'
+    use 'lukas-reineke/indent-blankline.nvim'
 
     -- LSP config
     use 'neovim/nvim-lspconfig'
