@@ -66,7 +66,6 @@ return require('packer').startup(function(use)
     -- telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
     use 'nvim-telescope/telescope-frecency.nvim'
-    use 'nvim-telescope/telescope-file-browser.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-telescope/telescope-symbols.nvim'
     use 'nvim-telescope/telescope-hop.nvim'
@@ -103,6 +102,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 
     -- Utility
+    use 'kyazdani42/nvim-tree.lua'
     use 'folke/which-key.nvim'
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
