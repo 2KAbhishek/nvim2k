@@ -5,11 +5,11 @@ end
 
 surround.setup {
   keymaps = { -- vim-surround style keymaps
-    insert = "<m-s>",
-    insert_line = "<m-s><m-s>",
-    visual = "<m-s>",
-    delete = "<m-d>",
-    change = "<m-c>",
+    insert = "ys",
+    insert_line = "yss",
+    visual = "S",
+    delete = "ds",
+    change = "cs",
   },
   delimiters = {
     pairs = {
