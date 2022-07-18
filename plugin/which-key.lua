@@ -105,21 +105,27 @@ local m_mappings = {
 }
 
 local mappings = {
-    ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["w"] = { "<cmd>w<CR>", "Write" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
     ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+    ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
+    ["i"] = { "<cmd>Format<cr>", "Format"},
+    ["q"] = { "<cmd>bw<cr>", "Close Current Buf"},
+    ["Q"] = { "<cmd>qa!<cr>", "Force Quit!"},
+    ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua", "Reload Neovim"},
+    ["w"] = { "<cmd>w<CR>", "Write" },
+    ["W"] = { "<cmd>wq<cr>", "Write & Quit" },
+    ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck"},
 
-    B = {
-        name = "Browse",
-        i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
-        b = { "<cmd>Browse<cr>", "Browse" },
-        d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
-        f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
-        m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
-    },
+    -- B = {
+    --     name = "Browse",
+    --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
+    --     b = { "<cmd>Browse<cr>", "Browse" },
+    --     d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
+    --     f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
+    --     m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
+    -- },
 
     p = {
         name = "Packer",
@@ -130,12 +136,12 @@ local mappings = {
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    r = {
-        name = "Replace",
-        r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-        f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-    },
+    -- r = {
+    --     name = "Replace",
+    --     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+    --     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+    --     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    -- },
 
     d = {
         name = "Debug",
@@ -214,7 +220,7 @@ local mappings = {
         D = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
         f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
-        i = { "<cmd>LspInfo<cr>", "Info" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementations" },
         h = { "<cmd>IlluminationToggle<cr>", "Toggle Doc HL" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         j = {
@@ -303,6 +309,7 @@ local mappings = {
         h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
         p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
         r = { "<cmd>TSToggle rainbow<cr>", "Rainbow" },
+        w = { ":write | edit | TSBufEnable :qhighlight" },
     },
 }
 

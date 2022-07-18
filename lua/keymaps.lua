@@ -47,16 +47,6 @@ keymap("x", "L", "$", opts)
 keymap("o", "H", "^", opts)
 keymap("o", "L", "$", opts)
 
--- General
-keymap("n", "<leader>Q", "<cmd>qa!<cr>", opts)
-keymap("n", "<leader>q", "<cmd>bw<cr>", opts)
-keymap("n", "<leader>w", "<cmd>w<cr>", opts)
-keymap("n", "<leader>W", "<cmd>wq<cr>", opts)
-keymap("n", "<leader>r", "<cmd>source ~/.config/nvim/init.vim <cr>", opts)
-keymap("n", "<leader>z", "<cmd>setlocal spell!<cr>", opts)
-keymap("n", "<leader>G", "<cmd>Git<cr>", opts)
-keymap("n", "<leader>i", "<cmd>Format<cr>", opts)
-
 -- Naviagate buffers
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -92,7 +82,5 @@ keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>')
 keymap("t", "tt", "<cmd>ToggleTerm<cr>", opts)
 
 -- LSP
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
