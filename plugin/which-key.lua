@@ -110,22 +110,13 @@ local mappings = {
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-    ["i"] = { "<cmd>Format<cr>", "Format"},
-    ["q"] = { "<cmd>bw<cr>", "Close Current Buf"},
-    ["Q"] = { "<cmd>qa!<cr>", "Force Quit!"},
-    ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua", "Reload Neovim"},
+    ["i"] = { "<cmd>Format<cr>", "Format" },
+    ["q"] = { "<cmd>bw<cr>", "Close Current Buf" },
+    ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
+    ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua<cr>", "Reload Neovim" },
     ["w"] = { "<cmd>w<CR>", "Write" },
     ["W"] = { "<cmd>wq<cr>", "Write & Quit" },
-    ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck"},
-
-    -- B = {
-    --     name = "Browse",
-    --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
-    --     b = { "<cmd>Browse<cr>", "Browse" },
-    --     d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
-    --     f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
-    --     m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
-    -- },
+    ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
 
     p = {
         name = "Packer",
@@ -135,14 +126,6 @@ local mappings = {
         S = { "<cmd>PackerStatus<cr>", "Status" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
-
-    -- r = {
-    --     name = "Replace",
-    --     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-    --     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-    --     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-    -- },
-
     d = {
         name = "Debug",
         b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
@@ -270,25 +253,6 @@ local mappings = {
         x = { "<cmd>SnipTerminate<cr>", "Terminate" },
     },
 
-    -- s = {
-    --   name = "Split",
-    --   s = { "<cmd>split<cr>", "HSplit" },
-    --   v = { "<cmd>vsplit<cr>", "VSplit" },
-    -- },
-
-    -- s = {
-    --     name = "Session",
-    --     s = { "<cmd>SaveSession<cr>", "Save" },
-    --     r = { "<cmd>RestoreSession<cr>", "Restore" },
-    --     x = { "<cmd>DeleteSession<cr>", "Delete" },
-    --     f = { "<cmd>Autosession search<cr>", "Find" },
-    --     d = { "<cmd>Autosession delete<cr>", "Find Delete" },
-    -- a = { ":SaveSession<cr>", "test" },
-    -- a = { ":RestoreSession<cr>", "test" },
-    -- a = { ":RestoreSessionFromFile<cr>", "test" },
-    -- a = { ":DeleteSession<cr>", "test" },
-    -- },
-
     t = {
         name = "Terminal",
         ["1"] = { ":1ToggleTerm<cr>", "1" },
@@ -311,6 +275,41 @@ local mappings = {
         r = { "<cmd>TSToggle rainbow<cr>", "Rainbow" },
         w = { ":write | edit | TSBufEnable :qhighlight" },
     },
+
+    -- B = {
+    --     name = "Browse",
+    --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
+    --     b = { "<cmd>Browse<cr>", "Browse" },
+    --     d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
+    --     f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
+    --     m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
+    -- },
+
+    -- r = {
+    --     name = "Replace",
+    --     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+    --     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+    --     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    -- },
+
+    -- s = {
+    --   name = "Split",
+    --   s = { "<cmd>split<cr>", "HSplit" },
+    --   v = { "<cmd>vsplit<cr>", "VSplit" },
+    -- },
+
+    -- s = {
+    --     name = "Session",
+    --     s = { "<cmd>SaveSession<cr>", "Save" },
+    --     r = { "<cmd>RestoreSession<cr>", "Restore" },
+    --     x = { "<cmd>DeleteSession<cr>", "Delete" },
+    --     f = { "<cmd>Autosession search<cr>", "Find" },
+    --     d = { "<cmd>Autosession delete<cr>", "Find Delete" },
+    -- a = { ":SaveSession<cr>", "test" },
+    -- a = { ":RestoreSession<cr>", "test" },
+    -- a = { ":RestoreSessionFromFile<cr>", "test" },
+    -- a = { ":DeleteSession<cr>", "test" },
+    -- },
 }
 
 local vopts = {
