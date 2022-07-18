@@ -168,7 +168,7 @@ local mappings = {
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         r = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", "Frecent Files" },
         R = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-        s = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<cr>", "Search in file" },
+        s = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending previewer=false<cr>", "Search in file" },
         ['"'] = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
