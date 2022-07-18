@@ -30,54 +30,23 @@ keymap("n", "tt", "<cmd>ToggleTerm<cr>", opts)
 keymap("t", "tt", "<cmd>ToggleTerm<cr>", opts)
 
 -- Telescope
-keymap(
-    "n",
-    "<leader>ff",
+keymap("n", "<leader>ff",
     "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔎<cr>",
     opts
 )
-
-keymap(
-    "n",
-    "<leader>fg",
-    "<cmd>Telescope live_grep<cr>",
-    opts
-)
-
-keymap(
-    "n",
-    "<leader>fb",
-    "<cmd>Telescope buffers<cr>",
-    opts
-)
-
-keymap(
-    "n",
-    "<leader>fh",
-    "<cmd>Telescope help_tags<cr>",
-    opts
-)
-
-keymap(
-    "n",
-    "<leader>fe",
-    "<cmd>Telescope file_browser <cr>",
-    { noremap = true }
-)
-
-keymap(
-    "n",
-    "<leader>f.",
-    "<cmd>Telescope symbols <cr>",
-    { noremap = true }
-)
-
-keymap(
-    "n",
-    "<leader>fr",
+keymap("n", "<leader>fr",
     "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>",
     opts
 )
+keymap("n", "<leader>fs",
+    "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<cr>",
+    opts
+)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<leader>fe", "<cmd>Telescope file_browser <cr>", { noremap = true })
+keymap("n", "<leader>f.", "<cmd>Telescope symbols <cr>", { noremap = true })
 
 -- LSP
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -88,4 +57,3 @@ keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "<C-n>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-
