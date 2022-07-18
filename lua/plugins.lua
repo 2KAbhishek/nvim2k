@@ -100,13 +100,12 @@ return require('packer').startup(function(use)
     use 'rafamadriz/friendly-snippets'
     use 'saadparwaiz1/cmp_luasnip'
 
-    -- which key
+    -- Utility
     use 'folke/which-key.nvim'
-
-    -- commenting
     use 'numToStr/Comment.nvim'
-    -- surround
     use 'kylechui/nvim-surround'
+    use "windwp/nvim-autopairs"
+
     -- sync after cloneing packer.nvim
     if PACKER_BOOTSTRAP then
         require("packer").sync()
