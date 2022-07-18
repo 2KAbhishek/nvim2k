@@ -26,7 +26,7 @@
 <h3>Short sweet headline with 🎇🎉</h3>
 
 <figure>
-  <img src= "images/screenshot.png" alt="nvim Demo">
+  <img src= "images/screenshot.jpg" alt="nvim Demo">
   <br/>
   <figcaption>nvim screenshot</figcaption>
 </figure>
