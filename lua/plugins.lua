@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
     use "windwp/nvim-autopairs"
+    use { "michaelb/sniprun", run = "bash ./install.sh" }
 
     -- sync after cloneing packer.nvim
     if PACKER_BOOTSTRAP then
