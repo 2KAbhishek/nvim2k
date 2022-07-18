@@ -109,6 +109,10 @@ return require('packer').startup(function(use)
     use "windwp/nvim-autopairs"
     use { "michaelb/sniprun", run = "bash ./install.sh" }
 
+    -- Debugging
+    use "mfussenegger/nvim-dap"
+    use "rcarriga/nvim-dap-ui"
+
     -- sync after cloneing packer.nvim
     if PACKER_BOOTSTRAP then
         require("packer").sync()
