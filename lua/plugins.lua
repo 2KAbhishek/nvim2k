@@ -106,8 +106,9 @@ return require('packer').startup(function(use)
     use 'folke/which-key.nvim'
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
-    use "windwp/nvim-autopairs"
+    use 'windwp/nvim-autopairs'
     use { "michaelb/sniprun", run = "bash ./install.sh" }
+    use 'norcalli/nvim-colorizer.lua'
 
     -- Debugging
     use "mfussenegger/nvim-dap"
