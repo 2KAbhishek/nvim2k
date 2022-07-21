@@ -23,7 +23,7 @@
 <a href="https://github.com/2KAbhishek?tab=followers">
 <img alt="Followers" src="https://img.shields.io/github/followers/2kabhishek?color=222&style=plastic&label=Followers"> </a>
 
-<h3>Short sweet headline with 🎇🎉</h3>
+<h3>Personalized Development Environment ❤️👨‍💻</h3>
 
 <figure>
   <img src= "images/screenshot.jpg" alt="nvim Demo">
@@ -35,11 +35,13 @@
 
 ## What is this
 
-nvim is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
+Handcrafted neovim configs for the ultimate CLI dev experience, completely in lua 
 
 ## Inspiration
 
-nvim was inspired by `<reason/idea>`.
+Have been using nvim as my editor of choice for a while, with the introduction of vim 9 and the breaking changes to viml I decided to rewrite my configs in pure lua.
+
+
 
 ## Prerequisites
 
