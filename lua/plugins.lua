@@ -108,6 +108,7 @@ return require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
     use 'windwp/nvim-autopairs'
+    use 'rmagatti/auto-session'
     -- color highlighter
     use 'norcalli/nvim-colorizer.lua'
     -- command line completion

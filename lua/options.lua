@@ -34,8 +34,10 @@ local options = {
     wrap = false, -- display lines as one long line
     scrolloff = 8, -- is one of my fav
     sidescrolloff = 8,
-    listchars = { trail = '', tab = '', nbsp = "_", extends = '>', precedes = '<' },
+    listchars = { trail = '', tab = '', nbsp = "_", extends = '>', precedes = '<' }, -- highlight
     list = true,
+    wildmenu = true, -- wildmenu
+    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
 }
 
  vim.cmd([[
@@ -53,7 +55,6 @@ local options = {
 -- ruler = true, -- Show cursor position
 -- softtabstop = 4, -- Tabs/Spaces interop
 -- undolevels = 999, -- Lots of these
--- wildmenu = true -- Enable wildmenu
 -- syntax enable      -- Turn on syntax highlighting
 
 vim.opt.shortmess:append "c"
