@@ -1,17 +1,17 @@
 local fn = vim.fn
 
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
+        'git',
+        'clone',
+        '--depth',
+        '1',
+        'https://github.com/wbthomason/packer.nvim',
         install_path,
     }
-    print "Installing packer close and reopen Neovim..."
+    print 'Installing packer close and reopen Neovim...'
     vim.cmd [[packadd packer.nvim]]
 end
 
@@ -24,7 +24,7 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
     return
 end
@@ -33,7 +33,7 @@ end
 packer.init {
     display = {
         open_fn = function()
-            return require("packer.util").float { border = "rounded" }
+            return require('packer.util').float { border = 'rounded' }
         end,
     },
 }
@@ -79,11 +79,11 @@ return require('packer').startup(function(use)
     -- Copilot
     -- use 'github/copilot.vim'
     use {
-        "zbirenbaum/copilot.lua",
-        event = { "VimEnter" },
+        'zbirenbaum/copilot.lua',
+        event = { 'VimEnter' },
         config = function()
             vim.defer_fn(function()
-                require("copilot").setup()
+                require('copilot').setup()
             end, 100)
         end,
     }
@@ -107,15 +107,20 @@ return require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
     use 'windwp/nvim-autopairs'
-    use { "michaelb/sniprun", run = "bash ./install.sh" }
+    -- color highlighter
     use 'norcalli/nvim-colorizer.lua'
+    -- command line completion
+    use 'gelguy/wilder.nvim'
 
+
+    -- code runner
+    use { 'michaelb/sniprun', run = 'bash ./install.sh' }
     -- Debugging
-    use "mfussenegger/nvim-dap"
-    use "rcarriga/nvim-dap-ui"
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
 
     -- sync after cloneing packer.nvim
     if PACKER_BOOTSTRAP then
-        require("packer").sync()
+        require('packer').sync()
     end
 end)
