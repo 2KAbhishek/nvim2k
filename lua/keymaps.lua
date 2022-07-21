@@ -78,9 +78,6 @@ keymap("n", "<m-q>", "<cmd>:q<cr>", opts)
 keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
--- Terminal
-keymap("t", "tt", "<cmd>ToggleTerm<cr>", opts)
-
 -- LSP
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
