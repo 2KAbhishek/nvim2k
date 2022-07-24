@@ -44,6 +44,9 @@ configs.setup {
             },
         },
     },
+    matchup = {
+        enable = true, -- mandatory, false will disable the whole extension
+    },
     textobjects = {
         select = {
             enable = true,
