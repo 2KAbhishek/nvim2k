@@ -26,7 +26,7 @@
 <h3>Personalized Development Environment ❤️👨‍💻</h3>
 
 <figure>
-  <img src= "images/screenshot.jpg" alt="nvim Demo">
+  <img src= "images/screenshot.png" alt="nvim Demo">
   <br/>
   <figcaption>nvim screenshot</figcaption>
 </figure>
@@ -35,19 +35,17 @@
 
 ## What is this
 
-Handcrafted neovim configs for the ultimate CLI dev experience, completely in lua 
+Handcrafted neovim configs for the ultimate CLI dev experience, completely in lua
 
 ## Inspiration
 
 Have been using nvim as my editor of choice for a while, with the introduction of vim 9 and the breaking changes to viml I decided to rewrite my configs in pure lua.
 
-
-
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- You have installed the latest version of `<coding_language/dependency/requirement_1>`
+- You have installed the latest version of `neovim`
 
 ## Getting nvim
 
@@ -55,52 +53,12 @@ To get nvim, follow these steps:
 
 ```bash
 git clone https://github.com/2kabhishek/nvim
-cd nvim
-<install_command>
+ln -sfnv $PWD/nvim $HOME/.config/nvim
 ```
 
-## Using nvim
+## Plugins
 
-```bash
-USAGE:
-    command [FLAGS] [OPTIONS]
-
-FLAGS:
-    -h, --help              Prints help information.
-
-OPTIONS:
-    -o, --option <value>    Option description.
-    Options are: a, b. [default: a]
-
-Example:
-
-
-```
-
-## How it was built
-
-nvim was built using `<tech/library>`
-
-## Challenges faced
-
-While building nvim the main challenges were `<issue/difficulty>`
-
-## What I learned
-
-While building nvim I `<learned/accomplished>` about `<learning/accomplishment>`
-
-## What's next
-
-Planning to add `<feature/module>`.
-
-### To-Do
-
-- [x] Setup repo
-- [ ] Think real hard
-- [ ] Start typing
-- [ ] Change me
-- [ ] Update README
-- [ ] Finish it
+For a list of plugins, see the [plugins file](./lua/plugins.lua).
 
 Hit the ⭐ button if you found this useful.
 
