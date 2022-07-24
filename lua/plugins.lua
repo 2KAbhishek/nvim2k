@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'folke/trouble.nvim'
     use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     -- plenary, required by telescope
     use 'nvim-lua/plenary.nvim'
