@@ -65,10 +65,8 @@ comment.setup {
     },
 
     ---Pre-hook, called before commenting the line
-    ---@type fun(ctx: CommentCtx):string
     pre_hook = nil,
 
     ---Post-hook, called after commenting is done
-    ---@type fun(ctx: CommentCtx)
     post_hook = nil,
 }
