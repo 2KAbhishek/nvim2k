@@ -140,8 +140,9 @@ local mappings = {
         i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
         l = { "<cmd>Telescope resume<cr>", "Last Search" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        r = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", "Frecent Files" },
-        R = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+        r = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactor" },
+        R = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", "Frecent Files" },
+        o = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
         s = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending previewer=false<cr>", "Search in file" },
         ['"'] = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
@@ -236,10 +237,14 @@ local mappings = {
     },
 
     r = {
-        name = "Replace",
-        r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+        name = "Refactor",
+        r = { "Rename" },
+        s = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-        f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+        b = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+        e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block"},
+        f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block To File"},
+        i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable"},
     },
 
     s = {
@@ -313,6 +318,13 @@ local vopts = {
 local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
     s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run Code" },
+    r = {
+        name = "Refactor",
+        e = { "<esc><cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function" },
+        f = { "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract Function To File" },
+        v = { "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", "Extract Variable" },
+        i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
+    }
 }
 
 which_key.setup(setup)

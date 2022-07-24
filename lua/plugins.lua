@@ -113,6 +113,8 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     -- command line completion
     use 'gelguy/wilder.nvim'
+    -- refactoring
+    use 'ThePrimeagen/refactoring.nvim'
     -- search and replace
     use 'windwp/nvim-spectre'
     -- bookmarks and term nav
