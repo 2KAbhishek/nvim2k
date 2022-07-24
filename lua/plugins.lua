@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'folke/trouble.nvim'
+    use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
     -- plenary, required by telescope
     use 'nvim-lua/plenary.nvim'
