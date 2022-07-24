@@ -113,6 +113,8 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     -- command line completion
     use 'gelguy/wilder.nvim'
+    -- bookmarks
+    use 'ThePrimeagen/harpoon'
 
     -- code runner
     use { 'michaelb/sniprun', run = 'bash ./install.sh' }
