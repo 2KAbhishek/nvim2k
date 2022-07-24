@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
     use 'stevearc/dressing.nvim'
 
     -- LSP config
+    use 'williamboman/mason.nvim'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'jose-elias-alvarez/null-ls.nvim'

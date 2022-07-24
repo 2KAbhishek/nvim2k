@@ -227,12 +227,13 @@ local mappings = {
     },
 
     p = {
-        name = "Packer",
+        name = "Packages",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
         s = { "<cmd>PackerSync<cr>", "Sync" },
         S = { "<cmd>PackerStatus<cr>", "Status" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
+        m = { "<cmd>Mason<cr>", "Mason" },
     },
 
     r = {
@@ -241,9 +242,6 @@ local mappings = {
         s = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         b = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-        e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block"},
-        f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block To File"},
-        i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable"},
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block" },
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block To File" },
         i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
