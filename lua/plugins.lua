@@ -119,6 +119,8 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-spectre'
     -- bookmarks and term nav
     use 'ThePrimeagen/harpoon'
+    -- tab out of braces
+    use 'abecodes/tabout.nvim'
 
     -- code runner
     use { 'michaelb/sniprun', run = 'bash ./install.sh' }
