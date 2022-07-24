@@ -113,7 +113,9 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     -- command line completion
     use 'gelguy/wilder.nvim'
-    -- bookmarks
+    -- search and replace
+    use 'windwp/nvim-spectre'
+    -- bookmarks and term nav
     use 'ThePrimeagen/harpoon'
 
     -- code runner

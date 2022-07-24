@@ -105,19 +105,11 @@ local mappings = {
     ["i"] = { "<cmd>Format<cr>", "Format" },
     ["q"] = { "<cmd>bw<cr>", "Close Current Buf" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
-    ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua<cr>", "Reload Neovim" },
+    -- ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua<cr>", "Reload Neovim" },
     ["w"] = { "<cmd>w<CR>", "Write" },
     ["W"] = { "<cmd>wq<cr>", "Write & Quit" },
     ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
 
-    p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
 
     d = {
         name = "Debug",
@@ -225,6 +217,31 @@ local mappings = {
         },
     },
 
+    o = {
+        name = "Session",
+        s = { "<cmd>SaveSession<cr>", "Save" },
+        r = { "<cmd>RestoreSession<cr>", "Restore" },
+        x = { "<cmd>DeleteSession<cr>", "Delete" },
+        f = { "<cmd>Autosession search<cr>", "Find" },
+        d = { "<cmd>Autosession delete<cr>", "Find Delete" },
+    },
+
+    p = {
+        name = "Packer",
+        c = { "<cmd>PackerCompile<cr>", "Compile" },
+        i = { "<cmd>PackerInstall<cr>", "Install" },
+        s = { "<cmd>PackerSync<cr>", "Sync" },
+        S = { "<cmd>PackerStatus<cr>", "Status" },
+        u = { "<cmd>PackerUpdate<cr>", "Update" },
+    },
+
+    r = {
+        name = "Replace",
+        r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+        f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    },
+
     s = {
         name = "Surround",
         ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
@@ -278,30 +295,10 @@ local mappings = {
     --     m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
     -- },
 
-    -- r = {
-    --     name = "Replace",
-    --     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-    --     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-    --     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-    -- },
-
     -- s = {
     --   name = "Split",
     --   s = { "<cmd>split<cr>", "HSplit" },
     --   v = { "<cmd>vsplit<cr>", "VSplit" },
-    -- },
-
-    -- s = {
-    --     name = "Session",
-    --     s = { "<cmd>SaveSession<cr>", "Save" },
-    --     r = { "<cmd>RestoreSession<cr>", "Restore" },
-    --     x = { "<cmd>DeleteSession<cr>", "Delete" },
-    --     f = { "<cmd>Autosession search<cr>", "Find" },
-    --     d = { "<cmd>Autosession delete<cr>", "Find Delete" },
-    -- a = { ":SaveSession<cr>", "test" },
-    -- a = { ":RestoreSession<cr>", "test" },
-    -- a = { ":RestoreSessionFromFile<cr>", "test" },
-    -- a = { ":DeleteSession<cr>", "test" },
     -- },
 }
 
