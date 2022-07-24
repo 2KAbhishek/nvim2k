@@ -99,10 +99,9 @@ local m_mappings = {
 local mappings = {
     ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
     ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-    ["i"] = { "<cmd>Format<cr>", "Format" },
+    ["i"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     ["q"] = { "<cmd>bw<cr>", "Close Current Buf" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
     -- ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua<cr>", "Reload Neovim" },
@@ -187,7 +186,7 @@ local mappings = {
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         d = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
         D = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
-        f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+        f = { "<cmd>lua vim.lsp.buf.formatting({ async = true })<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
         i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementations" },
         h = { "<cmd>IlluminationToggle<cr>", "Toggle Doc HL" },
@@ -245,6 +244,9 @@ local mappings = {
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block"},
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block To File"},
         i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable"},
+        e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block" },
+        f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block To File" },
+        i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
     },
 
     s = {
