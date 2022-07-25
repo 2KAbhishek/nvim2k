@@ -127,6 +127,8 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
     -- tab out of braces
     use 'abecodes/tabout.nvim'
+    -- movement
+    use 'ggandor/leap.nvim'
 
     -- code runner
     use { 'michaelb/sniprun', run = 'bash ./install.sh' }
