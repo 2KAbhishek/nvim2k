@@ -130,8 +130,12 @@ local mappings = {
             "Find files",
         },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        f = {
+        a = {
             "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔎<cr>",
+            "Find All Files",
+        },
+        f = {
+            "<cmd>Telescope git_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔎<cr>",
             "Find files",
         },
         g = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
