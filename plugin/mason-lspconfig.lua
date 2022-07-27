@@ -45,6 +45,25 @@ mason_lsp.setup({
     automatic_installation = false,
 })
 
+local server_settings = {
+    tsserver = {
+        format = { enable = false },
+    },
+    eslint = {
+        enable = true,
+        format = { enable = true }, -- this will enable formatting
+        packageManager = "npm",
+        autoFixOnSave = true,
+        codeActionsOnSave = {
+            mode = "all",
+            rules = { "!debugger", "!no-only-tests/*" },
+        },
+        lintTask = {
+            enable = true,
+        },
+    }
+}
+
 mason_lsp.setup_handlers {
     function(server_name)
         lspconfig[server_name].setup {}
@@ -60,4 +79,9 @@ mason_lsp.setup_handlers {
             },
         })
     end,
+    ["eslint"] = function()
+        lspconfig.eslint.setup({
+            settings = server_settings.eslint,
+        })
+    end
 }
