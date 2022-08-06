@@ -44,6 +44,9 @@ return require('packer').startup(function(use)
     -- improve load speed
     use 'lewis6991/impatient.nvim'
 
+    -- language specific
+    use 'tpope/vim-endwise' -- ruby end completion
+
     -- appearance
     use 'joshdick/onedark.vim'
     use 'kyazdani42/nvim-web-devicons'
