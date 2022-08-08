@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
     use 'stevearc/dressing.nvim'
     -- use 'lewis6991/satellite.nvim' -- disabled because unstable
+    -- use 'edluffy/specs.nvim'
 
     -- LSP config
     use 'williamboman/mason.nvim'
