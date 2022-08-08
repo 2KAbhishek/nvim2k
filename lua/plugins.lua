@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'stevearc/dressing.nvim'
-    use 'lewis6991/satellite.nvim'
+    -- use 'lewis6991/satellite.nvim' -- disabled because unstable
 
     -- LSP config
     use 'williamboman/mason.nvim'
