@@ -55,7 +55,7 @@ ln -sfnv $PWD/nvim $HOME/.config/nvim
 
 ## Plugins
 
-For a list of plugins, see the [plugins file](./lua/plugins.lua).
+For a list of plugins, see the [plugins file](./lua/plugin-list.lua).
 
 Hit the ⭐ button if you found this useful.
 
