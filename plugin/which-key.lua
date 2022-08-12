@@ -104,7 +104,7 @@ local mappings = {
     ["i"] = { "<cmd>lua vim.lsp.buf.formatting({ async = true })<cr>", "Format" },
     ["q"] = { "<cmd>bw<cr>", "Close Current Buf" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
-    -- ["r"] = { "<cmd>luafile ~/.config/nvim/init.lua<cr>", "Reload Neovim" },
+    ["R"] = { "<cmd>lua ReloadConfig()<cr>", "Reload Neovim" },
     ["w"] = { "<cmd>w<CR>", "Write" },
     ["W"] = { "<cmd>wq<cr>", "Write & Quit" },
     ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
