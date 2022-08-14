@@ -20,6 +20,34 @@ keymap("i", "jj", "<Esc>", opts)
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Do not copy on x
+keymap('n', 'x', '"_x', opts)
+
+-- Increment/decrement
+keymap('n', '+', '<C-a>', opts)
+keymap('n', '-', '<C-x>', opts)
+
+-- Delete a word backwards
+keymap('n', 'dw', 'vb"_d', opts)
+
+-- New tab
+keymap('n', 'te', ':tabedit', opts)
+-- Split window
+keymap('n', 'ts', ':split<Return><C-w>w', opts)
+keymap('n', 'tv', ':vsplit<Return><C-w>w', opts)
+-- Move window
+keymap('n', 'tw', '<C-w>w', opts)
+keymap('', 'th', '<C-w>h', opts)
+keymap('', 'tk', '<C-w>k', opts)
+keymap('', 'tj', '<C-w>j', opts)
+keymap('', 'tl', '<C-w>l', opts)
+
+-- Resize window
+keymap('n', '<C-w><left>', '<C-w><', opts)
+keymap('n', '<C-w><right>', '<C-w>>', opts)
+keymap('n', '<C-w><up>', '<C-w>+', opts)
+keymap('n', '<C-w><down>', '<C-w>-', opts)
+
 -- Better window navigation
 keymap("n", "<m-h>", "<C-w>h", opts)
 keymap("n", "<m-j>", "<C-w>j", opts)
@@ -27,15 +55,15 @@ keymap("n", "<m-k>", "<C-w>k", opts)
 keymap("n", "<m-l>", "<C-w>l", opts)
 
 -- Tabs --
-keymap("n", "<enter>", ":tabnew %<cr>", opts)
-keymap("n", "<s-enter>", ":tabclose<cr>", opts)
-keymap("n", "<m-\\>", ":tabonly<cr>", opts)
+-- keymap("n", "<enter>", ":tabnew %<cr>", opts)
+-- keymap("n", "<s-enter>", ":tabclose<cr>", opts)
+-- keymap("n", "<m-\\>", ":tabonly<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- I hate typing these
 -- keymap("n", "H", "^", opts)
