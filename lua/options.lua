@@ -32,12 +32,20 @@ local options = {
     numberwidth = 4, -- set number column width to 2 {default 4}
     signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
     wrap = false, -- display lines as one long line
-    scrolloff = 8, -- is one of my fav
+    scrolloff = 10, -- is one of my fav
     sidescrolloff = 8,
     listchars = { trail = '', tab = '', nbsp = "_", extends = '>', precedes = '<' }, -- highlight
     list = true,
     wildmenu = true, -- wildmenu
     sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
+    autoindent = true,
+    shell = 'zsh',
+    inccommand = 'split',
+    smarttab = true,
+    breakindent = true,
+    ai = true,
+    si = true,
+    backspace = 'indent,eol,start',
 }
 
  vim.cmd([[
@@ -46,16 +54,17 @@ local options = {
      filetype plugin indent on
  ]])
 
--- set backspace=indent,eol,start
--- autoindent = true, -- Enable autoindent
--- hidden = true, -- Needed for toggleterm
--- autoread = true, -- Reload files on change
--- history = 1000, -- More history
--- incsearch = true, -- Show partial matches for a search phrase
--- ruler = true, -- Show cursor position
--- softtabstop = 4, -- Tabs/Spaces interop
--- undolevels = 999, -- Lots of these
--- syntax enable      -- Turn on syntax highlighting
+vim.opt.path:append { '**' }
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- Turn off paste mode when leaving insert
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+--   pattern = '*',
+--   command = "set nopaste"
+-- })
 
 vim.opt.shortmess:append "c"
 

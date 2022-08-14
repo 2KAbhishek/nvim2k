@@ -97,18 +97,12 @@ local m_mappings = {
 }
 
 local mappings = {
-    ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
-    ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
     ["i"] = { "<cmd>lua vim.lsp.buf.formatting({ async = true })<cr>", "Format" },
-    ["q"] = { "<cmd>bw<cr>", "Close Current Buf" },
+    ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
     ["R"] = { "<cmd>lua ReloadConfig()<cr>", "Reload Neovim" },
-    ["w"] = { "<cmd>w<CR>", "Write" },
-    ["W"] = { "<cmd>wq<cr>", "Write & Quit" },
     ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
-
 
     d = {
         name = "Debug",
@@ -283,7 +277,7 @@ local mappings = {
         t = { "<cmd>ToggleTerm<cr>", "ToggleTerm" },
         p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+        s = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
 
@@ -295,6 +289,15 @@ local mappings = {
         w = { ":write | edit | TSBufEnable :qhighlight" },
     },
 
+    w = {
+        name = "Window",
+        w = { "<cmd>w<cr>", "Write" },
+        W = { "<cmd>wq<cr>", "Write and Quit" },
+        q = { "<cmd>bw<cr>", "Close Current Buf" },
+        s = { "<cmd>split<cr>", "Horizontal Split File" },
+        v = { "<cmd>vsplit<cr>", "Vertical Split File" },
+        t = { "<cmd>tabnew<cr>", "New Tab" },
+    },
     -- B = {
     --     name = "Browse",
     --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },

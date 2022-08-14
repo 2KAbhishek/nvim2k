@@ -13,8 +13,8 @@ end
 
 surround.setup {
     keymaps = { -- vim-surround style keymaps
-        insert = "ys",
-        insert_line = "yss",
+        -- insert = "ys",
+        -- insert_line = "yss",
         visual = "S",
         delete = "ds",
         change = "cs",
