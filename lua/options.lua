@@ -40,7 +40,7 @@ local options = {
     sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
     autoindent = true,
     shell = 'zsh',
-    inccommand =' split',
+    inccommand = 'split',
     smarttab = true,
     breakindent = true,
     ai = true,
@@ -54,7 +54,7 @@ local options = {
      filetype plugin indent on
  ]])
 
-vim.opt.path:appent { '**' }
+vim.opt.path:append { '**' }
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
