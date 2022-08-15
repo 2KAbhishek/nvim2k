@@ -181,26 +181,20 @@ local mappings = {
 
     l = {
         name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+        f = { "<cmd>Lspsaga lsp_finder<cr>", "Finder" },
+        h = { "<cmd>Lspsaga signature_help<cr>", "Hover" },
+        j = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic", },
+        k = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic", },
+        p = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
+        r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+        o = { "<cmd>LSoutlineToggle<cr>", "Outline" },
         d = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
         D = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
-        f = { "<cmd>lua vim.lsp.buf.formatting({ async = true })<cr>", "Format" },
-        F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
         i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementations" },
-        h = { "<cmd>IlluminationToggle<cr>", "Toggle Doc HL" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = {
-            "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
-            "Next Diagnostic",
-        },
-        k = {
-            "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
-            "Prev Diagnostic",
-        },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        o = { "<cmd>SymbolsOutline<cr>", "Outline" },
         q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
@@ -331,6 +325,10 @@ local vmappings = {
         f = { "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract Function To File" },
         v = { "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", "Extract Variable" },
         i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
+    },
+    l = {
+        name = "LSP",
+        a = "<cmd><C-U>Lspsaga range_code_action<CR>",
     }
 }
 
