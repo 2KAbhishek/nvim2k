@@ -102,7 +102,6 @@ local mappings = {
     ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
     ["R"] = { "<cmd>lua ReloadConfig()<cr>", "Reload Neovim" },
-    ["z"] = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
 
     d = {
         name = "Debug",
@@ -291,7 +290,17 @@ local mappings = {
         s = { "<cmd>split<cr>", "Horizontal Split File" },
         v = { "<cmd>vsplit<cr>", "Vertical Split File" },
         t = { "<cmd>tabnew<cr>", "New Tab" },
+        o = { "<cmd>tabnext<cr>", "Only Editor" },
+        O = { "<cmd>tabnext<cr>", "Only Tab" },
     },
+
+    z = {
+        name = "Zen",
+        s = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
+        z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
+        t = { "<cmd>Twilight<cr>", "Toggle Twilight" },
+    },
+
     -- B = {
     --     name = "Browse",
     --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
