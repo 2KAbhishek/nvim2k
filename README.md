@@ -61,6 +61,10 @@ Hit the ⭐ button if you found this useful.
 
 ## More Info
 
+Want the complete CLI+ experience on your *nix system too? Have a look at [Dotfiles](https://github.com/2kabhishek/Dotfiles)
+Looking for my tmux configs? See [tmux2k](https://github.com/2kabhishek/tmux2k)
+Want the CLI experience on your Android too? Have a look at [Oh-My-Termux](https://github.com/2kabhishek/Oh-My-Termux)
+
 <div align="center">
 
 <a href="https://github.com/2KAbhishek/nvim">Source</a> | <a href="https://2kabhishek.github.io/nvim">Website</a>
