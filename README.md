@@ -32,11 +32,11 @@
 
 ## What is this
 
-Handcrafted neovim configs for the ultimate CLI dev experience, completely in lua
+Handcrafted `neovim` configs for the ultimate CLI dev experience, completely in `lua`
 
 ## Inspiration
 
-Have been using nvim as my editor of choice for a while, with the introduction of vim 9 and the breaking changes to viml I decided to rewrite my configs in pure lua.
+Have been using `neovim` as my editor of choice for a while, with the introduction of vim 9 and the breaking changes to `viml` I decided to rewrite my configs in pure `lua`.
 
 ## Prerequisites
 
@@ -44,9 +44,9 @@ Before you begin, ensure you have met the following requirements:
 
 - You have installed the latest version of `neovim`
 
-## Getting nvim
+## Getting `nvim`
 
-To get nvim, follow these steps:
+To get `nvim`, follow these steps:
 
 ```bash
 git clone https://github.com/2kabhishek/nvim
@@ -61,8 +61,10 @@ Hit the ⭐ button if you found this useful.
 
 ## More Info
 
-Want the complete CLI+ experience on your *nix system too? Have a look at [Dotfiles](https://github.com/2kabhishek/Dotfiles)
+Looking for my `zsh` and other `cli` configs? See [Dotfiles](https://github.com/2kabhishek/Dotfiles)
+
 Looking for my tmux configs? See [tmux2k](https://github.com/2kabhishek/tmux2k)
+
 Want the CLI experience on your Android too? Have a look at [Oh-My-Termux](https://github.com/2kabhishek/Oh-My-Termux)
 
 <div align="center">
