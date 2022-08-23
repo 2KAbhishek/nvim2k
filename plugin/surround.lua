@@ -19,33 +19,7 @@ surround.setup {
         delete = "ds",
         change = "cs",
     },
-    delimiters = {
-        pairs = {
-            ["("] = { "( ", " )" },
-            [")"] = { "(", ")" },
-            ["{"] = { "{ ", " }" },
-            ["}"] = { "{", "}" },
-            ["<"] = { "< ", " >" },
-            [">"] = { "<", ">" },
-            ["["] = { "[ ", " ]" },
-            ["]"] = { "[", "]" },
-            -- Define pairs based on function evaluations!
-            ["i"] = function()
-                local left_delimiter = get_input("Enter the left delimiter: ")
-                if left_delimiter then
-                    local right_delimiter = get_input("Enter the right delimiter: ")
-                    if right_delimiter then
-                        return { left_delimiter, right_delimiter }
-                    end
-                end
-            end,
-            ["f"] = function()
-                local result = get_input("Enter the function name: ")
-                if result then
-                    return { result .. "(", ")" }
-                end
-            end,
-        },
+    surrounds = {
         separators = {
             ["'"] = { "'", "'" },
             ['"'] = { '"', '"' },
@@ -65,7 +39,7 @@ surround.setup {
             ["s"] = { ")", "]", "}", ">", "'", '"', "`" }, -- Any surrounding delimiter
         },
     },
-    highlight_motion = { -- Highlight before inserting/changing surrounds
-        duration = 0,
+    highlight = { -- Highlight before inserting/changing surrounds
+        duration = 2,
     },
 }
