@@ -20,11 +20,6 @@ surround.setup {
         change = "cs",
     },
     surrounds = {
-        separators = {
-            ["'"] = { "'", "'" },
-            ['"'] = { '"', '"' },
-            ["`"] = { "`", "`" },
-        },
         HTML = {
             ["t"] = "type", -- Change just the tag type
             ["T"] = "whole", -- Change the whole tag contents
