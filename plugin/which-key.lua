@@ -208,6 +208,19 @@ local mappings = {
         },
     },
 
+    n = {
+        name = "Notes",
+        o = { "<cmd>vsplit $NOTES_ROOT<cr>", "Open Notes" },
+        n = { "<cmd>execute 'vsplit $NOTES_PATH/'.strftime(\"%F\").'.md' <cr>", "New Note" },
+        N = { "<cmd>execute 'e '.strftime(\"%F\").'.md' <cr>", "New Note Here" },
+        z = { "<cmd>execute 'vsplit $NOTES_PATH/'.strftime(\"%F-%H-%M\").'.md' <cr>", "New Zettelkasten" },
+        Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", "New Zettelkasten Here" },
+        d = { "<cmd>put =strftime('%F')<cr>", "Insert Date"},
+        D = { "<cmd>put =strftime('%a %d %b %r')<cr>", "Insert Human Date"},
+        t = { "<cmd>put =strftime('%F-%H-%M')<cr>", "Insert Time"},
+        T = { "<cmd>put =strftime('%r')<cr>", "Insert Human Time"},
+    },
+
     o = {
         name = "Session",
         s = { "<cmd>SaveSession<cr>", "Save" },
