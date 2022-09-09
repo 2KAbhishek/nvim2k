@@ -98,7 +98,7 @@ local m_mappings = {
 
 local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["i"] = { "<cmd>lua vim.lsp.buf.formatting({ async = true })<cr>", "Format" },
+    ["i"] = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
     ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
     ["R"] = { "<cmd>lua ReloadConfig()<cr>", "Reload Neovim" },
@@ -215,10 +215,10 @@ local mappings = {
         N = { "<cmd>execute 'e '.strftime(\"%F\").'.md' <cr>", "New Note Here" },
         z = { "<cmd>execute 'vsplit $NOTES_PATH/'.strftime(\"%F-%H-%M\").'.md' <cr>", "New Zettelkasten" },
         Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", "New Zettelkasten Here" },
-        d = { "<cmd>put =strftime('%F')<cr>", "Insert Date"},
-        D = { "<cmd>put =strftime('%a %d %b %r')<cr>", "Insert Human Date"},
-        t = { "<cmd>put =strftime('%F-%H-%M')<cr>", "Insert Time"},
-        T = { "<cmd>put =strftime('%r')<cr>", "Insert Human Time"},
+        d = { "<cmd>put =strftime('%F')<cr>", "Insert Date" },
+        D = { "<cmd>put =strftime('%a %d %b %r')<cr>", "Insert Human Date" },
+        t = { "<cmd>put =strftime('%F-%H-%M')<cr>", "Insert Time" },
+        T = { "<cmd>put =strftime('%r')<cr>", "Insert Human Time" },
     },
 
     o = {
