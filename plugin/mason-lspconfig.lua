@@ -73,7 +73,7 @@ mason_lsp.setup_handlers {
             settings = {
                 Lua = {
                     diagnostics = {
-                        globals = { "P", "vim" },
+                        globals = { "awesome", "screen", "client", "root", "P", "vim" },
                     },
                 },
             },
