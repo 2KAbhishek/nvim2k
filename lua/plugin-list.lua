@@ -73,11 +73,8 @@ return require('packer').startup(function(use)
 
     -- plenary, required by telescope
     use 'nvim-lua/plenary.nvim'
-    -- sqlite, required by frecency
-    use 'tami5/sqlite.lua'
     -- telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
-    use 'nvim-telescope/telescope-frecency.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-telescope/telescope-symbols.nvim'
     use 'nvim-telescope/telescope-hop.nvim'
