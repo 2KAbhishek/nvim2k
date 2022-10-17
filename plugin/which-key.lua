@@ -98,10 +98,15 @@ local m_mappings = {
 
 local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["i"] = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
     ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
     ["R"] = { "<cmd>lua ReloadConfig()<cr>", "Reload Neovim" },
+
+    c = {
+        name = "Config",
+        r = { "<cmd>set relativenumber!<cr>", "Relative Numbers" },
+        s = { "<cmd>set spell!<cr>", "Spellcheck" },
+    },
 
     d = {
         name = "Debug",
@@ -182,7 +187,8 @@ local mappings = {
         name = "LSP",
         a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
         A = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        f = { "<cmd>Lspsaga lsp_finder<cr>", "Finder" },
+        f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+        F = { "<cmd>Lspsaga lsp_finder<cr>", "Finder" },
         h = { "<cmd>Lspsaga signature_help<cr>", "Hover" },
         j = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic", },
         k = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic", },
@@ -311,7 +317,6 @@ local mappings = {
 
     z = {
         name = "Zen",
-        s = { "<cmd>setlocal spell!<cr>", "Toggle Spellcheck" },
         z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
         t = { "<cmd>Twilight<cr>", "Toggle Twilight" },
     },
