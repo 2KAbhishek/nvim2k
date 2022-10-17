@@ -100,11 +100,11 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
-    ["R"] = { "<cmd>lua ReloadConfig()<cr>", "Reload Neovim" },
 
     c = {
         name = "Config",
-        r = { "<cmd>set relativenumber!<cr>", "Relative Numbers" },
+        n = { "<cmd>set relativenumber!<cr>", "Relative Numbers" },
+        r = { "<cmd>lua ReloadConfig()<cr>", "Reload" },
         s = { "<cmd>set spell!<cr>", "Spellcheck" },
     },
 
