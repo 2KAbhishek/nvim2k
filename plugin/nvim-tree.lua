@@ -8,7 +8,7 @@ if not config_status_ok then
     return
 end
 
-local icons = require "icons"
+local icons = require "nvim2k.icons"
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 

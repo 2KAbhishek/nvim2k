@@ -17,7 +17,7 @@ end
 
 local compare = require "cmp.config.compare"
 
-local icons = require("icons")
+local icons = require "nvim2k.icons"
 local kind_icons = icons.kind
 vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
