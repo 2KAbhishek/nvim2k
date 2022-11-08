@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+local multi_open_mappings = require('nvim2k.plugins.multi')
 
 telescope.setup {
     defaults = {
@@ -89,13 +90,9 @@ telescope.setup {
         },
     },
     pickers = {
-        -- Default configuration for builtin pickers goes here:
-        -- picker_name = {
-        --   picker_config_key = value,
-        --   ...
-        -- }
-        -- Now the picker_config_key will be applied every time you call this
-        -- builtin picker
+        find_files = { mappings = multi_open_mappings },
+        git_files = { mappings = multi_open_mappings },
+        oldfiles = { mappings = multi_open_mappings },
     },
     extensions = {
         file_browser = {
