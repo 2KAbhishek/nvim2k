@@ -41,56 +41,60 @@ packer.init {
 return require('packer').startup(function(use)
     -- packer can manage itself
     use 'wbthomason/packer.nvim'
-    -- improve load speed
-    use 'lewis6991/impatient.nvim'
 
-    -- language specific
-    use 'tpope/vim-endwise' -- ruby end completion
+    -- Appearance
+    use {
+        'joshdick/onedark.vim',
+        'kyazdani42/nvim-web-devicons',
+        'nvim-lualine/lualine.nvim',
+        { 'akinsho/bufferline.nvim', tag = 'v2.*' },
+        { 'akinsho/toggleterm.nvim', tag = 'v2.*' },
+        'lewis6991/gitsigns.nvim',
+        'lukas-reineke/indent-blankline.nvim',
+        'stevearc/dressing.nvim',
+        'folke/zen-mode.nvim',
+        'folke/twilight.nvim'
+        -- 'lewis6991/satellite.nvim',
+        -- 'edluffy/specs.nvim',
+    }
 
-    -- appearance
-    use 'joshdick/onedark.vim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'nvim-lualine/lualine.nvim'
-    use { 'akinsho/bufferline.nvim', tag = 'v2.*' }
-    use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }
-    use 'lewis6991/gitsigns.nvim'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'stevearc/dressing.nvim'
-    use 'folke/zen-mode.nvim'
-    use 'folke/twilight.nvim'
-    -- use 'lewis6991/satellite.nvim' -- disabled because unstable
-    -- use 'edluffy/specs.nvim'
+    -- LSP
+    use {
+        'neovim/nvim-lspconfig',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'jose-elias-alvarez/null-ls.nvim',
+        'folke/trouble.nvim',
+        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+        'ray-x/lsp_signature.nvim',
+        'mfussenegger/nvim-dap',
+        'rcarriga/nvim-dap-ui',
+        { "glepnir/lspsaga.nvim", branch = "main" },
+    }
 
-    -- LSP config
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'neovim/nvim-lspconfig'
-    use 'jose-elias-alvarez/null-ls.nvim'
-    use 'folke/trouble.nvim'
-    use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
-    use 'ray-x/lsp_signature.nvim'
-    use { "glepnir/lspsaga.nvim", branch = "main" }
+    -- Telescope
+    use {
+        'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope.nvim', tag = '0.1.0' },
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        'nvim-telescope/telescope-symbols.nvim',
+        'nvim-telescope/telescope-hop.nvim',
+    }
 
-    -- plenary, required by telescope
-    use 'nvim-lua/plenary.nvim'
-    -- telescope
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'nvim-telescope/telescope-symbols.nvim'
-    use 'nvim-telescope/telescope-hop.nvim'
-
-    -- treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'nvim-treesitter/nvim-treesitter-refactor'
-    use 'nvim-treesitter/nvim-treesitter-context'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
-    use 'windwp/nvim-ts-autotag'
-    use 'p00f/nvim-ts-rainbow'
-    use 'andymass/vim-matchup'
+    -- Treesitter
+    use {
+        { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+        'nvim-treesitter/nvim-treesitter-refactor',
+        'nvim-treesitter/nvim-treesitter-context',
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        'windwp/nvim-ts-autotag',
+        'p00f/nvim-ts-rainbow',
+        'andymass/vim-matchup',
+    }
 
     -- Copilot
-    -- use 'github/copilot.vim'
     -- use {
+    --     'github/copilot.vim',
     --     'zbirenbaum/copilot.lua',
     --     event = { 'VimEnter' },
     --     config = function()
@@ -100,50 +104,41 @@ return require('packer').startup(function(use)
     --     end,
     -- }
 
-    -- cmp
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    -- use 'zbirenbaum/copilot-cmp'
-
-    -- snippets
-    use 'L3MON4D3/LuaSnip'
-    use 'rafamadriz/friendly-snippets'
-    use 'saadparwaiz1/cmp_luasnip'
+    -- Completion
+    use {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp',
+        'zbirenbaum/copilot-cmp',
+        'L3MON4D3/LuaSnip',
+        'rafamadriz/friendly-snippets',
+        'saadparwaiz1/cmp_luasnip',
+    }
 
     -- Utility
-    use 'kyazdani42/nvim-tree.lua'
-    use 'folke/which-key.nvim'
-    use 'numToStr/Comment.nvim'
-    use 'kylechui/nvim-surround'
-    use 'windwp/nvim-autopairs'
-    use 'rmagatti/auto-session'
-    -- color highlighter
-    use 'norcalli/nvim-colorizer.lua'
-    -- command line completion
-    use 'gelguy/wilder.nvim'
-    -- refactoring
-    use 'ThePrimeagen/refactoring.nvim'
-    -- search and replace
-    use 'windwp/nvim-spectre'
-    -- bookmarks and term nav
-    use 'ThePrimeagen/harpoon'
-    -- tab out of braces
-    use 'abecodes/tabout.nvim'
-    -- movement
-    use 'ggandor/leap.nvim'
-
-    -- code runner
-    use { 'michaelb/sniprun', run = 'bash ./install.sh' }
-    -- Debugging
-    use 'mfussenegger/nvim-dap'
-    use 'rcarriga/nvim-dap-ui'
+    use {
+        'kyazdani42/nvim-tree.lua',
+        'folke/which-key.nvim',
+        'numToStr/Comment.nvim',
+        'kylechui/nvim-surround',
+        'windwp/nvim-autopairs',
+        'rmagatti/auto-session',
+        'norcalli/nvim-colorizer.lua',
+        'gelguy/wilder.nvim',
+        'ThePrimeagen/refactoring.nvim',
+        'windwp/nvim-spectre',
+        'ThePrimeagen/harpoon',
+        'abecodes/tabout.nvim',
+        'ggandor/leap.nvim',
+        'tpope/vim-endwise',
+        { 'michaelb/sniprun', run = 'bash ./install.sh' },
+        'lewis6991/impatient.nvim',
+    }
 
     -- sync after cloneing packer.nvim
     if PACKER_BOOTSTRAP then
         require('packer').sync()
     end
 end)
-
