@@ -93,16 +93,16 @@ return require('packer').startup(function(use)
     }
 
     -- Copilot
-    -- use {
-    --     'github/copilot.vim',
-    --     'zbirenbaum/copilot.lua',
-    --     event = { 'VimEnter' },
-    --     config = function()
-    --         vim.defer_fn(function()
-    --             require('copilot').setup()
-    --         end, 100)
-    --     end,
-    -- }
+    use {
+        'github/copilot.vim',
+        'zbirenbaum/copilot.lua',
+        event = { 'VimEnter' },
+        config = function()
+            vim.defer_fn(function()
+                require('copilot').setup()
+            end, 100)
+        end,
+    }
 
     -- Completion
     use {
