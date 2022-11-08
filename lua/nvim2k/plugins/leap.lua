@@ -4,21 +4,23 @@ if not status_ok then
 end
 
 leap.setup {
-    max_aot_targets = nil,
-    highlight_unlabeled = false,
+    max_phase_one_targets = nil,
+    highlight_unlabeled_phase_one_targets = false,
+    max_highlighted_traversal_targets = 10,
     case_sensitive = false,
-    character_classes = { ' \t\r\n', },
-    -- Leaving the appropriate list empty effectively disables "smart" mode,
-    -- and forces auto-jump to be on or off.
-    -- safe_labels = { . . . },
-    -- labels = { . . . },
-    -- These keys are captured directly by the plugin at runtime.
+    equivalence_classes = { ' \t\r\n', },
+    substitute_chars = {},
+    safe_labels = { 's', 'f', 'n', 'u', 't' },
+    labels = { 's', 'f', 'n', 'j', 'k' },
     special_keys = {
         repeat_search = '<enter>',
-        next_match    = '<enter>',
-        prev_match    = '<tab>',
-        next_group    = '<space>',
-        prev_group    = '<tab>',
+        next_phase_one_target = '<enter>',
+        next_target = { '<enter>', ';' },
+        prev_target = { '<tab>', ',' },
+        next_group = '<space>',
+        prev_group = '<tab>',
+        multi_accept = '<enter>',
+        multi_revert = '<backspace>',
     },
 }
 
