@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
-local multi_open_mappings = require('nvim2k.plugins.multi')
+local multi_open_mappings = require('nvim2k.plugins.telescope-multiopen')
 
 telescope.setup {
     defaults = {
