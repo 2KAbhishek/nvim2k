@@ -52,6 +52,9 @@ local options = {
      setlocal spell spelllang=en "Set spellcheck language to en
      setlocal spell! "Disable spell checks by default
      filetype plugin indent on
+     if has('win32')
+        let g:python3_host_prog = $HOME . '/scoop/apps/python/current/python.exe'
+     endif
  ]])
 
 vim.opt.path:append { '**' }
