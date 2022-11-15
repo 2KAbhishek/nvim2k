@@ -11,6 +11,7 @@ require 'nvim2k.plugins.wilder'
 require 'nvim2k.plugins.zen-mode'
 
 -- Utilities
+require 'nvim2k.plugins.gitsigns'
 require 'nvim2k.plugins.diffview'
 require 'nvim2k.plugins.neogit'
 require 'nvim2k.plugins.dap'
