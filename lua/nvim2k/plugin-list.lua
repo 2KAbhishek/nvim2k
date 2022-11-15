@@ -120,6 +120,7 @@ return require('packer').startup(function(use)
 
     -- Utility
     use {
+        'sindrets/diffview.nvim',
         'TimUntersberger/neogit',
         'kyazdani42/nvim-tree.lua',
         'folke/which-key.nvim',
