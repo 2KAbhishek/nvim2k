@@ -120,6 +120,7 @@ return require('packer').startup(function(use)
 
     -- Utility
     use {
+        'TimUntersberger/neogit',
         'kyazdani42/nvim-tree.lua',
         'folke/which-key.nvim',
         'numToStr/Comment.nvim',
