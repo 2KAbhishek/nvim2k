@@ -17,11 +17,11 @@ neogit.setup {
     kind = "split",
     -- Change the default way of opening the commit popup
     commit_popup = {
-        kind = "floating",
+        kind = "split",
     },
     -- Change the default way of opening popups
     popup = {
-        kind = "floating",
+        kind = "split",
     },
     -- customize displayed signs
     signs = {
