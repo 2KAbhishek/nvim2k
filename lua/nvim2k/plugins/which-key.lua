@@ -174,6 +174,8 @@ local mappings = {
             "<cmd>Gitsigns diffthis HEAD<cr>",
             "Diff",
         },
+        D = { "<cmd>DiffviewOpen<cr>", "Diff View" },
+        f = { "<cmd>DiffviewFileHistory<cr>", "File History" },
         G = {
             name = "Gist",
             a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
