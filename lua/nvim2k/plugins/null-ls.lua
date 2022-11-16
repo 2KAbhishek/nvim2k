@@ -11,9 +11,6 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
     debug = false,
     sources = {
-        formatting.prettier.with { extra_args = { "--single-quote", "--trailing-comma all", "--jsx-single-quote" } },
-        formatting.rubocop,
-        diagnostics.rubocop,
         diagnostics.shellcheck,
         formatting.shfmt,
         -- formatting.black.with { extra_args = { "--fast" } },
