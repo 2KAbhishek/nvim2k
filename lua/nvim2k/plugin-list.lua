@@ -93,18 +93,6 @@ return require('packer').startup(function(use)
         'andymass/vim-matchup',
     }
 
-    -- Copilot
-    use {
-        'github/copilot.vim',
-        'zbirenbaum/copilot.lua',
-        event = { 'VimEnter' },
-        config = function()
-            vim.defer_fn(function()
-                require('copilot').setup()
-            end, 100)
-        end,
-    }
-
     -- Completion
     use {
         'hrsh7th/cmp-nvim-lsp',
@@ -112,11 +100,25 @@ return require('packer').startup(function(use)
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/nvim-cmp',
-        'zbirenbaum/copilot-cmp',
         'L3MON4D3/LuaSnip',
         'rafamadriz/friendly-snippets',
         'saadparwaiz1/cmp_luasnip',
     }
+
+    -- Copilot
+    -- use {
+    --     'github/copilot.vim',
+    --     {
+    --         'zbirenbaum/copilot.lua',
+    --         event = { 'VimEnter' },
+    --         config = function()
+    --             vim.defer_fn(function()
+    --                 require('copilot').setup()
+    --             end, 100)
+    --         end,
+    --     },
+    --     'zbirenbaum/copilot-cmp',
+    -- }
 
     -- Utility
     use {
