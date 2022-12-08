@@ -80,6 +80,8 @@ return require('packer').startup(function(use)
         { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
         'nvim-telescope/telescope-symbols.nvim',
         'nvim-telescope/telescope-hop.nvim',
+        'renerocksai/telekasten.nvim',
+        'renerocksai/calendar-vim'
     }
 
     -- Treesitter

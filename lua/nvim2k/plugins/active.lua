@@ -23,6 +23,7 @@ require 'nvim2k.plugins.telescope'
 require 'nvim2k.plugins.toggleterm'
 require 'nvim2k.plugins.treesitter-context'
 require 'nvim2k.plugins.treesitter'
+require 'nvim2k.plugins.telekasten'
 
 -- LSP Stuff
 require 'nvim2k.plugins.mason-lspconfig'
