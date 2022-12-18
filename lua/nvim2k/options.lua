@@ -18,8 +18,7 @@ local options = {
     swapfile = false, -- creates a swapfile
     termguicolors = true, -- set term gui colors (most terminals support this)
     timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
-    undofile = true, -- enable persistent undo
-    updatetime = 0, -- faster completion (4000ms default)
+    updatetime = 50, -- faster completion (4000ms default)
     writebackup = false, -- do not edit backups
     expandtab = true, -- convert tabs to spaces
     shiftwidth = 4, -- the number of spaces inserted for each indentation
@@ -46,6 +45,8 @@ local options = {
     ai = true,
     si = true,
     backspace = 'indent,eol,start',
+    undodir = os.getenv("HOME") .. "/.vim/undodir",
+    undofile = true, -- enable persistent undo
 }
 
  vim.cmd([[
