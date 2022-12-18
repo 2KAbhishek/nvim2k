@@ -124,6 +124,7 @@ return require('packer').startup(function(use)
 
     -- Utility
     use {
+        'mbbill/undotree',
         'sindrets/diffview.nvim',
         'TimUntersberger/neogit',
         'kyazdani42/nvim-tree.lua',

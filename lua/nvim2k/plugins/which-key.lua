@@ -100,6 +100,7 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
+    ["u"] = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
 
     c = {
         name = "Config",
