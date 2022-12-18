@@ -79,34 +79,28 @@ local opts = {
     nowait = true, -- use `nowait` when creating keymaps
 }
 
-local m_opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "m",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
-local m_mappings = {
-    m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-    s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
-    ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
-    [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
-    [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
-}
-
 local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["q"] = { "<cmd>q<cr>", "Quit" },
     ["Q"] = { "<cmd>qa!<cr>", "Force Quit!" },
     ["u"] = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
 
+    m = {
+        name = "Harpoon",
+        a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+        m = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
+        ["k"] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
+        ["j"] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
+        ["s"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+    },
+
     c = {
         name = "Config",
         n = { "<cmd>set relativenumber!<cr>", "Relative Numbers" },
         r = { "<cmd>lua ReloadConfig()<cr>", "Reload" },
         s = { "<cmd>set spell!<cr>", "Spellcheck" },
+        z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
+        t = { "<cmd>Twilight<cr>", "Toggle Twilight" },
     },
 
     d = {
@@ -185,8 +179,8 @@ local mappings = {
         p = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
         r = { "<cmd>Lspsaga rename<cr>", "Rename" },
         o = { "<cmd>LSoutlineToggle<cr>", "Outline" },
-        d = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
-        D = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
         i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementations" },
         I = { "<cmd>LspInfo<cr>", "Info" },
         l = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle LSP Lines" },
@@ -305,12 +299,6 @@ local mappings = {
         O = { "<cmd>tabnext<cr>", "Only Tab" },
     },
 
-    z = {
-        name = "Zen",
-        z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
-        t = { "<cmd>Twilight<cr>", "Toggle Twilight" },
-    },
-
     -- B = {
     --     name = "Browse",
     --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
@@ -335,6 +323,7 @@ local vopts = {
     noremap = true, -- use `noremap` when creating keymaps
     nowait = true, -- use `nowait` when creating keymaps
 }
+
 local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
     s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run Code" },
@@ -354,4 +343,3 @@ local vmappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-which_key.register(m_mappings, m_opts)
