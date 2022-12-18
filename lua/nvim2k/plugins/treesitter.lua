@@ -4,9 +4,10 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = { "help", "javascript", "typescript", "lua", "markdown", "ruby", "rust" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing
+    auto_install = true,
 
     autopairs = {
         enable = true,
@@ -15,9 +16,9 @@ configs.setup {
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
     },
-    indent = { enable = true, disable = { "yaml" } },
+    indent = { enable = true },
 
     context_commentstring = {
         enable = true,
@@ -34,17 +35,17 @@ configs.setup {
         smart_rename = {
             enable = true,
             keymaps = {
-                smart_rename = "<leader>rr",
+                smart_rename = "<leader>lr",
             },
         },
         navigation = {
             enable = true,
             keymaps = {
-                goto_definition = "gnd",
-                list_definitions = "gnD",
-                list_definitions_toc = "gO",
-                goto_next_usage = "<a-*>",
-                goto_previous_usage = "<a-#>",
+                goto_definition = "ld",
+                list_definitions = "lD",
+                list_definitions_toc = "lo",
+                goto_next_usage = "lj",
+                goto_previous_usage = "lk",
             },
         },
     },
