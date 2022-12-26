@@ -26,15 +26,14 @@ require 'nvim2k.plugins.treesitter'
 require 'nvim2k.plugins.telekasten'
 
 -- LSP Stuff
-require 'nvim2k.plugins.mason-lspconfig'
-require 'nvim2k.plugins.mason'
+require 'nvim2k.plugins.lsp-zero'
+require 'nvim2k.plugins.cmp'
 require 'nvim2k.plugins.null-ls'
 require 'nvim2k.plugins.lsp-lines'
 require 'nvim2k.plugins.lsp-signature'
 require 'nvim2k.plugins.lspsaga'
 require 'nvim2k.plugins.lualine'
 require 'nvim2k.plugins.trouble'
-require 'nvim2k.plugins.cmp'
 
 -- Editing
 require 'nvim2k.plugins.autopairs'
