@@ -14,21 +14,48 @@ vim.opt.runtimepath:prepend(lazypath)
 local plugins = {
     -- Appearance
     'joshdick/onedark.vim',
-    'kyazdani42/nvim-web-devicons',
     'nvim-lualine/lualine.nvim',
     'akinsho/bufferline.nvim',
     { 'akinsho/toggleterm.nvim', cmd = 'ToggleTerm' },
     {
-        'lukas-reineke/indent-blankline.nvim',
-        'stevearc/dressing.nvim',
-        'lewis6991/gitsigns.nvim',
-        event = 'VeryLazy',
+        'folke/zen-mode.nvim',
+        cmd = 'ZenMode',
+        dependencies = {
+            'folke/twilight.nvim',
+        },
         lazy = true,
     },
+
+    -- Utilities
+    'mbbill/undotree',
+    'kyazdani42/nvim-tree.lua',
+    { 'folke/which-key.nvim', lazy = true },
+    { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = "SnipRun" },
+
     {
-        'folke/zen-mode.nvim',
-        'folke/twilight.nvim',
-        cmd = 'ZenMode',
+        'lewis6991/impatient.nvim',
+        dependencies = {
+            'lukas-reineke/indent-blankline.nvim',
+            'stevearc/dressing.nvim',
+            'lewis6991/gitsigns.nvim',
+            'kyazdani42/nvim-web-devicons',
+            'sindrets/diffview.nvim',
+            'TimUntersberger/neogit',
+            'numToStr/Comment.nvim',
+            'kylechui/nvim-surround',
+            'windwp/nvim-autopairs',
+            'rmagatti/auto-session',
+            'norcalli/nvim-colorizer.lua',
+            'gelguy/wilder.nvim',
+            'ThePrimeagen/refactoring.nvim',
+            'windwp/nvim-spectre',
+            'ThePrimeagen/harpoon',
+            'abecodes/tabout.nvim',
+            'ggandor/leap.nvim',
+            'tpope/vim-endwise',
+        },
+        event = 'BufRead',
+        lazy = true,
     },
 
     -- LSP
@@ -87,41 +114,17 @@ local plugins = {
     },
 
     -- Tresitter
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     {
-        'nvim-treesitter/nvim-treesitter-refactor',
-        'nvim-treesitter/nvim-treesitter-context',
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        'windwp/nvim-ts-autotag',
-        'p00f/nvim-ts-rainbow',
-        'andymass/vim-matchup',
-        event = 'BufRead',
-        lazy = true,
-    },
-
-    -- Utilities
-    'mbbill/undotree',
-    'kyazdani42/nvim-tree.lua',
-    { 'folke/which-key.nvim', lazy = true },
-    { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = "SnipRun" },
-
-    {
-        'sindrets/diffview.nvim',
-        'TimUntersberger/neogit',
-        'numToStr/Comment.nvim',
-        'kylechui/nvim-surround',
-        'windwp/nvim-autopairs',
-        'rmagatti/auto-session',
-        'norcalli/nvim-colorizer.lua',
-        'gelguy/wilder.nvim',
-        'ThePrimeagen/refactoring.nvim',
-        'windwp/nvim-spectre',
-        'ThePrimeagen/harpoon',
-        'abecodes/tabout.nvim',
-        'ggandor/leap.nvim',
-        'tpope/vim-endwise',
-        'lewis6991/impatient.nvim',
-        event = 'BufRead',
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-refactor',
+            'nvim-treesitter/nvim-treesitter-context',
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'windwp/nvim-ts-autotag',
+            'p00f/nvim-ts-rainbow',
+            'andymass/vim-matchup',
+        },
         lazy = true,
     },
 }
