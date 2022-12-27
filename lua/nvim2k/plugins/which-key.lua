@@ -150,6 +150,7 @@ local mappings = {
 
     g = {
         name = "Git",
+        A = { "<cmd>GitCoAuthors<cr>", "Co Authors" },
         g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
         n = { "<cmd>Neogit<cr>", "Neogit" },
         c = { "<cmd>Neogit commit<cr>", "Commit" },

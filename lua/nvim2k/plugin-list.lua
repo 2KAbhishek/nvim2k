@@ -31,6 +31,7 @@ local plugins = {
     'kyazdani42/nvim-tree.lua',
     { 'folke/which-key.nvim', lazy = true },
     { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = "SnipRun" },
+    { '2kabhishek/co-author.nvim', cmd = "GitCoAuthors" },
 
     {
         'lewis6991/impatient.nvim',
