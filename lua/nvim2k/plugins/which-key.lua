@@ -96,6 +96,7 @@ local mappings = {
 
     c = {
         name = "Config",
+        f = { "<cmd>retab<cr>", "Fix Tabs" },
         n = { "<cmd>set relativenumber!<cr>", "Relative Numbers" },
         r = { "<cmd>lua ReloadConfig()<cr>", "Reload" },
         R = { "<cmd>source %<cr>", "Source Current File" },
