@@ -1,11 +1,23 @@
-local home = vim.fn.expand("~/Projects/GitHub/Notes/Worklog/")
+local status_ok, telekasten = pcall(require, 'telekasten')
+if not status_ok then
+    return
+end
+
+local os = require('os')
+local notes_root = os.getenv('NOTES_ROOT')
+local home = vim.fn.expand(notes_root)
+if not notes_root then
+    home = vim.fn.expand("~/Projects/GitHub/Notes/Worklog/")
+end
+local year = os.date('%Y')
+local month = os.date('%m')
 -- NOTE for Windows users:
 -- - don't use Windows
 -- - try WSL2 on Windows and pretend you're on Linux
 -- - if you **must** use Windows, use "/Users/myname/zettelkasten" instead of "~/zettelkasten"
 -- - NEVER use "C:\Users\myname" style paths
 -- - Using `vim.fn.expand("~/zettelkasten")` should work now but mileage will vary with anything outside of finding and opening files
-require('telekasten').setup({
+telekasten.setup({
     home = home,
 
     -- if true, telekasten will be enabled when opening a note within the configured home
@@ -16,10 +28,10 @@ require('telekasten').setup({
     auto_set_filetype = true,
 
     -- dir names for special notes (absolute path or subdir name)
-    dailies   = home .. '/log/2022/11',
-    weeklies  = home .. '/weekly',
-    templates = home .. '/templates',
-    new_note_location = home .. "/notes/drafts",
+    dailies           = home .. 'log/' .. year .. '/' .. month,
+    weeklies          = home .. 'log/' .. year .. '/weekly',
+    templates         = home .. 'templates',
+    new_note_location = home .. 'notes/drafts',
 
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
@@ -50,15 +62,15 @@ require('telekasten').setup({
 
     -- template for new notes (new_note, follow_link)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_note = home .. '/' .. 'templates/new_note.md',
+    template_new_note = home .. 'templates/zettelkasten.md',
 
     -- template for newly created daily notes (goto_today)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_daily = home .. '/' .. 'templates/daily.md',
+    template_new_daily = home .. 'templates/todos.md',
 
     -- template for newly created weekly notes (goto_thisweek)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly = home .. '/' .. 'templates/weekly.md',
+    template_new_weekly = home .. '/emplates/weekly.md',
 
     -- image link style
     -- wiki:     ![[image name]]
