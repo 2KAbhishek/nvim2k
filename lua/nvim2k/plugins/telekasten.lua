@@ -31,7 +31,6 @@ telekasten.setup({
     dailies           = home .. 'log/' .. year .. '/' .. month,
     weeklies          = home .. 'log/' .. year .. '/weekly',
     templates         = home .. 'templates',
-    new_note_location = home .. 'notes/drafts',
 
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
@@ -46,9 +45,9 @@ telekasten.setup({
     -- "uuid" - Use uuid
     -- "uuid-title" - Prefix title by uuid
     -- "title-uuid" - Suffix title with uuid
-    new_note_filename = "title",
+    new_note_filename = "uuid-title",
     -- file uuid type ("rand" or input for os.date()")
-    uuid_type = "%Y%m%d%H%M",
+    uuid_type = "%Y-%m-%d-%H-%M",
     -- UUID separator
     uuid_sep = "-",
 
@@ -58,7 +57,7 @@ telekasten.setup({
     weeklies_create_nonexisting = true,
 
     -- skip telescope prompt for goto_today and goto_thisweek
-    journal_auto_open = false,
+    journal_auto_open = true,
 
     -- template for new notes (new_note, follow_link)
     -- set to `nil` or do not specify if you do not want a template
@@ -138,6 +137,7 @@ telekasten.setup({
     --     - same_as_current: put all new notes in the dir of the current note if
     --                        present or else in home
     --                        except for notes/with/subdirs/in/title.
+    new_note_location = home .. 'same_as_current',
 
     -- should all links be updated when a file is renamed
     rename_update_links = true,
