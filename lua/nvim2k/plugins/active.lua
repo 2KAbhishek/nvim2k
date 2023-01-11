@@ -1,5 +1,4 @@
 -- Appearance and UI
-require 'nvim2k.plugins.auto-session'
 require 'nvim2k.plugins.bufferline'
 require 'nvim2k.plugins.colorizer'
 require 'nvim2k.plugins.dressing'

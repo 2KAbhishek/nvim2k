@@ -45,7 +45,6 @@ local plugins = {
             'numToStr/Comment.nvim',
             'kylechui/nvim-surround',
             'windwp/nvim-autopairs',
-            'rmagatti/auto-session',
             'norcalli/nvim-colorizer.lua',
             'gelguy/wilder.nvim',
             'ThePrimeagen/refactoring.nvim',
