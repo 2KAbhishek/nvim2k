@@ -36,6 +36,7 @@ local plugins = {
     {
         'lewis6991/impatient.nvim',
         dependencies = {
+            'stevearc/oil.nvim',
             'lukas-reineke/indent-blankline.nvim',
             'stevearc/dressing.nvim',
             'lewis6991/gitsigns.nvim',
