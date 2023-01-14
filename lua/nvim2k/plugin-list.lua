@@ -36,6 +36,11 @@ local plugins = {
     {
         'lewis6991/impatient.nvim',
         dependencies = {
+            {
+                "iamcco/markdown-preview.nvim",
+                build = function() vim.fn["mkdp#util#install"]() end,
+                cmd = "MarkdownPreviewToggle"
+            },
             'stevearc/oil.nvim',
             'lukas-reineke/indent-blankline.nvim',
             'stevearc/dressing.nvim',

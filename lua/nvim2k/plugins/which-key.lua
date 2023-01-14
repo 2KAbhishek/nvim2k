@@ -221,6 +221,7 @@ local mappings = {
         S = { "<cmd>!cd $NOTES_ROOT && cmtr -s<cr>", "Commit Notes" },
         w = { "<cmd>Telekasten goto_thisweek<cr>", "Weekly" },
         W = { "<cmd>Telekasten find_weekly_notes<cr>", "Find Weeklies" },
+        v = { "<cmd>MarkdownPreviewToggle<cr>", "Preview" },
         x = { "<cmd>Telekasten toggle_todo<cr>", "Toggle Todo" },
         y = { "<cmd>Telekasten yank_notelink<cr>", "Copy Note Link" },
         z = { "<cmd>execute 'vsplit $NOTES_ROOT/notes/drafts/'.strftime(\"%F-%H-%M\").'.md' <cr>", "New Zettelkasten" },
