@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local os = require('os')
-local notes_root = os.getenv('NOTES_ROOT')
+local notes_root = os.getenv('$NOTES_ROOT')
 local home = vim.fn.expand(notes_root)
 if not notes_root then
     home = vim.fn.expand("~/Projects/GitHub/Notes/Worklog/")
