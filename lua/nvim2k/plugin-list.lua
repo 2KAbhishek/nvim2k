@@ -25,6 +25,17 @@ local plugins = {
         },
         lazy = true,
     },
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
 
     -- Utilities
     'mbbill/undotree',
@@ -45,7 +56,7 @@ local plugins = {
             'lukas-reineke/indent-blankline.nvim',
             'stevearc/dressing.nvim',
             'lewis6991/gitsigns.nvim',
-            'kyazdani42/nvim-web-devicons',
+            'nvim-tree/nvim-web-devicons',
             'sindrets/diffview.nvim',
             'TimUntersberger/neogit',
             'numToStr/Comment.nvim',
