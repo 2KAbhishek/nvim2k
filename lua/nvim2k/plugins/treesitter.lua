@@ -35,17 +35,17 @@ configs.setup {
         smart_rename = {
             enable = true,
             keymaps = {
-                smart_rename = "<leader>lr",
+                smart_rename = "<leader>Lr",
             },
         },
         navigation = {
             enable = true,
             keymaps = {
-                goto_definition = "ld",
-                list_definitions = "lD",
-                list_definitions_toc = "lo",
-                goto_next_usage = "lj",
-                goto_previous_usage = "lk",
+                goto_definition = "<leader>Ld",
+                list_definitions = "<leader>LD",
+                list_definitions_toc = "<leader>Lo",
+                goto_next_usage = "<leader>Lj",
+                goto_previous_usage = "<leader>Lk",
             },
         },
     },
