@@ -9,6 +9,40 @@ local multi_open_mappings = require('nvim2k.plugins.telescope-multiopen')
 telescope.setup {
     defaults = {
 
+        layout_config = {
+            bottom_pane = {
+                height = 0.5,
+                preview_width = 0.6,
+                preview_cutoff = 120,
+                prompt_position = "top"
+            },
+            center = {
+                height = 0.4,
+                preview_cutoff = 40,
+                prompt_position = "top",
+                width = 0.9
+            },
+            cursor = {
+                height = 0.9,
+                preview_cutoff = 40,
+                preview_width = 0.6,
+                width = 0.9
+            },
+            horizontal = {
+                height = 0.9,
+                preview_width = 0.6,
+                preview_cutoff = 120,
+                prompt_position = "bottom",
+                width = 0.9
+            },
+            vertical = {
+                height = 0.9,
+                preview_cutoff = 40,
+                prompt_position = "bottom",
+                width = 0.9
+            }
+            -- other layout configuration here
+        },
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "smart" },
