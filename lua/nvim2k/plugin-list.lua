@@ -13,7 +13,7 @@ vim.opt.runtimepath:prepend(lazypath)
 
 local plugins = {
     -- Appearance
-    'joshdick/onedark.vim',
+    'navarasu/onedark.nvim',
     'nvim-lualine/lualine.nvim',
     'akinsho/bufferline.nvim',
     { 'akinsho/toggleterm.nvim', cmd = 'ToggleTerm' },
