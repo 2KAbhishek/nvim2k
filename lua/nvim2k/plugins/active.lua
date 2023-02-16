@@ -1,3 +1,6 @@
+-- Plugin Manager, load first
+require 'nvim2k.plugins.lazy'
+
 -- Appearance and UI
 require 'nvim2k.plugins.onedark'
 require 'nvim2k.plugins.bufferline'
