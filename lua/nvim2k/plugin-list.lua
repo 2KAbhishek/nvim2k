@@ -18,21 +18,15 @@ local plugins = {
     'akinsho/bufferline.nvim',
     { 'akinsho/toggleterm.nvim',   cmd = 'ToggleTerm' },
     {
-        'folke/zen-mode.nvim',
-        cmd = 'ZenMode',
+        'folke/zen-mode.nvim', cmd = 'ZenMode', lazy = true,
         dependencies = {
             'folke/twilight.nvim',
         },
-        lazy = true,
     },
 
     -- Utilities
-    {
-        'mbbill/undotree',
-        cmd = 'UndoTreeToggle',
-        lazy = true,
-    },
     'kyazdani42/nvim-tree.lua',
+    { 'mbbill/undotree',           cmd = 'UndotreeToggle',      lazy = true },
     { 'folke/which-key.nvim',      lazy = true },
     { 'michaelb/sniprun',          build = 'bash ./install.sh', cmd = "SnipRun" },
     { '2kabhishek/co-author.nvim', cmd = "GitCoAuthors" },
@@ -137,6 +131,9 @@ local plugins = {
         },
         lazy = true,
     },
+
+    -- Language specific
+    { 'tpope/vim-rails', ft = "ruby" }
 }
 
 require('lazy').setup(plugins)
