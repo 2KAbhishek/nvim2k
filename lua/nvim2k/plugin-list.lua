@@ -16,7 +16,7 @@ local plugins = {
     'navarasu/onedark.nvim',
     'nvim-lualine/lualine.nvim',
     'akinsho/bufferline.nvim',
-    { 'akinsho/toggleterm.nvim', cmd = 'ToggleTerm' },
+    { 'akinsho/toggleterm.nvim',   cmd = 'ToggleTerm' },
     {
         'folke/zen-mode.nvim',
         cmd = 'ZenMode',
@@ -27,10 +27,14 @@ local plugins = {
     },
 
     -- Utilities
-    'mbbill/undotree',
+    {
+        'mbbill/undotree',
+        cmd = 'UndoTreeToggle',
+        lazy = true,
+    },
     'kyazdani42/nvim-tree.lua',
-    { 'folke/which-key.nvim', lazy = true },
-    { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = "SnipRun" },
+    { 'folke/which-key.nvim',      lazy = true },
+    { 'michaelb/sniprun',          build = 'bash ./install.sh', cmd = "SnipRun" },
     { '2kabhishek/co-author.nvim', cmd = "GitCoAuthors" },
 
     {
