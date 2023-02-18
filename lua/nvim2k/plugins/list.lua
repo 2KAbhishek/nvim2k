@@ -120,5 +120,6 @@ return {
     },
 
     -- Language specific
-    { 'tpope/vim-rails', ft = "ruby" }
+    { 'tpope/vim-rails', ft = "ruby" },
+    'RRethy/nvim-treesitter-endwise',
 }
