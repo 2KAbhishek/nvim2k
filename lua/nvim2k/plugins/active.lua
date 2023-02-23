@@ -19,6 +19,7 @@ local plugins = {
     'notify',
 
     -- Utilities
+    'gh',
     'gitsigns',
     'diffview',
     'neogit',
