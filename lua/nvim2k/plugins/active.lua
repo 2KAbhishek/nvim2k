@@ -1,51 +1,66 @@
--- Plugin Manager, load first
-require 'nvim2k.plugins.lazy'
+local plugins = {
+    -- Plugin Manager, load first
+    "lazy",
 
--- Appearance and UI
-require 'nvim2k.plugins.onedark'
-require 'nvim2k.plugins.bufferline'
-require 'nvim2k.plugins.colorizer'
-require 'nvim2k.plugins.dressing'
-require 'nvim2k.plugins.indentline'
-require 'nvim2k.plugins.satellite'
-require 'nvim2k.plugins.specs'
-require 'nvim2k.plugins.twilight'
-require 'nvim2k.plugins.wilder'
-require 'nvim2k.plugins.zen-mode'
+    -- Keybindings
+    "which-key",
 
--- Utilities
-require 'nvim2k.plugins.gitsigns'
-require 'nvim2k.plugins.diffview'
-require 'nvim2k.plugins.neogit'
-require 'nvim2k.plugins.dap'
-require 'nvim2k.plugins.harpoon'
-require 'nvim2k.plugins.leap'
-require 'nvim2k.plugins.nvim-tree'
-require 'nvim2k.plugins.sniprun'
-require 'nvim2k.plugins.telescope'
-require 'nvim2k.plugins.toggleterm'
-require 'nvim2k.plugins.treesitter-context'
-require 'nvim2k.plugins.treesitter'
-require 'nvim2k.plugins.telekasten'
-require 'nvim2k.plugins.oil'
+    -- Appearance and UI
+    "onedark",
+    "bufferline",
+    "colorizer",
+    "dressing",
+    "indentline",
+    "satellite",
+    "specs",
+    "twilight",
+    "wilder",
+    "zen-mode",
 
--- LSP Stuff
-require 'nvim2k.plugins.lsp-zero'
-require 'nvim2k.plugins.cmp'
-require 'nvim2k.plugins.null-ls'
-require 'nvim2k.plugins.lsp-lines'
-require 'nvim2k.plugins.lsp-signature'
-require 'nvim2k.plugins.lspsaga'
-require 'nvim2k.plugins.lualine'
-require 'nvim2k.plugins.trouble'
+    -- Utilities
+    "gitsigns",
+    "diffview",
+    "neogit",
+    "dap",
+    "harpoon",
+    "leap",
+    "nvim-tree",
+    "sniprun",
+    "telescope",
+    "toggleterm",
+    "treesitter-context",
+    "treesitter",
+    "telekasten",
+    "oil",
 
--- Editing
-require 'nvim2k.plugins.autopairs'
-require 'nvim2k.plugins.comment'
-require 'nvim2k.plugins.refactoring'
-require 'nvim2k.plugins.spectre'
-require 'nvim2k.plugins.surround'
-require 'nvim2k.plugins.tabout'
+    -- LSP Stuff
+    "lsp-zero",
+    "cmp",
+    "null-ls",
+    "lsp-lines",
+    "lsp-signature",
+    "lspsaga",
+    "lualine",
+    "trouble",
 
--- Keybindings (load last)
-require 'nvim2k.plugins.which-key'
+    -- Editing
+    "autopairs",
+    "comment",
+    "refactoring",
+    "spectre",
+    "surround",
+    "tabout",
+}
+
+local errors = {}
+
+for _, plugin in pairs(plugins) do
+    local no_errors, err_msg = pcall(require, "nvim2k.plugins." .. plugin)
+    if not no_errors then
+        table.insert(errors, err_msg)
+    end
+end
+
+for _, err_msg in pairs(errors) do
+    error(err_msg)
+end
