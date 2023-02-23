@@ -49,4 +49,3 @@ require 'nvim2k.plugins.tabout'
 
 -- Keybindings (load last)
 require 'nvim2k.plugins.which-key'
-require 'nvim2k.plugins.impatient'
