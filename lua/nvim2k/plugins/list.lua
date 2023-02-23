@@ -34,6 +34,10 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'tpope/vim-endwise',
+    {
+        'ldelossa/gh.nvim',
+        dependencies = { 'ldelossa/litee.nvim' },
+    },
 
     { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },
     { 'folke/which-key.nvim', lazy = true },
@@ -41,7 +45,9 @@ return {
     { '2kabhishek/co-author.nvim', cmd = 'GitCoAuthors' },
     {
         'iamcco/markdown-preview.nvim',
-        build = function() vim.fn['mkdp#util#install']() end,
+        build = function()
+            vim.fn['mkdp#util#install']()
+        end,
         cmd = 'MarkdownPreviewToggle',
     },
 
