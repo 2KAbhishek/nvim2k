@@ -1,6 +1,6 @@
 <div align = "center">
 
-<h1><a href="https://2kabhishek.github.io/nvim2k">nvim</a></h1>
+<h1><a href="https://2kabhishek.github.io/nvim2k">nvim2k</a></h1>
 
 <a href="https://github.com/2KAbhishek/nvim2k/blob/main/LICENSE">
 <img alt="License" src="https://img.shields.io/github/license/2kabhishek/nvim2k?style=flat&color=eee&label="> </a>
