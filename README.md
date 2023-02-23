@@ -42,7 +42,7 @@ Have been using `neovim` as my editor of choice for a while, with the introducti
 
 Before you begin, ensure you have met the following requirements:
 
-- You have installed the latest version of `neovim`
+-   You have installed the latest version of `neovim`
 
 ## Getting `nvim2k`
 
