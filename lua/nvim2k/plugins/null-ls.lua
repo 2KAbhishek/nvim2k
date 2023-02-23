@@ -1,6 +1,6 @@
-local status_ok, null_ls = pcall(require, "null-ls")
+local status_ok, null_ls = pcall(require, 'null-ls')
 if not status_ok then
-	return
+    return
 end
 
 local formatting = null_ls.builtins.formatting
@@ -10,41 +10,43 @@ local code_actions = null_ls.builtins.code_actions
 local completion = null_ls.builtins.completion
 
 null_ls.setup({
-	debug = false,
-	sources = {
-		code_actions.cspell.with({
-			{
-				disabled_filetypes = { "lua" },
-				filetypes = { "html", "json", "yaml", "markdown" },
-				extra_args = { "--config ~/.cspell.json" },
-			},
-		}),
-		code_actions.eslint,
-		code_actions.proselint,
-		code_actions.refactoring,
-		code_actions.shellcheck,
-		completion.spell,
-		completion.tags,
-		diagnostics.cspell.with({
-			{
-				disabled_filetypes = { "lua" },
-				filetypes = { "html", "json", "yaml", "markdown" },
-				extra_args = { "--config ~/.cspell.json" },
-			},
-		}),
-		diagnostics.eslint,
-		diagnostics.rubocop,
-		diagnostics.selene,
-		diagnostics.shellcheck,
-		diagnostics.standardrb,
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.eslint,
-		formatting.prettier,
-		formatting.rubocop,
-		formatting.shfmt,
-		formatting.standardrb,
-		formatting.stylua,
-		hover.dictionary,
-		hover.printenv,
-	},
+    debug = false,
+    border = 'rounded',
+    diagnostics_format = '#{c} #{m} (#{s})',
+    sources = {
+        code_actions.eslint,
+        code_actions.proselint,
+        code_actions.refactoring,
+        code_actions.shellcheck,
+        completion.spell,
+        completion.tags,
+        diagnostics.eslint,
+        diagnostics.rubocop,
+        diagnostics.selene,
+        diagnostics.shellcheck,
+        diagnostics.standardrb,
+        formatting.black.with({ extra_args = { '--fast' } }),
+        formatting.eslint,
+        formatting.prettier,
+        formatting.rubocop,
+        formatting.shfmt,
+        formatting.standardrb,
+        formatting.stylua,
+        hover.dictionary,
+        hover.printenv,
+        -- diagnostics.cspell.with({
+        --     {
+        --         disabled_filetypes = { "lua" },
+        --         filetypes = { "html", "json", "yaml", "markdown" },
+        --         extra_args = { "--config ~/.cspell.json" },
+        --     },
+        -- }),
+        -- code_actions.cspell.with({
+        --     {
+        --         disabled_filetypes = { 'lua' },
+        --         filetypes = { 'html', 'json', 'yaml', 'markdown' },
+        --         extra_args = { '--config ~/.cspell.json' },
+        --     },
+        -- }),
+    },
 })
