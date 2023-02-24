@@ -1,9 +1,9 @@
-local status_ok, neogit = pcall(require, "neogit")
+local status_ok, neogit = pcall(require, 'neogit')
 if not status_ok then
     return
 end
 
-neogit.setup {
+neogit.setup({
     disable_signs = false,
     disable_hint = false,
     disable_context_highlighting = false,
@@ -14,47 +14,47 @@ neogit.setup {
     disable_builtin_notifications = false,
     use_magit_keybindings = false,
     -- Change the default way of opening neogit
-    kind = "split",
+    kind = 'split',
     -- Change the default way of opening the commit popup
     commit_popup = {
-        kind = "split",
+        kind = 'split',
     },
     -- Change the default way of opening popups
     popup = {
-        kind = "split",
+        kind = 'split',
     },
     -- customize displayed signs
     signs = {
         -- { CLOSED, OPENED }
-        section = { ">", "v" },
-        item = { ">", "v" },
-        hunk = { "", "" },
+        section = { '>', 'v' },
+        item = { '>', 'v' },
+        hunk = { '', '' },
     },
     integrations = {
-        diffview = true
+        diffview = true,
     },
     -- Setting any section to `false` will make the section not render at all
     sections = {
         untracked = {
-            folded = false
+            folded = false,
         },
         unstaged = {
-            folded = false
+            folded = false,
         },
         staged = {
-            folded = false
+            folded = false,
         },
         stashes = {
-            folded = true
+            folded = true,
         },
         unpulled = {
-            folded = true
+            folded = true,
         },
         unmerged = {
-            folded = false
+            folded = false,
         },
         recent = {
-            folded = true
+            folded = true,
         },
     },
     -- override/add mappings
@@ -62,9 +62,9 @@ neogit.setup {
         -- modify status buffer mappings
         status = {
             -- Adds a mapping with "B" as key that does the "BranchPopup" command
-            ["B"] = "BranchPopup",
+            ['B'] = 'BranchPopup',
             -- Removes the default mapping of "s"
             -- ["s"] = "",
-        }
-    }
-}
+        },
+    },
+})

@@ -1,5 +1,5 @@
-local status_ok, telescope = pcall(require, "telescope")
+local status_ok, telescope = pcall(require, 'telescope')
 if not status_ok then
-  return
+    return
 end
-telescope.load_extension "harpoon"
+telescope.load_extension('harpoon')

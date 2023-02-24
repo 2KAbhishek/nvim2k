@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-zen.setup {
+zen.setup({
     window = {
         backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
         -- height and width can be:
@@ -41,13 +41,11 @@ zen.setup {
         -- - listen_on unix:/tmp/kitty
         kitty = {
             enabled = false,
-            font = "+4", -- font size increment
+            font = '+4', -- font size increment
         },
     },
     -- callback where you can add custom code when the Zen window opens
-    on_open = function(win)
-    end,
+    on_open = function(win) end,
     -- callback where you can add custom code when the Zen window closes
-    on_close = function()
-    end,
-}
+    on_close = function() end,
+})

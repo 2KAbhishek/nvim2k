@@ -1,9 +1,9 @@
-local status_ok, onedark = pcall(require, "onedark")
+local status_ok, onedark = pcall(require, 'onedark')
 if not status_ok then
     return
 end
 
-onedark.setup {
+onedark.setup({
     -- Main options --
     style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = true, -- Show/hide background
@@ -23,7 +23,7 @@ onedark.setup {
         keywords = 'none',
         functions = 'none',
         strings = 'none',
-        variables = 'none'
+        variables = 'none',
     },
 
     -- Lualine options --
@@ -49,6 +49,6 @@ onedark.setup {
         undercurl = true, -- use undercurl instead of underline for diagnostics
         background = false, -- use background color for virtual text
     },
-}
+})
 
 onedark.load()

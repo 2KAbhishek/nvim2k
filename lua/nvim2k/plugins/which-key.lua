@@ -135,7 +135,7 @@ local mappings = {
         i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", 'Media' },
         l = { '<cmd>Telescope resume<cr>', 'Last Search' },
         M = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
-        n = { "<cmd>Telescope notify theme=dropdown<CR>", 'Refactor' },
+        n = { '<cmd>Telescope notify theme=dropdown<CR>', 'Refactor' },
         r = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor' },
         R = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", 'Frecent Files' },
         o = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },

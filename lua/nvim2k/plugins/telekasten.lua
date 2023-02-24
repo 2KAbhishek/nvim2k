@@ -7,7 +7,7 @@ local os = require('os')
 local notes_root = os.getenv('$NOTES_ROOT')
 local home = vim.fn.expand(notes_root)
 if not notes_root then
-    home = vim.fn.expand("~/Projects/GitHub/Notes/Worklog/")
+    home = vim.fn.expand('~/Projects/GitHub/Notes/Worklog/')
 end
 local year = os.date('%Y')
 local month = os.date('%m')
@@ -28,28 +28,28 @@ telekasten.setup({
     auto_set_filetype = true,
 
     -- dir names for special notes (absolute path or subdir name)
-    dailies           = home .. 'log/' .. year .. '/' .. month,
-    weeklies          = home .. 'log/' .. year .. '/weekly',
-    templates         = home .. 'templates',
+    dailies = home .. 'log/' .. year .. '/' .. month,
+    weeklies = home .. 'log/' .. year .. '/weekly',
+    templates = home .. 'templates',
 
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
     -- or nil if pasted images shouldn't go into a special subdir
-    image_subdir = "img",
+    image_subdir = 'img',
 
     -- markdown file extension
-    extension = ".md",
+    extension = '.md',
 
     -- Generate note filenames. One of:
     -- "title" (default) - Use title if supplied, uuid otherwise
     -- "uuid" - Use uuid
     -- "uuid-title" - Prefix title by uuid
     -- "title-uuid" - Suffix title with uuid
-    new_note_filename = "uuid-title",
+    new_note_filename = 'uuid-title',
     -- file uuid type ("rand" or input for os.date()")
-    uuid_type = "%Y-%m-%d-%H-%M",
+    uuid_type = '%Y-%m-%d-%H-%M',
     -- UUID separator
-    uuid_sep = "-",
+    uuid_sep = '-',
 
     -- following a link to a non-existing note will create it
     follow_creates_nonexisting = true,
@@ -74,10 +74,10 @@ telekasten.setup({
     -- image link style
     -- wiki:     ![[image name]]
     -- markdown: ![](image_subdir/xxxxx.png)
-    image_link_style = "markdown",
+    image_link_style = 'markdown',
 
     -- default sort option: 'filename', 'modified'
-    sort = "filename",
+    sort = 'filename',
 
     -- integrate with calendar-vim
     plug_into_calendar = true,
@@ -95,14 +95,14 @@ telekasten.setup({
     insert_after_inserting = true,
 
     -- tag notation: '#tag', ':tag:', 'yaml-bare'
-    tag_notation = "#tag",
+    tag_notation = '#tag',
 
     -- command palette theme: dropdown (window) or ivy (bottom panel)
-    command_palette_theme = "ivy",
+    command_palette_theme = 'ivy',
 
     -- tag list theme:
     -- get_cursor: small tag list at cursor; ivy and dropdown like above
-    show_tags_theme = "ivy",
+    show_tags_theme = 'ivy',
 
     -- when linking to a note in subdir/, create a [[subdir/title]] link
     -- instead of a [[title only]] link
@@ -114,7 +114,7 @@ telekasten.setup({
     -- - prefer_new_note: use `new_note` template
     -- - smart: if day or week is detected in title, use daily / weekly templates (default)
     -- - always_ask: always ask before creating a note
-    template_handling = "smart",
+    template_handling = 'smart',
 
     -- path handling:
     --   this applies to:
@@ -154,7 +154,7 @@ telekasten.setup({
     -- how to preview media files
     -- "telescope-media-files" if you have telescope-media-files.nvim installed
     -- "catimg-previewer" if you have catimg installed
-    media_previewer = "telescope-media-files",
+    media_previewer = 'telescope-media-files',
 
     -- A customizable fallback handler for urls.
     follow_url_fallback = nil,

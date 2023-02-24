@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-local status_ok, lazy = pcall(require, "lazy")
+local status_ok, lazy = pcall(require, 'lazy')
 if not status_ok then
     return
 end
@@ -19,22 +19,22 @@ end
 local plugins = require('nvim2k.plugins.list')
 
 lazy.setup({
-    root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
+    root = vim.fn.stdpath('data') .. '/lazy', -- directory where plugins will be installed
     defaults = {
         lazy = true, -- should plugins be lazy-loaded?
-        version = "*",
+        version = '*',
         -- version = "*", -- enable this to try installing the latest stable versions of plugins
     },
     -- leave nil when passing the spec as the first argument to setup()
     spec = plugins, ---Lazy plugins list
-    lockfile = vim.fn.stdpath("config") .. "/lua/nvim2k/plugins/lock.json", -- lockfile generated after running update.
+    lockfile = vim.fn.stdpath('config') .. '/lua/nvim2k/plugins/lock.json', -- lockfile generated after running update.
     concurrency = nil, ---@type number limit the maximum amount of concurrent tasks
     git = {
         -- defaults for the `Lazy log` command
         -- log = { "-10" }, -- show the last 10 commits
-        log = { "--since=3 days ago" }, -- show commits from the last 3 days
+        log = { '--since=3 days ago' }, -- show commits from the last 3 days
         timeout = 120, -- kill processes that take more than 2 minutes
-        url_format = "https://github.com/%s.git",
+        url_format = 'https://github.com/%s.git',
         -- lazy.nvim requires git >=2.19.0. If you really want to use lazy with an older version,
         -- then set the below to false. This is should work, but is NOT supported and will
         -- increase downloads a lot.
@@ -42,7 +42,7 @@ lazy.setup({
     },
     dev = {
         -- directory where you store your local plugin projects
-        path = "~/Projects",
+        path = '~/Projects',
         ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
         patterns = {}, -- For example {"folke"}
         fallback = false, -- Fallback to git when local plugin doesn't exist
@@ -51,35 +51,35 @@ lazy.setup({
         -- install missing plugins on startup. This doesn't increase startup time.
         missing = true,
         -- try to load one of these colorschemes when starting an installation during startup
-        colorscheme = { "onedark" },
+        colorscheme = { 'onedark' },
     },
     ui = {
         -- a number <1 is a percentage., >1 is a fixed size
         size = { width = 0.9, height = 0.8 },
         wrap = true, -- wrap the lines in the ui
         -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
-        border = "rounded",
+        border = 'rounded',
         icons = {
-            cmd = " ",
-            config = "",
-            event = "",
-            ft = " ",
-            init = " ",
-            import = " ",
-            keys = " ",
-            lazy = "󰒲 ",
-            loaded = "●",
-            not_loaded = "○",
-            plugin = " ",
-            runtime = " ",
-            source = " ",
-            start = "",
-            task = "✔ ",
+            cmd = ' ',
+            config = '',
+            event = '',
+            ft = ' ',
+            init = ' ',
+            import = ' ',
+            keys = ' ',
+            lazy = '󰒲 ',
+            loaded = '●',
+            not_loaded = '○',
+            plugin = ' ',
+            runtime = ' ',
+            source = ' ',
+            start = '',
+            task = '✔ ',
             list = {
-                "●",
-                "➜",
-                "★",
-                "‒",
+                '●',
+                '➜',
+                '★',
+                '‒',
             },
         },
         -- leave nil, to automatically select a browser depending on your OS.
@@ -91,15 +91,15 @@ lazy.setup({
             -- To disable one of the defaults, set it to false
 
             -- open lazygit log
-            ["<localleader>l"] = function(plugin)
-                require("lazy.util").float_term({ "lazygit", "log" }, {
+            ['<localleader>l'] = function(plugin)
+                require('lazy.util').float_term({ 'lazygit', 'log' }, {
                     cwd = plugin.dir,
                 })
             end,
 
             -- open a terminal for the plugin dir
-            ["<localleader>t"] = function(plugin)
-                require("lazy.util").float_term(nil, {
+            ['<localleader>t'] = function(plugin)
+                require('lazy.util').float_term(nil, {
                     cwd = plugin.dir,
                 })
             end,
@@ -112,7 +112,7 @@ lazy.setup({
         -- * git: will run git diff and open a buffer with filetype git
         -- * terminal_git: will open a pseudo terminal with git diff
         -- * diffview.nvim: will open Diffview to show the diff
-        cmd = "git",
+        cmd = 'git',
     },
     checker = {
         -- automatically check for plugin updates
@@ -137,14 +137,14 @@ lazy.setup({
             paths = {}, -- add any custom paths here that you want to includes in the rtp
             ---@type string[] list any plugins you want to disable here
             disabled_plugins = {
-                "gzip",
-                "matchit",
-                "matchparen",
-                "netrwPlugin",
-                "tarPlugin",
-                "tohtml",
-                "tutor",
-                "zipPlugin",
+                'gzip',
+                'matchit',
+                'matchparen',
+                'netrwPlugin',
+                'tarPlugin',
+                'tohtml',
+                'tutor',
+                'zipPlugin',
             },
         },
     },
@@ -152,10 +152,10 @@ lazy.setup({
     -- so :help works even for plugins that don't have vim docs.
     -- when the readme opens with :help it will be correctly displayed as markdown
     readme = {
-        root = vim.fn.stdpath("state") .. "/lazy/readme",
-        files = { "README.md", "lua/**/README.md" },
+        root = vim.fn.stdpath('state') .. '/lazy/readme',
+        files = { 'README.md', 'lua/**/README.md' },
         -- only generate markdown helptags for plugins that dont have docs
         skip_if_doc_exists = true,
     },
-    state = vim.fn.stdpath("state") .. "/lazy/state.json", -- state info for checker and other things
+    state = vim.fn.stdpath('state') .. '/lazy/state.json', -- state info for checker and other things
 })
