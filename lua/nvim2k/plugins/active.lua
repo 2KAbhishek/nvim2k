@@ -56,14 +56,18 @@ local plugins = {
 }
 
 local errors = {}
+local error_plugins = {}
 
 for _, plugin in pairs(plugins) do
     local no_errors, err_msg = pcall(require, 'nvim2k.plugins.' .. plugin)
     if not no_errors then
         table.insert(errors, err_msg)
+        table.insert(error_plugins, plugin)
     end
 end
 
-for _, err_msg in pairs(errors) do
-    error(err_msg)
+for i, err_msg in pairs(errors) do
+    vim.notify(err_msg, vim.log.levels.ERROR, {
+        title = 'Error loading : ' .. error_plugins[i],
+    })
 end
