@@ -36,6 +36,7 @@ local plugins = {
     'oil',
 
     -- LSP Stuff
+    'mason',
     'lsp-zero',
     'cmp',
     'null-ls',
