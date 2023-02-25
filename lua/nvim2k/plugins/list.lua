@@ -113,14 +113,13 @@ return {
             'nvim-treesitter/nvim-treesitter-refactor',
             'nvim-treesitter/nvim-treesitter-context',
             'nvim-treesitter/nvim-treesitter-textobjects',
+            'RRethy/nvim-treesitter-endwise',
             'windwp/nvim-ts-autotag',
             'p00f/nvim-ts-rainbow',
-            'andymass/vim-matchup',
         },
         lazy = true,
     },
 
     -- Language specific
     { 'tpope/vim-rails', ft = 'ruby' },
-    'RRethy/nvim-treesitter-endwise',
 }
