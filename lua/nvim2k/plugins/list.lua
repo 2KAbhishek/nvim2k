@@ -33,7 +33,6 @@ return {
     'ThePrimeagen/harpoon',
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
-    'tpope/vim-endwise',
     {
         'ldelossa/gh.nvim',
         dependencies = { 'ldelossa/litee.nvim' },
