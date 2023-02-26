@@ -23,6 +23,7 @@ local plugins = {
     'gitsigns',
     'diffview',
     'neogit',
+    'tmux',
     'dap',
     'harpoon',
     'leap',
