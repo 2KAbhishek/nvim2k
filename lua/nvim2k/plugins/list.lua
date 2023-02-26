@@ -33,11 +33,11 @@ return {
     'ThePrimeagen/harpoon',
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
+    'aserowy/tmux.nvim',
     {
         'ldelossa/gh.nvim',
         dependencies = { 'ldelossa/litee.nvim' },
     },
-
     { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },
     { 'folke/which-key.nvim', lazy = true },
     { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = 'SnipRun' },
