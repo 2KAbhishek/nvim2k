@@ -4,7 +4,7 @@ return {
     'nvim-lualine/lualine.nvim',
     'akinsho/bufferline.nvim',
     'rcarriga/nvim-notify',
-    { 'akinsho/toggleterm.nvim',   cmd = 'ToggleTerm' },
+    { 'akinsho/toggleterm.nvim', cmd = 'ToggleTerm' },
     {
         'folke/zen-mode.nvim',
         cmd = 'ZenMode',
@@ -15,7 +15,7 @@ return {
     },
 
     -- Utilities
-    'kyazdani42/nvim-tree.lua',
+    'nvim-tree/nvim-tree.lua',
     'stevearc/oil.nvim',
     'lukas-reineke/indent-blankline.nvim',
     'stevearc/dressing.nvim',
@@ -34,10 +34,10 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'aserowy/tmux.nvim',
-    { 'ldelossa/gh.nvim',          dependencies = { 'ldelossa/litee.nvim' } },
-    { 'mbbill/undotree',           cmd = 'UndotreeToggle',                  lazy = true },
-    { 'folke/which-key.nvim',      lazy = true },
-    { 'michaelb/sniprun',          build = 'bash ./install.sh',             cmd = 'SnipRun' },
+    { 'ldelossa/gh.nvim', dependencies = { 'ldelossa/litee.nvim' } },
+    { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },
+    { 'folke/which-key.nvim', lazy = true },
+    { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = 'SnipRun' },
     { '2kabhishek/co-author.nvim', cmd = 'GitCoAuthors' },
     {
         'iamcco/markdown-preview.nvim',
