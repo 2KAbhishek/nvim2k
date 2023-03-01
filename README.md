@@ -32,7 +32,7 @@
 
 ## What is this
 
-Handcrafted `neovim` configs for the ultimate CLI dev experience, completely in `lua`
+Handcrafted `neovim` configs for the ultimate CLI dev experience, completely in `lua`, [video walkthrough](https://youtu.be/WfhylGI_F-o)
 
 ## Inspiration
 
