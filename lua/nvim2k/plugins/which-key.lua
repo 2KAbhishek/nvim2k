@@ -95,6 +95,7 @@ local mappings = {
     c = {
         name = 'Config',
         f = { '<cmd>retab<cr>', 'Fix Tabs' },
+        F = { '<cmd>!rubocop -A %<cr>', 'Format Files' },
         n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
         l = { '<cmd>Notifications<cr>', 'Show Notifications' },
         r = { '<cmd>lua ReloadConfig()<cr>', 'Reload' },
@@ -140,6 +141,7 @@ local mappings = {
         n = { '<cmd>Telescope notify<cr>', 'Notifications' },
         R = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", 'Frecent Files' },
         o = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
+        r = { "<cmd>lua require('ror.commands').list_commands()<cr>", 'ROR Commands' },
         s = {
             '<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending previewer=false<cr>',
             'Search in file',
@@ -303,7 +305,6 @@ local mappings = {
     r = {
         name = 'Refactor',
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
-        c = { "<cmd>lua require('ror.commands').list_commands()<cr>", 'ROR Commands' },
         s = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
         b = { "<cmd>lua require('spectre').open_file_search()<cr>", 'Replace Buffer' },

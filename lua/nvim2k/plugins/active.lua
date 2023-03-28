@@ -54,6 +54,7 @@ local plugins = {
     'spectre',
     'surround',
     'tabout',
+    'ror',
 }
 
 local errors = {}
