@@ -39,7 +39,7 @@ configs.setup({
         smart_rename = {
             enable = true,
             keymaps = {
-                smart_rename = '<leader>Lr',
+                smart_rename = '<leader>rn',
             },
         },
         navigation = {

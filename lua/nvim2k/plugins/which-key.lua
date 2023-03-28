@@ -138,7 +138,6 @@ local mappings = {
         l = { '<cmd>Telescope resume<cr>', 'Last Search' },
         M = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
         n = { '<cmd>Telescope notify<cr>', 'Notifications' },
-        r = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor' },
         R = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", 'Frecent Files' },
         o = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
         s = {
@@ -303,13 +302,16 @@ local mappings = {
     },
     r = {
         name = 'Refactor',
-        r = { 'Rename' },
+        r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
+        c = { "<cmd>lua require('ror.commands').list_commands()<cr>", 'ROR Commands' },
         s = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
         b = { "<cmd>lua require('spectre').open_file_search()<cr>", 'Replace Buffer' },
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", 'Extract Block' },
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract Block To File' },
         i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
+        n = { 'Rename' },
+        v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
     },
     s = {
         name = 'Surround',
@@ -393,6 +395,7 @@ local vmappings = {
     s = { "<esc><cmd>'<,'>SnipRun<cr>", 'Run Code' },
     r = {
         name = 'Refactor',
+        r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
         e = { "<esc><cmd>lua require('refactoring').refactor('Extract Function')<CR>", 'Extract Function' },
         f = {
             "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>",
