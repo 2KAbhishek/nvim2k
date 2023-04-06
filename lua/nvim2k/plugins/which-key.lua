@@ -123,7 +123,7 @@ local mappings = {
             "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
             'Find files',
         },
-        c = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
+        C = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
         a = {
             '<cmd>Telescope find_files find_command=fd,--hidden,-I<cr>',
             'Find All Files',
@@ -148,7 +148,7 @@ local mappings = {
         },
         ['"'] = { '<cmd>Telescope registers<cr>', 'Registers' },
         k = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
-        C = { '<cmd>Telescope commands<cr>', 'Commands' },
+        c = { '<cmd>Telescope commands<cr>', 'Commands' },
         ['.'] = { '<cmd>Telescope symbols<cr>', 'Emojis' },
     },
     g = {
