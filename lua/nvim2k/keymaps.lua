@@ -1,16 +1,20 @@
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local function map(mode, lhs, rhs, opts)
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
 local opts = { noremap = true, silent = true }
 
+
 -- Space as leader
-keymap('n', '<Space>', '', opts)
+map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-keymap('n', '<C-Space>', '<cmd>WhichKey \\<leader><cr>', opts)
-keymap('n', '<C-i>', '<C-i>', opts)
+map('n', '<C-Space>', '<cmd>WhichKey \\<leader><cr>', opts)
+map('n', '<C-i>', '<C-i>', opts)
 
 -- Use jj as escape
-keymap('i', 'jj', '<Esc>', opts)
+map('i', 'jj', '<Esc>', opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -20,85 +24,128 @@ keymap('i', 'jj', '<Esc>', opts)
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Do not copy on x
-keymap('n', 'x', '"_x', opts)
-
--- Increment/decrement
-keymap('n', '+', '<C-a>', opts)
-keymap('n', '-', '<C-x>', opts)
-
--- New tab
-keymap('n', 'te', ':tabedit ', opts)
--- Split window
-keymap('n', 'ts', ':split ', opts)
-keymap('n', 'tv', ':vsplit ', opts)
-
--- Switch window
-keymap('n', 'tw', '<C-w>w', opts)
-keymap('', 'th', '<C-w>h', opts)
-keymap('', 'tk', '<C-w>k', opts)
-keymap('', 'tj', '<C-w>j', opts)
-keymap('', 'tl', '<C-w>l', opts)
-
--- Resize window
-keymap('n', '<C-w><left>', '<C-w><', opts)
-keymap('n', '<C-w><right>', '<C-w>>', opts)
-keymap('n', '<C-w><up>', '<C-w>+', opts)
-keymap('n', '<C-w><down>', '<C-w>-', opts)
-
 -- Delete a word backwards
--- keymap('n', 'dw', 'vb"_d', opts)
+-- map('n', 'dw', 'vb"_d', opts)
 
 -- I hate typing these
--- keymap("n", "H", "^", opts)
--- keymap("n", "L", "$", opts)
-keymap('v', 'H', '^', opts)
-keymap('v', 'L', '$', opts)
-keymap('x', 'H', '^', opts)
-keymap('x', 'L', '$', opts)
-keymap('o', 'H', '^', opts)
-keymap('o', 'L', '$', opts)
-
--- Naviagate buffers
-keymap('n', '<S-l>', ':bnext<CR>', opts)
-keymap('n', '<S-h>', ':bprevious<CR>', opts)
-
--- Stay in indent mode
-keymap('v', '<', '<gv', opts)
-keymap('v', '>', '>gv', opts)
-
--- Move text up and down
-keymap('v', '<A-j>', ':m .+1<CR>==', opts)
-keymap('v', '<A-k>', ':m .-2<CR>==', opts)
+-- map("n", "H", "^", opts)
+-- map("n", "L", "$", opts)
+map('v', 'H', '^', opts)
+map('v', 'L', '$', opts)
+map('x', 'H', '^', opts)
+map('x', 'L', '$', opts)
+map('o', 'H', '^', opts)
+map('o', 'L', '$', opts)
 
 -- Paste
-keymap('v', 'p', '"_dP', opts)
-keymap('x', '<leader>pp', '"_dP', opts)
+map('v', 'p', '"_dP', opts)
+map('x', '<leader>pp', '"_dP', opts)
 
--- Move text up and down
-keymap('x', 'J', ":move '>+1<CR>gv-gv", opts)
-keymap('x', 'K', ":move '<-2<CR>gv-gv", opts)
-keymap('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
-keymap('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
+-- Do not copy on x
+map('n', 'x', '"_x', opts)
+
+-- Increment/decrement
+map('n', '+', '<C-a>', opts)
+map('n', '-', '<C-x>', opts)
+
+-- New tab
+map('n', 'te', ':tabedit ', opts)
+-- Split window
+map('n', 'ts', ':split ', opts)
+map('n', 'tv', ':vsplit ', opts)
+
+-- Switch window
+map('n', 'tw', '<C-w>w', opts)
+map('', 'th', '<C-w>h', opts)
+map('', 'tk', '<C-w>k', opts)
+map('', 'tj', '<C-w>j', opts)
+map('', 'tl', '<C-w>l', opts)
 
 -- alt binds
-keymap('n', '<m-s>', '<cmd>split<cr>', opts)
-keymap('n', '<m-v>', '<cmd>vsplit<cr>', opts)
-keymap('n', '<m-q>', '<cmd>:q<cr>', opts)
+map('n', '<m-s>', '<cmd>split<cr>', opts)
+map('n', '<m-v>', '<cmd>vsplit<cr>', opts)
+map('n', '<m-q>', '<cmd>:q<cr>', opts)
 
-keymap('n', '<esc><esc>', '<cmd>nohlsearch<cr>', opts)
-keymap('n', 'gx', [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+-- open link under cursor
+map('n', 'gx', [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
 -- LSP
-keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
 -- Center Cursors
-keymap('n', 'J', 'mzJ`z', opts)
-keymap('n', '<C-d>', '<C-d>zz', opts)
-keymap('n', '<C-u>', '<C-u>zz', opts)
-keymap('n', 'n', 'nzzzv', opts)
-keymap('n', 'N', 'Nzzzv', opts)
+map('n', 'J', 'mzJ`z', opts)
+map('n', '<C-d>', '<C-d>zz', opts)
+map('n', '<C-u>', '<C-u>zz', opts)
+map('n', 'n', 'nzzzv', opts)
+map('n', 'N', 'Nzzzv', opts)
 
--- Search
-keymap('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+-- Search and replace
+map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
+-- better up/down
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- Move to window using the <ctrl> hjkl keys
+map('n', '<C-h>', '<C-w>h', { desc = 'Go to left window' })
+map('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
+
+-- Resize window using <ctrl> arrow keys
+map('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase window height' })
+map('n', '<C-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease window height' })
+map('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window width' })
+map('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
+
+-- Switch buffers
+map('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
+map('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
+map('n', '[b', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
+map('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
+map("n", "<leader><tab>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+
+-- Move Lines
+map("n", "J", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "K", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Clear search, diff update and redraw
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
+-- Search word under cursor
+map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
+
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+
+-- Add undo break-points
+map("i", ",", ",<c-g>u")
+map("i", ".", ".<c-g>u")
+map("i", ";", ";<c-g>u")
+
+-- save file
+map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- windows
+map("n", "<leader>w<tab>", "<C-W>p", { desc = "Other window" })
+map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
+map("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
+map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right" })
+map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
+map("n", "<leader>\\", "<C-W>v", { desc = "Split window right" })
+
