@@ -7,6 +7,7 @@ local plugins = {
 
     -- Appearance and UI
     'onedark',
+    'dashboard',
     'bufferline',
     'colorizer',
     'dressing',

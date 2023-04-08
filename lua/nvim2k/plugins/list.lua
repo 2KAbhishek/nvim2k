@@ -16,6 +16,10 @@ return {
             'folke/twilight.nvim',
         },
     },
+    {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+    },
 
     -- Utilities
     'nvim-tree/nvim-tree.lua',
