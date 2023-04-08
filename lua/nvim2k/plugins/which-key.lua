@@ -142,10 +142,12 @@ local mappings = {
     },
     c = {
         name = 'Config',
+        c = { '<cmd>enew<cr>', 'New File' },
         f = { '<cmd>retab<cr>', 'Fix Tabs' },
         F = { '<cmd>!rubocop -A %<cr>', 'Format Files' },
+        i = { vim.show_pos, 'Inspect Position' },
         n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
-        l = { '<cmd>Notifications<cr>', 'Show Notifications' },
+        N = { '<cmd>Notifications<cr>', 'Show Notifications' },
         r = { '<cmd>lua ReloadConfig()<cr>', 'Reload' },
         R = { '<cmd>source %<cr>', 'Source Current File' },
         s = { '<cmd>set spell!<cr>', 'Spellcheck' },
@@ -191,6 +193,8 @@ local mappings = {
         R = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", 'Frecent Files' },
         o = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
         p = { '<cmd>Telescope<cr>', 'Panel' },
+        q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },
+        L = { '<cmd>Telescope loclist<cr>', 'Location List' },
         r = { "<cmd>lua require('ror.commands').list_commands()<cr>", 'ROR Commands' },
         s = {
             '<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending previewer=false<cr>',
