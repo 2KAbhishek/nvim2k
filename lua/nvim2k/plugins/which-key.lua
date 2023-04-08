@@ -132,7 +132,6 @@ local mappings = {
     ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
     ['q'] = { '<cmd>q<cr>', 'Quit' },
     ['Q'] = { '<cmd>qa!<cr>', 'Force Quit!' },
-    ['u'] = { '<cmd>UndotreeToggle<cr>', 'Undo Tree' },
     m = {
         name = 'Harpoon',
         a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
@@ -152,6 +151,7 @@ local mappings = {
         s = { '<cmd>set spell!<cr>', 'Spellcheck' },
         z = { '<cmd>ZenMode<cr>', 'Toggle ZenMode' },
         t = { '<cmd>Twilight<cr>', 'Toggle Twilight' },
+        u = { '<cmd>UndotreeToggle<cr>', 'Undo Tree' },
     },
     d = {
         name = 'Debug',
