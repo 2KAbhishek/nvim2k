@@ -141,6 +141,7 @@ local mappings = {
         n = { '<cmd>Telescope notify<cr>', 'Notifications' },
         R = { "<cmd>lua require('telescope').extensions.frecency.frecency()<cr>", 'Frecent Files' },
         o = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
+        p = { '<cmd>Telescope<cr>', 'Panel' },
         r = { "<cmd>lua require('ror.commands').list_commands()<cr>", 'ROR Commands' },
         s = {
             '<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending previewer=false<cr>',
