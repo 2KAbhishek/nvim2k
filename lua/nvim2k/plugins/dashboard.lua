@@ -23,8 +23,9 @@ dashboard.setup({
         footer = { 'Build, Ship, Innovate with nvim2k!' },
         shortcut = {
             { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+            { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
             {
-                icon = ' ',
+                icon = ' ',
                 icon_hl = '@variable',
                 desc = 'Files',
                 group = 'Label',
