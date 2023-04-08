@@ -5,7 +5,6 @@ local function map(mode, lhs, rhs, opts)
 end
 local opts = { noremap = true, silent = true }
 
-
 -- Space as leader
 map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
@@ -104,48 +103,47 @@ map('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
 map('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
 map('n', '[b', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
 map('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
-map("n", "<leader><tab>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map('n', '<leader><tab>', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
+map('n', '<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 
--- Move Lines
-map("n", "J", "<cmd>m .+1<cr>==", { desc = "Move down" })
-map("n", "K", "<cmd>m .-2<cr>==", { desc = "Move up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+-- Move text up and down
+map('v', '<A-j>', ':m .+1<CR>==', opts)
+map('v', '<A-k>', ':m .-2<CR>==', opts)
+map('x', 'J', ":move '>+1<CR>gv-gv", opts)
+map('x', 'K', ":move '<-2<CR>gv-gv", opts)
+map('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
+map('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
 
 -- Clear search, diff update and redraw
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
 -- Search word under cursor
-map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
+map({ 'n', 'x' }, 'gw', '*N', { desc = 'Search word under cursor' })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map('n', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
+map('x', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
+map('o', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
+map('n', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result' })
+map('x', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result' })
+map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result' })
 
 -- Add undo break-points
-map("i", ",", ",<c-g>u")
-map("i", ".", ".<c-g>u")
-map("i", ";", ";<c-g>u")
+map('i', ',', ',<c-g>u')
+map('i', '.', '.<c-g>u')
+map('i', ';', ';<c-g>u')
 
 -- save file
-map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
 -- better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+map('v', '<', '<gv')
+map('v', '>', '>gv')
 
 -- windows
-map("n", "<leader>w<tab>", "<C-W>p", { desc = "Other window" })
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
-map("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
-map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right" })
-map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
-map("n", "<leader>\\", "<C-W>v", { desc = "Split window right" })
-
+map('n', '<leader>w<tab>', '<C-W>p', { desc = 'Other window' })
+map('n', '<leader>wd', '<C-W>c', { desc = 'Delete window' })
+map('n', '<leader>w-', '<C-W>s', { desc = 'Split window below' })
+map('n', '<leader>w\\', '<C-W>v', { desc = 'Split window right' })
+map('n', '<leader>-', '<C-W>s', { desc = 'Split window below' })
+map('n', '<leader>\\', '<C-W>v', { desc = 'Split window right' })
