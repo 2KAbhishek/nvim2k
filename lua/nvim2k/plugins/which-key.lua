@@ -48,7 +48,7 @@ local setup = {
         position = 'bottom', -- bottom, top
         margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
         padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-        winblend = 35,
+        winblend = 15,
     },
     layout = {
         height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -83,6 +83,41 @@ local setup = {
         v = { 'j', 'j' },
     },
 }
+
+local i = {
+    [' '] = 'Whitespace',
+    ['"'] = 'Balanced "',
+    ["'"] = "Balanced '",
+    ['`'] = 'Balanced `',
+    ['('] = 'Balanced (',
+    [')'] = 'Balanced ) including white-space',
+    ['>'] = 'Balanced > including white-space',
+    ['<lt>'] = 'Balanced <',
+    [']'] = 'Balanced ] including white-space',
+    ['['] = 'Balanced [',
+    ['}'] = 'Balanced } including white-space',
+    ['{'] = 'Balanced {',
+    ['?'] = 'User Prompt',
+    _ = 'Underscore',
+    a = 'Argument',
+    b = 'Balanced ), ], }',
+    c = 'Class',
+    f = 'Function',
+    o = 'Block, conditional, loop',
+    q = 'Quote `, ", \'',
+    t = 'Tag',
+}
+
+local a = vim.deepcopy(i)
+for k, v in pairs(a) do
+    a[k] = v:gsub(' including.*', '')
+end
+local ic = vim.deepcopy(i)
+local ac = vim.deepcopy(a)
+for key, name in pairs({ n = 'Next', l = 'Last' }) do
+    i[key] = vim.tbl_extend('force', { name = 'Inside ' .. name .. ' textobject' }, ic)
+    a[key] = vim.tbl_extend('force', { name = 'Around ' .. name .. ' textobject' }, ac)
+end
 
 local opts = {
     mode = 'n', -- NORMAL mode
@@ -429,3 +464,4 @@ local vmappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
+which_key.register({ mode = { 'o', 'x' }, i = i, a = a })
