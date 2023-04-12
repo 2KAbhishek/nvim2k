@@ -130,7 +130,7 @@ local opts = {
 
 local mappings = {
     ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
-    ['q'] = { '<cmd>q<cr>', 'Quit' },
+    ['q'] = { '<cmd>bw<cr>', 'Close Buffer' },
     ['Q'] = { '<cmd>qa!<cr>', 'Force Quit!' },
     m = {
         name = 'Harpoon',
