@@ -130,6 +130,7 @@ local opts = {
 
 local mappings = {
     ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
+    ['x'] = { '<cmd>x<cr>', 'Write and Quit' },
     ['q'] = { '<cmd>bw<cr>', 'Close Buffer' },
     ['Q'] = { '<cmd>qa!<cr>', 'Force Quit!' },
     m = {
@@ -219,7 +220,7 @@ local mappings = {
         r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset Hunk' },
         R = { '<cmd>Gitsigns reset_buffer<cr>', 'Reset Buffer' },
         s = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
-        S = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Hunk' },
+        S = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Buffer' },
         u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
         o = { '<cmd>Telescope git_status<cr>', 'Open changed file' },
         b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
