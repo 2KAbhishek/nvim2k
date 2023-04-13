@@ -40,6 +40,7 @@ local plugins = {
     -- LSP Stuff
     'mason',
     'lsp-zero',
+    'copilot',
     'cmp',
     'null-ls',
     'lsp-lines',

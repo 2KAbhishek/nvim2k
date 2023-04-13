@@ -90,6 +90,9 @@ return {
         },
     },
 
+    { 'zbirenbaum/copilot.lua', dependencies = {
+        'zbirenbaum/copilot-cmp',
+    } },
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
