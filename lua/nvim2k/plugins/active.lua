@@ -63,8 +63,8 @@ local errors = {}
 local error_plugins = {}
 
 for _, plugin in pairs(plugins) do
-    local no_errors, err_msg = pcall(require, 'nvim2k.plugins.' .. plugin)
-    if not no_errors then
+    local ok, err_msg = pcall(require, 'nvim2k.plugins.' .. plugin)
+    if not ok then
         table.insert(errors, err_msg)
         table.insert(error_plugins, plugin)
     end
