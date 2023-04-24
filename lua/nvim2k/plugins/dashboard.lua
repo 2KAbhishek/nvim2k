@@ -22,8 +22,14 @@ dashboard.setup({
         mru = { limit = 8 },
         footer = { 'Build, Ship, Innovate with nvim2k!' },
         shortcut = {
-            { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+            { desc = ' Plugins', group = '@property', action = 'Lazy', key = 'u' },
             { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
+            {
+                desc = ' Config',
+                group = '@property',
+                action = 'e ~/.config/nvim/lua/nvim2k/plugins/list.lua',
+                key = 'e',
+            },
             {
                 icon = ' ',
                 icon_hl = '@variable',
@@ -33,10 +39,16 @@ dashboard.setup({
                 key = 'f',
             },
             {
-                desc = ' Todo',
+                desc = ' Todo',
                 group = 'Label',
                 action = 'Telekasten goto_today',
                 key = 'd',
+            },
+            {
+                desc = ' New File',
+                group = 'Label',
+                action = 'enew',
+                key = 'c',
             },
         },
     },
