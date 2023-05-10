@@ -157,6 +157,8 @@ local mappings = {
         z = { '<cmd>ZenMode<cr>', 'Toggle ZenMode' },
         t = { '<cmd>Twilight<cr>', 'Toggle Twilight' },
         u = { '<cmd>UndotreeToggle<cr>', 'Undo Tree' },
+        y = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
+        Y = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
     },
     d = {
         name = 'Debug',
