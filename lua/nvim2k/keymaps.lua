@@ -10,6 +10,8 @@ map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 map('n', '<C-Space>', '<cmd>WhichKey \\<leader><cr>', opts)
+map('n', '<C-p>', '<cmd>Telescope git_files<cr>', opts)
+map('n', '<C-g>', '<cmd>lua _LAZYGIT_TOGGLE()<cr>', opts)
 map('n', '<C-i>', '<C-i>', opts)
 
 -- Use jj as escape
