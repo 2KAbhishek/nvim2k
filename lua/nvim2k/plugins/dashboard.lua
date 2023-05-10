@@ -22,7 +22,7 @@ dashboard.setup({
         mru = { limit = 8 },
         footer = { 'Build, Ship, Innovate with nvim2k!' },
         shortcut = {
-            { desc = ' Plugins', group = '@property', action = 'Lazy', key = 'u' },
+            { desc = ' Plugins', group = '@property', action = 'Lazy', key = 'p' },
             { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
             {
                 desc = ' Config',
@@ -48,7 +48,7 @@ dashboard.setup({
                 desc = ' New File',
                 group = 'Label',
                 action = 'enew',
-                key = 'c',
+                key = 'n',
             },
         },
     },
