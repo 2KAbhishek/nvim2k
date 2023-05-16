@@ -11,12 +11,6 @@ mason.setup({
     ---@type '"prepend"' | '"append"' | '"skip"'
     PATH = 'prepend',
 
-    -- The registries to source packages from. Accepts multiple entries. Should a package with the same name exist in
-    -- multiple registries, the registry listed first will be used.
-    registries = {
-        'lua:mason-registry.index',
-    },
-
     -- Controls to which degree logs are written to the log file. It's useful to set this to vim.log.levels.DEBUG when
     -- debugging issues with package installations.
     log_level = vim.log.levels.INFO,
