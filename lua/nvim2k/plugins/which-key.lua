@@ -219,6 +219,7 @@ local mappings = {
         C = { '<cmd>Telescope git_commits<cr>', 'Checkout commit' },
         j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
+        a = { "<cmd>silent execute '!(cd %:h && git add -A &) > /dev/null'<cr>", 'Stage Changes' },
         l = { "<cmd>silent execute '!(cd %:h && git pull --rebase --autostash &) > /dev/null'<cr>", 'Pull Changes' },
         p = { "<cmd>silent execute '!(cd %:h && git push &) > /dev/null'<cr>", 'Push Changes' },
         H = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
