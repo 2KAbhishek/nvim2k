@@ -219,9 +219,21 @@ local mappings = {
         C = { '<cmd>Telescope git_commits<cr>', 'Checkout commit' },
         j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
-        a = { "<cmd>silent execute '!(cd %:h && git add -A &) > /dev/null' | lua require('notify')('Staged Changes')<cr>", 'Stage Changes' },
-        l = { "<cmd>silent execute '!(cd %:h && git pull --rebase --autostash &) > /dev/null' | lua require('notify')('Pulling Changes')<cr>", 'Pull Changes' },
-        p = { "<cmd>silent execute '!(cd %:h && git push &) > /dev/null' | lua require('notify')('Pushing Changes...')<cr>", 'Push Changes' },
+        a = {
+            "<cmd>silent execute '!(cd %:h && git add -A &) > /dev/null' \
+            | lua require('notify')('Staged Changes')<cr>",
+            'Stage Changes',
+        },
+        l = {
+            "<cmd>silent execute '!(cd %:h && git pull --rebase --autostash &) > /dev/null' \
+            | lua require('notify')('Pulling Changes')<cr>",
+            'Pull Changes',
+        },
+        p = {
+            "<cmd>silent execute '!(cd %:h && git push &) > /dev/null' \
+            | lua require('notify')('Pushing Changes...')<cr>",
+            'Push Changes',
+        },
         H = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
         r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset Hunk' },
         R = { '<cmd>Gitsigns reset_buffer<cr>', 'Reset Buffer' },
@@ -327,14 +339,25 @@ local mappings = {
         N = { "<cmd>execute 'e '.strftime(\"%F\").'.md' <cr>", 'New Note Here' },
         o = { '<cmd>vsplit $NOTES_ROOT<cr>', 'Open Notes' },
         p = { '<cmd>Telekasten<cr>', 'Telekasten' },
-        s = { "<cmd>silent execute '!(cd $NOTES_ROOT && cmtr -b &) > /dev/null' | lua require('notify')('Backed Up')<cr>", 'Commit Notes' },
-        S = { "<cmd>silent execute '!(cd $NOTES_ROOT && cmtr -s &) > /dev/null' | lua require('notify')('Syncing Changes...') <cr>", 'Sync Notes' },
+        s = {
+            "<cmd>silent execute '!(cd $NOTES_ROOT && cmtr -b &) > /dev/null' \
+            | lua require('notify')('Backed Up')<cr>",
+            'Commit Notes',
+        },
+        S = {
+            "<cmd>silent execute '!(cd $NOTES_ROOT && cmtr -s &) > /dev/null' \
+            | lua require('notify')('Syncing Changes...') <cr>",
+            'Sync Notes',
+        },
         w = { '<cmd>Telekasten goto_thisweek<cr>', 'Weekly' },
         W = { '<cmd>Telekasten find_weekly_notes<cr>', 'Find Weeklies' },
         v = { '<cmd>MarkdownPreviewToggle<cr>', 'Preview' },
         x = { '<cmd>Telekasten toggle_todo<cr>', 'Toggle Todo' },
         y = { '<cmd>Telekasten yank_notelink<cr>', 'Copy Note Link' },
-        z = { "<cmd>execute 'vsplit $NOTES_ROOT/notes/drafts/'.strftime(\"%F-%H-%M\").'.md' <cr>", 'New Zettelkasten' },
+        z = {
+            "<cmd>execute 'vsplit $NOTES_ROOT/notes/drafts/'.strftime(\"%F-%H-%M\").'.md' <cr>",
+            'New Zettelkasten',
+        },
         Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", 'New Zettelkasten Here' },
     },
     o = {
