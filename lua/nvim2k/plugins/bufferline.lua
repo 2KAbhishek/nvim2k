@@ -59,7 +59,21 @@ bufferline.setup({
                 return true
             end
         end,
-        offsets = { { text_align = 'left' } },
+        offsets = {
+            {
+                filetype = 'NvimTree',
+                text = ' Files',
+                highlight = 'Directory',
+                text_align = 'left',
+            },
+        },
+        custom_areas = {
+            left = function()
+                return {
+                    { text = '    ', fg = '#1688f0' },
+                }
+            end,
+        },
 
         color_icons = true, -- whether or not to add the filetype icon highlights
         show_buffer_icons = true, -- disable filetype icons for buffers
