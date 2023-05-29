@@ -64,7 +64,7 @@ bufferline.setup({
                 filetype = 'NvimTree',
                 text = ' Files',
                 highlight = 'Directory',
-                text_align = 'left',
+                text_align = 'center',
             },
         },
         custom_areas = {
