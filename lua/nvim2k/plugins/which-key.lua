@@ -220,18 +220,15 @@ local mappings = {
         j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
         a = {
-            "<cmd>silent execute '!(cd %:h && git add -A &) > /dev/null' \
-            | lua require('notify')('Staged Changes')<cr>",
+            '<cmd>silent execute "!(cd %:h && git add -A &) > /dev/null" | lua require("notify")("Staged Changes")<cr>',
             'Stage Changes',
         },
         l = {
-            "<cmd>silent execute '!(cd %:h && git pull --rebase --autostash &) > /dev/null' \
-            | lua require('notify')('Pulling Changes')<cr>",
+            '<cmd>silent execute "!(cd %:h && git pull --rebase --autostash &) > /dev/null" | lua require("notify")("Pulling Changes...")<cr>',
             'Pull Changes',
         },
         p = {
-            "<cmd>silent execute '!(cd %:h && git push &) > /dev/null' \
-            | lua require('notify')('Pushing Changes...')<cr>",
+            '<cmd>silent execute "!(cd %:h && git push &) > /dev/null" | lua require("notify")("Pushing Changes...")<cr>',
             'Push Changes',
         },
         H = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
@@ -340,13 +337,11 @@ local mappings = {
         o = { '<cmd>vsplit $NOTES_ROOT<cr>', 'Open Notes' },
         p = { '<cmd>Telekasten<cr>', 'Telekasten' },
         s = {
-            "<cmd>silent execute '!(cd $NOTES_ROOT && cmtr -b &) > /dev/null' \
-            | lua require('notify')('Backed Up')<cr>",
+            '<cmd>silent execute "!(cd $NOTES_ROOT && cmtr -b &) > /dev/null" | lua require("notify")("Notes Commited")<cr>',
             'Commit Notes',
         },
         S = {
-            "<cmd>silent execute '!(cd $NOTES_ROOT && cmtr -s &) > /dev/null' \
-            | lua require('notify')('Syncing Changes...') <cr>",
+            '<cmd>silent execute "!(cd $NOTES_ROOT && cmtr -s &) > /dev/null" | lua require("notify")("Syncing Changes...") <cr>',
             'Sync Notes',
         },
         w = { '<cmd>Telekasten goto_thisweek<cr>', 'Weekly' },
