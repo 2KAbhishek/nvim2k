@@ -31,7 +31,6 @@ return {
     'numToStr/Comment.nvim',
     'kylechui/nvim-surround',
     'windwp/nvim-autopairs',
-    'gelguy/wilder.nvim',
     'ThePrimeagen/refactoring.nvim',
     'windwp/nvim-spectre',
     'ThePrimeagen/harpoon',
@@ -43,6 +42,12 @@ return {
     { 'folke/which-key.nvim', lazy = true },
     { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = 'SnipRun' },
     { '2kabhishek/co-author.nvim', cmd = 'GitCoAuthors' },
+    {
+        'gelguy/wilder.nvim',
+        build = function()
+            vim.cmd([[silent UpdateRemotePlugins]])
+        end,
+    },
     {
         'iamcco/markdown-preview.nvim',
         build = function()
