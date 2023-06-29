@@ -20,11 +20,11 @@ local plugins = {
     'notify',
 
     -- Utilities
-    'gh',
+    'neogit',
     'gitsigns',
     'octo',
+    'gitlinker',
     'diffview',
-    'neogit',
     'tmux',
     'dap',
     'harpoon',
