@@ -122,7 +122,6 @@ return {
         },
         lazy = true,
     },
-    'axkirillov/easypick.nvim',
     -- Tresitter
     {
         'nvim-treesitter/nvim-treesitter',

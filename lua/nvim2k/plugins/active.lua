@@ -33,7 +33,6 @@ local plugins = {
     'nvim-tree',
     'sniprun',
     'telescope',
-    'easypick',
     'toggleterm',
     'treesitter-context',
     'treesitter',
