@@ -54,6 +54,15 @@ return {
             vim.fn['mkdp#util#install']()
         end,
     },
+    {
+        'nvim-neotest/neotest',
+        lazy = true,
+        dependencies = {
+            'antoinemadec/FixCursorHold.nvim',
+            'olimorris/neotest-rspec',
+            'haydenmeade/neotest-jest',
+        },
+    },
 
     -- LSP
     {

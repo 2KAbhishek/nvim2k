@@ -28,6 +28,7 @@ local plugins = {
     'dap',
     'harpoon',
     'leap',
+    'neotest',
     'nvim-tree',
     'sniprun',
     'telescope',
