@@ -132,6 +132,7 @@ return {
             'nvim-treesitter/nvim-treesitter-context',
             'nvim-treesitter/nvim-treesitter-textobjects',
             'RRethy/nvim-treesitter-endwise',
+            'RRethy/nvim-treesitter-textsubjects',
             'windwp/nvim-ts-autotag',
             'HiPhish/nvim-ts-rainbow2',
         },
