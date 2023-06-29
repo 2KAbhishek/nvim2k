@@ -22,6 +22,7 @@ local plugins = {
     -- Utilities
     'gh',
     'gitsigns',
+    'octo',
     'diffview',
     'neogit',
     'tmux',

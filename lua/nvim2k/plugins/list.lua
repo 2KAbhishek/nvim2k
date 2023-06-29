@@ -37,6 +37,7 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'aserowy/tmux.nvim',
+    'pwntester/octo.nvim',
     { 'ldelossa/gh.nvim', dependencies = { 'ldelossa/litee.nvim' } },
     { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },
     { 'folke/which-key.nvim', lazy = true },
