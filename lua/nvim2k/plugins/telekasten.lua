@@ -35,7 +35,7 @@ telekasten.setup({
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
     -- or nil if pasted images shouldn't go into a special subdir
-    image_subdir = 'img',
+    image_subdir = 'embeds',
 
     -- markdown file extension
     extension = '.md',
