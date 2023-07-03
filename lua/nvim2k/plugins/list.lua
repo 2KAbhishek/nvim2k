@@ -36,7 +36,7 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'aserowy/tmux.nvim',
-    'TimUntersberger/neogit',
+    'NeogitOrg/neogit',
     'ruifm/gitlinker.nvim',
     'pwntester/octo.nvim',
     { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },

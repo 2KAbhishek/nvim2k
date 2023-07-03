@@ -12,7 +12,7 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
     debug = false,
     border = 'rounded',
-    log_level = 'error',
+    log_level = 'info',
     diagnostics_format = '#{c} #{m} (#{s})',
     sources = {
         code_actions.eslint,
