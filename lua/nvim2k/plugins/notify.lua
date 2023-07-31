@@ -21,30 +21,27 @@ notify.setup({
     top_down = false,
 })
 
-vim.notify = notify
 local buffered_messages = {
-  "Client %d+ quit",
+    'Client %d+ quit',
 }
 
 -- Controls noisy notifications
 local message_notifications = {}
 vim.notify = function(msg, level, opts)
-  opts = opts or {}
-  for _, pattern in ipairs(buffered_messages) do
-    if string.find(msg, pattern) then
+    opts = opts or {}
+    for _, pattern in ipairs(buffered_messages) do
+        if string.find(msg, pattern) then
+            if message_notifications[pattern] then
+                opts.replace = message_notifications[pattern]
+            end
 
-      if message_notifications[pattern] then
-        opts.replace = message_notifications[pattern]
-      end
-
-      opts.on_close = function()
-        message_notifications[pattern] = nil
-      end
-      message_notifications[pattern] = notify.notify(msg, level, opts)
-      return
+            opts.on_close = function()
+                message_notifications[pattern] = nil
+            end
+            message_notifications[pattern] = notify.notify(msg, level, opts)
+            return
+        end
     end
-  end
 
-  notify.notify(msg, level, opts)
+    notify.notify(msg, level, opts)
 end
-
