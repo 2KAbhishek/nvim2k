@@ -59,6 +59,7 @@ local plugins = {
     'surround',
     'tabout',
     'ror',
+    'neodev',
 }
 
 local errors = {}

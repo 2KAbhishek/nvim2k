@@ -105,9 +105,12 @@ return {
         },
     },
 
-    { 'zbirenbaum/copilot.lua', dependencies = {
-        'zbirenbaum/copilot-cmp',
-    } },
+    {
+        'zbirenbaum/copilot.lua',
+        dependencies = {
+            'zbirenbaum/copilot-cmp',
+        },
+    },
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -141,4 +144,5 @@ return {
     -- Language specific
     { 'tpope/vim-rails', ft = 'ruby' },
     { 'weizheheng/ror.nvim', branch = 'main' },
+    { 'folke/neodev.nvim' },
 }
