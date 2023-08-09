@@ -58,6 +58,7 @@ local plugins = {
     'spectre',
     'surround',
     'tabout',
+    'spider',
     'ror',
     'neodev',
 }

@@ -39,6 +39,7 @@ return {
     'NeogitOrg/neogit',
     'ruifm/gitlinker.nvim',
     'pwntester/octo.nvim',
+    { 'chrisgrieser/nvim-spider', lazy = true },
     { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },
     { 'folke/which-key.nvim', lazy = true },
     { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = 'SnipRun' },
