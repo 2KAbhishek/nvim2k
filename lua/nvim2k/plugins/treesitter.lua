@@ -62,22 +62,6 @@ configs.setup({
         enable = true, -- mandatory, false will disable the whole extension
     },
 
-    rainbow = {
-        enable = true,
-        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-        max_file_lines = nil, -- Do not enable for files with more than n lines, int
-        colors = {
-            '#4688f0',
-            '#98c379',
-            '#e06c75',
-            '#e5c07b',
-            '#aa94ff',
-            '#56b6c2',
-            '#c678dd',
-        },
-    },
-
     textsubjects = {
         enable = true,
         prev_selection = ',', -- (Optional) keymap to select the previous selection

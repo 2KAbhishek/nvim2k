@@ -137,7 +137,6 @@ return {
             'RRethy/nvim-treesitter-endwise',
             'RRethy/nvim-treesitter-textsubjects',
             'windwp/nvim-ts-autotag',
-            'HiPhish/nvim-ts-rainbow2',
         },
         lazy = true,
     },
