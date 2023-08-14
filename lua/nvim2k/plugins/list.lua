@@ -137,6 +137,7 @@ return {
             'RRethy/nvim-treesitter-endwise',
             'RRethy/nvim-treesitter-textsubjects',
             'windwp/nvim-ts-autotag',
+            'HiPhish/rainbow-delimiters.nvim',
         },
         lazy = true,
     },
