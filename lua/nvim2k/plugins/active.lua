@@ -49,6 +49,7 @@ local plugins = {
     'lspsaga',
     'lualine',
     'trouble',
+    'efmls',
 
     -- Editing
     'autopairs',
