@@ -44,7 +44,6 @@ local plugins = {
     'lsp-zero',
     'copilot',
     'cmp',
-    'null-ls',
     'lsp-lines',
     'lsp-signature',
     'lspsaga',

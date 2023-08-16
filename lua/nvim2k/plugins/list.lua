@@ -73,7 +73,6 @@ return {
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
-            'jose-elias-alvarez/null-ls.nvim',
             'folke/trouble.nvim',
             'Maan2003/lsp_lines.nvim',
             'ray-x/lsp_signature.nvim',
