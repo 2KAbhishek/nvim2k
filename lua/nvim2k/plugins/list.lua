@@ -7,7 +7,10 @@ return {
     'stevearc/dressing.nvim',
     'nvim-tree/nvim-web-devicons',
     'norcalli/nvim-colorizer.lua',
-    { 'akinsho/toggleterm.nvim', cmd = 'ToggleTerm' },
+    {
+        'akinsho/toggleterm.nvim',
+        cmd = 'ToggleTerm'
+    },
     {
         'folke/zen-mode.nvim',
         cmd = 'ZenMode',
@@ -39,11 +42,28 @@ return {
     'NeogitOrg/neogit',
     'ruifm/gitlinker.nvim',
     'pwntester/octo.nvim',
-    { 'chrisgrieser/nvim-spider', lazy = true },
-    { 'mbbill/undotree', cmd = 'UndotreeToggle', lazy = true },
-    { 'folke/which-key.nvim', lazy = true },
-    { 'michaelb/sniprun', build = 'bash ./install.sh', cmd = 'SnipRun' },
-    { '2kabhishek/co-author.nvim', cmd = 'GitCoAuthors' },
+    {
+        'chrisgrieser/nvim-spider',
+        lazy = true
+    },
+    {
+        'mbbill/undotree',
+        cmd = 'UndotreeToggle',
+        lazy = true
+    },
+    {
+        'folke/which-key.nvim',
+        lazy = true
+    },
+    {
+        'michaelb/sniprun',
+        build = 'bash ./install.sh',
+        cmd = 'SnipRun'
+    },
+    {
+        '2kabhishek/co-author.nvim',
+        cmd = 'GitCoAuthors'
+    },
     {
         'gelguy/wilder.nvim',
         build = function()
@@ -80,7 +100,10 @@ return {
         },
         lazy = true,
     },
-
+    {
+        'creativenull/efmls-configs-nvim',
+        dependencies = { 'neovim/nvim-lspconfig' },
+    },
     {
         'mfussenegger/nvim-dap',
         dependencies = {
@@ -117,7 +140,10 @@ return {
         version = '0.1.0',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                build = 'make'
+            },
             'nvim-telescope/telescope-symbols.nvim',
             'nvim-telescope/telescope-hop.nvim',
             'renerocksai/telekasten.nvim',
@@ -142,7 +168,7 @@ return {
     },
 
     -- Language specific
-    { 'tpope/vim-rails', ft = 'ruby' },
+    { 'tpope/vim-rails',     ft = 'ruby' },
     { 'weizheheng/ror.nvim', branch = 'main' },
     { 'folke/neodev.nvim' },
 }
