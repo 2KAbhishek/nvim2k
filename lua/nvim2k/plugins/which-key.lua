@@ -143,7 +143,7 @@ local mappings = {
     },
     c = {
         name = 'Config',
-        e = { '<cmd>e ~/.config/nvim/lua/nvim2k/plugins/list.lua<cr>', 'Edit Config' },
+        e = { '<cmd>e ~/.config/nvim/lua/nvim2k/plugins/installed.lua<cr>', 'Edit Config' },
         -- f = { '<cmd>!eslint --fix %<cr>', 'Format Files' },
         f = { '<cmd>!rubocop -A %<cr>', 'Format Files' },
         F = { '<cmd>retab<cr>', 'Fix Tabs' },

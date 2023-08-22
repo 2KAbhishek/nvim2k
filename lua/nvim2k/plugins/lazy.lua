@@ -16,7 +16,7 @@ if not status_ok then
     return
 end
 
-local plugins = require('nvim2k.plugins.list')
+local plugins = require('nvim2k.plugins.installed')
 
 lazy.setup({
     root = vim.fn.stdpath('data') .. '/lazy', -- directory where plugins will be installed

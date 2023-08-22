@@ -27,7 +27,7 @@ dashboard.setup({
             {
                 desc = ' Config',
                 group = '@property',
-                action = 'e ~/.config/nvim/lua/nvim2k/plugins/list.lua',
+                action = 'e ~/.config/nvim/lua/nvim2k/plugins/installed.lua',
                 key = 'e',
             },
             {
