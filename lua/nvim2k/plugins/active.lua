@@ -38,6 +38,7 @@ local plugins = {
     'treesitter',
     'telekasten',
     'oil',
+    'dbee',
 
     -- LSP Stuff
     'mason',
