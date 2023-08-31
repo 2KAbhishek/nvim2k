@@ -4,10 +4,10 @@ if not status_ok then
 end
 
 local os = require('os')
-local notes_root = os.getenv('$NOTES_ROOT')
-local home = vim.fn.expand(notes_root)
+local notes_dir = os.getenv('$NOTES_DIR')
+local home = vim.fn.expand(notes_dir)
 if not notes_root then
-    home = vim.fn.expand('~/Projects/GitHub/Notes/Worklog/')
+    home = vim.fn.expand('~/Projects/GitHub/Notes/worklog/')
 end
 local year = os.date('%Y')
 local month = os.date('%m')
