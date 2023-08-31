@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local icons = require('nvim2k.icons')
+local icons = require('icons')
 
 local function on_attach(bufnr)
     local api = require('nvim-tree.api')
