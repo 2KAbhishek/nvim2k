@@ -23,6 +23,10 @@ return {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
     },
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    },
 
     -- Utilities
     'nvim-tree/nvim-tree.lua',
