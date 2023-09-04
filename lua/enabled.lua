@@ -60,6 +60,7 @@ local plugins = {
     'surround',
     'tabout',
     'spider',
+    'hardtime',
     'ror',
     'neodev',
 }
