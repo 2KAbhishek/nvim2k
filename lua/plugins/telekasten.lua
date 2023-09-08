@@ -27,9 +27,9 @@ telekasten.setup({
     auto_set_filetype = true,
 
     -- dir names for special notes (absolute path or subdir name)
-    dailies = home .. 'log/' .. year .. '/' .. month,
-    weeklies = home .. 'log/' .. year .. '/weekly',
-    templates = home .. 'templates',
+    dailies = notes_dir .. 'log/' .. year .. '/' .. month,
+    weeklies = notes_dir .. 'log/' .. year .. '/weekly',
+    templates = notes_dir .. 'templates',
 
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
@@ -60,15 +60,15 @@ telekasten.setup({
 
     -- template for new notes (new_note, follow_link)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_note = home .. 'templates/zettelkasten.md',
+    template_new_note = notes_dir .. 'templates/zettelkasten.md',
 
     -- template for newly created daily notes (goto_today)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_daily = home .. 'templates/todos.md',
+    template_new_daily = notes_dir .. 'templates/todos.md',
 
     -- template for newly created weekly notes (goto_thisweek)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly = home .. '/emplates/weekly.md',
+    template_new_weekly = notes_dir .. '/emplates/weekly.md',
 
     -- image link style
     -- wiki:     ![[image name]]
@@ -136,7 +136,7 @@ telekasten.setup({
     --     - same_as_current: put all new notes in the dir of the current note if
     --                        present or else in home
     --                        except for notes/with/subdirs/in/title.
-    new_note_location = home .. 'same_as_current',
+    new_note_location = 'smart',
 
     -- should all links be updated when a file is renamed
     rename_update_links = true,
