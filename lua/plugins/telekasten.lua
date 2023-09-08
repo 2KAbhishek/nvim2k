@@ -4,10 +4,9 @@ if not status_ok then
 end
 
 local os = require('os')
-local notes_dir = os.getenv('$NOTES_DIR')
-local home = vim.fn.expand(notes_dir)
-if not notes_root then
-    home = vim.fn.expand('~/Projects/GitHub/Notes/worklog/')
+local notes_dir = vim.fn.expand(os.getenv('NOTES_DIR'))
+if not notes_dir then
+    notes_dir = vim.fn.expand('~/Projects/GitHub/Notes/worklog/')
 end
 local year = os.date('%Y')
 local month = os.date('%m')
@@ -18,7 +17,7 @@ local month = os.date('%m')
 -- - NEVER use "C:\Users\myname" style paths
 -- - Using `vim.fn.expand("~/zettelkasten")` should work now but mileage will vary with anything outside of finding and opening files
 telekasten.setup({
-    home = home,
+    home = notes_dir,
 
     -- if true, telekasten will be enabled when opening a note within the configured home
     take_over_my_home = true,
