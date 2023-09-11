@@ -9,7 +9,7 @@ return {
     'norcalli/nvim-colorizer.lua',
     {
         'akinsho/toggleterm.nvim',
-        cmd = 'ToggleTerm'
+        cmd = 'ToggleTerm',
     },
     {
         'folke/zen-mode.nvim',
@@ -24,8 +24,8 @@ return {
         event = 'VimEnter',
     },
     {
-        "m4xshen/hardtime.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        'm4xshen/hardtime.nvim',
+        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
     },
 
     -- Utilities
@@ -48,25 +48,25 @@ return {
     'pwntester/octo.nvim',
     {
         'chrisgrieser/nvim-spider',
-        lazy = true
+        lazy = true,
     },
     {
         'mbbill/undotree',
         cmd = 'UndotreeToggle',
-        lazy = true
+        lazy = true,
     },
     {
         'folke/which-key.nvim',
-        lazy = true
+        lazy = true,
     },
     {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
-        cmd = 'SnipRun'
+        cmd = 'SnipRun',
     },
     {
         '2kabhishek/co-author.nvim',
-        cmd = 'GitCoAuthors'
+        cmd = 'GitCoAuthors',
     },
     {
         'gelguy/wilder.nvim',
@@ -90,21 +90,22 @@ return {
         },
     },
     {
-        "kndndrj/nvim-dbee",
+        'kndndrj/nvim-dbee',
         dependencies = {
-            "MunifTanjim/nui.nvim",
+            'MunifTanjim/nui.nvim',
         },
         build = function()
             -- Install tries to automatically detect the install method.
             -- if it fails, try calling it with one of these parameters:
             --    "curl", "wget", "bitsadmin", "go"
-            require("dbee").install("curl")
+            require('dbee').install('curl')
         end,
     },
 
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
@@ -131,7 +132,7 @@ return {
     -- Completion
     {
         'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
+        event = { 'InsertEnter', 'BufRead' },
         dependencies = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
@@ -158,7 +159,7 @@ return {
             'nvim-lua/plenary.nvim',
             {
                 'nvim-telescope/telescope-fzf-native.nvim',
-                build = 'make'
+                build = 'make',
             },
             'nvim-telescope/telescope-symbols.nvim',
             'nvim-telescope/telescope-hop.nvim',
@@ -184,7 +185,7 @@ return {
     },
 
     -- Language specific
-    { 'tpope/vim-rails',     ft = 'ruby' },
+    { 'tpope/vim-rails', ft = 'ruby' },
     { 'weizheheng/ror.nvim', branch = 'main' },
     { 'folke/neodev.nvim' },
 }
