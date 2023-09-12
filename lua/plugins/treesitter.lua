@@ -29,6 +29,16 @@ configs.setup({
         enable_autocmd = false,
     },
 
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = '<c-enter>',
+            node_incremental = '<c-enter>',
+            scope_incremental = '<c-s>',
+            node_decremental = '<C-S-Enter>',
+        },
+    },
+
     refactor = {
         highlight_definitions = {
             enable = true,
