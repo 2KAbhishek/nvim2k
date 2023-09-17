@@ -33,26 +33,23 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
 
-function _LAZYGIT_TOGGLE()
+vim.api.nvim_create_user_command('LazygitToggle', function()
+    local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
     lazygit:toggle()
-end
+end, {})
 
-local ruby = Terminal:new({ cmd = 'irb', hidden = true })
-
-function _RUBY_TOGGLE()
+vim.api.nvim_create_user_command('RubyToggle', function()
+    local ruby = Terminal:new({ cmd = 'irb', hidden = true })
     ruby:toggle()
-end
+end, {})
 
-local node = Terminal:new({ cmd = 'node', hidden = true })
-
-function _NODE_TOGGLE()
+vim.api.nvim_create_user_command('NodeToggle', function()
+    local node = Terminal:new({ cmd = 'node', hidden = true })
     node:toggle()
-end
+end, {})
 
-local python = Terminal:new({ cmd = 'ipython', hidden = true })
-
-function _PYTHON_TOGGLE()
+vim.api.nvim_create_user_command('PythonToggle', function()
+    local python = Terminal:new({ cmd = 'ipython', hidden = true })
     python:toggle()
-end
+end, {})
