@@ -362,7 +362,7 @@ local mappings = {
         x = { '<cmd>SnipTerminate<cr>', 'Terminate' },
     },
     t = {
-        name = 'Terminal and Tests',
+        name = 'Terminal',
         ['1'] = { ':1ToggleTerm<cr>', '1' },
         ['2'] = { ':2ToggleTerm<cr>', '2' },
         ['3'] = { ':3ToggleTerm<cr>', '3' },
@@ -373,18 +373,13 @@ local mappings = {
         t = { '<cmd>ToggleTerm<cr>', 'ToggleTerm' },
         v = { '<cmd>ToggleTerm size=10 direction=horizontal<cr>', 'Horizontal' },
         V = { '<cmd>ToggleTerm size=80 direction=vertical<cr>', 'Vertical' },
-
+    },
+    T = {
+        name = 'Tests',
         r = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
         f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Current File' },
         o = { '<cmd>Neotest output-panel<cr>', 'Test Output' },
         s = { '<cmd>Neotest summary<cr>', 'Test Summary' },
-    },
-    T = {
-        name = 'Treesitter',
-        h = { '<cmd>TSHighlightCapturesUnderCursor<cr>', 'Highlight' },
-        p = { '<cmd>TSPlaygroundToggle<cr>', 'Playground' },
-        r = { '<cmd>TSToggle rainbow<cr>', 'Rainbow' },
-        w = { ':write | edit | TSBufEnable :qhighlight' },
     },
     w = {
         name = 'Window',
