@@ -309,14 +309,6 @@ local mappings = {
         },
         Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", 'New Zettelkasten Here' },
     },
-    o = {
-        name = 'Session',
-        s = { '<cmd>SaveSession<cr>', 'Save' },
-        r = { '<cmd>RestoreSession<cr>', 'Restore' },
-        x = { '<cmd>DeleteSession<cr>', 'Delete' },
-        f = { '<cmd>Autosession search<cr>', 'Find' },
-        d = { '<cmd>Autosession delete<cr>', 'Find Delete' },
-    },
     p = {
         name = 'Packages',
         c = { '<cmd>Lazy check<cr>', 'Check' },
@@ -339,27 +331,7 @@ local mappings = {
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", 'Extract Block' },
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract Block To File' },
         i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
-        n = { 'Rename' },
         v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
-    },
-    s = {
-        name = 'Surround',
-        ['.'] = { "<cmd>lua require('surround').repeat_last()<cr>", 'Repeat' },
-        a = { "<cmd>lua require('surround').surround_add(true)<cr>", 'Add' },
-        d = { "<cmd>lua require('surround').surround_delete()<cr>", 'Delete' },
-        r = { "<cmd>lua require('surround').surround_replace()<cr>", 'Replace' },
-        q = { "<cmd>lua require('surround').toggle_quotes()<cr>", 'Quotes' },
-        b = { "<cmd>lua require('surround').toggle_brackets()<cr>", 'Brackets' },
-    },
-    S = {
-        name = 'SnipRun',
-        c = { '<cmd>SnipClose<cr>', 'Close' },
-        f = { '<cmd>%SnipRun<cr>', 'Run File' },
-        i = { '<cmd>SnipInfo<cr>', 'Info' },
-        m = { '<cmd>SnipReplMemoryClean<cr>', 'Mem Clean' },
-        r = { '<cmd>SnipReset<cr>', 'Reset' },
-        t = { '<cmd>SnipRunToggle<cr>', 'Toggle' },
-        x = { '<cmd>SnipTerminate<cr>', 'Terminate' },
     },
     t = {
         name = 'Terminal',
@@ -396,20 +368,6 @@ local mappings = {
         c = { '<cmd>tabclose<cr>', 'Close Tab' },
         O = { '<cmd>tabprevious<cr>', 'Previous Tab' },
     },
-    -- B = {
-    --     name = "Browse",
-    --     i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
-    --     b = { "<cmd>Browse<cr>", "Browse" },
-    --     d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
-    --     f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
-    --     m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
-    -- },
-
-    -- s = {
-    --   name = "Split",
-    --   s = { "<cmd>split<cr>", "HSplit" },
-    --   v = { "<cmd>vsplit<cr>", "VSplit" },
-    -- },
 }
 
 local vopts = {
