@@ -1,5 +1,5 @@
 -- Reload neovim config
-function _G.ReloadConfig()
+vim.api.nvim_create_user_command('ReloadConfig', function()
     for name, _ in pairs(package.loaded) do
         if name:match('^plugins') then
             package.loaded[name] = nil
@@ -8,7 +8,7 @@ function _G.ReloadConfig()
 
     dofile(vim.env.MYVIMRC)
     vim.notify('Nvim configuration reloaded!', vim.log.levels.INFO)
-end
+end, {})
 
 -- Copy relative path
 vim.api.nvim_create_user_command('CRpath', function()
