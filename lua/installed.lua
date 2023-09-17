@@ -110,7 +110,6 @@ return {
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
-            'folke/trouble.nvim',
             'Maan2003/lsp_lines.nvim',
             'ray-x/lsp_signature.nvim',
             'glepnir/lspsaga.nvim',

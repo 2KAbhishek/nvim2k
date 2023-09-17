@@ -49,7 +49,6 @@ local plugins = {
     'lsp-signature',
     'lspsaga',
     'lualine',
-    'trouble',
     'efmls',
 
     -- Editing
