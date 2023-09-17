@@ -70,10 +70,6 @@ map('n', '<m-q>', '<cmd>:q<cr>', opts)
 -- open link under cursor
 map('n', 'gx', [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
--- LSP
-map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-
 -- Center Cursors
 map('n', 'J', 'mzJ`z', opts)
 map('n', '<C-d>', '<C-d>zz', opts)
