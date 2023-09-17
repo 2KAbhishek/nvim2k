@@ -133,14 +133,6 @@ local mappings = {
     ['x'] = { '<cmd>x<cr>', 'Write and Quit' },
     ['q'] = { '<cmd>bw<cr>', 'Close Buffer' },
     ['Q'] = { '<cmd>qa!<cr>', 'Force Quit!' },
-    m = {
-        name = 'Harpoon',
-        a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
-        m = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
-        ['k'] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
-        ['j'] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon Prev' },
-        ['s'] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
-    },
     c = {
         name = 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
@@ -272,6 +264,14 @@ local mappings = {
         S = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols', },
         t = { '<cmd>Lspsaga peek_type_definition<cr>', 'Peek Type Definition' },
         T = { '<cmd>Lspsaga goto_type_definition<cr>', 'Goto Type Definition' },
+    },
+    m = {
+        name = 'Marks',
+        a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
+        m = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
+        ['k'] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
+        ['j'] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon Prev' },
+        ['s'] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
     },
     n = {
         name = 'Notes',
