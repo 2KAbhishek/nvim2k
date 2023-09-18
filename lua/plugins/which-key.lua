@@ -299,7 +299,6 @@ local mappings = {
         },
         w = { '<cmd>Telekasten goto_thisweek<cr>', 'Weekly' },
         W = { '<cmd>Telekasten find_weekly_notes<cr>', 'Find Weeklies' },
-        v = { '<cmd>MarkdownPreviewToggle<cr>', 'Preview' },
         x = { '<cmd>Telekasten toggle_todo<cr>', 'Toggle Todo' },
         y = { '<cmd>Telekasten yank_notelink<cr>', 'Copy Note Link' },
         z = {
@@ -323,6 +322,7 @@ local mappings = {
         name = 'Toggle',
         c = { '<cmd>Twilight<cr>', 'Twilight' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
+        m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
         n = { '<cmd>NodeToggle<cr>', 'Node' },
         p = { '<cmd>PythonToggle<cr>', 'Python' },
         r = { '<cmd>RubyToggle<cr>', 'Ruby' },
