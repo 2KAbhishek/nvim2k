@@ -24,32 +24,11 @@ dashboard.setup({
         shortcut = {
             { desc = ' Plugins', group = '@property', action = 'Lazy', key = 'p' },
             { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
-            {
-                desc = ' Config',
-                group = '@property',
-                action = 'e ~/.config/nvim/lua/installed.lua',
-                key = 'e',
-            },
-            {
-                icon = ' ',
-                icon_hl = '@variable',
-                desc = 'Files',
-                group = 'Label',
-                action = 'Telescope find_files',
-                key = 'f',
-            },
-            {
-                desc = ' Todo',
-                group = 'Label',
-                action = 'Telekasten goto_today',
-                key = 'd',
-            },
-            {
-                desc = ' New File',
-                group = 'Label',
-                action = 'enew',
-                key = 'n',
-            },
+            { desc = ' Config', group = '@property', action = 'e ~/.config/nvim/lua/installed.lua', key = 'e' },
+            { desc = ' Files', group = 'Label', action = 'Telescope find_files', key = 'f' },
+            { desc = ' Todo', group = 'Label', action = 'Telekasten goto_today', key = 'd' },
+            { desc = ' New File', group = 'Label', action = 'enew', key = 'n' },
+            { desc = '󰐥 Exit', group = 'Action', action = 'quit', key = 'q' },
         },
     },
 })
