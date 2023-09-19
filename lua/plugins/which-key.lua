@@ -222,10 +222,10 @@ local mappings = {
         d = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
         D = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
         g = { '<cmd>LazygitToggle<cr>', 'Lazygit' },
+        h = { '<cmd>Octo<cr>', 'Octo' },
         j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
         n = { '<cmd>Neogit<cr>', 'Neogit' },
-        o = { '<cmd>Octo<cr>', 'Octo' },
         p = {
             '<cmd>silent execute "!(cd %:h && git pull --rebase --autostash &) > /dev/null" | lua require("notify")("Pulling Changes...")<cr>',
             'Pull Changes',
