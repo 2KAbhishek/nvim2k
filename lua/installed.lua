@@ -102,6 +102,7 @@ return {
         dependencies = {
             'MunifTanjim/nui.nvim',
         },
+        event = 'VeryLazy',
         build = function()
             -- Install tries to automatically detect the install method.
             -- if it fails, try calling it with one of these parameters:
@@ -151,7 +152,6 @@ return {
             'rafamadriz/friendly-snippets',
         },
     },
-
     {
         'zbirenbaum/copilot.lua',
         dependencies = {
@@ -170,8 +170,7 @@ return {
             },
             'nvim-telescope/telescope-symbols.nvim',
             'nvim-telescope/telescope-hop.nvim',
-            'renerocksai/telekasten.nvim',
-            'renerocksai/calendar-vim',
+            'nvim-telescope/telescope-live-grep-args.nvim',
         },
         lazy = true,
     },

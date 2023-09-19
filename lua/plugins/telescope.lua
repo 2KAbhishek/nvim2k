@@ -5,6 +5,7 @@ end
 
 local actions = require('telescope.actions')
 local multi_open_mappings = require('plugins.telescope-multiopen')
+local lga_actions = require('telescope-live-grep-args.actions')
 
 telescope.setup({
     defaults = {
@@ -215,11 +216,22 @@ telescope.setup({
             --   ["Projects"] = "/home/abhishek/Projects",
             -- }
         },
+        live_grep_args = {
+            auto_quoting = true,
+            mappings = {
+                i = {
+                    ['<C-k>'] = lga_actions.quote_prompt(),
+                    ['<C-i>'] = lga_actions.quote_prompt({ postfix = ' --iglob ' }),
+                },
+            },
+        },
     },
 })
 
 require('telescope').load_extension('hop')
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('notify')
-require("telescope").load_extension("refactoring")
+require('telescope').load_extension('refactoring')
 require('telescope').load_extension('harpoon')
+require('telescope').load_extension('live_grep_args')
+
