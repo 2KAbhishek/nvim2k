@@ -83,6 +83,12 @@ return {
         end,
     },
     {
+        'renerocksai/telekasten.nvim',
+        dependencies = { 'renerocksai/calendar-vim' },
+        cmd = 'Telekasten',
+        event = 'VeryLazy',
+    },
+    {
         'nvim-neotest/neotest',
         lazy = true,
         dependencies = {
