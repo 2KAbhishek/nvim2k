@@ -3,24 +3,25 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 saga.setup({
     ui = {
         -- Currently, only the round theme exists
         theme = 'round',
         -- This option only works in Neovim 0.9
-        title = true,
-        -- Border type can be single, double, rounded, solid, shadow.
         border = 'rounded',
-        winblend = 0,
-        expand = '',
-        collapse = '',
-        preview = ' ',
-        code_action = '💡',
-        diagnostic = '🐞',
-        incoming = ' ',
-        outgoing = ' ',
-        hover = ' ',
-        kind = {},
+        devicon = true,
+        title = true,
+        winblend = 1,
+        expand = icons.ui.ArrowOpen,
+        collapse = icons.ui.ArrowClosed,
+        preview = icons.ui.List,
+        code_action = icons.diagnostics.Hint,
+        diagnostic = icons.ui.Bug,
+        incoming = icons.ui.Incoming,
+        outgoing = icons.ui.Outgoing,
+        hover = icons.ui.Comment,
     },
 })
 
