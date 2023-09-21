@@ -49,7 +49,7 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'aserowy/tmux.nvim',
-    'NeogitOrg/neogit',
+    {'NeogitOrg/neogit', cmd = "Neogit", config = 'plugins.neogit' },
     'ruifm/gitlinker.nvim',
     'pwntester/octo.nvim',
     {
