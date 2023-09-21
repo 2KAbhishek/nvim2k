@@ -68,6 +68,7 @@ return {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
         cmd = 'SnipRun',
+        config = 'plugins.sniprun',
     },
     {
         '2kabhishek/co-author.nvim',
