@@ -28,9 +28,10 @@ return {
     },
 
     -- Utilities
-    {'nvim-tree/nvim-tree.lua',
-        cmd = "NvimTreeToggle",
-        config = "plugins.nvim-tree",
+    {
+        'nvim-tree/nvim-tree.lua',
+        cmd = 'NvimTreeToggle',
+        config = 'plugins.nvim-tree',
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
@@ -58,7 +59,6 @@ return {
     {
         'mbbill/undotree',
         cmd = 'UndotreeToggle',
-        lazy = true,
     },
     {
         'folke/which-key.nvim',
@@ -185,6 +185,7 @@ return {
     -- Tresitter
     {
         'nvim-treesitter/nvim-treesitter',
+        event = 'BufWinEnter',
         build = ':TSUpdate',
         dependencies = {
             'nvim-treesitter/nvim-treesitter-refactor',
@@ -196,6 +197,7 @@ return {
             'HiPhish/rainbow-delimiters.nvim',
         },
         lazy = true,
+        config = 'plugins.treesitter',
     },
 
     -- Language specific
