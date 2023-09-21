@@ -5,7 +5,6 @@ return {
     'akinsho/bufferline.nvim',
     'rcarriga/nvim-notify',
     'stevearc/dressing.nvim',
-    'nvim-tree/nvim-web-devicons',
     'norcalli/nvim-colorizer.lua',
     {
         'akinsho/toggleterm.nvim',
@@ -29,7 +28,13 @@ return {
     },
 
     -- Utilities
-    'nvim-tree/nvim-tree.lua',
+    {'nvim-tree/nvim-tree.lua',
+        cmd = "NvimTreeToggle",
+        config = "plugins.nvim-tree",
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    },
     'stevearc/oil.nvim',
     'lukas-reineke/indent-blankline.nvim',
     'lewis6991/gitsigns.nvim',
