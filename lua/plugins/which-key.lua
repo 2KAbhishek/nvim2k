@@ -5,22 +5,22 @@ end
 
 local setup = {
     plugins = {
-        marks = true,         -- shows a list of your marks on ' and `
-        registers = true,     -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+        marks = true, -- shows a list of your marks on ' and `
+        registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         spelling = {
-            enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+            enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
             suggestions = 20, -- how many suggestions should be shown in the list?
         },
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-            operators = true,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
-            motions = true,      -- adds help for motions
+            operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+            motions = true, -- adds help for motions
             text_objects = true, -- help for text objects triggered after entering an operator
-            windows = true,      -- default bindings on <c-w>
-            nav = true,          -- misc bindings to work with windows
-            z = true,            -- bindings for folds, spelling and others prefixed with z
-            g = true,            -- bindings for prefixed with g
+            windows = true, -- default bindings on <c-w>
+            nav = true, -- misc bindings to work with windows
+            z = true, -- bindings for folds, spelling and others prefixed with z
+            g = true, -- bindings for prefixed with g
         },
     },
     -- add operators that will trigger motion and text object completion
@@ -41,26 +41,26 @@ local setup = {
     },
     popup_mappings = {
         scroll_down = '<c-d>', -- binding to scroll down inside the popup
-        scroll_up = '<c-u>',   -- binding to scroll up inside the popup
+        scroll_up = '<c-u>', -- binding to scroll up inside the popup
     },
     window = {
-        border = 'none',          -- none, single, double, shadow
-        position = 'bottom',      -- bottom, top
-        margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]
+        border = 'none', -- none, single, double, shadow
+        position = 'bottom', -- bottom, top
+        margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
         padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
         winblend = 15,
     },
     layout = {
         height = { min = 4, max = 25 }, -- min and max height of the columns
         width = { min = 20, max = 50 }, -- min and max width of the columns
-        spacing = 3,                    -- spacing between columns
-        align = 'center',               -- align columns left, center or right
+        spacing = 3, -- spacing between columns
+        align = 'center', -- align columns left, center or right
     },
-    ignore_missing = true,              -- enable this to hide mappings for which you didn't specify a label
+    ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
     hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', '^:', '^ ', '^call ', '^lua ' },
-    show_help = true,                   -- show a help message in the command line for using WhichKey
-    show_keys = true,                   -- show the currently pressed key and its label as a message in the command line
-    triggers = 'auto',                  -- automatically setup triggers
+    show_help = true, -- show a help message in the command line for using WhichKey
+    show_keys = true, -- show the currently pressed key and its label as a message in the command line
+    triggers = 'auto', -- automatically setup triggers
     -- triggers = {"<leader>"} -- or specifiy a list manually
     -- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
     triggers_nowait = {
@@ -120,21 +120,23 @@ for key, name in pairs({ n = 'Next', l = 'Last' }) do
 end
 
 local opts = {
-    mode = 'n',     -- NORMAL mode
+    mode = 'n', -- NORMAL mode
     prefix = '<leader>',
-    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true,  -- use `silent` when creating keymaps
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
     noremap = true, -- use `noremap` when creating keymaps
-    nowait = true,  -- use `nowait` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
 }
 
+local icons = require('icons')
+
 local mappings = {
-    ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
-    ['x'] = { '<cmd>x<cr>', 'Write and Quit' },
-    ['q'] = { '<cmd>bw<cr>', 'Close Buffer' },
-    ['Q'] = { '<cmd>qa!<cr>', 'Force Quit!' },
+    ['e'] = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
+    ['x'] = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
+    ['q'] = { '<cmd>bw<cr>', icons.ui.Close .. 'Close Buffer' },
+    ['Q'] = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     c = {
-        name = 'Config',
+        name = icons.ui.Vim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
         C = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
         e = { '<cmd>e ~/.config/nvim/lua/installed.lua<cr>', 'Edit Config' },
@@ -146,7 +148,7 @@ local mappings = {
         N = { '<cmd>Telescope notify<cr>', 'Notifications' },
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
-        s = { "<cmd>%SnipRun<cr>", 'Run File' },
+        s = { '<cmd>%SnipRun<cr>', 'Run File' },
         y = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
         Y = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
         p = {
@@ -165,7 +167,7 @@ local mappings = {
         },
     },
     d = {
-        name = 'Debug',
+        name = icons.ui.Bug .. 'Debug',
         b = { '<cmd>DapToggleBreakpoint<cr>', 'Breakpoint' },
         c = { '<cmd>DapContinue<cr>', 'Continue' },
         i = { '<cmd>DapStepInto<cr>', 'Into' },
@@ -178,7 +180,7 @@ local mappings = {
         x = { '<cmd>DapTerminate<cr>', 'Exit' },
     },
     D = {
-        name = 'Database',
+        name = icons.ui.Database .. 'Database',
         b = { '<cmd>lua require("dbee").toggle()<cr>', 'DB Explorer' },
         j = { '<cmd>lua require("dbee").next()<cr>', 'DB Next' },
         k = { '<cmd>lua require("dbee").prev()<cr>', 'DB Prev' },
@@ -187,14 +189,15 @@ local mappings = {
         t = { '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', 'DB to Table' },
     },
     f = {
-        name = 'Find',
+        name = icons.ui.Telescope .. 'Find',
         b = {
             "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
-            'Buffers', },
+            'Buffers',
+        },
         c = { '<cmd>Telescope git_bcommits<cr>', 'File Commits' },
         C = { '<cmd>Telescope git_commits<cr>', 'Git Commits' },
-        f = { '<cmd>Telescope git_files find_command=fd,--hidden<cr>', 'Find files', },
-        F = { '<cmd>Telescope find_files find_command=fd,--hidden,-I<cr>', 'Find All Files', },
+        f = { '<cmd>Telescope git_files find_command=fd,--hidden<cr>', 'Find files' },
+        F = { '<cmd>Telescope find_files find_command=fd,--hidden,-I<cr>', 'Find All Files' },
         g = { '<cmd>Telescope live_grep<cr>', 'Find Text' },
         G = { '<cmd>Telescope grep_string<cr>', 'Find Under Cursor' },
         h = { '<cmd>Telescope help_tags<cr>', 'Help' },
@@ -213,7 +216,7 @@ local mappings = {
         ['.'] = { '<cmd>Telescope symbols<cr>', 'Emojis' },
     },
     g = {
-        name = 'Git',
+        name = icons.git.Octoface .. 'Git',
         a = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
         A = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Buffer' },
         b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
@@ -242,7 +245,7 @@ local mappings = {
         u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
     },
     l = {
-        name = 'LSP',
+        name = icons.ui.Gear .. 'LSP',
         a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
         d = { '<cmd>Lspsaga peek_definition<cr>', 'Peek Definition' },
         D = { '<cmd>Lspsaga goto_definition<cr>', 'Goto Definition' },
@@ -255,19 +258,19 @@ local mappings = {
         j = { '<cmd>Lspsaga diagnostic_jump_next<cr>', 'Next Diagnostic' },
         k = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', 'Prev Diagnostic' },
         l = { "<cmd>lua require('lsp_lines').toggle()<cr>", 'Toggle LSP Lines' },
-        L = { "<cmd>LspInfo<cr>", 'LSP Info' },
+        L = { '<cmd>LspInfo<cr>', 'LSP Info' },
         o = { '<cmd>Lspsaga outline<cr>', 'Outline' },
         p = { '<cmd>Telescope lsp_incoming_calls<cr>', 'Incoming Calls' },
         P = { '<cmd>Telescope lsp_outgoing_calls<cr>', 'Outgoing Calls' },
         r = { '<cmd>Lspsaga rename<cr>', 'Rename' },
         R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
         s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document Symbols' },
-        S = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols', },
+        S = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols' },
         t = { '<cmd>Lspsaga peek_type_definition<cr>', 'Peek Type Definition' },
         T = { '<cmd>Lspsaga goto_type_definition<cr>', 'Goto Type Definition' },
     },
     m = {
-        name = 'Marks',
+        name = icons.ui.Bookmark .. 'Marks',
         a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
         m = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
         ['k'] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
@@ -275,7 +278,7 @@ local mappings = {
         ['s'] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
     },
     n = {
-        name = 'Notes',
+        name = icons.ui.Note .. 'Notes',
         c = { '<cmd>Telekasten show_calendar<cr>', 'Calendar' },
         d = { '<cmd>vsplit || Telekasten goto_today<cr>', 'Daily' },
         D = { '<cmd>Telekasten find_daily_notes<cr>', 'Find Dailies' },
@@ -312,7 +315,7 @@ local mappings = {
         Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", 'New Zettelkasten Here' },
     },
     r = {
-        name = 'Refactor',
+        name = icons.diagnostics.Hint .. 'Refactor',
         b = { "<cmd>lua require('spectre').open_file_search()<cr>", 'Replace Buffer' },
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", 'Extract Block' },
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract Block To File' },
@@ -323,7 +326,7 @@ local mappings = {
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
     },
     t = {
-        name = 'Toggle',
+        name = icons.ui.Terminal .. 'Toggle',
         c = { '<cmd>Twilight<cr>', 'Twilight' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
@@ -339,14 +342,14 @@ local mappings = {
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
     },
     T = {
-        name = 'Tests',
+        name = icons.ui.Test .. 'Tests',
         f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Current File' },
         o = { '<cmd>Neotest output-panel<cr>', 'Test Output' },
         r = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
         s = { '<cmd>Neotest summary<cr>', 'Test Summary' },
     },
     w = {
-        name = 'Window',
+        name = icons.ui.Windows .. 'Window',
         c = { '<cmd>tabclose<cr>', 'Close Tab' },
         f = { '<cmd>tabfirst<cr>', 'First Tab' },
         l = { '<cmd>tablast<cr>', 'Last Tab' },
@@ -363,12 +366,12 @@ local mappings = {
 }
 
 local vopts = {
-    mode = 'v',     -- VISUAL mode
+    mode = 'v', -- VISUAL mode
     prefix = '<leader>',
-    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true,  -- use `silent` when creating keymaps
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
     noremap = true, -- use `noremap` when creating keymaps
-    nowait = true,  -- use `nowait` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
 }
 
 local vmappings = {
