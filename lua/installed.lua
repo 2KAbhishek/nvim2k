@@ -12,11 +12,11 @@ return {
     },
     {
         'folke/zen-mode.nvim',
-        cmd = 'ZenMode',
-        lazy = true,
         dependencies = {
             'folke/twilight.nvim',
         },
+        cmd = {'ZenMode', 'Twilight'},
+        config = 'plugins.zen-mode',
     },
     {
         'glepnir/dashboard-nvim',
