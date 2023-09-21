@@ -15,7 +15,7 @@ return {
         dependencies = {
             'folke/twilight.nvim',
         },
-        cmd = {'ZenMode', 'Twilight'},
+        cmd = { 'ZenMode', 'Twilight' },
         config = 'plugins.zen-mode',
     },
     {
@@ -49,7 +49,7 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'aserowy/tmux.nvim',
-    {'NeogitOrg/neogit', cmd = "Neogit", config = 'plugins.neogit' },
+    { 'NeogitOrg/neogit', cmd = 'Neogit', config = 'plugins.neogit' },
     'ruifm/gitlinker.nvim',
     'pwntester/octo.nvim',
     {
