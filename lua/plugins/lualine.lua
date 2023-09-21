@@ -158,7 +158,7 @@ ins_left({
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
         color_info = { fg = colors.blue },
-        color_hint = { fg = colors.fg },
+        color_hint = { fg = colors.yellow },
     },
 })
 
@@ -194,7 +194,7 @@ ins_left({
 -- Add components to right sections
 ins_right({
     'branch',
-    icon = '',
+    icon = icons.git.Branch,
     fmt = function(str)
         return str:sub(1, 16)
     end,
