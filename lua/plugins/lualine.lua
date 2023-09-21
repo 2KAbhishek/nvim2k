@@ -19,6 +19,8 @@ local colors = {
     red      = '#ec5f67',
 }
 
+local icons = require('icons')
+
 local conditions = {
     buffer_not_empty = function()
         return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
@@ -134,9 +136,9 @@ ins_left({
 
 ins_left({
     'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = ' ', removed = ' ' },
-    diff_color = { added = { fg = colors.green },
+    symbols = { added = icons.git.Add, modified = icons.git.Mod, removed = icons.git.Remove },
+    diff_color = {
+        added = { fg = colors.green },
         modified = { fg = colors.orange },
         removed = { fg = colors.red },
     },
@@ -146,7 +148,12 @@ ins_left({
 ins_left({
     'diagnostics',
     sources = { 'nvim_lsp', 'nvim_diagnostic', 'nvim_workspace_diagnostic' },
-    symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+    symbols = {
+        error = icons.diagnostics.Error,
+        warn = icons.diagnostics.Warning,
+        info = icons.diagnostics.Information,
+        hint = icons.diagnostics.Hint,
+    },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
@@ -180,7 +187,7 @@ ins_left({
         end
         return msg
     end,
-    icon = ' :',
+    icon = icons.ui.Gear .. ' :',
     color = { fg = colors.fg, gui = 'bold' },
 })
 
