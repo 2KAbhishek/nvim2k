@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 dashboard.setup({
     theme = 'hyper', --  theme is doom and hyper default is hyper
     disable_move = false, --  defualt is false disable move keymap for hyper
@@ -22,13 +24,13 @@ dashboard.setup({
         mru = { limit = 8 },
         footer = { 'Build, Ship, Innovate with nvim2k!' },
         shortcut = {
-            { desc = ' Plugins', group = '@property', action = 'Lazy', key = 'p' },
-            { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
-            { desc = ' Config', group = '@property', action = 'e ~/.config/nvim/lua/installed.lua', key = 'e' },
-            { desc = ' Files', group = 'Label', action = 'Telescope find_files', key = 'f' },
-            { desc = ' Todo', group = 'Label', action = 'Telekasten goto_today', key = 'd' },
-            { desc = ' New File', group = 'Label', action = 'enew', key = 'n' },
-            { desc = '󰐥 Exit', group = 'Action', action = 'quit', key = 'q' },
+            { desc = icons.ui.Package .. 'Plugins', group = '@property', action = 'Lazy', key = 'p' },
+            { desc = icons.ui.Gear .. 'Mason', group = '@property', action = 'Mason', key = 'm' },
+            { desc = icons.ui.Vim .. 'Config', group = '@property', action = 'e ~/.config/nvim/lua/installed.lua', key = 'e' },
+            { desc = icons.ui.Search .. 'Files', group = 'Label', action = 'Telescope find_files', key = 'f' },
+            { desc = icons.ui.Check .. 'Todo', group = 'Label', action = 'Telekasten goto_today', key = 'd' },
+            { desc = icons.ui.NewFile .. 'New File', group = 'Label', action = 'enew', key = 'n' },
+            { desc = icons.ui.Power .. 'Exit', group = 'Action', action = 'quit', key = 'q' },
         },
     },
 })

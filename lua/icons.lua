@@ -100,7 +100,7 @@ return {
         Power = '󰐥 ',
         Project = ' ',
         Rocket = ' ',
-        Search = '',
+        Search = ' ',
         SignIn = ' ',
         SignOut = ' ',
         Table = ' ',
