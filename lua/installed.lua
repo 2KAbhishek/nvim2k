@@ -96,6 +96,8 @@ return {
     {
         'nvim-neotest/neotest',
         lazy = true,
+        cmd = 'Neotest',
+        config = 'plugins.neotest',
         dependencies = {
             'antoinemadec/FixCursorHold.nvim',
             'olimorris/neotest-rspec',
