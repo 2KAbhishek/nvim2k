@@ -153,6 +153,7 @@ local mappings = {
             name = 'Packages',
             c = { '<cmd>Lazy check<cr>', 'Check' },
             d = { '<cmd>Lazy debug<cr>', 'Debug' },
+            h = { '<cmd>Lazy<cr>', 'Plugins' },
             i = { '<cmd>Lazy install<cr>', 'Install' },
             l = { '<cmd>Lazy log<cr>', 'Log' },
             m = { '<cmd>Mason<cr>', 'Mason' },
