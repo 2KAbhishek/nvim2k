@@ -245,6 +245,7 @@ local mappings = {
         s = { '<cmd>Telescope git_status<cr>', 'Changed files' },
         S = { '<cmd>Telescope git_stash<cr>', 'Stashed Changes' },
         u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
+        y = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
     },
     l = {
         name = icons.ui.Gear .. 'LSP',
@@ -377,10 +378,13 @@ local vopts = {
 }
 
 local vmappings = {
-    ['/'] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', 'Comment' },
-    s = { "<esc><cmd>'<,'>SnipRun<cr>", 'Run Code' },
+    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
+    g = {
+        name = icons.git.Octoface .. 'Git',
+        y = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
+    },
     r = {
-        name = 'Refactor',
+        name = icons.diagnostics.Hint .. 'Refactor',
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
         e = { "<esc><cmd>lua require('refactoring').refactor('Extract Function')<CR>", 'Extract Function' },
         f = {
@@ -391,7 +395,7 @@ local vmappings = {
         i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
     },
     l = {
-        name = 'LSP',
+        name = icons.ui.Gear .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',
     },
 }
