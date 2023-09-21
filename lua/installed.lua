@@ -179,7 +179,8 @@ return {
             'nvim-telescope/telescope-hop.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
         },
-        lazy = true,
+        cmd = 'Telescope',
+        config = 'plugins.telescope',
     },
     -- Tresitter
     {
