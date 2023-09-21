@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 local setup = {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
@@ -30,14 +32,14 @@ local setup = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
         -- ["<space>"] = "SPC",
-        ['<leader>'] = 'SPC',
+        ['<leader>'] = icons.ui.Rocket .. 'SPC',
         -- ["<cr>"] = "RET",
         -- ["<tab>"] = "TAB",
     },
     icons = {
-        breadcrumb = '»', -- symbol used in the command line area that shows your active key combo
-        separator = '➜', -- symbol used between a key and it's label
-        group = '+', -- symbol prepended to a group
+        breadcrumb = icons.ui.ArrowOpen, -- symbol used in the command line area that shows your active key combo
+        separator = icons.ui.Arrow, -- symbol used between a key and it's label
+        group = '', -- symbol prepended to a group
     },
     popup_mappings = {
         scroll_down = '<c-d>', -- binding to scroll down inside the popup
@@ -112,8 +114,10 @@ local a = vim.deepcopy(i)
 for k, v in pairs(a) do
     a[k] = v:gsub(' including.*', '')
 end
+
 local ic = vim.deepcopy(i)
 local ac = vim.deepcopy(a)
+
 for key, name in pairs({ n = 'Next', l = 'Last' }) do
     i[key] = vim.tbl_extend('force', { name = 'Inside ' .. name .. ' textobject' }, ic)
     a[key] = vim.tbl_extend('force', { name = 'Around ' .. name .. ' textobject' }, ac)
@@ -127,8 +131,6 @@ local opts = {
     noremap = true, -- use `noremap` when creating keymaps
     nowait = true, -- use `nowait` when creating keymaps
 }
-
-local icons = require('icons')
 
 local mappings = {
     ['e'] = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
@@ -166,7 +168,7 @@ local mappings = {
             x = { '<cmd>Lazy clean<cr>', 'Clean' },
         },
     },
-    d = {
+    b = {
         name = icons.ui.Bug .. 'Debug',
         b = { '<cmd>DapToggleBreakpoint<cr>', 'Breakpoint' },
         c = { '<cmd>DapContinue<cr>', 'Continue' },
@@ -179,7 +181,7 @@ local mappings = {
         u = { "<cmd>lua require'dapui'.toggle()<cr>", 'UI' },
         x = { '<cmd>DapTerminate<cr>', 'Exit' },
     },
-    D = {
+    d = {
         name = icons.ui.Database .. 'Database',
         b = { '<cmd>lua require("dbee").toggle()<cr>', 'DB Explorer' },
         j = { '<cmd>lua require("dbee").next()<cr>', 'DB Next' },
@@ -325,6 +327,13 @@ local mappings = {
         v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
     },
+    s = {
+        name = icons.ui.Test .. 'Tests',
+        f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Current File' },
+        o = { '<cmd>Neotest output-panel<cr>', 'Test Output' },
+        r = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
+        s = { '<cmd>Neotest summary<cr>', 'Test Summary' },
+    },
     t = {
         name = icons.ui.Terminal .. 'Toggle',
         c = { '<cmd>Twilight<cr>', 'Twilight' },
@@ -340,13 +349,6 @@ local mappings = {
         V = { '<cmd>ToggleTerm size=80 direction=vertical<cr>', 'Vertical Terminal' },
         w = { ':write | edit | TSBufEnable :qhighlight', 'Highlight' },
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
-    },
-    T = {
-        name = icons.ui.Test .. 'Tests',
-        f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Current File' },
-        o = { '<cmd>Neotest output-panel<cr>', 'Test Output' },
-        r = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
-        s = { '<cmd>Neotest summary<cr>', 'Test Summary' },
     },
     w = {
         name = icons.ui.Windows .. 'Window',
