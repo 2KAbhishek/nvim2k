@@ -6,7 +6,6 @@ local plugins = {
     'colorizer',
     'dressing',
     'indentline',
-    'wilder',
     'notify',
 
     -- Utilities

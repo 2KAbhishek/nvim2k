@@ -138,6 +138,10 @@ return {
         build = function()
             vim.cmd([[silent UpdateRemotePlugins]])
         end,
+        config = function()
+            require('plugins.wilder')
+        end,
+        event = 'BufWinEnter',
     },
     {
         'iamcco/markdown-preview.nvim',
