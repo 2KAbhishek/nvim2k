@@ -3,9 +3,6 @@ local plugins = {
     'lazy',
     'lsp-zero',
 
-    -- LSP Stuff
-    'efmls',
-
     -- Editing
     'autopairs',
     'refactoring',
