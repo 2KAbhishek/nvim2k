@@ -15,8 +15,10 @@ return {
         dependencies = {
             'folke/twilight.nvim',
         },
+        config = function()
+            require('plugins.zen-mode')
+        end,
         cmd = { 'ZenMode', 'Twilight' },
-        config = 'plugins.zen-mode',
     },
     {
         'glepnir/dashboard-nvim',
@@ -25,7 +27,9 @@ return {
                 return 'VimEnter'
             end
         end,
-        config = "require('plugins.dashboard')",
+        config = function()
+            require('plugins.dashboard')
+        end,
         cmd = 'Dashboard',
     },
     {
@@ -36,11 +40,13 @@ return {
     -- Utilities
     {
         'nvim-tree/nvim-tree.lua',
-        cmd = 'NvimTreeToggle',
-        config = 'plugins.nvim-tree',
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
+        config = function()
+            require('plugins.nvim-tree')
+        end,
+        cmd = 'NvimTreeToggle',
     },
     'stevearc/oil.nvim',
     'lukas-reineke/indent-blankline.nvim',
@@ -104,7 +110,9 @@ return {
         'nvim-neotest/neotest',
         lazy = true,
         cmd = 'Neotest',
-        config = 'plugins.neotest',
+        config = function()
+            require('plugins.neotest')
+        end,
         dependencies = {
             'antoinemadec/FixCursorHold.nvim',
             'olimorris/neotest-rspec',
@@ -187,7 +195,9 @@ return {
             'nvim-telescope/telescope-live-grep-args.nvim',
         },
         cmd = 'Telescope',
-        config = 'plugins.telescope',
+        config = function()
+            require('plugins.telescope')
+        end,
     },
     -- Tresitter
     {
