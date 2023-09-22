@@ -3,9 +3,6 @@ local plugins = {
     'lazy',
     'lsp-zero',
 
-    -- Appearance and UI
-    'indentline',
-
     -- Utilities
     'diffview',
     'tmux',
