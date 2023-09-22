@@ -40,7 +40,7 @@ return {
         config = function()
             require('plugins.colorizer')
         end,
-        ft = { 'html', 'css', 'sass', 'vim', 'lua', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+        ft = { 'html', 'css', 'sass', 'javascript', 'typescriptreact', 'javascriptreact' },
         cmd = 'ColorizerToggle',
     },
     {
@@ -113,7 +113,13 @@ return {
             end
         end,
     },
-    'numToStr/Comment.nvim',
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('plugins.comment')
+        end,
+        keys = { 'gcc', 'gbc' },
+    },
     'kylechui/nvim-surround',
     'windwp/nvim-autopairs',
     'ThePrimeagen/refactoring.nvim',
@@ -125,7 +131,7 @@ return {
         config = function()
             require('plugins.leap')
         end,
-        event = 'VeryLazy',
+        keys = { 's', 'S' },
     },
     {
         'aserowy/tmux.nvim',
