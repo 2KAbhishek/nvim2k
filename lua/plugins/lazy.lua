@@ -16,6 +16,7 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
 local plugins = require('installed')
 
 lazy.setup({
@@ -59,26 +60,26 @@ lazy.setup({
         -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
         border = 'rounded',
         icons = {
-            cmd = ' ',
-            config = '',
-            event = '',
-            ft = ' ',
-            init = ' ',
-            import = ' ',
-            keys = ' ',
-            lazy = '󰒲 ',
-            loaded = '●',
-            not_loaded = '○',
-            plugin = ' ',
-            runtime = ' ',
-            source = ' ',
-            start = '',
-            task = '✔ ',
+            cmd = icons.ui.Terminal,
+            config = icons.ui.Gear,
+            event = icons.ui.Electric,
+            ft = icons.documents.File,
+            init = icons.ui.Rocket,
+            import = icons.documents.Import,
+            keys = icons.ui.Keyboard,
+            lazy = icons.ui.Sleep,
+            loaded = icons.ui.CircleSmall,
+            not_loaded = icons.ui.CircleSmallEmpty,
+            plugin = icons.ui.Package,
+            runtime = icons.ui.Vim,
+            source = icons.ui.Code,
+            start = icons.ui.Play,
+            task = icons.ui.Check,
             list = {
-                '●',
-                '➜',
-                '★',
-                '‒',
+                icons.ui.CircleSmall,
+                icons.ui.Arrow,
+                icons.ui.Star,
+                icons.ui.Minus,
             },
         },
         -- leave nil, to automatically select a browser depending on your OS.
