@@ -8,7 +8,6 @@ local plugins = {
     'tmux',
     'dap',
     'leap',
-    'oil',
 
     -- LSP Stuff
     'copilot',
