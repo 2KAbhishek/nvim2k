@@ -4,7 +4,6 @@ local plugins = {
     'lsp-zero',
 
     -- Utilities
-    'tmux',
     'dap',
     'leap',
 

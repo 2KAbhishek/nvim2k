@@ -121,7 +121,13 @@ return {
     'ThePrimeagen/harpoon',
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
-    'aserowy/tmux.nvim',
+    {
+        'aserowy/tmux.nvim',
+        config = function()
+            require('plugins.tmux')
+        end,
+        event = 'VeryLazy',
+    },
     {
         'lewis6991/gitsigns.nvim',
         cmd = 'Gitsigns',
