@@ -6,7 +6,6 @@ local plugins = {
     'which-key',
 
     -- Appearance and UI
-    'bufferline',
     'colorizer',
     'dressing',
     'indentline',

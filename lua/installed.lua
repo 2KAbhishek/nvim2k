@@ -8,7 +8,11 @@ return {
         lazy = false,
     },
     'nvim-lualine/lualine.nvim',
-    'akinsho/bufferline.nvim',
+    {
+        'akinsho/bufferline.nvim',
+        config = LoadPlugin('bufferline'),
+        event = 'BufWinEnter',
+    },
     'rcarriga/nvim-notify',
     'stevearc/dressing.nvim',
     'norcalli/nvim-colorizer.lua',
