@@ -28,7 +28,6 @@ local plugins = {
     'mason',
     'lsp-zero',
     'copilot',
-    'cmp',
     'lsp-lines',
     'lsp-signature',
     'lspsaga',

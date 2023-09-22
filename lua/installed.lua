@@ -196,7 +196,7 @@ return {
     -- Completion
     {
         'hrsh7th/nvim-cmp',
-        event = { 'InsertEnter', 'BufRead' },
+        event = { 'InsertEnter' },
         dependencies = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
@@ -207,6 +207,9 @@ return {
             'L3MON4D3/LuaSnip',
             'rafamadriz/friendly-snippets',
         },
+        config = function()
+            require('plugins.cmp')
+        end,
     },
     {
         'zbirenbaum/copilot.lua',
