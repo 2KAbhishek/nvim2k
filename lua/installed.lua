@@ -106,7 +106,9 @@ return {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
         cmd = 'SnipRun',
-        config = 'plugins.sniprun',
+        config = function()
+            require('plugins.sniprun')
+        end,
     },
     {
         '2kabhishek/co-author.nvim',
@@ -239,7 +241,9 @@ return {
             'HiPhish/rainbow-delimiters.nvim',
         },
         lazy = true,
-        config = 'plugins.treesitter',
+        config = function()
+            require('plugins.treesitter')
+        end,
     },
 
     -- Language specific
