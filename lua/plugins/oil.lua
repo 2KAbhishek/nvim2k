@@ -8,9 +8,9 @@ oil.setup({
     -- See :help oil-columns
     columns = {
         'icon',
-        -- "permissions",
-        -- "size",
-        -- "mtime",
+        "permissions",
+        "size",
+        "mtime",
     },
     -- Window-local options to use for oil buffers
     win_options = {
