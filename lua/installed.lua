@@ -148,30 +148,31 @@ return {
     },
     {
         'iamcco/markdown-preview.nvim',
-        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
-        ft = { 'markdown' },
         build = function()
             vim.fn['mkdp#util#install']()
         end,
+        ft = { 'markdown' },
+        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
     },
     {
         'renerocksai/telekasten.nvim',
         dependencies = { 'renerocksai/calendar-vim' },
+        config = function()
+            require('plugins.telekasten')
+        end,
         cmd = 'Telekasten',
-        event = 'VeryLazy',
     },
     {
         'nvim-neotest/neotest',
-        lazy = true,
-        cmd = 'Neotest',
-        config = function()
-            require('plugins.neotest')
-        end,
         dependencies = {
             'antoinemadec/FixCursorHold.nvim',
             'olimorris/neotest-rspec',
             'haydenmeade/neotest-jest',
         },
+        config = function()
+            require('plugins.neotest')
+        end,
+        cmd = 'Neotest',
     },
     {
         'kndndrj/nvim-dbee',
