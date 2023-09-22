@@ -8,9 +8,11 @@ if not dap_ui_status_ok then
     return
 end
 
+local icons = require('icons')
+
 -- dapui.setup()
 dapui.setup({
-    icons = { expanded = '▾', collapsed = '▸' },
+    icons = { expanded = icons.ui.ArrowClosed, collapsed = icons.ui.ArrowOpen },
     mappings = {
         -- Use a table to apply multiple mappings
         expand = { '<CR>', '<2-LeftMouse>' },
@@ -64,8 +66,6 @@ dapui.setup({
         max_type_length = nil, -- Can be integer or nil.
     },
 })
-
-local icons = require('icons')
 
 vim.fn.sign_define('DapBreakpoint', { text = icons.ui.Bug, texthl = 'DiagnosticSignError', linehl = '', numhl = '' })
 
@@ -131,5 +131,5 @@ dap.configurations.ruby = {
 }
 
 vim.api.nvim_create_user_command('DapUIToggle', function()
-     require'dapui'.toggle()
+    require('dapui').toggle()
 end, {})
