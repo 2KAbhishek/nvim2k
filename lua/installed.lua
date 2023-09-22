@@ -7,7 +7,13 @@ return {
         end,
         lazy = false,
     },
-    'nvim-lualine/lualine.nvim',
+    {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('plugins.lualine')
+        end,
+        event = 'BufWinEnter',
+    },
     {
         'akinsho/bufferline.nvim',
         config = function()
