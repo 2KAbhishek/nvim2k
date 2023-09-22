@@ -373,5 +373,5 @@ return {
     -- Language specific
     { 'tpope/vim-rails', ft = 'ruby' },
     { 'weizheheng/ror.nvim', branch = 'main' },
-    { 'folke/neodev.nvim' },
+    { 'folke/neodev.nvim', ft = { 'lua', 'vim' } },
 }
