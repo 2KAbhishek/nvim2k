@@ -10,7 +10,6 @@ local plugins = {
     'spectre',
     'tabout',
     'spider',
-    'ror',
 }
 
 local errors = {}
