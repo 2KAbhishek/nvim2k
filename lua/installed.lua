@@ -128,7 +128,6 @@ return {
         keys = { 'cs', 'ds', 'ys' },
     },
     'windwp/nvim-autopairs',
-    'ThePrimeagen/refactoring.nvim',
     {
         'windwp/nvim-spectre',
         config = function()
@@ -357,6 +356,12 @@ return {
             'nvim-telescope/telescope-hop.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
             'ThePrimeagen/harpoon',
+            {
+                'ThePrimeagen/refactoring.nvim',
+                config = function()
+                    require('plugins.refactoring')
+                end,
+            },
         },
         cmd = 'Telescope',
         config = function()

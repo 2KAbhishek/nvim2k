@@ -6,7 +6,6 @@ local plugins = {
 
     -- Editing
     'autopairs',
-    'refactoring',
     'spider',
 }
 
