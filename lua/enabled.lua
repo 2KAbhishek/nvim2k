@@ -23,7 +23,6 @@ local plugins = {
     'dbee',
 
     -- LSP Stuff
-    'mason',
     'lsp-zero',
     'copilot',
     'lsp-lines',
