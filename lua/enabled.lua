@@ -7,7 +7,6 @@ local plugins = {
     'colorizer',
     'dressing',
     'indentline',
-    'notify',
 
     -- Utilities
     'diffview',
