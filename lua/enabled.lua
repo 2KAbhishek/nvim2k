@@ -1,6 +1,7 @@
 local plugins = {
     -- Plugin Manager, load first
     'lazy',
+    'lsp-zero',
 
     -- Appearance and UI
     'colorizer',
@@ -17,9 +18,7 @@ local plugins = {
     'dbee',
 
     -- LSP Stuff
-    'lsp-zero',
     'copilot',
-    'lualine',
     'efmls',
 
     -- Editing
