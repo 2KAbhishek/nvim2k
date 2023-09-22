@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 mason.setup({
     -- Where Mason should put its bin location in your PATH. Can be one of:
     -- - "prepend" (default, Mason's bin location is put first in PATH)
@@ -38,11 +40,11 @@ mason.setup({
 
         icons = {
             -- The list icon to use for installed packages.
-            package_installed = '',
+            package_installed = icons.ui.Gear,
             -- The list icon to use for packages that are installing, or queued for installation.
-            package_pending = '󰇚 ',
+            package_pending = icons.ui.Download,
             -- The list icon to use for packages that are not installed.
-            package_uninstalled = '',
+            package_uninstalled = icons.ui.Plus,
         },
 
         keymaps = {

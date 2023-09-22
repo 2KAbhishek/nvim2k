@@ -116,6 +116,7 @@ return {
         Pin = '車 ',
         Play = ' ',
         Plug = ' ',
+        Plus = ' ',
         Power = ' ',
         PowerlineRightRound = '',
         PowerlineLeftRound = '',
