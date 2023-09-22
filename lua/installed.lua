@@ -21,7 +21,13 @@ return {
         end,
         event = 'BufWinEnter',
     },
-    'rcarriga/nvim-notify',
+    {
+        'rcarriga/nvim-notify',
+        config = function()
+            require('plugins.notify')
+        end,
+        cmd = 'Notifications',
+    },
     'stevearc/dressing.nvim',
     'norcalli/nvim-colorizer.lua',
     {
