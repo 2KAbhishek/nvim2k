@@ -22,7 +22,7 @@ dashboard.setup({
         packages = { enable = true }, -- show how many plugins neovim loaded
         project = { enable = true, limit = 8 },
         mru = { limit = 8 },
-        footer = { 'Build, Ship, Innovate with nvim2k!' },
+        footer = { icons.ui.Rocket .. ' Build, Ship, Innovate with nvim2k! ' .. icons.ui.Vim },
         shortcut = {
             {
                 desc = icons.ui.Package .. 'Plugins',
