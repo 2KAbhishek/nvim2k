@@ -27,5 +27,3 @@ refactoring.setup({
     printf_statements = {},
     print_var_statements = {},
 })
-
-require('telescope').load_extension('refactoring')
