@@ -317,6 +317,10 @@ return {
         dependencies = {
             'zbirenbaum/copilot-cmp',
         },
+        config = function()
+            require('plugins.copilot')
+        end,
+        event = 'InsertEnter',
     },
     -- Telescope
     {

@@ -4,7 +4,6 @@ local plugins = {
     'lsp-zero',
 
     -- LSP Stuff
-    'copilot',
     'efmls',
 
     -- Editing
