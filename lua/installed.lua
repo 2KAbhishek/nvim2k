@@ -20,7 +20,10 @@ return {
     'norcalli/nvim-colorizer.lua',
     {
         'akinsho/toggleterm.nvim',
-        cmd = 'ToggleTerm',
+        config = function()
+            require('plugins.toggleterm')
+        end,
+        cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
     },
     {
         'folke/zen-mode.nvim',
