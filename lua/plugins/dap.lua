@@ -129,3 +129,7 @@ dap.configurations.ruby = {
         useBundler = true,
     },
 }
+
+vim.api.nvim_create_user_command('DapUIToggle', function()
+     require'dapui'.toggle()
+end, {})

@@ -281,7 +281,10 @@ return {
         dependencies = {
             'rcarriga/nvim-dap-ui',
         },
-        cmd = 'DapToggleBreakpoint',
+        config = function()
+            require('plugins.dap')
+        end,
+        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
     },
 
     -- Completion
