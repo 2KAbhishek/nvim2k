@@ -62,13 +62,14 @@ return {
     },
     {
         'glepnir/dashboard-nvim',
+        config = function()
+            require('plugins.dashboard')
+        end,
+        -- Only load when no arguments
         event = function()
             if vim.fn.argc() == 0 then
                 return 'VimEnter'
             end
-        end,
-        config = function()
-            require('plugins.dashboard')
         end,
         cmd = 'Dashboard',
     },
@@ -99,7 +100,19 @@ return {
         end,
         event = 'VeryLazy',
     },
-    'stevearc/oil.nvim',
+    {
+        'stevearc/oil.nvim',
+        config = function()
+            require('plugins.oil')
+        end,
+        cmd = 'Oil',
+        -- Only load when argument is a directory
+        event = function()
+            if vim.fn.isdirectory(vim.fn.expand('%')) == 1 then
+                return 'VimEnter'
+            end
+        end,
+    },
     'sindrets/diffview.nvim',
     'numToStr/Comment.nvim',
     'kylechui/nvim-surround',

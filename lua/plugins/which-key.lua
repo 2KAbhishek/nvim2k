@@ -198,6 +198,7 @@ local mappings = {
         },
         c = { '<cmd>Telescope git_bcommits<cr>', 'File Commits' },
         C = { '<cmd>Telescope git_commits<cr>', 'Git Commits' },
+        e = { '<cmd>Oil<cr>', 'Dir Editor' },
         f = { '<cmd>Telescope git_files find_command=fd,--hidden<cr>', 'Find files' },
         F = { '<cmd>Telescope find_files find_command=fd,--hidden,-I<cr>', 'Find All Files' },
         g = { '<cmd>Telescope live_grep<cr>', 'Find Text' },
