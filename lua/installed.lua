@@ -1,6 +1,12 @@
 return {
     -- Appearance
-    'navarasu/onedark.nvim',
+    {
+        'navarasu/onedark.nvim',
+        config = function()
+            require('plugins.onedark')
+        end,
+        lazy = false,
+    },
     'nvim-lualine/lualine.nvim',
     'akinsho/bufferline.nvim',
     'rcarriga/nvim-notify',
