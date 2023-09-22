@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 bufferline.setup({
     options = {
         mode = 'buffers', -- set to "tabs" to only show tabpages instead
@@ -15,11 +17,11 @@ bufferline.setup({
         -- and so changing this is NOT recommended, this is intended
         -- as an escape hatch for people who cannot bear it for whatever reason
         -- indicator_icon = '▎',
-        buffer_close_icon = '',
-        modified_icon = '●',
-        close_icon = '',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
+        buffer_close_icon = icons.ui.Close,
+        modified_icon = icons.ui.CircleSmall,
+        close_icon = icons.ui.Close,
+        left_trunc_marker = icons.ui.ArrowLeft,
+        right_trunc_marker = icons.ui.ArrowRight,
         --- name_formatter can be used to change the buffer's label in the bufferline.
         --- Please note some names can/will break the
         --- bufferline so use this at your discretion knowing that it has

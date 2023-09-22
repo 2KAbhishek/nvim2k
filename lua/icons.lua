@@ -71,7 +71,9 @@ return {
     ui = {
         Arrow = '➜ ',
         ArrowClosed = ' ',
+        ArrowLeft = ' ',
         ArrowOpen = ' ',
+        ArrowRight = ' ',
         Bluetooth = ' ',
         Bookmark = ' ',
         Bug = ' ',
@@ -83,7 +85,7 @@ return {
         CircleSmall = '● ',
         CircleSmallEmpty = '○ ',
         Clipboard = ' ',
-        Close = ' ',
+        Close = ' ',
         Code = ' ',
         Collection = ' ',
         Color = ' ',
