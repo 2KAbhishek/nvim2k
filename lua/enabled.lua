@@ -16,10 +16,6 @@ local plugins = {
     'notify',
 
     -- Utilities
-    'neogit',
-    'gitsigns',
-    'octo',
-    'gitlinker',
     'diffview',
     'tmux',
     'dap',

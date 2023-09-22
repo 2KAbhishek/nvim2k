@@ -50,7 +50,6 @@ return {
     },
     'stevearc/oil.nvim',
     'lukas-reineke/indent-blankline.nvim',
-    'lewis6991/gitsigns.nvim',
     'sindrets/diffview.nvim',
     'numToStr/Comment.nvim',
     'kylechui/nvim-surround',
@@ -61,9 +60,36 @@ return {
     'abecodes/tabout.nvim',
     'ggandor/leap.nvim',
     'aserowy/tmux.nvim',
-    { 'NeogitOrg/neogit', cmd = 'Neogit', config = 'plugins.neogit' },
-    'ruifm/gitlinker.nvim',
-    'pwntester/octo.nvim',
+    {
+        'lewis6991/gitsigns.nvim',
+        cmd = 'Gitsigns',
+        event = 'BufWinEnter',
+        config = function()
+            require('plugins.gitsigns')
+        end,
+    },
+    {
+        'NeogitOrg/neogit',
+        cmd = 'Neogit',
+        config = function()
+            require('plugins.neogit')
+        end,
+    },
+    {
+        'pwntester/octo.nvim',
+        cmd = 'Octo',
+        config = function()
+            require('plugins.octo')
+        end,
+        opts = true,
+    },
+    {
+        'ruifm/gitlinker.nvim',
+        config = function()
+            require('plugins.gitlinker')
+        end,
+        keys = '<leader>gy',
+    },
     {
         'chrisgrieser/nvim-spider',
         lazy = true,
