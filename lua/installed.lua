@@ -29,7 +29,15 @@ return {
         cmd = 'Notifications',
     },
     'stevearc/dressing.nvim',
-    'norcalli/nvim-colorizer.lua',
+    {
+    {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('plugins.colorizer')
+        end,
+        ft = { 'html', 'css', 'sass', 'vim', 'lua', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+        cmd = 'ColorizerToggle',
+    },
     {
         'akinsho/toggleterm.nvim',
         config = function()
