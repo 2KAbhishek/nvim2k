@@ -48,7 +48,7 @@ return {
         'm4xshen/hardtime.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
         config = function()
-            require('hardtime').setup({enabled = true})
+            require('hardtime').setup({ enabled = true })
         end,
         cmd = 'Hardtime',
     },
@@ -183,12 +183,17 @@ return {
         event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
             'Maan2003/lsp_lines.nvim',
             'glepnir/lspsaga.nvim',
         },
-        lazy = true,
+    },
+    {
+        'williamboman/mason.nvim',
+        config = function()
+            require('plugins.mason')
+        end,
+        cmd = 'Mason',
     },
     {
         'creativenull/efmls-configs-nvim',
