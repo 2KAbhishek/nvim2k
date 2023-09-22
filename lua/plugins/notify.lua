@@ -3,15 +3,17 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 notify.setup({
     background_colour = '#000',
     fps = 30,
     icons = {
-        DEBUG = '',
-        ERROR = '',
-        INFO = '',
-        TRACE = '✎',
-        WARN = '',
+        DEBUG = icons.ui.Bug,
+        ERROR = icons.diagnostics.Error,
+        INFO = icons.diagnostics.Information,
+        TRACE = icons.ui.Bookmark,
+        WARN = icons.diagnostics.Warning,
     },
     level = 2,
     minimum_width = 50,
