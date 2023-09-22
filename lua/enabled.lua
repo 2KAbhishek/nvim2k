@@ -1,6 +1,7 @@
 local plugins = {
     -- Plugin Manager, load first
     'lazy',
+    'neodev',
     'lsp-zero',
 
     -- Editing
@@ -10,7 +11,6 @@ local plugins = {
     'tabout',
     'spider',
     'ror',
-    'neodev',
 }
 
 local errors = {}
