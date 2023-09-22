@@ -8,7 +8,6 @@ local plugins = {
     'autopairs',
     'refactoring',
     'spectre',
-    'tabout',
     'spider',
 }
 
