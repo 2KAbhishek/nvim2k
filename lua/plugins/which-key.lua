@@ -183,7 +183,7 @@ local mappings = {
     },
     d = {
         name = icons.ui.Database .. 'Database',
-        b = { '<cmd>lua require("dbee").toggle()<cr>', 'DB Explorer' },
+        b = { '<cmd>DBToggle<cr>', 'DB Explorer' },
         j = { '<cmd>lua require("dbee").next()<cr>', 'DB Next' },
         k = { '<cmd>lua require("dbee").prev()<cr>', 'DB Prev' },
         s = { '<cmd>lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', 'DB to CSV' },
@@ -337,7 +337,7 @@ local mappings = {
     },
     t = {
         name = icons.ui.Terminal .. 'Toggle',
-        c = { '<cmd>Twilight<cr>', 'Twilight' },
+        c = { '<cmd>ColorizerToggle<cr>', 'Colorize' },
         d = { '<cmd>Dashboard<cr>', 'Dashboard' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
@@ -351,6 +351,7 @@ local mappings = {
         V = { '<cmd>ToggleTerm size=80 direction=vertical<cr>', 'Vertical Terminal' },
         w = { ':write | edit | TSBufEnable :qhighlight', 'Highlight' },
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
+        Z = { '<cmd>Twilight<cr>', 'Twilight' },
     },
     w = {
         name = icons.ui.Windows .. 'Window',
