@@ -120,7 +120,13 @@ return {
     'windwp/nvim-spectre',
     'ThePrimeagen/harpoon',
     'abecodes/tabout.nvim',
-    'ggandor/leap.nvim',
+    {
+        'ggandor/leap.nvim',
+        config = function()
+            require('plugins.leap')
+        end,
+        event = 'VeryLazy',
+    },
     {
         'aserowy/tmux.nvim',
         config = function()
