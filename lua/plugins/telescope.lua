@@ -6,6 +6,7 @@ end
 local actions = require('telescope.actions')
 local multi_open_mappings = require('plugins.telescope-multiopen')
 local lga_actions = require('telescope-live-grep-args.actions')
+local icons = require('icons')
 
 telescope.setup({
     defaults = {
@@ -43,8 +44,8 @@ telescope.setup({
             },
             -- other layout configuration here
         },
-        prompt_prefix = ' ',
-        selection_caret = ' ',
+        prompt_prefix = icons.ui.Telescope,
+        selection_caret = icons.ui.Play,
         path_display = { 'smart' },
 
         mappings = {
@@ -234,4 +235,3 @@ require('telescope').load_extension('notify')
 require('telescope').load_extension('refactoring')
 require('telescope').load_extension('harpoon')
 require('telescope').load_extension('live_grep_args')
-
