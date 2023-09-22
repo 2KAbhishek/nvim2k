@@ -4,7 +4,6 @@ local plugins = {
     'lsp-zero',
 
     -- Appearance and UI
-    'dressing',
     'indentline',
 
     -- Utilities

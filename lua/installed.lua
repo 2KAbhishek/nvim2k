@@ -28,8 +28,13 @@ return {
         end,
         cmd = 'Notifications',
     },
-    'stevearc/dressing.nvim',
     {
+        'stevearc/dressing.nvim',
+        config = function()
+            require('plugins.dressing')
+        end,
+        event = 'VeryLazy',
+    },
     {
         'norcalli/nvim-colorizer.lua',
         config = function()
