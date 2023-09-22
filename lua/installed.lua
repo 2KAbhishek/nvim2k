@@ -210,13 +210,14 @@ return {
         dependencies = {
             'MunifTanjim/nui.nvim',
         },
-        event = 'VeryLazy',
         build = function()
-            -- Install tries to automatically detect the install method.
-            -- if it fails, try calling it with one of these parameters:
             --    "curl", "wget", "bitsadmin", "go"
             require('dbee').install('curl')
         end,
+        config = function()
+            require('plugins.dbee')
+        end,
+        cmd = 'DBToggle',
     },
 
     -- LSP
@@ -262,7 +263,6 @@ return {
     -- Completion
     {
         'hrsh7th/nvim-cmp',
-        event = { 'InsertEnter' },
         dependencies = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
@@ -277,6 +277,7 @@ return {
         config = function()
             require('plugins.cmp')
         end,
+        event = 'InsertEnter',
     },
     {
         'zbirenbaum/copilot.lua',
