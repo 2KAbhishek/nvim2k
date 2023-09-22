@@ -127,7 +127,13 @@ return {
         end,
         keys = { 'cs', 'ds', 'ys' },
     },
-    'windwp/nvim-autopairs',
+    {
+        'windwp/nvim-autopairs',
+        config = function()
+            require('plugins.autopairs')
+        end,
+        event = 'InsertEnter',
+    },
     {
         'windwp/nvim-spectre',
         config = function()

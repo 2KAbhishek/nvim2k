@@ -5,7 +5,6 @@ local plugins = {
     'lsp-zero',
 
     -- Editing
-    'autopairs',
     'spider',
 }
 
