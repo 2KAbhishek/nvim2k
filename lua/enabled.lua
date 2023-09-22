@@ -28,7 +28,6 @@ local plugins = {
     'lsp-zero',
     'copilot',
     'lsp-lines',
-    'lsp-signature',
     'lspsaga',
     'lualine',
     'efmls',
