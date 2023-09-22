@@ -194,7 +194,10 @@ return {
     },
     {
         'chrisgrieser/nvim-spider',
-        lazy = true,
+        config = function()
+            require('plugins.spider')
+        end,
+        event = 'VeryLazy',
     },
     {
         'mbbill/undotree',

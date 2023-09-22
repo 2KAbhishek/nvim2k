@@ -3,9 +3,6 @@ local plugins = {
     'lazy',
     'neodev',
     'lsp-zero',
-
-    -- Editing
-    'spider',
 }
 
 local errors = {}
