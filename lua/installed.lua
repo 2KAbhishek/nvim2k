@@ -131,7 +131,13 @@ return {
     'ThePrimeagen/refactoring.nvim',
     'windwp/nvim-spectre',
     'ThePrimeagen/harpoon',
-    'abecodes/tabout.nvim',
+    {
+        'abecodes/tabout.nvim',
+        config = function()
+            require('plugins.tabout')
+        end,
+        event = 'VeryLazy',
+    },
     {
         'ggandor/leap.nvim',
         config = function()
