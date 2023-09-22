@@ -338,6 +338,7 @@ local mappings = {
     t = {
         name = icons.ui.Terminal .. 'Toggle',
         c = { '<cmd>Twilight<cr>', 'Twilight' },
+        d = { '<cmd>Dashboard<cr>', 'Dashboard' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
         n = { '<cmd>NodeToggle<cr>', 'Node' },
