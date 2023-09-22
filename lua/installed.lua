@@ -20,7 +20,13 @@ return {
     },
     {
         'glepnir/dashboard-nvim',
-        event = 'VimEnter',
+        event = function()
+            if vim.fn.argc() == 0 then
+                return 'VimEnter'
+            end
+        end,
+        config = "require('plugins.dashboard')",
+        cmd = 'Dashboard',
     },
     {
         'm4xshen/hardtime.nvim',
