@@ -3,17 +3,19 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 octo.setup({
     use_local_fs = false, -- use local files on right side of reviews
     enable_builtin = true, -- shows a list of builtin actions when no action is provided
     default_remote = { 'upstream', 'origin' }, -- order to try remotes
     ssh_aliases = {}, -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`
-    reaction_viewer_hint_icon = '', -- marker for user reactions
-    user_icon = ' ', -- user icon
-    timeline_marker = '', -- timeline marker
+    reaction_viewer_hint_icon = icons.ui.CircleSmall, -- marker for user reactions
+    user_icon = icons.ui.Person, -- user icon
+    timeline_marker = icons.ui.ArrowOpen, -- timeline marker
     timeline_indent = '2', -- timeline indentation
-    right_bubble_delimiter = '', -- bubble delimiter
-    left_bubble_delimiter = '', -- bubble delimiter
+    right_bubble_delimiter = icons.ui.PowerlineRightRound, -- bubble delimiter
+    left_bubble_delimiter = icons.ui.PowerlineLeftRound, -- bubble delimiter
     github_hostname = '', -- GitHub Enterprise host
     snippet_context_lines = 4, -- number or lines around commented lines
     gh_env = {}, -- extra environment variables to pass on to GitHub CLI, can be a table or function returning a table

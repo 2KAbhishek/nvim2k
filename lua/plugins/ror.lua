@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 ror.setup({
     test = {
         message = {
@@ -22,7 +24,7 @@ ror.setup({
             -- Otherwise, the progress and the result will be a different notification window
             timeout = false,
         },
-        pass_icon = require('icons').ui.Check,
-        fail_icon = require('icons').ui.Close,
+        pass_icon = icons.ui.Check,
+        fail_icon = icons.ui.Close,
     },
 })
