@@ -9,7 +9,6 @@ local plugins = {
     'colorizer',
     'dressing',
     'indentline',
-    'satellite',
     'wilder',
     'notify',
 
