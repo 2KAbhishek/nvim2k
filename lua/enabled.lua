@@ -19,8 +19,6 @@ local plugins = {
     -- LSP Stuff
     'lsp-zero',
     'copilot',
-    'lsp-lines',
-    'lspsaga',
     'lualine',
     'efmls',
 

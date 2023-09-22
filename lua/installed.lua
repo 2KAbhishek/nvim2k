@@ -191,13 +191,23 @@ return {
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
-        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'neovim/nvim-lspconfig',
             'williamboman/mason-lspconfig.nvim',
-            'Maan2003/lsp_lines.nvim',
-            'glepnir/lspsaga.nvim',
+            {
+                'Maan2003/lsp_lines.nvim',
+                config = function()
+                    require('plugins.lsp-lines')
+                end,
+            },
+            {
+                'glepnir/lspsaga.nvim',
+                config = function()
+                    require('plugins.lspsaga')
+                end,
+            },
         },
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'williamboman/mason.nvim',

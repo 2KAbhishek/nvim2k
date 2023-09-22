@@ -15,3 +15,10 @@ lsp.ensure_installed({
 lsp.nvim_workspace()
 
 lsp.setup()
+
+require('mason-lspconfig').setup({
+    ensure_installed = {},
+    handlers = {
+        lsp.default_setup,
+    },
+})
