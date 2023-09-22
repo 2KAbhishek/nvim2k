@@ -5,6 +5,8 @@ end
 
 local os = require('os')
 local notes_dir = vim.fn.expand(os.getenv('NOTES_DIR'))
+local entry_dir = vim.fn.expand(os.getenv('ENTRY_DIR'))
+local creative_dir = vim.fn.expand(os.getenv('CREATIVE_DIR'))
 if not notes_dir then
     notes_dir = vim.fn.expand('~/Projects/GitHub/Notes/worklog/')
 end
@@ -44,9 +46,9 @@ telekasten.setup({
     -- "uuid" - Use uuid
     -- "uuid-title" - Prefix title by uuid
     -- "title-uuid" - Suffix title with uuid
-    new_note_filename = 'uuid-title',
+    new_note_filename = 'title-uuid',
     -- file uuid type ("rand" or input for os.date()")
-    uuid_type = '%Y-%m-%d-%H-%M',
+    uuid_type = '%Y-%m-%d',
     -- UUID separator
     uuid_sep = '-',
 
@@ -68,7 +70,7 @@ telekasten.setup({
 
     -- template for newly created weekly notes (goto_thisweek)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly = notes_dir .. '/emplates/weekly.md',
+    template_new_weekly = notes_dir .. 'templates/weekly.md',
 
     -- image link style
     -- wiki:     ![[image name]]
@@ -142,11 +144,15 @@ telekasten.setup({
     rename_update_links = true,
 
     vaults = {
-        vault2 = {
-            -- alternate configuration for vault2 here. Missing values are defaulted to
-            -- default values from telekasten.
-            -- e.g.
-            -- home = "/home/user/vaults/personal",
+        entry = {
+            home = entry_dir,
+            dailies = year .. '/' .. month,
+        },
+        creative = {
+            home = creative_dir .. year .. '/' .. month,
+            new_note_filename = 'title-uuid',
+            uuid_type = '%Y-%m-%d-%H-%M',
+            template_new_note = creative_dir .. 'template.md',
         },
     },
 

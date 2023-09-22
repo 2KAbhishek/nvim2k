@@ -298,7 +298,7 @@ local mappings = {
         T = { '<cmd>Telescope live_grep cwd=$NOTES_DIR <cr>', 'Search Notes' },
         n = { '<cmd>Telekasten new_note<cr>', 'New Note' },
         N = { "<cmd>execute 'e '.strftime(\"%F\").'.md' <cr>", 'New Note Here' },
-        o = { '<cmd>vsplit $NOTES_DIR<cr>', 'Open Notes' },
+        o = { '<cmd>Telekasten switch_vault<cr>', 'Open Vault' },
         p = { '<cmd>Telekasten<cr>', 'Telekasten' },
         s = {
             '<cmd>silent execute "!(cd $NOTES_DIR && cmtr -b &) > /dev/null" | lua require("notify")("Notes Commited")<cr>',
