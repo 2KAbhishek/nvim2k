@@ -5,7 +5,6 @@ local plugins = {
 
     -- Utilities
     'dap',
-    'leap',
 
     -- LSP Stuff
     'copilot',
