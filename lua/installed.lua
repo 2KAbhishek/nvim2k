@@ -22,6 +22,13 @@ return {
         event = 'BufWinEnter',
     },
     {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('plugins.indentline')
+        end,
+        event = 'VeryLazy',
+    },
+    {
         'rcarriga/nvim-notify',
         config = function()
             require('plugins.notify')
@@ -44,23 +51,6 @@ return {
         cmd = 'ColorizerToggle',
     },
     {
-        'akinsho/toggleterm.nvim',
-        config = function()
-            require('plugins.toggleterm')
-        end,
-        cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
-    },
-    {
-        'folke/zen-mode.nvim',
-        dependencies = {
-            'folke/twilight.nvim',
-        },
-        config = function()
-            require('plugins.zen-mode')
-        end,
-        cmd = { 'ZenMode', 'Twilight' },
-    },
-    {
         'glepnir/dashboard-nvim',
         config = function()
             require('plugins.dashboard')
@@ -74,155 +64,6 @@ return {
         cmd = 'Dashboard',
     },
     {
-        'm4xshen/hardtime.nvim',
-        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-        config = function()
-            require('hardtime').setup({ enabled = true })
-        end,
-        cmd = 'Hardtime',
-    },
-
-    -- Utilities
-    {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = function()
-            require('plugins.nvim-tree')
-        end,
-        cmd = 'NvimTreeToggle',
-    },
-    {
-        'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require('plugins.indentline')
-        end,
-        event = 'VeryLazy',
-    },
-    {
-        'stevearc/oil.nvim',
-        config = function()
-            require('plugins.oil')
-        end,
-        cmd = 'Oil',
-        -- Only load when argument is a directory
-        event = function()
-            if vim.fn.isdirectory(vim.fn.expand('%')) == 1 then
-                return 'VimEnter'
-            end
-        end,
-    },
-    {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('plugins.comment')
-        end,
-        keys = { 'gcc', 'gbc' },
-    },
-    {
-        'kylechui/nvim-surround',
-        config = function()
-            require('plugins.surround')
-        end,
-        keys = { 'cs', 'ds', 'ys' },
-    },
-    {
-        'windwp/nvim-autopairs',
-        config = function()
-            require('plugins.autopairs')
-        end,
-        event = 'InsertEnter',
-    },
-    {
-        'windwp/nvim-spectre',
-        config = function()
-            require('plugins.spectre')
-        end,
-        cmd = 'Spectre',
-    },
-    {
-        'abecodes/tabout.nvim',
-        config = function()
-            require('plugins.tabout')
-        end,
-        event = 'VeryLazy',
-    },
-    {
-        'ggandor/leap.nvim',
-        config = function()
-            require('plugins.leap')
-        end,
-        keys = { 's', 'S' },
-    },
-    {
-        'aserowy/tmux.nvim',
-        config = function()
-            require('plugins.tmux')
-        end,
-        event = 'VeryLazy',
-    },
-    {
-        'lewis6991/gitsigns.nvim',
-        cmd = 'Gitsigns',
-        event = 'BufWinEnter',
-        config = function()
-            require('plugins.gitsigns')
-        end,
-    },
-    {
-        'NeogitOrg/neogit',
-        cmd = 'Neogit',
-        config = function()
-            require('plugins.neogit')
-        end,
-    },
-    {
-        'pwntester/octo.nvim',
-        cmd = 'Octo',
-        config = function()
-            require('plugins.octo')
-        end,
-        opts = true,
-    },
-    {
-        'ruifm/gitlinker.nvim',
-        config = function()
-            require('plugins.gitlinker')
-        end,
-        keys = '<leader>gy',
-    },
-    {
-        'chrisgrieser/nvim-spider',
-        config = function()
-            require('plugins.spider')
-        end,
-        event = 'VeryLazy',
-    },
-    {
-        'mbbill/undotree',
-        cmd = 'UndotreeToggle',
-    },
-    {
-        'folke/which-key.nvim',
-        config = function()
-            require('plugins.which-key')
-        end,
-        event = 'BufWinEnter',
-    },
-    {
-        'michaelb/sniprun',
-        build = 'bash ./install.sh',
-        cmd = 'SnipRun',
-        config = function()
-            require('plugins.sniprun')
-        end,
-    },
-    {
-        '2kabhishek/co-author.nvim',
-        cmd = 'GitCoAuthors',
-    },
-    {
         'gelguy/wilder.nvim',
         build = function()
             vim.cmd([[silent UpdateRemotePlugins]])
@@ -233,46 +74,33 @@ return {
         event = 'BufWinEnter',
     },
     {
-        'iamcco/markdown-preview.nvim',
-        build = function()
-            vim.fn['mkdp#util#install']()
-        end,
-        ft = { 'markdown' },
-        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
-    },
-    {
-        'renerocksai/telekasten.nvim',
-        dependencies = { 'renerocksai/calendar-vim' },
-        config = function()
-            require('plugins.telekasten')
-        end,
-        cmd = 'Telekasten',
-    },
-    {
-        'nvim-neotest/neotest',
+        'folke/zen-mode.nvim',
         dependencies = {
-            'antoinemadec/FixCursorHold.nvim',
-            'olimorris/neotest-rspec',
-            'haydenmeade/neotest-jest',
+            'folke/twilight.nvim',
         },
         config = function()
-            require('plugins.neotest')
+            require('plugins.zen-mode')
         end,
-        cmd = 'Neotest',
+        cmd = { 'ZenMode', 'Twilight' },
     },
+
+    -- Tresitter
     {
-        'kndndrj/nvim-dbee',
+        'nvim-treesitter/nvim-treesitter',
+        event = 'BufWinEnter',
+        build = ':TSUpdate',
         dependencies = {
-            'MunifTanjim/nui.nvim',
+            'nvim-treesitter/nvim-treesitter-refactor',
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'RRethy/nvim-treesitter-endwise',
+            'RRethy/nvim-treesitter-textsubjects',
+            'windwp/nvim-ts-autotag',
+            'HiPhish/rainbow-delimiters.nvim',
         },
-        build = function()
-            --    "curl", "wget", "bitsadmin", "go"
-            require('dbee').install('curl')
-        end,
+        lazy = true,
         config = function()
-            require('plugins.dbee')
+            require('plugins.treesitter')
         end,
-        cmd = 'DBToggle',
     },
 
     -- LSP
@@ -351,6 +179,43 @@ return {
         end,
         event = 'InsertEnter',
     },
+
+    -- Git
+    {
+        '2kabhishek/co-author.nvim',
+        cmd = 'GitCoAuthors',
+    },
+    {
+        'ruifm/gitlinker.nvim',
+        config = function()
+            require('plugins.gitlinker')
+        end,
+        keys = '<leader>gy',
+    },
+    {
+        'lewis6991/gitsigns.nvim',
+        cmd = 'Gitsigns',
+        event = 'BufWinEnter',
+        config = function()
+            require('plugins.gitsigns')
+        end,
+    },
+    {
+        'NeogitOrg/neogit',
+        cmd = 'Neogit',
+        config = function()
+            require('plugins.neogit')
+        end,
+    },
+    {
+        'pwntester/octo.nvim',
+        cmd = 'Octo',
+        config = function()
+            require('plugins.octo')
+        end,
+        opts = true,
+    },
+
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -377,23 +242,162 @@ return {
             require('plugins.telescope')
         end,
     },
-    -- Tresitter
+
+    -- Utilities
     {
-        'nvim-treesitter/nvim-treesitter',
-        event = 'BufWinEnter',
-        build = ':TSUpdate',
+        'nvim-tree/nvim-tree.lua',
         dependencies = {
-            'nvim-treesitter/nvim-treesitter-refactor',
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            'RRethy/nvim-treesitter-endwise',
-            'RRethy/nvim-treesitter-textsubjects',
-            'windwp/nvim-ts-autotag',
-            'HiPhish/rainbow-delimiters.nvim',
+            'nvim-tree/nvim-web-devicons',
         },
-        lazy = true,
         config = function()
-            require('plugins.treesitter')
+            require('plugins.nvim-tree')
         end,
+        cmd = 'NvimTreeToggle',
+    },
+    {
+        'stevearc/oil.nvim',
+        config = function()
+            require('plugins.oil')
+        end,
+        cmd = 'Oil',
+        -- Only load when argument is a directory
+        event = function()
+            if vim.fn.isdirectory(vim.fn.expand('%')) == 1 then
+                return 'VimEnter'
+            end
+        end,
+    },
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('plugins.comment')
+        end,
+        keys = { 'gcc', 'gbc' },
+    },
+    {
+        'kylechui/nvim-surround',
+        config = function()
+            require('plugins.surround')
+        end,
+        keys = { 'cs', 'ds', 'ys' },
+    },
+    {
+        'windwp/nvim-autopairs',
+        config = function()
+            require('plugins.autopairs')
+        end,
+        event = 'InsertEnter',
+    },
+    {
+        'windwp/nvim-spectre',
+        config = function()
+            require('plugins.spectre')
+        end,
+        cmd = 'Spectre',
+    },
+    {
+        'abecodes/tabout.nvim',
+        config = function()
+            require('plugins.tabout')
+        end,
+        event = 'VeryLazy',
+    },
+    {
+        'ggandor/leap.nvim',
+        config = function()
+            require('plugins.leap')
+        end,
+        keys = { 's', 'S' },
+    },
+    {
+        'aserowy/tmux.nvim',
+        config = function()
+            require('plugins.tmux')
+        end,
+        event = 'VeryLazy',
+    },
+    {
+        'm4xshen/hardtime.nvim',
+        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('hardtime').setup({ enabled = true })
+        end,
+        cmd = 'Hardtime',
+    },
+    {
+        'chrisgrieser/nvim-spider',
+        config = function()
+            require('plugins.spider')
+        end,
+        event = 'VeryLazy',
+    },
+    {
+        'mbbill/undotree',
+        cmd = 'UndotreeToggle',
+    },
+    {
+        'folke/which-key.nvim',
+        config = function()
+            require('plugins.which-key')
+        end,
+        event = 'BufWinEnter',
+    },
+    {
+        'michaelb/sniprun',
+        build = 'bash ./install.sh',
+        cmd = 'SnipRun',
+        config = function()
+            require('plugins.sniprun')
+        end,
+    },
+    {
+        'iamcco/markdown-preview.nvim',
+        build = function()
+            vim.fn['mkdp#util#install']()
+        end,
+        ft = { 'markdown' },
+        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
+    },
+    {
+        'renerocksai/telekasten.nvim',
+        dependencies = { 'renerocksai/calendar-vim' },
+        config = function()
+            require('plugins.telekasten')
+        end,
+        cmd = 'Telekasten',
+    },
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'antoinemadec/FixCursorHold.nvim',
+            'olimorris/neotest-rspec',
+            'haydenmeade/neotest-jest',
+        },
+        config = function()
+            require('plugins.neotest')
+        end,
+        cmd = 'Neotest',
+    },
+    {
+        'kndndrj/nvim-dbee',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+        },
+        build = function()
+            --    "curl", "wget", "bitsadmin", "go"
+            require('dbee').install('curl')
+        end,
+        config = function()
+            require('plugins.dbee')
+        end,
+        cmd = 'DBToggle',
+    },
+    {
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require('plugins.toggleterm')
+        end,
+        cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
     },
 
     -- Language specific
