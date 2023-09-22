@@ -92,8 +92,14 @@ return {
         end,
         cmd = 'NvimTreeToggle',
     },
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('plugins.indentline')
+        end,
+        event = 'VeryLazy',
+    },
     'stevearc/oil.nvim',
-    'lukas-reineke/indent-blankline.nvim',
     'sindrets/diffview.nvim',
     'numToStr/Comment.nvim',
     'kylechui/nvim-surround',
