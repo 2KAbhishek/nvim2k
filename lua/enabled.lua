@@ -7,15 +7,12 @@ local plugins = {
 
     -- Appearance and UI
     'onedark',
-    'dashboard',
     'bufferline',
     'colorizer',
     'dressing',
     'indentline',
     'satellite',
-    'twilight',
     'wilder',
-    'zen-mode',
     'notify',
 
     -- Utilities
@@ -27,10 +24,7 @@ local plugins = {
     'tmux',
     'dap',
     'leap',
-    'neotest',
-    'nvim-tree',
     'sniprun',
-    'telescope',
     'toggleterm',
     'treesitter-context',
     'treesitter',
