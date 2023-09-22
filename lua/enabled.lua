@@ -9,7 +9,6 @@ local plugins = {
     'dap',
     'leap',
     'oil',
-    'dbee',
 
     -- LSP Stuff
     'copilot',
