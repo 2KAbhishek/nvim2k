@@ -22,7 +22,7 @@ ror.setup({
             -- Otherwise, the progress and the result will be a different notification window
             timeout = false,
         },
-        pass_icon = '✅',
-        fail_icon = '❌',
+        pass_icon = require('icons').ui.Check,
+        fail_icon = require('icons').ui.Close,
     },
 })
