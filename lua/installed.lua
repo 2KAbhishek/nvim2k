@@ -120,7 +120,13 @@ return {
         end,
         keys = { 'gcc', 'gbc' },
     },
-    'kylechui/nvim-surround',
+    {
+        'kylechui/nvim-surround',
+        config = function()
+            require('plugins.surround')
+        end,
+        keys = { 'cs', 'ds', 'ys' },
+    },
     'windwp/nvim-autopairs',
     'ThePrimeagen/refactoring.nvim',
     'windwp/nvim-spectre',

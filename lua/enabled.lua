@@ -7,7 +7,6 @@ local plugins = {
     'autopairs',
     'refactoring',
     'spectre',
-    'surround',
     'tabout',
     'spider',
     'ror',
