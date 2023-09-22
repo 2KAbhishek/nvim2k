@@ -3,14 +3,6 @@ if not status_ok then
     return
 end
 
-local get_input = function(prompt)
-    local ok, result = pcall(vim.fn.input, { prompt = prompt })
-    if not ok then
-        return nil
-    end
-    return result
-end
-
 surround.setup({
     keymaps = { -- vim-surround style keymaps
         -- insert = "ys",
