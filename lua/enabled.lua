@@ -3,9 +3,6 @@ local plugins = {
     'lazy',
     'lsp-zero',
 
-    -- Utilities
-    'dap',
-
     -- LSP Stuff
     'copilot',
     'efmls',

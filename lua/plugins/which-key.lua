@@ -178,7 +178,7 @@ local mappings = {
         O = { '<cmd>DapStepOut<cr>', 'Out' },
         r = { '<cmd>DapToggleRepl<cr>', 'Repl' },
         R = { '<cmd>DapRestartFrame<cr>', 'Restart Frame' },
-        u = { "<cmd>lua require'dapui'.toggle()<cr>", 'UI' },
+        t = { "<cmd>DapUIToggle<cr>", 'Debugger' },
         x = { '<cmd>DapTerminate<cr>', 'Exit' },
     },
     d = {
