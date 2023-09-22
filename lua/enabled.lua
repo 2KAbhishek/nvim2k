@@ -9,7 +9,6 @@ local plugins = {
 
     -- Editing
     'autopairs',
-    'comment',
     'refactoring',
     'spectre',
     'surround',
