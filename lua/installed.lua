@@ -113,7 +113,6 @@ return {
             end
         end,
     },
-    'sindrets/diffview.nvim',
     'numToStr/Comment.nvim',
     'kylechui/nvim-surround',
     'windwp/nvim-autopairs',
