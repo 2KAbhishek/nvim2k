@@ -129,8 +129,13 @@ return {
     },
     'windwp/nvim-autopairs',
     'ThePrimeagen/refactoring.nvim',
-    'windwp/nvim-spectre',
-    'ThePrimeagen/harpoon',
+    {
+        'windwp/nvim-spectre',
+        config = function()
+            require('plugins.spectre')
+        end,
+        cmd = 'Spectre',
+    },
     {
         'abecodes/tabout.nvim',
         config = function()
@@ -351,6 +356,7 @@ return {
             'nvim-telescope/telescope-symbols.nvim',
             'nvim-telescope/telescope-hop.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
+            'ThePrimeagen/harpoon',
         },
         cmd = 'Telescope',
         config = function()
