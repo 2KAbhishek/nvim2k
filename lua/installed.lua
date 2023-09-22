@@ -10,7 +10,9 @@ return {
     'nvim-lualine/lualine.nvim',
     {
         'akinsho/bufferline.nvim',
-        config = LoadPlugin('bufferline'),
+        config = function()
+            require('plugins.bufferline')
+        end,
         event = 'BufWinEnter',
     },
     'rcarriga/nvim-notify',
@@ -45,6 +47,10 @@ return {
     {
         'm4xshen/hardtime.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('hardtime').setup({enabled = true})
+        end,
+        cmd = 'Hardtime',
     },
 
     -- Utilities
