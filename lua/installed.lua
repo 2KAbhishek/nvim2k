@@ -116,7 +116,10 @@ return {
     },
     {
         'folke/which-key.nvim',
-        lazy = true,
+        config = function()
+            require('plugins.which-key')
+        end,
+        event = 'BufWinEnter',
     },
     {
         'michaelb/sniprun',

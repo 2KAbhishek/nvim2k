@@ -2,9 +2,6 @@ local plugins = {
     -- Plugin Manager, load first
     'lazy',
 
-    -- Keybindings
-    'which-key',
-
     -- Appearance and UI
     'colorizer',
     'dressing',
