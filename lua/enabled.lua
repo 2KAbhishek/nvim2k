@@ -13,7 +13,6 @@ local plugins = {
     'tmux',
     'dap',
     'leap',
-    'telekasten',
     'oil',
     'dbee',
 
