@@ -242,6 +242,10 @@ return {
             require('plugins.telescope')
         end,
     },
+    {
+        '2kabhishek/nerdy.nvim',
+        cmd = 'Nerdy',
+    },
 
     -- Utilities
     {
