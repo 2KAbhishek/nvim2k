@@ -326,7 +326,7 @@ local mappings = {
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract Block To File' },
         i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
-        s = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
+        S = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
         v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
     },
