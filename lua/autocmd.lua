@@ -1,16 +1,27 @@
-vim.cmd([[
-if has("autocmd")
-    " Have Vim jump to the last position when reopening a file
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\""
-    " Disable relative line numbers in insert mode
-    autocmd InsertLeave * set relativenumber
-    autocmd InsertEnter * set norelativenumber
-endif
-]])
-
 local function augroup(name)
     return vim.api.nvim_create_augroup('nvim2k_' .. name, { clear = true })
 end
+
+-- Jump to last known position
+vim.api.nvim_create_autocmd('BufRead', {
+    callback = function(opts)
+        vim.api.nvim_create_autocmd('BufWinEnter', {
+            once = true,
+            buffer = opts.buf,
+            callback = function()
+                local ft = vim.bo[opts.buf].filetype
+                local last_known_line = vim.api.nvim_buf_get_mark(opts.buf, '"')[1]
+                if
+                    not (ft:match('commit') and ft:match('rebase'))
+                    and last_known_line > 1
+                    and last_known_line <= vim.api.nvim_buf_line_count(opts.buf)
+                then
+                    vim.api.nvim_feedkeys([[g`"]], 'nx', false)
+                end
+            end,
+        })
+    end,
+})
 
 -- Terminal buffer options
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
