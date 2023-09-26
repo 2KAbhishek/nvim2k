@@ -33,6 +33,7 @@ return {
         config = function()
             require('plugins.notify')
         end,
+        event = 'VeryLazy',
         cmd = 'Notifications',
     },
     {
