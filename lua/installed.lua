@@ -345,10 +345,6 @@ return {
         event = 'VeryLazy',
     },
     {
-        'mbbill/undotree',
-        cmd = 'UndotreeToggle',
-    },
-    {
         'folke/which-key.nvim',
         config = function()
             require('plugins.which-key')
