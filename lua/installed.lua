@@ -237,6 +237,7 @@ return {
             'nvim-telescope/telescope-symbols.nvim',
             'nvim-telescope/telescope-hop.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
+            'debugloop/telescope-undo.nvim',
             'ThePrimeagen/harpoon',
             {
                 'ThePrimeagen/refactoring.nvim',

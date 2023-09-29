@@ -226,6 +226,21 @@ telescope.setup({
                 },
             },
         },
+        undo = {
+            use_delta = true,
+            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
+            side_by_side = true,
+            diff_context_lines = vim.o.scrolloff,
+            entry_format = 'state #$ID, $STAT, $TIME',
+            -- time_format = '%d %b %H:%M',
+            mappings = {
+                i = {
+                    ['<S-cr>'] = require('telescope-undo.actions').yank_additions,
+                    ['<C-cr>'] = require('telescope-undo.actions').yank_deletions,
+                    ['<cr>'] = require('telescope-undo.actions').restore,
+                },
+            },
+        },
     },
 })
 
@@ -235,3 +250,4 @@ require('telescope').load_extension('live_grep_args')
 require('telescope').load_extension('harpoon')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('refactoring')
+require('telescope').load_extension('undo')
