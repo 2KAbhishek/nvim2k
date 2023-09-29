@@ -26,6 +26,7 @@ return {
         config = function()
             require('plugins.indentline')
         end,
+        main = 'ibl',
         event = 'VeryLazy',
     },
     {
