@@ -29,6 +29,13 @@ return {
         event = 'VeryLazy',
     },
     {
+        'HiPhish/rainbow-delimiters.nvim',
+        config = function()
+            require('plugins.rainbow')
+        end,
+        event = 'VeryLazy',
+    },
+    {
         'rcarriga/nvim-notify',
         config = function()
             require('plugins.notify')
@@ -96,7 +103,6 @@ return {
             'RRethy/nvim-treesitter-endwise',
             'RRethy/nvim-treesitter-textsubjects',
             'windwp/nvim-ts-autotag',
-            'HiPhish/rainbow-delimiters.nvim',
         },
         lazy = true,
         config = function()
