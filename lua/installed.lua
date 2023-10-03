@@ -140,10 +140,8 @@ return {
         cmd = 'Mason',
     },
     {
-        'creativenull/efmls-configs-nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
         config = function()
-            require('plugins.efmls')
         end,
         event = 'BufReadPre',
     },
