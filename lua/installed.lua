@@ -140,8 +140,10 @@ return {
         cmd = 'Mason',
     },
     {
+        'nvimtools/none-ls.nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
         config = function()
+            require('plugins.null-ls')
         end,
         event = 'BufReadPre',
     },
