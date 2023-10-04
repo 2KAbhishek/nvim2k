@@ -49,19 +49,6 @@ map('n', 'x', '"_x', opts)
 map('n', '+', '<C-a>', opts)
 map('n', '-', '<C-x>', opts)
 
--- New tab
-map('n', 'te', ':tabedit ', opts)
--- Split window
-map('n', 'ts', ':split ', opts)
-map('n', 'tv', ':vsplit ', opts)
-
--- Switch window
-map('n', 'tw', '<C-w>w', opts)
-map('', 'th', '<C-w>h', opts)
-map('', 'tk', '<C-w>k', opts)
-map('', 'tj', '<C-w>j', opts)
-map('', 'tl', '<C-w>l', opts)
-
 -- alt binds
 map('n', '<m-s>', '<cmd>split<cr>', opts)
 map('n', '<m-v>', '<cmd>vsplit<cr>', opts)
