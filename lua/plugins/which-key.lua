@@ -141,6 +141,7 @@ local mappings = {
         name = icons.ui.Vim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
         C = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
+        d = { '<cmd>cd %:p:h<cr>', 'Change Directory' },
         e = { '<cmd>e ~/.config/nvim/lua/installed.lua<cr>', 'Edit Config' },
         -- f = { '<cmd>!eslint --fix %<cr>', 'Format Files' },
         f = { '<cmd>!bundle exec rubocop -A %<cr>', 'Format Files' },
