@@ -32,10 +32,10 @@ configs.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<c-enter>',
-            node_incremental = '<c-enter>',
-            scope_incremental = '<c-s>',
-            node_decremental = '<C-S-Enter>',
+            init_selection = '<c-space>',
+            node_incremental = '<c-space>',
+            scope_incremental = false,
+            node_decremental = '<bs>',
         },
     },
 
