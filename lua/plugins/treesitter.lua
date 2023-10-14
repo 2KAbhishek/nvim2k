@@ -76,9 +76,9 @@ configs.setup({
         enable = true,
         prev_selection = ',', -- (Optional) keymap to select the previous selection
         keymaps = {
-            ['<cr>'] = 'textsubjects-smart',
-            [';'] = 'textsubjects-container-outer',
-            ['i;'] = 'textsubjects-container-inner',
+            ['.'] = { 'textsubjects-smart', desc = "Select the current text subject" },
+            ['a;'] = { 'textsubjects-container-outer', desc = "Select outer container (class, function, etc.)" },
+            ['i;'] = { 'textsubjects-container-inner', desc = "Select inside containers (classes, functions, etc.)" },
         },
     },
 
