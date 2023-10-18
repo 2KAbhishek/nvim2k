@@ -1,6 +1,6 @@
 require('options')
-require('keymaps')
 require('functions')
+require('keymaps')
 require('autocmd')
 require('plugins.lazy')
 require('plugins.neodev')

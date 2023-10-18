@@ -9,10 +9,10 @@ local opts = { noremap = true, silent = true }
 map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-map('n', '<C-Space>', '<cmd>WhichKey \\<leader><cr>', opts)
-map('n', '<C-p>', '<cmd>Telescope git_files<cr>', opts)
+
+map('n', '<C-t>', '<cmd>call system("t")<cr>', opts)
+map('n', '<C-f>', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<C-g>', '<cmd>LazygitToggle<cr>', opts)
-map('n', '<C-i>', '<C-i>', opts)
 
 -- Use jj as escape
 map('i', 'jj', '<Esc>', opts)
