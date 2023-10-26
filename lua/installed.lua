@@ -80,7 +80,7 @@ return {
         config = function()
             require('plugins.wilder')
         end,
-        event = 'BufWinEnter',
+        keys = { ':', '/', '?', },
     },
     {
         'folke/zen-mode.nvim',
