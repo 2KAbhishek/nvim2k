@@ -1,24 +1,20 @@
-vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
-
-local status_ok, lsp = pcall(require, 'lsp-zero')
+local status_ok, lsp_zero = pcall(require, 'lsp-zero')
 if not status_ok then
     return
 end
-lsp.preset('recommended')
 
-lsp.ensure_installed({
-    -- 'tsserver',
-    -- 'eslint',
-    -- 'lua_ls',
-})
+lsp_zero.on_attach(function(client, bufnr)
+    lsp_zero.default_keymaps({ buffer = bufnr })
+end)
 
-lsp.nvim_workspace()
-
-lsp.setup()
-
+require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {},
     handlers = {
-        lsp.default_setup,
-    },
+        lsp_zero.default_setup,
+        lua_ls = function()
+            local lua_opts = lsp_zero.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
+        end,
+    }
 })
