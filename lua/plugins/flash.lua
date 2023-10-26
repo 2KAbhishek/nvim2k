@@ -3,10 +3,12 @@ if not status_ok then
     return
 end
 
+local icons = require('icons')
+
 flash.setup({
     prompt = {
         enabled = true,
-        prefix = { { " ", "FlashPromptIcon" } },
+        prefix = { { icons.ui.Separator .. icons.ui.Rocket .. icons.ui.ChevronRight .. " ", "FlashPromptIcon" } },
         win_config = {
             relative = "editor",
             width = 1, -- when <=1 it's a percentage of the editor width
