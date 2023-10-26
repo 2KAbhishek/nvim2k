@@ -8,6 +8,25 @@ local multi_open_mappings = require('plugins.telescope-multiopen')
 local lga_actions = require('telescope-live-grep-args.actions')
 local icons = require('icons')
 
+local function flash(prompt_bufnr)
+    require("flash").jump({
+        pattern = "^",
+        label = { after = { 0, 0 } },
+        search = {
+            mode = "search",
+            exclude = {
+                function(win)
+                    return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+                end,
+            },
+        },
+        action = function(match)
+            local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+            picker:set_selection(match.pos[1] - 1)
+        end,
+    })
+end
+
 telescope.setup({
     defaults = {
         layout_config = {
@@ -66,6 +85,7 @@ telescope.setup({
                 ['<C-x>'] = actions.select_horizontal,
                 ['<C-v>'] = actions.select_vertical,
                 ['<C-t>'] = actions.select_tab,
+                ['<C-s>'] = flash,
 
                 ['<C-u>'] = actions.preview_scrolling_up,
                 ['<C-d>'] = actions.preview_scrolling_down,
@@ -97,6 +117,7 @@ telescope.setup({
                 ['<C-x>'] = actions.select_horizontal,
                 ['<C-v>'] = actions.select_vertical,
                 ['<C-t>'] = actions.select_tab,
+                ['s'] = flash,
 
                 ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
                 ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,

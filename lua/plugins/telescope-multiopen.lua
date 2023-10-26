@@ -53,13 +53,13 @@ end
 local multi_open_mappings = {
     i = {
         ['<C-v>'] = stopinsert(custom_actions.multi_selection_open_vertical),
-        ['<C-s>'] = stopinsert(custom_actions.multi_selection_open_horizontal),
+        ['<C-x>'] = stopinsert(custom_actions.multi_selection_open_horizontal),
         ['<C-t>'] = stopinsert(custom_actions.multi_selection_open_tab),
         ['<CR>'] = stopinsert(custom_actions.multi_selection_open),
     },
     n = {
         ['<C-v>'] = custom_actions.multi_selection_open_vertical,
-        ['<C-s>'] = custom_actions.multi_selection_open_horizontal,
+        ['<C-x>'] = custom_actions.multi_selection_open_horizontal,
         ['<C-t>'] = custom_actions.multi_selection_open_tab,
         ['<CR>'] = custom_actions.multi_selection_open,
     },
