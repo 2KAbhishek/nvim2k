@@ -114,6 +114,7 @@ return {
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
         dependencies = {
             'neovim/nvim-lspconfig',
             'williamboman/mason-lspconfig.nvim',
