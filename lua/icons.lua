@@ -11,7 +11,8 @@ return {
         Warning = ' ',
     },
     documents = {
-        File = ' ',
+        File = ' ',
+        FileEmpty = ' ',
         Files = ' ',
         Folder = ' ',
         FolderEmpty = ' ',
