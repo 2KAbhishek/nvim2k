@@ -316,11 +316,8 @@ return {
         event = 'VeryLazy',
     },
     {
-        'ggandor/leap.nvim',
         config = function()
-            require('plugins.leap')
         end,
-        keys = { 's', 'S' },
     },
     {
         'aserowy/tmux.nvim',
