@@ -72,6 +72,7 @@ cmp.setup({
     },
     formatting = {
         fields = { 'kind', 'abbr', 'menu' },
+        expandable_indicator = true,
         format = function(entry, vim_item)
             -- Kind icons
             vim_item.kind = kind_icons[vim_item.kind]
@@ -132,6 +133,7 @@ cmp.setup({
             border = 'rounded',
             winhighlight = 'NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None',
         },
+        scrollbar = true,
     },
     experimental = {
         ghost_text = true,
