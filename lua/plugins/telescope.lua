@@ -253,11 +253,17 @@ telescope.setup({
                 },
             },
         },
+        menufacture = {
+            mappings = {
+                main_menu = { [{ 'i', 'n' }] = '<C-,>' },
+            },
+        },
     },
 })
 
 require('telescope').load_extension('hop')
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('menufacture')
 require('telescope').load_extension('undo')
 require('telescope').load_extension('harpoon')
 require('telescope').load_extension('notify')
