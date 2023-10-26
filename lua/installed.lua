@@ -236,7 +236,6 @@ return {
                 build = 'make',
             },
             'nvim-telescope/telescope-symbols.nvim',
-            'nvim-telescope/telescope-hop.nvim',
             'molecule-man/telescope-menufacture',
             'debugloop/telescope-undo.nvim',
             'ThePrimeagen/harpoon',
