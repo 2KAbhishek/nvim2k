@@ -59,6 +59,8 @@ local options = {
     writebackup = false, -- do not edit backups
 }
 
+-- print(vim.inspect(options))
+
 vim.cmd([[
      setlocal spell spelllang=en "Set spellcheck language to en
      setlocal spell! "Disable spell checks by default
@@ -73,12 +75,6 @@ vim.opt.path:append({ '**' })
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
-
--- Turn off paste mode when leaving insert
--- vim.api.nvim_create_autocmd("InsertLeave", {
---   pattern = '*',
---   command = "set nopaste"
--- })
 
 vim.opt.shortmess:append({ W = true, I = true, c = true })
 
