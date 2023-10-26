@@ -288,7 +288,7 @@ return {
         end,
         keys = {
             { 'gcc', mode = { 'n', }, function() require('Comment').toggle() end, desc = "Comment" },
-            { 'gc', mode = { 'v' }, function() require('Comment').toggle() end, desc = "Comment" },
+            { 'gc',  mode = { 'v' },  function() require('Comment').toggle() end, desc = "Comment" },
         },
     },
     {
@@ -327,10 +327,34 @@ return {
         end,
         keys = {
             { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-            { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-            { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-            { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+            {
+                "S",
+                mode = { "n", "x", "o" },
+                function() require("flash").treesitter() end,
+                desc =
+                "Flash Treesitter"
+            },
+            {
+                "r",
+                mode = "o",
+                function() require("flash").remote() end,
+                desc =
+                "Remote Flash"
+            },
+            {
+                "R",
+                mode = { "o", "x" },
+                function() require("flash").treesitter_search() end,
+                desc =
+                "Treesitter Search"
+            },
+            {
+                "<c-s>",
+                mode = { "c" },
+                function() require("flash").toggle() end,
+                desc =
+                "Toggle Flash Search"
+            },
         },
     },
     {
@@ -421,7 +445,7 @@ return {
     },
 
     -- Language specific
-    { 'tpope/vim-rails', ft = 'ruby' },
-    { 'weizheheng/ror.nvim', branch = 'main', ft = 'ruby' },
-    { 'folke/neodev.nvim', ft = { 'lua', 'vim' } },
+    { 'tpope/vim-rails',     ft = 'ruby' },
+    { 'weizheheng/ror.nvim', branch = 'main',      ft = 'ruby' },
+    { 'folke/neodev.nvim',   ft = { 'lua', 'vim' } },
 }
