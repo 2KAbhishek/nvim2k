@@ -361,7 +361,11 @@ return {
         config = function()
             require('plugins.tmux')
         end,
-        event = 'VeryLazy',
+        event = function()
+            if vim.fn.exists('$TMUX') == 1 then
+                return 'VeryLazy'
+            end
+        end,
     },
     {
         'm4xshen/hardtime.nvim',
