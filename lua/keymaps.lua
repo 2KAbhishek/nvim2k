@@ -10,7 +10,6 @@ map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-map('n', '<C-t>', '<cmd>call system("t")<cr>', opts)
 map('n', '<C-f>', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<C-g>', '<cmd>LazygitToggle<cr>', opts)
 
