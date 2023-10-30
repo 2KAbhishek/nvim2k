@@ -50,6 +50,6 @@ vim.api.nvim_create_user_command('NodeToggle', function()
 end, {})
 
 vim.api.nvim_create_user_command('PythonToggle', function()
-    local python = Terminal:new({ cmd = 'ipython', hidden = true })
+    local python = Terminal:new({ cmd = 'bpython', hidden = true })
     python:toggle()
 end, {})
