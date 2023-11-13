@@ -83,10 +83,10 @@ map('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window wi
 map('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
 
 -- Switch buffers
-map('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
-map('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
-map('n', '[b', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev buffer' })
-map('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
+map('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
+map('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
+map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 map('n', '<leader><tab>', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 map('n', '<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 

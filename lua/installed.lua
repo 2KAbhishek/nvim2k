@@ -15,13 +15,6 @@ return {
         event = 'BufWinEnter',
     },
     {
-        'akinsho/bufferline.nvim',
-        config = function()
-            require('plugins.bufferline')
-        end,
-        event = 'BufWinEnter',
-    },
-    {
         'lukas-reineke/indent-blankline.nvim',
         config = function()
             require('plugins.indentline')
