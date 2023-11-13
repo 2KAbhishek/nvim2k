@@ -42,13 +42,7 @@ local config = {
         component_separators = '',
         section_separators = '',
         theme = 'onedark',
-        -- theme = {
-        --     -- We are going to use lualine_c an lualine_x as left and
-        --     -- right section. Both are highlighted by c theme .  So we
-        --     -- are just setting default looks o statusline
-        --     normal = { c = { fg = colors.fg, bg = colors.bg } },
-        --     inactive = { c = { fg = colors.fg, bg = colors.bg } },
-        -- },
+        -- extensions = { 'quickfix', 'mason', 'lazy', 'toggletermm', 'nvim-tree' },
     },
     sections = {
         -- these are to remove the defaults
@@ -85,7 +79,7 @@ ins_left({
     function()
         return '▊'
     end,
-    color = { fg = colors.blue }, -- Sets highlighting of component
+    color = { fg = colors.blue },      -- Sets highlighting of component
     padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
@@ -170,7 +164,17 @@ ins_left({
     end,
 })
 
-ins_left({
+-- Add components to right sections
+ins_right({
+    'branch',
+    icon = icons.git.Branch,
+    fmt = function(str)
+        return str:sub(1, 16)
+    end,
+    color = { fg = colors.violet, gui = 'bold' },
+})
+
+ins_right({
     -- Lsp server name .
     function()
         local msg = 'No LSP'
@@ -187,18 +191,8 @@ ins_left({
         end
         return msg
     end,
-    icon = icons.ui.Gear .. ' :',
+    icon = icons.ui.Gear,
     color = { fg = colors.fg, gui = 'bold' },
-})
-
--- Add components to right sections
-ins_right({
-    'branch',
-    icon = icons.git.Branch,
-    fmt = function(str)
-        return str:sub(1, 16)
-    end,
-    color = { fg = colors.violet, gui = 'bold' },
 })
 
 ins_right({ 'progress', color = { fg = colors.fg, gui = 'bold' } })
