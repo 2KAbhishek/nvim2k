@@ -56,19 +56,25 @@ local conditions = {
     end,
 }
 
-local separator = {
-    function()
-        return icons.ui.Separator
-    end,
-    color = { fg = colors.blue, gui = 'bold' },
-    padding = { left = 0, right = 0 },
+local searchcount = { 'searchcount', color = { fg = colors.fg, gui = 'bold' } }
+local selectioncount = { 'selectioncount', color = { fg = colors.fg, gui = 'bold' } }
+local progress = { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+
+local filesize = {
+    'filesize',
+    color = { fg = colors.fg, gui = 'bold' },
+    cond = conditions.buffer_not_empty,
 }
 
-local mode = {
-    function()
-        return icons.ui.Heart
-    end,
-    color = { fg = mode_color[vim.fn.mode()], gui = 'bold' },
+local filetype = {
+    'filetype',
+    color = { fg = colors.blue, gui = 'bold' },
+}
+
+local fileformat = {
+    'fileformat',
+    icons_enabled = true,
+    color = { fg = colors.white, gui = 'bold' },
 }
 
 local filename = {
@@ -78,6 +84,15 @@ local filename = {
     end,
     cond = conditions.buffer_not_empty,
     color = { fg = colors.magenta, gui = 'bold' },
+}
+
+local branch = {
+    'branch',
+    icon = icons.git.Branch,
+    fmt = function(str)
+        return str:sub(1, 32)
+    end,
+    color = { fg = colors.violet, gui = 'bold' },
 }
 
 local diff_icons = {
@@ -108,19 +123,6 @@ local diagnostics = {
     },
 }
 
--- Add components to right sections
-local searchcount = { 'searchcount', color = { fg = colors.fg, gui = 'bold' } }
-local selectioncount = { 'selectioncount', color = { fg = colors.fg, gui = 'bold' } }
-
-local branch = {
-    'branch',
-    icon = icons.git.Branch,
-    fmt = function(str)
-        return str:sub(1, 16)
-    end,
-    color = { fg = colors.violet, gui = 'bold' },
-}
-
 local lsp = {
     function()
         local msg = 'No LSP'
@@ -141,32 +143,35 @@ local lsp = {
     color = { fg = colors.fg, gui = 'bold' },
 }
 
-local progress = { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
-local filesize = {
-    -- filesize component
-    'filesize',
-    color = { fg = colors.fg, gui = 'bold' },
-    cond = conditions.buffer_not_empty,
-}
-
-local filetype = {
-    'filetype',
-    color = { fg = colors.blue, gui = 'bold' },
-}
-
-local fileformat = {
-    'fileformat',
-    icons_enabled = true,
-    color = { fg = colors.white, gui = 'bold' },
-}
-
 local encoding = {
-    'o:encoding', -- option component same as &encoding in viml
+    'o:encoding',
     fmt = string.upper,
     cond = conditions.hide_in_width,
-    color = { fg = mode_color[vim.fn.mode()], gui = 'bold', bg = nil },
+    color = { fg = colors.green, gui = 'bold' },
 }
+
+local separator = {
+    function()
+        return icons.ui.Separator
+    end,
+    color = function()
+        return { fg = mode_color[vim.fn.mode()] }
+    end,
+    padding = { left = 0, right = 0 },
+}
+
+local function mode(icon)
+    icon = icon or icons.ui.Vim
+    return {
+        function()
+            return icon
+        end,
+        color = function()
+            return { fg = mode_color[vim.fn.mode()] }
+        end,
+        padding = { left = 1, right = 0 },
+    }
+end
 
 -- Config
 local config = {
@@ -175,25 +180,28 @@ local config = {
         component_separators = '',
         -- section_separators = '',
         theme = 'onedark',
+        disabled_filetypes = {
+            'dashboard',
+        },
     },
-    extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
+    -- extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
     sections = {
         -- these are to remove the defaults
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { separator, mode, 'location', filename, diff_icons, diagnostics },
+        lualine_c = { separator, mode(icons.ui.Heart), 'location', filename, diff_icons, diagnostics },
         lualine_x = { searchcount, selectioncount, branch, lsp, progress, filesize, filetype, fileformat, encoding,
             separator },
         lualine_y = {},
         lualine_z = {},
     },
     tabline = {
-        lualine_a = { { 'buffers', use_mode_colors = true }, },
-        lualine_b = {},
+        lualine_a = {},
+        lualine_b = { mode(), { 'buffers', use_mode_colors = true } },
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {},
-        lualine_z = { 'tabs' }
+        lualine_y = { 'tabs' },
+        lualine_z = {}
     },
 }
 
