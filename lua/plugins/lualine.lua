@@ -42,8 +42,8 @@ local config = {
         component_separators = '',
         section_separators = '',
         theme = 'onedark',
-        -- extensions = { 'quickfix', 'mason', 'lazy', 'toggletermm', 'nvim-tree' },
     },
+    extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
     sections = {
         -- these are to remove the defaults
         lualine_a = {},
