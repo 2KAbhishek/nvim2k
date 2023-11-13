@@ -12,7 +12,7 @@ return {
         config = function()
             require('plugins.lualine')
         end,
-        event = 'BufWinEnter',
+        event = 'VeryLazy',
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -89,7 +89,6 @@ return {
     -- Tresitter
     {
         'nvim-treesitter/nvim-treesitter',
-        event = 'BufWinEnter',
         build = ':TSUpdate',
         dependencies = {
             'nvim-treesitter/nvim-treesitter-refactor',
@@ -102,6 +101,7 @@ return {
         config = function()
             require('plugins.treesitter')
         end,
+        event = 'VeryLazy',
     },
 
     -- LSP
@@ -124,7 +124,7 @@ return {
                 end,
             },
         },
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'VeryLazy', 'BufNewFile' },
     },
     {
         'williamboman/mason.nvim',
@@ -139,7 +139,7 @@ return {
         config = function()
             require('plugins.null-ls')
         end,
-        event = 'BufReadPre',
+        event = 'VeryLazy',
     },
     {
         'mfussenegger/nvim-dap',
@@ -197,7 +197,7 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         cmd = 'Gitsigns',
-        event = 'BufWinEnter',
+        event = 'VeryLazy',
         config = function()
             require('plugins.gitsigns')
         end,
@@ -380,7 +380,7 @@ return {
         config = function()
             require('plugins.which-key')
         end,
-        event = 'BufWinEnter',
+        event = 'VeryLazy',
     },
     {
         'michaelb/sniprun',
