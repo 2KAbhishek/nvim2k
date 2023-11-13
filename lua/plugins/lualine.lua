@@ -25,21 +25,21 @@ local mode_color = {
     v = colors.magenta,
     [''] = colors.magenta,
     V = colors.magenta,
-    c = colors.magenta,
-    no = colors.red,
-    s = colors.orange,
-    S = colors.orange,
-    [''] = colors.orange,
+    c = colors.yellow,
+    t = colors.red,
+    R = colors.orange,
+    Rv = colors.orange,
+    no = colors.fg,
+    s = colors.violet,
+    S = colors.violet,
+    [''] = colors.violet,
     ic = colors.yellow,
-    R = colors.violet,
-    Rv = colors.violet,
     cv = colors.red,
     ce = colors.red,
     r = colors.cyan,
     rm = colors.cyan,
     ['r?'] = colors.cyan,
     ['!'] = colors.red,
-    t = colors.red,
 }
 
 local conditions = {
@@ -92,7 +92,7 @@ local branch = {
     fmt = function(str)
         return str:sub(1, 32)
     end,
-    color = { fg = colors.violet, gui = 'bold' },
+    color = { fg = colors.green, gui = 'bold' },
 }
 
 local diff_icons = {
