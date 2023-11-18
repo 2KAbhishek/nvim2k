@@ -318,11 +318,13 @@ local mappings = {
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", 'Extract Block' },
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract Block To File' },
         i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
+        n = {'', 'Swap Next'},
+        p = {'', 'Swap Previous'},
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
         S = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
+        s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' },
         v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
-        s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }
     },
     s = {
         name = icons.ui.Test .. 'Tests',

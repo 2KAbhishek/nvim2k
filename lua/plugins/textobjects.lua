@@ -40,14 +40,14 @@ local textobjects = {
     swap = {
         enable = true,
         swap_next = {
-            ["<leader>na"] = "@parameter.inner", -- swap object property with next
-            ["<leader>n:"] = "@property.outer",  -- swap parameters/argument with next
-            ["<leader>nm"] = "@function.outer",  -- swap function with next
+            ["<leader>rna"] = "@parameter.inner", -- swap object property with next
+            ["<leader>rn:"] = "@property.outer",  -- swap parameters/argument with next
+            ["<leader>rnm"] = "@function.outer",  -- swap function with next
         },
         swap_previous = {
-            ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-            ["<leader>p:"] = "@property.outer",  -- swap object property with prev
-            ["<leader>pm"] = "@function.outer",  -- swap function with previous
+            ["<leader>rpa"] = "@parameter.inner", -- swap parameters/argument with prev
+            ["<leader>rp:"] = "@property.outer",  -- swap object property with prev
+            ["<leader>rpm"] = "@function.outer",  -- swap function with previous
         },
     },
     move = {
