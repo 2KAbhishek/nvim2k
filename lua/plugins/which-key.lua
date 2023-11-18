@@ -406,7 +406,34 @@ local vmappings = {
     },
 }
 
+local no_leader_opts = {
+    mode = 'n',
+    prefix = '',
+    buffer = nil,
+    silent = true,
+    noremap = true,
+    nowait = true,
+}
+
+local nav_mappings = {
+    ['['] = {
+        name = "Previous",
+        b = { "<cmd>bprevious<cr>", "Previous Buffer" },
+        B = { "<cmd>bfirst<cr>", "First Buffer" },
+        e = { "g;", "Previous Edit" },
+        j = { "<C-o>", "Previous Jump" },
+    },
+    ["]"] = {
+        name = "Next",
+        b = { "<cmd>bnext<cr>", "Next Buffer" },
+        B = { "<cmd>blast<cr>", "Last Buffer" },
+        e = { "g,", "Next Edit" },
+        j = { "<C-i>", "Next Jump" },
+    }
+}
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
+which_key.register(nav_mappings, no_leader_opts)
 which_key.register({ mode = { 'o', 'x' }, i = i, a = a })
