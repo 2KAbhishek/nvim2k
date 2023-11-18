@@ -43,10 +43,16 @@ dashboard.setup({
                 key = 'e',
             },
             {
-                desc = icons.ui.Search .. 'Files',
+                desc = icons.documents.OpenFolder .. 'Files',
                 group = 'Label',
                 action = 'Telescope find_files',
                 key = 'f',
+            },
+            {
+                desc = icons.ui.Search .. 'Search',
+                group = 'Label',
+                action = 'Telescope live_grep',
+                key = 'g',
             },
             {
                 desc = icons.ui.Check .. 'Todo',
