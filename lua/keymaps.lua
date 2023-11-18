@@ -1,5 +1,3 @@
--- This file only tweaks the default keymaps for setting new ones use which-key
-
 local function map(mode, lhs, rhs, opts)
     opts = opts or {}
     opts.silent = opts.silent ~= false
@@ -15,6 +13,8 @@ vim.g.maplocalleader = ' '
 -- Modes
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v",
 -- visual_block_mode = "x", term_mode = "t", command_mode = "c",
+
+-- This file only tweaks the default keymaps for setting new ones use which-key
 
 -- Use jj as escape
 map('i', 'jj', '<Esc>', opts)
@@ -40,9 +40,6 @@ map('n', 'N', 'Nzzzv', opts)
 -- Better up/down
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-
--- Alternate buffer
-map('n', '<leader><tab>', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 
 -- Move text up and down
 map({ 'v', 'x', }, 'J', ":move '>+1<CR>gv-gv", opts)
