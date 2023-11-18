@@ -424,7 +424,10 @@ local no_leader_opts = {
     nowait = true,
 }
 
-local nav_mappings = {
+local no_leader_mappings = {
+    ['<S-h>'] = { "<cmd>bprevious<cr>", "Previous Buffer"},
+    ['<S-l>'] = { "<cmd>bnext<cr>", "Next Buffer"},
+
     ['<C-h>'] = { "<C-w>h", "Move Left"},
     ['<C-j>'] = { "<C-w>j", "Move Down"},
     ['<C-k>'] = { "<C-w>k", "Move Up"},
@@ -434,6 +437,7 @@ local nav_mappings = {
     ['<C-Down>'] = {"<cmd>resize -10<cr>", "Decrease window height"},
     ['<C-Left>'] = {"<cmd>vertical resize -10<cr>", "Decrease window width"},
     ['<C-Right>'] = {"<cmd>vertical resize +10<cr>", "Increase window width"},
+
     ['['] = {
         name = "Previous",
         b = { "<cmd>bprevious<cr>", "Previous Buffer" },
@@ -453,5 +457,5 @@ local nav_mappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-which_key.register(nav_mappings, no_leader_opts)
+which_key.register(no_leader_mappings, no_leader_opts)
 which_key.register({ mode = { 'o', 'x' }, i = i, a = a })

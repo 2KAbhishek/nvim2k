@@ -67,11 +67,6 @@ map('n', 'N', 'Nzzzv', opts)
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
--- Switch buffers
-map('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
-map('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
-map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
-map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 map('n', '<leader><tab>', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 map('n', '<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 
