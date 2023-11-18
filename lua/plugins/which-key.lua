@@ -213,7 +213,7 @@ local mappings = {
         a = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
         A = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Buffer' },
         b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
-        c = { '<cmd>Neogit commit<cr>', 'Commit' },
+        c = { '<cmd>Git<cr>', 'Commit' },
         C = { '<cmd>GitCoAuthors<cr>', 'Co Authors' },
         d = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
         D = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
@@ -221,7 +221,6 @@ local mappings = {
         h = { '<cmd>Octo<cr>', 'Octo' },
         j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
-        n = { '<cmd>Neogit<cr>', 'Neogit' },
         p = {
             '<cmd>silent execute "!(cd %:h && git pull --rebase --autostash &) > /dev/null" | lua require("notify")("Pulling Changes...")<cr>',
             'Pull Changes',

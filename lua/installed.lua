@@ -203,11 +203,8 @@ return {
         end,
     },
     {
-        'NeogitOrg/neogit',
-        cmd = 'Neogit',
-        config = function()
-            require('plugins.neogit')
-        end,
+        'tpope/vim-fugitive',
+        cmd = 'Git',
     },
     {
         'pwntester/octo.nvim',
