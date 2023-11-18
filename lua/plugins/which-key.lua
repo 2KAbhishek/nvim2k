@@ -360,17 +360,25 @@ local mappings = {
     },
     w = {
         name = icons.ui.Windows .. 'Window',
+        ['-'] = { '<C-w>s', 'Split Below' },
+        ['\\'] = { '<C-w>s', 'Split Right' },
         c = { '<cmd>tabclose<cr>', 'Close Tab' },
+        d = { '<C-w>c', 'Close Window' },
         f = { '<cmd>tabfirst<cr>', 'First Tab' },
-        l = { '<cmd>tablast<cr>', 'Last Tab' },
+        h = { '<C-w>h', 'Move Left' },
+        j = { '<C-w>j', 'Move Down' },
+        k = { '<C-w>k', 'Move Up' },
+        l = { '<C-w>l', 'Move Right' },
+        L = { '<cmd>tablast<cr>', 'Last Tab' },
         o = { '<cmd>tabnext<cr>', 'Next Tab' },
         O = { '<cmd>tabprevious<cr>', 'Previous Tab' },
+        p = { '<C-w>p', 'Previous Window' },
         q = { '<cmd>bw<cr>', 'Close Current Buf' },
         s = { '<cmd>split<cr>', 'Horizontal Split File' },
         t = { '<cmd>tabnew<cr>', 'New Tab' },
         v = { '<cmd>vsplit<cr>', 'Vertical Split File' },
-        w = { '<cmd>w<cr>', 'Write' },
         W = { "<cmd>lua require'utils'.sudo_write()<cr>", 'Force Write' },
+        w = { '<cmd>w<cr>', 'Write' },
         x = { '<cmd>x<cr>', 'Write and Quit' },
     },
 }
@@ -417,6 +425,15 @@ local no_leader_opts = {
 }
 
 local nav_mappings = {
+    ['<C-h>'] = { "<C-w>h", "Move Left"},
+    ['<C-j>'] = { "<C-w>j", "Move Down"},
+    ['<C-k>'] = { "<C-w>k", "Move Up"},
+    ['<C-l>'] = { "<C-w>l", "Move Right"},
+
+    ['<C-Up>'] = {"<cmd>resize +10<cr>", "Increase window height"},
+    ['<C-Down>'] = {"<cmd>resize -10<cr>", "Decrease window height"},
+    ['<C-Left>'] = {"<cmd>vertical resize -10<cr>", "Decrease window width"},
+    ['<C-Right>'] = {"<cmd>vertical resize +10<cr>", "Increase window width"},
     ['['] = {
         name = "Previous",
         b = { "<cmd>bprevious<cr>", "Previous Buffer" },
