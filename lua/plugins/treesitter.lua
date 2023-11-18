@@ -51,17 +51,17 @@ configs.setup({
         smart_rename = {
             enable = true,
             keymaps = {
-                smart_rename = '<leader>Lr',
+                smart_rename = '<leader>ler',
             },
         },
         navigation = {
             enable = true,
             keymaps = {
-                goto_definition = '<leader>Ld',
-                list_definitions = '<leader>LD',
-                list_definitions_toc = '<leader>Lo',
-                goto_next_usage = '<leader>Lj',
-                goto_previous_usage = '<leader>Lk',
+                goto_definition = '<leader>led',
+                list_definitions = '<leader>leD',
+                list_definitions_toc = '<leader>leo',
+                goto_next_usage = '<leader>lej',
+                goto_previous_usage = '<leader>lek',
             },
         },
     },
