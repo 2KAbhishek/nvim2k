@@ -133,10 +133,10 @@ local opts = {
 }
 
 local mappings = {
-    ['e'] = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
-    ['x'] = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
-    ['q'] = { '<cmd>bw<cr>', icons.ui.Close .. 'Close Buffer' },
-    ['Q'] = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
+    e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
+    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
+    q = { '<cmd>bw<cr>', icons.ui.Close .. 'Close Buffer' },
+    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     c = {
         name = icons.ui.Vim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
