@@ -331,6 +331,7 @@ local mappings = {
         S = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
         v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
+        s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }
     },
     s = {
         name = icons.ui.Test .. 'Tests',
