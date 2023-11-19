@@ -1,5 +1,5 @@
 return {
-    -- Appearance
+    -- UI
     {
         'navarasu/onedark.nvim',
         config = function()
@@ -83,6 +83,39 @@ return {
     },
 
     -- Language
+    { 'tpope/vim-rails',     ft = 'ruby' },
+    { 'weizheheng/ror.nvim', branch = 'main',      ft = 'ruby' },
+    { 'folke/neodev.nvim',   ft = { 'lua', 'vim' } },
+    {
+        'mfussenegger/nvim-dap',
+        dependencies = {
+            'rcarriga/nvim-dap-ui',
+        },
+        config = function()
+            require('plugins.lang.dap')
+        end,
+        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
+    },
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'antoinemadec/FixCursorHold.nvim',
+            'olimorris/neotest-rspec',
+            'haydenmeade/neotest-jest',
+        },
+        config = function()
+            require('plugins.neotest')
+        end,
+        cmd = 'Neotest',
+    },
+    {
+        'michaelb/sniprun',
+        build = 'bash ./install.sh',
+        cmd = 'SnipRun',
+        config = function()
+            require('plugins.lang.sniprun')
+        end,
+    },
 
     -- Tresitter
     {
@@ -139,16 +172,6 @@ return {
         end,
         event = 'VeryLazy',
     },
-    {
-        'mfussenegger/nvim-dap',
-        dependencies = {
-            'rcarriga/nvim-dap-ui',
-        },
-        config = function()
-            require('plugins.lang.dap')
-        end,
-        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
-    },
 
     -- Completion
     {
@@ -180,110 +203,21 @@ return {
         event = 'InsertEnter',
     },
 
-    {
-        'nvim-neotest/neotest',
-        dependencies = {
-            'antoinemadec/FixCursorHold.nvim',
-            'olimorris/neotest-rspec',
-            'haydenmeade/neotest-jest',
-        },
-        config = function()
-            require('plugins.neotest')
-        end,
-        cmd = 'Neotest',
-    },
-    {
-        'michaelb/sniprun',
-        build = 'bash ./install.sh',
-        cmd = 'SnipRun',
-        config = function()
-            require('plugins.lang.sniprun')
-        end,
-    },
-    -- Language specific
-    { 'tpope/vim-rails',     ft = 'ruby' },
-    { 'weizheheng/ror.nvim', branch = 'main',      ft = 'ruby' },
-    { 'folke/neodev.nvim',   ft = { 'lua', 'vim' } },
-
-    -- Git
-    {
-        '2kabhishek/co-author.nvim',
-        cmd = 'GitCoAuthors',
-    },
-    {
-        'ruifm/gitlinker.nvim',
-        config = function()
-            require('plugins.gitlinker')
-        end,
-        keys = '<leader>gy',
-    },
-    {
-        'lewis6991/gitsigns.nvim',
-        cmd = 'Gitsigns',
-        event = 'VeryLazy',
-        config = function()
-            require('plugins.gitsigns')
-        end,
-    },
-    {
-        'tpope/vim-fugitive',
-        cmd = 'Git',
-    },
-    {
-        'pwntester/octo.nvim',
-        cmd = 'Octo',
-        config = function()
-            require('plugins.octo')
-        end,
-        opts = true,
-    },
-
-    -- Telescope
-    {
-        'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            {
-                'nvim-telescope/telescope-fzf-native.nvim',
-                build = 'make',
-            },
-            'nvim-telescope/telescope-symbols.nvim',
-            'molecule-man/telescope-menufacture',
-            'debugloop/telescope-undo.nvim',
-            'ThePrimeagen/harpoon',
-            {
-                'ThePrimeagen/refactoring.nvim',
-                config = function()
-                    require('plugins.refactoring')
-                end,
-            },
-        },
-        cmd = 'Telescope',
-        config = function()
-            require('plugins.telescope')
-        end,
-    },
-    {
-        '2kabhishek/nerdy.nvim',
-        cmd = 'Nerdy',
-    },
-
-    -- Utilities
+    -- Tools
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
         config = function()
-            require('plugins.nvim-tree')
+            require('plugins.tools.nvim-tree')
         end,
         cmd = 'NvimTreeToggle',
     },
     {
         'stevearc/oil.nvim',
         config = function()
-            require('plugins.oil')
+            require('plugins.tools.oil')
         end,
         cmd = 'Oil',
         -- Only load when argument is a directory
@@ -296,7 +230,7 @@ return {
     {
         'numToStr/Comment.nvim',
         config = function()
-            require('plugins.comment')
+            require('plugins.tools.comment')
         end,
         keys = {
             { 'gcc', mode = { 'n', }, function() require('Comment').toggle() end, desc = "Comment" },
@@ -306,28 +240,28 @@ return {
     {
         'kylechui/nvim-surround',
         config = function()
-            require('plugins.surround')
+            require('plugins.tools.surround')
         end,
         keys = { 'cs', 'ds', 'ys' },
     },
     {
         'windwp/nvim-autopairs',
         config = function()
-            require('plugins.autopairs')
+            require('plugins.tools.autopairs')
         end,
         event = 'InsertEnter',
     },
     {
         'windwp/nvim-spectre',
         config = function()
-            require('plugins.spectre')
+            require('plugins.tools.spectre')
         end,
         cmd = 'Spectre',
     },
     {
         'abecodes/tabout.nvim',
         config = function()
-            require('plugins.tabout')
+            require('plugins.tools.tabout')
         end,
         event = 'VeryLazy',
     },
@@ -335,7 +269,7 @@ return {
         "folke/flash.nvim",
         event = "VeryLazy",
         config = function()
-            require('plugins.flash')
+            require('plugins.tools.flash')
         end,
         keys = {
             { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
@@ -372,7 +306,7 @@ return {
     {
         'aserowy/tmux.nvim',
         config = function()
-            require('plugins.tmux')
+            require('plugins.tools.tmux')
         end,
         event = function()
             if vim.fn.exists('$TMUX') == 1 then
@@ -391,14 +325,14 @@ return {
     {
         'chrisgrieser/nvim-spider',
         config = function()
-            require('plugins.spider')
+            require('plugins.tools.spider')
         end,
         event = 'VeryLazy',
     },
     {
         'folke/which-key.nvim',
         config = function()
-            require('plugins.which-key')
+            require('plugins.tools.which-key')
         end,
         event = 'VeryLazy',
     },
@@ -414,7 +348,7 @@ return {
         'renerocksai/telekasten.nvim',
         dependencies = { 'renerocksai/calendar-vim' },
         config = function()
-            require('plugins.telekasten')
+            require('plugins.tools.telekasten')
         end,
         cmd = 'Telekasten',
     },
@@ -428,15 +362,80 @@ return {
             require('dbee').install('curl')
         end,
         config = function()
-            require('plugins.dbee')
+            require('plugins.tools.dbee')
         end,
         cmd = 'DBToggle',
     },
     {
         'akinsho/toggleterm.nvim',
         config = function()
-            require('plugins.toggleterm')
+            require('plugins.tools.toggleterm')
         end,
         cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
     },
+
+    -- Telescope
+    {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                build = 'make',
+            },
+            'nvim-telescope/telescope-symbols.nvim',
+            'molecule-man/telescope-menufacture',
+            'debugloop/telescope-undo.nvim',
+            'ThePrimeagen/harpoon',
+            {
+                'ThePrimeagen/refactoring.nvim',
+                config = function()
+                    require('plugins.tools.refactoring')
+                end,
+            },
+        },
+        cmd = 'Telescope',
+        config = function()
+            require('plugins.tools.telescope')
+        end,
+    },
+    {
+        '2kabhishek/nerdy.nvim',
+        cmd = 'Nerdy',
+    },
+
+    -- Git
+    {
+        '2kabhishek/co-author.nvim',
+        cmd = 'GitCoAuthors',
+    },
+    {
+        'ruifm/gitlinker.nvim',
+        config = function()
+            require('plugins.tools.gitlinker')
+        end,
+        keys = '<leader>gy',
+    },
+    {
+        'lewis6991/gitsigns.nvim',
+        cmd = 'Gitsigns',
+        event = 'VeryLazy',
+        config = function()
+            require('plugins.tools.gitsigns')
+        end,
+    },
+    {
+        'tpope/vim-fugitive',
+        cmd = 'Git',
+    },
+    {
+        'pwntester/octo.nvim',
+        cmd = 'Octo',
+        config = function()
+            require('plugins.tools.octo')
+        end,
+        opts = true,
+    },
+
 }
