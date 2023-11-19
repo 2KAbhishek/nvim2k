@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local textobjects = require('plugins.textobjects')
+local textobjects = require('plugins.lang.textobjects')
 
 configs.setup({
     ensure_installed = { 'vimdoc', 'lua', 'markdown' }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages

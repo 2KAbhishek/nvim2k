@@ -83,6 +83,8 @@ return {
         cmd = { 'ZenMode', 'Twilight' },
     },
 
+    -- Language
+
     -- Tresitter
     {
         'nvim-treesitter/nvim-treesitter',
@@ -96,7 +98,7 @@ return {
         },
         lazy = true,
         config = function()
-            require('plugins.treesitter')
+            require('plugins.lang.treesitter')
         end,
         event = 'VeryLazy',
     },
@@ -111,13 +113,13 @@ return {
             {
                 'Maan2003/lsp_lines.nvim',
                 config = function()
-                    require('plugins.lsp-lines')
+                    require('plugins.lang.lsp-lines')
                 end,
             },
             {
                 'glepnir/lspsaga.nvim',
                 config = function()
-                    require('plugins.lspsaga')
+                    require('plugins.lang.lspsaga')
                 end,
             },
         },
@@ -126,7 +128,7 @@ return {
     {
         'williamboman/mason.nvim',
         config = function()
-            require('plugins.mason')
+            require('plugins.lang.mason')
         end,
         cmd = 'Mason',
     },
@@ -134,7 +136,7 @@ return {
         'nvimtools/none-ls.nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
         config = function()
-            require('plugins.null-ls')
+            require('plugins.lang.null-ls')
         end,
         event = 'VeryLazy',
     },
@@ -144,7 +146,7 @@ return {
             'rcarriga/nvim-dap-ui',
         },
         config = function()
-            require('plugins.dap')
+            require('plugins.lang.dap')
         end,
         cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
     },
@@ -164,7 +166,7 @@ return {
             'rafamadriz/friendly-snippets',
         },
         config = function()
-            require('plugins.cmp')
+            require('plugins.lang.cmp')
         end,
         event = 'InsertEnter',
     },
@@ -174,10 +176,35 @@ return {
             'zbirenbaum/copilot-cmp',
         },
         config = function()
-            require('plugins.copilot')
+            require('plugins.lang.copilot')
         end,
         event = 'InsertEnter',
     },
+
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'antoinemadec/FixCursorHold.nvim',
+            'olimorris/neotest-rspec',
+            'haydenmeade/neotest-jest',
+        },
+        config = function()
+            require('plugins.neotest')
+        end,
+        cmd = 'Neotest',
+    },
+    {
+        'michaelb/sniprun',
+        build = 'bash ./install.sh',
+        cmd = 'SnipRun',
+        config = function()
+            require('plugins.lang.sniprun')
+        end,
+    },
+    -- Language specific
+    { 'tpope/vim-rails',     ft = 'ruby' },
+    { 'weizheheng/ror.nvim', branch = 'main',      ft = 'ruby' },
+    { 'folke/neodev.nvim',   ft = { 'lua', 'vim' } },
 
     -- Git
     {
@@ -377,14 +404,6 @@ return {
         event = 'VeryLazy',
     },
     {
-        'michaelb/sniprun',
-        build = 'bash ./install.sh',
-        cmd = 'SnipRun',
-        config = function()
-            require('plugins.sniprun')
-        end,
-    },
-    {
         'iamcco/markdown-preview.nvim',
         build = function()
             vim.fn['mkdp#util#install']()
@@ -399,18 +418,6 @@ return {
             require('plugins.telekasten')
         end,
         cmd = 'Telekasten',
-    },
-    {
-        'nvim-neotest/neotest',
-        dependencies = {
-            'antoinemadec/FixCursorHold.nvim',
-            'olimorris/neotest-rspec',
-            'haydenmeade/neotest-jest',
-        },
-        config = function()
-            require('plugins.neotest')
-        end,
-        cmd = 'Neotest',
     },
     {
         'kndndrj/nvim-dbee',
@@ -433,9 +440,4 @@ return {
         end,
         cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
     },
-
-    -- Language specific
-    { 'tpope/vim-rails',     ft = 'ruby' },
-    { 'weizheheng/ror.nvim', branch = 'main',      ft = 'ruby' },
-    { 'folke/neodev.nvim',   ft = { 'lua', 'vim' } },
 }
