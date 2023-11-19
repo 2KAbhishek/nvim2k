@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local icons = require('icons')
+local icons = require('lib.icons')
 
 mason.setup({
     -- Where Mason should put its bin location in your PATH. Can be one of:

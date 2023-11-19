@@ -12,7 +12,7 @@ require('luasnip/loaders/from_vscode').lazy_load()
 
 local compare = require('cmp.config.compare')
 
-local icons = require('icons')
+local icons = require('lib.icons')
 local kind_icons = icons.kind
 vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', { fg = '#6CC644' })
 

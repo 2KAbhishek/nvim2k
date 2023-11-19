@@ -8,7 +8,7 @@ if not dap_ui_status_ok then
     return
 end
 
-local icons = require('icons')
+local icons = require('lib.icons')
 
 -- dapui.setup()
 dapui.setup({

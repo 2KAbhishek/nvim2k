@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local icons = require('icons')
+local icons = require('lib.icons')
 
 octo.setup({
     use_local_fs = false, -- use local files on right side of reviews

@@ -5,7 +5,7 @@ end
 
 local actions = require('telescope.actions')
 local multi_open_mappings = require('plugins.telescope-multiopen')
-local icons = require('icons')
+local icons = require('lib.icons')
 
 local function flash(prompt_bufnr)
     require("flash").jump({

@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local icons = require('icons')
+local icons = require('lib.icons')
 
 dashboard.setup({
     theme = 'hyper', --  theme is doom and hyper default is hyper
