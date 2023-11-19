@@ -50,7 +50,10 @@ To get `nvim2k`, follow these steps:
 
 ```bash
 git clone https://github.com/2kabhishek/nvim2k
+# On Linux and Mac
 ln -sfnv $PWD/nvim2k $HOME/.config/nvim
+# On Windows
+cmd /c mklink /d %LOCALAPPDATA%\nvim %CD%\nvim2k
 ```
 
 ## Plugins
