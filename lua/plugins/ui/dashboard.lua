@@ -18,23 +18,17 @@ dashboard.setup({
     config = {
         week_header = {
             enable = true,
+            append = { '', icons.ui.Circle .. ' Nvim2K: Learn. Make, Explore! ' .. icons.ui.Circle },
         },
         packages = { enable = true }, -- show how many plugins neovim loaded
         project = { enable = true, limit = 8 },
         mru = { limit = 8 },
-        footer = { icons.ui.Rocket .. ' Build, Ship, Innovate with nvim2k! ' .. icons.ui.Vim },
         shortcut = {
             {
                 desc = icons.ui.Package .. 'Plugins',
                 group = '@property',
                 action = 'Lazy',
                 key = 'p',
-            },
-            {
-                desc = icons.ui.Gear .. 'Mason',
-                group = '@property',
-                action = 'Mason',
-                key = 'm',
             },
             {
                 desc = icons.ui.Vim .. 'Config',
@@ -61,17 +55,12 @@ dashboard.setup({
                 key = 'd',
             },
             {
-                desc = icons.ui.NewFile .. 'New File',
-                group = 'Label',
-                action = 'enew',
-                key = 'n',
-            },
-            {
-                desc = icons.ui.Power .. 'Exit',
+                desc = icons.ui.Power,
                 group = 'Action',
                 action = 'quit',
                 key = 'q',
             },
         },
+        footer = { '', icons.ui.Heart .. ' Happiness is a state of mind. ' .. icons.ui.Heart },
     },
 })
