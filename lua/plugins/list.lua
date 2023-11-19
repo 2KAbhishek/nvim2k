@@ -124,16 +124,19 @@ return {
         dependencies = {
             'neovim/nvim-lspconfig',
             'williamboman/mason-lspconfig.nvim',
-            {
-                'Maan2003/lsp_lines.nvim',
-                config = load_config('lang.lsp-lines'),
-            },
-            {
-                'glepnir/lspsaga.nvim',
-                config = load_config('lang.lspsaga'),
-            },
         },
         event = { 'VeryLazy', 'BufNewFile' },
+    },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = load_config('lang.lspsaga'),
+        event = 'LspAttach',
+    },
+    {
+        'Maan2003/lsp_lines.nvim',
+        config = load_config('lang.lsp-lines'),
+        event = 'LspAttach',
+
     },
     {
         'williamboman/mason.nvim',
@@ -144,7 +147,7 @@ return {
         'nvimtools/none-ls.nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
         config = load_config('lang.null-ls'),
-        event = 'VeryLazy',
+        event = 'LspAttach',
     },
 
     -- Completion
