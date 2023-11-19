@@ -454,7 +454,9 @@ local no_leader_mappings = {
         B = { '<cmd>blast<cr>', 'Last Buffer' },
         e = { 'g,', 'Next Edit' },
         j = { '<C-i>', 'Next Jump' },
-    }
+    },
+
+    K = {'<cmd>Lspsaga hover_doc<cr>', 'LSP Hover'}
 }
 
 which_key.setup(setup)
