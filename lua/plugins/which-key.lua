@@ -127,7 +127,7 @@ local mappings = {
     c = {
         name = icons.ui.Vim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
-        C = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
+        C = { '<cmd>CccConvert<cr>', 'Convert Color' },
         d = { '<cmd>cd %:p:h<cr>', 'Change Directory' },
         e = { '<cmd>e ~/.config/nvim/lua/installed.lua<cr>', 'Edit Config' },
         -- f = { '<cmd>!eslint --fix %<cr>', 'Format Files' },
@@ -155,6 +155,7 @@ local mappings = {
             u = { '<cmd>Lazy update<cr>', 'Update' },
             x = { '<cmd>Lazy clean<cr>', 'Clean' },
         },
+        P = { '<cmd>CccPick<cr>', 'Pick Color' },
     },
     b = {
         name = icons.ui.Bug .. 'Debug',
@@ -341,7 +342,7 @@ local mappings = {
     },
     t = {
         name = icons.ui.Terminal .. 'Toggle',
-        c = { '<cmd>ColorizerToggle<cr>', 'Colorize' },
+        c = { '<cmd>CccHighlighterToggle<cr>', 'Colorize' },
         d = { '<cmd>Dashboard<cr>', 'Dashboard' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },

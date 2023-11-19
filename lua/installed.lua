@@ -45,12 +45,9 @@ return {
         event = 'VeryLazy',
     },
     {
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            require('plugins.colorizer')
-        end,
+        'uga-rosa/ccc.nvim',
         ft = { 'html', 'css', 'sass', 'javascript', 'typescriptreact', 'javascriptreact' },
-        cmd = 'ColorizerToggle',
+        cmd = {'CccHighlighterToggle', 'CccConvert', 'CccPick'},
     },
     {
         'glepnir/dashboard-nvim',
