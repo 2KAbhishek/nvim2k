@@ -39,7 +39,7 @@ dashboard.setup({
             {
                 desc = icons.ui.Vim .. 'Config',
                 group = '@property',
-                action = 'e ~/.config/nvim/lua/installed.lua',
+                action = 'e ~/.config/nvim/lua/plugins/list.lua',
                 key = 'e',
             },
             {
