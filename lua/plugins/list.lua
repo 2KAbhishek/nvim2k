@@ -1,58 +1,48 @@
+local function load_config(package)
+    return function() require('plugins.' .. package) end
+end
+
 return {
     -- UI
     {
         'navarasu/onedark.nvim',
-        config = function()
-            require('plugins.ui.onedark')
-        end,
+        config = load_config('ui.onedark'),
         lazy = false,
     },
     {
         'nvim-lualine/lualine.nvim',
-        config = function()
-            require('plugins.ui.lualine')
-        end,
+        config = load_config('ui.lualine'),
         event = 'VeryLazy',
     },
     {
         'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require('plugins.ui.indentline')
-        end,
+        config = load_config('ui.indentline'),
         main = 'ibl',
         event = 'VeryLazy',
     },
     {
         'HiPhish/rainbow-delimiters.nvim',
-        config = function()
-            require('plugins.ui.rainbow')
-        end,
+        config = load_config('ui.rainbow'),
         event = 'VeryLazy',
     },
     {
         'rcarriga/nvim-notify',
-        config = function()
-            require('plugins.ui.notify')
-        end,
+        config = load_config('ui.notify'),
         event = 'VeryLazy',
         cmd = 'Notifications',
     },
     {
         'stevearc/dressing.nvim',
-        config = function()
-            require('plugins.ui.dressing')
-        end,
+        config = load_config('ui.dressing'),
         event = 'VeryLazy',
     },
     {
         'uga-rosa/ccc.nvim',
-        cmd = {'CccHighlighterToggle', 'CccConvert', 'CccPick'},
+        cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     },
     {
         'glepnir/dashboard-nvim',
-        config = function()
-            require('plugins.ui.dashboard')
-        end,
+        config = load_config('ui.dashboard'),
         -- Only load when no arguments
         event = function()
             if vim.fn.argc() == 0 then
@@ -66,9 +56,7 @@ return {
         build = function()
             vim.cmd([[silent UpdateRemotePlugins]])
         end,
-        config = function()
-            require('plugins.ui.wilder')
-        end,
+        config = load_config('ui.wilder'),
         keys = { ':', '/', '?', },
     },
     {
@@ -76,9 +64,7 @@ return {
         dependencies = {
             'folke/twilight.nvim',
         },
-        config = function()
-            require('plugins.ui.zen-mode')
-        end,
+        config = load_config('ui.zen-mode'),
         cmd = { 'ZenMode', 'Twilight' },
     },
 
@@ -91,9 +77,7 @@ return {
         dependencies = {
             'rcarriga/nvim-dap-ui',
         },
-        config = function()
-            require('plugins.lang.dap')
-        end,
+        config = load_config('lang.dap'),
         cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
     },
     {
@@ -103,18 +87,18 @@ return {
             'olimorris/neotest-rspec',
             'haydenmeade/neotest-jest',
         },
-        config = function()
-            require('plugins.neotest')
-        end,
+        config = load_config('neotest'),
         cmd = 'Neotest',
     },
     {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
         cmd = 'SnipRun',
-        config = function()
-            require('plugins.lang.sniprun')
-        end,
+        config = load_config('lang.sniprun'),
+    },
+    {
+        'ThePrimeagen/refactoring.nvim',
+        config = load_config('lang.refactoring')
     },
 
     -- Tresitter
@@ -129,9 +113,7 @@ return {
             'windwp/nvim-ts-autotag',
         },
         lazy = true,
-        config = function()
-            require('plugins.lang.treesitter')
-        end,
+        config = load_config('lang.treesitter'),
         event = 'VeryLazy',
     },
 
@@ -144,32 +126,24 @@ return {
             'williamboman/mason-lspconfig.nvim',
             {
                 'Maan2003/lsp_lines.nvim',
-                config = function()
-                    require('plugins.lang.lsp-lines')
-                end,
+                config = load_config('lang.lsp-lines'),
             },
             {
                 'glepnir/lspsaga.nvim',
-                config = function()
-                    require('plugins.lang.lspsaga')
-                end,
+                config = load_config('lang.lspsaga'),
             },
         },
         event = { 'VeryLazy', 'BufNewFile' },
     },
     {
         'williamboman/mason.nvim',
-        config = function()
-            require('plugins.lang.mason')
-        end,
+        config = load_config('lang.mason'),
         cmd = 'Mason',
     },
     {
         'nvimtools/none-ls.nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
-        config = function()
-            require('plugins.lang.null-ls')
-        end,
+        config = load_config('lang.null-ls'),
         event = 'VeryLazy',
     },
 
@@ -187,9 +161,7 @@ return {
             'L3MON4D3/LuaSnip',
             'rafamadriz/friendly-snippets',
         },
-        config = function()
-            require('plugins.lang.cmp')
-        end,
+        config = load_config('lang.cmp'),
         event = 'InsertEnter',
     },
     {
@@ -197,9 +169,7 @@ return {
         dependencies = {
             'zbirenbaum/copilot-cmp',
         },
-        config = function()
-            require('plugins.lang.copilot')
-        end,
+        config = load_config('lang.copilot'),
         event = 'InsertEnter',
     },
 
@@ -209,16 +179,12 @@ return {
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
-        config = function()
-            require('plugins.tools.nvim-tree')
-        end,
+        config = load_config('tools.nvim-tree'),
         cmd = 'NvimTreeToggle',
     },
     {
         'stevearc/oil.nvim',
-        config = function()
-            require('plugins.tools.oil')
-        end,
+        config = load_config('tools.oil'),
         cmd = 'Oil',
         -- Only load when argument is a directory
         event = function()
@@ -229,9 +195,7 @@ return {
     },
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('plugins.tools.comment')
-        end,
+        config = load_config('tools.comment'),
         keys = {
             { 'gcc', mode = { 'n', }, function() require('Comment').toggle() end, desc = "Comment" },
             { 'gc',  mode = { 'v' },  function() require('Comment').toggle() end, desc = "Comment" },
@@ -239,38 +203,28 @@ return {
     },
     {
         'kylechui/nvim-surround',
-        config = function()
-            require('plugins.tools.surround')
-        end,
+        config = load_config('tools.surround'),
         keys = { 'cs', 'ds', 'ys' },
     },
     {
         'windwp/nvim-autopairs',
-        config = function()
-            require('plugins.tools.autopairs')
-        end,
+        config = load_config('tools.autopairs'),
         event = 'InsertEnter',
     },
     {
         'windwp/nvim-spectre',
-        config = function()
-            require('plugins.tools.spectre')
-        end,
+        config = load_config('tools.spectre'),
         cmd = 'Spectre',
     },
     {
         'abecodes/tabout.nvim',
-        config = function()
-            require('plugins.tools.tabout')
-        end,
+        config = load_config('tools.tabout'),
         event = 'VeryLazy',
     },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
-        config = function()
-            require('plugins.tools.flash')
-        end,
+        config = load_config('tools.flash'),
         keys = {
             { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
             {
@@ -305,9 +259,7 @@ return {
     },
     {
         'aserowy/tmux.nvim',
-        config = function()
-            require('plugins.tools.tmux')
-        end,
+        config = load_config('tools.tmux'),
         event = function()
             if vim.fn.exists('$TMUX') == 1 then
                 return 'VeryLazy'
@@ -324,16 +276,12 @@ return {
     },
     {
         'chrisgrieser/nvim-spider',
-        config = function()
-            require('plugins.tools.spider')
-        end,
+        config = load_config('tools.spider'),
         event = 'VeryLazy',
     },
     {
         'folke/which-key.nvim',
-        config = function()
-            require('plugins.tools.which-key')
-        end,
+        config = load_config('tools.which-key'),
         event = 'VeryLazy',
     },
     {
@@ -347,9 +295,7 @@ return {
     {
         'renerocksai/telekasten.nvim',
         dependencies = { 'renerocksai/calendar-vim' },
-        config = function()
-            require('plugins.tools.telekasten')
-        end,
+        config = load_config('tools.telekasten'),
         cmd = 'Telekasten',
     },
     {
@@ -361,16 +307,12 @@ return {
             --    "curl", "wget", "bitsadmin", "go"
             require('dbee').install('curl')
         end,
-        config = function()
-            require('plugins.tools.dbee')
-        end,
+        config = load_config('tools.dbee'),
         cmd = 'DBToggle',
     },
     {
         'akinsho/toggleterm.nvim',
-        config = function()
-            require('plugins.tools.toggleterm')
-        end,
+        config = load_config('tools.toggleterm'),
         cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
     },
 
@@ -388,17 +330,9 @@ return {
             'molecule-man/telescope-menufacture',
             'debugloop/telescope-undo.nvim',
             'ThePrimeagen/harpoon',
-            {
-                'ThePrimeagen/refactoring.nvim',
-                config = function()
-                    require('plugins.tools.refactoring')
-                end,
-            },
         },
         cmd = 'Telescope',
-        config = function()
-            require('plugins.tools.telescope')
-        end,
+        config = load_config('tools.telescope'),
     },
     {
         '2kabhishek/nerdy.nvim',
@@ -412,18 +346,14 @@ return {
     },
     {
         'ruifm/gitlinker.nvim',
-        config = function()
-            require('plugins.tools.gitlinker')
-        end,
+        config = load_config('tools.gitlinker'),
         keys = '<leader>gy',
     },
     {
         'lewis6991/gitsigns.nvim',
         cmd = 'Gitsigns',
         event = 'VeryLazy',
-        config = function()
-            require('plugins.tools.gitsigns')
-        end,
+        config = load_config('tools.gitsigns'),
     },
     {
         'tpope/vim-fugitive',
@@ -432,9 +362,7 @@ return {
     {
         'pwntester/octo.nvim',
         cmd = 'Octo',
-        config = function()
-            require('plugins.tools.octo')
-        end,
+        config = load_config('tools.octo'),
         opts = true,
     },
 
