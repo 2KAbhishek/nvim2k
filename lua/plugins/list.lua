@@ -94,8 +94,8 @@ return {
     {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
-        cmd = 'SnipRun',
         config = load_config('lang.sniprun'),
+        cmd = 'SnipRun',
     },
     {
         'ThePrimeagen/refactoring.nvim',
@@ -113,8 +113,8 @@ return {
             'RRethy/nvim-treesitter-textsubjects',
             'windwp/nvim-ts-autotag',
         },
-        lazy = true,
         config = load_config('lang.treesitter'),
+        lazy = true,
         event = 'VeryLazy',
     },
 
@@ -126,7 +126,7 @@ return {
             'neovim/nvim-lspconfig',
             'williamboman/mason-lspconfig.nvim',
         },
-        event = { 'VeryLazy', 'BufNewFile' },
+        event = 'VimEnter',
     },
     {
         'nvimdev/lspsaga.nvim',
@@ -170,7 +170,8 @@ return {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
         dependencies = { 'rafamadriz/friendly-snippets', },
-        build = "make install_jsregexp"
+        build = "make install_jsregexp",
+        event = 'InsertEnter'
     },
     {
         'zbirenbaum/copilot.lua',
@@ -227,11 +228,10 @@ return {
     {
         'abecodes/tabout.nvim',
         config = load_config('tools.tabout'),
-        event = 'VeryLazy',
+        event = 'InsertEnter',
     },
     {
         "folke/flash.nvim",
-        event = "VeryLazy",
         config = load_config('tools.flash'),
         keys = {
             { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
@@ -339,8 +339,8 @@ return {
             'debugloop/telescope-undo.nvim',
             'ThePrimeagen/harpoon',
         },
-        cmd = 'Telescope',
         config = load_config('tools.telescope'),
+        cmd = 'Telescope',
     },
     {
         '2kabhishek/nerdy.nvim',
@@ -359,9 +359,9 @@ return {
     },
     {
         'lewis6991/gitsigns.nvim',
+        config = load_config('tools.gitsigns'),
         cmd = 'Gitsigns',
         event = 'VeryLazy',
-        config = load_config('tools.gitsigns'),
     },
     {
         'tpope/vim-fugitive',
@@ -369,8 +369,8 @@ return {
     },
     {
         'pwntester/octo.nvim',
-        cmd = 'Octo',
         config = load_config('tools.octo'),
+        cmd = 'Octo',
         opts = true,
     },
 
