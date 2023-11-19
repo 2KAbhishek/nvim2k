@@ -54,8 +54,12 @@ To get `nvim2k`, follow these steps:
 git clone https://github.com/2kabhishek/nvim2k
 # On Linux and Mac
 ln -sfnv $PWD/nvim2k $HOME/.config/nvim
-# On Windows
 cmd /c mklink /d %LOCALAPPDATA%\nvim %CD%\nvim2k
+```
+
+```powershell
+# On Windows
+New-Item -ItemType SymbolicLink -Path "$env:LOCALAPPDATA\nvim" -Target "$PWD\nvim2k" -Force
 ```
 
 ## Plugins
