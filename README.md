@@ -42,7 +42,9 @@ Have been using `neovim` as my editor of choice for a while, with the introducti
 
 Before you begin, ensure you have met the following requirements:
 
--   You have installed the latest version of `neovim`
+- You have installed the latest version of `neovim`
+- Python proivder is necessary for some operations: `pip install neovim`
+- To use nvim2k for notes, make sure to add `export NOTES_DIR=your/notes/path` as a env var [video with more info](https://youtu.be/FP7sQhc8kek)
 
 ## Getting `nvim2k`
 
