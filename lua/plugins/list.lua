@@ -3,21 +3,21 @@ return {
     {
         'navarasu/onedark.nvim',
         config = function()
-            require('plugins.onedark')
+            require('plugins.ui.onedark')
         end,
         lazy = false,
     },
     {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require('plugins.lualine')
+            require('plugins.ui.lualine')
         end,
         event = 'VeryLazy',
     },
     {
         'lukas-reineke/indent-blankline.nvim',
         config = function()
-            require('plugins.indentline')
+            require('plugins.ui.indentline')
         end,
         main = 'ibl',
         event = 'VeryLazy',
@@ -25,14 +25,14 @@ return {
     {
         'HiPhish/rainbow-delimiters.nvim',
         config = function()
-            require('plugins.rainbow')
+            require('plugins.ui.rainbow')
         end,
         event = 'VeryLazy',
     },
     {
         'rcarriga/nvim-notify',
         config = function()
-            require('plugins.notify')
+            require('plugins.ui.notify')
         end,
         event = 'VeryLazy',
         cmd = 'Notifications',
@@ -40,19 +40,18 @@ return {
     {
         'stevearc/dressing.nvim',
         config = function()
-            require('plugins.dressing')
+            require('plugins.ui.dressing')
         end,
         event = 'VeryLazy',
     },
     {
         'uga-rosa/ccc.nvim',
-        ft = { 'html', 'css', 'sass', 'javascript', 'typescriptreact', 'javascriptreact' },
         cmd = {'CccHighlighterToggle', 'CccConvert', 'CccPick'},
     },
     {
         'glepnir/dashboard-nvim',
         config = function()
-            require('plugins.dashboard')
+            require('plugins.ui.dashboard')
         end,
         -- Only load when no arguments
         event = function()
@@ -68,7 +67,7 @@ return {
             vim.cmd([[silent UpdateRemotePlugins]])
         end,
         config = function()
-            require('plugins.wilder')
+            require('plugins.ui.wilder')
         end,
         keys = { ':', '/', '?', },
     },
@@ -78,7 +77,7 @@ return {
             'folke/twilight.nvim',
         },
         config = function()
-            require('plugins.zen-mode')
+            require('plugins.ui.zen-mode')
         end,
         cmd = { 'ZenMode', 'Twilight' },
     },
