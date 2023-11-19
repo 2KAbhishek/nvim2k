@@ -41,7 +41,7 @@ return {
         cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     },
     {
-        'glepnir/dashboard-nvim',
+        'nvimdev/dashboard-nvim',
         config = load_config('ui.dashboard'),
         -- Only load when no arguments
         event = function()
@@ -63,6 +63,7 @@ return {
         'folke/zen-mode.nvim',
         dependencies = {
             'folke/twilight.nvim',
+            config = load_config('ui.twilight'),
         },
         config = load_config('ui.zen-mode'),
         cmd = { 'ZenMode', 'Twilight' },
@@ -161,11 +162,15 @@ return {
             'hrsh7th/cmp-nvim-lsp-signature-help',
             'hrsh7th/cmp-nvim-lua',
             'saadparwaiz1/cmp_luasnip',
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
         },
         config = load_config('lang.cmp'),
         event = 'InsertEnter',
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        dependencies = { 'rafamadriz/friendly-snippets', },
+        build = "make install_jsregexp"
     },
     {
         'zbirenbaum/copilot.lua',

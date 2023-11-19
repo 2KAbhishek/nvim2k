@@ -59,8 +59,6 @@ local options = {
     writebackup = false, -- do not edit backups
 }
 
--- print(vim.inspect(options))
-
 vim.cmd([[
      setlocal spell spelllang=en "Set spellcheck language to en
      setlocal spell! "Disable spell checks by default
