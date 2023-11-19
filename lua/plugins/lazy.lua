@@ -27,7 +27,7 @@ lazy.setup({
     },
     -- leave nil when passing the spec as the first argument to setup()
     spec = plugins, ---Lazy plugins list
-    lockfile = vim.fn.stdpath('config') .. '/lua/lock.json', -- lockfile generated after running update.
+    lockfile = vim.fn.stdpath('config') .. '/lua/plugins/lock.json', -- lockfile generated after running update.
     concurrency = nil, ---@type number limit the maximum amount of concurrent tasks
     git = {
         -- defaults for the `Lazy log` command
