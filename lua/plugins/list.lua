@@ -321,7 +321,7 @@ return {
     {
         'akinsho/toggleterm.nvim',
         config = load_config('tools.toggleterm'),
-        cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle' },
+        cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle', 'ElixirToggle' },
     },
 
     -- Telescope

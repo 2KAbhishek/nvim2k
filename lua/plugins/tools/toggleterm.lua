@@ -44,6 +44,11 @@ vim.api.nvim_create_user_command('RubyToggle', function()
     ruby:toggle()
 end, {})
 
+vim.api.nvim_create_user_command('ElixirToggle', function()
+    local elixir = Terminal:new({ cmd = 'iex', hidden = true })
+    elixir:toggle()
+end, {})
+
 vim.api.nvim_create_user_command('NodeToggle', function()
     local node = Terminal:new({ cmd = 'node', hidden = true })
     node:toggle()

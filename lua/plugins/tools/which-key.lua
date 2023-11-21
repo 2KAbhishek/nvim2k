@@ -344,6 +344,7 @@ local mappings = {
         name = icons.ui.Terminal .. 'Toggle',
         c = { '<cmd>CccHighlighterToggle<cr>', 'Colorize' },
         d = { '<cmd>Dashboard<cr>', 'Dashboard' },
+        e = { '<cmd>ElixirToggle<cr>', 'Elixir' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
         n = { '<cmd>NodeToggle<cr>', 'Node' },
