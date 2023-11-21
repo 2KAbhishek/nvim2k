@@ -161,7 +161,7 @@ local separator = {
 }
 
 local function mode(icon)
-    icon = icon or icons.ui.Vim
+    icon = icon or icons.ui.NeoVim
     return {
         function()
             return icon
