@@ -20,7 +20,7 @@
 <a href="https://github.com/2KAbhishek/nvim2k/pulse">
 <img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/nvim2k?style=flat&color=e06c75&label="> </a>
 
-<h3>Personalized Development Environment ❤️👨‍💻</h3>
+<h3>Your Personalized Development Environment ❤️👨‍💻</h3>
 
 <figure>
   <img src= "images/screenshot.png" alt="nvim2k Demo">
