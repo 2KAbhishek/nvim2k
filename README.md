@@ -30,54 +30,114 @@
 
 </div>
 
-## What is this
+Handcrafted `neovim` configs for the ultimate CLI dev experience, completely in `lua`
 
-Handcrafted `neovim` configs for the ultimate CLI dev experience, completely in `lua`, [video walkthrough](https://youtu.be/WfhylGI_F-o)
+Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 
-## Inspiration
+## ✨ Features
 
-Have been using `neovim` as my editor of choice for a while, with the introduction of vim 9 and the breaking changes to `viml` I decided to rewrite my configs in pure `lua`.
+- **Fully configured LSP**: Out of the box LSP and completions, including Copilot (optional)
+- **Awesome keybindings**: Intuitive and well documented keybindings with which-key
+- **Blazingly fast**: Starts up in less than 50ms thanks to extensive lazy loading
+- **Batteries included**: Has all the necessary plugins included out of the box
+- **Git in there**: Powerful git integrations thanks to lazygit, fugitive, gitsigns and more
+- **Pretty colors**: Comes with treesitter and onedark preconfigured with full transparency support
+- **Goto for notes**: Comes with powerful note-taking capabilities, thanks to telekasten
+- **Tmux integration**: Just works, with your tmux configurations out of the box
+- **Dev tools**: Comes with debugging, testing, database and REPL support, pick and choose
+- and many more!
 
-## Prerequisites
+But most importantly::
+
+**It's Easy to customize**: Has a simple and scalable config structure that promotes personalization, bring your keybindings, configs and plugins over, make **nvim2k: Your Personalized Development Environment**
+
+## ⚡ Setup
+
+### ⚙️ Requirements
 
 Before you begin, ensure you have met the following requirements:
 
 - You have installed the latest version of `neovim`
-- Python proivder is necessary for some operations: `pip install neovim`
+- Python provider is necessary for some operations: `pip install neovim`
+- Some command line tools: fd, ripgrep
+
 - To use nvim2k for notes, make sure to add `export NOTES_DIR=your/notes/path` as a env var [video with more info](https://youtu.be/FP7sQhc8kek)
 
-## Getting `nvim2k`
+### 💻 Installation
 
-To get `nvim2k`, follow these steps:
+To install `nvim2k` simply clone the repo and setup symlinks
 
 ```bash
 git clone https://github.com/2kabhishek/nvim2k
-# On Linux and Mac
+```
+
+On Linux and Mac
+
+```bash
 ln -sfnv $PWD/nvim2k $HOME/.config/nvim
 cmd /c mklink /d %LOCALAPPDATA%\nvim %CD%\nvim2k
 ```
 
+On Windows
+
 ```powershell
-# On Windows
 New-Item -ItemType SymbolicLink -Path "$env:LOCALAPPDATA\nvim" -Target "$PWD\nvim2k" -Force
 ```
 
-## Plugins
+## 🚀 Usage
 
-For a list of plugins, see the [plugins file](./lua/plugins/list.lua)
+Edit files in [lua/core](./lua/core/) for tweaking [options](./lua/core/options.lua), and to add/remove [functions](./lua/core/functions.lua) and [autocmds](./lua/core/autocmd.lua)
 
-Hit the ⭐ button if you found this useful.
+### 📦 Plugins
 
-## More Info
+To add new plugins simply add it to the [plugins list](./lua/plugins/list.lua)
 
-Looking for my `zsh` and other `cli` configs? See [Dotfiles](https://github.com/2kabhishek/Dotfiles)
+For plugin configs you can place them in these folders based on the functionality:
 
-Looking for my tmux configs? See [tmux2k](https://github.com/2kabhishek/tmux2k)
+- lang: Plugins related to language features, completions, lsp, debugging etc.
+- ui: Cosmetic plugins, things that make neovim pretty.
+- tools: General purpose tool plugins that aid in the editing experience.
 
-Want the CLI experience on your Android too? Have a look at [Oh-My-Termux](https://github.com/2kabhishek/Oh-My-Termux)
+### ⌨️ Keybindings
+
+If you want to change functionality of a core keybinding, edit [core/keymaps](./lua/core/keymaps.lua)
+
+To add new keybindings visit the [which-key config](./lua/plugins/tools/which-key.lua)
+
+## 🧑‍💻 Behind The Code
+
+### 🌈 Inspiration
+
+I have been using vim/neovim for 6+ years now, wanted to create a fun and easily extensible neovim config for everyone to use
+
+### 💡 Challenges/Learnings
+
+- Finding out just the right plugins and configs!
+- Setting up the initial config structure with lazy loading was tough.
+
+### 🧰 Tools Used
+
+- [dots2k](https://github.com/2kabhishek/dots2k) — Dev Environment
+- [nvim2k](https://github.com/2kabhishek/nvim2k) — Personalized Editor
+- [sway2k](https://github.com/2kabhishek/sway2k) — Desktop Environment
+- [qute2k](https://github.com/2kabhishek/qute2k) — Personalized Browser
+
+### 🔍 More Info
+
+- [nerdy.nvim](https://github.com/2kabhishek/nerdy.nvim) — search nerdfont glyphs from inside neovim
+- [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — easily add co authors to your git commits
+
+<hr>
 
 <div align="center">
 
-<a href="https://github.com/2KAbhishek/nvim2k">Source</a> | <a href="https://2kabhishek.github.io/nvim">Website</a>
+<strong>⭐ hit the star button if you found this useful ⭐</strong><br>
+
+<a href="https://github.com/2KAbhishek/nvim2k">Source</a>
+| <a href="https://2kabhishek.github.io/blog" target="_blank">Blog </a>
+| <a href="https://twitter.com/2kabhishek" target="_blank">Twitter </a>
+| <a href="https://linkedin.com/in/2kabhishek" target="_blank">LinkedIn </a>
+| <a href="https://2kabhishek.github.io/links" target="_blank">More Links </a>
+| <a href="https://2kabhishek.github.io/projects" target="_blank">Other Projects </a>
 
 </div>
