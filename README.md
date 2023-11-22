@@ -93,9 +93,9 @@ To add new plugins simply add it to the [plugins list](./lua/plugins/list.lua)
 
 For plugin configs you can place them in these folders based on the functionality:
 
-- lang: Plugins related to language features, completions, lsp, debugging etc.
-- ui: Cosmetic plugins, things that make neovim pretty.
-- tools: General purpose tool plugins that aid in the editing experience.
+- [lang](./lua/plugins/lang/): Plugins related to language features, completions, lsp, debugging etc.
+- [tools](./lua/plugins/tools/): General purpose tool plugins that aid in the editing experience.
+- [ui](./lua/plugins/ui/): Cosmetic plugins, things that make neovim pretty.
 
 ### ⌨️ Keybindings
 
