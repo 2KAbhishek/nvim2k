@@ -49,7 +49,7 @@ Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 
 But most importantly::
 
-**It's Easy to customize**: Has a simple and scalable config structure that promotes personalization, bring your keybindings, configs and plugins over, make **nvim2k: Your Personalized Development Environment**
+**Easy extensibility**: nvim2k has a simple and scalable config structure that promotes personalization, so go ahead, bring your keybindings, configs and plugins over, and truly make **nvim2k: Your Personalized Development Environment**
 
 ## ⚡ Setup
 
@@ -75,7 +75,6 @@ On Linux and Mac
 
 ```bash
 ln -sfnv $PWD/nvim2k $HOME/.config/nvim
-cmd /c mklink /d %LOCALAPPDATA%\nvim %CD%\nvim2k
 ```
 
 On Windows
