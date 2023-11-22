@@ -49,7 +49,7 @@ Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 
 But most importantly::
 
-**Easy extensibility**: nvim2k has a simple and scalable config structure that promotes personalization, so go ahead, bring your keybindings, configs and plugins over, and truly make **nvim2k: Your Personalized Development Environment**
+**Easy extensibility**: nvim2k has a simple and scalable config structure that promotes personalization, so go ahead, bring your keybindings, configs and plugins over, and truly make **nvim2k: Your Personalized Development Environment!**
 
 ## ⚡ Setup
 
@@ -77,7 +77,7 @@ On Linux and Mac
 ln -sfnv $PWD/nvim2k $HOME/.config/nvim
 ```
 
-On Windows
+On Windows Powershell
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path "$env:LOCALAPPDATA\nvim" -Target "$PWD\nvim2k" -Force
