@@ -97,7 +97,7 @@ local branch = {
 
 local diff_icons = {
     'diff',
-    symbols = { added = icons.git.Add, modified = icons.git.Mod, removed = icons.git.Remove },
+    symbols = { added = icons.git.AddAlt, modified = icons.git.DiffAlt, removed = icons.git.RemoveAlt },
     diff_color = {
         added = { fg = colors.green },
         modified = { fg = colors.orange },
@@ -185,23 +185,21 @@ local config = {
         },
     },
     -- extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
-    sections = {
-        -- these are to remove the defaults
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { separator, mode(icons.ui.Heart), 'location', filename, diff_icons, diagnostics },
-        lualine_x = { searchcount, selectioncount, branch, lsp, progress, filesize, filetype, fileformat, encoding,
-            separator },
-        lualine_y = {},
-        lualine_z = {},
-    },
     tabline = {
         lualine_a = {},
         lualine_b = { mode(), { 'buffers', use_mode_colors = true } },
         lualine_c = {},
-        lualine_x = {},
-        lualine_y = { 'tabs' },
+        lualine_x = { diff_icons, branch },
+        lualine_y = { searchcount, selectioncount },
         lualine_z = {}
+    },
+    sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { separator, mode(icons.ui.Heart), 'location', progress, filename },
+        lualine_x = { diagnostics, lsp, filetype, filesize, fileformat, encoding, separator },
+        lualine_y = {},
+        lualine_z = {},
     },
 }
 
