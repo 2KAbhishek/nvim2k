@@ -373,5 +373,4 @@ return {
         cmd = 'Octo',
         opts = true,
     },
-
 }
