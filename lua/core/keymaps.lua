@@ -14,8 +14,6 @@ vim.g.maplocalleader = ' '
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v",
 -- visual_block_mode = "x", term_mode = "t", command_mode = "c",
 
--- This file only tweaks the default keymaps for setting new ones use which-key
-
 -- Use jj as escape
 map('i', 'jj', '<Esc>', opts)
 map('t', 'JJ', '<C-\\><C-n>', opts)
