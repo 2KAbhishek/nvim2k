@@ -48,7 +48,6 @@ local options = {
     tabstop = 4, -- insert 2 spaces for a tab
     termguicolors = true, -- set term gui colors (most terminals support this)
     timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
-    undodir = os.getenv('HOME') .. '/.vim/undodir',
     undofile = true, -- enable persistent undo
     undolevels = 10000,
     updatetime = 50, -- faster completion (4000ms default)
