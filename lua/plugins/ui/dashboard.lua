@@ -39,7 +39,7 @@ dashboard.setup({
             {
                 desc = icons.documents.OpenFolder .. 'Files',
                 group = 'Label',
-                action = 'lua require("telescope").extensions.menufacture.git_files()',
+                action = 'lua require("telescope").extensions.menufacture.find_files()',
                 key = 'f',
             },
             {
