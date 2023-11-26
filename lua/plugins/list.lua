@@ -8,6 +8,7 @@ return {
         'navarasu/onedark.nvim',
         config = load_config('ui.onedark'),
         lazy = false,
+        priority = 1000,
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -70,9 +71,8 @@ return {
     },
 
     -- Language
-    { 'tpope/vim-rails',     ft = 'ruby' },
-    { 'weizheheng/ror.nvim', branch = 'main',      ft = 'ruby' },
-    { 'folke/neodev.nvim',   ft = { 'lua', 'vim' } },
+    { 'tpope/vim-rails', ft = 'ruby' },
+    { 'weizheheng/ror.nvim', branch = 'main', ft = 'ruby' },
     {
         'mfussenegger/nvim-dap',
         dependencies = {
@@ -88,7 +88,7 @@ return {
             'olimorris/neotest-rspec',
             'haydenmeade/neotest-jest',
         },
-        config = load_config('neotest'),
+        config = load_config('lang.neotest'),
         cmd = 'Neotest',
     },
     {
@@ -126,7 +126,14 @@ return {
             'neovim/nvim-lspconfig',
             'williamboman/mason-lspconfig.nvim',
         },
-        event = 'VimEnter',
+        config = load_config('lang.lsp-zero'),
+        event = { 'BufReadPre', 'BufNewFile' },
+
+    },
+    {
+        'folke/neodev.nvim',
+        ft = { 'lua', 'vim' },
+        config = load_config('lang.neodev')
     },
     {
         'nvimdev/lspsaga.nvim',
