@@ -35,7 +35,7 @@ return {
     {
         'stevearc/dressing.nvim',
         config = load_config('ui.dressing'),
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'uga-rosa/ccc.nvim',
@@ -350,12 +350,14 @@ return {
     },
     {
         '2kabhishek/nerdy.nvim',
+        dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
     },
 
     -- Git
     {
         '2kabhishek/co-author.nvim',
+        dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'GitCoAuthors',
     },
     {
