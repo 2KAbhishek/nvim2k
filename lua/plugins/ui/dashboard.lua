@@ -11,7 +11,7 @@ dashboard.setup({
     shortcut_type = 'letter', --  shorcut type 'letter' or 'number'
     change_to_vcs_root = false, -- default is false,for open file in hyper mru. it will change to the root of vcs
     hide = {
-        statusline = false, -- hide statusline default is true
+        statusline = true, -- hide statusline default is true
         tabline = false, -- hide the tabline
         winbar = false, -- hide winbar
     },

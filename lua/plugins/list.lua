@@ -13,18 +13,18 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         config = load_config('ui.lualine'),
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'lukas-reineke/indent-blankline.nvim',
         config = load_config('ui.indentline'),
         main = 'ibl',
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'HiPhish/rainbow-delimiters.nvim',
         config = load_config('ui.rainbow'),
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'rcarriga/nvim-notify',
@@ -114,8 +114,7 @@ return {
             'windwp/nvim-ts-autotag',
         },
         config = load_config('lang.treesitter'),
-        lazy = true,
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
 
     -- LSP
@@ -292,7 +291,7 @@ return {
     {
         'chrisgrieser/nvim-spider',
         config = load_config('tools.spider'),
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'folke/which-key.nvim',
@@ -368,7 +367,7 @@ return {
         'lewis6991/gitsigns.nvim',
         config = load_config('tools.gitsigns'),
         cmd = 'Gitsigns',
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'tpope/vim-fugitive',
