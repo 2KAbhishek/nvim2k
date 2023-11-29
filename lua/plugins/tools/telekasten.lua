@@ -46,7 +46,7 @@ telekasten.setup({
     -- "uuid" - Use uuid
     -- "uuid-title" - Prefix title by uuid
     -- "title-uuid" - Suffix title with uuid
-    new_note_filename = 'title-uuid',
+    new_note_filename = 'title',
     -- file uuid type ("rand" or input for os.date()")
     uuid_type = '%Y-%m-%d',
     -- UUID separator
@@ -84,11 +84,11 @@ telekasten.setup({
     plug_into_calendar = true,
     calendar_opts = {
         -- calendar week display mode: 1 .. 'WK01', 2 .. 'WK 1', 3 .. 'KW01', 4 .. 'KW 1', 5 .. '1'
-        weeknm = 4,
+        weeknm = 2,
         -- use monday as first day of week: 1 .. true, 0 .. false
-        calendar_monday = 1,
+        calendar_monday = 0,
         -- calendar mark: where to put mark for marked days: 'left', 'right', 'left-fit'
-        calendar_mark = 'left-fit',
+        calendar_mark = 'right',
     },
 
     -- telescope actions behavior
@@ -150,7 +150,7 @@ telekasten.setup({
         },
         creative = {
             home = creative_dir .. year .. '/' .. month,
-            new_note_filename = 'title-uuid',
+            new_note_filename = 'title',
             uuid_type = '%Y-%m-%d-%H-%M',
             template_new_note = creative_dir .. 'template.md',
         },
