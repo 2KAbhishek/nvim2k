@@ -198,17 +198,6 @@ return {
         cmd = 'NvimTreeToggle',
     },
     {
-        'stevearc/oil.nvim',
-        config = load_config('tools.oil'),
-        cmd = 'Oil',
-        -- Only load when argument is a directory
-        event = function()
-            if vim.fn.isdirectory(vim.fn.expand('%')) == 1 then
-                return 'VimEnter'
-            end
-        end,
-    },
-    {
         'numToStr/Comment.nvim',
         config = load_config('tools.comment'),
         keys = {
