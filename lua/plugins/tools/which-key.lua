@@ -123,7 +123,6 @@ local mappings = {
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
-    ['<tab>'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
     c = {
         name = icons.ui.NeoVim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
@@ -468,6 +467,7 @@ local no_leader_mappings = {
         l = { '$', 'End of line' },
     },
 
+    ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
     K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
     U = { '<cmd>redo<cr>', 'Redo' },
 }
