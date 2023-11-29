@@ -4,20 +4,21 @@ if not status_ok then
 end
 
 local os = require('os')
-local notes_dir = vim.fn.expand(os.getenv('NOTES_DIR'))
-local entry_dir = vim.fn.expand(os.getenv('ENTRY_DIR'))
-local creative_dir = vim.fn.expand(os.getenv('CREATIVE_DIR'))
-if not notes_dir then
-    notes_dir = vim.fn.expand('~/Projects/GitHub/Notes/worklog/')
-end
 local year = os.date('%Y')
 local month = os.date('%m')
--- NOTE for Windows users:
--- - don't use Windows
--- - try WSL2 on Windows and pretend you're on Linux
--- - if you **must** use Windows, use "/Users/myname/zettelkasten" instead of "~/zettelkasten"
--- - NEVER use "C:\Users\myname" style paths
--- - Using `vim.fn.expand("~/zettelkasten")` should work now but mileage will vary with anything outside of finding and opening files
+
+local notes_root = vim.fn.expand(os.getenv('NOTES_DIR'))
+local entry_dir = vim.fn.expand(os.getenv('ENTRY_DIR'))
+local creative_dir = vim.fn.expand(os.getenv('CREATIVE_DIR'))
+
+if not notes_root then
+    notes_root = vim.fn.expand('~/Projects/GitHub/Notes/worklog/')
+end
+
+local notes_dir = notes_root .. '/notes/'
+local templates_dir = notes_dir .. 'templates/'
+local log_dir = notes_root .. '/log/'
+
 telekasten.setup({
     home = notes_dir,
 
@@ -29,14 +30,14 @@ telekasten.setup({
     auto_set_filetype = true,
 
     -- dir names for special notes (absolute path or subdir name)
-    dailies = notes_dir .. 'log/' .. year .. '/' .. month,
-    weeklies = notes_dir .. 'log/' .. year .. '/weekly',
-    templates = notes_dir .. 'templates',
+    dailies = log_dir .. year .. '/' .. month,
+    weeklies = log_dir .. year .. '/weekly',
+    templates = templates_dir,
 
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
     -- or nil if pasted images shouldn't go into a special subdir
-    image_subdir = 'embeds',
+    image_subdir = 'images',
 
     -- markdown file extension
     extension = '.md',
@@ -60,21 +61,10 @@ telekasten.setup({
     -- skip telescope prompt for goto_today and goto_thisweek
     journal_auto_open = true,
 
-    -- template for new notes (new_note, follow_link)
-    -- set to `nil` or do not specify if you do not want a template
-    template_new_note = notes_dir .. 'templates/zettelkasten.md',
+    template_new_note = templates_dir .. 'zettelkasten.md',
+    template_new_daily = templates_dir .. 'todos.md',
+    template_new_weekly = templates_dir .. 'weekly.md',
 
-    -- template for newly created daily notes (goto_today)
-    -- set to `nil` or do not specify if you do not want a template
-    template_new_daily = notes_dir .. 'templates/todos.md',
-
-    -- template for newly created weekly notes (goto_thisweek)
-    -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly = notes_dir .. 'templates/weekly.md',
-
-    -- image link style
-    -- wiki:     ![[image name]]
-    -- markdown: ![](image_subdir/xxxxx.png)
     image_link_style = 'markdown',
 
     -- default sort option: 'filename', 'modified'
@@ -109,35 +99,7 @@ telekasten.setup({
     -- instead of a [[title only]] link
     subdirs_in_links = true,
 
-    -- template_handling
-    -- What to do when creating a new note via `new_note()` or `follow_link()`
-    -- to a non-existing note
-    -- - prefer_new_note: use `new_note` template
-    -- - smart: if day or week is detected in title, use daily / weekly templates (default)
-    -- - always_ask: always ask before creating a note
     template_handling = 'smart',
-
-    -- path handling:
-    --   this applies to:
-    --     - new_note()
-    --     - new_templated_note()
-    --     - follow_link() to non-existing note
-    --
-    --   it does NOT apply to:
-    --     - goto_today()
-    --     - goto_thisweek()
-    --
-    --   Valid options:
-    --     - smart: put daily-looking notes in daily, weekly-looking ones in weekly,
-    --              all other ones in home, except for notes/with/subdirs/in/title.
-    --              (default)
-    --
-    --     - prefer_home: put all notes in home except for goto_today(), goto_thisweek()
-    --                    except for notes with subdirs/in/title.
-    --
-    --     - same_as_current: put all new notes in the dir of the current note if
-    --                        present or else in home
-    --                        except for notes/with/subdirs/in/title.
     new_note_location = 'smart',
 
     -- should all links be updated when a file is renamed
