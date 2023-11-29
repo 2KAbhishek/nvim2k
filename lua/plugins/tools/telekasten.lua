@@ -61,8 +61,8 @@ telekasten.setup({
     -- skip telescope prompt for goto_today and goto_thisweek
     journal_auto_open = true,
 
-    template_new_note = templates_dir .. 'zettelkasten.md',
-    template_new_daily = templates_dir .. 'todos.md',
+    template_new_note = templates_dir .. 'note.md',
+    template_new_daily = templates_dir .. 'todo.md',
     template_new_weekly = templates_dir .. 'weekly.md',
 
     image_link_style = 'markdown',
