@@ -71,8 +71,12 @@ return {
     },
 
     -- Language
+    {
+        'weizheheng/ror.nvim',
+        branch = 'main',
+        ft = 'ruby'
+    },
     { 'tpope/vim-rails', ft = 'ruby' },
-    { 'weizheheng/ror.nvim', branch = 'main', ft = 'ruby' },
     {
         'mfussenegger/nvim-dap',
         dependencies = {
@@ -292,7 +296,7 @@ return {
         build = function()
             vim.fn['mkdp#util#install']()
         end,
-        ft = { 'markdown' },
+        ft = 'markdown',
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
     },
     {
