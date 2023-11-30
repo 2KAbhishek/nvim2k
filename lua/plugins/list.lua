@@ -154,7 +154,7 @@ return {
         'nvimtools/none-ls.nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
         config = load_config('lang.null-ls'),
-        event = 'LspAttach',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
 
     -- Completion
