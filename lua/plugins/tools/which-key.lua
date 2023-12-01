@@ -461,12 +461,6 @@ local no_leader_mappings = {
         j = { '<C-i>', 'Next Jump' },
     },
 
-    g = {
-        name = 'Vim g',
-        h = { '^', 'First non-blank character' },
-        l = { '$', 'End of line' },
-    },
-
     ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
     K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
     U = { '<cmd>redo<cr>', 'Redo' },

@@ -28,6 +28,10 @@ map({ 'v', 'x' }, 'x', '"_x', opts)
 map({ 'n', 'v', 'x' }, '=', '<C-a>', opts)
 map({ 'n', 'v', 'x' }, '-', '<C-x>', opts)
 
+-- Move to line begining and end
+map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' } )
+map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Begining of line' } )
+
 -- Center Cursors
 map('n', 'J', 'mzJ`z', opts)
 map('n', '<C-d>', '<C-d>zz', opts)
