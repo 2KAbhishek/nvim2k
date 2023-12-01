@@ -351,7 +351,7 @@ return {
     {
         '2kabhishek/co-author.nvim',
         dependencies = { 'stevearc/dressing.nvim' },
-        cmd = 'GitCoAuthors',
+        cmd = 'CoAuthor',
     },
     {
         'ruifm/gitlinker.nvim',
