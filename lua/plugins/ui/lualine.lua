@@ -79,9 +79,6 @@ local fileformat = {
 
 local filename = {
     'filename',
-    fmt = function(str)
-        return str:sub(1, 16)
-    end,
     cond = conditions.buffer_not_empty,
     color = { fg = colors.magenta, gui = 'bold' },
 }
