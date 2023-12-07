@@ -1,2 +1,5 @@
 # Packer compiled output
 plugin/packer_compiled.lua
+
+# Custom user configs
+lua/user/
