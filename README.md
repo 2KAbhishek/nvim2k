@@ -103,6 +103,26 @@ If you want to change functionality of a core keybinding, edit [core/keymaps](./
 
 To add new keybindings visit the [which-key config](./lua/plugins/tools/which-key.lua)
 
+### 🎨 User Configs
+
+`nvim2k` supports a user module where you can store your custom configs, these will always override the default configs, whenever there is a clash.
+
+To use custom configs create the file `lua/user/init.lua`, you can structure your configs as you like there.
+
+> `user/init.lua` must be present to load custom configs, any other custom modules should be loaded in this file directly.
+
+Example `user/init.lua`
+
+```lua
+require('user.extra')
+
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set('i', 'jk', '<Esc>', opts)
+```
+
+`user` module is excluded in the [nvim2k gitignore](./.gitignore), you can set up `user` module as a separate git repository while continuously receiving `nvim2k` updates.
+
 ## 🧑‍💻 Behind The Code
 
 ### 🌈 Inspiration
