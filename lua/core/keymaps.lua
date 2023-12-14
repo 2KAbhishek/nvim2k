@@ -61,3 +61,9 @@ map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result
 -- Better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
+
+-- Add undo breakpoints
+map('i', ',', ',<c-g>u')
+map('i', '.', '.<c-g>u')
+map('i', ';', ';<c-g>u')
+
