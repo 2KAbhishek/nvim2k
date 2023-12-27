@@ -30,7 +30,6 @@ local options = {
     relativenumber = true, -- set relative numbered lines
     scrolloff = 10, -- is one of my fav
     sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal',
-    shell = 'zsh',
     shiftround = true, -- Round indent
     shiftwidth = 4, -- the number of spaces inserted for each indentation
     showcmd = false,
