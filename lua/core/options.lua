@@ -49,7 +49,6 @@ local options = {
     termguicolors = true, -- set term gui colors (most terminals support this)
     timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true, -- enable persistent undo
-    undodir = os.getenv('HOME') .. '/.vim/undodir', -- set an undo directory
     undolevels = 10000,
     updatetime = 50, -- faster completion (4000ms default)
     wildmenu = true, -- wildmenu
