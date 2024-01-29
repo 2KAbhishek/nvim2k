@@ -138,8 +138,6 @@ local mappings = {
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
         s = { '<cmd>%SnipRun<cr>', 'Run File' },
-        y = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
-        Y = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
         p = {
             name = icons.ui.Package .. 'Packages',
             c = { '<cmd>Lazy check<cr>', 'Check' },
@@ -244,7 +242,6 @@ local mappings = {
         },
         u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
         v = { '<cmd>Gitsigns select_hunk<cr>', 'Select Hunk' },
-        y = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
     },
     l = {
         name = icons.ui.Gear .. 'LSP',
@@ -386,6 +383,13 @@ local mappings = {
         w = { '<cmd>w<cr>', 'Write' },
         x = { '<cmd>x<cr>', 'Write and Quit' },
     },
+    y = {
+        name = icons.ui.Clipboard .. 'Yank',
+        f = { '<cmd>%y+<cr>', 'Copy Whole File' },
+        p = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
+        P = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
+        g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
+    }
 }
 
 local vopts = {
@@ -399,10 +403,6 @@ local vopts = {
 
 local vmappings = {
     s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
-    g = {
-        name = icons.git.Octoface .. 'Git',
-        y = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
-    },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
@@ -418,6 +418,10 @@ local vmappings = {
         name = icons.ui.Gear .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',
     },
+    y = {
+        name = icons.ui.Clipboard .. 'Yank',
+        g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
+    }
 }
 
 local no_leader_opts = {
