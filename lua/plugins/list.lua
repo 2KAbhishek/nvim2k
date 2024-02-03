@@ -322,6 +322,12 @@ return {
         config = load_config('tools.toggleterm'),
         cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle', 'ElixirToggle' },
     },
+    {
+        '2kabhishek/tdo.nvim',
+        dir = '~/Projects/GitHub/tdo.nvim/',
+        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoPending', 'TdoSearch', 'TdoFind', 'TdoFiles', 'TdoYesterday', 'TdoTomorrow' },
+        keys = { '[t', ']t' },
+    },
 
     -- Telescope
     {
