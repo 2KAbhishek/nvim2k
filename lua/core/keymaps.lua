@@ -25,8 +25,8 @@ map({ 'v', 'x' }, 'p', '"_dP', opts)
 map({ 'v', 'x' }, 'x', '"_x', opts)
 
 -- Increment/decrement
-map({ 'n', 'v', 'x' }, '=', '<C-a>', opts)
-map({ 'n', 'v', 'x' }, '-', '<C-x>', opts)
+map({ 'n', 'v', 'x' }, '-', '<C-a>', opts)
+map({ 'n', 'v', 'x' }, '=', '<C-x>', opts)
 
 -- Move to line begining and end
 map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' } )
