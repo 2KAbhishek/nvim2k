@@ -321,7 +321,7 @@ return {
         dir = '~/Projects/GitHub/tdo.nvim/',
         dependencies = { 'stevearc/dressing.nvim', 'nvim-telescope/telescope.nvim' },
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoPending', 'TdoToggle', 'TdoFind', 'TdoFiles',
-            'TdoYesterday', 'TdoTomorrow', 'TdoSearch' },
+            'TdoYesterday', 'TdoTomorrow' },
         keys = { '[t', ']t' },
     },
 
