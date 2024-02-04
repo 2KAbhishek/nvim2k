@@ -300,12 +300,6 @@ return {
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
     },
     {
-        'renerocksai/telekasten.nvim',
-        dependencies = { 'renerocksai/calendar-vim' },
-        config = load_config('tools.telekasten'),
-        cmd = 'Telekasten',
-    },
-    {
         'kndndrj/nvim-dbee',
         dependencies = {
             'MunifTanjim/nui.nvim',
