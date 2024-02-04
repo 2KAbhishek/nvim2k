@@ -42,7 +42,7 @@ Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 - **Batteries included**: Has all the necessary plugins included out of the box
 - **Git in there**: Powerful git integrations thanks to lazygit, fugitive, gitsigns and more
 - **Pretty colors**: Comes with treesitter and onedark preconfigured with full transparency support
-- **Goto for notes**: Comes with powerful note-taking capabilities, thanks to telekasten
+- **Goto for notes**: Comes with powerful note-taking capabilities, thanks to [tdo](https://github.com/2kabhishek/tdo)
 - **Tmux integration**: Just works, with your tmux configurations out of the box
 - **Dev tools**: Comes with debugging, testing, database and REPL support, pick and choose
 - and many more!
@@ -61,7 +61,7 @@ Before you begin, ensure you have met the following requirements:
 - Python provider is necessary for some operations: `pip install neovim`
 - Some command line tools: fd, ripgrep
 
-- To use nvim2k for notes, make sure to add `export NOTES_DIR=your/notes/path` as a env var [video with more info](https://youtu.be/FP7sQhc8kek)
+- To use nvim2k for notes, take a look at [tdo.nvim](https://github.com/2kabhishek/tdo.nvim)
 
 ### 💻 Installation
 
