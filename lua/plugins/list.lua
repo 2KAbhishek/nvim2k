@@ -300,12 +300,6 @@ return {
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
     },
     {
-        'renerocksai/telekasten.nvim',
-        dependencies = { 'renerocksai/calendar-vim' },
-        config = load_config('tools.telekasten'),
-        cmd = 'Telekasten',
-    },
-    {
         'kndndrj/nvim-dbee',
         dependencies = {
             'MunifTanjim/nui.nvim',
@@ -321,6 +315,13 @@ return {
         'akinsho/toggleterm.nvim',
         config = load_config('tools.toggleterm'),
         cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle', 'ElixirToggle' },
+    },
+    {
+        '2kabhishek/tdo.nvim',
+        dir = '~/Projects/GitHub/tdo.nvim/',
+        dependencies = { 'stevearc/dressing.nvim', 'nvim-telescope/telescope.nvim' },
+        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoPending', 'TdoToggle', 'TdoFind', 'TdoFiles'},
+        keys = { '[t', ']t' },
     },
 
     -- Telescope

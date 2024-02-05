@@ -120,9 +120,9 @@ local opts = {
 
 local mappings = {
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
+    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     c = {
         name = icons.ui.NeoVim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
@@ -278,41 +278,20 @@ local mappings = {
     },
     n = {
         name = icons.ui.Note .. 'Notes',
-        c = { '<cmd>Telekasten show_calendar<cr>', 'Calendar' },
-        d = { '<cmd>vsplit || Telekasten goto_today<cr>', 'Daily' },
-        D = { '<cmd>Todos<cr>', 'Pending Todos' },
-        f = { '<cmd>Telekasten find_notes<cr>', 'Find Notes' },
-        F = { '<cmd>Telekasten follow_link<cr>', 'Follow Link' },
-        g = { '<cmd>Telekasten search_notes<cr>', 'Search String in Notes' },
-        G = { '<cmd>Telekasten find_daily_notes<cr>', 'Find Dailies' },
-        i = { '<cmd>Telekasten insert_link<cr>', 'Insert Link' },
-        J = { "<cmd>put =strftime('%F')<cr>", 'Insert Date' },
+        d = { '<cmd>Tdo<cr>', "Today's Todo" },
+        e = { '<cmd>TdoEntry<cr>', "Today's Entry" },
+        f = { '<cmd>TdoFiles<cr>', 'All Notes' },
+        g = { '<cmd>TdoFind<cr>', 'Find Notes' },
+        h = { '<cmd>Tdo -1<cr>', "Yesterday's Todo" },
         j = { "<cmd>put =strftime('%a %d %b %r')<cr>", 'Insert Human Date' },
-        K = { "<cmd>put =strftime('%F-%H-%M')<cr>", 'Insert Time' },
+        J = { "<cmd>put =strftime('%F')<cr>", 'Insert Date' },
         k = { "<cmd>put =strftime('%r')<cr>", 'Insert Human Time' },
-        t = { '<cmd>Telekasten show_tags<cr>', 'Tags' },
-        T = { '<cmd>Telescope live_grep cwd=$NOTES_DIR <cr>', 'Search Notes' },
-        n = { '<cmd>Telekasten new_note<cr>', 'New Note' },
-        N = { "<cmd>execute 'e '.strftime(\"%F\").'.md' <cr>", 'New Note Here' },
-        o = { '<cmd>Telekasten switch_vault<cr>', 'Open Vault' },
-        p = { '<cmd>Telekasten<cr>', 'Telekasten' },
-        s = {
-            '<cmd>silent execute "!(cd $NOTES_DIR && cmtr -b &) > /dev/null" | lua require("notify")("Notes Commited")<cr>',
-            'Commit Notes',
-        },
-        S = {
-            '<cmd>silent execute "!(cd $NOTES_DIR && cmtr -s &) > /dev/null" | lua require("notify")("Syncing Changes...") <cr>',
-            'Sync Notes',
-        },
-        w = { '<cmd>Telekasten goto_thisweek<cr>', 'Weekly' },
-        W = { '<cmd>Telekasten find_weekly_notes<cr>', 'Find Weeklies' },
-        x = { '<cmd>Telekasten toggle_todo<cr>', 'Toggle Todo' },
-        y = { '<cmd>Telekasten yank_notelink<cr>', 'Copy Note Link' },
-        z = {
-            "<cmd>execute 'vsplit $NOTES_DIR/notes/drafts/'.strftime(\"%F-%H-%M\").'.md' <cr>",
-            'New Zettelkasten',
-        },
-        Z = { "<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", 'New Zettelkasten Here' },
+        K = { "<cmd>put =strftime('%F-%H-%M')<cr>", 'Insert Time' },
+        l = { '<cmd>Tdo 1<cr>', "Tomorrow's Todo" },
+        n = { '<cmd>TdoNote<cr>', 'New Note' },
+        s = { '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Commited!")<cr>', 'Commit Note', },
+        t = { '<cmd>TdoPending<cr>', 'Pending Todos' },
+        x = { '<cmd>TdoToggle<cr>', 'Toggle Todo' },
     },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
@@ -363,7 +342,7 @@ local mappings = {
     w = {
         name = icons.ui.Windows .. 'Window',
         ['-'] = { '<C-w>s', 'Split Below' },
-        ['\\'] = { '<C-w>s', 'Split Right' },
+        ['\\'] = { '<C-w>v', 'Split Right' },
         c = { '<cmd>tabclose<cr>', 'Close Tab' },
         d = { '<C-w>c', 'Close Window' },
         f = { '<cmd>tabfirst<cr>', 'First Tab' },
@@ -402,7 +381,10 @@ local vopts = {
 }
 
 local vmappings = {
-    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
+    l = {
+        name = icons.ui.Gear .. 'LSP',
+        a = '<cmd><C-U>Lspsaga range_code_action<CR>',
+    },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
@@ -414,10 +396,10 @@ local vmappings = {
         v = { "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
     },
-    l = {
-        name = icons.ui.Gear .. 'LSP',
-        a = '<cmd><C-U>Lspsaga range_code_action<CR>',
-    },
+    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
+    q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
+    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
+    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
