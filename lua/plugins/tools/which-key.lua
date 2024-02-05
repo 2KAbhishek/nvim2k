@@ -120,9 +120,9 @@ local opts = {
 
 local mappings = {
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
+    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     c = {
         name = icons.ui.NeoVim .. 'Config',
         c = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
@@ -290,14 +290,7 @@ local mappings = {
         l = { '<cmd>TdoTomorrow<cr>', "Tomorrow's Todo" },
         t = { '<cmd>TdoPending<cr>', 'Pending Todos' },
         n = { '<cmd>TdoNote<cr>', 'New Note' },
-        s = {
-            '<cmd>silent execute "!(cd $NOTES_DIR && cmtr -b &) > /dev/null" | lua require("notify")("Notes Commited")<cr>',
-            'Commit Notes',
-        },
-        S = {
-            '<cmd>silent execute "!(cd $NOTES_DIR && cmtr -s &) > /dev/null" | lua require("notify")("Syncing Changes...") <cr>',
-            'Sync Notes',
-        },
+        s = { '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Commited!")<cr>', 'Commit Note', },
         x = { '<cmd>TdoToggle<cr>', 'Toggle Todo' },
     },
     r = {
@@ -388,7 +381,10 @@ local vopts = {
 }
 
 local vmappings = {
-    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
+    l = {
+        name = icons.ui.Gear .. 'LSP',
+        a = '<cmd><C-U>Lspsaga range_code_action<CR>',
+    },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
@@ -400,10 +396,10 @@ local vmappings = {
         v = { "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
     },
-    l = {
-        name = icons.ui.Gear .. 'LSP',
-        a = '<cmd><C-U>Lspsaga range_code_action<CR>',
-    },
+    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
+    q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
+    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
+    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
