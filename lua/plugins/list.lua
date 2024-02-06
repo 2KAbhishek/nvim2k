@@ -318,7 +318,7 @@ return {
     },
     {
         '2kabhishek/tdo.nvim',
-        dependencies = { 'stevearc/dressing.nvim', 'nvim-telescope/telescope.nvim' },
+        dependencies =  'nvim-telescope/telescope.nvim',
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoPending', 'TdoToggle', 'TdoFind', 'TdoFiles'},
         keys = { '[t', ']t' },
     },
