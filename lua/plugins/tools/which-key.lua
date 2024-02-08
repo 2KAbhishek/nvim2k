@@ -290,7 +290,7 @@ local mappings = {
         l = { '<cmd>Tdo 1<cr>', "Tomorrow's Todo" },
         n = { '<cmd>TdoNote<cr>', 'New Note' },
         s = { '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Commited!")<cr>', 'Commit Note', },
-        t = { '<cmd>TdoPending<cr>', 'Pending Todos' },
+        t = { '<cmd>TdoTodos<cr>', 'Incomplete Todos' },
         x = { '<cmd>TdoToggle<cr>', 'Toggle Todo' },
     },
     r = {
