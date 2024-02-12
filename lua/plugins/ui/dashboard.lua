@@ -18,7 +18,7 @@ dashboard.setup({
     config = {
         week_header = {
             enable = true,
-            append = { '', icons.ui.Circle .. ' Nvim2K: Learn. Make, Explore! ' .. icons.ui.Circle },
+            append = { '', icons.ui.Circle .. ' Nvim2K: Learn, Make, Explore! ' .. icons.ui.Circle },
         },
         packages = { enable = true }, -- show how many plugins neovim loaded
         project = { enable = true, limit = 8 },
@@ -43,15 +43,15 @@ dashboard.setup({
                 key = 'f',
             },
             {
-                desc = icons.ui.Search .. 'Search',
+                desc = icons.ui.Telescope .. 'Search',
                 group = 'Label',
                 action = 'lua require("telescope").extensions.menufacture.live_grep()',
-                key = 's',
+                key = 'g',
             },
             {
                 desc = icons.ui.Note .. 'Notes',
                 group = 'Label',
-                action = 'Telekasten goto_today',
+                action = 'Tdo',
                 key = 'n',
             },
             {
