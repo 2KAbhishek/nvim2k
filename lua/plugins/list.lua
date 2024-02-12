@@ -205,8 +205,8 @@ return {
         'numToStr/Comment.nvim',
         config = load_config('tools.comment'),
         keys = {
-            { 'gcc', mode = { 'n', }, function() require('Comment').toggle() end, desc = "Comment" },
-            { 'gc',  mode = { 'v' },  function() require('Comment').toggle() end, desc = "Comment" },
+            { 'gcc', mode = { 'n' }, function() require('Comment').toggle() end, desc = "Comment" },
+            { 'gc',  mode = { 'v' }, function() require('Comment').toggle() end, desc = "Comment" },
         },
     },
     {
@@ -318,8 +318,8 @@ return {
     },
     {
         '2kabhishek/tdo.nvim',
-        dependencies =  'nvim-telescope/telescope.nvim',
-        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles'},
+        dependencies = 'nvim-telescope/telescope.nvim',
+        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
         keys = { '[t', ']t' },
     },
 
