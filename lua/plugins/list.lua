@@ -313,8 +313,7 @@ return {
     },
     {
         '2kabhishek/termim.nvim',
-        cmd = { 'Term', 'Sterm', 'Vterm' },
-        dir = '~/Projects/GitHub/termim.nvim',
+        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
     },
     {
         '2kabhishek/tdo.nvim',
