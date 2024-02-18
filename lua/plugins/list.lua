@@ -312,9 +312,8 @@ return {
         cmd = 'DBToggle',
     },
     {
-        'akinsho/toggleterm.nvim',
-        config = load_config('tools.toggleterm'),
-        cmd = { 'ToggleTerm', 'LazygitToggle', 'NodeToggle', 'PythonToggle', 'RubyToggle', 'ElixirToggle' },
+        '2kabhishek/termim.nvim',
+        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
     },
     {
         '2kabhishek/tdo.nvim',
