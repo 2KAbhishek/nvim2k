@@ -43,7 +43,7 @@ dashboard.setup({
                 key = 'f',
             },
             {
-                desc = icons.ui.Telescope .. 'Search',
+                desc = icons.ui.Search .. 'Search',
                 group = 'Label',
                 action = 'lua require("telescope").extensions.menufacture.live_grep()',
                 key = 'g',
