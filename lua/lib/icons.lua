@@ -106,7 +106,7 @@ return {
         Game = ' ',
         Gear = ' ',
         GitHub = ' ',
-        Heart = ' ',
+        Heart = ' ',
         History = ' ',
         Home = ' ',
         Incoming = ' ',
