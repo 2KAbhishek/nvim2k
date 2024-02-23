@@ -46,6 +46,9 @@ local conditions = {
     buffer_not_empty = function()
         return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
     end,
+    mode_not_terminal = function()
+        return vim.fn.mode() ~= 't'
+    end,
     hide_in_width = function()
         return vim.fn.winwidth(0) > 80
     end,
@@ -79,7 +82,7 @@ local fileformat = {
 
 local filename = {
     'filename',
-    cond = conditions.buffer_not_empty,
+    cond = conditions.buffer_not_empty and conditions.mode_not_terminal,
     color = { fg = colors.magenta, gui = 'bold' },
 }
 
