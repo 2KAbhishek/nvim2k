@@ -23,16 +23,6 @@ vim.api.nvim_create_autocmd('BufRead', {
     end,
 })
 
--- Terminal buffer options
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-    group = augroup('bufenter'),
-    pattern = { 'term://*' },
-    callback = function()
-        vim.cmd('startinsert!')
-        vim.cmd('set cmdheight=1')
-    end,
-})
-
 -- Strip trailing spaces before write
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     group = augroup('strip_space'),
