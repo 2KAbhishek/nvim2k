@@ -3,12 +3,39 @@ if not status_ok then
     return
 end
 
+local parsers = {
+    'bash',
+    'css',
+    'elixir',
+    'go',
+    'html',
+    'java',
+    'javascript',
+    'json',
+    'lua',
+    'markdown',
+    'markdown_inline',
+    'python',
+    'ruby',
+    'rust',
+    'typescript',
+    'vim',
+    'vimdoc',
+    'yaml',
+}
+
+local auto_install = require('lib.util').get_user_config('auto_install', true)
+local installed_parsers = {}
+if auto_install then
+    installed_parsers = parsers
+end
+
 local textobjects = require('plugins.lang.textobjects')
 
 configs.setup({
-    ensure_installed = { 'vimdoc', 'lua', 'markdown' }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    ignore_install = { '' }, -- List of parsers to ignore installing
+    ensure_installed = installed_parsers,
+    sync_install = false,
+    ignore_install = {},
     auto_install = true,
 
     autopairs = {
@@ -20,8 +47,8 @@ configs.setup({
     },
 
     highlight = {
-        enable = true, -- false will disable the whole extension
-        disable = { '' }, -- list of language that will be disabled
+        enable = true,
+        disable = {},
         additional_vim_regex_highlighting = false,
     },
     indent = { enable = true },
@@ -44,7 +71,6 @@ configs.setup({
     refactor = {
         highlight_definitions = {
             enable = true,
-            -- Set to false if you have an `updatetime` of ~100.
             clear_on_cursor_move = true,
         },
         highlight_current_scope = { enable = true },
@@ -71,16 +97,16 @@ configs.setup({
     },
 
     matchup = {
-        enable = true, -- mandatory, false will disable the whole extension
+        enable = true,
     },
 
     textsubjects = {
         enable = true,
-        prev_selection = ',', -- (Optional) keymap to select the previous selection
+        prev_selection = ',',
         keymaps = {
-            ['.'] = { 'textsubjects-smart', desc = "Select the current text subject" },
-            ['a;'] = { 'textsubjects-container-outer', desc = "Select outer container (class, function, etc.)" },
-            ['i;'] = { 'textsubjects-container-inner', desc = "Select inside containers (classes, functions, etc.)" },
+            ['.'] = { 'textsubjects-smart', desc = 'Select the current text subject' },
+            ['a;'] = { 'textsubjects-container-outer', desc = 'Select outer container (class, function, etc.)' },
+            ['i;'] = { 'textsubjects-container-inner', desc = 'Select inside containers (classes, functions, etc.)' },
         },
     },
     textobjects = textobjects,
