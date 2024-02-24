@@ -30,7 +30,7 @@
 
 </div>
 
-Handcrafted `neovim` configs for the ultimate CLI dev experience, completely in `lua`
+Handcrafted Neovim setup for the ultimate CLI dev experience.
 
 Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 
@@ -43,13 +43,13 @@ Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 - **Git in there**: Powerful git integrations thanks to lazygit, fugitive, gitsigns and more
 - **Pretty colors**: Comes with treesitter and onedark preconfigured with full transparency support
 - **Goto for notes**: Comes with powerful note-taking capabilities, thanks to [tdo](https://github.com/2kabhishek/tdo)
-- **Tmux integration**: Just works, with your tmux configurations out of the box
+- **Tmux integration**: Works with your tmux configurations out of the box
 - **Dev tools**: Comes with debugging, testing, database and REPL support, pick and choose
-- and many more!
+- and some more
 
-But most importantly::
+Most importantly:
 
-**Easy extensibility**: nvim2k has a simple and scalable config structure that promotes personalization, so go ahead, bring your keybindings, configs and plugins over, and truly make **nvim2k: Your Personalized Development Environment!**
+**Built for extending**: nvim2k has a easy to understand config structure that promotes personalization, so go ahead, bring your keybindings, functions and plugins over, and truly make **nvim2k: Your Personalized Development Environment!**
 
 ## ⚡ Setup
 
@@ -65,7 +65,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### 💻 Installation
 
-To install `nvim2k` simply clone the repo and setup symlinks
+To install `nvim2k` clone the repo and setup the symlink
 
 ```bash
 git clone https://github.com/2kabhishek/nvim2k
@@ -89,13 +89,13 @@ Edit files in [lua/core](./lua/core/) for tweaking [options](./lua/core/options.
 
 ### 📦 Plugins
 
-To add new plugins simply add it to the [plugins list](./lua/plugins/list.lua)
+To add new plugins add it to the [plugins list](./lua/plugins/list.lua)
 
 For plugin configs you can place them in these folders based on the functionality:
 
 - [lang](./lua/plugins/lang/): Plugins related to language features, completions, lsp, debugging etc.
 - [tools](./lua/plugins/tools/): General purpose tool plugins that aid in the editing experience.
-- [ui](./lua/plugins/ui/): Cosmetic plugins, things that make neovim pretty.
+- [ui](./lua/plugins/ui/): Cosmetic plugins that make neovim pretty.
 
 ### ⌨️ Keybindings
 
@@ -109,29 +109,26 @@ To add new keybindings visit the [which-key config](./lua/plugins/tools/which-ke
 
 To use custom configs create the file `lua/user/init.lua`, you can structure your configs as you like there.
 
-> `user/init.lua` must be present to load custom configs, any other custom modules should be loaded in this file directly.
-
+> `user/init.lua` must be present to load custom configs, `require` any custom modules in this file.
 Example `user/init.lua`
 
 ```lua
-require('user.extra')
-
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('i', 'jk', '<Esc>', opts)
 ```
 
-`user` module is excluded in the [nvim2k gitignore](./.gitignore), you can set up `user` module as a separate git repository while continuously receiving `nvim2k` updates.
+`user` module is not part of the repo, you can set up `user` module as a separate git repository while continuously receiving `nvim2k` updates.
 
 ## 🧑‍💻 Behind The Code
 
 ### 🌈 Inspiration
 
-I have been using vim/neovim for 6+ years now, wanted to create a fun and easily extensible neovim config for everyone to use
+I have been using vim/neovim for 7+ years now, I wanted to share my config for everyone to use
 
 ### 💡 Challenges/Learnings
 
-- Finding out just the right plugins and configs!
+- Finding out the right plugins and configs!
 - Setting up the initial config structure with lazy loading was tough.
 
 ### 🧰 Tools Used
@@ -143,8 +140,10 @@ I have been using vim/neovim for 6+ years now, wanted to create a fun and easily
 
 ### 🔍 More Info
 
+- [tdo.nvim](https://github.com/2kabhishek/tdo.nvim) — note taking system in neovim
+- [termim.nvim](https://github.com/2kabhishek/termim.nvim) — enhanced neovim terminal
 - [nerdy.nvim](https://github.com/2kabhishek/nerdy.nvim) — search nerdfont glyphs from inside neovim
-- [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — easily add co authors to your git commits
+- [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — add co authors to your git commits
 
 <hr>
 
