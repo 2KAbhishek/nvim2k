@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
+local diag = null_ls.builtins.diagnostics
 local hover = null_ls.builtins.hover
 local action = null_ls.builtins.code_actions
 local comp = null_ls.builtins.completion
@@ -23,7 +23,19 @@ null_ls.setup({
         comp.luasnip,
         comp.spell,
         comp.tags,
-        formatting.shfmt,
+        diag.actionlint,
+        diag.alex,
+        diag.credo,
+        diag.golangci_lint,
+        diag.hadolint,
+        diag.proselint,
+        diag.reek,
+        diag.rubocop,
+        diag.selene,
+        diag.todo_comments,
+        diag.trail_space,
+        diag.vint,
+        diag.write_good,
         hover.dictionary,
         hover.printenv,
         -- diagnostics.cspell.with({
