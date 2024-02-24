@@ -159,7 +159,7 @@ return {
     },
     {
         'nvimtools/none-ls.nvim',
-        dependencies = { 'neovim/nvim-lspconfig' },
+        dependencies = { 'neovim/nvim-lspconfig', "jay-babu/mason-null-ls.nvim" },
         config = load_config('lang.null-ls'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
