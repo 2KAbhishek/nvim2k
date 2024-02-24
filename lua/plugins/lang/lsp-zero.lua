@@ -9,7 +9,20 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {},
+    ensure_installed = {
+        'bashls',
+        'eslint',
+        'elixirls',
+        'jsonls',
+        'lua_ls',
+        'ruby_ls',
+        'ruff_lsp',
+        'rubocop',
+        'rust_analyzer',
+        'tsserver',
+        'typos_lsp',
+        'vimls',
+    },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -19,11 +32,11 @@ require('mason-lspconfig').setup({
                 defaultConfig = {
                     align_continuous_assign_statement = false,
                     align_continuous_rect_table_field = false,
-                    align_array_table = false
-                }
+                    align_array_table = false,
+                },
             }
             lua_opts.settings.Lua.format = custom_options
             require('lspconfig').lua_ls.setup(lua_opts)
         end,
-    }
+    },
 })
