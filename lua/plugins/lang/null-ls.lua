@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local formatting = null_ls.builtins.formatting
+local format = null_ls.builtins.formatting
 local diag = null_ls.builtins.diagnostics
 local hover = null_ls.builtins.hover
 local action = null_ls.builtins.code_actions
@@ -36,20 +36,19 @@ null_ls.setup({
         diag.trail_space,
         diag.vint,
         diag.write_good,
+        format.mix,
+        format.prettier,
+        format.rubocop,
+        format.shfmt,
+        format.stylua,
         hover.dictionary,
         hover.printenv,
+        -- Extend sources
         -- diagnostics.cspell.with({
         --     {
         --         disabled_filetypes = { "lua" },
         --         filetypes = { "html", "json", "yaml", "markdown" },
         --         extra_args = { "--config ~/.cspell.json" },
-        --     },
-        -- }),
-        -- code_actions.cspell.with({
-        --     {
-        --         disabled_filetypes = { 'lua' },
-        --         filetypes = { 'html', 'json', 'yaml', 'markdown' },
-        --         extra_args = { '--config ~/.cspell.json' },
         --     },
         -- }),
     },
