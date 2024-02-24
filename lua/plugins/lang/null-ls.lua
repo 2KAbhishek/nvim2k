@@ -7,7 +7,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local hover = null_ls.builtins.hover
 local action = null_ls.builtins.code_actions
-local completion = null_ls.builtins.completion
+local comp = null_ls.builtins.completion
 
 -- Buily in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 
@@ -20,9 +20,9 @@ null_ls.setup({
         action.proselint,
         action.refactoring,
         action.ts_node_action,
-        completion.tags,
-        diagnostics.shellcheck,
-        formatting.prettier,
+        comp.luasnip,
+        comp.spell,
+        comp.tags,
         formatting.shfmt,
         hover.dictionary,
         hover.printenv,
