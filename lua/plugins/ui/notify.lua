@@ -25,6 +25,7 @@ notify.setup({
 
 local buffered_messages = {
     'Client %d+ quit',
+    'No node found at cursor'
 }
 
 -- Controls noisy notifications
