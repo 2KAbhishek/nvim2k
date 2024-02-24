@@ -109,16 +109,26 @@ To add new keybindings visit the [which-key config](./lua/plugins/tools/which-ke
 
 To use custom configs create the file `lua/user/init.lua`, you can structure your configs as you like there.
 
-> `user/init.lua` must be present to load custom configs, `require` any custom modules in this file.
-Example `user/init.lua`
-
-```lua
-local opts = { noremap = true, silent = true }
-
-vim.keymap.set('i', 'jk', '<Esc>', opts)
-```
+> `lua/user/init.lua` must be present to load custom configs, `require` any custom modules in this file.
 
 `user` module is not part of the repo, you can set up `user` module as a separate git repository while continuously receiving `nvim2k` updates.
+
+#### 🤖 Auto Install
+
+By default nvim2k will auto install a set of LSP servers and null-ls sources using mason, if you want to disable it make sure to add the following to your user module.
+
+```lua
+-- lua/user/init.lua
+local user = {
+    auto_install = true
+}
+
+return user
+```
+
+To setup and access other user options you can use the `get_user_config(key, default)` method in `lib.util`
+
+Example: `local auto_install = require('lib.util').get_user_value('auto_install', true)`
 
 ## 🧑‍💻 Behind The Code
 
