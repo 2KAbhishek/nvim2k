@@ -1,5 +1,7 @@
 local function load_config(package)
-    return function() require('plugins.' .. package) end
+    return function()
+        require('plugins.' .. package)
+    end
 end
 
 return {
@@ -58,7 +60,7 @@ return {
             vim.cmd([[silent UpdateRemotePlugins]])
         end,
         config = load_config('ui.wilder'),
-        keys = { ':', '/', '?', },
+        keys = { ':', '/', '?' },
     },
     {
         'folke/zen-mode.nvim',
@@ -74,7 +76,7 @@ return {
     {
         'weizheheng/ror.nvim',
         branch = 'main',
-        ft = 'ruby'
+        ft = 'ruby',
     },
     { 'tpope/vim-rails', ft = 'ruby' },
     {
@@ -103,7 +105,7 @@ return {
     },
     {
         'ThePrimeagen/refactoring.nvim',
-        config = load_config('lang.refactoring')
+        config = load_config('lang.refactoring'),
     },
 
     -- Tresitter
@@ -134,12 +136,11 @@ return {
         },
         config = load_config('lang.lsp-zero'),
         event = { 'BufReadPre', 'BufNewFile' },
-
     },
     {
         'folke/neodev.nvim',
         ft = { 'lua', 'vim' },
-        config = load_config('lang.neodev')
+        config = load_config('lang.neodev'),
     },
     {
         'nvimdev/lspsaga.nvim',
@@ -150,7 +151,6 @@ return {
         'Maan2003/lsp_lines.nvim',
         config = load_config('lang.lsp-lines'),
         event = 'LspAttach',
-
     },
     {
         'williamboman/mason.nvim',
@@ -159,7 +159,7 @@ return {
     },
     {
         'nvimtools/none-ls.nvim',
-        dependencies = { 'neovim/nvim-lspconfig', "jay-babu/mason-null-ls.nvim" },
+        dependencies = { 'neovim/nvim-lspconfig', 'jay-babu/mason-null-ls.nvim' },
         config = load_config('lang.null-ls'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
@@ -180,11 +180,11 @@ return {
         event = 'InsertEnter',
     },
     {
-        "L3MON4D3/LuaSnip",
-        version = "v2.*",
-        dependencies = { 'rafamadriz/friendly-snippets', },
-        build = "make install_jsregexp",
-        event = 'InsertEnter'
+        'L3MON4D3/LuaSnip',
+        version = 'v2.*',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        build = 'make install_jsregexp',
+        event = 'InsertEnter',
     },
     {
         'zbirenbaum/copilot.lua',
@@ -208,8 +208,22 @@ return {
         'numToStr/Comment.nvim',
         config = load_config('tools.comment'),
         keys = {
-            { 'gcc', mode = { 'n' }, function() require('Comment').toggle() end, desc = "Comment" },
-            { 'gc',  mode = { 'v' }, function() require('Comment').toggle() end, desc = "Comment" },
+            {
+                'gcc',
+                mode = { 'n' },
+                function()
+                    require('Comment').toggle()
+                end,
+                desc = 'Comment',
+            },
+            {
+                'gc',
+                mode = { 'v' },
+                function()
+                    require('Comment').toggle()
+                end,
+                desc = 'Comment',
+            },
         },
     },
     {
@@ -233,37 +247,48 @@ return {
         event = 'InsertEnter',
     },
     {
-        "folke/flash.nvim",
+        'folke/flash.nvim',
         config = load_config('tools.flash'),
         keys = {
-            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
             {
-                "S",
-                mode = { "n", "x", "o" },
-                function() require("flash").treesitter() end,
-                desc =
-                "Flash Treesitter"
+                's',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    require('flash').jump()
+                end,
+                desc = 'Flash',
             },
             {
-                "r",
-                mode = "o",
-                function() require("flash").remote() end,
-                desc =
-                "Remote Flash"
+                'S',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    require('flash').treesitter()
+                end,
+                desc = 'Flash Treesitter',
             },
             {
-                "R",
-                mode = { "o", "x" },
-                function() require("flash").treesitter_search() end,
-                desc =
-                "Treesitter Search"
+                'r',
+                mode = 'o',
+                function()
+                    require('flash').remote()
+                end,
+                desc = 'Remote Flash',
             },
             {
-                "<c-s>",
-                mode = { "c" },
-                function() require("flash").toggle() end,
-                desc =
-                "Toggle Flash Search"
+                'R',
+                mode = { 'o', 'x' },
+                function()
+                    require('flash').treesitter_search()
+                end,
+                desc = 'Treesitter Search',
+            },
+            {
+                '<c-s>',
+                mode = { 'c' },
+                function()
+                    require('flash').toggle()
+                end,
+                desc = 'Toggle Flash Search',
             },
         },
     },
