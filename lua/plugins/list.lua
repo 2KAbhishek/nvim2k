@@ -120,7 +120,10 @@ return {
         config = load_config('lang.treesitter'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
-
+    {
+        'ckolkey/ts-node-action',
+        dependencies = { 'nvim-treesitter' },
+    },
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
