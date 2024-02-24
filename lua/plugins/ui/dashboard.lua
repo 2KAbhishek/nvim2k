@@ -6,14 +6,14 @@ end
 local icons = require('lib.icons')
 
 dashboard.setup({
-    theme = 'hyper', --  theme is doom and hyper default is hyper
-    disable_move = false, --  defualt is false disable move keymap for hyper
-    shortcut_type = 'letter', --  shorcut type 'letter' or 'number'
-    change_to_vcs_root = false, -- default is false,for open file in hyper mru. it will change to the root of vcs
+    theme = 'hyper',
+    disable_move = false,
+    shortcut_type = 'letter',
+    change_to_vcs_root = true,
     hide = {
-        statusline = true, -- hide statusline default is true
-        tabline = false, -- hide the tabline
-        winbar = false, -- hide winbar
+        statusline = true,
+        tabline = false,
+        winbar = false,
     },
     config = {
         week_header = {
@@ -25,16 +25,16 @@ dashboard.setup({
         mru = { limit = 8 },
         shortcut = {
             {
-                desc = icons.ui.Package .. 'Plugins',
+                desc = icons.ui.Package .. 'Mason',
+                group = '@property',
+                action = 'Mason',
+                key = 'm',
+            },
+            {
+                desc = icons.ui.Sleep .. 'Lazy',
                 group = '@property',
                 action = 'Lazy',
                 key = 'p',
-            },
-            {
-                desc = icons.ui.NeoVim .. 'Config',
-                group = '@property',
-                action = 'e ~/.config/nvim/lua/plugins/list.lua',
-                key = 'c',
             },
             {
                 desc = icons.documents.OpenFolder .. 'Files',
@@ -49,10 +49,10 @@ dashboard.setup({
                 key = 'g',
             },
             {
-                desc = icons.ui.Note .. 'Notes',
+                desc = icons.ui.Note .. 'Todo',
                 group = 'Label',
                 action = 'Tdo',
-                key = 'n',
+                key = 'd',
             },
             {
                 desc = icons.ui.Power,
