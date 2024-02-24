@@ -10,7 +10,6 @@ local action = null_ls.builtins.code_actions
 local comp = null_ls.builtins.completion
 
 -- Buily in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
-
 null_ls.setup({
     debug = false,
     border = 'rounded',
@@ -24,7 +23,6 @@ null_ls.setup({
         comp.spell,
         comp.tags,
         diag.actionlint,
-        diag.alex,
         diag.credo,
         diag.golangci_lint,
         diag.hadolint,
@@ -43,18 +41,10 @@ null_ls.setup({
         format.stylua,
         hover.dictionary,
         hover.printenv,
-        -- Extend sources
-        -- diagnostics.cspell.with({
-        --     {
-        --         disabled_filetypes = { "lua" },
-        --         filetypes = { "html", "json", "yaml", "markdown" },
-        --         extra_args = { "--config ~/.cspell.json" },
-        --     },
-        -- }),
     },
 })
 
 require('mason-null-ls').setup({
     ensure_installed = nil,
-    automatic_installation = true,
+    automatic_installation = require('lib.util').get_user_config('auto_install', true),
 })
