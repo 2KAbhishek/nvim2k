@@ -6,17 +6,17 @@ end
 local icons = require('lib.icons')
 
 local colors = {
-    bg       = '#202328',
-    fg       = '#bbc2cf',
-    yellow   = '#ECBE7B',
-    cyan     = '#008080',
+    bg = '#202328',
+    fg = '#bbc2cf',
+    yellow = '#ECBE7B',
+    cyan = '#008080',
     darkblue = '#081633',
-    green    = '#98be65',
-    orange   = '#FF8800',
-    violet   = '#a9a1e1',
-    magenta  = '#c678dd',
-    blue     = '#51afef',
-    red      = '#ec5f67',
+    green = '#98be65',
+    orange = '#FF8800',
+    violet = '#a9a1e1',
+    magenta = '#c678dd',
+    blue = '#51afef',
+    red = '#ec5f67',
 }
 
 local mode_color = {
@@ -46,8 +46,8 @@ local conditions = {
     buffer_not_empty = function()
         return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
     end,
-    mode_not_terminal = function()
-        return vim.fn.mode() ~= 't'
+    buffer_is_file = function()
+        return vim.bo.buftype == ''
     end,
     hide_in_width = function()
         return vim.fn.winwidth(0) > 80
@@ -82,8 +82,20 @@ local fileformat = {
 
 local filename = {
     'filename',
-    cond = conditions.buffer_not_empty and conditions.mode_not_terminal,
+    cond = conditions.buffer_not_empty and conditions.buffer_is_file,
     color = { fg = colors.magenta, gui = 'bold' },
+}
+
+local buffers = {
+    'buffers',
+    filetype_names = {
+        TelescopePrompt = icons.ui.Telescope .. 'Telescope',
+        dashboard = icons.ui.Dashboard .. 'Dashboard',
+        lazy = icons.ui.Sleep .. 'Lazy',
+        mason = icons.ui.Package .. 'Mason',
+        NvimTree = icons.documents.OpenFolder .. 'Files',
+    },
+    use_mode_colors = true,
 }
 
 local branch = {
@@ -187,11 +199,11 @@ local config = {
     -- extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
     tabline = {
         lualine_a = {},
-        lualine_b = { mode(), { 'buffers', use_mode_colors = true } },
+        lualine_b = { mode(), buffers },
         lualine_c = {},
         lualine_x = { diff_icons, branch },
         lualine_y = { searchcount, selectioncount },
-        lualine_z = {}
+        lualine_z = {},
     },
     sections = {
         lualine_a = {},
