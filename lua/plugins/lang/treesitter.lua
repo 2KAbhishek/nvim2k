@@ -3,31 +3,10 @@ if not status_ok then
     return
 end
 
-local parsers = {
-    'bash',
-    'css',
-    'elixir',
-    'go',
-    'html',
-    'java',
-    'javascript',
-    'json',
-    'lua',
-    'markdown',
-    'markdown_inline',
-    'python',
-    'ruby',
-    'rust',
-    'typescript',
-    'vim',
-    'vimdoc',
-    'yaml',
-}
-
 local auto_install = require('lib.util').get_user_config('auto_install', true)
 local installed_parsers = {}
 if auto_install then
-    installed_parsers = parsers
+    installed_parsers = require('plugins.list').ts_parsers
 end
 
 local textobjects = require('plugins.lang.textobjects')

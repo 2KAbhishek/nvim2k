@@ -7,27 +7,10 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
-local servers = {
-    'bashls',
-    'eslint',
-    'elixirls',
-    'jsonls',
-    'lua_ls',
-    'ruby_ls',
-    'ruff_lsp',
-    'rubocop',
-    'rust_analyzer',
-    'tsserver',
-    'typos_lsp',
-    'vimls',
-}
-
 local auto_install = require('lib.util').get_user_config('auto_install', true)
-
 local installed_servers = {}
-
 if auto_install then
-    installed_servers = servers
+    installed_servers = require('plugins.list').lsp_servers
 end
 
 require('mason').setup({})

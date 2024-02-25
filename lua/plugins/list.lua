@@ -4,7 +4,7 @@ local function load_config(package)
     end
 end
 
-return {
+local plugins = {
     -- UI
     {
         'navarasu/onedark.nvim',
@@ -401,4 +401,46 @@ return {
         cmd = 'Octo',
         opts = true,
     },
+}
+
+local ts_parsers = {
+    'bash',
+    'css',
+    'elixir',
+    'go',
+    'html',
+    'java',
+    'javascript',
+    'json',
+    'lua',
+    'markdown',
+    'markdown_inline',
+    'python',
+    'ruby',
+    'rust',
+    'typescript',
+    'vim',
+    'vimdoc',
+    'yaml',
+}
+
+local lsp_servers = {
+    'bashls',
+    'eslint',
+    'elixirls',
+    'jsonls',
+    'lua_ls',
+    'ruby_ls',
+    'ruff_lsp',
+    'rubocop',
+    'rust_analyzer',
+    'tsserver',
+    'typos_lsp',
+    'vimls',
+}
+
+return {
+    plugins = plugins,
+    ts_parsers = ts_parsers,
+    lsp_servers = lsp_servers,
 }

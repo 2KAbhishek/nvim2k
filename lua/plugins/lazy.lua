@@ -17,7 +17,7 @@ if not status_ok then
 end
 
 local icons = require('lib.icons')
-local plugins = require('plugins.list')
+local plugins = require('plugins.list').plugins
 
 lazy.setup({
     root = vim.fn.stdpath('data') .. '/lazy',
