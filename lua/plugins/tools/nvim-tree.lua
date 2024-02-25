@@ -9,12 +9,15 @@ local function on_attach(bufnr)
     local api = require('nvim-tree.api')
 
     local function opts(desc)
-        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        return {
+            desc = 'nvim-tree: ' .. desc,
+            buffer = bufnr,
+            noremap = true,
+            silent = true,
+            nowait = true,
+        }
     end
 
-    -- Default mappings. Feel free to modify or remove as you wish.
-    --
-    -- BEGIN_DEFAULT_ON_ATTACH
     vim.keymap.set('n', '<C-]>', api.tree.change_root_to_node, opts('CD'))
     vim.keymap.set('n', '<C-e>', api.node.open.replace_tree_buffer, opts('Open: In Place'))
     vim.keymap.set('n', '<C-k>', api.node.show_info_popup, opts('Info'))
@@ -65,11 +68,7 @@ local function on_attach(bufnr)
     vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
     vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
     vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
-    -- END_DEFAULT_ON_ATTACH
 
-    -- Mappings migrated from view.mappings.list
-    --
-    -- You will need to insert "your code goes here" for any mappings with a custom action_cb
     vim.keymap.set('n', 'Y', api.fs.copy.filename, opts('Copy Name'))
     vim.keymap.set('n', 'y', api.fs.copy.relative_path, opts('Copy Relative Path'))
     vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
@@ -81,13 +80,9 @@ end
 
 nvim_tree.setup({
     on_attach = on_attach,
-    hijack_directories = {
-        enable = true,
-    },
-    filters = {
-        -- exclude = { '.gitignore' },
-    },
+    hijack_directories = { enable = true },
     update_cwd = true,
+    filters = {},
     renderer = {
         add_trailing = false,
         group_empty = false,
@@ -96,23 +91,14 @@ nvim_tree.setup({
         root_folder_modifier = ':t',
         indent_markers = {
             enable = false,
-            icons = {
-                corner = icons.ui.Corner,
-                edge = icons.ui.Edge,
-                none = icons.ui.Edge,
-            },
+            icons = { corner = icons.ui.Corner, edge = icons.ui.Edge, none = icons.ui.Edge },
         },
         icons = {
             webdev_colors = true,
             git_placement = 'before',
             padding = ' ',
             symlink_arrow = icons.ui.Arrow,
-            show = {
-                file = true,
-                folder = true,
-                folder_arrow = true,
-                git = true,
-            },
+            show = { file = true, folder = true, folder_arrow = true, git = true },
             glyphs = {
                 default = icons.documents.File,
                 symlink = icons.documents.SymLink,
@@ -147,16 +133,8 @@ nvim_tree.setup({
             error = icons.diagnostics.Error,
         },
     },
-    update_focused_file = {
-        enable = true,
-        update_cwd = true,
-        ignore_list = {},
-    },
-    git = {
-        enable = true,
-        ignore = true,
-        timeout = 500,
-    },
+    update_focused_file = { enable = true, update_cwd = true, ignore_list = {} },
+    git = { enable = true, ignore = true, timeout = 500 },
     view = {
         width = 40,
         side = 'left',

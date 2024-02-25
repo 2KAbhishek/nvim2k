@@ -8,19 +8,19 @@ local multi_open_mappings = require('plugins.tools.telescope-multiopen')
 local icons = require('lib.icons')
 
 local function flash(prompt_bufnr)
-    require("flash").jump({
-        pattern = "^",
+    require('flash').jump({
+        pattern = '^',
         label = { after = { 0, 0 } },
         search = {
-            mode = "search",
+            mode = 'search',
             exclude = {
                 function(win)
-                    return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+                    return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'TelescopeResults'
                 end,
             },
         },
         action = function(match)
-            local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+            local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
             picker:set_selection(match.pos[1] - 1)
         end,
     })
@@ -52,7 +52,6 @@ telescope.setup({
             vertical = {
                 preview_cutoff = 40,
             },
-            -- other layout configuration here
         },
         prompt_prefix = icons.ui.Telescope .. icons.ui.ChevronRight,
         selection_caret = icons.ui.Play,
@@ -142,7 +141,7 @@ telescope.setup({
         },
         undo = {
             use_delta = true,
-            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
+            use_custom_command = nil,
             side_by_side = true,
             diff_context_lines = vim.o.scrolloff,
             entry_format = 'state #$ID, $STAT, $TIME',
@@ -155,11 +154,7 @@ telescope.setup({
                 },
             },
         },
-        menufacture = {
-            mappings = {
-                main_menu = { [{ 'i', 'n' }] = '<C-,>' },
-            },
-        },
+        menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-,>' } } },
     },
 })
 

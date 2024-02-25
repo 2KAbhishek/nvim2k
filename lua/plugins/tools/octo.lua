@@ -6,40 +6,27 @@ end
 local icons = require('lib.icons')
 
 octo.setup({
-    use_local_fs = false, -- use local files on right side of reviews
-    enable_builtin = true, -- shows a list of builtin actions when no action is provided
-    default_remote = { 'upstream', 'origin' }, -- order to try remotes
-    ssh_aliases = {}, -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`
-    reaction_viewer_hint_icon = icons.ui.CircleSmall, -- marker for user reactions
-    user_icon = icons.ui.Person, -- user icon
-    timeline_marker = icons.ui.ArrowOpen, -- timeline marker
-    timeline_indent = '2', -- timeline indentation
-    right_bubble_delimiter = icons.ui.PowerlineRightRound, -- bubble delimiter
-    left_bubble_delimiter = icons.ui.PowerlineLeftRound, -- bubble delimiter
-    github_hostname = '', -- GitHub Enterprise host
-    snippet_context_lines = 4, -- number or lines around commented lines
-    gh_env = {}, -- extra environment variables to pass on to GitHub CLI, can be a table or function returning a table
-    timeout = 5000, -- timeout for requests between the remote server
-    ui = {
-        use_signcolumn = true, -- show "modified" marks on the sign column
-    },
-    issues = {
-        order_by = { -- criteria to sort results of `Octo issue list`
-            field = 'CREATED_AT', -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
-            direction = 'DESC', -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
-        },
-    },
+    use_local_fs = false,
+    enable_builtin = true,
+    default_remote = { 'upstream', 'origin' },
+    ssh_aliases = {},
+    reaction_viewer_hint_icon = icons.ui.CircleSmall,
+    user_icon = icons.ui.Person,
+    timeline_marker = icons.ui.ArrowOpen,
+    timeline_indent = '2',
+    right_bubble_delimiter = icons.ui.PowerlineRightRound,
+    left_bubble_delimiter = icons.ui.PowerlineLeftRound,
+    github_hostname = '',
+    snippet_context_lines = 4,
+    gh_env = {},
+    timeout = 5000,
+    ui = { use_signcolumn = true },
+    issues = { order_by = { field = 'CREATED_AT', direction = 'DESC' } },
     pull_requests = {
-        order_by = { -- criteria to sort the results of `Octo pr list`
-            field = 'CREATED_AT', -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
-            direction = 'DESC', -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
-        },
-        always_select_remote_on_create = 'false', -- always give prompt to select base remote repo when creating PRs
+        order_by = { field = 'CREATED_AT', direction = 'DESC' },
+        always_select_remote_on_create = 'false',
     },
-    file_panel = {
-        size = 10, -- changed files panel rows
-        use_icons = true, -- use web-devicons in file panel (if false, nvim-web-devicons does not need to be installed)
-    },
+    file_panel = { size = 10, use_icons = true },
     mappings = {
         issue = {
             close_issue = { lhs = '<space>ic', desc = 'close issue' },
