@@ -23,4 +23,3 @@ vim.api.nvim_create_user_command('CApath', function()
     vim.fn.setreg('+', path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
-
