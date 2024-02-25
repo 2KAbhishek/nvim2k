@@ -58,27 +58,12 @@ local conditions = {
         return gitdir and #gitdir > 0 and #gitdir < #filepath
     end,
 }
-
 local searchcount = { 'searchcount', color = { fg = colors.fg, gui = 'bold' } }
 local selectioncount = { 'selectioncount', color = { fg = colors.fg, gui = 'bold' } }
 local progress = { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
-local filesize = {
-    'filesize',
-    color = { fg = colors.fg, gui = 'bold' },
-    cond = conditions.buffer_not_empty,
-}
-
-local filetype = {
-    'filetype',
-    color = { fg = colors.blue, gui = 'bold' },
-}
-
-local fileformat = {
-    'fileformat',
-    icons_enabled = true,
-    color = { fg = colors.white, gui = 'bold' },
-}
+local filetype = { 'filetype', color = { fg = colors.blue, gui = 'bold' } }
+local filesize = { 'filesize', color = { fg = colors.fg, gui = 'bold' }, cond = conditions.buffer_not_empty }
+local fileformat = { 'fileformat', icons_enabled = true, color = { fg = colors.white, gui = 'bold' } }
 
 local filename = {
     'filename',
@@ -94,6 +79,7 @@ local buffers = {
         lazy = icons.ui.Sleep .. 'Lazy',
         mason = icons.ui.Package .. 'Mason',
         NvimTree = icons.documents.OpenFolder .. 'Files',
+        spectre_panel = icons.ui.Search .. 'Spectre',
     },
     use_mode_colors = true,
 }
@@ -185,10 +171,8 @@ local function mode(icon)
     }
 end
 
--- Config
 local config = {
     options = {
-        -- Disable sections and component separators
         component_separators = '',
         -- section_separators = '',
         theme = 'onedark',
@@ -215,5 +199,4 @@ local config = {
     },
 }
 
--- Now don't forget to initialize lualine
 lualine.setup(config)

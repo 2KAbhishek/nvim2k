@@ -23,12 +23,12 @@ notify.setup({
     top_down = false,
 })
 
+-- Controls noisy notifications
 local buffered_messages = {
     'Client %d+ quit',
     'No node found at cursor'
 }
 
--- Controls noisy notifications
 local message_notifications = {}
 vim.notify = function(msg, level, opts)
     opts = opts or {}

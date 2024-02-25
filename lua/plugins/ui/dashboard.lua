@@ -20,7 +20,7 @@ dashboard.setup({
             enable = true,
             append = { '', icons.ui.Circle .. ' Nvim2K: Learn, Make, Explore! ' .. icons.ui.Circle },
         },
-        packages = { enable = true }, -- show how many plugins neovim loaded
+        packages = { enable = true },
         project = { enable = true, limit = 8 },
         mru = { limit = 8 },
         shortcut = {
