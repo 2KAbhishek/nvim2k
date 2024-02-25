@@ -5,7 +5,6 @@ end
 
 local icons = require('lib.icons')
 mason.setup({
-    -- Where Mason should put its bin location in your PATH. Can be one of:
     -- - "prepend": Use mason binary, "append": Use system binary
     PATH = 'prepend',
 

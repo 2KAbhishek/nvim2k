@@ -7,7 +7,6 @@ refactoring.setup({
     prompt_func_return_type = {
         go = false,
         java = false,
-
         cpp = false,
         c = false,
         h = false,

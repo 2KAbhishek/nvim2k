@@ -7,9 +7,7 @@ local icons = require('lib.icons')
 
 saga.setup({
     ui = {
-        -- Currently, only the round theme exists
         theme = 'round',
-        -- This option only works in Neovim 0.9
         border = 'rounded',
         devicon = true,
         title = true,
