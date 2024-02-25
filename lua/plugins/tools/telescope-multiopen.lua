@@ -17,7 +17,6 @@ local function multiopen(prompt_bufnr, method)
         pcall(vim.api.nvim_set_current_win, picker.original_win_id)
 
         for i, entry in ipairs(multi_selection) do
-            -- opinionated use-case
             local cmd = i == 1 and 'edit' or cmd_map[method]
             vim.cmd(string.format('%s %s', cmd, entry.value))
         end
