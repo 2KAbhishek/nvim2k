@@ -29,8 +29,8 @@ map({ 'n', 'v', 'x' }, '-', '<C-x>', opts)
 map({ 'n', 'v', 'x' }, '=', '<C-a>', opts)
 
 -- Move to line begining and end
-map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' } )
-map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Begining of line' } )
+map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
+map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Begining of line' })
 
 -- Center Cursors
 map('n', 'J', 'mzJ`z', opts)
@@ -44,8 +44,8 @@ map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Move text up and down
-map({ 'v', 'x', }, 'J', ":move '>+1<CR>gv-gv", opts)
-map({ 'v', 'x', }, 'K', ":move '<-2<CR>gv-gv", opts)
+map({ 'v', 'x' }, 'J', ":move '>+1<CR>gv-gv", opts)
+map({ 'v', 'x' }, 'K', ":move '<-2<CR>gv-gv", opts)
 
 -- Clear search, diff update and redraw
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
@@ -66,4 +66,3 @@ map('v', '>', '>gv')
 map('i', ',', ',<c-g>u')
 map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
-
