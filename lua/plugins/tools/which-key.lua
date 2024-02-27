@@ -220,10 +220,10 @@ local mappings = {
     h = {
         name = icons.ui.Bookmark .. 'Harpoon',
         a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
-        m = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
-        ['k'] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
-        ['j'] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon Prev' },
-        ['s'] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
+        h = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
+        m = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
+        k = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
+        j = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon Prev' },
     },
     l = {
         name = icons.ui.Gear .. 'LSP',
@@ -428,6 +428,7 @@ local no_leader_mappings = {
         B = { '<cmd>bfirst<cr>', 'First Buffer' },
         e = { 'g;', 'Previous Edit' },
         j = { '<C-o>', 'Previous Jump' },
+        h = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Prev Harpoon' },
     },
     [']'] = {
         name = icons.ui.ArrowRight .. 'Next',
@@ -435,6 +436,7 @@ local no_leader_mappings = {
         B = { '<cmd>blast<cr>', 'Last Buffer' },
         e = { 'g,', 'Next Edit' },
         j = { '<C-i>', 'Next Jump' },
+        h = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Next Harpoon' },
     },
 
     ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
