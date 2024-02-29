@@ -45,6 +45,8 @@ Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 - **Goto for notes**: Comes with powerful note-taking capabilities, thanks to [tdo](https://github.com/2kabhishek/tdo)
 - **Tmux integration**: Works with your tmux configurations out of the box
 - **Dev tools**: Comes with debugging, testing, database and REPL support, pick and choose
+- **Auto install**: All necessary LSPs, Null LS sources, Treesitter Parsers etc. are auto installed
+- **User module**: Configure nvim2k according to your needs by using the `user` module!
 - and some more
 
 Most importantly:
