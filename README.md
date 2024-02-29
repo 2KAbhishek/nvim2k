@@ -38,7 +38,7 @@ Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
 
 - **Fully configured LSP**: Out of the box LSP and completions, including Copilot (optional)
 - **Awesome keybindings**: Intuitive and well documented keybindings with which-key
-- **Blazingly fast**: Starts up in less than 50ms thanks to extensive lazy loading
+- **Blazingly fast**: Starts up in less than 30ms thanks to extensive lazy loading
 - **Batteries included**: Has all the necessary plugins included out of the box
 - **Git in there**: Powerful git integrations thanks to lazygit, fugitive, gitsigns and more
 - **Pretty colors**: Comes with treesitter and onedark preconfigured with full transparency support
