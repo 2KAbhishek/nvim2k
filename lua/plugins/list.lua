@@ -439,8 +439,13 @@ local lsp_servers = {
     'vimls',
 }
 
+local null_ls_sources = {
+    'shellcheck',
+}
+
 return {
     plugins = plugins,
     ts_parsers = ts_parsers,
     lsp_servers = lsp_servers,
+    null_ls_sources = null_ls_sources,
 }
