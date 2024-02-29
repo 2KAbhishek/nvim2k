@@ -407,6 +407,7 @@ local ts_parsers = {
     'bash',
     'css',
     'elixir',
+    'gitcommit',
     'go',
     'html',
     'java',
