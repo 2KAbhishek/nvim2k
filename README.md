@@ -23,7 +23,7 @@
 <h3>Your Personalized Development Environment ❤️👨‍💻</h3>
 
 <figure>
-  <img src= "images/screenshot.jpg" alt="nvim2k Demo">
+  <img src= "images/screenshot.png" alt="nvim2k Demo">
   <br/>
   <figcaption>nvim2k screenshot</figcaption>
 </figure>
