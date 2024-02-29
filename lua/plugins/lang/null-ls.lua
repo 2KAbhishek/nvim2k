@@ -42,7 +42,13 @@ null_ls.setup({
     },
 })
 
+local auto_install = require('lib.util').get_user_config('auto_install', true)
+local installed_sources = {}
+if auto_install then
+    installed_sources = require('plugins.list').null_ls_sources
+end
+
 require('mason-null-ls').setup({
-    ensure_installed = nil,
-    automatic_installation = require('lib.util').get_user_config('auto_install', true),
+    ensure_installed = installed_sources,
+    automatic_installation = auto_install,
 })
