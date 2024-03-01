@@ -32,7 +32,7 @@
 
 Handcrafted Neovim setup for the ultimate CLI dev experience.
 
-Here's a (slightly dated) [video walkthrough](https://youtu.be/WfhylGI_F-o)
+Here's a [video playlist](https://www.youtube.com/watch?v=Pj7jJnOcW9I&list=PL52YFor3VtLdye3d4NiLHA7h4v5_kj5_C) that contains all the video I made related to nvim2k.
 
 ## ✨ Features
 
