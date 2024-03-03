@@ -432,6 +432,7 @@ local lsp_servers = {
     'jsonls',
     'lua_ls',
     'ruby_ls',
+    'solargraph',
     'ruff_lsp',
     'rubocop',
     'rust_analyzer',
