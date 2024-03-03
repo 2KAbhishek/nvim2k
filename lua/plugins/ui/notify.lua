@@ -17,6 +17,8 @@ notify.setup({
     },
     level = 2,
     minimum_width = 50,
+    max_height = 10,
+    max_width = 100,
     render = 'default',
     stages = 'fade_in_slide_out',
     timeout = 2000,
