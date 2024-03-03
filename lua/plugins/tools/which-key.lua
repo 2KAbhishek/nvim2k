@@ -126,8 +126,7 @@ local mappings = {
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     c = {
         name = icons.ui.NeoVim .. 'Config',
-        c = { '<cmd>CccHighlighterToggle<cr>', 'Colorize' },
-        C = { '<cmd>CccConvert<cr>', 'Convert Color' },
+        c = { '<cmd>CccConvert<cr>', 'Convert Color' },
         d = { '<cmd>cd %:p:h<cr>', 'Change Directory' },
         e = { '<cmd>e ~/.config/nvim/init.lua<cr>', 'Edit Config' },
         f = { '<cmd>!bundle exec rubocop -A %<cr>', 'Format Files' },
@@ -252,6 +251,7 @@ local mappings = {
     },
     m = {
         name = icons.kind.Field .. 'Modes',
+        c = { '<cmd>CccHighlighterToggle<cr>', 'Highlight Colors' },
         d = { '<cmd>Dashboard<cr>', 'Dashboard' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
