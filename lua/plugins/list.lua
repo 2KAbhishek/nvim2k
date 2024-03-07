@@ -327,19 +327,6 @@ local plugins = {
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
     },
     {
-        'kndndrj/nvim-dbee',
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-        },
-        build = function()
-            --    "curl", "wget", "bitsadmin", "go"
-            require('dbee').install('curl')
-        end,
-        config = load_config('tools.dbee'),
-        cmd = 'DBToggle',
-        enabled = false,
-    },
-    {
         '2kabhishek/termim.nvim',
         cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
     },
@@ -395,11 +382,27 @@ local plugins = {
         'tpope/vim-fugitive',
         cmd = 'Git',
     },
+
+    -- Disabled
+    {
+        'kndndrj/nvim-dbee',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+        },
+        build = function()
+            --    "curl", "wget", "bitsadmin", "go"
+            require('dbee').install('curl')
+        end,
+        config = load_config('tools.dbee'),
+        cmd = 'DBToggle',
+        enabled = false,
+    },
     {
         'pwntester/octo.nvim',
         config = load_config('tools.octo'),
         cmd = 'Octo',
         opts = true,
+        enabled = false,
     },
 }
 
