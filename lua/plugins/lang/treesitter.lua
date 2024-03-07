@@ -1,7 +1,5 @@
-local status_ok, configs = pcall(require, 'nvim-treesitter.configs')
-if not status_ok then
-    return
-end
+local treesitter = require('nvim-treesitter.configs')
+local textobjects = require('plugins.lang.textobjects')
 
 local auto_install = require('lib.util').get_user_config('auto_install', true)
 local installed_parsers = {}
@@ -9,9 +7,7 @@ if auto_install then
     installed_parsers = require('plugins.list').ts_parsers
 end
 
-local textobjects = require('plugins.lang.textobjects')
-
-configs.setup({
+treesitter.setup({
     ensure_installed = installed_parsers,
     sync_install = false,
     ignore_install = {},

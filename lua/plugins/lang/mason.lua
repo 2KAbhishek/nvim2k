@@ -1,7 +1,4 @@
-local status_ok, mason = pcall(require, 'mason')
-if not status_ok then
-    return
-end
+local mason = require('mason')
 
 local icons = require('lib.icons')
 mason.setup({

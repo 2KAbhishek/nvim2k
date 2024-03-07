@@ -1,7 +1,4 @@
-local status_ok, pairs = pcall(require, 'mini.pairs')
-if not status_ok then
-    return
-end
+local pairs = require('mini.pairs')
 
 pairs.setup({
     modes = { insert = true, command = true, terminal = false },
@@ -20,4 +17,3 @@ pairs.setup({
         ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = '[^\\].', register = { cr = false } },
     },
 })
-

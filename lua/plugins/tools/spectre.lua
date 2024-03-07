@@ -1,7 +1,4 @@
-local status_ok, spectre = pcall(require, 'spectre')
-if not status_ok then
-    return
-end
+local spectre = require('spectre')
 
 spectre.setup({
     color_devicons = true,

@@ -1,7 +1,4 @@
-local status_ok, ai = pcall(require, 'mini.ai')
-if not status_ok then
-    return
-end
+local ai = require('mini.ai')
 
 ai.setup({
     custom_textobjects = {

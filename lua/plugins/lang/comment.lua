@@ -1,7 +1,4 @@
-local status_ok, comment = pcall(require, 'mini.comment')
-if not status_ok then
-    return
-end
+local comment = require('mini.comment')
 
 comment.setup({
     options = {

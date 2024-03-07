@@ -1,7 +1,4 @@
-local status_ok, notify = pcall(require, 'notify')
-if not status_ok then
-    return
-end
+local notify = require('notify')
 
 local icons = require('lib.icons')
 

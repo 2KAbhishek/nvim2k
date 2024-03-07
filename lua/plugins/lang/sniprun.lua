@@ -1,7 +1,4 @@
-local status_ok, sniprun = pcall(require, 'sniprun')
-if not status_ok then
-    return
-end
+local sniprun = require('sniprun')
 
 sniprun.setup({
     display = { 'VirtualTextOk', 'VirtualTextErr' },

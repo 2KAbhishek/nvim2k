@@ -1,8 +1,4 @@
-local status_ok, dashboard = pcall(require, 'dashboard')
-if not status_ok then
-    return
-end
-
+local dashboard = require('dashboard')
 local icons = require('lib.icons')
 
 dashboard.setup({

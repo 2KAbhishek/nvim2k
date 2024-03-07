@@ -1,11 +1,8 @@
-local status_ok, saga = pcall(require, 'lspsaga')
-if not status_ok then
-    return
-end
+local lspsaga = require('lspsaga')
 
 local icons = require('lib.icons')
 
-saga.setup({
+lspsaga.setup({
     ui = {
         theme = 'round',
         border = 'rounded',

@@ -1,7 +1,4 @@
-local status_ok, wilder = pcall(require, 'wilder')
-if not status_ok then
-    return
-end
+local wilder = require('wilder')
 
 wilder.setup({ modes = { ':', '/', '?' } })
 
@@ -21,8 +18,7 @@ wilder.set_option('pipeline', {
     ),
 })
 
-local accent =
-    wilder.make_hl('WilderAccent', 'Pmenu', { { a = 1 }, { a = 1 }, { foreground = '#00AAFF' } })
+local accent = wilder.make_hl('WilderAccent', 'Pmenu', { { a = 1 }, { a = 1 }, { foreground = '#00AAFF' } })
 local icons = require('lib.icons')
 
 local popupmenu_renderer = wilder.popupmenu_renderer(wilder.popupmenu_palette_theme({

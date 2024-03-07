@@ -1,8 +1,4 @@
-local status_ok, flash = pcall(require, 'flash')
-if not status_ok then
-    return
-end
-
+local flash = require('flash')
 local icons = require('lib.icons')
 
 flash.setup({
