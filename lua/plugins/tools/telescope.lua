@@ -154,7 +154,7 @@ telescope.setup({
                 },
             },
         },
-        menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-,>' } } },
+        menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-e>' } } },
     },
 })
 
