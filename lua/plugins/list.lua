@@ -107,6 +107,31 @@ local plugins = {
         'ThePrimeagen/refactoring.nvim',
         config = load_config('lang.refactoring'),
     },
+    {
+        'echasnovski/mini.comment',
+        version = '*',
+        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+        config = load_config('lang.comment'),
+        keys = 'gc',
+    },
+    {
+        'echasnovski/mini.surround',
+        version = '*',
+        config = load_config('lang.surround'),
+        keys = 'gs',
+    },
+    {
+        'echasnovski/mini.pairs',
+        version = '*',
+        config = load_config('lang.pairs'),
+        event = 'InsertEnter',
+    },
+    {
+        'echasnovski/mini.ai',
+        version = '*',
+        config = load_config('lang.ai'),
+        event = 'InsertEnter',
+    },
 
     -- Tresitter
     {
@@ -202,38 +227,6 @@ local plugins = {
         },
         config = load_config('tools.nvim-tree'),
         cmd = 'NvimTreeToggle',
-    },
-    {
-        'numToStr/Comment.nvim',
-        config = load_config('tools.comment'),
-        keys = {
-            {
-                'gcc',
-                mode = { 'n' },
-                function()
-                    require('Comment').toggle()
-                end,
-                desc = 'Comment',
-            },
-            {
-                'gc',
-                mode = { 'v' },
-                function()
-                    require('Comment').toggle()
-                end,
-                desc = 'Comment',
-            },
-        },
-    },
-    {
-        'kylechui/nvim-surround',
-        config = load_config('tools.surround'),
-        keys = { 'cs', 'ds', 'ys' },
-    },
-    {
-        'windwp/nvim-autopairs',
-        config = load_config('tools.autopairs'),
-        event = 'InsertEnter',
     },
     {
         'windwp/nvim-spectre',
