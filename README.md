@@ -122,7 +122,7 @@ By default nvim2k will auto install a set of LSP servers and null-ls sources usi
 ```lua
 -- lua/user/init.lua
 local user = {
-    auto_install = true
+    auto_install = true,
 }
 
 return user
