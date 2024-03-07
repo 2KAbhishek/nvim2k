@@ -126,6 +126,12 @@ local plugins = {
         config = load_config('lang.pairs'),
         event = 'InsertEnter',
     },
+    {
+        'echasnovski/mini.ai',
+        version = '*',
+        config = load_config('lang.ai'),
+        event = 'InsertEnter',
+    },
 
     -- Tresitter
     {
