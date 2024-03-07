@@ -10,8 +10,6 @@ end
 
 require('luasnip/loaders/from_vscode').lazy_load()
 
-local compare = require('cmp.config.compare')
-
 local icons = require('lib.icons')
 local kind_icons = icons.kind
 vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', { fg = '#6CC644' })
@@ -49,10 +47,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {
-            'i',
-            's',
-        }),
+        end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -61,10 +56,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {
-            'i',
-            's',
-        }),
+        end, { 'i', 's' }),
     },
     formatting = {
         fields = { 'kind', 'abbr', 'menu' },
@@ -91,30 +83,10 @@ cmp.setup({
     sources = {
         { name = 'copilot' },
         { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'nvim_lsp_signature_help' },
-        { name = 'path' },
         { name = 'nvim_lua' },
-        { name = 'luasnip' },
-    },
-    sorting = {
-        priority_weight = 2,
-        comparators = {
-            -- require("copilot_cmp.comparators").prioritize,
-            -- require("copilot_cmp.comparators").score,
-            compare.offset,
-            compare.exact,
-            -- compare.scopes,
-            compare.score,
-            compare.recently_used,
-            compare.locality,
-            -- compare.kind,
-            compare.sort_text,
-            compare.length,
-            compare.order,
-            -- require("copilot_cmp.comparators").prioritize,
-            -- require("copilot_cmp.comparators").score,
-        },
+        { name = 'path' },
+        { name = 'luasnip', keyword_length = 2 },
+        { name = 'buffer', keyword_length = 3 },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
