@@ -130,9 +130,10 @@ local plugins = {
         },
     },
     {
-        'kylechui/nvim-surround',
-        config = load_config('tools.surround'),
-        keys = { 'cs', 'ds', 'ys' },
+        'echasnovski/mini.surround',
+        version = '*',
+        config = load_config('lang.surround'),
+        keys = 'gs',
     },
     {
         'echasnovski/mini.pairs',
