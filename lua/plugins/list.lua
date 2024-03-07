@@ -390,13 +390,6 @@ local plugins = {
         cmd = 'DBToggle',
         enabled = false,
     },
-    {
-        'pwntester/octo.nvim',
-        config = load_config('tools.octo'),
-        cmd = 'Octo',
-        opts = true,
-        enabled = false,
-    },
 }
 
 local ts_parsers = {
