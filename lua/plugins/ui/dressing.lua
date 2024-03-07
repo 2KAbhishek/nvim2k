@@ -1,13 +1,9 @@
-local status_ok, dressing = pcall(require, 'dressing')
-if not status_ok then
-    return
-end
+local dressing = require('dressing')
 
 dressing.setup({
     win_options = {
         winblend = 10,
-        winhighlight =
-        'Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder',
+        winhighlight = 'Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder',
     },
     input = {
         enabled = true,

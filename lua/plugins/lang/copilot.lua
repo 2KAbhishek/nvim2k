@@ -1,7 +1,4 @@
-local status_ok, copilot = pcall(require, 'copilot')
-if not status_ok then
-    return
-end
+local copilot = require('copilot')
 
 copilot.setup({
     panel = {

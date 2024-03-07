@@ -1,7 +1,4 @@
-local status_ok, lsp_lines = pcall(require, 'lsp_lines')
-if not status_ok then
-    return
-end
+local lsp_lines = require('lsp_lines')
 
 lsp_lines.setup()
 vim.diagnostic.config({ virtual_text = false })

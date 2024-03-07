@@ -1,7 +1,4 @@
-local status_ok, twilight = pcall(require, 'twilight')
-if not status_ok then
-    return
-end
+local twilight = require('twilight')
 
 twilight.setup({
     dimming = { alpha = 0.45, color = { 'Normal', '#ffffff' }, inactive = false },

@@ -1,8 +1,4 @@
-local status_ok, ror = pcall(require, 'ror')
-if not status_ok then
-    return
-end
-
+local ror = require('ror')
 local icons = require('lib.icons')
 
 ror.setup({

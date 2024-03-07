@@ -1,8 +1,4 @@
-local status_ok, lualine = pcall(require, 'lualine')
-if not status_ok then
-    return
-end
-
+local lualine = require('lualine')
 local icons = require('lib.icons')
 
 local colors = {
@@ -171,7 +167,7 @@ local function mode(icon)
     }
 end
 
-local config = {
+lualine.setup({
     options = {
         component_separators = '',
         -- section_separators = '',
@@ -197,6 +193,4 @@ local config = {
         lualine_y = {},
         lualine_z = {},
     },
-}
-
-lualine.setup(config)
+})

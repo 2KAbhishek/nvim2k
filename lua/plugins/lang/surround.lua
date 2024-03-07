@@ -1,7 +1,4 @@
-local status_ok, surround = pcall(require, 'mini.surround')
-if not status_ok then
-    return
-end
+local surround = require('mini.surround')
 
 surround.setup({
     custom_surroundings = nil,

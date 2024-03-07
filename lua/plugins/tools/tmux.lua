@@ -1,7 +1,4 @@
-local status_ok, tmux = pcall(require, 'tmux')
-if not status_ok then
-    return
-end
+local tmux = require('tmux')
 
 tmux.setup({
     copy_sync = {
