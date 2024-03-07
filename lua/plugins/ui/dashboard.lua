@@ -64,3 +64,14 @@ dashboard.setup({
         footer = { '', icons.ui.Heart .. ' Happiness is a state of mind. ' .. icons.ui.Heart },
     },
 })
+
+-- Show dashboard when lazy closes
+if vim.o.filetype == 'lazy' then
+    vim.cmd.close()
+    vim.api.nvim_create_autocmd('User', {
+        pattern = 'DashboardLoaded',
+        callback = function()
+            require('lazy').show()
+        end,
+    })
+end
