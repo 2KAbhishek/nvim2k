@@ -33,5 +33,5 @@ indent.setup({
     try_as_border = true,
   },
 
-  symbol = '|',
+  symbol = '│',
 })
