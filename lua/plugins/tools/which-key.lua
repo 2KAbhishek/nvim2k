@@ -193,7 +193,6 @@ local mappings = {
         d = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
         D = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
         g = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
-        h = { '<cmd>Octo<cr>', 'Octo' },
         j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
         r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset Hunk' },
