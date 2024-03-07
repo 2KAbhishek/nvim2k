@@ -338,6 +338,7 @@ local plugins = {
         end,
         config = load_config('tools.dbee'),
         cmd = 'DBToggle',
+        enabled = false,
     },
     {
         '2kabhishek/termim.nvim',
