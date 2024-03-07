@@ -108,26 +108,11 @@ local plugins = {
         config = load_config('lang.refactoring'),
     },
     {
-        'numToStr/Comment.nvim',
-        config = load_config('tools.comment'),
-        keys = {
-            {
-                'gcc',
-                mode = { 'n' },
-                function()
-                    require('Comment').toggle()
-                end,
-                desc = 'Comment',
-            },
-            {
-                'gc',
-                mode = { 'v' },
-                function()
-                    require('Comment').toggle()
-                end,
-                desc = 'Comment',
-            },
-        },
+        'echasnovski/mini.comment',
+        version = '*',
+        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+        config = load_config('lang.comment'),
+        keys = 'gc',
     },
     {
         'echasnovski/mini.surround',
