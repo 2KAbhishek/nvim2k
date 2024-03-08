@@ -153,13 +153,12 @@ local plugins = {
     },
     -- LSP
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        'neovim/nvim-lspconfig',
         dependencies = {
-            'neovim/nvim-lspconfig',
             'williamboman/mason-lspconfig.nvim',
+            'hrsh7th/cmp-nvim-lsp',
         },
-        config = load_config('lang.lsp-zero'),
+        config = load_config('lang.lspconfig'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
@@ -196,18 +195,12 @@ local plugins = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-nvim-lua',
+            'L3MON4D3/LuaSnip',
+            'rafamadriz/friendly-snippets',
             'saadparwaiz1/cmp_luasnip',
         },
         config = load_config('lang.cmp'),
-        event = 'InsertEnter',
-    },
-    {
-        'L3MON4D3/LuaSnip',
-        version = 'v2.*',
-        dependencies = { 'rafamadriz/friendly-snippets' },
-        build = 'make install_jsregexp',
         event = 'InsertEnter',
     },
     {
