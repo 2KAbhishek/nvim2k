@@ -1,7 +1,7 @@
 return {
     diagnostics = {
         Error = ' ',
-        Hint = '󰌵 ',
+        Hint = '󰠠 ',
         Information = ' ',
         Question = ' ',
         Warning = ' ',
@@ -107,6 +107,7 @@ return {
         Home = ' ',
         Incoming = ' ',
         Keyboard = '  ',
+        Ligthbulb = '󰌵 ',
         List = '',
         Lock = ' ',
         Minus = '‒ ',

@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local cmp_lsp = require('cmp_nvim_lsp')
+local icons = require('lib.icons').diagnostics
 
 local auto_install = require('lib.util').get_user_config('auto_install', true)
 local installed_servers = {}
@@ -12,6 +13,12 @@ local default_setup = function(server)
     lspconfig[server].setup({
         capabilities = lsp_capabilities,
     })
+end
+
+local signs = { Error = icons.Error, Warn = icons.Warning, Hint = icons.Hint, Info = icons.Information }
+for type, icon in pairs(signs) do
+    local hl = 'DiagnosticSign' .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
 require('mason-lspconfig').setup({
