@@ -224,7 +224,7 @@ local mappings = {
         a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
         d = { '<cmd>Lspsaga peek_definition<cr>', 'Peek Definition' },
         D = { '<cmd>Lspsaga goto_definition<cr>', 'Goto Definition' },
-        f = { '<cmd>LspZeroFormat<cr>', 'Format' },
+        f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format' },
         g = { '<cmd>Lspsaga finder<cr>', 'Finder' },
         G = { '<cmd>Telescope lsp_references<cr>', 'References' },
         h = { '<cmd>Lspsaga hover_doc<cr>', 'Hover' },
