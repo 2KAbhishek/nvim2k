@@ -1,9 +1,5 @@
 local cmp = require('cmp')
-
-local snip_status_ok, luasnip = pcall(require, 'luasnip')
-if not snip_status_ok then
-    return
-end
+local luasnip = require('luasnip')
 
 require('luasnip/loaders/from_vscode').lazy_load()
 
@@ -12,6 +8,9 @@ local kind_icons = icons.kind
 vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', { fg = '#6CC644' })
 
 cmp.setup({
+    completion = {
+        completeopt = 'menu,menuone,preview,noselect',
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -80,8 +79,8 @@ cmp.setup({
     sources = {
         { name = 'copilot' },
         { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
         { name = 'path' },
+        { name = 'nvim_lua' },
         { name = 'luasnip', keyword_length = 2 },
         { name = 'buffer', keyword_length = 3 },
     },
