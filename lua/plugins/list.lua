@@ -383,6 +383,26 @@ local plugins = {
     },
 }
 
+local lsp_servers = {
+    'bashls',
+    'elixirls',
+    'eslint',
+    'jsonls',
+    'lua_ls',
+    'rubocop', -- ruby
+    'ruby_ls',
+    'ruff_lsp', -- python
+    'rust_analyzer',
+    'solargraph', -- ruby
+    'tsserver',
+    'typos_lsp', -- check typos
+    'vimls',
+}
+
+local null_ls_sources = {
+    'shellcheck', -- bash lint
+}
+
 local ts_parsers = {
     'bash',
     'css',
@@ -395,7 +415,7 @@ local ts_parsers = {
     'json',
     'lua',
     'markdown',
-    'markdown_inline',
+    'markdown_inline', -- markdown code blocks
     'python',
     'ruby',
     'rust',
@@ -405,29 +425,9 @@ local ts_parsers = {
     'yaml',
 }
 
-local lsp_servers = {
-    'bashls',
-    'eslint',
-    'elixirls',
-    'jsonls',
-    'lua_ls',
-    'ruby_ls',
-    'solargraph',
-    'ruff_lsp',
-    'rubocop',
-    'rust_analyzer',
-    'tsserver',
-    'typos_lsp',
-    'vimls',
-}
-
-local null_ls_sources = {
-    'shellcheck',
-}
-
 return {
     plugins = plugins,
-    ts_parsers = ts_parsers,
     lsp_servers = lsp_servers,
     null_ls_sources = null_ls_sources,
+    ts_parsers = ts_parsers,
 }

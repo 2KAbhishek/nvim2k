@@ -1,10 +1,10 @@
 local null_ls = require('null-ls')
 
-local format = null_ls.builtins.formatting
-local diag = null_ls.builtins.diagnostics
-local hover = null_ls.builtins.hover
 local action = null_ls.builtins.code_actions
 local comp = null_ls.builtins.completion
+local diag = null_ls.builtins.diagnostics
+local format = null_ls.builtins.formatting
+local hover = null_ls.builtins.hover
 
 -- Buily in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 null_ls.setup({
@@ -13,29 +13,29 @@ null_ls.setup({
     log_level = 'info',
     diagnostics_format = '#{c} #{m} (#{s})',
     sources = {
-        action.proselint,
+        action.proselint, -- markdown actions
         action.refactoring,
-        action.ts_node_action,
-        comp.spell,
-        comp.tags,
-        diag.actionlint,
-        diag.credo,
+        action.ts_node_action, -- treesitter node actions
+        comp.spell, -- spell completion
+        comp.tags, -- tags completion
+        diag.actionlint, -- github action lint
+        diag.credo, -- elixir diagnostics
         diag.golangci_lint,
-        diag.hadolint,
-        diag.proselint,
-        diag.reek,
-        diag.rubocop,
+        diag.hadolint, -- docker lint
+        diag.proselint, -- markdown lint
+        diag.reek, -- ruby code smell
+        diag.rubocop, -- ruby diagnostics
         diag.todo_comments,
-        diag.trail_space,
-        diag.vint,
-        diag.write_good,
-        format.mix,
-        format.prettier,
-        format.rubocop,
-        format.shfmt,
-        format.stylua,
-        hover.dictionary,
-        hover.printenv,
+        diag.trail_space, -- trailing space check
+        diag.vint, -- vim lint
+        diag.write_good, -- english writing style
+        format.mix, -- elixir formatter
+        format.prettier, -- js, md, css, etc formatter
+        format.rubocop, -- ruby formatter
+        format.shfmt, -- shell formatter
+        format.stylua, -- lua formatter
+        hover.dictionary, -- show word dictionary on hover
+        hover.printenv, -- show env on hover
     },
 })
 
