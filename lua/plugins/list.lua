@@ -90,7 +90,6 @@ local plugins = {
     {
         'nvim-neotest/neotest',
         dependencies = {
-            'antoinemadec/FixCursorHold.nvim',
             'olimorris/neotest-rspec',
             'haydenmeade/neotest-jest',
         },
