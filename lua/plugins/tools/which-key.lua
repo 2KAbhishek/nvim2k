@@ -123,7 +123,7 @@ local mappings = {
     c = {
         name = icons.ui.NeoVim .. 'Config',
         c = { '<cmd>CccConvert<cr>', 'Convert Color' },
-        d = { '<cmd>cd %:p:h<cr>', 'Change Directory' },
+        d = { '<cmd>RootDir<cr>', 'Root Directory' },
         e = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
         f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' },
         F = { '<cmd>retab<cr>', 'Fix Tabs' },
