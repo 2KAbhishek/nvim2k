@@ -348,10 +348,15 @@ local plugins = {
             'nvim-telescope/telescope-symbols.nvim',
             'molecule-man/telescope-menufacture',
             'debugloop/telescope-undo.nvim',
-            'ThePrimeagen/harpoon',
         },
         config = load_config('tools.telescope'),
         cmd = 'Telescope',
+    },
+    {
+        'ThePrimeagen/harpoon',
+        branch = 'harpoon2',
+        config = load_config('tools.harpoon'),
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         '2kabhishek/nerdy.nvim',

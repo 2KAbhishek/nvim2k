@@ -211,14 +211,7 @@ local mappings = {
         u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
         v = { '<cmd>Gitsigns select_hunk<cr>', 'Select Hunk' },
     },
-    h = {
-        name = icons.ui.Bookmark .. 'Harpoon',
-        a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', 'Harpoon' },
-        h = { '<cmd>Telescope harpoon marks<cr>', 'Search Files' },
-        m = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', 'Harpoon UI' },
-        k = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon Next' },
-        j = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon Prev' },
-    },
+    h = { name = icons.ui.Bookmark .. 'Harpoon' },
     l = {
         name = icons.ui.Gear .. 'LSP',
         a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
@@ -424,7 +417,6 @@ local no_leader_mappings = {
         e = { 'g;', 'Edit' },
         g = { '<cmd>Gitsigns prev_hunk<cr>', 'Git Hunk' },
         j = { '<C-o>', 'Jump' },
-        h = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', 'Harpoon' },
     },
     [']'] = {
         name = icons.ui.ArrowRight .. 'Next',
@@ -434,7 +426,6 @@ local no_leader_mappings = {
         e = { 'g,', 'Edit' },
         g = { '<cmd>Gitsigns next_hunk<cr>', 'Git Hunk' },
         j = { '<C-i>', 'Jump' },
-        h = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', 'Harpoon' },
     },
 
     ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
