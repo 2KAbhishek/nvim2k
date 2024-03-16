@@ -40,10 +40,6 @@ local plugins = {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
-        'uga-rosa/ccc.nvim',
-        cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
-    },
-    {
         'nvimdev/dashboard-nvim',
         config = load_config('ui.dashboard'),
         -- Only load when no arguments
@@ -310,6 +306,11 @@ local plugins = {
         end,
         ft = 'markdown',
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
+    },
+    {
+        'uga-rosa/ccc.nvim',
+        config = load_config('tools.ccc'),
+        cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     },
     {
         '2kabhishek/termim.nvim',
