@@ -103,6 +103,11 @@ local plugins = {
         config = load_config('lang.refactoring'),
     },
     {
+        'windwp/nvim-autopairs',
+        config = load_config('lang.autopairs'),
+        event = 'InsertEnter',
+    },
+    {
         'echasnovski/mini.comment',
         version = '*',
         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
@@ -114,12 +119,6 @@ local plugins = {
         version = '*',
         config = load_config('lang.surround'),
         keys = 'gs',
-    },
-    {
-        'echasnovski/mini.pairs',
-        version = '*',
-        config = load_config('lang.pairs'),
-        event = 'InsertEnter',
     },
     {
         'echasnovski/mini.ai',
