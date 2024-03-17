@@ -18,9 +18,9 @@ local plugins = {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
-        'echasnovski/mini.indentscope',
-        version = '*',
-        config = load_config('ui.indentscope'),
+        'lukas-reineke/indent-blankline.nvim',
+        config = load_config('ui.indentline'),
+        main = 'ibl',
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
