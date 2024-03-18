@@ -1,5 +1,10 @@
 local comment = require('mini.comment')
 
+require('ts_context_commentstring').setup({
+    enable_autocmd = false,
+    -- languages = { typescript = '// %s' },
+})
+
 comment.setup({
     options = {
         custom_commentstring = function()
