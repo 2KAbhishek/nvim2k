@@ -13,4 +13,19 @@ util.get_user_config = function(key, default)
     return user_config
 end
 
+util.get_root_dir = function()
+    local bufname = vim.fn.expand('%:p')
+    if vim.fn.filereadable(bufname) == 0 then
+        return
+    end
+
+    local parent = vim.fn.fnamemodify(bufname, ':h')
+    local git_root = vim.fn.systemlist('git -C ' .. parent .. ' rev-parse --show-toplevel')
+    if #git_root > 0 and git_root[1] ~= '' then
+        return git_root[1]
+    else
+        return parent
+    end
+end
+
 return util
