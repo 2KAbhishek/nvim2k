@@ -112,19 +112,19 @@ local plugins = {
         version = '*',
         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
         config = load_config('lang.comment'),
-        keys = 'gc',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'echasnovski/mini.surround',
         version = '*',
         config = load_config('lang.surround'),
-        keys = 'gs',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'echasnovski/mini.ai',
         version = '*',
         config = load_config('lang.ai'),
-        event = 'InsertEnter',
+        event = { 'BufReadPre', 'BufNewFile' },
     },
 
     -- Tresitter
