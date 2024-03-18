@@ -31,7 +31,7 @@ end
 util.get_file_type = function(extension)
     local root = util.get_root_dir()
 
-    if extension == 'arb' then
+    if extension == 'arb' and root then
         local gemfile_exists = vim.fn.filereadable(root .. '/Gemfile') == 1
         local pubspec_exists = vim.fn.filereadable(root .. '/pubspec.yaml') == 1
         if gemfile_exists then
