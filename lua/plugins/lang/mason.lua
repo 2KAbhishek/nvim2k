@@ -27,7 +27,7 @@ mason.setup({
             check_package_version = 'c',
             update_all_packages = 'U',
             check_outdated_packages = 'C',
-            uninstall_package = 'd',
+            uninstall_package = 'x',
             cancel_installation = '<C-c>',
             apply_language_filter = '<C-f>',
         },
