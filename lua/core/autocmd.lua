@@ -2,27 +2,6 @@ local function augroup(name)
     return vim.api.nvim_create_augroup('nvim2k_' .. name, { clear = true })
 end
 
--- Jump to last known position
-vim.api.nvim_create_autocmd('BufRead', {
-    callback = function(opts)
-        vim.api.nvim_create_autocmd('BufWinEnter', {
-            once = true,
-            buffer = opts.buf,
-            callback = function()
-                local ft = vim.bo[opts.buf].filetype
-                local last_known_line = vim.api.nvim_buf_get_mark(opts.buf, '"')[1]
-                if
-                    not (ft:match('commit') and ft:match('rebase'))
-                    and last_known_line > 1
-                    and last_known_line <= vim.api.nvim_buf_line_count(opts.buf)
-                then
-                    vim.api.nvim_feedkeys([[g`"]], 'nx', false)
-                end
-            end,
-        })
-    end,
-})
-
 -- Strip trailing spaces before write
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     group = augroup('strip_space'),
@@ -111,6 +90,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 
 -- Set arb filetype
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNewFile' }, {
+    group = augroup('set_file_type'),
     pattern = { '*.arb' },
     command = require('lib.util').get_file_type('arb'),
 })
