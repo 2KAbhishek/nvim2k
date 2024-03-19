@@ -89,7 +89,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 })
 
 -- Set arb filetype
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNewFile' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
     group = augroup('set_file_type'),
     pattern = { '*.arb' },
     command = require('lib.util').get_file_type('arb'),
