@@ -387,29 +387,10 @@ local plugins = {
     },
 }
 
-local lsp_servers = {
-    'bashls',
-    'elixirls',
-    'eslint',
-    'jsonls',
-    'lua_ls',
-    'rubocop', -- ruby
-    'ruby_ls',
-    'ruff_lsp', -- python
-    'rust_analyzer',
-    'solargraph', -- ruby
-    'tsserver',
-    'typos_lsp', -- check typos
-    'vimls',
-}
-
-local null_ls_sources = {
-    'shellcheck', -- bash lint
-}
-
 local ts_parsers = {
     'bash',
     'css',
+    'dart',
     'elixir',
     'gitcommit',
     'go',
@@ -428,6 +409,55 @@ local ts_parsers = {
     'vimdoc',
     'yaml',
 }
+
+local null_ls_sources = {
+    'shellcheck', -- bash lint
+}
+
+local lsp_servers = {
+    'bashls',
+    'jsonls',
+    'lua_ls',
+    'typos_lsp', -- check typos
+    'vimls',
+}
+
+local util = require('lib.util')
+
+if util.is_present('npm') then
+    table.insert(lsp_servers, 'eslint')
+    table.insert(lsp_servers, 'tsserver')
+end
+
+if util.is_present('gem') then
+    table.insert(lsp_servers, 'solargraph')
+    table.insert(lsp_servers, 'ruby_ls')
+    table.insert(lsp_servers, 'rubocop')
+end
+
+if util.is_present('go') then
+    table.insert(lsp_servers, 'gopls')
+end
+
+if util.is_present('dart') then
+    table.insert(lsp_servers, 'dartls')
+end
+
+if util.is_present('java') then
+    table.insert(lsp_servers, 'jdtls')
+end
+
+if util.is_present('pip') then
+    table.insert(lsp_servers, 'ruff_lsp')
+end
+
+if util.is_present('mix') then
+    table.insert(lsp_servers, 'elixirls')
+end
+
+if util.is_present('cargo') then
+    table.insert(lsp_servers, 'rust_analyzer')
+end
 
 return {
     plugins = plugins,
