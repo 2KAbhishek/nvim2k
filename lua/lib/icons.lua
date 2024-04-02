@@ -69,7 +69,7 @@ return {
         String = ' ',
     },
     ui = {
-        Arrow = '➜ ',
+        Arrow = ' ',
         ArrowClosed = ' ',
         ArrowLeft = ' ',
         ArrowOpen = ' ',
