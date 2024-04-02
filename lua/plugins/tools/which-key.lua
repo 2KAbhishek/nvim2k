@@ -116,7 +116,7 @@ local opts = {
 }
 
 local mappings = {
-    ['<Tab>'] = { '<cmd>b#<cr>', icons.ui.History .. 'Recent' },
+    [','] = { '<cmd>b#<cr>', icons.ui.History .. 'Recent' },
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
@@ -398,10 +398,11 @@ local no_leader_mappings = {
     ['<S-h>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
     ['<S-l>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
 
-    ['<C-h>'] = { '<C-w>h', 'Move Left' },
-    ['<C-j>'] = { '<C-w>j', 'Move Down' },
-    ['<C-k>'] = { '<C-w>k', 'Move Up' },
-    ['<C-l>'] = { '<C-w>l', 'Move Right' },
+    ['<C-h>'] = { '<cmd>NavigatorLeft<cr>', 'Move Left' },
+    ['<C-j>'] = { '<cmd>NavigatorDown<cr>', 'Move Down' },
+    ['<C-k>'] = { '<cmd>NavigatorUp<cr>', 'Move Up' },
+    ['<C-l>'] = { '<cmd>NavigatorRight<cr>', 'Move Right' },
+    ['<C-,>'] = { '<cmd>NavigatorPrevious<cr>', 'Goto Previous' },
 
     ['<C-Up>'] = { '<cmd>resize +10<cr>', 'Increase window height' },
     ['<C-Down>'] = { '<cmd>resize -10<cr>', 'Decrease window height' },
