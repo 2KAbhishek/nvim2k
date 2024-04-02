@@ -20,8 +20,9 @@ local setup = {
         },
     },
     key_labels = {
-        ['<leader>'] = icons.ui.Rocket .. 'Space',
-        ['<space>'] = icons.ui.Rocket .. 'Space',
+        ['<leader>'] = icons.ui.Rocket,
+        ['<space>'] = '<spc>',
+        ['<Tab>'] = '<tab>',
     },
     icons = {
         breadcrumb = icons.ui.ArrowOpen,
@@ -115,6 +116,7 @@ local opts = {
 }
 
 local mappings = {
+    ['<Tab>'] = { '<cmd>b#<cr>', icons.ui.History .. 'Recent' },
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
@@ -428,7 +430,6 @@ local no_leader_mappings = {
         j = { '<C-i>', 'Jump' },
     },
 
-    ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
     K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
     U = { '<cmd>redo<cr>', 'Redo' },
 }
