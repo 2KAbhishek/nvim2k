@@ -272,13 +272,9 @@ local plugins = {
         },
     },
     {
-        'aserowy/tmux.nvim',
-        config = load_config('tools.tmux'),
-        event = function()
-            if vim.fn.exists('$TMUX') == 1 then
-                return 'VeryLazy'
-            end
-        end,
+        'numToStr/Navigator.nvim',
+        config = load_config('tools.navigator'),
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'm4xshen/hardtime.nvim',
