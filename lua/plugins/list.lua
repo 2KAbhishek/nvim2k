@@ -73,8 +73,22 @@ local plugins = {
         'weizheheng/ror.nvim',
         branch = 'main',
         ft = 'ruby',
+        config = load_config('lang.ror'),
+        keys = {
+            {
+                '<leader>rc',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    vim.cmd('RorCommands')
+                end,
+                desc = 'Rails Commands',
+            },
+        },
     },
-    { 'tpope/vim-rails', ft = 'ruby' },
+    {
+        'tpope/vim-rails',
+        ft = 'ruby',
+    },
     {
         'mfussenegger/nvim-dap',
         dependencies = {
