@@ -94,3 +94,12 @@ vim.api.nvim_create_autocmd({ 'BufEnter' }, {
     pattern = { '*.arb' },
     command = require('lib.util').get_file_type_cmd('arb'),
 })
+
+-- Disable format options
+vim.api.nvim_create_autocmd('FileType', {
+    group = augroup('disable_formatoptions'),
+    pattern = '*',
+    callback = function()
+        vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
+    end,
+})
