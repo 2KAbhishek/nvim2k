@@ -323,6 +323,7 @@ local mappings = {
     },
     s = {
         name = icons.ui.Windows .. 'Split',
+        [','] = { '<cmd>NavigatorPrevious<cr>', 'Previous Split' },
         ['-'] = { '<C-w>s', 'Split Below' },
         ['\\'] = { '<C-w>v', 'Split Right' },
         c = { '<cmd>tabclose<cr>', 'Close Tab' },
@@ -398,11 +399,10 @@ local no_leader_mappings = {
     ['<S-h>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
     ['<S-l>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
 
-    ['<C-h>'] = { '<cmd>NavigatorLeft<cr>', 'Move Left' },
-    ['<C-j>'] = { '<cmd>NavigatorDown<cr>', 'Move Down' },
-    ['<C-k>'] = { '<cmd>NavigatorUp<cr>', 'Move Up' },
-    ['<C-l>'] = { '<cmd>NavigatorRight<cr>', 'Move Right' },
-    ['<C-,>'] = { '<cmd>NavigatorPrevious<cr>', 'Goto Previous' },
+    ['<C-h>'] = { '<C-w>h', 'Move Left' },
+    ['<C-j>'] = { '<C-w>j', 'Move Down' },
+    ['<C-k>'] = { '<C-w>k', 'Move Up' },
+    ['<C-l>'] = { '<C-w>l', 'Move Right' },
 
     ['<C-Up>'] = { '<cmd>resize +10<cr>', 'Increase window height' },
     ['<C-Down>'] = { '<cmd>resize -10<cr>', 'Decrease window height' },
@@ -434,6 +434,17 @@ local no_leader_mappings = {
     K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
     U = { '<cmd>redo<cr>', 'Redo' },
 }
+
+if vim.fn.exists('$TMUX') == 1 then
+    local tmux_mappings = {
+        ['<C-h>'] = { '<cmd>NavigatorLeft<cr>', 'Move Left' },
+        ['<C-j>'] = { '<cmd>NavigatorDown<cr>', 'Move Down' },
+        ['<C-k>'] = { '<cmd>NavigatorUp<cr>', 'Move Up' },
+        ['<C-l>'] = { '<cmd>NavigatorRight<cr>', 'Move Right' },
+        ['<C-m>'] = { '<cmd>NavigatorPrevious<cr>', 'Goto Previous' },
+    }
+    no_leader_mappings = vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
+end
 
 which_key.setup(setup)
 which_key.register(mappings, opts)

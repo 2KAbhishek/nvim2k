@@ -289,7 +289,11 @@ local plugins = {
     {
         'numToStr/Navigator.nvim',
         config = load_config('tools.navigator'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = function()
+            if vim.fn.exists('$TMUX') == 1 then
+                return 'VeryLazy'
+            end
+        end,
     },
     {
         'm4xshen/hardtime.nvim',
