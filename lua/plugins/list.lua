@@ -335,6 +335,7 @@ local plugins = {
         dependencies = 'nvim-telescope/telescope.nvim',
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
         keys = { '[t', ']t' },
+        -- dir = "~/Projects/GitHub/Maintain/tdo.nvim"
     },
     {
         'kndndrj/nvim-dbee',
