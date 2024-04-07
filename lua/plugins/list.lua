@@ -465,6 +465,7 @@ end
 
 if util.is_present('pip') then
     table.insert(lsp_servers, 'ruff_lsp')
+    table.insert(lsp_servers, 'pylsp')
 end
 
 if util.is_present('mix') then
