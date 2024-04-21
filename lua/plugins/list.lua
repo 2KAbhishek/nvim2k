@@ -70,26 +70,6 @@ local plugins = {
 
     -- Language
     {
-        'weizheheng/ror.nvim',
-        branch = 'main',
-        ft = 'ruby',
-        config = load_config('lang.ror'),
-        keys = {
-            {
-                '<leader>rc',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    vim.cmd('RorCommands')
-                end,
-                desc = 'Rails Commands',
-            },
-        },
-    },
-    {
-        'tpope/vim-rails',
-        ft = 'ruby',
-    },
-    {
         'mfussenegger/nvim-dap',
         dependencies = {
             'rcarriga/nvim-dap-ui',
@@ -446,9 +426,32 @@ if util.is_present('npm') then
 end
 
 if util.is_present('gem') then
+    local ror_nvim = {
+        'weizheheng/ror.nvim',
+        branch = 'main',
+        ft = 'ruby',
+        config = load_config('lang.ror'),
+        keys = {
+            {
+                '<leader>rc',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    vim.cmd('RorCommands')
+                end,
+                desc = 'Rails Commands',
+            },
+        },
+    }
+    local vim_rails = {
+        'tpope/vim-rails',
+        ft = 'ruby',
+    }
+
     table.insert(lsp_servers, 'solargraph')
     table.insert(lsp_servers, 'ruby_ls')
     table.insert(lsp_servers, 'rubocop')
+    table.insert(plugins, ror_nvim)
+    table.insert(plugins, vim_rails)
 end
 
 if util.is_present('go') then
