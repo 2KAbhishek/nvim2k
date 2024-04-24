@@ -448,7 +448,7 @@ if util.is_present('gem') then
     }
 
     table.insert(lsp_servers, 'solargraph')
-    table.insert(lsp_servers, 'ruby_ls')
+    table.insert(lsp_servers, 'ruby_lsp')
     table.insert(lsp_servers, 'rubocop')
     table.insert(plugins, ror_nvim)
     table.insert(plugins, vim_rails)
