@@ -52,7 +52,11 @@ telescope.setup({
         prompt_prefix = icons.ui.Telescope .. icons.ui.ChevronRight,
         selection_caret = icons.ui.Play,
         multi_icon = icons.ui.Check,
-        path_display = { 'smart' },
+        path_display = {
+            filename_first = {
+                reverse_directories = false,
+            },
+        },
         sorting_strategy = 'ascending',
 
         mappings = {
