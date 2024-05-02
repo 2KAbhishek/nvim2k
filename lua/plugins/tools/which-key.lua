@@ -161,10 +161,7 @@ local mappings = {
     f = {
         name = icons.ui.Telescope .. 'Find',
         b = { '<cmd>Telescope buffers<cr>', 'Buffers' },
-        B = { '<cmd>Telescope git_branches<cr>', 'Checkout branch' },
         a = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', 'All Files' },
-        c = { '<cmd>Telescope git_bcommits<cr>', 'File Commits' },
-        C = { '<cmd>Telescope git_commits<cr>', 'Git Commits' },
         e = { '<cmd>Oil<cr>', 'Dir Editor' },
         f = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find files' },
         g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Text' },
@@ -190,8 +187,11 @@ local mappings = {
         a = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
         A = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Buffer' },
         b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
-        c = { '<cmd>Git<cr>', 'Commit' },
-        C = { '<cmd>CoAuthor<cr>', 'Add Co Author' },
+        B = { '<cmd>Telescope git_branches<cr>', 'Branches' },
+        c = { '<cmd>Telescope git_bcommits<cr>', 'File Commits' },
+        C = { '<cmd>Telescope git_commits<cr>', 'Commits' },
+        f = { '<cmd>Git<cr>', 'Fugitive' },
+        F = { '<cmd>CoAuthor<cr>', 'Find Co Author' },
         d = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
         D = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
         g = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
@@ -382,7 +382,7 @@ local vmappings = {
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
-        g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
+        g = { '<cmd>lua require"gitlinker".get_buf_range_url("v")<cr>', 'Copy Git URL' },
     },
 }
 

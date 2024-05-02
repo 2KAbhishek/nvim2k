@@ -20,5 +20,5 @@ gitlinker.setup({
         ['git.kernel.org'] = require('gitlinker.hosts').get_cgit_type_url,
         ['git.savannah.gnu.org'] = require('gitlinker.hosts').get_cgit_type_url,
     },
-    mappings = '<leader>gy',
+    mappings = '<leader>yg',
 })
