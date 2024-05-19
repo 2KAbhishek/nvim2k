@@ -103,13 +103,6 @@ local plugins = {
         event = 'InsertEnter',
     },
     {
-        'echasnovski/mini.comment',
-        version = '*',
-        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
-        config = load_config('lang.comment'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
         'echasnovski/mini.surround',
         version = '*',
         config = load_config('lang.surround'),
