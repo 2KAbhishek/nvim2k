@@ -139,6 +139,7 @@ local plugins = {
     {
         'ckolkey/ts-node-action',
         dependencies = { 'nvim-treesitter' },
+        enabled = false,
     },
     -- LSP
     {
