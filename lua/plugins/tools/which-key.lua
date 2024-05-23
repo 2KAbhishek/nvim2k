@@ -160,8 +160,9 @@ local mappings = {
     },
     f = {
         name = icons.ui.Telescope .. 'Find',
-        b = { '<cmd>Telescope buffers<cr>', 'Buffers' },
         a = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', 'All Files' },
+        b = { '<cmd>Telescope buffers<cr>', 'Buffers' },
+        d = { '<cmd>bdelete<cr>', 'Close Buffer' },
         e = { '<cmd>Oil<cr>', 'Dir Editor' },
         f = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find files' },
         g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Text' },
