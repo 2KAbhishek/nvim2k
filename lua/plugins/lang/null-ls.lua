@@ -24,14 +24,14 @@ null_ls.setup({
         diag.hadolint, -- docker lint
         diag.proselint, -- markdown lint
         diag.reek, -- ruby code smell
-        diag.rubocop, -- ruby diagnostics
+        -- diag.rubocop, -- ruby diagnostics
         diag.todo_comments,
         diag.trail_space, -- trailing space check
         diag.vint, -- vim lint
         diag.write_good, -- english writing style
         format.mix, -- elixir formatter
         format.prettier, -- js, md, css, etc formatter
-        format.rubocop, -- ruby formatter
+        -- format.rubocop, -- ruby formatter
         format.shfmt, -- shell formatter
         format.stylua, -- lua formatter
         hover.dictionary, -- show word dictionary on hover
