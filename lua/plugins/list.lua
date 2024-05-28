@@ -155,11 +155,6 @@ local plugins = {
         event = 'LspAttach',
     },
     {
-        'Maan2003/lsp_lines.nvim',
-        config = load_config('lang.lsp-lines'),
-        event = 'LspAttach',
-    },
-    {
         'williamboman/mason.nvim',
         config = load_config('lang.mason'),
         cmd = 'Mason',
