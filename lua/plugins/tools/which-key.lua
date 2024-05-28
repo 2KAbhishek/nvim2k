@@ -124,7 +124,8 @@ local mappings = {
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     c = {
         name = icons.ui.NeoVim .. 'Config',
-        c = { '<cmd>CccConvert<cr>', 'Convert Color' },
+        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
+        C = { '<cmd>CccConvert<cr>', 'Convert Color' },
         d = { '<cmd>RootDir<cr>', 'Root Directory' },
         e = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
         f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' },
@@ -367,6 +368,9 @@ local vopts = {
 }
 
 local vmappings = {
+    c = {
+        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
+    },
     l = {
         name = icons.ui.Gear .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',

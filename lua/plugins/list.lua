@@ -194,6 +194,16 @@ local plugins = {
         config = load_config('lang.copilot'),
         event = 'InsertEnter',
     },
+    {
+        'CopilotC-Nvim/CopilotChat.nvim',
+        branch = 'canary',
+        dependencies = {
+            { 'zbirenbaum/copilot.lua' },
+            { 'nvim-lua/plenary.nvim' },
+        },
+        cmd = { 'CopilotChat', 'CopilotChatToggle' },
+        config = load_config('lang.copilot-chat'),
+    },
 
     -- Tools
     {
