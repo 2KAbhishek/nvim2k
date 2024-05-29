@@ -74,11 +74,6 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.opt.shortmess:append({ W = true, I = true, c = true })
 
-if vim.fn.has('nvim-0.9.0') == 1 then
-    vim.opt.splitkeep = 'screen'
-    vim.opt.shortmess:append({ C = true })
-end
-
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
