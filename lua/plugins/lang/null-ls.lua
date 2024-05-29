@@ -25,7 +25,7 @@ null_ls.setup({
         diag.proselint, -- markdown lint
         diag.reek, -- ruby code smell
         -- diag.rubocop, -- ruby diagnostics
-        diag.todo_comments,
+        -- diag.todo_comments, -- causes highlighter errors on J
         diag.trail_space, -- trailing space check
         diag.vint, -- vim lint
         diag.write_good, -- english writing style
