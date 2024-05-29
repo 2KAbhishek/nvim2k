@@ -84,7 +84,7 @@ nvim_tree.setup({
     git = { enable = true, ignore = true, timeout = 500 },
     view = {
         width = 50,
-        side = 'right',
+        side = 'left',
         adaptive_size = false,
         number = true,
         relativenumber = true,
