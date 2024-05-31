@@ -366,7 +366,7 @@ local plugins = {
         '2kabhishek/nerdy.nvim',
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
-        -- dir = '~/Projects/GitHub/Maintai/nerdy.nvim',
+        -- dir = '~/Projects/GitHub/Maintain/nerdy.nvim',
     },
 
     -- Git
