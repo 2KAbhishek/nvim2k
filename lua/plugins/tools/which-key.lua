@@ -391,9 +391,10 @@ local mappings = {
     },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
-        f = { '<cmd>%y+<cr>', 'Copy Whole File' },
-        p = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
-        P = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
+        a = { '<cmd>%y+<cr>', 'Copy Whole File' },
+        f = { '<cmd>CopyFileName<cr>', 'File Name' },
+        p = { '<cmd>CopyRelativePath<cr>', 'Relative Path' },
+        P = { '<cmd>CopyAbsolutePath<cr>', 'Absolute Path' },
         g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
     },
     z = {

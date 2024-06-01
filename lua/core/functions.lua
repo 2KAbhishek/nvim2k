@@ -10,16 +10,20 @@ vim.api.nvim_create_user_command('ReloadConfig', function()
     vim.notify('Nvim configuration reloaded!', vim.log.levels.INFO)
 end, {})
 
--- Copy relative path
-vim.api.nvim_create_user_command('CRpath', function()
+vim.api.nvim_create_user_command('CopyRelativePath', function()
     local path = vim.fn.expand('%')
     vim.fn.setreg('+', path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
--- Copy absolute path
-vim.api.nvim_create_user_command('CApath', function()
+vim.api.nvim_create_user_command('CopyAbsolutePath', function()
     local path = vim.fn.expand('%:p')
+    vim.fn.setreg('+', path)
+    vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+
+vim.api.nvim_create_user_command('CopyFileName', function()
+    local path = vim.fn.expand('%:t')
     vim.fn.setreg('+', path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
