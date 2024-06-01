@@ -230,8 +230,25 @@ local mappings = {
         n = { '<cmd>Nerdy<cr>', 'Nerd Glyphs' },
     },
     j = {
-        name = icons.ui.Gear .. 'Jump',
-        j = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
+        name = icons.ui.Jump .. 'Jump',
+        c = { '*', 'Word' },
+        d = { '<cmd>FlashDiagnostics<cr>', 'Diagnostics' },
+        h = { '<C-o>', 'Backward' },
+        j = { "<cmd>lua require('flash').remote()<cr>", 'Remote' },
+        k = { "<cmd>lua require('flash').treesitter()<cr>", 'Treesitter' },
+        l = { '<C-i>', 'Forward' },
+        n = {
+            "<cmd>lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
+            'Search Forward',
+        },
+        N = {
+            "<cmd>lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
+            'Search Backward',
+        },
+        p = { "<cmd>lua require('flash').jump({continue = true})<cr>", 'Previous Jump' },
+        s = { "<cmd>lua require('flash').jump()<cr>", 'Search' },
+        t = { "<cmd>lua require('flash').treesitter_search()<cr>", 'Remote Treesitter' },
+        w = { '<cmd>lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>', 'Current Word' },
     },
     k = {
         name = icons.ui.Telescope .. 'Keep',

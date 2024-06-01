@@ -108,6 +108,7 @@ return {
         History = ' ',
         Home = ' ',
         Incoming = ' ',
+        Jump = ' ',
         Keyboard = '  ',
         Ligthbulb = '󰌵 ',
         List = '',
