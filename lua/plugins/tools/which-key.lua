@@ -414,6 +414,24 @@ local vmappings = {
     c = {
         c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
     },
+    j = {
+        name = icons.ui.Jump .. 'Jump',
+        d = { '<cmd>FlashDiagnostics<cr>', 'Diagnostics' },
+        j = { "<cmd>lua require('flash').remote()<cr>", 'Remote' },
+        k = { "<cmd>lua require('flash').treesitter()<cr>", 'Treesitter' },
+        n = {
+            "<cmd>lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
+            'Search Forward',
+        },
+        N = {
+            "<cmd>lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
+            'Search Backward',
+        },
+        p = { "<cmd>lua require('flash').jump({continue = true})<cr>", 'Previous Jump' },
+        s = { "<cmd>lua require('flash').jump()<cr>", 'Search' },
+        t = { "<cmd>lua require('flash').treesitter_search()<cr>", 'Remote Treesitter' },
+        w = { '<cmd>lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>', 'Current Word' },
+    },
     l = {
         name = icons.ui.Gear .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',
