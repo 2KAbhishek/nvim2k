@@ -158,8 +158,9 @@ telescope.setup({
     },
 })
 
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('menufacture')
-require('telescope').load_extension('undo')
-require('telescope').load_extension('notify')
-require('telescope').load_extension('refactoring')
+telescope.load_extension('fzf')
+telescope.load_extension('menufacture')
+telescope.load_extension('undo')
+telescope.load_extension('marks_nvim')
+telescope.load_extension('notify')
+telescope.load_extension('refactoring')

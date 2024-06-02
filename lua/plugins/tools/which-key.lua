@@ -301,7 +301,39 @@ local mappings = {
     },
     m = {
         name = icons.ui.Bookmark .. 'Marks',
+        b = { "<cmd>lua require('telescope').extensions.marks_nvim.bookmarks_list_all()<cr>", 'Bookmarks' },
+        D = { "<cmd>lua require('marks').delete_buf()<cr>", 'Delete Buffer' },
+        d = { "<cmd>lua require('marks').delete_line()<cr>", 'Delete Line' },
+        P = { "<cmd>lua require('marks').preview()<cr>", 'Preview' },
+        x = { "<cmd>lua require('marks').delete_bookmark()<cr>", 'Delete Bookmark' },
+        h = { "<cmd>lua require('marks').next_bookmark()<cr>", 'Next Bookmark' },
+        j = { "<cmd>lua require('marks').next()<cr>", 'Next' },
+        k = { "<cmd>lua require('marks').prev()<cr>", 'Previous' },
+        l = { "<cmd>lua require('marks').prev_bookmark()<cr>", 'Previous Bookmark' },
         m = { '<cmd>Telescope marks<cr>', 'All Marks' },
+        s = { "<cmd>lua require('marks').set_next()<cr>", 'Set Next' },
+        t = { "<cmd>lua require('marks').toggle()<cr>", 'Toggle' },
+
+        ['1'] = { "<cmd>lua require('marks').toggle_bookmark1()<cr>", 'Toggle Bookmark 0' },
+        ['2'] = { "<cmd>lua require('marks').toggle_bookmark2()<cr>", 'Toggle Bookmark 2' },
+        ['3'] = { "<cmd>lua require('marks').toggle_bookmark3()<cr>", 'Toggle Bookmark 3' },
+        ['4'] = { "<cmd>lua require('marks').toggle_bookmark4()<cr>", 'Toggle Bookmark 4' },
+
+        n = {
+            name = 'Next Bookmark Group',
+            ['1'] = { "<cmd>lua require('marks').next_bookmark1()<cr>", 'Next Bookmark 1' },
+            ['2'] = { "<cmd>lua require('marks').next_bookmark2()<cr>", 'Next Bookmark 2' },
+            ['3'] = { "<cmd>lua require('marks').next_bookmark3()<cr>", 'Next Bookmark 3' },
+            ['4'] = { "<cmd>lua require('marks').next_bookmark4()<cr>", 'Next Bookmark 4' },
+        },
+
+        p = {
+            name = 'Previous Bookmark Group',
+            ['1'] = { "<cmd>lua require('marks').prev_bookmark1()<cr>", 'Previous Bookmark 1' },
+            ['2'] = { "<cmd>lua require('marks').prev_bookmark2()<cr>", 'Previous Bookmark 2' },
+            ['3'] = { "<cmd>lua require('marks').prev_bookmark3()<cr>", 'Previous Bookmark 3' },
+            ['4'] = { "<cmd>lua require('marks').prev_bookmark4()<cr>", 'Previous Bookmark 4' },
+        },
     },
     n = {
         name = icons.ui.Note .. 'Notes',
@@ -442,9 +474,21 @@ local vopts = {
 }
 
 local vmappings = {
+    a = {
+        name = icons.ui.Copilot .. 'AI',
+        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
+        d = { '<cmd>CopilotChatDocs<cr>', 'Docs' },
+        e = { '<cmd>CopilotChatExplain<cr>', 'Explain' },
+        f = { '<cmd>CopilotChatFix<cr>', 'Fix' },
+        F = { '<cmd>CopilotChatFixDiagnostic<cr>', 'Fix Diagnostic' },
+        g = { '<cmd>CopilotChatCommit<cr>', 'Commit' },
+        G = { '<cmd>CopilotChatCommitStaged<cr>', 'Commit Staged' },
+        o = { '<cmd>CopilotChatOptimize<cr>', 'Optimize' },
+        r = { '<cmd>CopilotChatReview<cr>', 'Review' },
+        t = { '<cmd>CopilotChatTests<cr>', 'Tests' },
+    },
     c = {
         name = icons.ui.Neovim .. 'Code',
-        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
         s = { ':sort<cr>', 'Sort Asc' },
         S = { ':sort!<cr>', 'Sort Desc' },
         u = { ':!uniq<cr>', 'Unique' },
