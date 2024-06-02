@@ -419,7 +419,7 @@ if util.is_present('gem') then
         keys = {
             {
                 '<leader>rc',
-                mode = { 'n', 'x', 'o' },
+                mode = { 'n' },
                 function()
                     vim.cmd('RorCommands')
                 end,

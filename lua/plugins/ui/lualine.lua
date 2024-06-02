@@ -155,7 +155,7 @@ local separator = {
 }
 
 local function mode(icon)
-    icon = icon or icons.ui.NeoVim
+    icon = icon or icons.ui.Neovim
     return {
         function()
             return icon

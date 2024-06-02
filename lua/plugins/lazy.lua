@@ -51,7 +51,7 @@ lazy.setup({
             loaded = icons.ui.CircleSmall,
             not_loaded = icons.ui.CircleSmallEmpty,
             plugin = icons.ui.Package,
-            runtime = icons.ui.NeoVim,
+            runtime = icons.ui.Neovim,
             source = icons.ui.Code,
             start = icons.ui.Play,
             task = icons.ui.Check,
