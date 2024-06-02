@@ -334,9 +334,8 @@ local plugins = {
         cmd = 'Telescope',
     },
     {
-        'ThePrimeagen/harpoon',
-        branch = 'harpoon2',
-        config = load_config('tools.harpoon'),
+        'chentoast/marks.nvim',
+        config = load_config('tools.marks'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
