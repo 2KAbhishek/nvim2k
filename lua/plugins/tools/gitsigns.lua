@@ -82,8 +82,6 @@ gitsigns.setup({
             return '<Ignore>'
         end, { expr = true, desc = 'Previous Change' })
 
-        map({ 'v' }, '<leader>ga', ':Gitsigns stage_hunk<CR>', { desc = 'Stage Hunk' })
-        map({ 'v' }, '<leader>gr', ':Gitsigns reset_hunk<CR>', { desc = 'Reset Hunk' })
         map('n', '<leader>gB', function()
             gs.blame_line({ full = true })
         end, { desc = 'Blame With Preview' })

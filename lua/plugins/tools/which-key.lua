@@ -117,13 +117,8 @@ local opts = {
 
 local mappings = {
     a = {
-        name = icons.kind.Field .. 'Actions',
-        d = { '<cmd>Dashboard<cr>', 'Dashboard' },
-        c = { '<cmd>CccHighlighterToggle<cr>', 'Highlight Colors' },
-        h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
-        m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
-        n = { '<cmd>Telescope notify<cr>', 'Notifications' },
-        r = { '<cmd>%SnipRun<cr>', 'Run File' },
+        name = icons.ui.Copilot .. 'AI',
+        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
     },
     b = {
         name = icons.ui.Bug .. 'Debug',
@@ -139,16 +134,21 @@ local mappings = {
         x = { '<cmd>DapTerminate<cr>', 'Exit' },
     },
     c = {
-        name = icons.ui.NeoVim .. 'Config',
-        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
-        C = { '<cmd>CccConvert<cr>', 'Convert Color' },
+        name = icons.ui.Neovim .. 'Code',
         d = { '<cmd>RootDir<cr>', 'Root Directory' },
         f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' },
         F = { '<cmd>retab<cr>', 'Fix Tabs' },
-        l = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
-        p = { '<cmd>CccPick<cr>', 'Pick Color' },
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
+        o = { '<cmd>Dashboard<cr>', 'Dashboard' },
+        c = { '<cmd>CccHighlighterToggle<cr>', 'Highlight Colors' },
+        h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
+        l = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
+        m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
+        n = { '<cmd>Telescope notify<cr>', 'Notifications' },
+        p = { '<cmd>CccPick<cr>', 'Pick Color' },
+        P = { '<cmd>CccConvert<cr>', 'Convert Color' },
+        x = { '<cmd>%SnipRun<cr>', 'Run File' },
     },
     d = {
         name = icons.ui.Database .. 'Database',
@@ -226,7 +226,7 @@ local mappings = {
         m = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
     },
     i = {
-        name = icons.ui.Pencil .. 'Insert',
+        name = icons.ui.Download .. 'Insert',
         d = { "<cmd>put =strftime('## %a %d %b %r')<cr>", 'Date' },
         e = { '<cmd>Telescope symbols<cr>', 'Emojis' },
         f = { "<cmd>put =expand('%:t')<cr>", 'File Name' },
@@ -266,7 +266,7 @@ local mappings = {
         s = { '<cmd>Telescope search_history<cr>', 'Search History' },
     },
     l = {
-        name = icons.ui.Gear .. 'LSP',
+        name = icons.kind.TypeParameter .. 'LSP',
         a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
         d = { '<cmd>Lspsaga peek_definition<cr>', 'Peek Definition' },
         f = { '<cmd>Lspsaga finder<cr>', 'Finder' },
@@ -309,10 +309,11 @@ local mappings = {
         x = { '<cmd>TdoToggle<cr>', 'Toggle Todo' },
     },
     o = {
-        name = icons.ui.SignOut .. 'Options',
+        name = icons.ui.Gear .. 'Options',
         c = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
+        h = { '<cmd>Telescope highlights<cr>', 'Highlight Colors' },
         n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
-        o = { '<cmd>Telescope options<cr>', 'All Options' },
+        o = { '<cmd>Telescope vim_options<cr>', 'All Options' },
     },
     p = {
         name = icons.ui.Package .. 'Packages',
@@ -337,7 +338,7 @@ local mappings = {
         q = { '<cmd>q<cr>', 'Quit' },
     },
     r = {
-        name = icons.diagnostics.Hint .. 'Refactor',
+        name = icons.ui.Code .. 'Refactor',
         b = { "<cmd>lua require('spectre').open_file_search()<cr>", 'Replace Buffer' },
         e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", 'Extract Block' },
         f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract To File' },
@@ -390,7 +391,7 @@ local mappings = {
         O = { '<cmd>Neotest summary<cr>', 'Test Summary' },
     },
     v = {
-        name = icons.ui.Clipboard .. 'Visual',
+        name = icons.type.Object .. 'Select',
         p = { 'vip', 'Paragraph' },
         P = { 'vap', 'Around Para' },
         q = { 'viq', 'Quote' },
@@ -399,7 +400,7 @@ local mappings = {
         B = { 'vab', 'Around Bracket' },
     },
     w = {
-        name = icons.ui.Clipboard .. 'Writing',
+        name = icons.kind.File .. 'Writing',
         f = { "<cmd>lua require'utils'.sudo_write()<cr>", 'Force Write' },
         j = { ']s', 'Next Misspell' },
         k = { '[s', 'Prev Misspell' },
@@ -430,14 +431,17 @@ local vopts = {
 }
 
 local vmappings = {
-    a = {
-        name = icons.kind.Field .. 'Actions',
+    c = {
+        name = icons.ui.Neovim .. 'Code',
+        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
         s = { ':sort<cr>', 'Sort Asc' },
         S = { ':sort!<cr>', 'Sort Desc' },
         u = { ':!uniq<cr>', 'Unique' },
     },
-    c = {
-        c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
+    g = {
+        name = icons.git.Octoface .. 'Git',
+        a = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
+        r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset Hunk' },
     },
     j = {
         name = icons.ui.Jump .. 'Jump',
@@ -458,11 +462,11 @@ local vmappings = {
         w = { '<cmd>lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>', 'Current Word' },
     },
     l = {
-        name = icons.ui.Gear .. 'LSP',
+        name = icons.kind.TypeParameter .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',
     },
     r = {
-        name = icons.diagnostics.Hint .. 'Refactor',
+        name = icons.ui.Code .. 'Refactor',
         r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
         e = { "<esc><cmd>lua require('refactoring').refactor('Extract Function')<CR>", 'Extract Function' },
         f = { "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", 'Extract To File' },
@@ -470,9 +474,6 @@ local vmappings = {
         i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
     },
     s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
-    q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
-    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         g = { '<cmd>lua require"gitlinker".get_buf_range_url("v")<cr>', 'Copy Git URL' },
