@@ -41,9 +41,9 @@ local setup = {
         winblend = 10,
     },
     layout = {
-        height = { min = 4, max = 24 },
+        height = { min = 5, max = 26 },
         width = { min = 20, max = 50 },
-        spacing = 3,
+        spacing = 6,
         align = 'center',
     },
     ignore_missing = false,
