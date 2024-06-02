@@ -116,17 +116,13 @@ local opts = {
 }
 
 local mappings = {
-    e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
-    q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
-    w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     a = {
         name = icons.kind.Field .. 'Actions',
-        d = { '<cmd>bdelete<cr>', 'Close Buffer' },
+        d = { '<cmd>Dashboard<cr>', 'Dashboard' },
         c = { '<cmd>CccHighlighterToggle<cr>', 'Highlight Colors' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
-        q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
+        n = { '<cmd>Telescope notify<cr>', 'Notifications' },
         r = { '<cmd>%SnipRun<cr>', 'Run File' },
     },
     b = {
@@ -150,7 +146,6 @@ local mappings = {
         f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' },
         F = { '<cmd>retab<cr>', 'Fix Tabs' },
         l = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
-        n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
         p = { '<cmd>CccPick<cr>', 'Pick Color' },
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
@@ -229,7 +224,6 @@ local mappings = {
         h = { '<cmd>Telescope help_tags<cr>', 'Help' },
         i = { vim.show_pos, 'Inspect Position' },
         m = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
-        n = { '<cmd>Telescope notify<cr>', 'Notifications' },
     },
     i = {
         name = icons.ui.Pencil .. 'Insert',
@@ -265,10 +259,11 @@ local mappings = {
         w = { '<cmd>lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>', 'Current Word' },
     },
     k = {
-        name = icons.ui.Telescope .. 'Keys',
+        name = icons.ui.Keyboard .. 'Keys',
         k = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
         c = { '<cmd>Telescope commands<cr>', 'Commands' },
         h = { '<cmd>Telescope command_history<cr>', 'Command History' },
+        s = { '<cmd>Telescope search_history<cr>', 'Search History' },
     },
     l = {
         name = icons.ui.Gear .. 'LSP',
