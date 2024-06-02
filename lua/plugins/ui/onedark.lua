@@ -7,7 +7,7 @@ onedark.setup({
     ending_tildes = false,
     cmp_itemkind_reverse = false,
 
-    toggle_style_key = '<leader>ct',
+    toggle_style_key = '<leader>ot',
     toggle_style_list = { 'dark', 'darker', 'cool', 'warm', 'warmer', 'deep', 'light' },
 
     -- Options are italic, bold, underline, none and combos 'italic,bold'
