@@ -143,6 +143,7 @@ return {
         Save = '󰆓 ',
         Search = ' ',
         Separator = '▊ ',
+        SeparatorLight = '▍',
         SignIn = ' ',
         SignOut = ' ',
         Sleep = '󰒲 ',
