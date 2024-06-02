@@ -21,11 +21,11 @@ local function toggle_telescope(harpoon_files)
 end
 
 vim.keymap.set('n', '<leader>ha', function()
-    harpoon:list():append()
+    harpoon:list():add()
 end, { desc = 'Add Mark' })
 vim.keymap.set('n', '<leader>hh', function()
     toggle_telescope(harpoon:list())
-end, { desc = 'Telescope Marks' })
+end, { desc = 'Harpoon Marks' })
 vim.keymap.set('n', '<leader>hm', function()
     harpoon.ui:toggle_quick_menu(harpoon:list())
 end, { desc = 'Open UI' })

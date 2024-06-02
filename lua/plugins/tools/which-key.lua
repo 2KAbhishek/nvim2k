@@ -116,7 +116,6 @@ local opts = {
 }
 
 local mappings = {
-    [','] = { '<cmd>b#<cr>', icons.ui.History .. 'Recent' },
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
@@ -124,7 +123,8 @@ local mappings = {
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     a = {
         name = icons.ui.Plus .. 'Add',
-        a = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
+        d = { '<cmd>bdelete<cr>', 'Close Buffer' },
+        n = { '<cmd>enew<cr>', 'New File' },
     },
     b = {
         name = icons.ui.Bug .. 'Debug',
@@ -144,7 +144,6 @@ local mappings = {
         c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
         C = { '<cmd>CccConvert<cr>', 'Convert Color' },
         d = { '<cmd>RootDir<cr>', 'Root Directory' },
-        e = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
         f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' },
         F = { '<cmd>retab<cr>', 'Fix Tabs' },
         i = { vim.show_pos, 'Inspect Position' },
@@ -168,20 +167,18 @@ local mappings = {
         a = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', 'All Files' },
         b = { '<cmd>Telescope buffers<cr>', 'Buffers' },
         c = { '<cmd>Telescope commands<cr>', 'Commands' },
-        d = { '<cmd>bdelete<cr>', 'Close Buffer' },
         e = { '<cmd>Oil<cr>', 'Dir Editor' },
         f = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find files' },
         g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Text' },
         h = { '<cmd>Telescope help_tags<cr>', 'Help' },
         k = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
-        l = { '<cmd>Telescope resume<cr>', 'Last Search' },
         L = { '<cmd>Telescope loclist<cr>', 'Location List' },
         m = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
-        n = { '<cmd>enew<cr>', 'New File' },
         r = { '<cmd>Telescope oldfiles<cr>', 'Recent Files' },
-        p = { '<cmd>Telescope<cr>', 'Panel' },
+        p = { '<cmd>Telescope resume<cr>', 'Last Search' },
         q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },
         s = { '<cmd>Telescope live_grep grep_open_files=true<cr>', 'Find in Open Files' },
+        t = { '<cmd>Telescope<cr>', 'Panel' },
         u = { '<cmd>Telescope undo<cr>', 'Undo History' },
         w = { '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', 'Find Word' },
     },
@@ -234,6 +231,7 @@ local mappings = {
         name = icons.ui.Jump .. 'Jump',
         c = { '*', 'Word' },
         d = { '<cmd>FlashDiagnostics<cr>', 'Diagnostics' },
+        f = { '<cmd>Telescope jumplist<cr>', 'Jumplist' },
         h = { '<C-o>', 'Backward' },
         j = { "<cmd>lua require('flash').remote()<cr>", 'Remote' },
         k = { "<cmd>lua require('flash').treesitter()<cr>", 'Treesitter' },
@@ -308,7 +306,8 @@ local mappings = {
     },
     o = {
         name = icons.ui.SignOut .. 'Open',
-        o = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
+        c = { '<cmd>e $MYVIMRC<cr>', 'Config' },
+        o = { '<cmd>b#<cr>', icons.ui.History .. 'Other File' },
     },
     p = {
         name = icons.ui.Package .. 'Packages',
