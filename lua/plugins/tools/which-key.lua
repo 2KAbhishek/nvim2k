@@ -164,6 +164,17 @@ local mappings = {
         S = { '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', 'To JSON' },
         t = { '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', 'To Table' },
     },
+    e = {
+        name = icons.ui.Pencil .. 'Edit',
+        a = { '<cmd>b#<cr>', 'Alternate File' },
+        c = { '<cmd>e $MYVIMRC<cr>', 'Config' },
+        d = { '<cmd>lua require("telescope.builtin").find_files({cwd = vim.fn.stdpath("config")})<cr>', 'Config Dir' },
+        e = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
+        f = { 'gf', 'File Under Cursor' },
+        l = { '<cmd>e ~/.config/shell/local.sh', 'Local Config' },
+        n = { '<cmd>enew<cr>', 'New File' },
+        z = { '<cmd>e $ZDOTDIR/.zshrc<cr>', 'Zsh Config' },
+    },
     f = {
         name = icons.ui.Telescope .. 'Find',
         a = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', 'All Files' },
@@ -303,11 +314,10 @@ local mappings = {
         x = { '<cmd>TdoToggle<cr>', 'Toggle Todo' },
     },
     o = {
-        name = icons.ui.SignOut .. 'Open',
-        c = { '<cmd>e $MYVIMRC<cr>', 'Config' },
-        d = { '<cmd>Dashboard<cr>', 'Dashboard' },
-        n = { '<cmd>enew<cr>', 'New File' },
-        o = { '<cmd>b#<cr>', icons.ui.History .. 'Other File' },
+        name = icons.ui.SignOut .. 'Options',
+        c = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
+        n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
+        o = { '<cmd>Telescope options<cr>', 'All Options' },
     },
     p = {
         name = icons.ui.Package .. 'Packages',
