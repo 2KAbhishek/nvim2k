@@ -323,6 +323,14 @@ local mappings = {
         u = { '<cmd>Lazy update<cr>', 'Update' },
         x = { '<cmd>Lazy clean<cr>', 'Clean' },
     },
+    q = {
+        name = icons.ui.Close .. 'Quit',
+        a = { '<cmd>qall<cr>', 'Quit All' },
+        b = { '<cmd>bw<cr>', 'Close Buffer' },
+        d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
+        f = { '<cmd>qall!<cr>', 'Force Quit' },
+        q = { '<cmd>q<cr>', 'Quit' },
+    },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
         b = { "<cmd>lua require('spectre').open_file_search()<cr>", 'Replace Buffer' },
