@@ -436,7 +436,7 @@ local mappings = {
         O = { '<cmd>Neotest summary<cr>', 'Test Summary' },
     },
     v = {
-        name = icons.type.Object .. 'Select',
+        name = icons.ui.Star .. 'Select',
         p = { 'vip', 'Paragraph' },
         P = { 'vap', 'Around Para' },
         q = { 'viq', 'Quote' },
@@ -455,7 +455,7 @@ local mappings = {
         w = { '<cmd>w<cr>', 'Write' },
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
     },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
+    x = { '<cmd>x<cr>', icons.ui.SignOut .. 'Save and Quit' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         a = { '<cmd>%y+<cr>', 'Copy Whole File' },
