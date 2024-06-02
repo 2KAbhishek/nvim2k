@@ -432,9 +432,9 @@ local vopts = {
 local vmappings = {
     a = {
         name = icons.kind.Field .. 'Actions',
-        -- Sort lines
-        s = { "<cmd>'<, '>%sort<cr>", 'Sort Asc' },
-        S = { "<cmd>'<, '>%sort!<cr>", 'Sort Desc' },
+        s = { ':sort<cr>', 'Sort Asc' },
+        S = { ':sort!<cr>', 'Sort Desc' },
+        u = { ':!uniq<cr>', 'Unique' },
     },
     c = {
         c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
