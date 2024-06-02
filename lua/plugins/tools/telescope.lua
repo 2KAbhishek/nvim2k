@@ -161,6 +161,5 @@ telescope.setup({
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('menufacture')
 require('telescope').load_extension('undo')
-require('telescope').load_extension('harpoon')
 require('telescope').load_extension('notify')
 require('telescope').load_extension('refactoring')
