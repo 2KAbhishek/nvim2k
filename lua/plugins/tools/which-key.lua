@@ -178,6 +178,7 @@ local mappings = {
         e = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
         f = { 'gf', 'File Under Cursor' },
         l = { '<cmd>e ~/.config/shell/local.sh', 'Local Config' },
+        m = { '<cmd>e README.md<cr>', 'Readme' },
         n = { '<cmd>enew<cr>', 'New File' },
         z = { '<cmd>e $ZDOTDIR/.zshrc<cr>', 'Zsh Config' },
     },
