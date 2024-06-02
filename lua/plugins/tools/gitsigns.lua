@@ -1,22 +1,23 @@
 local gitsigns = require('gitsigns')
+local icons = require('lib.icons')
 
 gitsigns.setup({
     signs = {
         add = {
             hl = 'GitSignsAdd',
-            text = '│',
+            text = icons.ui.SeparatorLight,
             numhl = 'GitSignsAddNr',
             linehl = 'GitSignsAddLn',
         },
         change = {
             hl = 'GitSignsChange',
-            text = '│',
+            text = icons.ui.SeparatorLight,
             numhl = 'GitSignsChangeNr',
             linehl = 'GitSignsChangeLn',
         },
         delete = {
             hl = 'GitSignsDelete',
-            text = '_',
+            text = icons.ui.SeparatorLight,
             numhl = 'GitSignsDeleteNr',
             linehl = 'GitSignsDeleteLn',
         },
@@ -28,7 +29,7 @@ gitsigns.setup({
         },
         changedelete = {
             hl = 'GitSignsChange',
-            text = '~',
+            text = '▍',
             numhl = 'GitSignsChangeNr',
             linehl = 'GitSignsChangeLn',
         },
@@ -51,7 +52,7 @@ gitsigns.setup({
     update_debounce = 100,
     status_formatter = nil,
     max_file_length = 40000,
-    preview_config = { border = 'single', style = 'minimal', relative = 'cursor', row = 0, col = 1 },
+    preview_config = { border = 'rounded', style = 'minimal', relative = 'cursor', row = 0, col = 1 },
     yadm = { enable = false },
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -81,10 +82,6 @@ gitsigns.setup({
             end)
             return '<Ignore>'
         end, { expr = true, desc = 'Previous Change' })
-
-        map('n', '<leader>gB', function()
-            gs.blame_line({ full = true })
-        end, { desc = 'Blame With Preview' })
 
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end,

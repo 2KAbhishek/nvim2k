@@ -202,7 +202,7 @@ local mappings = {
         name = icons.git.Octoface .. 'Git',
         a = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
         A = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Buffer' },
-        b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
+        b = { "<cmd>lua require('gitsigns').blame_line({full = true})<cr>", 'Blame' },
         B = { '<cmd>Telescope git_branches<cr>', 'Branches' },
         c = { '<cmd>Git<cr>', 'Git Console' },
         C = { '<cmd>CoAuthor<cr>', 'Co-Authors' },
