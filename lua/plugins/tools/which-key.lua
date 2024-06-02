@@ -119,6 +119,17 @@ local mappings = {
     a = {
         name = icons.ui.Copilot .. 'AI',
         c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
+        d = { '<cmd>CopilotChatDocs<cr>', 'Docs' },
+        e = { '<cmd>CopilotChatExplain<cr>', 'Explain' },
+        f = { '<cmd>CopilotChatFix<cr>', 'Fix' },
+        F = { '<cmd>CopilotChatFixDiagnostic<cr>', 'Fix Diagnostic' },
+        g = { '<cmd>CopilotChatCommit<cr>', 'Commit' },
+        G = { '<cmd>CopilotChatCommitStaged<cr>', 'Commit Staged' },
+        l = { '<cmd>CopilotChatLoad<cr>', 'Load Chat' },
+        o = { '<cmd>CopilotChatOptimize<cr>', 'Optimize' },
+        r = { '<cmd>CopilotChatReview<cr>', 'Review' },
+        s = { '<cmd>CopilotChatSave<cr>', 'Save Chat' },
+        t = { '<cmd>CopilotChatTests<cr>', 'Tests' },
     },
     b = {
         name = icons.ui.Bug .. 'Debug',
