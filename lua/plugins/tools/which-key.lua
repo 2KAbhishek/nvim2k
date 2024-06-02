@@ -393,6 +393,18 @@ local mappings = {
         b = { 'vib', 'Bracket' },
         B = { 'vab', 'Around Bracket' },
     },
+    w = {
+        name = icons.ui.Clipboard .. 'Writing',
+        f = { "<cmd>lua require'utils'.sudo_write()<cr>", 'Force Write' },
+        j = { ']s', 'Next Misspell' },
+        k = { '[s', 'Prev Misspell' },
+        c = { '<cmd>set spell!<cr>', 'Spellcheck' },
+        s = { '<cmd>Telescope spell_suggest<cr>', 'Suggestions' },
+        t = { '<cmd>Twilight<cr>', 'Twilight' },
+        w = { '<cmd>w<cr>', 'Write' },
+        z = { '<cmd>ZenMode<cr>', 'ZenMode' },
+    },
+    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         a = { '<cmd>%y+<cr>', 'Copy Whole File' },
@@ -400,15 +412,6 @@ local mappings = {
         p = { '<cmd>CopyRelativePath<cr>', 'Relative Path' },
         P = { '<cmd>CopyAbsolutePath<cr>', 'Absolute Path' },
         g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
-    },
-    z = {
-        name = icons.ui.Clipboard .. 'Writing',
-        j = { '[s', 'Next Misspell' },
-        k = { ']s', 'Prev Misspell' },
-        c = { '<cmd>set spell!<cr>', 'Spellcheck' },
-        s = { '<cmd>Telescope spell_suggest<cr>', 'Suggestions' },
-        t = { '<cmd>Twilight<cr>', 'Twilight' },
-        z = { '<cmd>ZenMode<cr>', 'ZenMode' },
     },
 }
 
