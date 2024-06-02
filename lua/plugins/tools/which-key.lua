@@ -118,7 +118,6 @@ local opts = {
 local mappings = {
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
-    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
     a = {
@@ -127,6 +126,7 @@ local mappings = {
         c = { '<cmd>CccHighlighterToggle<cr>', 'Highlight Colors' },
         h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
         m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
+        q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
         r = { '<cmd>%SnipRun<cr>', 'Run File' },
     },
     b = {
@@ -213,7 +213,8 @@ local mappings = {
         u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
         v = { '<cmd>Gitsigns select_hunk<cr>', 'Select Hunk' },
     },
-    h = { name = icons.ui.Question .. 'Help',
+    h = {
+        name = icons.ui.Question .. 'Help',
         h = { '<cmd>Telescope help_tags<cr>', 'Help' },
         i = { vim.show_pos, 'Inspect Position' },
         m = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
@@ -256,6 +257,7 @@ local mappings = {
         name = icons.ui.Telescope .. 'Keys',
         k = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
         c = { '<cmd>Telescope commands<cr>', 'Commands' },
+        h = { '<cmd>Telescope command_history<cr>', 'Command History' },
     },
     l = {
         name = icons.ui.Gear .. 'LSP',
@@ -384,8 +386,12 @@ local mappings = {
     },
     v = {
         name = icons.ui.Clipboard .. 'Visual',
-        -- select in paragraph, function
-        v = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
+        p = { 'vip', 'Paragraph' },
+        P = { 'vap', 'Around Para' },
+        q = { 'viq', 'Quote' },
+        Q = { 'vaq', 'Around Quote' },
+        b = { 'vib', 'Bracket' },
+        B = { 'vab', 'Around Bracket' },
     },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
@@ -396,8 +402,11 @@ local mappings = {
         g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
     },
     z = {
-        name = icons.ui.Clipboard .. 'Visual',
-        s = { '<cmd>set spell!<cr>', 'Spellcheck' },
+        name = icons.ui.Clipboard .. 'Writing',
+        j = { '[s', 'Next Misspell' },
+        k = { ']s', 'Prev Misspell' },
+        c = { '<cmd>set spell!<cr>', 'Spellcheck' },
+        s = { '<cmd>Telescope spell_suggest<cr>', 'Suggestions' },
         t = { '<cmd>Twilight<cr>', 'Twilight' },
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
     },
@@ -413,6 +422,12 @@ local vopts = {
 }
 
 local vmappings = {
+    a = {
+        name = icons.kind.Field .. 'Actions',
+        -- Sort lines
+        s = { "<cmd>'<, '>%sort<cr>", 'Sort Asc' },
+        S = { "<cmd>'<, '>%sort!<cr>", 'Sort Desc' },
+    },
     c = {
         c = { '<cmd>CopilotChatToggle<cr>', 'Copilot Chat' },
     },
