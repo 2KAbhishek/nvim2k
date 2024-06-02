@@ -9,16 +9,29 @@ marks.setup({
     sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
     excluded_filetypes = {},
     excluded_buftypes = { 'nofile' },
-    -- supports up to 10 bookmark groups, easily open group of files
-    bookmark_0 = {
+    -- supports up to 10 bookmark groups
+    bookmark_1 = {
         sign = icons.ui.Flag,
-        virt_text = 'group-0',
+        virt_text = 'flag',
         annotate = false,
     },
-    bookmark_1 = {
+    bookmark_2 = {
         sign = icons.ui.Eye,
         virt_text = 'watch',
         annotate = false,
     },
-    mappings = {},
+    bookmark_3 = {
+        sign = icons.ui.Star,
+        virt_text = 'star',
+        annotate = false,
+    },
+    bookmark_4 = {
+        sign = icons.ui.Bug,
+        virt_text = 'bug',
+        annotate = false,
+    },
+    mappings = {
+        set = 'M',
+        toggle_mark = 'm',
+    },
 })
