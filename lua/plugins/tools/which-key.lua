@@ -233,8 +233,9 @@ local mappings = {
     },
     h = {
         name = icons.ui.Question .. 'Help',
-        h = { '<cmd>Telescope help_tags<cr>', 'Help' },
+        h = { '<cmd>Telescope help_tags<cr>', 'Help Pages' },
         i = { vim.show_pos, 'Inspect Position' },
+        k = { '<cmd>Lspsaga hover_doc<cr>', 'Hover Doc' },
         m = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
     },
     i = {

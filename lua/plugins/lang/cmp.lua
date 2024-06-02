@@ -76,6 +76,7 @@ cmp.setup({
             return vim_item
         end,
     },
+
     sources = {
         { name = 'copilot' },
         { name = 'nvim_lsp' },
@@ -83,6 +84,7 @@ cmp.setup({
         { name = 'nvim_lua' },
         { name = 'luasnip', keyword_length = 2 },
         { name = 'buffer', keyword_length = 3 },
+        { name = 'lazydev', group_index = 0 },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,

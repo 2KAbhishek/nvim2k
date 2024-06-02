@@ -154,9 +154,8 @@ local plugins = {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
-        'folke/neodev.nvim',
-        ft = { 'lua', 'vim' },
-        config = load_config('lang.neodev'),
+        'folke/lazydev.nvim',
+        ft = 'lua',
     },
     {
         'nvimdev/lspsaga.nvim',
