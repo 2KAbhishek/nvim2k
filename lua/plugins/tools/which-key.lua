@@ -415,8 +415,8 @@ local mappings = {
         k = { '<C-w>k', 'Move Up' },
         l = { '<C-w>l', 'Move Right' },
         p = { '<C-w>p', 'Previous Window' },
-        s = { '<cmd>split<cr>', 'Horizontal Split File' },
-        v = { '<cmd>vsplit<cr>', 'Vertical Split File' },
+        s = { '<cmd>split<cr>', 'Horizontal Split' },
+        a = { '<cmd>vsplit<cr>', 'Vertical Split' },
     },
     t = {
         name = icons.ui.Terminal .. 'Terminal',
