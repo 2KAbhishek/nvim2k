@@ -1,4 +1,5 @@
 local onedark = require('onedark')
+local util = require('lib.util')
 
 onedark.setup({
     style = 'deep',
@@ -24,20 +25,5 @@ onedark.setup({
 })
 onedark.load()
 
--- transparent background
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
-
--- set hlsearch color
-vim.api.nvim_set_hl(0, 'Search', { bg = '#8BCD5B', fg = '#202020' })
-vim.api.nvim_set_hl(0, 'CurSearch', { bg = '#EFBD5D', fg = '#000000' })
-vim.api.nvim_set_hl(0, 'IncSearch', { bg = '#F15664', fg = '#000000' })
-
--- set cursorline color
-vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1A1A1F' })
-vim.api.nvim_set_hl(0, 'CursorColumn', { bg = '#1A1A1F' })
-
--- set visual highlight
-vim.api.nvim_set_hl(0, 'Visual', { bg = '#103070' })
+util.set_transparent_bg()
+util.set_custom_highlights()

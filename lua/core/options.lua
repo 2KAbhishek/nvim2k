@@ -77,6 +77,9 @@ vim.opt.shortmess:append({ W = true, I = true, c = true })
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
+-- hides `~` at the end of the buffer
+vim.cmd([[set fillchars+=eob:\ ]])
+
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
