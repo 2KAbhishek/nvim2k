@@ -583,6 +583,7 @@ local no_leader_mappings = {
     },
 
     K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
+    Q = { '<cmd>qall!<cr>', 'Force Quit!' },
     U = { '<cmd>redo<cr>', 'Redo' },
 }
 
