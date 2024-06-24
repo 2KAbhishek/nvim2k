@@ -1,6 +1,5 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
-local multi_open_mappings = require('plugins.tools.telescope-multiopen')
 local icons = require('lib.icons')
 
 local function flash(prompt_bufnr)
@@ -125,11 +124,6 @@ telescope.setup({
                 ['?'] = actions.which_key,
             },
         },
-    },
-    pickers = {
-        find_files = { mappings = multi_open_mappings },
-        git_files = { mappings = multi_open_mappings },
-        oldfiles = { mappings = multi_open_mappings },
     },
     extensions = {
         fzf = {
