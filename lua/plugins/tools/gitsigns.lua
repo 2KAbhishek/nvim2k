@@ -3,36 +3,12 @@ local icons = require('lib.icons')
 
 gitsigns.setup({
     signs = {
-        add = {
-            hl = 'GitSignsAdd',
-            text = icons.ui.SeparatorLight,
-            numhl = 'GitSignsAddNr',
-            linehl = 'GitSignsAddLn',
-        },
-        change = {
-            hl = 'GitSignsChange',
-            text = icons.ui.SeparatorLight,
-            numhl = 'GitSignsChangeNr',
-            linehl = 'GitSignsChangeLn',
-        },
-        delete = {
-            hl = 'GitSignsDelete',
-            text = icons.ui.SeparatorLight,
-            numhl = 'GitSignsDeleteNr',
-            linehl = 'GitSignsDeleteLn',
-        },
-        topdelete = {
-            hl = 'GitSignsDelete',
-            text = '‾',
-            numhl = 'GitSignsDeleteNr',
-            linehl = 'GitSignsDeleteLn',
-        },
-        changedelete = {
-            hl = 'GitSignsChange',
-            text = '▍',
-            numhl = 'GitSignsChangeNr',
-            linehl = 'GitSignsChangeLn',
-        },
+        add = { text = icons.ui.SeparatorLight },
+        change = { text = icons.ui.SeparatorLight },
+        delete = { text = icons.ui.SeparatorLight },
+        topdelete = { text = icons.ui.Topline },
+        changedelete = { text = icons.ui.SeparatorLight },
+        untracked = { text = icons.ui.SeparatorDashed },
     },
     signcolumn = true,
     numhl = false,
@@ -53,7 +29,6 @@ gitsigns.setup({
     status_formatter = nil,
     max_file_length = 40000,
     preview_config = { border = 'rounded', style = 'minimal', relative = 'cursor', row = 0, col = 1 },
-    yadm = { enable = false },
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
