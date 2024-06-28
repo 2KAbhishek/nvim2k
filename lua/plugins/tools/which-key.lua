@@ -422,6 +422,7 @@ local mappings = {
     t = {
         name = icons.ui.Terminal .. 'Terminal',
         ['`'] = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
+        c = { '<cmd>Sterm bundle exec rails console<cr>', 'Rails Console' },
         n = { '<cmd>Sterm node<cr>', 'Node' },
         p = { '<cmd>Sterm bpython<cr>', 'Python' },
         r = { '<cmd>Sterm irb<cr>', 'Ruby' },
