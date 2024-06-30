@@ -101,9 +101,11 @@ For plugin configs you can place them in these folders based on the functionalit
 
 ### ⌨️ Keybindings
 
+Find the [keybinding manual here](./docs/keybindings.md).
+
 If you want to change functionality of a core keybinding, edit [core/keys](./lua/core/keys.lua)
 
-To add new keybindings visit the [which-key config](./lua/plugins/tools/which-key.lua)
+To add new keybindings edit the [which-key config](./lua/plugins/tools/which-key.lua)
 
 ### 🎨 User Configs
 
