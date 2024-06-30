@@ -295,6 +295,8 @@ local mappings = {
         o = { '<cmd>Lspsaga outline<cr>', 'Outline' },
         p = { '<cmd>Telescope lsp_incoming_calls<cr>', 'Incoming Calls' },
         P = { '<cmd>Telescope lsp_outgoing_calls<cr>', 'Outgoing Calls' },
+        q = { '<cmd>LspStop<cr>', 'Stop LSP' },
+        Q = { '<cmd>LspRestart<cr>', 'Restart LSP' },
         R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
         r = { '<cmd>Lspsaga rename<cr>', 'Rename' },
         s = { '<cmd>Telescope lsp_document_symbols theme=get_ivy<cr>', 'Document Symbols' },
@@ -382,7 +384,7 @@ local mappings = {
         d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
         f = { '<cmd>qall!<cr>', 'Force Quit' },
         q = { '<cmd>q<cr>', 'Quit' },
-        w = { '<cmdwx<cr>', 'Write and Quit' },
+        w = { '<cmd>wq<cr>', 'Write and Quit' },
     },
     r = {
         name = icons.ui.Code .. 'Refactor',
@@ -406,7 +408,7 @@ local mappings = {
     },
     s = {
         name = icons.ui.Windows .. 'Split',
-        [','] = { '<C-w>p', 'Previous Window' },
+        ['`'] = { '<C-w>p', 'Previous Window' },
         ['-'] = { '<C-w>s', 'Split Below' },
         ['\\'] = { '<C-w>v', 'Split Right' },
         a = { '<cmd>vsplit<cr>', 'Vertical Split' },
@@ -499,6 +501,7 @@ local vmappings = {
         S = { ':sort!<cr>', 'Sort Desc' },
         s = { ':sort<cr>', 'Sort Asc' },
         u = { ':!uniq<cr>', 'Unique' },
+        x = { "<esc><cmd>'<,'>SnipRun<cr>", 'Run Code' },
     },
     g = {
         name = icons.git.Octoface .. 'Git',
@@ -535,7 +538,6 @@ local vmappings = {
         v = { "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
         i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
     },
-    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         g = { '<cmd>lua require"gitlinker".get_buf_range_url("v")<cr>', 'Copy Git URL' },
@@ -552,22 +554,26 @@ local no_leader_opts = {
 }
 
 local no_leader_mappings = {
+    K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
+    Q = { '<cmd>qall!<cr>', 'Force Quit!' },
+    U = { '<cmd>redo<cr>', 'Redo' },
+
     ['<S-h>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
     ['<S-l>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
 
-    ['<C-\\>'] = { '<cmd>NavigatorPrevious<cr>', 'Previous Pane' },
+    ['<C-f>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
+    ['<C-g>'] = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
+
     ['<C-h>'] = { '<C-w>h', 'Move Left' },
     ['<C-j>'] = { '<C-w>j', 'Move Down' },
     ['<C-k>'] = { '<C-w>k', 'Move Up' },
     ['<C-l>'] = { '<C-w>l', 'Move Right' },
+    ['<C-\\>'] = { '<C-w>p', 'Previous Pane' },
 
     ['<C-Up>'] = { '<cmd>resize +10<cr>', 'Increase window height' },
     ['<C-Down>'] = { '<cmd>resize -10<cr>', 'Decrease window height' },
     ['<C-Left>'] = { '<cmd>vertical resize -10<cr>', 'Decrease window width' },
     ['<C-Right>'] = { '<cmd>vertical resize +10<cr>', 'Increase window width' },
-
-    ['<C-f>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
-    ['<C-g>'] = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
 
     ['['] = {
         name = icons.ui.ArrowLeft .. 'Previous',
@@ -587,10 +593,6 @@ local no_leader_mappings = {
         g = { '<cmd>Gitsigns next_hunk<cr>', 'Git Hunk' },
         j = { '<C-i>', 'Jump' },
     },
-
-    K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
-    Q = { '<cmd>qall!<cr>', 'Force Quit!' },
-    U = { '<cmd>redo<cr>', 'Redo' },
 }
 
 if vim.fn.exists('$TMUX') == 1 then
@@ -599,7 +601,7 @@ if vim.fn.exists('$TMUX') == 1 then
         ['<C-j>'] = { '<cmd>NavigatorDown<cr>', 'Move Down' },
         ['<C-k>'] = { '<cmd>NavigatorUp<cr>', 'Move Up' },
         ['<C-l>'] = { '<cmd>NavigatorRight<cr>', 'Move Right' },
-        ['<C-m>'] = { '<cmd>NavigatorPrevious<cr>', 'Goto Previous' },
+        ['<C-\\>'] = { '<cmd>NavigatorPrevious<cr>', 'Previous Pane' },
     }
     no_leader_mappings = vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
 end
