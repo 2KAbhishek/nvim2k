@@ -219,8 +219,6 @@ local plugins = {
             'CopilotChatSave',
             'CopilotChatTests',
         },
-
-        keys = { { '<leader>a' } },
         config = load_config('lang.copilot-chat'),
     },
 
@@ -247,7 +245,6 @@ local plugins = {
         'folke/flash.nvim',
         config = load_config('tools.flash'),
         keys = {
-            { '<leader>j' },
             {
                 's',
                 mode = { 'n', 'x', 'o' },
