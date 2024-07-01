@@ -331,9 +331,13 @@ Sources:
 | <key>Leader</key> <key> s d </key> | Close Window     |
 | <key>Leader</key> <key> s f </key> | First Tab        |
 | <key>Leader</key> <key> s h </key> | Move Left        |
+| <key>Leader</key> <key> s H </key> | Decrease Width   |
 | <key>Leader</key> <key> s j </key> | Move Down        |
+| <key>Leader</key> <key> s J </key> | Decrease Height  |
 | <key>Leader</key> <key> s k </key> | Move Up          |
+| <key>Leader</key> <key> s K </key> | Increase Height  |
 | <key>Leader</key> <key> s l </key> | Move Right       |
+| <key>Leader</key> <key> s L </key> | Increase Width   |
 | <key>Leader</key> <key> s p </key> | Previous Pane    |
 | <key>Leader</key> <key> s s </key> | Horizontal Split |
 
@@ -513,4 +517,3 @@ Sources:
 | <key>]</key> <key>e</key> | Edit        |
 | <key>]</key> <key>g</key> | Git Hunk    |
 | <key>]</key> <key>j</key> | Jump        |
-
