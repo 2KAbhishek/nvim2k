@@ -439,10 +439,10 @@ local mappings = {
     },
     u = {
         name = icons.ui.Test .. 'Test',
-        F = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
-        f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Test' },
+        c = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
+        f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Test File' },
         o = { '<cmd>Neotest output-panel<cr>', 'Test Output' },
-        O = { '<cmd>Neotest summary<cr>', 'Test Summary' },
+        s = { '<cmd>Neotest summary<cr>', 'Test Summary' },
     },
     v = {
         name = icons.ui.Star .. 'Select',

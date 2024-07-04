@@ -358,10 +358,10 @@ Sources:
 
 | Keybinding                         | Action           |
 | ---------------------------------- | ---------------- |
-| <key>Leader</key> <key> u F </key> | Run Current Test |
-| <key>Leader</key> <key> u f </key> | Run Test         |
+| <key>Leader</key> <key> u c </key> | Run Current Test |
+| <key>Leader</key> <key> u f </key> | Run Test File    |
 | <key>Leader</key> <key> u o </key> | Test Output      |
-| <key>Leader</key> <key> u O </key> | Test Summary     |
+| <key>Leader</key> <key> u s </key> | Test Summary     |
 
 ### v - Select
 
