@@ -331,7 +331,7 @@ Sources:
 | <key>Leader</key> <key> s = </key> | Increase Width   |
 | <key>Leader</key> <key> s _ </key> | Decrease Height  |
 | <key>Leader</key> <key> s + </key> | Increase Height  |
-| <key>Leader</key> <key> s a </key> | Vertical Split   |
+| <key>Leader</key> <key> s a </key> | Horizontal Split |
 | <key>Leader</key> <key> s c </key> | Close Tab        |
 | <key>Leader</key> <key> s f </key> | First Tab        |
 | <key>Leader</key> <key> s h </key> | Move Left        |
@@ -344,7 +344,7 @@ Sources:
 | <key>Leader</key> <key> s L </key> | Increase Width   |
 | <key>Leader</key> <key> s p </key> | Previous Pane    |
 | <key>Leader</key> <key> s q </key> | Close Split      |
-| <key>Leader</key> <key> s s </key> | Horizontal Split |
+| <key>Leader</key> <key> s s </key> | Vertical Split   |
 
 ### t - Terminal
 
