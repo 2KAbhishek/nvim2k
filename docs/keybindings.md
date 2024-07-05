@@ -295,6 +295,7 @@ Sources:
 | <key>Leader</key> <key> q d </key> | Delete Buffer  |
 | <key>Leader</key> <key> q f </key> | Force Quit     |
 | <key>Leader</key> <key> q q </key> | Quit           |
+| <key>Leader</key> <key> q s </key> | Close Split    |
 | <key>Leader</key> <key> q w </key> | Write and Quit |
 
 ### r - Refactor
@@ -324,11 +325,10 @@ Sources:
 | Keybinding                         | Action           |
 | ---------------------------------- | ---------------- |
 | <key>Leader</key> <key> s ` </key> | Previous Window  |
-| <key>Leader</key> <key> s - </key> | Split Below      |
 | <key>Leader</key> <key> s \ </key> | Split Right      |
+| <key>Leader</key> <key> s / </key> | Split Below      |
 | <key>Leader</key> <key> s a </key> | Vertical Split   |
 | <key>Leader</key> <key> s c </key> | Close Tab        |
-| <key>Leader</key> <key> s d </key> | Close Window     |
 | <key>Leader</key> <key> s f </key> | First Tab        |
 | <key>Leader</key> <key> s h </key> | Move Left        |
 | <key>Leader</key> <key> s H </key> | Decrease Width   |
@@ -339,6 +339,7 @@ Sources:
 | <key>Leader</key> <key> s l </key> | Move Right       |
 | <key>Leader</key> <key> s L </key> | Increase Width   |
 | <key>Leader</key> <key> s p </key> | Previous Pane    |
+| <key>Leader</key> <key> s q </key> | Close Split      |
 | <key>Leader</key> <key> s s </key> | Horizontal Split |
 
 ### t - Terminal
