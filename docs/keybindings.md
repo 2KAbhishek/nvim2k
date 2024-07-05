@@ -327,6 +327,10 @@ Sources:
 | <key>Leader</key> <key> s ` </key> | Previous Window  |
 | <key>Leader</key> <key> s \ </key> | Split Right      |
 | <key>Leader</key> <key> s / </key> | Split Below      |
+| <key>Leader</key> <key> s - </key> | Decrease Width   |
+| <key>Leader</key> <key> s = </key> | Increase Width   |
+| <key>Leader</key> <key> s _ </key> | Decrease Height  |
+| <key>Leader</key> <key> s + </key> | Increase Height  |
 | <key>Leader</key> <key> s a </key> | Vertical Split   |
 | <key>Leader</key> <key> s c </key> | Close Tab        |
 | <key>Leader</key> <key> s f </key> | First Tab        |
