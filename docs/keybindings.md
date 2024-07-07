@@ -1,4 +1,4 @@
-# nvim2k Keybindings
+# [nvim2k](https://github.com/2kabhishek/nvim2k) [Keybindings](https://github.com/2KAbhishek/nvim2k/blob/main/docs/keybindings.md)
 
 Here are all the keybindings defined for nvim2k.
 
