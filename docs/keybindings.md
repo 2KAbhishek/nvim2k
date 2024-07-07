@@ -352,6 +352,7 @@ Sources:
 | ---------------------------------- | ------------------- |
 | <kbd>Leader</kbd> <kbd> t ` </kbd> | Horizontal Terminal |
 | <kbd>Leader</kbd> <kbd> t c </kbd> | Rails Console       |
+| <kbd>Leader</kbd> <kbd> t d </kbd> | Exe Launcher        |
 | <kbd>Leader</kbd> <kbd> t n </kbd> | Node                |
 | <kbd>Leader</kbd> <kbd> t p </kbd> | Python              |
 | <kbd>Leader</kbd> <kbd> t r </kbd> | Ruby                |
