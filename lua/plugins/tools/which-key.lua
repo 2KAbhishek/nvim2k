@@ -442,6 +442,7 @@ local mappings = {
         s = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
         t = { '<cmd>Fterm<cr>', 'Terminal' },
         v = { '<cmd>Vterm<cr>', 'Vertical Terminal' },
+        w = { '<cmd>Sterm dexe --wait-before-exit<cr>', 'Exe Launcher, Wait' },
     },
     u = {
         name = icons.ui.Test .. 'Test',

@@ -359,6 +359,7 @@ Sources:
 | <kbd>Leader</kbd> <kbd> t s </kbd> | Horizontal Terminal |
 | <kbd>Leader</kbd> <kbd> t t </kbd> | Terminal            |
 | <kbd>Leader</kbd> <kbd> t v </kbd> | Vertical Terminal   |
+| <kbd>Leader</kbd> <kbd> t w </kbd> | Exe Launcher, Wait  |
 
 ### u - Test
 
