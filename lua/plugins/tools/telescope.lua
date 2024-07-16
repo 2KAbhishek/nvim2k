@@ -136,9 +136,16 @@ telescope.setup({
             use_delta = true,
             use_custom_command = nil,
             side_by_side = true,
-            diff_context_lines = vim.o.scrolloff,
+            vim_diff_opts = {
+                ctxlen = vim.o.scrolloff * 2,
+            },
             entry_format = 'state #$ID, $STAT, $TIME',
             -- time_format = '%d %b %H:%M',
+            saved_only = false,
+            layout_strategy = 'vertical',
+            layout_config = {
+                preview_height = 0.7,
+            },
             mappings = {
                 i = {
                     ['<S-cr>'] = require('telescope-undo.actions').yank_additions,
