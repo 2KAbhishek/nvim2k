@@ -2,6 +2,7 @@ local which_key = require('which-key')
 local icons = require('lib.icons')
 
 local setup = {
+    preset = 'modern',
     plugins = {
         marks = true,
         registers = true,
@@ -19,54 +20,42 @@ local setup = {
             g = true,
         },
     },
-    key_labels = {
-        ['<leader>'] = icons.ui.Rocket,
-        ['<space>'] = '<spc>',
-        ['<Tab>'] = '<tab>',
-    },
     icons = {
         breadcrumb = icons.ui.ArrowOpen,
         separator = icons.ui.Arrow,
         group = '',
+        keys = {
+            Space = icons.ui.Rocket,
+        },
+        rules = false, -- enable auto icon rules
     },
     popup_mappings = {
         scroll_down = '<c-d>',
         scroll_up = '<c-u>',
     },
-    window = {
-        border = 'shadow',
-        position = 'bottom',
-        margin = { 0, 0, 0, 0 },
-        padding = { 1, 2, 1, 2 },
-        winblend = 10,
+    win = {
+        no_overlap = true,
+        border = 'rounded',
+        width = 0.8,
+        height = { min = 5, max = 25 },
+        padding = { 1, 2 },
+        title = true,
+        title_pos = 'center',
+        zindex = 1000,
+        wo = {
+            winblend = 10,
+        },
     },
     layout = {
-        height = { min = 5, max = 26 },
-        width = { min = 20, max = 50 },
+        width = { min = 20 },
         spacing = 6,
         align = 'center',
     },
     ignore_missing = false,
     hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', '^:', '^ ', '^call ', '^lua ' },
-    show_help = true,
+    show_help = false,
     show_keys = true,
-    triggers = 'auto',
-    triggers_nowait = {
-        -- marks
-        '`',
-        "'",
-        'g`',
-        "g'",
-        -- registers
-        '"',
-        '<c-r>',
-        -- spelling
-        'z=',
-    },
-    triggers_blacklist = {
-        i = { 'j', 'j' },
-        v = { 'j', 'j' },
-    },
+    triggers = true,
 }
 
 local i = {
