@@ -52,43 +52,6 @@ local setup = {
     triggers = true,
 }
 
-local i = {
-    [' '] = 'Whitespace',
-    ['"'] = 'Balanced "',
-    ["'"] = "Balanced '",
-    ['`'] = 'Balanced `',
-    ['('] = 'Balanced (',
-    [')'] = 'Balanced ) including white-space',
-    ['>'] = 'Balanced > including white-space',
-    ['<lt>'] = 'Balanced <',
-    [']'] = 'Balanced ] including white-space',
-    ['['] = 'Balanced [',
-    ['}'] = 'Balanced } including white-space',
-    ['{'] = 'Balanced {',
-    ['?'] = 'User Prompt',
-    _ = 'Underscore',
-    a = 'Argument',
-    b = 'Balanced ), ], }',
-    c = 'Class',
-    f = 'Function',
-    o = 'Block, conditional, loop',
-    q = 'Quote `, ", \'',
-    t = 'Tag',
-}
-
-local a = vim.deepcopy(i)
-for k, v in pairs(a) do
-    a[k] = v:gsub(' including.*', '')
-end
-
-local ic = vim.deepcopy(i)
-local ac = vim.deepcopy(a)
-
-for key, name in pairs({ n = 'Next', l = 'Last' }) do
-    i[key] = vim.tbl_extend('force', { name = 'Inside ' .. name .. ' textobject' }, ic)
-    a[key] = vim.tbl_extend('force', { name = 'Around ' .. name .. ' textobject' }, ac)
-end
-
 local n_mappings = {
     mode = 'n',
     { '<leader>a', group = ' AI' },
@@ -575,7 +538,4 @@ if vim.fn.exists('$TMUX') == 1 then
 end
 
 which_key.setup(setup)
-which_key.add(n_mappings)
-which_key.add(v_mappings)
-which_key.add(no_leader_mappings)
-which_key.register({ mode = { 'o', 'x' }, i = i, a = a })
+which_key.add(n_mappings, v_mappings, no_leader_mappings)
