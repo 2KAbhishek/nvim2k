@@ -29,10 +29,6 @@ local setup = {
         },
         rules = false, -- enable auto icon rules
     },
-    popup_mappings = {
-        scroll_down = '<c-d>',
-        scroll_up = '<c-u>',
-    },
     win = {
         no_overlap = true,
         border = 'rounded',
@@ -51,8 +47,6 @@ local setup = {
         spacing = 6,
         align = 'center',
     },
-    ignore_missing = false,
-    hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', '^:', '^ ', '^call ', '^lua ' },
     show_help = false,
     show_keys = true,
     triggers = true,
