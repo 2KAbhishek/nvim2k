@@ -57,6 +57,24 @@ local options = {
     writebackup = false, -- do not edit backups
 }
 
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
+
+-- netrw file explorer settings
+vim.g.netrw_winsize = 20
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 1
+
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
+
+vim.opt.path:append({ '**' })
+vim.opt.shortmess:append({ W = true, I = true, c = true })
+
+-- hides `~` at the end of the buffer
+vim.cmd([[set fillchars+=eob:\ ]])
+
 vim.cmd([[
      setlocal spell spelllang=en "Set spellcheck language to en
      setlocal spell! "Disable spell checks by default
@@ -64,25 +82,8 @@ vim.cmd([[
      if has('win32')
         let g:python3_host_prog = $HOME . '/scoop/apps/python/current/python.exe'
      endif
+    let &t_Cs = "\e[4:3m" "Undercurl
+    let &t_Ce = "\e[4:0m"
+    set whichwrap+=<,>,[,],h,l
+    set iskeyword+=-
  ]])
-
-vim.opt.path:append({ '**' })
-
--- Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
-
-vim.opt.shortmess:append({ W = true, I = true, c = true })
-
--- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
-
--- hides `~` at the end of the buffer
-vim.cmd([[set fillchars+=eob:\ ]])
-
-for k, v in pairs(options) do
-    vim.opt[k] = v
-end
-
-vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd([[set iskeyword+=-]])
