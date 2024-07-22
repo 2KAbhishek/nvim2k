@@ -224,7 +224,7 @@ local mappings = {
     },
     i = {
         name = icons.ui.Download .. 'Insert',
-        d = { "<cmd>put =strftime('## %a %d %b %r')<cr>", 'Date' },
+        d = { "<cmd>put =strftime('## %a, %d %b, %Y, %r')<cr>", 'Date' },
         e = { '<cmd>Telescope symbols<cr>', 'Emojis' },
         f = { "<cmd>put =expand('%:t')<cr>", 'File Name' },
         n = { '<cmd>Nerdy<cr>', 'Nerd Glyphs' },
