@@ -173,7 +173,7 @@ local n_mappings = {
 
     { '<leader>i', group = ' Insert' },
     { '<leader>iP', '<cmd>put %:p<cr>', desc = 'Absolute Path' },
-    { '<leader>id', "<cmd>put =strftime('## %a %d %b %r')<cr>", desc = 'Date' },
+    { '<leader>id', "<cmd>put =strftime('## %a, %d %b, %Y, %r')<cr>", desc = 'Date' },
     { '<leader>ie', '<cmd>Telescope symbols<cr>', desc = 'Emojis' },
     { '<leader>if', "<cmd>put =expand('%:t')<cr>", desc = 'File Name' },
     { '<leader>in', '<cmd>Nerdy<cr>', desc = 'Nerd Glyphs' },
