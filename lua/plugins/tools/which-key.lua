@@ -49,7 +49,10 @@ local setup = {
     },
     show_help = false,
     show_keys = true,
-    triggers = true,
+    triggers = {
+        { '<auto>', mode = 'nixsotc' },
+        { '<leader>', mode = { 'n', 'v' } },
+    },
 }
 
 local n_mappings = {
@@ -411,7 +414,7 @@ local n_mappings = {
 }
 
 local v_mappings = {
-    mode = { 'v' },
+    mode = 'v',
     { '<leader>a', group = ' AI' },
     { '<leader>aF', '<cmd>CopilotChatFixDiagnostic<cr>', desc = 'Fix Diagnostic' },
     { '<leader>aG', '<cmd>CopilotChatCommitStaged<cr>', desc = 'Commit Staged' },
@@ -489,6 +492,7 @@ local v_mappings = {
 }
 
 local no_leader_mappings = {
+    mode = 'n',
     { '<C-Down>', '<cmd>resize -10<cr>', desc = 'Decrease window height' },
     { '<C-Left>', '<cmd>vertical resize -10<cr>', desc = 'Decrease window width' },
     { '<C-Right>', '<cmd>vertical resize +10<cr>', desc = 'Increase window width' },
@@ -538,4 +542,6 @@ if vim.fn.exists('$TMUX') == 1 then
 end
 
 which_key.setup(setup)
-which_key.add(n_mappings, v_mappings, no_leader_mappings)
+which_key.add(n_mappings)
+which_key.add(v_mappings)
+which_key.add(no_leader_mappings)
