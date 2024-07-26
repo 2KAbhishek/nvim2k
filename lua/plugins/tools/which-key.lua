@@ -530,18 +530,19 @@ local no_leader_mappings = {
     { ']j', '<C-i>', desc = 'Jump' },
 }
 
-if vim.fn.exists('$TMUX') == 1 then
-    local tmux_mappings = {
-        { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'Move Left' },
-        { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'Move Down' },
-        { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'Move Up' },
-        { '<C-l>', '<cmd>NavigatorRight<cr>', desc = 'Move Right' },
-        { '<C-\\>', '<cmd>NavigatorPrevious<cr>', desc = 'Previous Pane' },
-    }
-    no_leader_mappings = vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
-end
+local tmux_mappings = {
+    { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'Move Left' },
+    { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'Move Down' },
+    { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'Move Up' },
+    { '<C-l>', '<cmd>NavigatorRight<cr>', desc = 'Move Right' },
+    { '<C-\\>', '<cmd>NavigatorPrevious<cr>', desc = 'Previous Pane' },
+}
 
 which_key.setup(setup)
 which_key.add(n_mappings)
 which_key.add(v_mappings)
 which_key.add(no_leader_mappings)
+
+if vim.fn.exists('$TMUX') == 1 then
+    which_key.add(tmux_mappings)
+end
