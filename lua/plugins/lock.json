@@ -33,6 +33,7 @@
   "mini.surround": { "branch": "main", "commit": "3cb5b509ad34f2402df4b977be607a614c8c7524" },
   "neotest": { "branch": "master", "commit": "32ff2ac21135a372a42b38ae131e531e64833bd3" },
   "neotest-jest": { "branch": "main", "commit": "514fd4eae7da15fd409133086bb8e029b65ac43f" },
+  "neotest-python": { "branch": "master", "commit": "2e83d2bc00acbcc1fd529dbf0a0e677cabfe6b50" },
   "neotest-rspec": { "branch": "main", "commit": "48573d5882cbe8d8bcd3b735d9ee7705168b1b87" },
   "nerdy.nvim": { "branch": "main", "commit": "b467d6609b78d6a5f1e12cbc08fcc1ac87af20f5" },
   "none-ls.nvim": { "branch": "main", "commit": "2cde745aadc2c36f6860a77a556494870675771a" },

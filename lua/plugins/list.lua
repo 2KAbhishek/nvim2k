@@ -82,7 +82,8 @@ local plugins = {
         dependencies = {
             'nvim-neotest/nvim-nio',
             'olimorris/neotest-rspec',
-            'haydenmeade/neotest-jest',
+            'nvim-neotest/neotest-jest',
+            'nvim-neotest/neotest-python',
         },
         config = load_config('lang.neotest'),
         cmd = 'Neotest',
