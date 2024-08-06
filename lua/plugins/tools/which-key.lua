@@ -313,6 +313,7 @@ local n_mappings = {
     { '<leader>qb', '<cmd>bw<cr>', desc = 'Close Buffer' },
     { '<leader>qd', '<cmd>bdelete<cr>', desc = 'Delete Buffer' },
     { '<leader>qf', '<cmd>qall!<cr>', desc = 'Force Quit' },
+    { '<leader>qo', ':%bdelete|b#|bdelete#<cr>', desc = 'Close Others' },
     { '<leader>qq', '<cmd>q<cr>', desc = 'Quit' },
     { '<leader>qs', '<C-w>c', desc = 'Close Split' },
     { '<leader>qw', '<cmd>wq<cr>', desc = 'Write and Quit' },
