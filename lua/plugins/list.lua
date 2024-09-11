@@ -422,7 +422,7 @@ local util = require('lib.util')
 
 if util.is_present('npm') then
     table.insert(lsp_servers, 'eslint')
-    table.insert(lsp_servers, 'tsserver')
+    table.insert(lsp_servers, 'ts_ls')
 end
 
 if util.is_present('gem') then
