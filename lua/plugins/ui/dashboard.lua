@@ -1,5 +1,6 @@
 local dashboard = require('dashboard')
 local icons = require('lib.icons')
+local pwd = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
 
 dashboard.setup({
     theme = 'hyper',
@@ -14,7 +15,7 @@ dashboard.setup({
     config = {
         week_header = {
             enable = true,
-            append = { '', icons.ui.Circle .. ' nvim2K: Learn, Make, Explore! ' .. icons.ui.Circle },
+            append = { '', icons.documents.OpenFolder .. pwd },
         },
         packages = { enable = true },
         project = { enable = true, limit = 8 },
@@ -57,7 +58,7 @@ dashboard.setup({
                 key = 'q',
             },
         },
-        footer = { '', icons.ui.Heart .. ' Happiness is a state of mind. ' .. icons.ui.Heart },
+        footer = { '', icons.ui.Heart .. ' happiness is a state of mind ' .. icons.ui.Heart },
     },
 })
 
