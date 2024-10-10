@@ -155,6 +155,7 @@ local n_mappings = {
     { '<leader>gj', '<cmd>Gitsigns next_hunk<cr>', desc = 'Next Hunk' },
     { '<leader>gk', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Prev Hunk' },
     { '<leader>gl', '<cmd>Git log<cr>', desc = 'Log' },
+    { '<leader>go', group = 'Octohub' },
     { '<leader>gp', '<cmd>Git pull<cr>', desc = 'Pull' },
     { '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset Hunk' },
     { '<leader>gs', '<cmd>Telescope git_branches<cr>', desc = 'Switch Branch' },
