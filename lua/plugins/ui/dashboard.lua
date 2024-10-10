@@ -34,7 +34,7 @@ dashboard.setup({
                 key = 'p',
             },
             {
-                desc = icons.documents.OpenFolder .. 'Files',
+                desc = icons.ui.Telescope .. 'Files',
                 group = 'Label',
                 action = 'lua require("telescope").extensions.menufacture.find_files()',
                 key = 'f',
