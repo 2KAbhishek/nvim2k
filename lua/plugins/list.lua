@@ -398,7 +398,7 @@ local plugins = {
             'nvim-telescope/telescope.nvim',
         },
         config = load_config('tools.octohub'),
-        dir = '~/Projects/GitHub/Maintain/octohub.nvim/',
+        -- dir = '~/Projects/GitHub/Maintain/octohub.nvim/',
     },
     {
         'ruifm/gitlinker.nvim',
