@@ -307,14 +307,14 @@ local plugins = {
     {
         '2kabhishek/termim.nvim',
         cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-        -- dir = '~/Projects/GitHub/Maintain/termim.nvim',
+        -- dir = '~/Projects/2KAbhishek/termim.nvim',
     },
     {
         '2kabhishek/tdo.nvim',
         dependencies = 'nvim-telescope/telescope.nvim',
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
         keys = { '[t', ']t' },
-        -- dir = '~/Projects/GitHub/Maintain/tdo.nvim',
+        -- dir = '~/Projects/2KAbhishek/tdo.nvim',
     },
     {
         'kndndrj/nvim-dbee',
@@ -357,7 +357,7 @@ local plugins = {
         '2kabhishek/nerdy.nvim',
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
-        -- dir = '~/Projects/GitHub/Maintain/nerdy.nvim',
+        -- dir = '~/Projects/2KAbhishek/nerdy.nvim',
     },
 
     -- Git
@@ -398,7 +398,7 @@ local plugins = {
             'nvim-telescope/telescope.nvim',
         },
         config = load_config('tools.octohub'),
-        -- dir = '~/Projects/GitHub/Maintain/octohub.nvim/',
+        -- dir = '~/Projects/2KAbhishek/octohub.nvim/',
     },
     {
         'ruifm/gitlinker.nvim',
