@@ -3,7 +3,7 @@ local octohub = require('octohub')
 octohub.setup({
     per_user_dir = true,
     projects_dir = '~/Projects/',
-    contrib_icons = { '', '', '', '', '', '', '' },
+    contribution_icons = { '', '', '', '', '', '', '' },
     sort_repos_by = '',
     repo_type = '',
     max_contributions = 50,
