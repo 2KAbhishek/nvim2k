@@ -437,8 +437,9 @@ local v_mappings = {
     { '<leader>cx', "<esc><cmd>'<,'>SnipRun<cr>", desc = 'Run Code' },
 
     { '<leader>g', group = ' Git' },
-    { '<leader>ga', '<cmd>Gitsigns stage_hunk<cr>', desc = 'Stage Hunk' },
-    { '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset Hunk' },
+    { '<leader>ga', ":'<,'>Gitsigns stage_hunk<cr>", desc = 'Stage Hunk' },
+    { '<leader>gr', ":'<,'>Gitsigns reset_hunk<cr>", desc = 'Reset Hunk' },
+    { '<leader>gu', ":'<,'>Gitsigns undo_stage_hunk<cr>", desc = 'Undo Stage Hunk' },
 
     { '<leader>j', group = ' Jump' },
     {
