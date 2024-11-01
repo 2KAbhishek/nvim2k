@@ -147,12 +147,79 @@ local plugins = {
     -- LSP
     {
         'neovim/nvim-lspconfig',
-        dependencies = {
-            'williamboman/mason-lspconfig.nvim',
-            'hrsh7th/cmp-nvim-lsp',
-        },
+        dependencies = { 'saghen/blink.cmp', 'williamboman/mason-lspconfig.nvim' },
         config = load_config('lang.lspconfig'),
-        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
+        'saghen/blink.cmp',
+        lazy = false,
+        dependencies = 'rafamadriz/friendly-snippets',
+        version = 'v0.*',
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            -- 'default' for mappings similar to built-in completion
+            -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+            -- see the "default configuration" section below for full documentation on how to define
+            -- your own keymap. when defining your own, no keybinds will be assigned automatically.
+            keymap = {
+                ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<C-e>'] = { 'hide' },
+                ['<C-c>'] = { 'hide' },
+                ['<C-y>'] = { 'select_and_accept' },
+
+                ['<C-p>'] = { 'select_prev', 'fallback' },
+                ['<C-n>'] = { 'select_next', 'fallback' },
+                ['<Up>'] = { 'select_prev', 'fallback' },
+                ['<Down>'] = { 'select_next', 'fallback' },
+
+                ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+                ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+
+                ['<CR>'] = {
+                    function(cmp)
+                        if cmp.visible then
+                            return cmp.select_next
+                        elseif cmp.is_in_snippet() then
+                            return cmp.accept()
+                        else
+                            return cmp.select_and_accept()
+                        end
+                    end,
+                    'fallback',
+                },
+                ['<Tab>'] = {
+                    function(cmp)
+                        if cmp.visible then
+                            return cmp.select_next
+                        elseif cmp.is_in_snippet() then
+                            return cmp.accept()
+                        else
+                            return cmp.select_and_accept()
+                        end
+                    end,
+                    'snippet_forward',
+                    'fallback',
+                },
+                ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
+            },
+
+            highlight = {
+                -- sets the fallback highlight groups to nvim-cmp's highlight groups
+                -- useful for when your theme doesn't support blink.cmp
+                -- will be removed in a future release, assuming themes add support
+                use_nvim_cmp_as_default = true,
+            },
+            -- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+            -- adjusts spacing to ensure icons are aligned
+            nerd_font_variant = 'normal',
+
+            -- experimental auto-brackets support
+            accept = { auto_brackets = { enabled = true } },
+
+            -- experimental signature help support
+            trigger = { signature_help = { enabled = true } },
+        },
     },
     {
         'folke/lazydev.nvim',
@@ -189,6 +256,7 @@ local plugins = {
         },
         config = load_config('lang.cmp'),
         event = 'InsertEnter',
+        enabled = false,
     },
     {
         'zbirenbaum/copilot.lua',
@@ -197,6 +265,7 @@ local plugins = {
         },
         config = load_config('lang.copilot'),
         event = 'InsertEnter',
+        enabled = false,
     },
     {
         'CopilotC-Nvim/CopilotChat.nvim',
