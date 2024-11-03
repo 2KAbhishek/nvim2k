@@ -5,8 +5,8 @@ chat.setup({
     debug = false, -- Enable debug logging
     proxy = nil, -- [protocol://]host[:port] Use this proxy
     allow_insecure = false, -- Allow insecure server connections
-    model = 'gpt-4', -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
-    temperature = 0.1, -- GPT temperature
+    model = 'gpt-4o', -- model to use, :CopilotChatModels for available models
+    temperature = 0.1, -- temperature
 
     question_header = '# ' .. icons.ui.User .. 'User', -- Header to use for user questions
     answer_header = '# ' .. icons.ui.Copilot .. 'Copilot', -- Header to use for AI answers
@@ -20,7 +20,7 @@ chat.setup({
     clear_chat_on_new_prompt = false, -- Clears chat on every new prompt
     highlight_selection = true, -- Highlight selection in the source buffer when in the chat window
 
-    context = nil, -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
+    context = 'buffers', -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
     history_path = vim.fn.stdpath('data') .. '/copilot_chat_history', -- Default path to stored history
     callback = nil, -- Callback to use when ask response is received
 
@@ -42,8 +42,7 @@ chat.setup({
     -- default mappings
     mappings = {
         complete = {
-            detail = 'Use @<Tab> or /<Tab> for options.',
-            insert = '<Tab>',
+            insert = '',
         },
         close = {
             normal = 'q',
@@ -75,3 +74,5 @@ chat.setup({
         },
     },
 })
+
+require('CopilotChat.integrations.cmp').setup()
