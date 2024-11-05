@@ -14,10 +14,5 @@ octohub.setup({
     show_recent_activity = true,
     show_contributions = true,
     show_repo_stats = true,
-    repo_cache_timeout = 3600 * 24,
-    username_cache_timeout = 3600 * 24 * 7,
-    events_cache_timeout = 60 * 30,
-    contibutions_cache_timeout = 3600 * 4,
-    user_cache_timeout = 3600 * 24 * 7,
     add_default_keybindings = true,
 })
