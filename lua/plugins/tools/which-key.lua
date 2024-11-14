@@ -408,10 +408,12 @@ local n_mappings = {
     { '<leader>x', '<cmd>x<cr>', desc = ' Save and Quit' },
 
     { '<leader>y', group = ' Yank' },
+    { '<leader>yL', '<cmd>CopyAbsolutePathWithLine<cr>', desc = 'Absolute Path with Line' },
     { '<leader>yP', '<cmd>CopyAbsolutePath<cr>', desc = 'Absolute Path' },
     { '<leader>ya', '<cmd>%y+<cr>', desc = 'Copy Whole File' },
     { '<leader>yf', '<cmd>CopyFileName<cr>', desc = 'File Name' },
     { '<leader>yg', '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', desc = 'Copy Git URL' },
+    { '<leader>yl', '<cmd>CopyRelativePathWithLine<cr>', desc = 'Relative Path with Line' },
     { '<leader>yp', '<cmd>CopyRelativePath<cr>', desc = 'Relative Path' },
 }
 
