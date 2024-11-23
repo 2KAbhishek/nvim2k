@@ -367,6 +367,33 @@ local plugins = {
         cmd = 'CoAuthor',
     },
     {
+        '2kabhishek/utils.nvim',
+        -- dir = '~/Projects/2KAbhishek/utils.nvim/',
+    },
+    {
+        '2kabhishek/exercism.nvim',
+        cmd = {
+            'ExercismLanguages',
+            'ExercismList',
+            'ExercismSubmit',
+            'ExercismTest',
+        },
+        keys = {
+            '<leader>exa',
+            '<leader>exl',
+            '<leader>exs',
+            '<leader>ext',
+        },
+        dependencies = {
+            '2kabhishek/utils.nvim',
+            'stevearc/dressing.nvim',
+            '2kabhishek/termim.nvim',
+        },
+        config = load_config('tools.exercism'),
+        -- opts = {},
+        -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
+    },
+    {
         '2kabhishek/octohub.nvim',
         cmd = {
             'OctoRepos',
