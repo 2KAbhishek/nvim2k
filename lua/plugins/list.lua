@@ -365,9 +365,11 @@ local plugins = {
         '2kabhishek/co-author.nvim',
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'CoAuthor',
+        -- dir = '~/Projects/2KAbhishek/co-author.nvim/',
     },
     {
         '2kabhishek/utils.nvim',
+        cmd = 'UtilsClearCache',
         -- dir = '~/Projects/2KAbhishek/utils.nvim/',
     },
     {
@@ -528,7 +530,7 @@ if util.is_present('java') then
 end
 
 if util.is_present('pip') then
-    table.insert(lsp_servers, 'ruff_lsp')
+    table.insert(lsp_servers, 'ruff')
     table.insert(lsp_servers, 'pylsp')
 end
 
