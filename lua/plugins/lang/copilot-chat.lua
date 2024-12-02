@@ -13,7 +13,7 @@ chat.setup({
     question_header = '# ' .. icons.ui.User .. 'User', -- Header to use for user questions
     answer_header = '# ' .. icons.ui.Copilot .. 'Copilot', -- Header to use for AI answers
     error_header = '## ' .. icons.ui.CopilotError .. 'Error', -- Header to use for errors
-    separator = '\n──────────────', -- Separator to use in chat
+    separator = ' ', -- Separator to use in chat
 
     show_folds = true, -- Shows folds for sections in chat
     show_help = true, -- Shows help message as virtual lines when waiting for user input
