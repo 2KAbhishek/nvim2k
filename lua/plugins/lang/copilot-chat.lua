@@ -28,8 +28,8 @@ chat.setup({
 
     -- default window options
     window = {
-        layout = 'horizontal', -- 'vertical', 'horizontal', 'float', 'replace'
-        width = 0.5, -- fractional width of parent, or absolute width in columns when > 1
+        layout = 'vertical', -- 'vertical', 'horizontal', 'float', 'replace'
+        width = 0.45, -- fractional width of parent, or absolute width in columns when > 1
         height = 0.4, -- fractional height of parent, or absolute height in rows when > 1
         -- Options below only apply to floating windows
         relative = 'editor', -- 'editor', 'win', 'cursor', 'mouse'
