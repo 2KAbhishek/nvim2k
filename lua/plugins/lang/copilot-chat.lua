@@ -6,6 +6,8 @@ chat.setup({
     proxy = nil, -- [protocol://]host[:port] Use this proxy
     allow_insecure = false, -- Allow insecure server connections
     model = 'gpt-4o', -- model to use, :CopilotChatModels for available models
+    agent = 'copilot', -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
+    context = 'buffers', -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
     temperature = 0.1, -- temperature
 
     question_header = '# ' .. icons.ui.User .. 'User', -- Header to use for user questions
@@ -15,12 +17,12 @@ chat.setup({
 
     show_folds = true, -- Shows folds for sections in chat
     show_help = true, -- Shows help message as virtual lines when waiting for user input
-    auto_follow_cursor = true, -- Auto-follow cursor in chat
+    auto_follow_cursor = false, -- Auto-follow cursor in chat
     auto_insert_mode = false, -- Automatically enter insert mode when opening window and if auto follow cursor is enabled on new prompt
     clear_chat_on_new_prompt = false, -- Clears chat on every new prompt
     highlight_selection = true, -- Highlight selection in the source buffer when in the chat window
 
-    context = 'buffers', -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
+    chat_autocomplete = true, -- Enable chat autocompletion (when disabled, requires manual `mappings.complete` trigger)
     history_path = vim.fn.stdpath('data') .. '/copilot_chat_history', -- Default path to stored history
     callback = nil, -- Callback to use when ask response is received
 
@@ -42,37 +44,49 @@ chat.setup({
     -- default mappings
     mappings = {
         complete = {
-            insert = '',
+            insert = '<Tab>',
         },
         close = {
             normal = 'q',
             insert = '<C-c>',
         },
         reset = {
-            normal = '<C-r>',
-            insert = '<C-r>',
+            normal = '<C-l>',
+            insert = '<C-l>',
         },
         submit_prompt = {
             normal = '<CR>',
-            insert = '<C-m>',
+            insert = '<C-s>',
+        },
+        toggle_sticky = {
+            detail = 'Makes line under cursor sticky or deletes sticky line.',
+            normal = 'gr',
         },
         accept_diff = {
             normal = '<C-y>',
             insert = '<C-y>',
         },
+        jump_to_diff = {
+            normal = 'gj',
+        },
+        quickfix_diffs = {
+            normal = 'gq',
+        },
         yank_diff = {
             normal = 'gy',
+            register = '"',
         },
         show_diff = {
             normal = 'gd',
         },
-        show_system_prompt = {
-            normal = 'gp',
+        show_info = {
+            normal = 'gi',
         },
-        show_user_selection = {
-            normal = 'gs',
+        show_context = {
+            normal = 'gc',
+        },
+        show_help = {
+            normal = 'gh',
         },
     },
 })
-
-require('CopilotChat.integrations.cmp').setup()

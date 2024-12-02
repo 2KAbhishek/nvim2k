@@ -200,11 +200,12 @@ local plugins = {
     },
     {
         'CopilotC-Nvim/CopilotChat.nvim',
-        branch = 'canary',
         dependencies = {
             { 'zbirenbaum/copilot.lua' },
             { 'nvim-lua/plenary.nvim' },
         },
+        branch = 'main',
+        build = 'make tiktoken', -- Only on MacOS or Linux
         cmd = {
             'CopilotChat',
             'CopilotChatToggle',
