@@ -80,17 +80,31 @@ Sources:
 
 ### e - Edit
 
-| Keybinding                         | Action            |
-| ---------------------------------- | ----------------- |
-| <kbd>Leader</kbd> <kbd> e a </kbd> | Alternate File    |
-| <kbd>Leader</kbd> <kbd> e c </kbd> | Config            |
-| <kbd>Leader</kbd> <kbd> e d </kbd> | Config Dir        |
-| <kbd>Leader</kbd> <kbd> e e </kbd> | Explorer          |
-| <kbd>Leader</kbd> <kbd> e f </kbd> | File Under Cursor |
-| <kbd>Leader</kbd> <kbd> e l </kbd> | Local Config      |
-| <kbd>Leader</kbd> <kbd> e m </kbd> | Readme            |
-| <kbd>Leader</kbd> <kbd> e n </kbd> | New File          |
-| <kbd>Leader</kbd> <kbd> e z </kbd> | Zsh Config        |
+| Keybinding                           | Action             |
+| ------------------------------------ | ------------------ |
+| <kbd>Leader</kbd> <kbd> e a </kbd>   | Alternate File     |
+| <kbd>Leader</kbd> <kbd> e c </kbd>   | Config             |
+| <kbd>Leader</kbd> <kbd> e c a </kbd> | Shell Aliases      |
+| <kbd>Leader</kbd> <kbd> e c A </kbd> | Alacritty Config   |
+| <kbd>Leader</kbd> <kbd> e c b </kbd> | Bash Config        |
+| <kbd>Leader</kbd> <kbd> e c c </kbd> | Neovim Configs     |
+| <kbd>Leader</kbd> <kbd> e c d </kbd> | Dotfiles           |
+| <kbd>Leader</kbd> <kbd> e c e </kbd> | Environment Config |
+| <kbd>Leader</kbd> <kbd> e c f </kbd> | Shell Functions    |
+| <kbd>Leader</kbd> <kbd> e c g </kbd> | Git Config         |
+| <kbd>Leader</kbd> <kbd> e c k </kbd> | Kitty Config       |
+| <kbd>Leader</kbd> <kbd> e c l </kbd> | Locak Env          |
+| <kbd>Leader</kbd> <kbd> e c n </kbd> | Neovim Init        |
+| <kbd>Leader</kbd> <kbd> e c p </kbd> | Plugin List        |
+| <kbd>Leader</kbd> <kbd> e c q </kbd> | Qutebrowser Config |
+| <kbd>Leader</kbd> <kbd> e c t </kbd> | Tmux Config        |
+| <kbd>Leader</kbd> <kbd> e c v </kbd> | Vim Config         |
+| <kbd>Leader</kbd> <kbd> e c z </kbd> | Zsh Config         |
+| <kbd>Leader</kbd> <kbd> e c Z </kbd> | Zsh Prompt Config  |
+| <kbd>Leader</kbd> <kbd> e e </kbd>   | Explorer           |
+| <kbd>Leader</kbd> <kbd> e f </kbd>   | File Under Cursor  |
+| <kbd>Leader</kbd> <kbd> e m </kbd>   | Readme             |
+| <kbd>Leader</kbd> <kbd> e n </kbd>   | New File           |
 
 ### f - Find
 
