@@ -154,6 +154,11 @@ local n_mappings = {
     { '<leader>fm', '<cmd>Telescope git_status<cr>', desc = 'Modified files' },
     { '<leader>fo', '<cmd>Telescope live_grep grep_open_files=true<cr>', desc = 'Find in Open Files' },
     { '<leader>fp', '<cmd>Telescope resume<cr>', desc = 'Last Search' },
+    {
+        '<leader>fP',
+        '<cmd>lua require("telescope.builtin").find_files({cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")})<cr>',
+        desc = 'Plugin Files',
+    },
     { '<leader>fq', '<cmd>Telescope quickfix<cr>', desc = 'Quickfix' },
     { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files' },
     { '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Fuzzy Find in File' },
