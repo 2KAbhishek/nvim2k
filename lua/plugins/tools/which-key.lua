@@ -89,6 +89,7 @@ local n_mappings = {
     { '<leader>cR', '<cmd>ReloadConfig<cr>', desc = 'Reload Configs' },
     { '<leader>cc', '<cmd>CccHighlighterToggle<cr>', desc = 'Highlight Colors' },
     { '<leader>cd', '<cmd>RootDir<cr>', desc = 'Root Directory' },
+    { '<leader>ce', '<cmd>%SnipRun<cr>', desc = 'Execute File' },
     { '<leader>cf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', desc = 'Format File' },
     { '<leader>ch', '<cmd>Hardtime toggle<cr>', desc = 'Hardtime' },
     { '<leader>cl', '<cmd>:g/^\\s*$/d<cr>', desc = 'Clean Empty Lines' },
@@ -97,7 +98,8 @@ local n_mappings = {
     { '<leader>co', '<cmd>Dashboard<cr>', desc = 'Dashboard' },
     { '<leader>cp', '<cmd>CccPick<cr>', desc = 'Pick Color' },
     { '<leader>cr', '<cmd>Telescope reloader<cr>', desc = 'Reload Module' },
-    { '<leader>cx', '<cmd>%SnipRun<cr>', desc = 'Run File' },
+    { '<leader>cs', '<cmd>source %<cr>', desc = 'Source File' },
+    { '<leader>cx', ':lua<cr>', desc = 'Execute Lua' },
 
     { '<leader>d', group = ' Database' },
     { '<leader>dS', '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', desc = 'To JSON' },
@@ -432,11 +434,12 @@ local v_mappings = {
     { '<leader>at', '<cmd>CopilotChatTests<cr>', desc = 'Tests' },
 
     { '<leader>c', group = ' Code' },
+    { '<leader>ce', "<esc><cmd>'<,'>SnipRun<cr>", desc = 'Execute Selection' },
     { '<leader>cS', ':sort!<cr>', desc = 'Sort Desc' },
     { '<leader>ci', ':sort i<cr>', desc = 'Sort Case Insensitive' },
     { '<leader>cs', ':sort<cr>', desc = 'Sort Asc' },
     { '<leader>cu', ':!uniq<cr>', desc = 'Unique' },
-    { '<leader>cx', "<esc><cmd>'<,'>SnipRun<cr>", desc = 'Run Code' },
+    { '<leader>cx', ':lua<cr>', desc = 'Execute Lua' },
 
     { '<leader>g', group = ' Git' },
     { '<leader>ga', ":'<,'>Gitsigns stage_hunk<cr>", desc = 'Stage Hunk' },

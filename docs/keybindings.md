@@ -50,20 +50,22 @@ Sources:
 
 | Keybinding                         | Action            |
 | ---------------------------------- | ----------------- |
+| <kbd>Leader</kbd> <kbd> c c </kbd> | Highlight Colors  |
 | <kbd>Leader</kbd> <kbd> c d </kbd> | Root Directory    |
+| <kbd>Leader</kbd> <kbd> c e </kbd> | Execute File      |
 | <kbd>Leader</kbd> <kbd> c f </kbd> | Format File       |
 | <kbd>Leader</kbd> <kbd> c F </kbd> | Fix Tabs          |
-| <kbd>Leader</kbd> <kbd> c r </kbd> | Reload Module     |
-| <kbd>Leader</kbd> <kbd> c R </kbd> | Reload Configs    |
-| <kbd>Leader</kbd> <kbd> c o </kbd> | Dashboard         |
-| <kbd>Leader</kbd> <kbd> c c </kbd> | Highlight Colors  |
 | <kbd>Leader</kbd> <kbd> c h </kbd> | Hardtime          |
 | <kbd>Leader</kbd> <kbd> c l </kbd> | Clean Empty Lines |
 | <kbd>Leader</kbd> <kbd> c m </kbd> | Markdown Preview  |
 | <kbd>Leader</kbd> <kbd> c n </kbd> | Notifications     |
+| <kbd>Leader</kbd> <kbd> c o </kbd> | Dashboard         |
 | <kbd>Leader</kbd> <kbd> c p </kbd> | Pick Color        |
 | <kbd>Leader</kbd> <kbd> c P </kbd> | Convert Color     |
-| <kbd>Leader</kbd> <kbd> c x </kbd> | Run File          |
+| <kbd>Leader</kbd> <kbd> c r </kbd> | Reload Module     |
+| <kbd>Leader</kbd> <kbd> c R </kbd> | Reload Configs    |
+| <kbd>Leader</kbd> <kbd> c s </kbd> | Source File       |
+| <kbd>Leader</kbd> <kbd> c x </kbd> | Execute Lua       |
 
 ### d - Database
 
