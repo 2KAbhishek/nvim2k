@@ -152,7 +152,7 @@ local plugins = {
             'hrsh7th/cmp-nvim-lsp',
         },
         config = load_config('lang.lspconfig'),
-        event = { 'BufReadPost', 'BufNewFile' },
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     {
         'folke/lazydev.nvim',
