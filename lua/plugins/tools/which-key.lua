@@ -145,11 +145,15 @@ local n_mappings = {
     { '<leader>en', '<cmd>enew<cr>', desc = 'New File' },
 
     { '<leader>f', group = ' Find' },
-    { '<leader>fa', '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', desc = 'All Files' },
+    { '<leader>fa', '<cmd>Telescope find_files<cr>', desc = 'All Files' },
     { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
     { '<leader>fc', '<cmd>Telescope git_bcommits<cr>', desc = 'File Commits' },
-    { '<leader>ff', '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', desc = 'Find files' },
-    { '<leader>fg', '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', desc = 'Find Text' },
+    { '<leader>ff', '<cmd>Telescope git_files<cr>', desc = 'Find files' },
+    {
+        '<leader>fg',
+        '<cmd>lua require("plugins.tools.telescope-custom").multi_grep()<cr>',
+        desc = 'Find Text',
+    },
     { '<leader>fl', '<cmd>Telescope loclist<cr>', desc = 'Location List' },
     { '<leader>fm', '<cmd>Telescope git_status<cr>', desc = 'Modified files' },
     { '<leader>fo', '<cmd>Telescope live_grep grep_open_files=true<cr>', desc = 'Find in Open Files' },

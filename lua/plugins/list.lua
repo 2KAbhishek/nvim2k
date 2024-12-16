@@ -342,7 +342,6 @@ local plugins = {
                 build = 'make',
             },
             'nvim-telescope/telescope-symbols.nvim',
-            'molecule-man/telescope-menufacture',
             'debugloop/telescope-undo.nvim',
         },
         config = load_config('tools.telescope'),
