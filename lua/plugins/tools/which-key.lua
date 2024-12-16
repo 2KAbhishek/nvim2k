@@ -557,6 +557,7 @@ local no_leader_mappings = {
     { '[e', 'g;', desc = 'Edit' },
     { '[g', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Git Hunk' },
     { '[j', '<C-o>', desc = 'Jump' },
+    { '[q', '<cmd>cprev<cr>', desc = 'Quickfix' },
 
     { ']', group = ' Next' },
     { ']B', '<cmd>blast<cr>', desc = 'Buffer' },
@@ -565,6 +566,7 @@ local no_leader_mappings = {
     { ']e', 'g,', desc = 'Edit' },
     { ']g', '<cmd>Gitsigns next_hunk<cr>', desc = 'Git Hunk' },
     { ']j', '<C-i>', desc = 'Jump' },
+    { ']q', '<cmd>cnext<cr>', desc = 'Quickfix' },
 }
 
 local tmux_mappings = {
