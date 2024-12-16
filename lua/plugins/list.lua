@@ -15,18 +15,18 @@ local plugins = {
     {
         'nvim-lualine/lualine.nvim',
         config = load_config('ui.lualine'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'lukas-reineke/indent-blankline.nvim',
         config = load_config('ui.indentline'),
         main = 'ibl',
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'HiPhish/rainbow-delimiters.nvim',
         config = load_config('ui.rainbow'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'rcarriga/nvim-notify',
@@ -37,7 +37,7 @@ local plugins = {
     {
         'stevearc/dressing.nvim',
         config = load_config('ui.dressing'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'nvimdev/dashboard-nvim',
@@ -108,7 +108,7 @@ local plugins = {
         version = '*',
         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
         config = load_config('lang.comment'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
         -- enabled if anything not 0.10
         enabled = vim.fn.has('nvim-0.10.0') == 0,
     },
@@ -116,13 +116,13 @@ local plugins = {
         'echasnovski/mini.surround',
         version = '*',
         config = load_config('lang.surround'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'echasnovski/mini.ai',
         version = '*',
         config = load_config('lang.ai'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
 
     -- Tresitter
@@ -137,7 +137,7 @@ local plugins = {
             'windwp/nvim-ts-autotag',
         },
         config = load_config('lang.treesitter'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'ckolkey/ts-node-action',
@@ -152,7 +152,7 @@ local plugins = {
             'hrsh7th/cmp-nvim-lsp',
         },
         config = load_config('lang.lspconfig'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'folke/lazydev.nvim',
@@ -172,7 +172,7 @@ local plugins = {
         'nvimtools/none-ls.nvim',
         dependencies = { 'neovim/nvim-lspconfig', 'jay-babu/mason-null-ls.nvim' },
         config = load_config('lang.null-ls'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
 
     -- Completion
@@ -285,7 +285,7 @@ local plugins = {
     {
         'chrisgrieser/nvim-spider',
         config = load_config('tools.spider'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'folke/which-key.nvim',
@@ -352,7 +352,7 @@ local plugins = {
         -- 'chentoast/marks.nvim',
         '2kabhishek/markit.nvim',
         config = load_config('tools.marks'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         '2kabhishek/nerdy.nvim',
@@ -460,7 +460,7 @@ local plugins = {
         'lewis6991/gitsigns.nvim',
         config = load_config('tools.gitsigns'),
         cmd = 'Gitsigns',
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'tpope/vim-fugitive',
