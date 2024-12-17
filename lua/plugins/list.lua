@@ -114,11 +114,6 @@ local plugins = {
         config = load_config('lang.treesitter'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-    {
-        'ckolkey/ts-node-action',
-        dependencies = { 'nvim-treesitter' },
-        enabled = false,
-    },
     -- LSP
     {
         'neovim/nvim-lspconfig',
