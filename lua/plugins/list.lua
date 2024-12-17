@@ -40,17 +40,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'nvimdev/dashboard-nvim',
-        config = load_config('ui.dashboard'),
-        -- Only load when no arguments
-        event = function()
-            if vim.fn.argc() == 0 then
-                return 'VimEnter'
-            end
-        end,
-        cmd = 'Dashboard',
-    },
-    {
         'gelguy/wilder.nvim',
         build = function()
             vim.cmd([[silent UpdateRemotePlugins]])
@@ -358,6 +347,12 @@ local plugins = {
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
         -- dir = '~/Projects/2KAbhishek/nerdy.nvim',
+    },
+    {
+        'folke/snacks.nvim',
+        priority = 1000,
+        lazy = false,
+        config = load_config('tools.snacks'),
     },
 
     -- Git
