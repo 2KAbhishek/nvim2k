@@ -30,6 +30,25 @@ Snacks.setup({
             { section = 'startup' },
         },
     },
+    indent = {
+        enabled = true,
+        priority = 1,
+        char = '│',
+        blank = nil, ---@type string? blank space character. If nil, it will use listchars when list is enabled.
+        -- blank = "∙",
+        only_scope = false,
+        only_current = false,
+        hl = {
+            'SnacksIndent1',
+            'SnacksIndent2',
+            'SnacksIndent3',
+            'SnacksIndent4',
+            'SnacksIndent5',
+            'SnacksIndent6',
+            'SnacksIndent7',
+            'SnacksIndent8',
+        },
+    },
     notifier = {
         enabled = true,
         timeout = 2000,
