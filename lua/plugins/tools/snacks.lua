@@ -30,6 +30,14 @@ Snacks.setup({
             { section = 'startup' },
         },
     },
+    dim = {
+        enabled = true,
+        scope = {
+            min_size = 5,
+            max_size = 20,
+            siblings = true,
+        },
+    },
     indent = {
         enabled = true,
         priority = 1,
@@ -75,4 +83,27 @@ Snacks.setup({
         refresh = 50,
     },
     notify = { enabled = true },
+    zen = {
+        enabled = true,
+        toggles = {
+            dim = true,
+            git_signs = false,
+            mini_diff_signs = false,
+            -- diagnostics = false,
+            -- inlay_hints = false,
+        },
+        show = {
+            statusline = false,
+            tabline = false,
+        },
+        win = { style = 'zen' },
+        zoom = {
+            toggles = {},
+            show = { statusline = true, tabline = true },
+            win = {
+                backdrop = false,
+                width = 0,
+            },
+        },
+    },
 })

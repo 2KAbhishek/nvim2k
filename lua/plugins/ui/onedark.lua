@@ -1,5 +1,4 @@
 local onedark = require('onedark')
-local util = require('lib.util')
 
 onedark.setup({
     style = 'deep',

@@ -30,15 +30,6 @@ local plugins = {
         config = load_config('ui.wilder'),
         keys = { ':', '/', '?' },
     },
-    {
-        'folke/zen-mode.nvim',
-        dependencies = {
-            'folke/twilight.nvim',
-            config = load_config('ui.twilight'),
-        },
-        config = load_config('ui.zen-mode'),
-        cmd = { 'ZenMode', 'Twilight' },
-    },
 
     -- Language
     {
