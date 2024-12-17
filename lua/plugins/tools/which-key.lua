@@ -168,7 +168,7 @@ local n_mappings = {
     { '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Fuzzy Find in File' },
     { '<leader>ft', '<cmd>Telescope<cr>', desc = 'Panel' },
     { '<leader>fu', '<cmd>Telescope undo<cr>', desc = 'Undo History' },
-    { '<leader>fw', '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', desc = 'Find Word' },
+    { '<leader>fw', '<cmd>Telescope grep_string<cr>', desc = 'Find Word' },
 
     { '<leader>g', group = ' Git' },
     { '<leader>gA', '<cmd>Gitsigns stage_buffer<cr>', desc = 'Stage Buffer' },
