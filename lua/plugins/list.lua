@@ -24,12 +24,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'rcarriga/nvim-notify',
-        config = load_config('ui.notify'),
-        event = 'VeryLazy',
-        cmd = 'Notifications',
-    },
-    {
         'stevearc/dressing.nvim',
         config = load_config('ui.dressing'),
         event = { 'BufReadPost', 'BufNewFile' },
