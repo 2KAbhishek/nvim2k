@@ -428,14 +428,16 @@ local n_mappings = {
 
     { '<leader>w', group = ' Writing' },
     { '<leader>wc', '<cmd>set spell!<cr>', desc = 'Spellcheck' },
+    { '<leader>wd', '<cmd>lua require("snacks").dim.enable()<cr>', desc = 'Dim On' },
+    { '<leader>wD', '<cmd>lua require("snacks").dim.disable()<cr>', desc = 'Dim Off' },
     { '<leader>wf', "<cmd>lua require'utils'.sudo_write()<cr>", desc = 'Force Write' },
     { '<leader>wj', ']s', desc = 'Next Misspell' },
     { '<leader>wk', '[s', desc = 'Prev Misspell' },
     { '<leader>wq', '<cmd>wq<cr>', desc = 'Write and Quit' },
     { '<leader>ws', '<cmd>Telescope spell_suggest<cr>', desc = 'Suggestions' },
-    { '<leader>wt', '<cmd>Twilight<cr>', desc = 'Twilight' },
     { '<leader>ww', '<cmd>w<cr>', desc = 'Write and Quit' },
-    { '<leader>wz', '<cmd>ZenMode<cr>', desc = 'ZenMode' },
+    { '<leader>wz', '<cmd>lua require("snacks").zen.zen()<cr>', desc = 'Zen' },
+    { '<leader>wZ', '<cmd>lua require("snacks").zen.zoom()<cr>', desc = 'Zoom' },
     { '<leader>x', '<cmd>x<cr>', desc = ' Save and Quit' },
 
     { '<leader>y', group = ' Yank' },

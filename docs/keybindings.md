@@ -404,14 +404,16 @@ Sources:
 | Keybinding                         | Action         |
 | ---------------------------------- | -------------- |
 | <kbd>Leader</kbd> <kbd> w c </kbd> | Spellcheck     |
+| <kbd>Leader</kbd> <kbd> w d </kbd> | Dim On         |
+| <kbd>Leader</kbd> <kbd> w D </kbd> | Dim Off        |
 | <kbd>Leader</kbd> <kbd> w f </kbd> | Force Write    |
 | <kbd>Leader</kbd> <kbd> w j </kbd> | Next Misspell  |
 | <kbd>Leader</kbd> <kbd> w k </kbd> | Prev Misspell  |
 | <kbd>Leader</kbd> <kbd> w q </kbd> | Write and Quit |
 | <kbd>Leader</kbd> <kbd> w s </kbd> | Suggestions    |
-| <kbd>Leader</kbd> <kbd> w t </kbd> | Twilight       |
 | <kbd>Leader</kbd> <kbd> w w </kbd> | Write and Quit |
-| <kbd>Leader</kbd> <kbd> w z </kbd> | ZenMode        |
+| <kbd>Leader</kbd> <kbd> w z </kbd> | Zen            |
+| <kbd>Leader</kbd> <kbd> w Z </kbd> | Zoom           |
 
 ### x - Exit
 
