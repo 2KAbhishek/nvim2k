@@ -18,12 +18,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'lukas-reineke/indent-blankline.nvim',
-        config = load_config('ui.indentline'),
-        main = 'ibl',
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
         'stevearc/dressing.nvim',
         config = load_config('ui.dressing'),
         event = { 'BufReadPost', 'BufNewFile' },
