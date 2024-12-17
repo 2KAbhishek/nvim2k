@@ -143,5 +143,4 @@ telescope.setup({
 telescope.load_extension('fzf')
 telescope.load_extension('undo')
 telescope.load_extension('marks_nvim')
-telescope.load_extension('notify')
 telescope.load_extension('refactoring')
