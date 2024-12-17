@@ -24,11 +24,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'HiPhish/rainbow-delimiters.nvim',
-        config = load_config('ui.rainbow'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
         'rcarriga/nvim-notify',
         config = load_config('ui.notify'),
         event = 'VeryLazy',
