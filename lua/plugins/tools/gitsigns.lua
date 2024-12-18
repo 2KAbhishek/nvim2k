@@ -38,9 +38,9 @@ gitsigns.setup({
             vim.keymap.set(mode, l, r, opts)
         end
 
-        map('n', ']c', function()
+        map('n', ']e', function()
             if vim.wo.diff then
-                return ']c'
+                return ']e'
             end
             vim.schedule(function()
                 gs.next_hunk()
@@ -48,15 +48,15 @@ gitsigns.setup({
             return '<Ignore>'
         end, { expr = true, desc = 'Next Change' })
 
-        map('n', '[c', function()
+        map('n', '[e', function()
             if vim.wo.diff then
-                return '[c'
+                return '[e'
             end
             vim.schedule(function()
                 gs.prev_hunk()
             end)
             return '<Ignore>'
-        end, { expr = true, desc = 'Previous Change' })
+        end, { expr = true, desc = 'Prev Change' })
 
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end,
