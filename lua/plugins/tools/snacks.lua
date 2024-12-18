@@ -103,6 +103,7 @@ Snacks.setup({
         refresh = 50,
     },
     notify = { enabled = true },
+    profiler = { enabled = true },
     zen = {
         enabled = true,
         toggles = {
