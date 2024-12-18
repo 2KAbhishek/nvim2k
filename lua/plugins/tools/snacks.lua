@@ -52,6 +52,7 @@ Snacks.setup({
         },
     },
     git = { enabled = true },
+    gitbrowse = { enabled = true },
     indent = {
         enabled = true,
         priority = 1,

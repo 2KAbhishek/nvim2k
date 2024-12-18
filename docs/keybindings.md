@@ -157,6 +157,7 @@ Sources:
 | <kbd>Leader</kbd> <kbd> g t w </kbd> | Word Diff       |
 | <kbd>Leader</kbd> <kbd> g u </kbd>   | Undo Stage Hunk |
 | <kbd>Leader</kbd> <kbd> g v </kbd>   | Select Hunk     |
+| <kbd>Leader</kbd> <kbd> g w </kbd>   | Git Browse      |
 
 ### h - Help
 

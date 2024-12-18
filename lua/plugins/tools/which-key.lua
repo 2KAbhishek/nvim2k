@@ -199,6 +199,7 @@ local n_mappings = {
     { '<leader>gtw', '<cmd>Gitsigns toggle_word_diff<cr>', desc = 'Word Diff' },
     { '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<cr>', desc = 'Undo Stage Hunk' },
     { '<leader>gv', '<cmd>Gitsigns select_hunk<cr>', desc = 'Select Hunk' },
+    { '<leader>gw', '<cmd>lua require("snacks").gitbrowse()<cr>', desc = 'Git Browse' },
 
     { '<leader>h', group = ' Help' },
     { '<leader>hh', '<cmd>Telescope help_tags<cr>', desc = 'Help Pages' },
