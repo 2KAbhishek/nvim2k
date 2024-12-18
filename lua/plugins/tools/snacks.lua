@@ -106,6 +106,44 @@ Snacks.setup({
     profiler = { enabled = true },
     quickfile = { enabled = true },
     rename = { enabled = true },
+    scope = {
+        enabled = true,
+        keys = {
+            textobject = {
+                ii = {
+                    min_size = 2, -- minimum size of the scope
+                    edge = false, -- inner scope
+                    cursor = false,
+                    treesitter = { blocks = { enabled = false } },
+                    desc = 'inner scope',
+                },
+                ai = {
+                    cursor = false,
+                    min_size = 2, -- minimum size of the scope
+                    treesitter = { blocks = { enabled = false } },
+                    desc = 'full scope',
+                },
+            },
+            jump = {
+                ['[a'] = {
+                    min_size = 1, -- allow single line scopes
+                    bottom = false,
+                    cursor = false,
+                    edge = true,
+                    treesitter = { blocks = { enabled = false } },
+                    desc = 'jump to top edge of scope',
+                },
+                [']a'] = {
+                    min_size = 1, -- allow single line scopes
+                    bottom = true,
+                    cursor = false,
+                    edge = true,
+                    treesitter = { blocks = { enabled = false } },
+                    desc = 'jump to bottom edge of scope',
+                },
+            },
+        },
+    },
     zen = {
         enabled = true,
         toggles = {
