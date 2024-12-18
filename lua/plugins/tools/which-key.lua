@@ -177,6 +177,7 @@ local n_mappings = {
     { '<leader>gS', '<cmd>Telescope git_stash<cr>', desc = 'Stashed Changes' },
     { '<leader>ga', '<cmd>Gitsigns stage_hunk<cr>', desc = 'Stage Hunk' },
     { '<leader>gb', "<cmd>lua require('gitsigns').blame_line({full = true})<cr>", desc = 'Blame' },
+    { '<leader>gB', "<cmd>lua require('snacks').git.blame_line()<cr>", desc = 'Detailed Blame' },
     { '<leader>gc', '<cmd>Telescope git_commits<cr>', desc = 'Find Commits' },
     { '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', desc = 'Diff' },
     { '<leader>gf', '<cmd>Git<cr>', desc = 'Fugitive Panel' },

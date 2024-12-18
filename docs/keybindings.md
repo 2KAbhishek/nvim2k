@@ -133,6 +133,7 @@ Sources:
 | <kbd>Leader</kbd> <kbd> g a </kbd>   | Stage Hunk      |
 | <kbd>Leader</kbd> <kbd> g A </kbd>   | Stage Buffer    |
 | <kbd>Leader</kbd> <kbd> g b </kbd>   | Blame           |
+| <kbd>Leader</kbd> <kbd> g B </kbd>   | Detailed Blame  |
 | <kbd>Leader</kbd> <kbd> g c </kbd>   | Find Commits    |
 | <kbd>Leader</kbd> <kbd> g C </kbd>   | Co-Authors      |
 | <kbd>Leader</kbd> <kbd> g d </kbd>   | Diff            |

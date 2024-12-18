@@ -51,6 +51,7 @@ Snacks.setup({
             siblings = true,
         },
     },
+    git = { enabled = true },
     indent = {
         enabled = true,
         priority = 1,
