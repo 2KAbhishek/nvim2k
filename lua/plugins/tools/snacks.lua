@@ -13,6 +13,7 @@ Snacks.setup({
         notify = true,
         size = 100 * 1024, -- 50 KB
     },
+    bufdelete = { enabled = true },
     dashboard = {
         enabled = true,
         sections = {
