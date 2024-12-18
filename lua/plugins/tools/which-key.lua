@@ -308,6 +308,12 @@ local n_mappings = {
     { '<leader>mx', "<cmd>lua require('marks').delete_bookmark()<cr>", desc = 'Delete Bookmark' },
 
     { '<leader>n', group = ' Notes' },
+    { '<leader>na', '<cmd>lua require("snacks").scratch.select()<cr>', desc = 'Select Scratch' },
+    {
+        '<leader>nc',
+        '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Committed!")<cr>',
+        desc = 'Commit Note',
+    },
     { '<leader>nd', '<cmd>Tdo<cr>', desc = "Today's Todo" },
     { '<leader>ne', '<cmd>TdoEntry<cr>', desc = "Today's Entry" },
     { '<leader>nf', '<cmd>TdoFiles<cr>', desc = 'All Notes' },
@@ -315,11 +321,7 @@ local n_mappings = {
     { '<leader>nh', '<cmd>Tdo -1<cr>', desc = "Yesterday's Todo" },
     { '<leader>nl', '<cmd>Tdo 1<cr>', desc = "Tomorrow's Todo" },
     { '<leader>nn', '<cmd>TdoNote<cr>', desc = 'New Note' },
-    {
-        '<leader>ns',
-        '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Committed!")<cr>',
-        desc = 'Commit Note',
-    },
+    { '<leader>ns', '<cmd>lua require("snacks").scratch()<cr>', desc = 'New Scratch' },
     { '<leader>nt', '<cmd>TdoTodos<cr>', desc = 'Incomplete Todos' },
     { '<leader>nx', '<cmd>TdoToggle<cr>', desc = 'Toggle Todo' },
 

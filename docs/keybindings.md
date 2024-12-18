@@ -269,6 +269,8 @@ Sources:
 
 | Keybinding                         | Action           |
 | ---------------------------------- | ---------------- |
+| <kbd>Leader</kbd> <kbd> n a </kbd> | Select Scratch   |
+| <kbd>Leader</kbd> <kbd> n c </kbd> | Commit Note      |
 | <kbd>Leader</kbd> <kbd> n d </kbd> | Today's Todo     |
 | <kbd>Leader</kbd> <kbd> n e </kbd> | Today's Entry    |
 | <kbd>Leader</kbd> <kbd> n f </kbd> | All Notes        |
@@ -276,7 +278,7 @@ Sources:
 | <kbd>Leader</kbd> <kbd> n h </kbd> | Yesterday's Todo |
 | <kbd>Leader</kbd> <kbd> n l </kbd> | Tomorrow's Todo  |
 | <kbd>Leader</kbd> <kbd> n n </kbd> | New Note         |
-| <kbd>Leader</kbd> <kbd> n s </kbd> | Commit Note      |
+| <kbd>Leader</kbd> <kbd> n s </kbd> | New Scratch      |
 | <kbd>Leader</kbd> <kbd> n t </kbd> | Incomplete Todos |
 | <kbd>Leader</kbd> <kbd> n x </kbd> | Toggle Todo      |
 
