@@ -2,6 +2,12 @@ local Snacks = require('snacks')
 local icons = require('lib.icons')
 
 Snacks.setup({
+    animate = {
+        enabled = true,
+        duration = 20, -- ms per step
+        easing = 'linear',
+        fps = 60,
+    },
     dashboard = {
         enabled = true,
         sections = {
@@ -42,8 +48,6 @@ Snacks.setup({
         enabled = true,
         priority = 1,
         char = '│',
-        blank = nil, ---@type string? blank space character. If nil, it will use listchars when list is enabled.
-        -- blank = "∙",
         only_scope = false,
         only_current = false,
         hl = {
@@ -73,9 +77,6 @@ Snacks.setup({
             trace = icons.ui.Bookmark,
             warn = icons.diagnostics.Warning,
         },
-        keep = function(notif)
-            return vim.fn.getcmdpos() > 0
-        end,
         style = 'compact',
         top_down = true,
         date_format = '%R',
