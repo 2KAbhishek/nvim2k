@@ -291,19 +291,22 @@ Sources:
 
 ### p - Packages
 
-| Keybinding                         | Action  |
-| ---------------------------------- | ------- |
-| <kbd>Leader</kbd> <kbd> p c </kbd> | Check   |
-| <kbd>Leader</kbd> <kbd> p d </kbd> | Debug   |
-| <kbd>Leader</kbd> <kbd> p i </kbd> | Install |
-| <kbd>Leader</kbd> <kbd> p l </kbd> | Log     |
-| <kbd>Leader</kbd> <kbd> p m </kbd> | Mason   |
-| <kbd>Leader</kbd> <kbd> p P </kbd> | Profile |
-| <kbd>Leader</kbd> <kbd> p p </kbd> | Plugins |
-| <kbd>Leader</kbd> <kbd> p r </kbd> | Restore |
-| <kbd>Leader</kbd> <kbd> p s </kbd> | Sync    |
-| <kbd>Leader</kbd> <kbd> p u </kbd> | Update  |
-| <kbd>Leader</kbd> <kbd> p x </kbd> | Clean   |
+| Keybinding                         | Action           |
+| ---------------------------------- | ---------------- |
+| <kbd>Leader</kbd> <kbd> p c </kbd> | Check            |
+| <kbd>Leader</kbd> <kbd> p d </kbd> | Debug            |
+| <kbd>Leader</kbd> <kbd> p e </kbd> | Profiler Scratch |
+| <kbd>Leader</kbd> <kbd> p f </kbd> | Profiler Find    |
+| <kbd>Leader</kbd> <kbd> p i </kbd> | Install          |
+| <kbd>Leader</kbd> <kbd> p l </kbd> | Log              |
+| <kbd>Leader</kbd> <kbd> p m </kbd> | Mason            |
+| <kbd>Leader</kbd> <kbd> p p </kbd> | Plugins          |
+| <kbd>Leader</kbd> <kbd> p P </kbd> | Profile          |
+| <kbd>Leader</kbd> <kbd> p r </kbd> | Restore          |
+| <kbd>Leader</kbd> <kbd> p s </kbd> | Sync             |
+| <kbd>Leader</kbd> <kbd> p t </kbd> | Profiler Toggle  |
+| <kbd>Leader</kbd> <kbd> p u </kbd> | Update           |
+| <kbd>Leader</kbd> <kbd> p x </kbd> | Clean            |
 
 ### q - Quit
 
