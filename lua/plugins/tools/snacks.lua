@@ -42,6 +42,7 @@ Snacks.setup({
             { section = 'startup' },
         },
     },
+    debug = { enabled = true },
     dim = {
         enabled = true,
         scope = {

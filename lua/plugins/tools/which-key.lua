@@ -99,7 +99,6 @@ local n_mappings = {
     { '<leader>cp', '<cmd>CccPick<cr>', desc = 'Pick Color' },
     { '<leader>cr', '<cmd>Telescope reloader<cr>', desc = 'Reload Module' },
     { '<leader>cs', '<cmd>source %<cr>', desc = 'Source File' },
-    { '<leader>cx', ':lua<cr>', desc = 'Execute Lua' },
 
     { '<leader>d', group = ' Database' },
     { '<leader>dS', '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', desc = 'To JSON' },
