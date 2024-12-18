@@ -222,6 +222,7 @@ Snacks.setup({
         },
         refresh = 50,
     },
+    terminal = { enabled = false },
     zen = {
         enabled = true,
         toggles = {
