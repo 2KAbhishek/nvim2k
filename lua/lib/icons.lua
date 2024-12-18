@@ -97,6 +97,7 @@ return {
         Dashboard = ' ',
         Database = ' ',
         Download = ' ',
+        Edit = ' ',
         Edge = '│ ',
         Electric = ' ',
         Eye = ' ',
