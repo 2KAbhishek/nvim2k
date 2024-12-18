@@ -8,6 +8,11 @@ Snacks.setup({
         easing = 'linear',
         fps = 60,
     },
+    bigfile = {
+        enabled = true,
+        notify = true,
+        size = 100 * 1024, -- 50 KB
+    },
     dashboard = {
         enabled = true,
         sections = {
