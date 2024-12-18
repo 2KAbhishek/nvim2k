@@ -209,6 +209,19 @@ Snacks.setup({
         },
     },
     scroll = { enabled = false },
+    statuscolumn = {
+        enabled = true,
+        left = { 'mark', 'sign' },
+        right = { 'fold', 'git' },
+        folds = {
+            open = false,
+            git_hl = false,
+        },
+        git = {
+            patterns = { 'GitSign', 'MiniDiffSign' },
+        },
+        refresh = 50,
+    },
     zen = {
         enabled = true,
         toggles = {
