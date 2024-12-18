@@ -70,6 +70,15 @@ Snacks.setup({
             'SnacksIndent8',
         },
     },
+    input = {
+        enabled = true,
+        icon = icons.ui.Edit,
+        icon_hl = 'SnacksInputIcon',
+        icon_pos = 'left',
+        prompt_pos = 'title',
+        win = { style = 'input' },
+        expand = true,
+    },
     notifier = {
         enabled = true,
         timeout = 2000,
