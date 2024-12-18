@@ -13,6 +13,12 @@ local plugins = {
         priority = 1000,
     },
     {
+        'folke/snacks.nvim',
+        priority = 1000,
+        lazy = false,
+        config = load_config('ui.snacks'),
+    },
+    {
         'nvim-lualine/lualine.nvim',
         config = load_config('ui.lualine'),
         event = { 'BufReadPost', 'BufNewFile' },
@@ -307,12 +313,6 @@ local plugins = {
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
         -- dir = '~/Projects/2KAbhishek/nerdy.nvim',
-    },
-    {
-        'folke/snacks.nvim',
-        priority = 1000,
-        lazy = false,
-        config = load_config('tools.snacks'),
     },
 
     -- Git
