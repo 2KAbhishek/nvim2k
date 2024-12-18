@@ -104,6 +104,7 @@ Snacks.setup({
     },
     notify = { enabled = true },
     profiler = { enabled = true },
+    quickfile = { enabled = true },
     zen = {
         enabled = true,
         toggles = {
