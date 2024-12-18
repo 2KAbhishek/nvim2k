@@ -53,6 +53,7 @@ vim.api.nvim_create_autocmd('FileType', {
         'Jaq',
         'PlenaryTestPopup',
         'fugitive',
+        'git',
         'help',
         'lir',
         'lspinfo',

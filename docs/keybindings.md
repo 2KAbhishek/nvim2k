@@ -142,7 +142,8 @@ Sources:
 | <kbd>Leader</kbd> <kbd> g i </kbd>   | Hunk Info       |
 | <kbd>Leader</kbd> <kbd> g j </kbd>   | Next Hunk       |
 | <kbd>Leader</kbd> <kbd> g k </kbd>   | Prev Hunk       |
-| <kbd>Leader</kbd> <kbd> g l </kbd>   | Log             |
+| <kbd>Leader</kbd> <kbd> g l </kbd>   | Lazygit Log     |
+| <kbd>Leader</kbd> <kbd> g L </kbd>   | Log             |
 | <kbd>Leader</kbd> <kbd> g p </kbd>   | Pull            |
 | <kbd>Leader</kbd> <kbd> g P </kbd>   | Push            |
 | <kbd>Leader</kbd> <kbd> g r </kbd>   | Reset Hunk      |
