@@ -208,6 +208,7 @@ Snacks.setup({
             },
         },
     },
+    scroll = { enabled = false },
     zen = {
         enabled = true,
         toggles = {
