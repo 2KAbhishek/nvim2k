@@ -65,7 +65,6 @@ Sources:
 | <kbd>Leader</kbd> <kbd> c r </kbd> | Reload Module     |
 | <kbd>Leader</kbd> <kbd> c R </kbd> | Reload Configs    |
 | <kbd>Leader</kbd> <kbd> c s </kbd> | Source File       |
-| <kbd>Leader</kbd> <kbd> c x </kbd> | Execute Lua       |
 
 ### d - Database
 
@@ -452,11 +451,12 @@ Sources:
 
 | Keybinding                         | Action                |
 | ---------------------------------- | --------------------- |
+| <kbd>Leader</kbd> <kbd> c e </kbd> | Run Code              |
 | <kbd>Leader</kbd> <kbd> c i </kbd> | Sort Case Insensitive |
 | <kbd>Leader</kbd> <kbd> c S </kbd> | Sort Desc             |
 | <kbd>Leader</kbd> <kbd> c s </kbd> | Sort Asc              |
 | <kbd>Leader</kbd> <kbd> c u </kbd> | Unique                |
-| <kbd>Leader</kbd> <kbd> c x </kbd> | Run Code              |
+| <kbd>Leader</kbd> <kbd> c x </kbd> | Execute Lua           |
 
 ### g - Git
 
