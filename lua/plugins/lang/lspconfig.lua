@@ -1,5 +1,4 @@
 local lspconfig = require('lspconfig')
-local cmp_lsp = require('cmp_nvim_lsp')
 local icons = require('lib.icons').diagnostics
 
 local auto_install = require('lib.util').get_user_config('auto_install', true)
@@ -8,10 +7,10 @@ if auto_install then
     installed_servers = require('plugins.list').lsp_servers
 end
 
-local lsp_capabilities = cmp_lsp.default_capabilities()
 local default_setup = function(server)
     lspconfig[server].setup({
-        capabilities = lsp_capabilities,
+        capabilities =
+            require('blink.cmp').get_lsp_capabilities()
     })
 end
 

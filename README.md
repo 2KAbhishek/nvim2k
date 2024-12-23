@@ -61,9 +61,6 @@ Before you begin, ensure you have met the following requirements:
 
 - You have installed the latest version of `neovim`
 - Some command line tools: fd, ripgrep
-- The Python provider is necessary for `wilder.nvim`.
-  - Install it using `pip install neovim`, and then run `:UpdateRemotePlugins` in Neovim.
-
 - To use nvim2k for notes, take a look at [tdo.nvim](https://github.com/2kabhishek/tdo.nvim)
 
 ### 💻 Installation

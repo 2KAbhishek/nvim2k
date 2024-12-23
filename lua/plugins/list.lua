@@ -28,14 +28,6 @@ local plugins = {
         config = load_config('ui.dressing'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-    {
-        'gelguy/wilder.nvim',
-        build = function()
-            vim.cmd([[silent UpdateRemotePlugins]])
-        end,
-        config = load_config('ui.wilder'),
-        keys = { ':', '/', '?' },
-    },
 
     -- Language
     {
@@ -104,7 +96,7 @@ local plugins = {
         'neovim/nvim-lspconfig',
         dependencies = {
             'williamboman/mason-lspconfig.nvim',
-            'hrsh7th/cmp-nvim-lsp',
+            'saghen/blink.cmp',
         },
         config = load_config('lang.lspconfig'),
         event = { 'BufReadPre', 'BufNewFile' },
@@ -132,24 +124,16 @@ local plugins = {
 
     -- Completion
     {
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-nvim-lua',
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-            'saadparwaiz1/cmp_luasnip',
-        },
-        config = load_config('lang.cmp'),
-        event = 'InsertEnter',
+        'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets', 'giuxtaposition/blink-cmp-copilot' },
+        version = '*',
+        config = load_config('lang.blink'),
+        opts_extend = { 'sources.default' },
+        event = { 'InsertEnter' },
     },
     {
         'zbirenbaum/copilot.lua',
-        dependencies = {
-            'zbirenbaum/copilot-cmp',
-        },
+        dependencies = { 'giuxtaposition/blink-cmp-copilot' },
         config = load_config('lang.copilot'),
         event = 'InsertEnter',
     },
