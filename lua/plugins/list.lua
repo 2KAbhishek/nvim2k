@@ -405,7 +405,7 @@ local plugins = {
     },
 }
 
-local ts_parsers = {
+local treesitter_parsers = {
     'bash',
     'css',
     'dart',
@@ -505,5 +505,5 @@ return {
     plugins = plugins,
     lsp_servers = lsp_servers,
     null_ls_sources = null_ls_sources,
-    ts_parsers = ts_parsers,
+    ts_parsers = treesitter_parsers,
 }
