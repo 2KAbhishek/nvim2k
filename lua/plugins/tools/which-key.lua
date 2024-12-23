@@ -440,6 +440,7 @@ local n_mappings = {
     { '<leader>wf', "<cmd>lua require'utils'.sudo_write()<cr>", desc = 'Force Write' },
     { '<leader>wj', ']s', desc = 'Next Misspell' },
     { '<leader>wk', '[s', desc = 'Prev Misspell' },
+    { '<leader>wn', '<cmd>WriteNoFormat<cr>', desc = 'Write Without Formatting' },
     { '<leader>wq', '<cmd>wq<cr>', desc = 'Write and Quit' },
     { '<leader>ws', '<cmd>Telescope spell_suggest<cr>', desc = 'Suggestions' },
     { '<leader>ww', '<cmd>w<cr>', desc = 'Write and Quit' },

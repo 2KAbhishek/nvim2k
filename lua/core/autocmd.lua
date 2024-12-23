@@ -105,11 +105,22 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
--- Autoformat before write
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-    group = augroup('autoformat'),
-    pattern = { '*' },
-    callback = function()
-        vim.lsp.buf.format()
-    end,
-})
+local function enable_autoformat()
+    vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+        group = augroup('autoformat'),
+        pattern = { '*' },
+        callback = function()
+            vim.lsp.buf.format()
+        end,
+    })
+end
+
+enable_autoformat()
+
+vim.api.nvim_create_user_command('WriteNoFormat', function()
+    -- Temporarily disable the autoformat autocmd
+    vim.api.nvim_del_augroup_by_name('nvim2k_autoformat')
+    vim.cmd('write')
+    -- Re-enable the autoformat autocmd
+    enable_autoformat()
+end, {})
