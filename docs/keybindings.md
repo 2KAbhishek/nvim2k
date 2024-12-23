@@ -174,7 +174,6 @@ Sources:
 | Keybinding                         | Action        |
 | ---------------------------------- | ------------- |
 | <kbd>Leader</kbd> <kbd> i d </kbd> | Date          |
-| <kbd>Leader</kbd> <kbd> i e </kbd> | Emojis        |
 | <kbd>Leader</kbd> <kbd> i f </kbd> | File Name     |
 | <kbd>Leader</kbd> <kbd> i n </kbd> | Nerd Glyphs   |
 | <kbd>Leader</kbd> <kbd> i P </kbd> | Absolute Path |

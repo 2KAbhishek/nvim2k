@@ -280,7 +280,6 @@ local plugins = {
                 'nvim-telescope/telescope-fzf-native.nvim',
                 build = 'make',
             },
-            'nvim-telescope/telescope-symbols.nvim',
             'debugloop/telescope-undo.nvim',
         },
         config = load_config('tools.telescope'),
