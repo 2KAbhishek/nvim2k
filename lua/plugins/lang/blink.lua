@@ -11,7 +11,10 @@ blink.setup({
     -- 'preselect', 'manual', 'auto_insert'
     completion = {
         list = { selection = 'auto_insert' },
+        menu = { border = 'rounded' },
+        documentation = { window = { border = 'rounded' } },
     },
+    signature = { window = { border = 'rounded' } },
     appearance = {
         -- Sets the fallback highlight groups to nvim-cmp's highlight groups
         use_nvim_cmp_as_default = true,
