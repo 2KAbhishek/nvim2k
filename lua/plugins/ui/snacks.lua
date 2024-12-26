@@ -146,7 +146,7 @@ Snacks.setup({
     },
     scratch = {
         enabled = true,
-        name = 'Scratch',
+        name = 'SCRATCH',
         ft = function()
             if vim.bo.buftype == '' and vim.bo.filetype ~= '' then
                 return vim.bo.filetype

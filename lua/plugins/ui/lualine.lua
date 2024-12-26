@@ -45,6 +45,9 @@ local conditions = {
     buffer_is_file = function()
         return vim.bo.buftype == ''
     end,
+    buffer_not_scratch = function()
+        return string.find(vim.fn.bufname(), 'SCRATCH') == nil
+    end,
     hide_in_width = function()
         return vim.fn.winwidth(0) > 80
     end,
@@ -63,13 +66,14 @@ local fileformat = { 'fileformat', icons_enabled = true, color = { fg = colors.w
 
 local filename = {
     'filename',
-    cond = conditions.buffer_not_empty and conditions.buffer_is_file,
+    cond = conditions.buffer_not_empty and conditions.buffer_is_file and conditions.buffer_not_scratch,
     color = { fg = colors.magenta, gui = 'bold' },
 }
 
 local buffers = {
     'buffers',
     mode = 2,
+    cond = conditions.buffer_not_scratch,
     filetype_names = {
         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
         dashboard = icons.ui.Dashboard .. 'Dashboard',
