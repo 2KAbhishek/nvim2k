@@ -56,7 +56,7 @@ Snacks.setup({
     indent = {
         enabled = true,
         priority = 1,
-        char = '│',
+        char = icons.ui.SeparatorLight,
         only_scope = false,
         only_current = false,
         hl = {
