@@ -69,6 +69,7 @@ local filename = {
 
 local buffers = {
     'buffers',
+    mode = 2,
     filetype_names = {
         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
         dashboard = icons.ui.Dashboard .. 'Dashboard',

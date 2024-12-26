@@ -107,24 +107,25 @@ Sources:
 
 ### f - Find
 
-| Keybinding                         | Action             |
-| ---------------------------------- | ------------------ |
-| <kbd>Leader</kbd> <kbd> f a </kbd> | All Files          |
-| <kbd>Leader</kbd> <kbd> f b </kbd> | Buffers            |
-| <kbd>Leader</kbd> <kbd> f c </kbd> | File Commits       |
-| <kbd>Leader</kbd> <kbd> f f </kbd> | Find files         |
-| <kbd>Leader</kbd> <kbd> f g </kbd> | Find Text          |
-| <kbd>Leader</kbd> <kbd> f l </kbd> | Location List      |
-| <kbd>Leader</kbd> <kbd> f m </kbd> | Modified files     |
-| <kbd>Leader</kbd> <kbd> f o </kbd> | Find in Open Files |
-| <kbd>Leader</kbd> <kbd> f p </kbd> | Last Search        |
-| <kbd>Leader</kbd> <kbd> f P </kbd> | Plugin Files       |
-| <kbd>Leader</kbd> <kbd> f q </kbd> | Quickfix           |
-| <kbd>Leader</kbd> <kbd> f r </kbd> | Recent Files       |
-| <kbd>Leader</kbd> <kbd> f s </kbd> | Fuzzy Find in File |
-| <kbd>Leader</kbd> <kbd> f t </kbd> | Panel              |
-| <kbd>Leader</kbd> <kbd> f u </kbd> | Undo History       |
-| <kbd>Leader</kbd> <kbd> f w </kbd> | Find Word          |
+| Keybinding                            | Action             |
+| ------------------------------------- | ------------------ |
+| <kbd>Leader</kbd> <kbd> f 1..9 </kbd> | Jump to File       |
+| <kbd>Leader</kbd> <kbd> f a </kbd>    | All Files          |
+| <kbd>Leader</kbd> <kbd> f c </kbd>    | File Commits       |
+| <kbd>Leader</kbd> <kbd> f f </kbd>    | Find files         |
+| <kbd>Leader</kbd> <kbd> f g </kbd>    | Find Text          |
+| <kbd>Leader</kbd> <kbd> f j </kbd>    | Buffers            |
+| <kbd>Leader</kbd> <kbd> f l </kbd>    | Location List      |
+| <kbd>Leader</kbd> <kbd> f m </kbd>    | Modified files     |
+| <kbd>Leader</kbd> <kbd> f o </kbd>    | Find in Open Files |
+| <kbd>Leader</kbd> <kbd> f p </kbd>    | Last Search        |
+| <kbd>Leader</kbd> <kbd> f P </kbd>    | Plugin Files       |
+| <kbd>Leader</kbd> <kbd> f q </kbd>    | Quickfix           |
+| <kbd>Leader</kbd> <kbd> f r </kbd>    | Recent Files       |
+| <kbd>Leader</kbd> <kbd> f s </kbd>    | Fuzzy Find in File |
+| <kbd>Leader</kbd> <kbd> f t </kbd>    | Panel              |
+| <kbd>Leader</kbd> <kbd> f u </kbd>    | Undo History       |
+| <kbd>Leader</kbd> <kbd> f w </kbd>    | Find Word          |
 
 ### g - Git
 

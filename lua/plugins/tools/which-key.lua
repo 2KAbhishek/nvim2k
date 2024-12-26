@@ -55,7 +55,7 @@ local setup = {
     },
 }
 
-local n_mappings = {
+local normal_mappings = {
     mode = 'n',
     { '<leader>a', group = ' AI' },
     { '<leader>aF', '<cmd>CopilotChatFixDiagnostic<cr>', desc = 'Fix Diagnostic' },
@@ -145,7 +145,6 @@ local n_mappings = {
 
     { '<leader>f', group = ' Find' },
     { '<leader>fa', '<cmd>Telescope find_files<cr>', desc = 'All Files' },
-    { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
     { '<leader>fc', '<cmd>Telescope git_bcommits<cr>', desc = 'File Commits' },
     { '<leader>ff', '<cmd>Telescope git_files<cr>', desc = 'Find files' },
     {
@@ -153,6 +152,7 @@ local n_mappings = {
         '<cmd>lua require("plugins.tools.telescope-custom").multi_grep()<cr>',
         desc = 'Find Text',
     },
+    { '<leader>fj', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
     { '<leader>fl', '<cmd>Telescope loclist<cr>', desc = 'Location List' },
     { '<leader>fm', '<cmd>Telescope git_status<cr>', desc = 'Modified files' },
     { '<leader>fo', '<cmd>Telescope live_grep grep_open_files=true<cr>', desc = 'Find in Open Files' },
@@ -457,7 +457,16 @@ local n_mappings = {
     { '<leader>yp', '<cmd>CopyRelativePath<cr>', desc = 'Relative Path' },
 }
 
-local v_mappings = {
+-- Jump to file mappings
+for i = 1, 9 do
+    table.insert(normal_mappings, {
+        string.format('<leader>f%d', i),
+        string.format('<cmd>LualineBuffersJump%d<cr>', i),
+        desc = string.format('File %d', i),
+    })
+end
+
+local visual_mappings = {
     mode = 'v',
     { '<leader>a', group = ' AI' },
     { '<leader>aF', '<cmd>CopilotChatFixDiagnostic<cr>', desc = 'Fix Diagnostic' },
@@ -585,8 +594,8 @@ local tmux_mappings = {
 }
 
 which_key.setup(setup)
-which_key.add(n_mappings)
-which_key.add(v_mappings)
+which_key.add(normal_mappings)
+which_key.add(visual_mappings)
 which_key.add(no_leader_mappings)
 
 if vim.fn.exists('$TMUX') == 1 then
