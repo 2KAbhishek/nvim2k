@@ -586,6 +586,7 @@ local no_leader_mappings = {
 }
 
 local tmux_mappings = {
+    mode = 'n',
     { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'Move Left' },
     { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'Move Down' },
     { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'Move Up' },
