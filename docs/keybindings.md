@@ -104,6 +104,7 @@ Sources:
 | <kbd>Leader</kbd> <kbd> e f </kbd>   | File Under Cursor  |
 | <kbd>Leader</kbd> <kbd> e m </kbd>   | Readme             |
 | <kbd>Leader</kbd> <kbd> e n </kbd>   | New File           |
+| <kbd>Leader</kbd> <kbd> e t </kbd>   | Explorer Tree      |
 
 ### f - Find
 
