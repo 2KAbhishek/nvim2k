@@ -223,6 +223,14 @@ local plugins = {
         end,
     },
     {
+        'm4xshen/hardtime.nvim',
+        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('hardtime').setup({ enabled = true })
+        end,
+        cmd = 'Hardtime',
+    },
+    {
         'chrisgrieser/nvim-spider',
         config = load_config('tools.spider'),
         event = { 'BufReadPost', 'BufNewFile' },
