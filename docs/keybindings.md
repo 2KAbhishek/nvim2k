@@ -55,7 +55,6 @@ Sources:
 | <kbd>Leader</kbd> <kbd> c e </kbd> | Execute File      |
 | <kbd>Leader</kbd> <kbd> c f </kbd> | Format File       |
 | <kbd>Leader</kbd> <kbd> c F </kbd> | Fix Tabs          |
-| <kbd>Leader</kbd> <kbd> c h </kbd> | Hardtime          |
 | <kbd>Leader</kbd> <kbd> c l </kbd> | Clean Empty Lines |
 | <kbd>Leader</kbd> <kbd> c m </kbd> | Markdown Preview  |
 | <kbd>Leader</kbd> <kbd> c n </kbd> | Notifications     |
