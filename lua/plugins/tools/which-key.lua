@@ -138,7 +138,7 @@ local normal_mappings = {
     { '<leader>ecz', '<cmd>e $ZDOTDIR/.zshrc<cr>', desc = 'Zsh Config' },
     { '<leader>ecZ', '<cmd>e $ZDOTDIR/prompt/init.zsh<cr>', desc = 'Zsh Prompt Config' },
 
-    { '<leader>ee', '<cmd>NvimTreeToggle<cr>', desc = 'Explorer' },
+    { '<leader>et', '<cmd>lua MiniFiles.open()<cr>', desc = 'Explorer' },
     { '<leader>ef', 'gf', desc = 'File Under Cursor' },
     { '<leader>em', '<cmd>e README.md<cr>', desc = 'Readme' },
     { '<leader>en', '<cmd>enew<cr>', desc = 'New File' },
