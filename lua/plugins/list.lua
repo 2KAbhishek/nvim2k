@@ -91,9 +91,7 @@ local plugins = {
         dependencies = {
             'nvim-treesitter/nvim-treesitter-refactor',
             'nvim-treesitter/nvim-treesitter-textobjects',
-            'RRethy/nvim-treesitter-endwise',
             'RRethy/nvim-treesitter-textsubjects',
-            'windwp/nvim-ts-autotag',
         },
         config = load_config('lang.treesitter'),
         event = { 'BufReadPost', 'BufNewFile' },
