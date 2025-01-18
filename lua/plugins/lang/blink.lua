@@ -8,9 +8,13 @@ blink.setup({
         ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
     },
-    -- 'preselect', 'manual', 'auto_insert'
     completion = {
-        list = { selection = 'auto_insert' },
+        list = {
+            selection = {
+                auto_insert = true,
+                preselect = true,
+            },
+        },
         menu = { border = 'rounded' },
         documentation = { window = { border = 'rounded' } },
     },
