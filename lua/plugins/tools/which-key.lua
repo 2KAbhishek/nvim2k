@@ -91,7 +91,6 @@ local normal_mappings = {
     { '<leader>cd', '<cmd>RootDir<cr>', desc = 'Root Directory' },
     { '<leader>ce', '<cmd>%SnipRun<cr>', desc = 'Execute File' },
     { '<leader>cf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', desc = 'Format File' },
-    { '<leader>ch', '<cmd>Hardtime toggle<cr>', desc = 'Hardtime' },
     { '<leader>cl', '<cmd>:g/^\\s*$/d<cr>', desc = 'Clean Empty Lines' },
     { '<leader>cm', '<cmd>MarkdownPreviewToggle<cr>', desc = 'Markdown Preview' },
     { '<leader>cn', '<cmd>lua require("snacks").notifier.show_history()<cr>', desc = 'Notifications' },
