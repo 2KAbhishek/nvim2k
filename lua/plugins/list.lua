@@ -165,12 +165,26 @@ local plugins = {
 
     -- Tools
     {
-        'nvim-tree/nvim-tree.lua',
+        'echasnovski/mini.files',
+        version = '*',
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
-        config = load_config('tools.nvim-tree'),
-        cmd = 'NvimTreeToggle',
+        config = load_config('tools.files'),
+        event = { 'BufReadPost', 'BufNewFile' },
+        keys = {
+            {
+                '<leader>ee',
+                function()
+                    local buf_name = vim.api.nvim_buf_get_name(0)
+                    local dir_name = vim.fn.fnamemodify(buf_name, ':p:h')
+                    local path = vim.fn.filereadable(buf_name) == 1 and buf_name
+                        or (vim.fn.isdirectory(dir_name) == 1 and dir_name or vim.loop.cwd())
+                    require('mini.files').open(path, true)
+                end,
+                desc = 'Open mini.files (cwd)',
+            },
+        },
     },
     {
         'windwp/nvim-spectre',
