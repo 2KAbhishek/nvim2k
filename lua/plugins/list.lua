@@ -1,3 +1,4 @@
+local util = require('lib.util')
 local function load_config(package)
     return function()
         require('plugins.' .. package)
@@ -176,11 +177,7 @@ local plugins = {
             {
                 '<leader>ee',
                 function()
-                    local buf_name = vim.api.nvim_buf_get_name(0)
-                    local dir_name = vim.fn.fnamemodify(buf_name, ':p:h')
-                    local path = vim.fn.filereadable(buf_name) == 1 and buf_name
-                        or (vim.fn.isdirectory(dir_name) == 1 and dir_name or vim.loop.cwd())
-                    require('mini.files').open(path, true)
+                    require('mini.files').open(util.get_file_path(), true)
                 end,
                 desc = 'Open mini.files (cwd)',
             },
@@ -453,8 +450,6 @@ local lsp_servers = {
     'typos_lsp', -- check typos
     'vimls',
 }
-
-local util = require('lib.util')
 
 if util.is_present('npm') then
     table.insert(lsp_servers, 'eslint')
