@@ -51,6 +51,7 @@ local plugins = {
         },
         config = load_config('lang.neotest'),
         cmd = 'Neotest',
+        enabled = false,
     },
     {
         'michaelb/sniprun',
