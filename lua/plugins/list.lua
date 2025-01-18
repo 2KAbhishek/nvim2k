@@ -179,7 +179,7 @@ local plugins = {
                 function()
                     require('mini.files').open(util.get_file_path(), true)
                 end,
-                desc = 'Open mini.files (cwd)',
+                desc = 'Explorer',
             },
         },
     },
