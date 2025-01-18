@@ -594,11 +594,12 @@ local tmux_mappings = {
     { '<C-\\>', '<cmd>NavigatorPrevious<cr>', desc = 'Previous Pane' },
 }
 
+if vim.fn.exists('$TMUX') == 1 then
+    -- merge tmux mappings with no leader mappings
+    vim.list_extend(no_leader_mappings, tmux_mappings)
+end
+
 which_key.setup(setup)
 which_key.add(normal_mappings)
 which_key.add(visual_mappings)
 which_key.add(no_leader_mappings)
-
-if vim.fn.exists('$TMUX') == 1 then
-    which_key.add(tmux_mappings)
-end
