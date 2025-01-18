@@ -47,7 +47,7 @@ files.setup({
         -- Width of focused window
         width_focus = 30,
         -- Width of non-focused window
-        width_nofocus = 15,
+        width_nofocus = 20,
         -- Width of preview window
         width_preview = 80,
     },
