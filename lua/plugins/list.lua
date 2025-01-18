@@ -192,11 +192,6 @@ local plugins = {
         cmd = 'Spectre',
     },
     {
-        'abecodes/tabout.nvim',
-        config = load_config('tools.tabout'),
-        event = 'InsertEnter',
-    },
-    {
         'folke/flash.nvim',
         config = load_config('tools.flash'),
         keys = {
