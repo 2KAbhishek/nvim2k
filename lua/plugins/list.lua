@@ -39,6 +39,7 @@ local plugins = {
         },
         config = load_config('lang.dap'),
         cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
+        enabled = false,
     },
     {
         'nvim-neotest/neotest',
