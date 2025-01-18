@@ -13,6 +13,7 @@ local plugins = {
         lazy = false,
         priority = 1000,
     },
+    { 'nvim-tree/nvim-web-devicons' },
     {
         'folke/snacks.nvim',
         priority = 1000,
@@ -168,9 +169,6 @@ local plugins = {
     {
         'echasnovski/mini.files',
         version = '*',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
         config = load_config('tools.files'),
         event = { 'BufReadPost', 'BufNewFile' },
         keys = {
