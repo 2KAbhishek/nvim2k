@@ -85,10 +85,7 @@ local plugins = {
     -- LSP
     {
         'neovim/nvim-lspconfig',
-        dependencies = {
-            'williamboman/mason-lspconfig.nvim',
-            'saghen/blink.cmp',
-        },
+        dependencies = { 'williamboman/mason-lspconfig.nvim' },
         config = load_config('lang.lspconfig'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
@@ -108,7 +105,7 @@ local plugins = {
     },
     {
         'nvimtools/none-ls.nvim',
-        dependencies = { 'neovim/nvim-lspconfig', 'jay-babu/mason-null-ls.nvim' },
+        dependencies = { 'jay-babu/mason-null-ls.nvim' },
         config = load_config('lang.null-ls'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
@@ -116,7 +113,7 @@ local plugins = {
     -- Completion
     {
         'saghen/blink.cmp',
-        dependencies = { 'rafamadriz/friendly-snippets', 'giuxtaposition/blink-cmp-copilot' },
+        dependencies = { 'rafamadriz/friendly-snippets' },
         version = '*',
         config = load_config('lang.blink'),
         opts_extend = { 'sources.default' },
@@ -130,10 +127,7 @@ local plugins = {
     },
     {
         'CopilotC-Nvim/CopilotChat.nvim',
-        dependencies = {
-            { 'zbirenbaum/copilot.lua' },
-            { 'nvim-lua/plenary.nvim' },
-        },
+        dependencies = { 'zbirenbaum/copilot.lua' },
         branch = 'main',
         build = 'make tiktoken', -- Only on MacOS or Linux
         cmd = {
@@ -227,14 +221,12 @@ local plugins = {
     {
         '2kabhishek/termim.nvim',
         cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-        -- dir = '~/Projects/2KAbhishek/termim.nvim',
     },
     {
         '2kabhishek/tdo.nvim',
         dependencies = 'nvim-telescope/telescope.nvim',
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
         keys = { '[t', ']t' },
-        -- dir = '~/Projects/2KAbhishek/tdo.nvim',
     },
     {
         'm4xshen/hardtime.nvim',
@@ -244,9 +236,7 @@ local plugins = {
     },
     {
         'kndndrj/nvim-dbee',
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-        },
+        dependencies = { 'MunifTanjim/nui.nvim' },
         build = function()
             --    "curl", "wget", "bitsadmin", "go"
             require('dbee').install('curl')
@@ -257,9 +247,7 @@ local plugins = {
     },
     {
         'mfussenegger/nvim-dap',
-        dependencies = {
-            'rcarriga/nvim-dap-ui',
-        },
+        dependencies = { 'rcarriga/nvim-dap-ui' },
         config = load_config('tools.dap'),
         cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
         enabled = false,
@@ -302,7 +290,6 @@ local plugins = {
         '2kabhishek/nerdy.nvim',
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
-        -- dir = '~/Projects/2KAbhishek/nerdy.nvim',
     },
 
     -- Git
@@ -310,12 +297,10 @@ local plugins = {
         '2kabhishek/co-author.nvim',
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'CoAuthor',
-        -- dir = '~/Projects/2KAbhishek/co-author.nvim/',
     },
     {
         '2kabhishek/utils.nvim',
         cmd = 'UtilsClearCache',
-        -- dir = '~/Projects/2KAbhishek/utils.nvim/',
     },
     {
         '2kabhishek/exercism.nvim',
@@ -393,7 +378,6 @@ local plugins = {
             'nvim-telescope/telescope.nvim',
         },
         config = load_config('tools.octohub'),
-        -- dir = '~/Projects/2KAbhishek/octohub.nvim/',
     },
     {
         'ruifm/gitlinker.nvim',
