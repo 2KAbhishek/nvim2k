@@ -28,6 +28,20 @@ util.get_root_dir = function()
     end
 end
 
+util.get_file_path = function()
+    local buf_name = vim.api.nvim_buf_get_name(0)
+    if vim.fn.filereadable(buf_name) == 1 then
+        return buf_name
+    end
+
+    local dir_name = vim.fn.fnamemodify(buf_name, ':p:h')
+    if vim.fn.isdirectory(dir_name) == 1 then
+        return dir_name
+    end
+
+    return vim.loop.cwd()
+end
+
 util.get_file_type_cmd = function(extension)
     local root = util.get_root_dir()
 
