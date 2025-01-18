@@ -33,27 +33,6 @@ local plugins = {
 
     -- Language
     {
-        'mfussenegger/nvim-dap',
-        dependencies = {
-            'rcarriga/nvim-dap-ui',
-        },
-        config = load_config('lang.dap'),
-        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
-        enabled = false,
-    },
-    {
-        'nvim-neotest/neotest',
-        dependencies = {
-            'nvim-neotest/nvim-nio',
-            'olimorris/neotest-rspec',
-            'nvim-neotest/neotest-jest',
-            'nvim-neotest/neotest-python',
-        },
-        config = load_config('lang.neotest'),
-        cmd = 'Neotest',
-        enabled = false,
-    },
-    {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
         config = load_config('lang.sniprun'),
@@ -83,6 +62,11 @@ local plugins = {
         'echasnovski/mini.ai',
         version = '*',
         config = load_config('lang.ai'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
+        'chrisgrieser/nvim-spider',
+        config = load_config('lang.spider'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
 
@@ -223,19 +207,6 @@ local plugins = {
         end,
     },
     {
-        'm4xshen/hardtime.nvim',
-        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-        config = function()
-            require('hardtime').setup({ enabled = true })
-        end,
-        cmd = 'Hardtime',
-    },
-    {
-        'chrisgrieser/nvim-spider',
-        config = load_config('tools.spider'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
         'folke/which-key.nvim',
         config = load_config('tools.which-key'),
         event = 'VeryLazy',
@@ -266,6 +237,12 @@ local plugins = {
         -- dir = '~/Projects/2KAbhishek/tdo.nvim',
     },
     {
+        'm4xshen/hardtime.nvim',
+        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        cmd = 'Hardtime',
+        enabled = false,
+    },
+    {
         'kndndrj/nvim-dbee',
         dependencies = {
             'MunifTanjim/nui.nvim',
@@ -276,6 +253,27 @@ local plugins = {
         end,
         config = load_config('tools.dbee'),
         cmd = 'DBToggle',
+        enabled = false,
+    },
+    {
+        'mfussenegger/nvim-dap',
+        dependencies = {
+            'rcarriga/nvim-dap-ui',
+        },
+        config = load_config('tools.dap'),
+        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
+        enabled = false,
+    },
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'nvim-neotest/nvim-nio',
+            'olimorris/neotest-rspec',
+            'nvim-neotest/neotest-jest',
+            'nvim-neotest/neotest-python',
+        },
+        config = load_config('tools.neotest'),
+        cmd = 'Neotest',
         enabled = false,
     },
 
