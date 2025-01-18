@@ -569,20 +569,12 @@ local no_leader_mappings = {
     { 'U', '<cmd>redo<cr>', desc = 'Redo' },
 
     { '[', group = ' Previous' },
-    { '[B', '<cmd>bfirst<cr>', desc = 'First Buffer' },
-    { '[b', '<cmd>bprevious<cr>', desc = 'Buffer' },
-    { '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', desc = 'Diagnostic' },
     { '[g', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Git Hunk' },
-    { '[j', '<C-o>', desc = 'Jump' },
-    { '[q', '<cmd>cprev<cr>', desc = 'Quickfix' },
+    { '[o', group = 'Textobjects' },
 
     { ']', group = ' Next' },
-    { ']B', '<cmd>blast<cr>', desc = 'Buffer' },
-    { ']b', '<cmd>bnext<cr>', desc = 'Buffer' },
-    { ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>', desc = 'Diagnostic' },
     { ']g', '<cmd>Gitsigns next_hunk<cr>', desc = 'Git Hunk' },
-    { ']j', '<C-i>', desc = 'Jump' },
-    { ']q', '<cmd>cnext<cr>', desc = 'Quickfix' },
+    { ']o', group = 'Textobjects' },
 }
 
 local tmux_mappings = {

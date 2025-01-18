@@ -62,6 +62,11 @@ local plugins = {
         config = load_config('lang.refactoring'),
     },
     {
+        'echasnovski/mini.bracketed',
+        config = load_config('lang.bracketed'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
         'echasnovski/mini.pairs',
         config = load_config('lang.pairs'),
         event = 'InsertEnter',

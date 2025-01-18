@@ -21,6 +21,7 @@
   "mason-null-ls.nvim": { "branch": "main", "commit": "de19726de7260c68d94691afb057fa73d3cc53e7" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "mini.ai": { "branch": "main", "commit": "40e380a589d07ec2c856940c6422aafe5d949a0d" },
+  "mini.bracketed": { "branch": "main", "commit": "0091e11fabe34973fc038a8d0d0485202742e403" },
   "mini.files": { "branch": "main", "commit": "a3a9cce82115a69dba161ac45bda16f4e606f73b" },
   "mini.pairs": { "branch": "main", "commit": "7e834c5937d95364cc1740e20d673afe2d034cdb" },
   "mini.surround": { "branch": "main", "commit": "0e67c4bc147f2a15cee94e7c94dcc0e115b9f55e" },
