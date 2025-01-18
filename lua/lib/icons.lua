@@ -33,6 +33,7 @@ return {
         Repo = ' ',
         Tag = ' ',
         Untrack = ' ',
+        Directory = '',
     },
     kind = {
         Class = ' ',
