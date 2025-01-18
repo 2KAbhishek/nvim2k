@@ -62,8 +62,8 @@ local plugins = {
         config = load_config('lang.refactoring'),
     },
     {
-        'windwp/nvim-autopairs',
-        config = load_config('lang.autopairs'),
+        'echasnovski/mini.pairs',
+        config = load_config('lang.pairs'),
         event = 'InsertEnter',
     },
     {
