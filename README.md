@@ -85,52 +85,68 @@ New-Item -ItemType SymbolicLink -Path "$env:LOCALAPPDATA\nvim" -Target "$PWD\nvi
 
 ## 🚀 Usage
 
-Edit files in [lua/core](./lua/core/) for tweaking [options](./lua/core/options.lua), and to add/remove [functions](./lua/core/functions.lua) and [autocmds](./lua/core/autocmd.lua)
-
-### 📦 Plugins
-
-To add new plugins add it to the [plugins list](./lua/plugins/list.lua)
-
-For plugin configs you can place them in these folders based on the functionality:
-
-- [lang](./lua/plugins/lang/): Plugins related to language features, completions, lsp, debugging etc.
-- [tools](./lua/plugins/tools/): General purpose tool plugins that aid in the editing experience.
-- [ui](./lua/plugins/ui/): Cosmetic plugins that make neovim pretty.
-
-### ⌨️ Keybindings
-
-Find the [keybinding manual here](./docs/keybindings.md).
-
-If you want to change functionality of a core keybinding, edit [core/keys](./lua/core/keys.lua)
-
-To add new keybindings edit the [which-key config](./lua/plugins/tools/which-key.lua)
-
 ### 🎨 User Configs
 
-`nvim2k` supports a user module where you can store your custom configs, these will always override the default configs, whenever there is a clash.
+`nvim2k` supports a user module where you can store your custom configs and override any default configs.
 
-To use custom configs create the file `lua/user/init.lua`, you can structure your configs as you like there.
-
-> `lua/user/init.lua` must be present to load custom configs, `require` any custom modules in this file.
-
-`user` module is not part of the repo, you can set up `user` module as a separate git repository while continuously receiving `nvim2k` updates.
-
-#### 🤖 Auto Install
-
-By default nvim2k will auto install a set of LSP servers and null-ls sources using mason, if you want to disable it make sure to add the following to your user module.
+To use custom configs create the file `lua/user/init.lua` in nvim2k, with the following structure:
 
 ```lua
 -- lua/user/init.lua
 local user = {
-    auto_install = true,
+    auto_install = true, -- enable auto install of LSPs, Treesitter parsers etc.
+    user_lsp_servers = {
+        -- Auto installed LSPs defined by user
+    },
+    user_null_ls_sources = {
+        -- Auto installed Null LS sources defined by user
+    },
+    user_treesitter_parsers = {
+        -- Auto installed Treesitter parsers defined by user
+    },
+
+    enable_db_explorer = false, -- enable dbee.nvim support
+    enable_debugger = false, -- enable dap.nvim support
+    enable_test_runner = false, -- enable neotest.nvim support
+    enable_trainer = false, -- enable hardtime.nvim support
+    user_plugins = {
+        -- Add your lazy plugin spec here
+    },
+
+    user_keybindings = {
+        -- Add your which-key bindings here
+    }
 }
 
 return user
 ```
 
-To setup and access other user options you can use the `get_user_config(key, default)` method in `lib.util`
+You can add and `require` any other custom modules and configurations you want in this file.
 
-Example: `local auto_install = require('lib.util').get_user_value('auto_install', true)`
+`user` module is not part of the repo, you can set up `user` module as a separate git repository while continuing to receive `nvim2k` updates.
+
+### Core
+
+Files in [lua/core](./lua/core/) control the core of neovim:
+
+- [options](./lua/core/options.lua),
+- [functions](./lua/core/functions.lua)
+- [autocmds](./lua/core/autocmd.lua)
+- [core keybindings](./lua/core/keys.lua)
+
+### ⌨️ Keybindings
+
+You can find the [keybinding manual here](./docs/keybindings.md).
+
+Apart from [core/keys](./lua/core/keys.lua) most keybindings are configured using [which-key](./lua/plugins/tools/which-key.lua)
+
+### 📦 Plugins
+
+You can check out the [plugins list file](./lua/plugins/list.lua) file to see the plugins that are included in nvim2k.
+
+- [lang](./lua/plugins/lang/): Plugins related to language features, completions, lsp, editing etc.
+- [tools](./lua/plugins/tools/): Plugins that add tool integrations to the editor.
+- [ui](./lua/plugins/ui/): Plugins that make improve Neovim user experience.
 
 ## 🧑‍💻 Behind The Code
 
