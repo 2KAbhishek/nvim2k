@@ -232,7 +232,7 @@ local plugins = {
         'm4xshen/hardtime.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
         cmd = 'Hardtime',
-        enabled = false,
+        enabled = util.get_user_config('enable_trainer', false),
     },
     {
         'kndndrj/nvim-dbee',
@@ -243,14 +243,14 @@ local plugins = {
         end,
         config = load_config('tools.dbee'),
         cmd = 'DBToggle',
-        enabled = false,
+        enabled = util.get_user_config('enable_db_explorer', false),
     },
     {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
         config = load_config('tools.dap'),
         cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
-        enabled = false,
+        enabled = util.get_user_config('enable_debugger', false),
     },
     {
         'nvim-neotest/neotest',
@@ -262,7 +262,7 @@ local plugins = {
         },
         config = load_config('tools.neotest'),
         cmd = 'Neotest',
-        enabled = false,
+        enabled = util.get_user_config('enable_test_runner', false),
     },
 
     -- Telescope
@@ -465,6 +465,11 @@ end
 if util.is_present('cargo') then
     table.insert(lsp_servers, 'rust_analyzer')
 end
+
+vim.tbl_extend('force', plugins, util.get_user_config('user_plugins', {}))
+vim.tbl_extend('force', lsp_servers, util.get_user_config('user_lsp_servers', {}))
+vim.tbl_extend('force', null_ls_sources, util.get_user_config('user_null_ls_sources', {}))
+vim.tbl_extend('force', treesitter_parsers, util.get_user_config('user_tresitter_parsers', {}))
 
 return {
     plugins = plugins,

@@ -586,11 +586,13 @@ local tmux_mappings = {
 }
 
 if vim.fn.exists('$TMUX') == 1 then
-    -- merge tmux mappings with no leader mappings
-    vim.list_extend(no_leader_mappings, tmux_mappings)
+    vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
 end
+
+local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
 
 which_key.setup(setup)
 which_key.add(normal_mappings)
 which_key.add(visual_mappings)
 which_key.add(no_leader_mappings)
+which_key.add(user_keybindings)
