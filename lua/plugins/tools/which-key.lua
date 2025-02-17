@@ -285,6 +285,21 @@ local normal_mappings = {
         "<cmd>lua require('telescope').extensions.marks_nvim.bookmarks_list_all()<cr>",
         desc = 'Bookmarks',
     },
+    {
+        '<leader>mB',
+        "<cmd>lua require('telescope').extensions.marks_nvim.bookmarks_list_all({project_only = true})<cr>",
+        desc = 'Bookmarks In Project',
+    },
+    {
+        '<leader>mg',
+        "<cmd>lua require('telescope').extensions.marks_nvim.bookmarks_list_all({group = 1})<cr>",
+        desc = 'Group 1 Bookmarks',
+    },
+    {
+        '<leader>mG',
+        "<cmd>lua require('telescope').extensions.marks_nvim.bookmarks_list_all({group = 1, project_only = true})<cr>",
+        desc = 'Group 1 Bookmarks In Project',
+    },
     { '<leader>md', "<cmd>lua require('marks').delete_line()<cr>", desc = 'Delete Line' },
     { '<leader>mh', "<cmd>lua require('marks').prev_bookmark()<cr>", desc = 'Previous Bookmark' },
     { '<leader>mj', "<cmd>lua require('marks').next()<cr>", desc = 'Next' },
