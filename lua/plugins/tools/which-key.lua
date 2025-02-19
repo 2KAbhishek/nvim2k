@@ -314,6 +314,7 @@ local normal_mappings = {
     { '<leader>nh', '<cmd>Tdo -1<cr>', desc = "Yesterday's Todo" },
     { '<leader>nl', '<cmd>Tdo 1<cr>', desc = "Tomorrow's Todo" },
     { '<leader>nn', '<cmd>TdoNote<cr>', desc = 'New Note' },
+    { '<leader>np', group = 'Past Todos' },
     { '<leader>ns', '<cmd>lua require("snacks").scratch()<cr>', desc = 'New Scratch' },
     { '<leader>nt', '<cmd>TdoTodos<cr>', desc = 'Incomplete Todos' },
     { '<leader>nx', '<cmd>TdoToggle<cr>', desc = 'Toggle Todo' },
@@ -453,6 +454,18 @@ local normal_mappings = {
 
 -- Numerical mappings
 for i = 1, 9 do
+    table.insert(normal_mappings, {
+        string.format('<leader>n%d', i),
+        string.format('<cmd>Tdo %d<cr>', i),
+        desc = string.format('Todo %d Days In Future', i),
+    })
+
+    table.insert(normal_mappings, {
+        string.format('<leader>np%d', i),
+        string.format('<cmd>Tdo -%d<cr>', i),
+        desc = string.format('Todo %d Days From Past', i),
+    })
+
     table.insert(normal_mappings, {
         string.format('<leader>f%d', i),
         string.format('<cmd>LualineBuffersJump%d<cr>', i),
