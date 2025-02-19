@@ -281,9 +281,8 @@ local plugins = {
         cmd = 'Telescope',
     },
     {
-        -- 'chentoast/marks.nvim',
         '2kabhishek/markit.nvim',
-        config = load_config('tools.marks'),
+        config = load_config('tools.markit'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {

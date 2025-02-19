@@ -1,7 +1,7 @@
-local marks = require('marks')
+local markit = require('markit')
 local icons = require('lib.icons')
 
-marks.setup({
+markit.setup({
     default_mappings = true,
     builtin_marks = { '.', '<', '>', '^' },
     cyclic = true,
