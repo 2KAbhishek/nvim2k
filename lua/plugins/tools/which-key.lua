@@ -474,7 +474,7 @@ for i = 1, 9 do
 
     table.insert(normal_mappings, {
         string.format('<leader>m%d', i),
-        string.format('<cmd>lua require("markit").next_bookmark%d()<cr>', i),
+        string.format('<cmd>lua require("markit").toggle_bookmark%d()<cr>', i),
         desc = string.format('Toggle Group %d Bookmark', i),
     })
 
