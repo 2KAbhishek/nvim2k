@@ -25,11 +25,6 @@ local plugins = {
         config = load_config('ui.lualine'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-    {
-        'stevearc/dressing.nvim',
-        config = load_config('ui.dressing'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
 
     -- Language
     {
@@ -287,14 +282,12 @@ local plugins = {
     },
     {
         '2kabhishek/nerdy.nvim',
-        dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'Nerdy',
     },
 
     -- Git
     {
         '2kabhishek/co-author.nvim',
-        dependencies = { 'stevearc/dressing.nvim' },
         cmd = 'CoAuthor',
     },
     {
@@ -317,7 +310,6 @@ local plugins = {
         },
         dependencies = {
             '2kabhishek/utils.nvim',
-            'stevearc/dressing.nvim',
             '2kabhishek/termim.nvim',
         },
         config = load_config('tools.exercism'),
