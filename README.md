@@ -136,8 +136,6 @@ Files in [lua/core](./lua/core/) control the core of neovim:
 
 ### ⌨️ Keybindings
 
-You can find the [keybinding manual here](./docs/keybindings.md).
-
 Apart from [core/keys](./lua/core/keys.lua) most keybindings are configured using [which-key](./lua/plugins/tools/which-key.lua)
 
 ### 📦 Plugins
