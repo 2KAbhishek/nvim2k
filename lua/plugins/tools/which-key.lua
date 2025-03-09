@@ -331,10 +331,79 @@ local normal_mappings = {
     { '<leader>nx', '<cmd>TdoToggle<cr>', desc = 'Toggle Todo' },
 
     { '<leader>o', group = ' Options' },
-    { '<leader>oc', '<cmd>Telescope colorscheme<cr>', desc = 'Colorscheme' },
-    { '<leader>oh', '<cmd>Telescope highlights<cr>', desc = 'Highlight Colors' },
-    { '<leader>on', '<cmd>set relativenumber!<cr>', desc = 'Relative Numbers' },
-    { '<leader>oo', '<cmd>Telescope vim_options<cr>', desc = 'All Options' },
+    { '<leader>oi', 'vim.show_pos', desc = 'Inspect Position' },
+    { '<leader>ok', '<cmd>Lspsaga hover_doc<cr>', desc = 'Hover Doc' },
+    { '<leader>or', '<cmd>set relativenumber!<cr>', desc = 'Relative Numbers' },
+    {
+        '<leader>oa',
+        function()
+            Snacks.picker.autocmds()
+        end,
+        desc = 'Autocmds',
+    },
+    {
+        '<leader>oc',
+        function()
+            Snacks.picker.command_history()
+        end,
+        desc = 'Command History',
+    },
+    {
+        '<leader>od',
+        function()
+            Snacks.picker.help()
+        end,
+        desc = 'Docs',
+    },
+    {
+        '<leader>og',
+        function()
+            Snacks.picker.commands()
+        end,
+        desc = 'Commands',
+    },
+    {
+        '<leader>oh',
+        function()
+            Snacks.picker.highlights()
+        end,
+        desc = 'Highlights',
+    },
+    {
+        '<leader>ok',
+        function()
+            Snacks.picker.keymaps()
+        end,
+        desc = 'Keymaps',
+    },
+    {
+        '<leader>om',
+        function()
+            Snacks.picker.man()
+        end,
+        desc = 'Man Pages',
+    },
+    {
+        '<leader>on',
+        function()
+            Snacks.picker.notifications()
+        end,
+        desc = 'Notification History',
+    },
+    {
+        '<leader>os',
+        function()
+            Snacks.picker.search_history()
+        end,
+        desc = 'Search History',
+    },
+    {
+        '<leader>ot',
+        function()
+            Snacks.picker.colorschemes()
+        end,
+        desc = 'Colorschemes',
+    },
 
     { '<leader>p', group = ' Packages' },
     { '<leader>pc', '<cmd>Lazy check<cr>', desc = 'Check' },
