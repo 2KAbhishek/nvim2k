@@ -112,29 +112,16 @@ local normal_mappings = {
     { '<leader>cf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', desc = 'Format File' },
     { '<leader>cl', '<cmd>:g/^\\s*$/d<cr>', desc = 'Clean Empty Lines' },
     { '<leader>cm', '<cmd>MarkdownPreviewToggle<cr>', desc = 'Markdown Preview' },
-    { '<leader>cn', '<cmd>lua require("snacks").notifier.show_history()<cr>', desc = 'Notifications' },
     { '<leader>co', '<cmd>Dashboard<cr>', desc = 'Dashboard' },
     { '<leader>cp', '<cmd>CccPick<cr>', desc = 'Pick Color' },
-    { '<leader>cr', '<cmd>Telescope reloader<cr>', desc = 'Reload Module' },
     { '<leader>cs', '<cmd>source %<cr>', desc = 'Source File' },
 
     { '<leader>e', group = ' Edit' },
     { '<leader>ea', '<cmd>b#<cr>', desc = 'Alternate File' },
-
     { '<leader>ec', group = 'Edit Configs' },
     { '<leader>eca', '<cmd>e ~/.config/shell/aliases.sh<cr>', desc = 'Shell Aliases' },
     { '<leader>ecA', '<cmd>e ~/.config/alacritty/alacritty.toml<cr>', desc = 'Alacritty Config' },
     { '<leader>ecb', '<cmd>e ~/.bashrc<cr>', desc = 'Bash Config' },
-    {
-        '<leader>ecc',
-        '<cmd>lua require("telescope.builtin").find_files({cwd = vim.fn.stdpath("config")})<cr>',
-        desc = 'Neovim Configs',
-    },
-    {
-        '<leader>ecd',
-        '<cmd>lua require("telescope.builtin").find_files({cwd = vim.fn.expand("$DOTS_DIR")})<cr>',
-        desc = 'Dotfiles',
-    },
     { '<leader>ece', '<cmd>e ~/.config/shell/environment.sh<cr>', desc = 'Environment Config' },
     { '<leader>ecf', '<cmd>e ~/.config/shell/functions.sh<cr>', desc = 'Shell Functions' },
     { '<leader>ecg', '<cmd>e ~/.gitconfig<cr>', desc = 'Git Config' },
@@ -147,60 +134,149 @@ local normal_mappings = {
     { '<leader>ecv', '<cmd>e ~/.vimrc<cr>', desc = 'Vim Config' },
     { '<leader>ecz', '<cmd>e $ZDOTDIR/.zshrc<cr>', desc = 'Zsh Config' },
     { '<leader>ecZ', '<cmd>e $ZDOTDIR/prompt/init.zsh<cr>', desc = 'Zsh Prompt Config' },
-
     { '<leader>et', '<cmd>lua MiniFiles.open()<cr>', desc = 'Explore Tree' },
     { '<leader>ef', 'gf', desc = 'File Under Cursor' },
     { '<leader>em', '<cmd>e README.md<cr>', desc = 'Readme' },
     { '<leader>en', '<cmd>enew<cr>', desc = 'New File' },
+    {
+        '<leader>ecc',
+        function()
+            Snacks.picker.files({ cwd = vim.fn.stdpath('config') })
+        end,
+        desc = 'Neovim Configs',
+    },
+    {
+        '<leader>eE',
+        function()
+            Snacks.explorer()
+        end,
+        desc = 'File Explorer',
+    },
 
     { '<leader>f', group = ' Find' },
-    { '<leader>fa', '<cmd>Telescope find_files<cr>', desc = 'All Files' },
-    { '<leader>fc', '<cmd>Telescope git_bcommits<cr>', desc = 'File Commits' },
-    { '<leader>ff', '<cmd>Telescope git_files<cr>', desc = 'Find files' },
+    {
+        '<leader>fa',
+        function()
+            Snacks.picker.files()
+        end,
+        desc = 'Find Files',
+    },
+    {
+        '<leader>fb',
+        function()
+            Snacks.picker.buffers()
+        end,
+        desc = 'Buffers',
+    },
+    {
+        '<leader>fc',
+        function()
+            Snacks.picker.git_log_file()
+        end,
+        desc = 'File Commits',
+    },
+    {
+        '<leader>fd',
+        function()
+            Snacks.picker.projects()
+        end,
+        desc = 'Project Dirs',
+    },
+    {
+        '<leader>ff',
+        function()
+            Snacks.picker.git_files()
+        end,
+        desc = 'Find Git Files',
+    },
     {
         '<leader>fg',
-        '<cmd>lua require("plugins.tools.telescope-custom").multi_grep()<cr>',
-        desc = 'Find Text',
+        function()
+            Snacks.picker.grep()
+        end,
+        desc = 'Grep',
     },
-    { '<leader>fj', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
-    { '<leader>fl', '<cmd>Telescope loclist<cr>', desc = 'Location List' },
-    { '<leader>fm', '<cmd>Telescope git_status<cr>', desc = 'Modified files' },
-    { '<leader>fo', '<cmd>Telescope live_grep grep_open_files=true<cr>', desc = 'Find in Open Files' },
-    { '<leader>fp', '<cmd>Telescope resume<cr>', desc = 'Last Search' },
     {
-        '<leader>fP',
-        '<cmd>lua require("telescope.builtin").find_files({cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")})<cr>',
-        desc = 'Plugin Files',
+        '<leader>fl',
+        function()
+            Snacks.picker.loclist()
+        end,
+        desc = 'Location List',
     },
-    { '<leader>fq', '<cmd>Telescope quickfix<cr>', desc = 'Quickfix' },
-    { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files' },
-    { '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Fuzzy Find in File' },
-    { '<leader>ft', '<cmd>Telescope<cr>', desc = 'Panel' },
-    { '<leader>fu', '<cmd>Telescope undo<cr>', desc = 'Undo History' },
-    { '<leader>fw', '<cmd>Telescope grep_string<cr>', desc = 'Find Word' },
+    {
+        '<leader>fm',
+        function()
+            Snacks.picker.git_status()
+        end,
+        desc = 'Git Status',
+    },
+    {
+        '<leader>fo',
+        function()
+            Snacks.picker.grep_buffers()
+        end,
+        desc = 'Grep Open Buffers',
+    },
+    {
+        '<leader>fp',
+        function()
+            Snacks.picker.resume()
+        end,
+        desc = 'Previous Picker',
+    },
+    {
+        '<leader>fq',
+        function()
+            Snacks.picker.qflist()
+        end,
+        desc = 'Quickfix List',
+    },
+    {
+        '<leader>fr',
+        function()
+            Snacks.picker.recent()
+        end,
+        desc = 'Recent',
+    },
+    {
+        '<leader>fs',
+        function()
+            Snacks.picker.lines()
+        end,
+        desc = 'Buffer Lines',
+    },
+    {
+        '<leader>fu',
+        function()
+            Snacks.picker.undo()
+        end,
+        desc = 'Undo History',
+    },
+    {
+        '<leader>fw',
+        function()
+            Snacks.picker.grep_word()
+        end,
+        desc = 'Word Grep',
+        mode = { 'n', 'x' },
+    },
 
     { '<leader>g', group = ' Git' },
     { '<leader>gA', '<cmd>Gitsigns stage_buffer<cr>', desc = 'Stage Buffer' },
     { '<leader>gC', '<cmd>CoAuthor<cr>', desc = 'Co-Authors' },
     { '<leader>gP', '<cmd>Git push<cr>', desc = 'Push' },
     { '<leader>gR', '<cmd>Gitsigns reset_buffer<cr>', desc = 'Reset Buffer' },
-    { '<leader>gS', '<cmd>Telescope git_stash<cr>', desc = 'Stashed Changes' },
     { '<leader>ga', '<cmd>Gitsigns stage_hunk<cr>', desc = 'Stage Hunk' },
     { '<leader>gb', "<cmd>lua require('gitsigns').blame_line({full = true})<cr>", desc = 'Blame' },
     { '<leader>gB', "<cmd>lua require('snacks').git.blame_line()<cr>", desc = 'Detailed Blame' },
-    { '<leader>gc', '<cmd>Telescope git_commits<cr>', desc = 'Find Commits' },
-    { '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', desc = 'Diff' },
-    { '<leader>gf', '<cmd>Git<cr>', desc = 'Fugitive Panel' },
+    { '<leader>gF', '<cmd>Git<cr>', desc = 'Fugitive Panel' },
     { '<leader>gg', '<cmd>lua require("snacks").lazygit()<cr>', desc = 'Lazygit' },
     { '<leader>gi', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Hunk Info' },
     { '<leader>gj', '<cmd>Gitsigns next_hunk<cr>', desc = 'Next Hunk' },
     { '<leader>gk', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Prev Hunk' },
-    { '<leader>gl', '<cmd>lua require("snacks").lazygit.log()<cr>', desc = 'Lazygit Log' },
-    { '<leader>gL', '<cmd>Git log<cr>', desc = 'Log' },
     { '<leader>go', group = 'Octohub' },
     { '<leader>gp', '<cmd>Git pull<cr>', desc = 'Pull' },
     { '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset Hunk' },
-    { '<leader>gs', '<cmd>Telescope git_branches<cr>', desc = 'Switch Branch' },
     { '<leader>gt', group = 'Toggle' },
     { '<leader>gtb', '<cmd>Gitsigns toggle_current_line_blame<cr>', desc = 'Blame' },
     { '<leader>gtd', '<cmd>Gitsigns toggle_deleted<cr>', desc = 'Deleted' },
@@ -211,12 +287,41 @@ local normal_mappings = {
     { '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<cr>', desc = 'Undo Stage Hunk' },
     { '<leader>gv', '<cmd>Gitsigns select_hunk<cr>', desc = 'Select Hunk' },
     { '<leader>gw', '<cmd>lua require("snacks").gitbrowse()<cr>', desc = 'Git Browse' },
-
-    { '<leader>h', group = ' Help' },
-    { '<leader>hh', '<cmd>Telescope help_tags<cr>', desc = 'Help Pages' },
-    { '<leader>hi', 'vim.show_pos', desc = 'Inspect Position' },
-    { '<leader>hk', '<cmd>Lspsaga hover_doc<cr>', desc = 'Hover Doc' },
-    { '<leader>hm', '<cmd>Telescope man_pages<cr>', desc = 'Man Pages' },
+    {
+        '<leader>gl',
+        function()
+            Snacks.picker.git_log()
+        end,
+        desc = 'Git Log',
+    },
+    {
+        '<leader>gL',
+        function()
+            Snacks.picker.git_log_line()
+        end,
+        desc = 'Git Log Line',
+    },
+    {
+        '<leader>gs',
+        function()
+            Snacks.picker.git_branches()
+        end,
+        desc = 'Git Branches',
+    },
+    {
+        '<leader>gS',
+        function()
+            Snacks.picker.git_stash()
+        end,
+        desc = 'Git Stash',
+    },
+    {
+        '<leader>gd',
+        function()
+            Snacks.picker.git_diff()
+        end,
+        desc = 'Git Diff (Hunks)',
+    },
 
     { '<leader>i', group = ' Insert' },
     { '<leader>iP', '<cmd>put %:p<cr>', desc = 'Absolute Path' },
@@ -224,65 +329,133 @@ local normal_mappings = {
     { '<leader>if', "<cmd>put =expand('%:t')<cr>", desc = 'File Name' },
     { '<leader>in', '<cmd>Nerdy<cr>', desc = 'Nerd Glyphs' },
     { '<leader>ip', '<cmd>put %<cr>', desc = 'Relative Path' },
-    { '<leader>ir', '<cmd>Telescope registers<cr>', desc = 'Registers' },
     { '<leader>it', "<cmd>put =strftime('## %r')<cr>", desc = 'Time' },
+    {
+        '<leader>ii',
+        function()
+            Snacks.picker.icons()
+        end,
+        desc = 'Icons',
+    },
+    {
+        '<leader>ir',
+        function()
+            Snacks.picker.registers()
+        end,
+        desc = 'Registers',
+    },
 
     { '<leader>j', group = ' Jump' },
-    {
-        '<leader>jN',
-        "<cmd>lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Backward',
-    },
     { '<leader>jc', '*', desc = 'Word' },
     { '<leader>jd', '<cmd>FlashDiagnostics<cr>', desc = 'Diagnostics' },
-    { '<leader>jf', '<cmd>Telescope jumplist<cr>', desc = 'Jumplist' },
     { '<leader>jh', '<C-o>', desc = 'Backward' },
     { '<leader>jj', "<cmd>lua require('flash').remote()<cr>", desc = 'Remote' },
     { '<leader>jk', "<cmd>lua require('flash').treesitter()<cr>", desc = 'Treesitter' },
     { '<leader>jl', '<C-i>', desc = 'Forward' },
+    { '<leader>jp', "<cmd>lua require('flash').jump({continue = true})<cr>", desc = 'Previous Jump' },
+    { '<leader>js', "<cmd>lua require('flash').jump()<cr>", desc = 'Search' },
+    { '<leader>jt', "<cmd>lua require('flash').treesitter_search()<cr>", desc = 'Remote Treesitter' },
+    {
+        '<leader>jf',
+        function()
+            Snacks.picker.jumps()
+        end,
+        desc = 'Jumps',
+    },
     {
         '<leader>jn',
         "<cmd>lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
         desc = 'Search Forward',
     },
-    { '<leader>jp', "<cmd>lua require('flash').jump({continue = true})<cr>", desc = 'Previous Jump' },
-    { '<leader>js', "<cmd>lua require('flash').jump()<cr>", desc = 'Search' },
-    { '<leader>jt', "<cmd>lua require('flash').treesitter_search()<cr>", desc = 'Remote Treesitter' },
+    {
+        '<leader>jN',
+        "<cmd>lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
+        desc = 'Search Backward',
+    },
     {
         '<leader>jw',
         '<cmd>lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>',
         desc = 'Current Word',
     },
 
-    { '<leader>k', group = ' Keys' },
-    { '<leader>kc', '<cmd>Telescope commands<cr>', desc = 'Commands' },
-    { '<leader>kh', '<cmd>Telescope command_history<cr>', desc = 'Command History' },
-    { '<leader>kk', '<cmd>Telescope keymaps<cr>', desc = 'Keymaps' },
-    { '<leader>ks', '<cmd>Telescope search_history<cr>', desc = 'Search History' },
-
     { '<leader>l', group = ' LSP' },
-    { '<leader>lF', '<cmd>Telescope lsp_references layout_strategy=vertical<cr>', desc = 'References' },
-    { '<leader>lL', '<cmd>Lspsaga show_workspace_diagnostics<cr>', desc = 'Workspace Diagnostics' },
-    { '<leader>lP', '<cmd>Telescope lsp_outgoing_calls<cr>', desc = 'Outgoing Calls' },
-    { '<leader>lQ', '<cmd>LspRestart<cr>', desc = 'Restart LSP' },
-    { '<leader>lR', '<cmd>Lspsaga project_replace<cr>', desc = 'Replace' },
-    { '<leader>lS', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'Workspace Symbols' },
-    { '<leader>lT', '<cmd>Lspsaga goto_type_definition<cr>', desc = 'Goto Type Definition' },
     { '<leader>la', '<cmd>Lspsaga code_action<cr>', desc = 'Code Action' },
-    { '<leader>ld', '<cmd>Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
     { '<leader>lf', '<cmd>Lspsaga finder<cr>', desc = 'Finder' },
-    { '<leader>lg', '<cmd>Lspsaga goto_definition<cr>', desc = 'Goto Definition' },
     { '<leader>lh', '<cmd>Lspsaga hover_doc<cr>', desc = 'Hover' },
-    { '<leader>li', '<cmd>LspInfo<cr>', desc = 'LSP Info' },
+    { '<leader>lI', '<cmd>LspInfo<cr>', desc = 'LSP Info' },
     { '<leader>lj', '<cmd>Lspsaga diagnostic_jump_next<cr>', desc = 'Next Diagnostic' },
     { '<leader>lk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', desc = 'Prev Diagnostic' },
-    { '<leader>ll', '<cmd>Telescope diagnostics layout_strategy=vertical<cr>', desc = 'File Diagnostics' },
     { '<leader>lo', '<cmd>Lspsaga outline<cr>', desc = 'Outline' },
-    { '<leader>lp', '<cmd>Telescope lsp_incoming_calls<cr>', desc = 'Incoming Calls' },
+    { '<leader>lp', '<cmd>Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
     { '<leader>lq', '<cmd>LspStop<cr>', desc = 'Stop LSP' },
+    { '<leader>lQ', '<cmd>LspRestart<cr>', desc = 'Restart LSP' },
     { '<leader>lr', '<cmd>Lspsaga rename<cr>', desc = 'Rename' },
-    { '<leader>ls', '<cmd>Telescope lsp_document_symbols theme=get_ivy<cr>', desc = 'Document Symbols' },
-    { '<leader>lt', '<cmd>Lspsaga peek_type_definition<cr>', desc = 'Peek Type Definition' },
+    { '<leader>lR', '<cmd>Lspsaga project_replace<cr>', desc = 'Replace' },
+    { '<leader>lP', '<cmd>Lspsaga peek_type_definition<cr>', desc = 'Peek Type Definition' },
+    {
+        '<leader>ld',
+        function()
+            Snacks.picker.lsp_definitions()
+        end,
+        desc = 'Goto Definition',
+    },
+    {
+        '<leader>lD',
+        function()
+            Snacks.picker.lsp_declarations()
+        end,
+        desc = 'Goto Declaration',
+    },
+    {
+        '<leader>lF',
+        function()
+            Snacks.picker.lsp_references()
+        end,
+        nowait = true,
+        desc = 'References',
+    },
+    {
+        '<leader>li',
+        function()
+            Snacks.picker.lsp_implementations()
+        end,
+        desc = 'Goto Implementation',
+    },
+    {
+        '<leader>ll',
+        function()
+            Snacks.picker.diagnostics_buffer()
+        end,
+        desc = 'Buffer Diagnostics',
+    },
+    {
+        '<leader>lL',
+        function()
+            Snacks.picker.diagnostics()
+        end,
+        desc = 'Diagnostics',
+    },
+    {
+        '<leader>ls',
+        function()
+            Snacks.picker.lsp_symbols()
+        end,
+        desc = 'LSP Symbols',
+    },
+    {
+        '<leader>lS',
+        function()
+            Snacks.picker.lsp_workspace_symbols()
+        end,
+        desc = 'LSP Workspace Symbols',
+    },
+    {
+        '<leader>lt',
+        function()
+            Snacks.picker.lsp_type_definitions()
+        end,
+        desc = 'Goto Type Definition',
+    },
 
     { '<leader>m', group = ' Marks' },
     {
@@ -303,7 +476,14 @@ local normal_mappings = {
     { '<leader>mj', "<cmd>lua require('markit').next()<cr>", desc = 'Next' },
     { '<leader>mk', "<cmd>lua require('markit').prev()<cr>", desc = 'Previous' },
     { '<leader>ml', "<cmd>lua require('markit').next_bookmark()<cr>", desc = 'Next Bookmark' },
-    { '<leader>mm', '<cmd>Telescope markit<cr>', desc = 'All Marks' },
+    --   { '<leader>mm', '<cmd>Telescope markit<cr>', desc = 'All Marks' },
+    {
+        '<leader>mm',
+        function()
+            Snacks.picker.marks()
+        end,
+        desc = 'Marks',
+    },
     { '<leader>mn', group = 'Next Bookmark In Group' },
     { '<leader>mp', group = 'Previous Bookmark In Group' },
     { '<leader>mP', "<cmd>lua require('markit').preview()<cr>", desc = 'Preview' },
@@ -420,6 +600,13 @@ local normal_mappings = {
     { '<leader>pt', '<cmd>lua require("snacks").profiler.toggle()<cr>', desc = 'Profiler Toggle' },
     { '<leader>pu', '<cmd>Lazy update<cr>', desc = 'Update' },
     { '<leader>px', '<cmd>Lazy clean<cr>', desc = 'Clean' },
+    {
+        '<leader>pS',
+        function()
+            Snacks.picker.lazy()
+        end,
+        desc = 'Search for Plugin Spec',
+    },
 
     { '<leader>q', group = ' Quit' },
     { '<leader>qa', '<cmd>qall<cr>', desc = 'Quit All' },
@@ -432,31 +619,26 @@ local normal_mappings = {
     { '<leader>qw', '<cmd>wq<cr>', desc = 'Write and Quit' },
 
     { '<leader>r', group = ' Refactor' },
-    {
-        '<leader>rR',
-        "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-        desc = 'Refactor Commands',
-    },
-    { '<leader>rS', "<cmd>lua require('spectre').open()<cr>", desc = 'Replace' },
     { '<leader>rb', "<cmd>lua require('spectre').open_file_search()<cr>", desc = 'Replace Buffer' },
-    { '<leader>rd', '', desc = 'Go To Definition' },
-    { '<leader>re', "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", desc = 'Extract Block' },
-    {
-        '<leader>rf',
-        "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>",
-        desc = 'Extract To File',
-    },
-    { '<leader>rh', '', desc = 'List Definition Head' },
     { '<leader>ri', "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", desc = 'Inline Variable' },
+    { '<leader>re', "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", desc = 'Extract Block' },
+    { '<leader>rs', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', desc = 'Replace Word' },
+    { '<leader>rS', "<cmd>lua require('spectre').open()<cr>", desc = 'Replace' },
+    { '<leader>rv', "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", desc = 'Extract Variable' },
+    { '<leader>rw', "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", desc = 'Replace Word' },
+    { '<leader>rd', '', desc = 'Go To Definition' }, -- treesitter navigation
+    { '<leader>rh', '', desc = 'List Definition Head' },
     { '<leader>rj', '', desc = 'Next Usage' },
     { '<leader>rk', '', desc = 'Previous Usage' },
     { '<leader>rl', '', desc = 'List Definition' },
     { '<leader>rn', '', desc = 'Swap Next' },
     { '<leader>rp', '', desc = 'Swap Previous' },
     { '<leader>rr', '', desc = 'Smart Rename' },
-    { '<leader>rs', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', desc = 'Replace Word' },
-    { '<leader>rv', "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", desc = 'Extract Variable' },
-    { '<leader>rw', "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", desc = 'Replace Word' },
+    {
+        '<leader>rf',
+        "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>",
+        desc = 'Extract To File',
+    },
 
     { '<leader>s', group = ' Split' },
     { '<leader>s+', '<cmd>resize +10<cr>', desc = 'Increase window height' },
@@ -502,8 +684,7 @@ local normal_mappings = {
     { '<leader>wk', '[s', desc = 'Prev Misspell' },
     { '<leader>wn', '<cmd>WriteNoFormat<cr>', desc = 'Write Without Formatting' },
     { '<leader>wq', '<cmd>wq<cr>', desc = 'Write and Quit' },
-    { '<leader>ws', '<cmd>Telescope spell_suggest<cr>', desc = 'Suggestions' },
-    { '<leader>ww', '<cmd>w<cr>', desc = 'Write and Quit' },
+    { '<leader>ww', '<cmd>w<cr>', desc = 'Write' },
     { '<leader>wz', '<cmd>lua require("snacks").zen.zen()<cr>', desc = 'Zen' },
     { '<leader>wZ', '<cmd>lua require("snacks").zen.zoom()<cr>', desc = 'Zoom' },
     { '<leader>x', '<cmd>x<cr>', desc = ' Save and Quit' },
@@ -638,11 +819,6 @@ local visual_mappings = {
     },
     { '<leader>ri', "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", desc = 'Inline Variable' },
     {
-        '<leader>rr',
-        "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-        desc = 'Refactor Commands',
-    },
-    {
         '<leader>rv',
         "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
         desc = 'Extract Variable',
@@ -658,8 +834,14 @@ local no_leader_mappings = {
     { '<C-Left>', '<cmd>vertical resize -10<cr>', desc = 'Decrease window width' },
     { '<C-Right>', '<cmd>vertical resize +10<cr>', desc = 'Increase window width' },
     { '<C-Up>', '<cmd>resize +10<cr>', desc = 'Increase window height' },
-    { '<C-f>', '<cmd>Telescope find_files<cr>', desc = 'Find Files' },
     { '<C-g>', '<cmd>Fterm lazygit<cr>', desc = 'Lazygit' },
+    {
+        '<C-f>',
+        function()
+            Snacks.picker.smart()
+        end,
+        desc = 'Smart Find Files',
+    },
 
     { '<C-h>', '<C-w>h', desc = 'Move Left' },
     { '<C-j>', '<C-w>j', desc = 'Move Down' },
