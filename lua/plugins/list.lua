@@ -262,20 +262,6 @@ local plugins = {
 
     -- Telescope
     {
-        'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            {
-                'nvim-telescope/telescope-fzf-native.nvim',
-                build = 'make',
-            },
-            'debugloop/telescope-undo.nvim',
-        },
-        config = load_config('tools.telescope'),
-        cmd = 'Telescope',
-    },
-    {
         '2kabhishek/markit.nvim',
         config = load_config('tools.markit'),
         event = { 'BufReadPost', 'BufNewFile' },
