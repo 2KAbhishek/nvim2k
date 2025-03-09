@@ -59,34 +59,11 @@ local setup = {
 
 local normal_mappings = {
     mode = 'n',
-    {
-        '<leader><space>',
-        function()
-            Snacks.picker.smart()
-        end,
-        desc = 'Smart Find Files',
-    },
-    {
-        '<leader>,',
-        function()
-            Snacks.picker.buffers()
-        end,
-        desc = 'Buffers',
-    },
-    {
-        '<leader>/',
-        function()
-            Snacks.picker.search_history()
-        end,
-        desc = 'Search History',
-    },
-    {
-        '<leader>:',
-        function()
-            Snacks.picker.command_history()
-        end,
-        desc = 'Command History',
-    },
+    { '<leader><space>', ':lua Snacks.picker.smart()<cr>', desc = 'Smart Find Files' },
+    { '<leader>,', ':lua Snacks.picker.buffers()<cr>', desc = 'Buffers' },
+    { '<leader>/', ':lua Snacks.picker.search_history()<cr>', desc = 'Search History' },
+    { '<leader>:', ':lua Snacks.picker.command_history()<cr>', desc = 'Command History' },
+    { '<leader>x', '<cmd>x<cr>', desc = ' Save and Quit' },
 
     { '<leader>a', group = ' AI' },
     { '<leader>aF', '<cmd>CopilotChatFixDiagnostic<cr>', desc = 'Fix Diagnostic' },
@@ -122,6 +99,7 @@ local normal_mappings = {
     { '<leader>eca', '<cmd>e ~/.config/shell/aliases.sh<cr>', desc = 'Shell Aliases' },
     { '<leader>ecA', '<cmd>e ~/.config/alacritty/alacritty.toml<cr>', desc = 'Alacritty Config' },
     { '<leader>ecb', '<cmd>e ~/.bashrc<cr>', desc = 'Bash Config' },
+    { '<leader>ecc', ':lua Snacks.picker.files({ cwd = vim.fn.stdpath("config") })<cr>', desc = 'Neovim Configs' },
     { '<leader>ece', '<cmd>e ~/.config/shell/environment.sh<cr>', desc = 'Environment Config' },
     { '<leader>ecf', '<cmd>e ~/.config/shell/functions.sh<cr>', desc = 'Shell Functions' },
     { '<leader>ecg', '<cmd>e ~/.gitconfig<cr>', desc = 'Git Config' },
@@ -134,132 +112,30 @@ local normal_mappings = {
     { '<leader>ecv', '<cmd>e ~/.vimrc<cr>', desc = 'Vim Config' },
     { '<leader>ecz', '<cmd>e $ZDOTDIR/.zshrc<cr>', desc = 'Zsh Config' },
     { '<leader>ecZ', '<cmd>e $ZDOTDIR/prompt/init.zsh<cr>', desc = 'Zsh Prompt Config' },
+    { '<leader>eE', ':lua Snacks.explorer()<cr>', desc = 'File Explorer' },
     { '<leader>et', '<cmd>lua MiniFiles.open()<cr>', desc = 'Explore Tree' },
     { '<leader>ef', 'gf', desc = 'File Under Cursor' },
     { '<leader>em', '<cmd>e README.md<cr>', desc = 'Readme' },
     { '<leader>en', '<cmd>enew<cr>', desc = 'New File' },
-    {
-        '<leader>ecc',
-        function()
-            Snacks.picker.files({ cwd = vim.fn.stdpath('config') })
-        end,
-        desc = 'Neovim Configs',
-    },
-    {
-        '<leader>eE',
-        function()
-            Snacks.explorer()
-        end,
-        desc = 'File Explorer',
-    },
 
     { '<leader>f', group = ' Find' },
-    {
-        '<leader>fa',
-        function()
-            Snacks.picker.files()
-        end,
-        desc = 'Find Files',
-    },
-    {
-        '<leader>fb',
-        function()
-            Snacks.picker.buffers()
-        end,
-        desc = 'Buffers',
-    },
-    {
-        '<leader>fc',
-        function()
-            Snacks.picker.git_log_file()
-        end,
-        desc = 'File Commits',
-    },
-    {
-        '<leader>fd',
-        function()
-            Snacks.picker.projects()
-        end,
-        desc = 'Project Dirs',
-    },
-    {
-        '<leader>ff',
-        function()
-            Snacks.picker.git_files()
-        end,
-        desc = 'Find Git Files',
-    },
-    {
-        '<leader>fg',
-        function()
-            Snacks.picker.grep()
-        end,
-        desc = 'Grep',
-    },
-    {
-        '<leader>fl',
-        function()
-            Snacks.picker.loclist()
-        end,
-        desc = 'Location List',
-    },
-    {
-        '<leader>fm',
-        function()
-            Snacks.picker.git_status()
-        end,
-        desc = 'Git Status',
-    },
-    {
-        '<leader>fo',
-        function()
-            Snacks.picker.grep_buffers()
-        end,
-        desc = 'Grep Open Buffers',
-    },
-    {
-        '<leader>fp',
-        function()
-            Snacks.picker.resume()
-        end,
-        desc = 'Previous Picker',
-    },
-    {
-        '<leader>fq',
-        function()
-            Snacks.picker.qflist()
-        end,
-        desc = 'Quickfix List',
-    },
-    {
-        '<leader>fr',
-        function()
-            Snacks.picker.recent()
-        end,
-        desc = 'Recent',
-    },
-    {
-        '<leader>fs',
-        function()
-            Snacks.picker.lines()
-        end,
-        desc = 'Buffer Lines',
-    },
-    {
-        '<leader>fu',
-        function()
-            Snacks.picker.undo()
-        end,
-        desc = 'Undo History',
-    },
-    {
-        '<leader>fw',
-        function()
-            Snacks.picker.grep_word()
-        end,
-        desc = 'Word Grep',
-        mode = { 'n', 'x' },
-    },
+    { '<leader>fa', ':lua Snacks.picker.files()<cr>', desc = 'Find Files' },
+    { '<leader>fb', ':lua Snacks.picker.buffers()<cr>', desc = 'Buffers' },
+    { '<leader>fc', ':lua Snacks.picker.git_log_file()<cr>', desc = 'File Commits' },
+    { '<leader>fd', ':lua Snacks.picker.projects()<cr>', desc = 'Project Dirs' },
+    { '<leader>ff', ':lua Snacks.picker.git_files()<cr>', desc = 'Find Git Files' },
+    { '<leader>fg', ':lua Snacks.picker.grep()<cr>', desc = 'Grep' },
+    { '<leader>fl', ':lua Snacks.picker.loclist()<cr>', desc = 'Location List' },
+    { '<leader>fm', ':lua Snacks.picker.git_status()<cr>', desc = 'Git Status' },
+    { '<leader>fo', ':lua Snacks.picker.grep_buffers()<cr>', desc = 'Grep Open Buffers' },
+    { '<leader>fp', ':lua Snacks.picker.resume()<cr>', desc = 'Previous Picker' },
+    { '<leader>fq', ':lua Snacks.picker.qflist()<cr>', desc = 'Quickfix List' },
+    { '<leader>fr', ':lua Snacks.picker.recent()<cr>', desc = 'Recent' },
+    { '<leader>fs', ':lua Snacks.picker.lines()<cr>', desc = 'Buffer Lines' },
+    { '<leader>ft', ':lua Snacks.picker.pickers()<cr>', desc = 'All Pickers' },
+    { '<leader>fu', ':lua Snacks.picker.undo()<cr>', desc = 'Undo History' },
+    { '<leader>fw', ':lua Snacks.picker.grep_word()<cr>', desc = 'Word Grep' },
+    { '<leader>fz', ':lua Snacks.picker.zoxide()<cr>', desc = 'Zoxide' },
 
     { '<leader>g', group = ' Git' },
     { '<leader>gA', '<cmd>Gitsigns stage_buffer<cr>', desc = 'Stage Buffer' },
@@ -269,14 +145,19 @@ local normal_mappings = {
     { '<leader>ga', '<cmd>Gitsigns stage_hunk<cr>', desc = 'Stage Hunk' },
     { '<leader>gb', "<cmd>lua require('gitsigns').blame_line({full = true})<cr>", desc = 'Blame' },
     { '<leader>gB', "<cmd>lua require('snacks').git.blame_line()<cr>", desc = 'Detailed Blame' },
+    { '<leader>gd', ':lua Snacks.picker.git_diff()<cr>', desc = 'Git Diff (Hunks)' },
     { '<leader>gF', '<cmd>Git<cr>', desc = 'Fugitive Panel' },
     { '<leader>gg', '<cmd>lua require("snacks").lazygit()<cr>', desc = 'Lazygit' },
     { '<leader>gi', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Hunk Info' },
     { '<leader>gj', '<cmd>Gitsigns next_hunk<cr>', desc = 'Next Hunk' },
     { '<leader>gk', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Prev Hunk' },
+    { '<leader>gl', ':lua Snacks.picker.git_log()<cr>', desc = 'Git Log' },
+    { '<leader>gL', ':lua Snacks.picker.git_log_line()<cr>', desc = 'Git Log Line' },
     { '<leader>go', group = 'Octohub' },
     { '<leader>gp', '<cmd>Git pull<cr>', desc = 'Pull' },
     { '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset Hunk' },
+    { '<leader>gs', ':lua Snacks.picker.git_branches()<cr>', desc = 'Git Branches' },
+    { '<leader>gS', ':lua Snacks.picker.git_stash()<cr>', desc = 'Git Stash' },
     { '<leader>gt', group = 'Toggle' },
     { '<leader>gtb', '<cmd>Gitsigns toggle_current_line_blame<cr>', desc = 'Blame' },
     { '<leader>gtd', '<cmd>Gitsigns toggle_deleted<cr>', desc = 'Deleted' },
@@ -287,67 +168,21 @@ local normal_mappings = {
     { '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<cr>', desc = 'Undo Stage Hunk' },
     { '<leader>gv', '<cmd>Gitsigns select_hunk<cr>', desc = 'Select Hunk' },
     { '<leader>gw', '<cmd>lua require("snacks").gitbrowse()<cr>', desc = 'Git Browse' },
-    {
-        '<leader>gl',
-        function()
-            Snacks.picker.git_log()
-        end,
-        desc = 'Git Log',
-    },
-    {
-        '<leader>gL',
-        function()
-            Snacks.picker.git_log_line()
-        end,
-        desc = 'Git Log Line',
-    },
-    {
-        '<leader>gs',
-        function()
-            Snacks.picker.git_branches()
-        end,
-        desc = 'Git Branches',
-    },
-    {
-        '<leader>gS',
-        function()
-            Snacks.picker.git_stash()
-        end,
-        desc = 'Git Stash',
-    },
-    {
-        '<leader>gd',
-        function()
-            Snacks.picker.git_diff()
-        end,
-        desc = 'Git Diff (Hunks)',
-    },
 
     { '<leader>i', group = ' Insert' },
-    { '<leader>iP', '<cmd>put %:p<cr>', desc = 'Absolute Path' },
     { '<leader>id', "<cmd>put =strftime('## %a, %d %b, %Y, %r')<cr>", desc = 'Date' },
     { '<leader>if', "<cmd>put =expand('%:t')<cr>", desc = 'File Name' },
+    { '<leader>ii', ':lua Snacks.picker.icons()<cr>', desc = 'Icons' },
     { '<leader>in', '<cmd>Nerdy<cr>', desc = 'Nerd Glyphs' },
     { '<leader>ip', '<cmd>put %<cr>', desc = 'Relative Path' },
+    { '<leader>iP', '<cmd>put %:p<cr>', desc = 'Absolute Path' },
+    { '<leader>ir', ':lua Snacks.picker.registers()<cr>', desc = 'Registers' },
     { '<leader>it', "<cmd>put =strftime('## %r')<cr>", desc = 'Time' },
-    {
-        '<leader>ii',
-        function()
-            Snacks.picker.icons()
-        end,
-        desc = 'Icons',
-    },
-    {
-        '<leader>ir',
-        function()
-            Snacks.picker.registers()
-        end,
-        desc = 'Registers',
-    },
 
     { '<leader>j', group = ' Jump' },
     { '<leader>jc', '*', desc = 'Word' },
     { '<leader>jd', '<cmd>FlashDiagnostics<cr>', desc = 'Diagnostics' },
+    { '<leader>jf', ':lua Snacks.picker.jumps()<cr>', desc = 'Jumps' },
     { '<leader>jh', '<C-o>', desc = 'Backward' },
     { '<leader>jj', "<cmd>lua require('flash').remote()<cr>", desc = 'Remote' },
     { '<leader>jk', "<cmd>lua require('flash').treesitter()<cr>", desc = 'Treesitter' },
@@ -355,13 +190,6 @@ local normal_mappings = {
     { '<leader>jp', "<cmd>lua require('flash').jump({continue = true})<cr>", desc = 'Previous Jump' },
     { '<leader>js', "<cmd>lua require('flash').jump()<cr>", desc = 'Search' },
     { '<leader>jt', "<cmd>lua require('flash').treesitter_search()<cr>", desc = 'Remote Treesitter' },
-    {
-        '<leader>jf',
-        function()
-            Snacks.picker.jumps()
-        end,
-        desc = 'Jumps',
-    },
     {
         '<leader>jn',
         "<cmd>lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
@@ -380,10 +208,16 @@ local normal_mappings = {
 
     { '<leader>l', group = ' LSP' },
     { '<leader>la', '<cmd>Lspsaga code_action<cr>', desc = 'Code Action' },
+    { '<leader>ld', ':lua Snacks.picker.lsp_definitions()<cr>', desc = 'Goto Definition' },
+    { '<leader>lD', ':lua Snacks.picker.lsp_declarations()<cr>', desc = 'Goto Declaration' },
     { '<leader>lf', '<cmd>Lspsaga finder<cr>', desc = 'Finder' },
+    { '<leader>lF', ':lua Snacks.picker.lsp_references()<cr>', desc = 'References' },
     { '<leader>lh', '<cmd>Lspsaga hover_doc<cr>', desc = 'Hover' },
+    { '<leader>li', ':lua Snacks.picker.lsp_implementations()<cr>', desc = 'Goto Implementation' },
     { '<leader>lI', '<cmd>LspInfo<cr>', desc = 'LSP Info' },
     { '<leader>lj', '<cmd>Lspsaga diagnostic_jump_next<cr>', desc = 'Next Diagnostic' },
+    { '<leader>ll', ':lua Snacks.picker.diagnostics_buffer()<cr>', desc = 'Buffer Diagnostics' },
+    { '<leader>lL', ':lua Snacks.picker.diagnostics()<cr>', desc = 'Diagnostics' },
     { '<leader>lk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', desc = 'Prev Diagnostic' },
     { '<leader>lo', '<cmd>Lspsaga outline<cr>', desc = 'Outline' },
     { '<leader>lp', '<cmd>Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
@@ -391,71 +225,10 @@ local normal_mappings = {
     { '<leader>lQ', '<cmd>LspRestart<cr>', desc = 'Restart LSP' },
     { '<leader>lr', '<cmd>Lspsaga rename<cr>', desc = 'Rename' },
     { '<leader>lR', '<cmd>Lspsaga project_replace<cr>', desc = 'Replace' },
+    { '<leader>ls', ':lua Snacks.picker.lsp_symbols()<cr>', desc = 'Symbols' },
+    { '<leader>lS', ':lua Snacks.picker.lsp_workspace_symbols()<cr>', desc = 'Workspace Symbols' },
+    { '<leader>lt', ':lua Snacks.picker.lsp_type_definitions()<cr>', desc = 'Goto Type Definition' },
     { '<leader>lP', '<cmd>Lspsaga peek_type_definition<cr>', desc = 'Peek Type Definition' },
-    {
-        '<leader>ld',
-        function()
-            Snacks.picker.lsp_definitions()
-        end,
-        desc = 'Goto Definition',
-    },
-    {
-        '<leader>lD',
-        function()
-            Snacks.picker.lsp_declarations()
-        end,
-        desc = 'Goto Declaration',
-    },
-    {
-        '<leader>lF',
-        function()
-            Snacks.picker.lsp_references()
-        end,
-        nowait = true,
-        desc = 'References',
-    },
-    {
-        '<leader>li',
-        function()
-            Snacks.picker.lsp_implementations()
-        end,
-        desc = 'Goto Implementation',
-    },
-    {
-        '<leader>ll',
-        function()
-            Snacks.picker.diagnostics_buffer()
-        end,
-        desc = 'Buffer Diagnostics',
-    },
-    {
-        '<leader>lL',
-        function()
-            Snacks.picker.diagnostics()
-        end,
-        desc = 'Diagnostics',
-    },
-    {
-        '<leader>ls',
-        function()
-            Snacks.picker.lsp_symbols()
-        end,
-        desc = 'LSP Symbols',
-    },
-    {
-        '<leader>lS',
-        function()
-            Snacks.picker.lsp_workspace_symbols()
-        end,
-        desc = 'LSP Workspace Symbols',
-    },
-    {
-        '<leader>lt',
-        function()
-            Snacks.picker.lsp_type_definitions()
-        end,
-        desc = 'Goto Type Definition',
-    },
 
     { '<leader>m', group = ' Marks' },
     {
@@ -477,13 +250,7 @@ local normal_mappings = {
     { '<leader>mk', "<cmd>lua require('markit').prev()<cr>", desc = 'Previous' },
     { '<leader>ml', "<cmd>lua require('markit').next_bookmark()<cr>", desc = 'Next Bookmark' },
     --   { '<leader>mm', '<cmd>Telescope markit<cr>', desc = 'All Marks' },
-    {
-        '<leader>mm',
-        function()
-            Snacks.picker.marks()
-        end,
-        desc = 'Marks',
-    },
+    { '<leader>mm', ':lua Snacks.picker.marks()<cr>', desc = 'Marks' },
     { '<leader>mn', group = 'Next Bookmark In Group' },
     { '<leader>mp', group = 'Previous Bookmark In Group' },
     { '<leader>mP', "<cmd>lua require('markit').preview()<cr>", desc = 'Preview' },
@@ -492,7 +259,7 @@ local normal_mappings = {
     { '<leader>mx', "<cmd>lua require('markit').delete_bookmark()<cr>", desc = 'Delete Bookmark' },
 
     { '<leader>n', group = ' Notes' },
-    { '<leader>na', '<cmd>lua require("snacks").scratch.select()<cr>', desc = 'Select Scratch' },
+    { '<leader>na', ':lua Snacks.scratch.select()<cr>', desc = 'Select Scratch' },
     {
         '<leader>nc',
         '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Committed!")<cr>',
@@ -506,84 +273,23 @@ local normal_mappings = {
     { '<leader>nl', '<cmd>Tdo 1<cr>', desc = "Tomorrow's Todo" },
     { '<leader>nn', '<cmd>TdoNote<cr>', desc = 'New Note' },
     { '<leader>np', group = 'Past Todos' },
-    { '<leader>ns', '<cmd>lua require("snacks").scratch()<cr>', desc = 'New Scratch' },
+    { '<leader>ns', ':lua Snacks.scratch()<cr>', desc = 'New Scratch' },
     { '<leader>nt', '<cmd>TdoTodos<cr>', desc = 'Incomplete Todos' },
     { '<leader>nx', '<cmd>TdoToggle<cr>', desc = 'Toggle Todo' },
 
     { '<leader>o', group = ' Options' },
+    { '<leader>oa', ':lua Snacks.picker.autocmds()<cr>', desc = 'Autocmds' },
+    { '<leader>oc', ':lua Snacks.picker.command_history()<cr>', desc = 'Command History' },
+    { '<leader>od', ':lua Snacks.picker.help()<cr>', desc = 'Docs' },
+    { '<leader>og', ':lua Snacks.picker.commands()<cr>', desc = 'Commands' },
+    { '<leader>oh', ':lua Snacks.picker.highlights()<cr>', desc = 'Highlights' },
     { '<leader>oi', 'vim.show_pos', desc = 'Inspect Position' },
-    { '<leader>ok', '<cmd>Lspsaga hover_doc<cr>', desc = 'Hover Doc' },
+    { '<leader>ok', ':lua Snacks.picker.keymaps()<cr>', desc = 'Keymaps' },
+    { '<leader>om', ':lua Snacks.picker.man()<cr>', desc = 'Man Pages' },
+    { '<leader>on', ':lua Snacks.picker.notifications()<cr>', desc = 'Notification History' },
     { '<leader>or', '<cmd>set relativenumber!<cr>', desc = 'Relative Numbers' },
-    {
-        '<leader>oa',
-        function()
-            Snacks.picker.autocmds()
-        end,
-        desc = 'Autocmds',
-    },
-    {
-        '<leader>oc',
-        function()
-            Snacks.picker.command_history()
-        end,
-        desc = 'Command History',
-    },
-    {
-        '<leader>od',
-        function()
-            Snacks.picker.help()
-        end,
-        desc = 'Docs',
-    },
-    {
-        '<leader>og',
-        function()
-            Snacks.picker.commands()
-        end,
-        desc = 'Commands',
-    },
-    {
-        '<leader>oh',
-        function()
-            Snacks.picker.highlights()
-        end,
-        desc = 'Highlights',
-    },
-    {
-        '<leader>ok',
-        function()
-            Snacks.picker.keymaps()
-        end,
-        desc = 'Keymaps',
-    },
-    {
-        '<leader>om',
-        function()
-            Snacks.picker.man()
-        end,
-        desc = 'Man Pages',
-    },
-    {
-        '<leader>on',
-        function()
-            Snacks.picker.notifications()
-        end,
-        desc = 'Notification History',
-    },
-    {
-        '<leader>os',
-        function()
-            Snacks.picker.search_history()
-        end,
-        desc = 'Search History',
-    },
-    {
-        '<leader>ot',
-        function()
-            Snacks.picker.colorschemes()
-        end,
-        desc = 'Colorschemes',
-    },
+    { '<leader>os', ':lua Snacks.picker.search_history()<cr>', desc = 'Search History' },
+    { '<leader>ot', ':lua Snacks.picker.colorschemes()<cr>', desc = 'Colorschemes' },
 
     { '<leader>p', group = ' Packages' },
     { '<leader>pc', '<cmd>Lazy check<cr>', desc = 'Check' },
@@ -600,13 +306,7 @@ local normal_mappings = {
     { '<leader>pt', '<cmd>lua require("snacks").profiler.toggle()<cr>', desc = 'Profiler Toggle' },
     { '<leader>pu', '<cmd>Lazy update<cr>', desc = 'Update' },
     { '<leader>px', '<cmd>Lazy clean<cr>', desc = 'Clean' },
-    {
-        '<leader>pS',
-        function()
-            Snacks.picker.lazy()
-        end,
-        desc = 'Search for Plugin Spec',
-    },
+    { '<leader>pS', ':lua Snacks.picker.lazy()<cr>', desc = 'Search for Plugin Spec' },
 
     { '<leader>q', group = ' Quit' },
     { '<leader>qa', '<cmd>qall<cr>', desc = 'Quit All' },
@@ -683,11 +383,11 @@ local normal_mappings = {
     { '<leader>wj', ']s', desc = 'Next Misspell' },
     { '<leader>wk', '[s', desc = 'Prev Misspell' },
     { '<leader>wn', '<cmd>WriteNoFormat<cr>', desc = 'Write Without Formatting' },
+    { '<leader>ws', '<cmd>lua Snacks.picker.spelling()<cr>', desc = 'Spell Suggestions' },
     { '<leader>wq', '<cmd>wq<cr>', desc = 'Write and Quit' },
     { '<leader>ww', '<cmd>w<cr>', desc = 'Write' },
     { '<leader>wz', '<cmd>lua require("snacks").zen.zen()<cr>', desc = 'Zen' },
     { '<leader>wZ', '<cmd>lua require("snacks").zen.zoom()<cr>', desc = 'Zoom' },
-    { '<leader>x', '<cmd>x<cr>', desc = ' Save and Quit' },
 
     { '<leader>y', group = ' Yank' },
     { '<leader>yL', '<cmd>CopyAbsolutePathWithLine<cr>', desc = 'Absolute Path with Line' },
@@ -835,13 +535,7 @@ local no_leader_mappings = {
     { '<C-Right>', '<cmd>vertical resize +10<cr>', desc = 'Increase window width' },
     { '<C-Up>', '<cmd>resize +10<cr>', desc = 'Increase window height' },
     { '<C-g>', '<cmd>Fterm lazygit<cr>', desc = 'Lazygit' },
-    {
-        '<C-f>',
-        function()
-            Snacks.picker.smart()
-        end,
-        desc = 'Smart Find Files',
-    },
+    { '<C-f>', ':lua Snacks.picker.smart()<cr>', desc = 'Smart Find Files' },
 
     { '<C-h>', '<C-w>h', desc = 'Move Left' },
     { '<C-j>', '<C-w>j', desc = 'Move Down' },
