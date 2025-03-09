@@ -58,6 +58,6 @@ gitsigns.setup({
             return '<Ignore>'
         end, { expr = true, desc = 'Prev Change' })
 
-        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<cr>')
     end,
 })

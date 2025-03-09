@@ -7,9 +7,9 @@ copilot.setup({
         keymap = {
             jump_prev = '[[',
             jump_next = ']]',
-            accept = '<CR>',
+            accept = '<cr>',
             refresh = 'gr',
-            open = '<M-CR>',
+            open = '<M-cr>',
         },
         layout = {
             position = 'bottom',

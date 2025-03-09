@@ -55,7 +55,7 @@ chat.setup({
             insert = '<C-r>',
         },
         submit_prompt = {
-            normal = '<CR>',
+            normal = '<cr>',
             insert = '<C-s>',
         },
         toggle_sticky = {

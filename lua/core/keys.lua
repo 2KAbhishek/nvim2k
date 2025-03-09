@@ -44,11 +44,11 @@ map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Move text up and down
-map({ 'v', 'x' }, 'J', ":move '>+1<CR>gv-gv", opts)
-map({ 'v', 'x' }, 'K', ":move '<-2<CR>gv-gv", opts)
+map({ 'v', 'x' }, 'J', ":move '>+1<cr>gv-gv", opts)
+map({ 'v', 'x' }, 'K', ":move '<-2<cr>gv-gv", opts)
 
 -- Clear search, diff update and redraw
-map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
+map({ 'i', 'n' }, '<esc>', ':noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
 -- Consistent n/N search navigation
 map('n', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
