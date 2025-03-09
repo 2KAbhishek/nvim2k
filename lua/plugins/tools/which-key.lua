@@ -1,5 +1,6 @@
 local which_key = require('which-key')
 local icons = require('lib.icons')
+local util = require('lib.util')
 
 local setup = {
     preset = 'modern',
@@ -71,18 +72,6 @@ local normal_mappings = {
     { '<leader>as', '<cmd>CopilotChatSave<cr>', desc = 'Save Chat' },
     { '<leader>at', '<cmd>CopilotChatTests<cr>', desc = 'Tests' },
 
-    { '<leader>b', group = ' Debug' },
-    { '<leader>bO', '<cmd>DapStepOut<cr>', desc = 'Out' },
-    { '<leader>bR', '<cmd>DapRestartFrame<cr>', desc = 'Restart Frame' },
-    { '<leader>bb', '<cmd>DapToggleBreakpoint<cr>', desc = 'Breakpoint' },
-    { '<leader>bc', '<cmd>DapContinue<cr>', desc = 'Continue' },
-    { '<leader>bi', '<cmd>DapStepInto<cr>', desc = 'Into' },
-    { '<leader>bl', "<cmd>lua require'dap'.run_last()<cr>", desc = 'Last' },
-    { '<leader>bo', '<cmd>DapStepOver<cr>', desc = 'Over' },
-    { '<leader>br', '<cmd>DapToggleRepl<cr>', desc = 'Repl' },
-    { '<leader>bt', '<cmd>DapUIToggle<cr>', desc = 'Debugger' },
-    { '<leader>bx', '<cmd>DapTerminate<cr>', desc = 'Exit' },
-
     { '<leader>c', group = ' Code' },
     { '<leader>cF', '<cmd>retab<cr>', desc = 'Fix Tabs' },
     { '<leader>cP', '<cmd>CccConvert<cr>', desc = 'Convert Color' },
@@ -98,14 +87,6 @@ local normal_mappings = {
     { '<leader>cp', '<cmd>CccPick<cr>', desc = 'Pick Color' },
     { '<leader>cr', '<cmd>Telescope reloader<cr>', desc = 'Reload Module' },
     { '<leader>cs', '<cmd>source %<cr>', desc = 'Source File' },
-
-    { '<leader>d', group = ' Database' },
-    { '<leader>dS', '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', desc = 'To JSON' },
-    { '<leader>db', '<cmd>DBToggle<cr>', desc = 'DB Explorer' },
-    { '<leader>dj', '<cmd>lua require("dbee").next()<cr>', desc = 'DB Next' },
-    { '<leader>dk', '<cmd>lua require("dbee").prev()<cr>', desc = 'DB Prev' },
-    { '<leader>ds', '<cmd>lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', desc = 'To CSV' },
-    { '<leader>dt', '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', desc = 'To Table' },
 
     { '<leader>e', group = ' Edit' },
     { '<leader>ea', '<cmd>b#<cr>', desc = 'Alternate File' },
@@ -413,20 +394,6 @@ local normal_mappings = {
     { '<leader>tv', '<cmd>Vterm<cr>', desc = 'Vertical Terminal' },
     { '<leader>tw', '<cmd>Sterm dexe --wait-before-exit<cr>', desc = 'Exe Launcher, Wait' },
 
-    { '<leader>u', group = ' Test' },
-    { '<leader>uc', '<cmd>lua require("neotest").run.run()<cr>', desc = 'Run Current Test' },
-    { '<leader>uf', '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', desc = 'Run Test File' },
-    { '<leader>uo', '<cmd>Neotest output-panel<cr>', desc = 'Test Output' },
-    { '<leader>us', '<cmd>Neotest summary<cr>', desc = 'Test Summary' },
-
-    { '<leader>v', group = ' Select' },
-    { '<leader>vB', 'vab', desc = 'Around Bracket' },
-    { '<leader>vP', 'vap', desc = 'Around Para' },
-    { '<leader>vQ', 'vaq', desc = 'Around Quote' },
-    { '<leader>vb', 'vib', desc = 'Bracket' },
-    { '<leader>vp', 'vip', desc = 'Paragraph' },
-    { '<leader>vq', 'viq', desc = 'Quote' },
-
     { '<leader>w', group = ' Writing' },
     { '<leader>wc', '<cmd>set spell!<cr>', desc = 'Spellcheck' },
     { '<leader>wd', '<cmd>lua require("snacks").dim.enable()<cr>', desc = 'Dim On' },
@@ -618,7 +585,6 @@ local no_leader_mappings = {
 }
 
 local tmux_mappings = {
-    mode = 'n',
     { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'Move Left' },
     { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'Move Down' },
     { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'Move Up' },
@@ -628,6 +594,47 @@ local tmux_mappings = {
 
 if vim.fn.exists('$TMUX') == 1 then
     vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
+end
+
+if util.get_user_config('enable_test_runner', false) then
+    local test_runner_bindings = {
+        { '<leader>u', group = ' Test' },
+        { '<leader>uc', '<cmd>lua require("neotest").run.run()<cr>', desc = 'Run Current Test' },
+        { '<leader>uf', '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', desc = 'Run Test File' },
+        { '<leader>uo', '<cmd>Neotest output-panel<cr>', desc = 'Test Output' },
+        { '<leader>us', '<cmd>Neotest summary<cr>', desc = 'Test Summary' },
+    }
+    vim.tbl_extend('force', normal_mappings, test_runner_bindings)
+end
+
+if util.get_user_config('enable_db_explorer', false) then
+    local db_explorer_bindings = {
+        { '<leader>d', group = ' Database' },
+        { '<leader>dS', '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', desc = 'To JSON' },
+        { '<leader>db', '<cmd>DBToggle<cr>', desc = 'DB Explorer' },
+        { '<leader>dj', '<cmd>lua require("dbee").next()<cr>', desc = 'DB Next' },
+        { '<leader>dk', '<cmd>lua require("dbee").prev()<cr>', desc = 'DB Prev' },
+        { '<leader>ds', '<cmd>lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', desc = 'To CSV' },
+        { '<leader>dt', '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', desc = 'To Table' },
+    }
+    vim.tbl_extend('force', normal_mappings, db_explorer_bindings)
+end
+
+if util.get_user_config('enable_debugger', false) then
+    local debugger_bindings = {
+        { '<leader>b', group = ' Debug' },
+        { '<leader>bO', '<cmd>DapStepOut<cr>', desc = 'Out' },
+        { '<leader>bR', '<cmd>DapRestartFrame<cr>', desc = 'Restart Frame' },
+        { '<leader>bb', '<cmd>DapToggleBreakpoint<cr>', desc = 'Breakpoint' },
+        { '<leader>bc', '<cmd>DapContinue<cr>', desc = 'Continue' },
+        { '<leader>bi', '<cmd>DapStepInto<cr>', desc = 'Into' },
+        { '<leader>bl', "<cmd>lua require'dap'.run_last()<cr>", desc = 'Last' },
+        { '<leader>bo', '<cmd>DapStepOver<cr>', desc = 'Over' },
+        { '<leader>br', '<cmd>DapToggleRepl<cr>', desc = 'Repl' },
+        { '<leader>bt', '<cmd>DapUIToggle<cr>', desc = 'Debugger' },
+        { '<leader>bx', '<cmd>DapTerminate<cr>', desc = 'Exit' },
+    }
+    vim.tbl_extend('force', normal_mappings, debugger_bindings)
 end
 
 local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
