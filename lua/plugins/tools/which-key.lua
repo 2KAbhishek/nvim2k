@@ -1,5 +1,6 @@
 local which_key = require('which-key')
 local icons = require('lib.icons')
+local Snacks = require('snacks')
 local util = require('lib.util')
 
 local setup = {
@@ -58,6 +59,35 @@ local setup = {
 
 local normal_mappings = {
     mode = 'n',
+    {
+        '<leader><space>',
+        function()
+            Snacks.picker.smart()
+        end,
+        desc = 'Smart Find Files',
+    },
+    {
+        '<leader>,',
+        function()
+            Snacks.picker.buffers()
+        end,
+        desc = 'Buffers',
+    },
+    {
+        '<leader>/',
+        function()
+            Snacks.picker.search_history()
+        end,
+        desc = 'Search History',
+    },
+    {
+        '<leader>:',
+        function()
+            Snacks.picker.command_history()
+        end,
+        desc = 'Command History',
+    },
+
     { '<leader>a', group = ' AI' },
     { '<leader>aF', '<cmd>CopilotChatFixDiagnostic<cr>', desc = 'Fix Diagnostic' },
     { '<leader>aG', '<cmd>CopilotChatCommitStaged<cr>', desc = 'Commit Staged' },
