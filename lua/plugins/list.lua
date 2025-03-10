@@ -397,14 +397,13 @@ local treesitter_parsers = {
 }
 
 local null_ls_sources = {
-    'shellcheck', -- bash lint
+    'shellcheck',
 }
 
 local lsp_servers = {
     'bashls',
     'jsonls',
-    'lua_ls',
-    'typos_lsp', -- check typos
+    'typos_lsp',
     'vimls',
 }
 
