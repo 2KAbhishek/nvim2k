@@ -48,7 +48,7 @@ map({ 'v', 'x' }, 'J', ":move '>+1<cr>gv-gv", opts)
 map({ 'v', 'x' }, 'K', ":move '<-2<cr>gv-gv", opts)
 
 -- Clear search, diff update and redraw
-map({ 'i', 'n' }, '<esc>', ':noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
+map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
 -- Consistent n/N search navigation
 map('n', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
