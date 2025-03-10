@@ -5,7 +5,7 @@ chat.setup({
     debug = false, -- Enable debug logging
     proxy = nil, -- [protocol://]host[:port] Use this proxy
     allow_insecure = false, -- Allow insecure server connections
-    model = 'gpt-4o', -- model to use, :CopilotChatModels for available models
+    model = 'claude-3.7-sonnet', -- model to use, :CopilotChatModels for available models
     agent = 'copilot', -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
     context = 'buffers', -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
     temperature = 0.1, -- temperature
