@@ -8,7 +8,7 @@ local CONTEXT_SIZES = {
 }
 
 local function adapter(model, extend_adapter, num_ctx)
-    return require('codecompanion.adapters').extend(extend_adapter or 'ollama', {
+    return require('codecompanion.adapters').extend(extend_adapter or 'githubmodels', {
         num_ctx = num_ctx or CONTEXT_SIZES.XXL,
         name = model,
         schema = {
@@ -38,20 +38,20 @@ require('codecompanion').setup({
         copilot_o3mini = adapter('o3-mini', 'copilot'),
 
         -- Github models - XXL context (131072)
-        github_cohere_cmd_r = adapter('Cohere-command-r', 'githubmodels'),
-        github_cohere_cmd_r_plus = adapter('Cohere-command-r-plus', 'githubmodels'),
-        github_cohere_cmd_r_plus_08_2024 = adapter('Cohere-command-r-plus-08-2024', 'githubmodels'),
-        github_llama_3_1_405b = adapter('Meta-Llama-3.1-405B-Instruct', 'githubmodels'),
-        github_phi_3_medium = adapter('Phi-3-medium-128k-instruct', 'githubmodels'),
-        github_phi_3_5_moe = adapter('Phi-3.5-MoE-instruct', 'githubmodels'),
-        github_phi_4 = adapter('Phi-4', 'githubmodels'),
-        github_gpt4o = adapter('gpt-4o', 'githubmodels'),
-        github_llama_3_3_70b = adapter('Llama-3.3-70B-Instruct', 'githubmodels'),
-        github_llama_3_2_90b_vision = adapter('Llama-3.2-90B-Vision-Instruct', 'githubmodels'),
-        github_phi_3_5_vision = adapter('Phi-3.5-vision-instruct', 'githubmodels'),
-        github_phi_4_multimodal = adapter('Phi-4-multimodal-instruct', 'githubmodels'),
-        github_o1_preview = adapter('o1-preview', 'githubmodels'),
-        github_gpt4o_mini = adapter('gpt-4o-mini', 'githubmodels'),
+        github_cohere_cmd_r = adapter('Cohere-command-r'),
+        github_cohere_cmd_r_plus = adapter('Cohere-command-r-plus'),
+        github_cohere_cmd_r_plus_08_2024 = adapter('Cohere-command-r-plus-08-2024'),
+        github_llama_3_1_405b = adapter('Meta-Llama-3.1-405B-Instruct'),
+        github_phi_3_medium = adapter('Phi-3-medium-128k-instruct'),
+        github_phi_3_5_moe = adapter('Phi-3.5-MoE-instruct'),
+        github_phi_4 = adapter('Phi-4'),
+        github_gpt4o = adapter('gpt-4o'),
+        github_llama_3_3_70b = adapter('Llama-3.3-70B-Instruct'),
+        github_llama_3_2_90b_vision = adapter('Llama-3.2-90B-Vision-Instruct'),
+        github_phi_3_5_vision = adapter('Phi-3.5-vision-instruct'),
+        github_phi_4_multimodal = adapter('Phi-4-multimodal-instruct'),
+        github_o1_preview = adapter('o1-preview'),
+        github_gpt4o_mini = adapter('gpt-4o-mini'),
 
         -- Github models - Large context (32768)
         github_o1_mini = adapter('o1-mini', 'githubmodels', CONTEXT_SIZES.L),
