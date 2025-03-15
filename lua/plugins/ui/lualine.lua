@@ -76,11 +76,14 @@ local buffers = {
     cond = conditions.buffer_not_scratch,
     filetype_names = {
         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
+        snacks_picker_input = icons.ui.Telescope .. 'Picker',
         dashboard = icons.ui.Dashboard .. 'Dashboard',
         lazy = icons.ui.Sleep .. 'Lazy',
         mason = icons.ui.Package .. 'Mason',
         NvimTree = icons.documents.OpenFolder .. 'Files',
+        minifiles = icons.documents.OpenFolder .. 'Files',
         spectre_panel = icons.ui.Search .. 'Spectre',
+        codecompanion = icons.ui.Copilot .. 'Chat',
     },
     use_mode_colors = true,
 }
