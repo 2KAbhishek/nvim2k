@@ -1,3 +1,6 @@
+local companion = require('codecompanion')
+local icons = require('lib.icons')
+
 local CONTEXT_SIZES = {
     S = 8192,
     M = 16384,
@@ -18,8 +21,7 @@ local function adapter(model, extend_adapter, num_ctx)
     })
 end
 
--- Setup with organized adapters
-require('codecompanion').setup({
+companion.setup({
     adapters = {
         opts = { show_defaults = false },
 
@@ -72,6 +74,102 @@ require('codecompanion').setup({
 
     strategies = {
         chat = {
+            intro_message = 'Welcome to CodeCompanion! Press ? for options',
+            show_header_separator = true, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
+            separator = '---', -- The separator between the different messages in the chat buffer
+            show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
+            show_settings = true, -- Show LLM settings at the top of the chat buffer?
+            show_token_count = true, -- Show the token count for each response?
+            start_in_insert_mode = true, -- Open the chat buffer in insert mode?
+            auto_scroll = true,
+
+            roles = {
+                llm = function(model)
+                    return icons.ui.Copilot .. 'CodeCompanion (' .. model.formatted_name .. ')'
+                end,
+                user = icons.ui.User .. 'Me',
+            },
+
+            window = {
+                layout = 'vertical', -- float|vertical|horizontal|buffer
+                position = nil, -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
+                border = 'single',
+                height = 0.8,
+                width = 0.45,
+                relative = 'editor',
+                full_height = true, -- when set to false, vsplit will be used to open the chat buffer vs. botright/topleft vsplit
+                opts = {
+                    breakindent = true,
+                    cursorcolumn = false,
+                    cursorline = false,
+                    foldcolumn = '0',
+                    linebreak = true,
+                    list = false,
+                    numberwidth = 1,
+                    signcolumn = 'no',
+                    spell = false,
+                    wrap = true,
+                },
+            },
+            keymaps = {
+                send = {
+                    modes = { n = '<cr>', i = '<C-s>' },
+                },
+                close = {
+                    modes = { n = 'q', i = '<C-c>' },
+                },
+            },
+            variables = {
+                ['buffers'] = {
+                    callback = function()
+                        local result = '# Open Buffers\n\n'
+                        for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+                            if vim.api.nvim_buf_is_valid(bufnr) and vim.api.nvim_buf_get_option(bufnr, 'buflisted') then
+                                local name = vim.api.nvim_buf_get_name(bufnr)
+                                local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+                                local modified = vim.api.nvim_buf_get_option(bufnr, 'modified') and '[+]' or ''
+
+                                -- Skip empty or special buffers
+                                if name ~= '' and not name:match('^term://') then
+                                    local short_name = vim.fn.fnamemodify(name, ':~:.')
+                                    result = result
+                                        .. string.format(
+                                            'Buffer %d: %s%s (%s)\n',
+                                            bufnr,
+                                            short_name,
+                                            modified,
+                                            filetype
+                                        )
+                                end
+                            end
+                        end
+                        return result
+                    end,
+                    description = 'List all currently open buffers',
+                },
+            },
+            slash_commands = {
+                ['git_files'] = {
+                    description = 'List git files',
+                    callback = function(chat)
+                        local handle = io.popen('git ls-files')
+                        if handle ~= nil then
+                            local result = handle:read('*a')
+                            handle:close()
+                            chat:add_reference({ content = result }, 'git', '<git_files>')
+                        else
+                            return vim.notify(
+                                'No git files available',
+                                vim.log.levels.INFO,
+                                { title = 'CodeCompanion' }
+                            )
+                        end
+                    end,
+                    opts = {
+                        contains_code = false,
+                    },
+                },
+            },
             adapter = 'copilot_claude37_thought',
         },
         inline = {
