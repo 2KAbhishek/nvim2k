@@ -107,6 +107,11 @@ local normal_mappings = {
     { '<leader>ecl', ':e ~/.config/shell/local.sh<cr>', desc = 'Local Env' },
     { '<leader>ecn', ':e $MYVIMRC<cr>', desc = 'Neovim Init' },
     { '<leader>ecp', ':e ~/.config/nvim/lua/plugins/list.lua<cr>', desc = 'Plugin List' },
+    {
+        '<leader>ecP',
+        ':lua Snacks.picker.files({ cwd = vim.fn.stdpath("data") .. "/lazy" })<cr>',
+        desc = 'Plugin Files',
+    },
     { '<leader>ecq', ':e ~/.config/qutebrowser/config.py<cr>', desc = 'Qutebrowser Config' },
     { '<leader>ect', ':e ~/.config/tmux/tmux.conf<cr>', desc = 'Tmux Config' },
     { '<leader>ecv', ':e ~/.vimrc<cr>', desc = 'Vim Config' },
