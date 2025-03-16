@@ -1,7 +1,7 @@
 local which_key = require('which-key')
 local icons = require('lib.icons')
-local Snacks = require('snacks')
 local util = require('lib.util')
+local prompts = require('lib.prompts')
 
 local setup = {
     preset = 'modern',
@@ -461,16 +461,13 @@ end
 local visual_mappings = {
     mode = 'v',
     { '<leader>a', group = ' AI' },
-    { '<leader>aF', ':CopilotChatFixDiagnostic<cr>', desc = 'Fix Diagnostic' },
-    { '<leader>aG', ':CopilotChatCommitStaged<cr>', desc = 'Commit Staged' },
-    { '<leader>ac', ':CopilotChatToggle<cr>', desc = 'Copilot Chat' },
-    { '<leader>ad', ':CopilotChatDocs<cr>', desc = 'Docs' },
-    { '<leader>ae', ':CopilotChatExplain<cr>', desc = 'Explain' },
-    { '<leader>af', ':CopilotChatFix<cr>', desc = 'Fix' },
-    { '<leader>ag', ':CopilotChatCommit<cr>', desc = 'Commit' },
-    { '<leader>ao', ':CopilotChatOptimize<cr>', desc = 'Optimize' },
-    { '<leader>ar', ':CopilotChatReview<cr>', desc = 'Review' },
-    { '<leader>at', ':CopilotChatTests<cr>', desc = 'Tests' },
+    { '<leader>ad', ':CodeCompanion ' .. prompts.docs .. '<cr>', desc = 'Docs' },
+    { '<leader>ae', ':CodeCompanion ' .. prompts.explain .. '<cr>', desc = 'Explain' },
+    { '<leader>af', ':CodeCompanion ' .. prompts.fix .. '<cr>', desc = 'Fix' },
+    { '<leader>ag', ':CodeCompanion ' .. prompts.commit .. '<cr>', desc = 'Commit' },
+    { '<leader>ao', ':CodeCompanion ' .. prompts.optimize .. '<cr>', desc = 'Optimize' },
+    { '<leader>ar', ':CodeCompanion ' .. prompts.review .. '<cr>', desc = 'Review' },
+    { '<leader>at', ':CodeCompanion ' .. prompts.tests .. '<cr>', desc = 'Tests' },
 
     { '<leader>c', group = ' Code' },
     { '<leader>ce', "<esc>:'<,'>SnipRun<cr>", desc = 'Execute Selection' },
