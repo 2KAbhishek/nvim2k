@@ -177,10 +177,10 @@ companion.setup({
                     },
                 },
             },
-            adapter = 'copilot_claude37_thought',
+            adapter = 'copilot_claude37',
         },
         inline = {
-            adapter = 'copilot_claude37',
+            adapter = 'copilot_o3mini',
         },
     },
 })
