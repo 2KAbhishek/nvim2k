@@ -542,11 +542,11 @@ local no_leader_mappings = {
     { '<C-g>', ':Fterm lazygit<cr>', desc = 'Lazygit' },
     { '<C-f>', ':lua Snacks.picker.smart()<cr>', desc = 'Smart Find Files' },
 
-    { '<C-h>', '<C-w>h', desc = 'Move Left' },
-    { '<C-j>', '<C-w>j', desc = 'Move Down' },
-    { '<C-k>', '<C-w>k', desc = 'Move Up' },
-    { '<C-l>', '<C-w>l', desc = 'Move Right' },
-    { '<C-\\>', '<C-w>p', desc = 'Previous Pane' },
+    { '<C-h>', ':NavigatorLeft<cr>', desc = 'Move Left' },
+    { '<C-j>', ':NavigatorDown<cr>', desc = 'Move Down' },
+    { '<C-k>', ':NavigatorUp<cr>', desc = 'Move Up' },
+    { '<C-l>', ':NavigatorRight<cr>', desc = 'Move Right' },
+    { '<C-\\>', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
 
     { '<S-h>', ':bprevious<cr>', desc = 'Previous Buffer' },
     { '<S-l>', ':bnext<cr>', desc = 'Next Buffer' },
@@ -563,17 +563,6 @@ local no_leader_mappings = {
     { ']g', ':Gitsigns next_hunk<cr>', desc = 'Git Hunk' },
     { ']o', group = 'Textobjects' },
 }
-
-if vim.fn.exists('$TMUX') == 1 then
-    local tmux_mappings = {
-        { '<C-h>', ':NavigatorLeft<cr>', desc = 'Move Left' },
-        { '<C-j>', ':NavigatorDown<cr>', desc = 'Move Down' },
-        { '<C-k>', ':NavigatorUp<cr>', desc = 'Move Up' },
-        { '<C-l>', ':NavigatorRight<cr>', desc = 'Move Right' },
-        { '<C-\\>', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
-    }
-    no_leader_mappings = vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
-end
 
 if util.get_user_config('enable_test_runner', false) then
     local test_runner_bindings = {
