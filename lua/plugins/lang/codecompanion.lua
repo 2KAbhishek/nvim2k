@@ -120,10 +120,10 @@ companion.setup({
                     modes = { n = '<cr>', i = '<C-s>' },
                 },
                 close = {
-                    modes = { n = 'q', i = '<C-c>' },
+                    modes = { n = 'q', i = '<C-q>' },
                 },
                 stop = {
-                    modes = { n = '<C-c>', i = 'q' },
+                    modes = { n = '<C-c>', i = '<C-c>' },
                 },
             },
             variables = {
