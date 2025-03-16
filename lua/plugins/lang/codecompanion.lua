@@ -72,17 +72,21 @@ companion.setup({
         github_jais = adapter('jais-30b-chat', 'githubmodels', CONTEXT_SIZES.S),
     },
 
+    display = {
+        chat = {
+            intro_message = icons.ui.Copilot .. ' Welcome to CodeCompanion! Press ? for options',
+            show_header_separator = true,
+            separator = '-',
+            show_references = true,
+            show_settings = false, -- Won't be able to switch adapters using ga
+            show_token_count = true,
+            start_in_insert_mode = false,
+            auto_scroll = true,
+        },
+    },
+
     strategies = {
         chat = {
-            intro_message = 'Welcome to CodeCompanion! Press ? for options',
-            show_header_separator = true, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
-            separator = '---', -- The separator between the different messages in the chat buffer
-            show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
-            show_settings = true, -- Show LLM settings at the top of the chat buffer?
-            show_token_count = true, -- Show the token count for each response?
-            start_in_insert_mode = true, -- Open the chat buffer in insert mode?
-            auto_scroll = true,
-
             roles = {
                 llm = function(model)
                     return icons.ui.Copilot .. 'CodeCompanion (' .. model.formatted_name .. ')'
