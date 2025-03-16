@@ -564,16 +564,15 @@ local no_leader_mappings = {
     { ']o', group = 'Textobjects' },
 }
 
-local tmux_mappings = {
-    { '<C-h>', ':NavigatorLeft<cr>', desc = 'Move Left' },
-    { '<C-j>', ':NavigatorDown<cr>', desc = 'Move Down' },
-    { '<C-k>', ':NavigatorUp<cr>', desc = 'Move Up' },
-    { '<C-l>', ':NavigatorRight<cr>', desc = 'Move Right' },
-    { '<C-\\>', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
-}
-
 if vim.fn.exists('$TMUX') == 1 then
-    vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
+    local tmux_mappings = {
+        { '<C-h>', ':NavigatorLeft<cr>', desc = 'Move Left' },
+        { '<C-j>', ':NavigatorDown<cr>', desc = 'Move Down' },
+        { '<C-k>', ':NavigatorUp<cr>', desc = 'Move Up' },
+        { '<C-l>', ':NavigatorRight<cr>', desc = 'Move Right' },
+        { '<C-\\>', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
+    }
+    no_leader_mappings = vim.tbl_extend('force', no_leader_mappings, tmux_mappings)
 end
 
 if util.get_user_config('enable_test_runner', false) then
@@ -584,7 +583,7 @@ if util.get_user_config('enable_test_runner', false) then
         { '<leader>uo', ':Neotest output-panel<cr>', desc = 'Test Output' },
         { '<leader>us', ':Neotest summary<cr>', desc = 'Test Summary' },
     }
-    vim.tbl_extend('force', normal_mappings, test_runner_bindings)
+    normal_mappings = vim.tbl_extend('force', normal_mappings, test_runner_bindings)
 end
 
 if util.get_user_config('enable_db_explorer', false) then
@@ -597,7 +596,7 @@ if util.get_user_config('enable_db_explorer', false) then
         { '<leader>ds', ':lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', desc = 'To CSV' },
         { '<leader>dt', ':lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', desc = 'To Table' },
     }
-    vim.tbl_extend('force', normal_mappings, db_explorer_bindings)
+    normal_mappings = vim.tbl_extend('force', normal_mappings, db_explorer_bindings)
 end
 
 if util.get_user_config('enable_debugger', false) then
@@ -614,7 +613,7 @@ if util.get_user_config('enable_debugger', false) then
         { '<leader>bt', ':DapUIToggle<cr>', desc = 'Debugger' },
         { '<leader>bx', ':DapTerminate<cr>', desc = 'Exit' },
     }
-    vim.tbl_extend('force', normal_mappings, debugger_bindings)
+    normal_mappings = vim.tbl_extend('force', normal_mappings, debugger_bindings)
 end
 
 local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
