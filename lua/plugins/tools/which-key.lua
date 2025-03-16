@@ -149,6 +149,7 @@ local normal_mappings = {
     { '<leader>gR', ':Gitsigns reset_buffer<cr>', desc = 'Reset Buffer' },
     { '<leader>ga', ':Gitsigns stage_hunk<cr>', desc = 'Stage Hunk' },
     { '<leader>gb', ":lua require('gitsigns').blame_line({full = true})<cr>", desc = 'Blame' },
+    { '<leader>gc', ':Git commit<cr>', desc = 'Commit Staged' },
     { '<leader>gB', ":lua require('snacks').git.blame_line()<cr>", desc = 'Detailed Blame' },
     { '<leader>gd', ':Gitsigns diffthis HEAD<cr>', desc = 'Git Diff' },
     { '<leader>gF', ':Git<cr>', desc = 'Fugitive Panel' },
