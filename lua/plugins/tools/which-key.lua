@@ -52,7 +52,7 @@ local setup = {
     show_help = false,
     show_keys = true,
     triggers = {
-        { '<auto>', mode = 'nixsotc' },
+        { '<auto>', mode = 'nvisoct' },
         { '<leader>', mode = { 'n', 'v' } },
     },
 }
@@ -509,7 +509,7 @@ local visual_mappings = {
     },
 
     { '<leader>l', group = ' LSP' },
-    { '<leader>la', desc = ':<C-U>Lspsaga range_code_action<cr>' },
+    { '<leader>la', ':<C-U>Lspsaga range_code_action<cr>', desc = 'Code Action' },
 
     { '<leader>r', group = ' Refactor' },
     {
