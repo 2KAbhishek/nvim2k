@@ -129,28 +129,6 @@ local plugins = {
         config = load_config('lang.codecompanion'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-    {
-        'CopilotC-Nvim/CopilotChat.nvim',
-        dependencies = { 'zbirenbaum/copilot.lua' },
-        branch = 'main',
-        build = 'make tiktoken', -- Only on MacOS or Linux
-        cmd = {
-            'CopilotChat',
-            'CopilotChatToggle',
-            'CopilotChatDocs',
-            'CopilotChatExplain',
-            'CopilotChatFix',
-            'CopilotChatFixDiagnostic',
-            'CopilotChatCommit',
-            'CopilotChatCommitStaged',
-            'CopilotChatLoad',
-            'CopilotChatOptimize',
-            'CopilotChatReview',
-            'CopilotChatSave',
-            'CopilotChatTests',
-        },
-        config = load_config('lang.copilot-chat'),
-    },
 
     -- Tools
     {
