@@ -75,6 +75,14 @@ local normal_mappings = {
     { '<leader>al', ':CodeCompanionChat github_llama_3_3_70b<cr>', desc = 'GitHub Ollama' },
     { '<leader>ao', ':CodeCompanionChat ollama_deepseek_coder<cr>', desc = 'Ollama Deepseek Coder' },
     { '<leader>as', ':CodeCompanionChat copilot_gemini<cr>', desc = 'Copilot Gemini' },
+    { '<leader>ap', group = 'Insert Prompt' },
+    { '<leader>apd', prompts.add_prompt('docs'), desc = 'Docs' },
+    { '<leader>ape', prompts.add_prompt('explain'), desc = 'Explain' },
+    { '<leader>apf', prompts.add_prompt('fix'), desc = 'Fix' },
+    { '<leader>apg', prompts.add_prompt('commit'), desc = 'Commit' },
+    { '<leader>apo', prompts.add_prompt('optimize'), desc = 'Optimize' },
+    { '<leader>apr', prompts.add_prompt('review'), desc = 'Review' },
+    { '<leader>apt', prompts.add_prompt('tests'), desc = 'Tests' },
 
     { '<leader>c', group = ' Code' },
     { '<leader>cF', ':retab<cr>', desc = 'Fix Tabs' },
@@ -461,6 +469,7 @@ end
 local visual_mappings = {
     mode = 'v',
     { '<leader>a', group = ' AI' },
+    { '<leader>ac', ':CodeCompanion<cr>', desc = 'Chat' },
     { '<leader>ad', ':CodeCompanion ' .. prompts.docs .. '<cr>', desc = 'Docs' },
     { '<leader>ae', ':CodeCompanion ' .. prompts.explain .. '<cr>', desc = 'Explain' },
     { '<leader>af', ':CodeCompanion ' .. prompts.fix .. '<cr>', desc = 'Fix' },

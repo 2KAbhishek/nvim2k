@@ -8,4 +8,14 @@ local prompts = {
     tests = 'Write comprehensive unit tests covering all edge cases for this code.',
 }
 
+---Returns a function that inserts the named prompt at cursor position
+---@param prompt_name string Name of the prompt to insert
+---@return function Function to execute in a keybinding
+prompts.add_prompt = function(prompt_name)
+    local prompt_text = prompts[prompt_name]
+    return function()
+        vim.cmd("put ='" .. prompt_text:gsub("'", "''") .. "'")
+    end
+end
+
 return prompts
