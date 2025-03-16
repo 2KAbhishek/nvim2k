@@ -131,10 +131,10 @@ companion.setup({
                     callback = function()
                         local result = '# Open Buffers\n\n'
                         for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-                            if vim.api.nvim_buf_is_valid(bufnr) and vim.api.nvim_buf_get_option(bufnr, 'buflisted') then
+                            if vim.api.nvim_buf_is_valid(bufnr) and vim.bo[bufnr].buflisted then
                                 local name = vim.api.nvim_buf_get_name(bufnr)
-                                local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
-                                local modified = vim.api.nvim_buf_get_option(bufnr, 'modified') and '[+]' or ''
+                                local filetype = vim.bo[bufnr].filetype
+                                local modified = vim.bo[bufnr].modified and '[+]' or ''
 
                                 -- Skip empty or special buffers
                                 if name ~= '' and not name:match('^term://') then
