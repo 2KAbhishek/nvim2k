@@ -118,6 +118,9 @@ companion.setup({
                 close = {
                     modes = { n = 'q', i = '<C-c>' },
                 },
+                stop = {
+                    modes = { n = '<C-c>', i = 'q' },
+                },
             },
             variables = {
                 ['buffers'] = {
