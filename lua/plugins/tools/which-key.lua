@@ -570,19 +570,26 @@ local no_leader_mappings = {
     { ']o', group = 'Textobjects' },
 }
 
+which_key.setup(setup)
+which_key.add(normal_mappings)
+which_key.add(visual_mappings)
+which_key.add(no_leader_mappings)
+
 if util.get_user_config('enable_test_runner', false) then
     local test_runner_bindings = {
+        mode = 'n',
         { '<leader>u', group = ' Test' },
         { '<leader>uc', ':lua require("neotest").run.run()<cr>', desc = 'Run Current Test' },
         { '<leader>uf', ':lua require("neotest").run.run(vim.fn.expand("%"))<cr>', desc = 'Run Test File' },
         { '<leader>uo', ':Neotest output-panel<cr>', desc = 'Test Output' },
         { '<leader>us', ':Neotest summary<cr>', desc = 'Test Summary' },
     }
-    normal_mappings = vim.tbl_extend('force', normal_mappings, test_runner_bindings)
+    which_key.add(test_runner_bindings)
 end
 
 if util.get_user_config('enable_db_explorer', false) then
     local db_explorer_bindings = {
+        mode = 'n',
         { '<leader>d', group = ' Database' },
         { '<leader>dS', ':lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', desc = 'To JSON' },
         { '<leader>db', ':DBToggle<cr>', desc = 'DB Explorer' },
@@ -591,11 +598,12 @@ if util.get_user_config('enable_db_explorer', false) then
         { '<leader>ds', ':lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', desc = 'To CSV' },
         { '<leader>dt', ':lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', desc = 'To Table' },
     }
-    normal_mappings = vim.tbl_extend('force', normal_mappings, db_explorer_bindings)
+    which_key.add(db_explorer_bindings)
 end
 
 if util.get_user_config('enable_debugger', false) then
     local debugger_bindings = {
+        mode = 'n',
         { '<leader>b', group = ' Debug' },
         { '<leader>bO', ':DapStepOut<cr>', desc = 'Out' },
         { '<leader>bR', ':DapRestartFrame<cr>', desc = 'Restart Frame' },
@@ -608,13 +616,8 @@ if util.get_user_config('enable_debugger', false) then
         { '<leader>bt', ':DapUIToggle<cr>', desc = 'Debugger' },
         { '<leader>bx', ':DapTerminate<cr>', desc = 'Exit' },
     }
-    normal_mappings = vim.tbl_extend('force', normal_mappings, debugger_bindings)
+    which_key.add(debugger_bindings)
 end
 
 local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
-
-which_key.setup(setup)
-which_key.add(normal_mappings)
-which_key.add(visual_mappings)
-which_key.add(no_leader_mappings)
 which_key.add(user_keybindings)
