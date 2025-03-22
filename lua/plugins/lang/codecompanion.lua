@@ -78,7 +78,7 @@ companion.setup({
             show_header_separator = true,
             separator = '-',
             show_references = true,
-            show_settings = false, -- Won't be able to switch adapters using ga
+            show_settings = true,
             show_token_count = true,
             start_in_insert_mode = false,
             auto_scroll = true,
