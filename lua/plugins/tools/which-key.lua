@@ -145,6 +145,7 @@ local normal_mappings = {
     { '<leader>ft', ':lua Snacks.picker.pickers()<cr>', desc = 'All Pickers' },
     { '<leader>fu', ':lua Snacks.picker.undo()<cr>', desc = 'Undo History' },
     { '<leader>fw', ':lua Snacks.picker.grep_word()<cr>', desc = 'Word Grep' },
+    { '<leader>fx', ':%bd|e#|bd#<cr>', desc = 'Close except current' },
     { '<leader>fz', ':lua Snacks.picker.zoxide()<cr>', desc = 'Zoxide' },
 
     { '<leader>g', group = ' Git' },
