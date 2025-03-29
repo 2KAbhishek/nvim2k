@@ -222,7 +222,7 @@ local normal_mappings = {
     { '<leader>l', group = ' LSP' },
     { '<leader>la', ':Lspsaga code_action<cr>', desc = 'Code Action' },
     { '<leader>ld', ':Lspsaga goto_definition<cr>', desc = 'Goto Definition' },
-    { '<leader>lD', ':Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
+    { '<leader>lD', ':lua Snacks.picker.lsp_declarations()<cr>', desc = 'Goto Declaration' },
     { '<leader>lf', ':Lspsaga finder<cr>', desc = 'Finder' },
     { '<leader>lF', ':lua Snacks.picker.lsp_references()<cr>', desc = 'References' },
     { '<leader>lh', ':Lspsaga hover_doc<cr>', desc = 'Hover' },
@@ -233,7 +233,7 @@ local normal_mappings = {
     { '<leader>lL', ':lua Snacks.picker.diagnostics()<cr>', desc = 'Diagnostics' },
     { '<leader>lk', ':Lspsaga diagnostic_jump_prev<cr>', desc = 'Prev Diagnostic' },
     { '<leader>lo', ':Lspsaga outline<cr>', desc = 'Outline' },
-    { '<leader>lp', ':lua Snacks.picker.lsp_declarations()<cr>', desc = 'Goto Declaration' },
+    { '<leader>lp', ':Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
     { '<leader>lq', ':LspStop<cr>', desc = 'Stop LSP' },
     { '<leader>lQ', ':LspRestart<cr>', desc = 'Restart LSP' },
     { '<leader>lr', ':Lspsaga rename<cr>', desc = 'Rename' },
@@ -569,6 +569,9 @@ local no_leader_mappings = {
     { ']', group = ' Next' },
     { ']g', ':Gitsigns next_hunk<cr>', desc = 'Git Hunk' },
     { ']o', group = 'Textobjects' },
+
+    { 'gd', ':Lspsaga goto_definition<cr>', desc = 'Goto Definition' },
+    { 'gD', ':lua Snacks.picker.lsp_declarations()<cr>', desc = 'Goto Declaration' },
 }
 
 which_key.setup(setup)
