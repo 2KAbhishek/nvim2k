@@ -262,6 +262,7 @@ local plugins = {
     {
         '2kabhishek/utils.nvim',
         cmd = 'UtilsClearCache',
+        opts = {},
     },
     {
         '2kabhishek/exercism.nvim',
