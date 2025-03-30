@@ -180,6 +180,7 @@ Snacks.setup({
             git_status = { layout = files_layout() },
             help = { layout = { preset = 'ivy_split' } },
             man = { layout = { preset = 'ivy_split' } },
+            notifications = { layout = palette_layout() },
             projects = { layout = files_layout(0.8) },
             recent = { layout = files_layout() },
             search_history = { layout = palette_layout() },
