@@ -123,15 +123,15 @@ local buffers = {
     mode = 2,
     cond = conditions.buffer_not_scratch,
     filetype_names = {
+        NvimTree = icons.documents.OpenFolder .. 'Files',
         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
-        snacks_picker_input = icons.ui.Telescope .. 'Picker',
+        codecompanion = icons.ui.Copilot .. 'Chat',
         dashboard = icons.ui.Dashboard .. 'Dashboard',
         lazy = icons.ui.Sleep .. 'Lazy',
         mason = icons.ui.Package .. 'Mason',
-        NvimTree = icons.documents.OpenFolder .. 'Files',
         minifiles = icons.documents.OpenFolder .. 'Files',
+        snacks_picker_input = icons.ui.Telescope .. 'Picker',
         spectre_panel = icons.ui.Search .. 'Spectre',
-        codecompanion = icons.ui.Copilot .. 'Chat',
     },
     use_mode_colors = true,
 }
