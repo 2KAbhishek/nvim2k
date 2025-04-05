@@ -87,13 +87,13 @@ companion.setup({
 
     strategies = {
         chat = {
+            adapter = 'copilot_claude37_thought',
             roles = {
                 llm = function(model)
                     return icons.ui.Copilot .. 'CodeCompanion (' .. model.formatted_name .. ')'
                 end,
                 user = icons.ui.User .. 'Me',
             },
-
             window = {
                 layout = 'vertical', -- float|vertical|horizontal|buffer
                 position = nil, -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
@@ -177,7 +177,6 @@ companion.setup({
                     },
                 },
             },
-            adapter = 'copilot_claude37',
         },
         inline = {
             adapter = 'copilot_o3mini',
