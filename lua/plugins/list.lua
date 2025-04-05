@@ -262,7 +262,9 @@ local plugins = {
     {
         '2kabhishek/utils.nvim',
         cmd = 'UtilsClearCache',
-        opts = {},
+        opts = {
+            picker_provider = 'snacks',
+        },
     },
     {
         '2kabhishek/exercism.nvim',
