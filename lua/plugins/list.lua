@@ -77,6 +77,7 @@ local plugins = {
         config = load_config('lang.treesitter'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
+
     -- LSP
     {
         'neovim/nvim-lspconfig',
@@ -196,69 +197,25 @@ local plugins = {
         config = load_config('tools.ccc'),
         cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     },
-    {
-        '2kabhishek/termim.nvim',
-        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-    },
-    {
-        '2kabhishek/tdo.nvim',
-        dependencies = 'nvim-telescope/telescope.nvim',
-        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
-        keys = { '[t', ']t' },
-    },
-    {
-        'm4xshen/hardtime.nvim',
-        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-        cmd = 'Hardtime',
-        enabled = util.get_user_config('enable_trainer', false),
-    },
-    {
-        'kndndrj/nvim-dbee',
-        dependencies = { 'MunifTanjim/nui.nvim' },
-        build = function()
-            --    "curl", "wget", "bitsadmin", "go"
-            require('dbee').install('curl')
-        end,
-        config = load_config('tools.dbee'),
-        cmd = 'DBToggle',
-        enabled = util.get_user_config('enable_db_explorer', false),
-    },
-    {
-        'mfussenegger/nvim-dap',
-        dependencies = { 'rcarriga/nvim-dap-ui' },
-        config = load_config('tools.dap'),
-        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
-        enabled = util.get_user_config('enable_debugger', false),
-    },
-    {
-        'nvim-neotest/neotest',
-        dependencies = {
-            'nvim-neotest/nvim-nio',
-            'olimorris/neotest-rspec',
-            'nvim-neotest/neotest-jest',
-            'nvim-neotest/neotest-python',
-        },
-        config = load_config('tools.neotest'),
-        cmd = 'Neotest',
-        enabled = util.get_user_config('enable_test_runner', false),
-    },
-
-    -- Telescope
-    {
-        '2kabhishek/markit.nvim',
-        config = load_config('tools.markit'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
-        '2kabhishek/nerdy.nvim',
-        cmd = 'Nerdy',
-    },
 
     -- Git
     {
-        '2kabhishek/co-author.nvim',
-        cmd = 'CoAuthor',
+        'ruifm/gitlinker.nvim',
+        config = load_config('tools.gitlinker'),
+        keys = '<leader>yg',
     },
+    {
+        'lewis6991/gitsigns.nvim',
+        config = load_config('tools.gitsigns'),
+        cmd = 'Gitsigns',
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
+        'tpope/vim-fugitive',
+        cmd = 'Git',
+    },
+
+    -- Homegrown :)
     {
         '2kabhishek/utils.nvim',
         cmd = 'UtilsClearCache',
@@ -267,26 +224,21 @@ local plugins = {
         },
     },
     {
-        '2kabhishek/exercism.nvim',
-        cmd = {
-            'ExercismLanguages',
-            'ExercismList',
-            'ExercismSubmit',
-            'ExercismTest',
-        },
-        keys = {
-            '<leader>exa',
-            '<leader>exl',
-            '<leader>exs',
-            '<leader>ext',
-        },
-        dependencies = {
-            '2kabhishek/utils.nvim',
-            '2kabhishek/termim.nvim',
-        },
-        config = load_config('tools.exercism'),
-        -- opts = {},
-        -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
+        '2kabhishek/co-author.nvim',
+        cmd = 'CoAuthor',
+    },
+    {
+        '2kabhishek/nerdy.nvim',
+        cmd = 'Nerdy',
+    },
+    {
+        '2kabhishek/termim.nvim',
+        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
+    },
+    {
+        '2kabhishek/tdo.nvim',
+        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
+        keys = { '[t', ']t' },
     },
     {
         '2kabhishek/octohub.nvim',
@@ -338,24 +290,73 @@ local plugins = {
         },
         dependencies = {
             '2kabhishek/utils.nvim',
-            'nvim-telescope/telescope.nvim',
         },
         config = load_config('tools.octohub'),
     },
     {
-        'ruifm/gitlinker.nvim',
-        config = load_config('tools.gitlinker'),
-        keys = '<leader>yg',
+        '2kabhishek/exercism.nvim',
+        cmd = {
+            'ExercismLanguages',
+            'ExercismList',
+            'ExercismSubmit',
+            'ExercismTest',
+        },
+        keys = {
+            '<leader>exa',
+            '<leader>exl',
+            '<leader>exs',
+            '<leader>ext',
+        },
+        dependencies = {
+            '2kabhishek/utils.nvim',
+            '2kabhishek/termim.nvim',
+        },
+        config = load_config('tools.exercism'),
+        -- opts = {},
+        -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
     },
     {
-        'lewis6991/gitsigns.nvim',
-        config = load_config('tools.gitsigns'),
-        cmd = 'Gitsigns',
+        '2kabhishek/markit.nvim',
+        config = load_config('tools.markit'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
+
+    -- Optional
     {
-        'tpope/vim-fugitive',
-        cmd = 'Git',
+        'm4xshen/hardtime.nvim',
+        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        cmd = 'Hardtime',
+        enabled = util.get_user_config('enable_trainer', false),
+    },
+    {
+        'kndndrj/nvim-dbee',
+        dependencies = { 'MunifTanjim/nui.nvim' },
+        build = function()
+            --    "curl", "wget", "bitsadmin", "go"
+            require('dbee').install('curl')
+        end,
+        config = load_config('tools.dbee'),
+        cmd = 'DBToggle',
+        enabled = util.get_user_config('enable_db_explorer', false),
+    },
+    {
+        'mfussenegger/nvim-dap',
+        dependencies = { 'rcarriga/nvim-dap-ui' },
+        config = load_config('tools.dap'),
+        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
+        enabled = util.get_user_config('enable_debugger', false),
+    },
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'nvim-neotest/nvim-nio',
+            'olimorris/neotest-rspec',
+            'nvim-neotest/neotest-jest',
+            'nvim-neotest/neotest-python',
+        },
+        config = load_config('tools.neotest'),
+        cmd = 'Neotest',
+        enabled = util.get_user_config('enable_test_runner', false),
     },
 }
 
@@ -439,3 +440,4 @@ return {
     null_ls_sources = null_ls_sources,
     ts_parsers = treesitter_parsers,
 }
+
