@@ -440,4 +440,3 @@ return {
     null_ls_sources = null_ls_sources,
     ts_parsers = treesitter_parsers,
 }
-
