@@ -2,7 +2,7 @@ local lualine = require('lualine')
 local icons = require('lib.icons')
 
 local colors = {
-    bg = '#202328',
+    bg = '#000000',
     fg = '#bbc2cf',
     yellow = '#ECBE7B',
     cyan = '#008080',
@@ -223,11 +223,14 @@ local function mode(icon)
     }
 end
 
+local custom_onedark = require('lualine.themes.onedark')
+custom_onedark.normal.c.bg = colors.bg
+
 lualine.setup({
     options = {
         component_separators = '',
         -- section_separators = '',
-        theme = 'onedark',
+        theme = custom_onedark,
         disabled_filetypes = {
             'dashboard',
         },
