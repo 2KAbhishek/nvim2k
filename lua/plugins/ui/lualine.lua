@@ -76,7 +76,6 @@ local spinner_symbols = {
 }
 local spinner_symbols_len = 10
 
--- Initializer
 function codecompanion:init(options)
     codecompanion.super.init(self, options)
 
@@ -95,7 +94,6 @@ function codecompanion:init(options)
     })
 end
 
--- Function that runs every time statusline is updated
 function codecompanion:update_status()
     if self.processing then
         self.spinner_index = (self.spinner_index % spinner_symbols_len) + 1
