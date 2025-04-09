@@ -198,16 +198,6 @@ local encoding = {
     color = { fg = colors.green, gui = 'bold' },
 }
 
-local separator = {
-    function()
-        return icons.ui.Separator
-    end,
-    color = function()
-        return { fg = mode_color[vim.fn.mode()] }
-    end,
-    padding = { left = 0, right = 0 },
-}
-
 local function mode(icon)
     icon = icon or icons.ui.Neovim
     return {
@@ -245,8 +235,8 @@ lualine.setup({
     sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { separator, mode(icons.ui.Heart), 'location', progress, filename },
-        lualine_x = { codecompanion, diagnostics, lsp, filetype, filesize, fileformat, encoding, separator },
+        lualine_c = { mode(icons.ui.Heart), 'location', progress, filename },
+        lualine_x = { codecompanion, diagnostics, lsp, filetype, filesize, fileformat, encoding },
         lualine_y = {},
         lualine_z = {},
     },
