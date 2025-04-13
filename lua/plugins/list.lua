@@ -219,6 +219,7 @@ local plugins = {
     {
         '2kabhishek/pickme.nvim',
         cmd = 'PickMe',
+        event = 'VeryLazy',
         dependencies = {
             'folke/snacks.nvim',
             -- 'nvim-telescope/telescope.nvim',
