@@ -217,11 +217,20 @@ local plugins = {
 
     -- Homegrown :)
     {
-        '2kabhishek/utils.nvim',
-        cmd = 'UtilsClearCache',
+        '2kabhishek/pickme.nvim',
+        cmd = 'PickMe',
+        dependencies = {
+            'folke/snacks.nvim',
+            -- 'nvim-telescope/telescope.nvim',
+            -- 'ibhagwan/fzf-lua',
+        },
         opts = {
             picker_provider = 'snacks',
         },
+    },
+    {
+        '2kabhishek/utils.nvim',
+        cmd = 'UtilsClearCache',
     },
     {
         '2kabhishek/co-author.nvim',
@@ -239,6 +248,11 @@ local plugins = {
         '2kabhishek/tdo.nvim',
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
         keys = { '[t', ']t' },
+    },
+    {
+        '2kabhishek/markit.nvim',
+        config = load_config('tools.markit'),
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         '2kabhishek/octohub.nvim',
@@ -314,11 +328,6 @@ local plugins = {
         config = load_config('tools.exercism'),
         -- opts = {},
         -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
-    },
-    {
-        '2kabhishek/markit.nvim',
-        config = load_config('tools.markit'),
-        event = { 'BufReadPost', 'BufNewFile' },
     },
 
     -- Optional
