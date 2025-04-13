@@ -58,6 +58,7 @@ vim.api.nvim_create_autocmd('FileType', {
         'lir',
         'lspinfo',
         'man',
+        'netrw',
         'notify',
         'qf',
         'spectre_panel',
