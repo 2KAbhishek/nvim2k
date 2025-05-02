@@ -84,7 +84,7 @@ avante.setup({
         refresh = '<leader>ar',
         focus = '<leader>af',
         stop = '<leader>as',
-        select_model = '<leader>am',
+        select_model = '<leader>aM',
         select_history = '<leader>ah',
         files = {
             add_current = '<leader>ac',
@@ -153,7 +153,15 @@ avante.setup({
         debounce = 600,
         throttle = 600,
     },
+    system_prompt = function()
+        local hub = require('mcphub').get_hub_instance()
+        return hub:get_active_servers_prompt()
+    end,
+    custom_tools = function()
+        return {
+            require('mcphub.extensions.avante').mcp_tool(),
+        }
+    end,
     disabled_tools = {},
-    custom_tools = {},
     slash_commands = {},
 })

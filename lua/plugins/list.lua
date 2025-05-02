@@ -134,7 +134,16 @@ local plugins = {
         dependencies = {
             'MunifTanjim/nui.nvim',
             'nvim-lua/plenary.nvim',
+            'ravitemer/mcphub.nvim',
         },
+    },
+    {
+        'ravitemer/mcphub.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        cmd = 'MCPHub',
+        -- build = 'npm install -g mcp-hub@latest', -- use this if you want to use the global mcp-hub
+        build = 'bundled_build.lua',
+        config = load_config('lang.mcphub'),
     },
 
     -- Tools
