@@ -29,8 +29,13 @@ blink.setup({
         kind_icons = icons.kind,
     },
     sources = {
-        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+        default = { 'avante', 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
         providers = {
+            avante = {
+                module = 'blink-cmp-avante',
+                name = 'Avante',
+                opts = {},
+            },
             copilot = {
                 name = 'copilot',
                 module = 'blink-cmp-copilot',

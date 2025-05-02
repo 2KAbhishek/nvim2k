@@ -109,7 +109,10 @@ local plugins = {
     -- Completion
     {
         'saghen/blink.cmp',
-        dependencies = { 'rafamadriz/friendly-snippets' },
+        dependencies = {
+            'rafamadriz/friendly-snippets',
+            'Kaiser-Yang/blink-cmp-avante',
+        },
         version = '*',
         config = load_config('lang.blink'),
         opts_extend = { 'sources.default' },
@@ -122,7 +125,14 @@ local plugins = {
         event = 'InsertEnter',
     },
     {
+        'yetone/avante.nvim',
+        version = false,
+        config = load_config('lang.avante'),
+        event = { 'BufReadPost', 'BufNewFile' },
+        build = 'make',
+        -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
         dependencies = {
+            'MunifTanjim/nui.nvim',
             'nvim-lua/plenary.nvim',
         },
     },
