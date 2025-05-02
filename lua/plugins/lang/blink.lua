@@ -29,7 +29,7 @@ blink.setup({
         kind_icons = icons.kind,
     },
     sources = {
-        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot', 'codecompanion' },
+        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
         providers = {
             copilot = {
                 name = 'copilot',

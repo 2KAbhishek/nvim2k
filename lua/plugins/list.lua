@@ -122,13 +122,9 @@ local plugins = {
         event = 'InsertEnter',
     },
     {
-        'olimorris/codecompanion.nvim',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-treesitter/nvim-treesitter',
         },
-        config = load_config('lang.codecompanion'),
-        event = { 'BufReadPost', 'BufNewFile' },
     },
 
     -- Tools

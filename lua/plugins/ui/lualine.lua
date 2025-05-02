@@ -58,51 +58,6 @@ local conditions = {
     end,
 }
 
-local codecompanion = require('lualine.component'):extend()
-codecompanion.processing = false
-codecompanion.spinner_index = 1
-
-local spinner_symbols = {
-    '⠋',
-    '⠙',
-    '⠹',
-    '⠸',
-    '⠼',
-    '⠴',
-    '⠦',
-    '⠧',
-    '⠇',
-    '⠏',
-}
-local spinner_symbols_len = 10
-
-function codecompanion:init(options)
-    codecompanion.super.init(self, options)
-
-    local group = vim.api.nvim_create_augroup('CodeCompanionHooks', {})
-
-    vim.api.nvim_create_autocmd({ 'User' }, {
-        pattern = 'CodeCompanionRequest*',
-        group = group,
-        callback = function(request)
-            if request.match == 'CodeCompanionRequestStarted' then
-                self.processing = true
-            elseif request.match == 'CodeCompanionRequestFinished' then
-                self.processing = false
-            end
-        end,
-    })
-end
-
-function codecompanion:update_status()
-    if self.processing then
-        self.spinner_index = (self.spinner_index % spinner_symbols_len) + 1
-        return spinner_symbols[self.spinner_index]
-    else
-        return nil
-    end
-end
-
 local searchcount = { 'searchcount', color = { fg = colors.fg, gui = 'bold' } }
 local selectioncount = { 'selectioncount', color = { fg = colors.fg, gui = 'bold' } }
 local progress = { 'progress', color = { fg = colors.fg, gui = 'bold' } }
@@ -123,7 +78,6 @@ local buffers = {
     filetype_names = {
         NvimTree = icons.documents.OpenFolder .. 'Files',
         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
-        codecompanion = icons.ui.Copilot .. 'Chat',
         dashboard = icons.ui.Dashboard .. 'Dashboard',
         lazy = icons.ui.Sleep .. 'Lazy',
         mason = icons.ui.Package .. 'Mason',
@@ -236,7 +190,7 @@ lualine.setup({
         lualine_a = {},
         lualine_b = {},
         lualine_c = { mode(icons.ui.Heart), 'location', progress, filename },
-        lualine_x = { codecompanion, diagnostics, lsp, filetype, filesize, fileformat, encoding },
+        lualine_x = { diagnostics, lsp, filetype, filesize, fileformat, encoding },
         lualine_y = {},
         lualine_z = {},
     },

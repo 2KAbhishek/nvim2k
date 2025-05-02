@@ -51,7 +51,6 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = {
         'Jaq',
         'PlenaryTestPopup',
-        'codecompanion',
         'fugitive',
         'git',
         'help',
