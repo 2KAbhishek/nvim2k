@@ -270,13 +270,8 @@ local normal_mappings = {
     { '<leader>qw', ':wq<cr>', desc = 'Write and Quit' },
 
     { '<leader>r', group = ' Refactor' },
+    { '<leader>ra', ":lua require('spectre').open()<cr>", desc = 'Replace All' },
     { '<leader>rb', ":lua require('spectre').open_file_search()<cr>", desc = 'Replace Buffer' },
-    { '<leader>re', ":lua require('refactoring').refactor('Extract Block')<cr>", desc = 'Extract Block' },
-    { '<leader>ri', ":lua require('refactoring').refactor('Inline Variable')<cr>", desc = 'Inline Variable' },
-    { '<leader>rs', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', desc = 'Replace Word' },
-    { '<leader>rS', ":lua require('spectre').open()<cr>", desc = 'Replace' },
-    { '<leader>rv', ":lua require('refactoring').refactor('Extract Variable')<cr>", desc = 'Extract Variable' },
-    { '<leader>rw', ":lua require('spectre').open_visual({select_word=true})<cr>", desc = 'Replace Word' },
     { '<leader>rd', '', desc = 'Go To Definition' }, -- treesitter navigation
     { '<leader>rh', '', desc = 'List Definition Head' },
     { '<leader>rj', '', desc = 'Next Usage' },
@@ -285,11 +280,8 @@ local normal_mappings = {
     { '<leader>rn', '', desc = 'Swap Next' },
     { '<leader>rp', '', desc = 'Swap Previous' },
     { '<leader>rr', '', desc = 'Smart Rename' },
-    {
-        '<leader>rf',
-        ":lua require('refactoring').refactor('Extract Block To File')<cr>",
-        desc = 'Extract To File',
-    },
+    { '<leader>rs', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', desc = 'Replace Word Buffer' },
+    { '<leader>rw', ":lua require('spectre').open_visual({select_word=true})<cr>", desc = 'Replace Word Everywhere' },
 
     { '<leader>s', group = ' Split' },
     { '<leader>s+', ':resize +10<cr>', desc = 'Increase window height' },
@@ -445,24 +437,6 @@ local visual_mappings = {
 
     { '<leader>l', group = ' LSP' },
     { '<leader>la', ':<C-U>Lspsaga range_code_action<cr>', desc = 'Code Action' },
-
-    { '<leader>r', group = ' Refactor' },
-    {
-        '<leader>re',
-        "<esc>:lua require('refactoring').refactor('Extract Function')<cr>",
-        desc = 'Extract Function',
-    },
-    {
-        '<leader>rf',
-        "<esc>:lua require('refactoring').refactor('Extract Function To File')<cr>",
-        desc = 'Extract To File',
-    },
-    { '<leader>ri', "<esc>:lua require('refactoring').refactor('Inline Variable')<cr>", desc = 'Inline Variable' },
-    {
-        '<leader>rv',
-        "<esc>:lua require('refactoring').refactor('Extract Variable')<cr>",
-        desc = 'Extract Variable',
-    },
 
     { '<leader>y', group = ' Yank' },
     { '<leader>yg', ':lua require"gitlinker".get_buf_range_url("v")<cr>', desc = 'Copy Git URL' },

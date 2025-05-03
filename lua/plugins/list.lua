@@ -34,8 +34,6 @@ local plugins = {
         cmd = 'SnipRun',
     },
     {
-        'ThePrimeagen/refactoring.nvim',
-        config = load_config('lang.refactoring'),
     },
     {
         'echasnovski/mini.bracketed',
