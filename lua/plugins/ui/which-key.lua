@@ -62,7 +62,9 @@ local normal_mappings = {
     { '<leader>x', ':x<cr>', desc = ' Save and Quit' },
 
     { '<leader>a', group = ' AI' },
+    { '<leader>aC', ':AvanteClear<cr>', desc = 'avante: clear' },
     { '<leader>am', ':MCPHub<cr>', desc = 'MCPHub' },
+    { '<leader>an', ':AvanteChatNew<cr>', desc = 'avante: new' },
     { '<leader>ap', group = 'Insert Prompt' },
     { '<leader>apd', prompts.add_prompt('docs'), desc = 'Docs' },
     { '<leader>ape', prompts.add_prompt('explain'), desc = 'Explain' },
