@@ -33,8 +33,8 @@ mcphub.setup({
     shutdown_delay = 600000, -- 10 minutes
     log = {
         level = vim.log.levels.INFO,
-        to_file = false,
-        file_path = vim.fn.expand('~/.config/mcphub/log'),
+        to_file = true,
+        file_path = vim.fn.stdpath('state') .. '/mcphub.log',
         prefix = 'MCPHub',
     },
 })
