@@ -49,6 +49,7 @@ local options = {
     timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
     title = true, -- window titles
     undofile = true, -- enable persistent undo
+    undodir = vim.fn.stdpath('cache') .. '/undo',
     undolevels = 10000,
     updatetime = 50, -- faster completion (4000ms default)
     wildmenu = true, -- wildmenu
