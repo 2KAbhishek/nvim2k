@@ -105,8 +105,6 @@ local plugins = {
         config = load_config('lang.null-ls'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-
-    -- Completion
     {
         'saghen/blink.cmp',
         dependencies = {
@@ -118,16 +116,18 @@ local plugins = {
         opts_extend = { 'sources.default' },
         event = { 'InsertEnter' },
     },
+
+    -- AI
     {
         'zbirenbaum/copilot.lua',
         dependencies = { 'giuxtaposition/blink-cmp-copilot' },
-        config = load_config('lang.copilot'),
+        config = load_config('ai.copilot'),
         event = 'InsertEnter',
     },
     {
         'yetone/avante.nvim',
         version = false,
-        config = load_config('lang.avante'),
+        config = load_config('ai.avante'),
         event = { 'BufReadPost', 'BufNewFile' },
         build = 'make',
         -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
@@ -143,7 +143,7 @@ local plugins = {
         cmd = 'MCPHub',
         -- build = 'npm install -g mcp-hub@latest', -- use this if you want to use the global mcp-hub
         build = 'bundled_build.lua',
-        config = load_config('lang.mcphub'),
+        config = load_config('ai.mcphub'),
     },
 
     -- Tools
