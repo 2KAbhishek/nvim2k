@@ -274,20 +274,12 @@ Snacks.setup({
             lua = {
                 keys = {
                     ['source'] = {
-                        '<cr>',
+                        '<leader>cr',
                         function(self)
                             local name = 'scratch.' .. vim.fn.fnamemodify(vim.api.nvim_buf_get_name(self.buf), ':e')
                             Snacks.debug.run({ buf = self.buf, name = name })
                         end,
                         desc = 'Source buffer',
-                        mode = { 'n', 'x' },
-                    },
-                    ['execute'] = {
-                        'e',
-                        function(_)
-                            vim.cmd('%SnipRun')
-                        end,
-                        desc = 'Execute buffer',
                         mode = { 'n', 'x' },
                     },
                 },

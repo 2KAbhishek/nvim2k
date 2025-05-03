@@ -1,5 +1,5 @@
 local treesitter = require('nvim-treesitter.configs')
-local textobjects = require('plugins.lang.textobjects')
+local textobjects = require('plugins.editor.textobjects')
 
 local auto_install = require('lib.util').get_user_config('auto_install', true)
 local installed_parsers = {}

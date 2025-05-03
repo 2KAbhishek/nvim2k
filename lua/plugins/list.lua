@@ -25,45 +25,24 @@ local plugins = {
         config = load_config('ui.lualine'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-
-    -- Language
     {
-        'michaelb/sniprun',
-        build = 'bash ./install.sh',
-        config = load_config('lang.sniprun'),
-        cmd = 'SnipRun',
+        'folke/which-key.nvim',
+        config = load_config('ui.which-key'),
+        event = 'VeryLazy',
     },
     {
-    },
-    {
-        'echasnovski/mini.bracketed',
-        config = load_config('lang.bracketed'),
+        'lewis6991/gitsigns.nvim',
+        config = load_config('ui.gitsigns'),
+        cmd = 'Gitsigns',
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'echasnovski/mini.pairs',
-        config = load_config('lang.pairs'),
-        event = 'InsertEnter',
-    },
-    {
-        'echasnovski/mini.surround',
-        version = '*',
-        config = load_config('lang.surround'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
-        'echasnovski/mini.ai',
-        version = '*',
-        config = load_config('lang.ai'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
-        'chrisgrieser/nvim-spider',
-        config = load_config('lang.spider'),
+        '2kabhishek/markit.nvim',
+        config = load_config('ui.markit'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
 
-    -- Tresitter
+    -- Editor
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
@@ -72,11 +51,38 @@ local plugins = {
             'nvim-treesitter/nvim-treesitter-textobjects',
             'RRethy/nvim-treesitter-textsubjects',
         },
-        config = load_config('lang.treesitter'),
+        config = load_config('editor.treesitter'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
+        'echasnovski/mini.bracketed',
+        config = load_config('editor.bracketed'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
+        'echasnovski/mini.pairs',
+        config = load_config('editor.pairs'),
+        event = 'InsertEnter',
+    },
+    {
+        'echasnovski/mini.surround',
+        version = '*',
+        config = load_config('editor.surround'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
+        'echasnovski/mini.ai',
+        version = '*',
+        config = load_config('editor.ai'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
+        'chrisgrieser/nvim-spider',
+        config = load_config('editor.spider'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
 
-    -- LSP
+    -- Language
     {
         'neovim/nvim-lspconfig',
         dependencies = { 'williamboman/mason-lspconfig.nvim' },
@@ -161,6 +167,12 @@ local plugins = {
         },
     },
     {
+        'michaelb/sniprun',
+        build = 'bash ./install.sh',
+        config = load_config('tools.sniprun'),
+        cmd = 'SnipRun',
+    },
+    {
         'windwp/nvim-spectre',
         config = load_config('tools.spectre'),
         cmd = 'Spectre',
@@ -193,11 +205,6 @@ local plugins = {
         event = 'VeryLazy',
     },
     {
-        'folke/which-key.nvim',
-        config = load_config('tools.which-key'),
-        event = 'VeryLazy',
-    },
-    {
         'iamcco/markdown-preview.nvim',
         build = function()
             vim.fn['mkdp#util#install']()
@@ -210,18 +217,10 @@ local plugins = {
         config = load_config('tools.ccc'),
         cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     },
-
-    -- Git
     {
         'ruifm/gitlinker.nvim',
         config = load_config('tools.gitlinker'),
         keys = '<leader>yg',
-    },
-    {
-        'lewis6991/gitsigns.nvim',
-        config = load_config('tools.gitsigns'),
-        cmd = 'Gitsigns',
-        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'tpope/vim-fugitive',
@@ -262,11 +261,6 @@ local plugins = {
         '2kabhishek/tdo.nvim',
         cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
         keys = { '[t', ']t' },
-    },
-    {
-        '2kabhishek/markit.nvim',
-        config = load_config('tools.markit'),
-        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         '2kabhishek/octohub.nvim',
