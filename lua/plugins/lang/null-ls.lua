@@ -14,7 +14,6 @@ null_ls.setup({
     diagnostics_format = '#{c} #{m} (#{s})',
     sources = {
         action.proselint, -- markdown actions
-        action.refactoring,
         -- action.ts_node_action, -- treesitter node actions, buggy, causes repeated notifications
         comp.spell, -- spell completion
         comp.tags, -- tags completion
