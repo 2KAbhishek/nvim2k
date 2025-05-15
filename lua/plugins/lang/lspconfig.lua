@@ -7,11 +7,17 @@ if auto_install then
     installed_servers = require('plugins.list').lsp_servers
 end
 
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 local default_setup = function(server)
     lspconfig[server].setup({
-        capabilities = require('blink.cmp').get_lsp_capabilities(),
+        capabilities = capabilities,
     })
 end
+
+require('mason-lspconfig').setup({
+    ensure_installed = installed_servers,
+    handlers = { default_setup },
+})
 
 local signs = { Error = icons.Error, Warn = icons.Warning, Hint = icons.Hint, Info = icons.Information }
 vim.diagnostic.config({
@@ -27,32 +33,5 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.INFO] = signs.Info,
             [vim.diagnostic.severity.HINT] = signs.Hint,
         },
-    },
-})
-
-require('mason-lspconfig').setup({
-    ensure_installed = installed_servers,
-    handlers = {
-        default_setup,
-        lua_ls = function()
-            lspconfig.lua_ls.setup({
-                settings = {
-                    Lua = {
-                        runtime = { version = 'LuaJIT' },
-                        diagnostics = { globals = { 'vim' } },
-                        workspace = { library = vim.api.nvim_get_runtime_file('', true) },
-                        telemetry = { enable = false },
-                        format = {
-                            enable = true,
-                            defaultConfig = {
-                                align_continuous_assign_statement = false,
-                                align_continuous_rect_table_field = false,
-                                align_array_table = false,
-                            },
-                        },
-                    },
-                },
-            })
-        end,
     },
 })
