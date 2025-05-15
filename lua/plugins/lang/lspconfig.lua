@@ -15,6 +15,11 @@ end
 
 local signs = { Error = icons.Error, Warn = icons.Warning, Hint = icons.Hint, Info = icons.Information }
 vim.diagnostic.config({
+    underline = true,
+    update_in_insert = true,
+    severity_sort = true,
+    virtual_text = true,
+    float = true,
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = signs.Error,
