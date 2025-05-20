@@ -446,10 +446,10 @@ if util.is_present('cargo') then
     table.insert(lsp_servers, 'rust_analyzer')
 end
 
-vim.tbl_extend('force', plugins, util.get_user_config('user_plugins', {}))
-vim.tbl_extend('force', lsp_servers, util.get_user_config('user_lsp_servers', {}))
-vim.tbl_extend('force', null_ls_sources, util.get_user_config('user_null_ls_sources', {}))
-vim.tbl_extend('force', treesitter_parsers, util.get_user_config('user_tresitter_parsers', {}))
+plugins = vim.tbl_extend('force', plugins, util.get_user_config('user_plugins', {}))
+lsp_servers = vim.tbl_extend('force', lsp_servers, util.get_user_config('user_lsp_servers', {}))
+null_ls_sources = vim.tbl_extend('force', null_ls_sources, util.get_user_config('user_null_ls_sources', {}))
+treesitter_parsers = vim.tbl_extend('force', treesitter_parsers, util.get_user_config('user_tresitter_parsers', {}))
 
 return {
     plugins = plugins,
