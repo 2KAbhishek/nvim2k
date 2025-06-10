@@ -251,7 +251,7 @@ local plugins = {
     },
     {
         '2kabhishek/nerdy.nvim',
-        cmd = 'Nerdy',
+        cmd = { 'Nerdy', 'NerdyRecents' },
     },
     {
         '2kabhishek/termim.nvim',

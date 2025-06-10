@@ -148,6 +148,7 @@ local normal_mappings = {
     { '<leader>id', ":put =strftime('## %a, %d %b, %Y, %r')<cr>", desc = 'Date' },
     { '<leader>if', ":put =expand('%:t')<cr>", desc = 'File Name' },
     { '<leader>in', ':Nerdy<cr>', desc = 'Nerd Glyphs' },
+    { '<leader>iN', ':NerdyRecents<cr>', desc = 'Recent Nerd Glyphs' },
     { '<leader>ip', ':put %<cr>', desc = 'Relative Path' },
     { '<leader>iP', ':put %:p<cr>', desc = 'Absolute Path' },
     { '<leader>it', ":put =strftime('## %r')<cr>", desc = 'Time' },
