@@ -16,7 +16,7 @@ local model_names = {
 
 avante.setup({
     mode = 'agentic',
-    provider = 'copilot-gemini-2.0-flash-001',
+    provider = 'copilot-gpt-4.1',
     -- cursor_applying_provider = 'copilot-o3-mini',
     -- auto_suggestions_provider = 'copilot-claude-3.7-sonnet',
 
