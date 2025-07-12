@@ -177,6 +177,7 @@ avante.setup({
         'create_dir',
         'rename_dir',
         'delete_dir',
+        'replace_in_file',
         'bash',
         'web_search',
     },
