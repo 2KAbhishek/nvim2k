@@ -15,4 +15,5 @@ octohub.setup({
     show_contributions = true,
     show_repo_stats = true,
     add_default_keybindings = true,
+    use_new_command = true,
 })
