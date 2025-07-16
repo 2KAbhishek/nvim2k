@@ -251,7 +251,9 @@ local plugins = {
     },
     {
         '2kabhishek/nerdy.nvim',
-        cmd = { 'Nerdy', 'NerdyRecents' },
+        cmd = { 'Nerdy' },
+        keys = { '<leader>in', '<leader>iN' },
+        config = load_config('tools.nerdy'),
     },
     {
         '2kabhishek/termim.nvim',
