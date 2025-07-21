@@ -81,7 +81,7 @@ return {
         Bug = ' ',
         Calendar = ' ',
         Camera = ' ',
-        Check = ' ',
+        Check = ' ',
         ChevronRight = '',
         Circle = ' ',
         CircleSmall = '● ',
