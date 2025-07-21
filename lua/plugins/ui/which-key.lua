@@ -222,22 +222,6 @@ local normal_mappings = {
 
     { '<leader>n', group = ' Notes' },
     { '<leader>na', ':lua Snacks.scratch.select()<cr>', desc = 'Select Scratch' },
-    {
-        '<leader>nc',
-        ':lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Committed!")<cr>',
-        desc = 'Commit Note',
-    },
-    { '<leader>nd', ':Tdo<cr>', desc = "Today's Todo" },
-    { '<leader>ne', ':TdoEntry<cr>', desc = "Today's Entry" },
-    { '<leader>nf', ':TdoFiles<cr>', desc = 'All Notes' },
-    { '<leader>ng', ':TdoFind<cr>', desc = 'Find Notes' },
-    { '<leader>nh', ':Tdo -1<cr>', desc = "Yesterday's Todo" },
-    { '<leader>nl', ':Tdo 1<cr>', desc = "Tomorrow's Todo" },
-    { '<leader>nn', ':TdoNote<cr>', desc = 'New Note' },
-    { '<leader>np', group = 'Past Todos' },
-    { '<leader>ns', ':lua Snacks.scratch()<cr>', desc = 'New Scratch' },
-    { '<leader>nt', ':TdoTodos<cr>', desc = 'Incomplete Todos' },
-    { '<leader>nx', ':TdoToggle<cr>', desc = 'Toggle Todo' },
 
     { '<leader>o', group = ' Options' },
     { '<leader>oi', 'vim.show_pos', desc = 'Inspect Position' },
@@ -344,18 +328,6 @@ local normal_mappings = {
 
 -- Numerical mappings
 for i = 1, 9 do
-    table.insert(normal_mappings, {
-        string.format('<leader>n%d', i),
-        string.format(':Tdo %d<cr>', i),
-        desc = string.format('Todo %d Days In Future', i),
-    })
-
-    table.insert(normal_mappings, {
-        string.format('<leader>np%d', i),
-        string.format(':Tdo -%d<cr>', i),
-        desc = string.format('Todo %d Days From Past', i),
-    })
-
     table.insert(normal_mappings, {
         string.format('<leader>f%d', i),
         string.format(':LualineBuffersJump%d<cr>', i),
