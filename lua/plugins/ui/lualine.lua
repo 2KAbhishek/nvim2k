@@ -56,6 +56,14 @@ local conditions = {
         local gitdir = vim.fn.finddir('.git', filepath .. ';')
         return gitdir and #gitdir > 0 and #gitdir < #filepath
     end,
+    is_note = function()
+        local notes_dir = vim.env.NOTES_DIR
+        if not notes_dir then
+            return false
+        end
+        local current_file = vim.fn.expand('%:p')
+        return current_file:find(vim.fn.expand(notes_dir), 1, true) == 1
+    end,
 }
 
 local searchcount = { 'searchcount', color = { fg = colors.fg, gui = 'bold' } }
@@ -148,6 +156,21 @@ local lsp = {
     color = { fg = colors.fg, gui = 'bold' },
 }
 
+local tdo = {
+    function()
+        local update_frequency = 300
+        if not vim.g.tdo_last_update or (os.time() - vim.g.tdo_last_update) > update_frequency then
+            vim.g.tdo_last_update = os.time()
+            local result = vim.fn.system('tdo pending')
+            vim.g.tdo_count = tonumber(result:match('%d+')) or 0
+        end
+        return vim.g.tdo_count or 0
+    end,
+    icon = icons.ui.Check,
+    color = { fg = '#8BCD5B', gui = 'bold' },
+    cond = conditions.is_note,
+}
+
 local encoding = {
     'o:encoding',
     fmt = string.upper,
@@ -183,7 +206,7 @@ lualine.setup({
     -- extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
     tabline = {
         lualine_a = {},
-        lualine_b = { mode(), buffers },
+        lualine_b = { mode(), tdo, buffers },
         lualine_c = {},
         lualine_x = { diff_icons, branch },
         lualine_y = { searchcount, selectioncount },
