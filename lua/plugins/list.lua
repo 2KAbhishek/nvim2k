@@ -261,8 +261,9 @@ local plugins = {
     },
     {
         '2kabhishek/tdo.nvim',
-        cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
-        keys = { '[t', ']t' },
+        cmd = { 'Tdo' },
+        keys = { '<leader>nn', '<leader>nx', '[t', ']t' },
+        config = load_config('tools.tdo'),
     },
     {
         '2kabhishek/octohub.nvim',
