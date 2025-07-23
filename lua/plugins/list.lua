@@ -276,23 +276,14 @@ local plugins = {
     },
     {
         '2kabhishek/exercism.nvim',
-        cmd = {
-            'ExercismLanguages',
-            'ExercismList',
-            'ExercismSubmit',
-            'ExercismTest',
-        },
-        keys = {
-            '<leader>exa',
-            '<leader>exl',
-            '<leader>exs',
-            '<leader>ext',
-        },
+        cmd = { 'Exercism' },
+        keys = { '<leader>exa', '<leader>exl' },
         dependencies = {
             '2kabhishek/utils.nvim',
             '2kabhishek/termim.nvim',
         },
         config = load_config('tools.exercism'),
+    },
         -- opts = {},
         -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
     },
