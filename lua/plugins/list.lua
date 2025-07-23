@@ -132,7 +132,6 @@ local plugins = {
         'yetone/avante.nvim',
         version = false,
         config = load_config('ai.avante'),
-        event = { 'BufReadPost', 'BufNewFile' },
         build = 'make',
         -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
         dependencies = {
@@ -140,11 +139,14 @@ local plugins = {
             'nvim-lua/plenary.nvim',
             'ravitemer/mcphub.nvim',
         },
+        cmd = 'AvanteAsk',
+        keys = { '<leader>aa' },
     },
     {
         'ravitemer/mcphub.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
         cmd = 'MCPHub',
+        keys = { '<leader>am' },
         -- build = 'npm install -g mcp-hub@latest', -- use this if you want to use the global mcp-hub
         build = 'bundled_build.lua',
         config = load_config('ai.mcphub'),
@@ -284,6 +286,12 @@ local plugins = {
         },
         config = load_config('tools.exercism'),
     },
+    {
+        -- '2kabhishek/template.nvim',
+        -- cmd = { 'Template' },
+        -- keys = { '<leader>th' },
+        -- dependencies = { '2kabhishek/utils.nvim', },
+        -- config = load_config('tools.template'),
         -- opts = {},
         -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
     },
