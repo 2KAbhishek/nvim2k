@@ -68,7 +68,7 @@ local plugins = {
         'echasnovski/mini.surround',
         version = '*',
         config = load_config('editor.surround'),
-        event = { 'BufReadPost', 'BufNewFile' },
+        event = { 'InsertEnter' },
     },
     {
         'echasnovski/mini.ai',
@@ -87,11 +87,7 @@ local plugins = {
         'neovim/nvim-lspconfig',
         dependencies = { 'williamboman/mason-lspconfig.nvim' },
         config = load_config('lang.lspconfig'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
-        'folke/lazydev.nvim',
-        ft = 'lua',
+        event = { 'InsertEnter' },
     },
     {
         'nvimdev/lspsaga.nvim',
@@ -99,15 +95,19 @@ local plugins = {
         event = 'LspAttach',
     },
     {
-        'williamboman/mason.nvim',
-        config = load_config('lang.mason'),
-        cmd = 'Mason',
-    },
-    {
         'nvimtools/none-ls.nvim',
         dependencies = { 'jay-babu/mason-null-ls.nvim' },
         config = load_config('lang.null-ls'),
-        event = { 'BufReadPost', 'BufNewFile' },
+        event = { 'InsertEnter' },
+    },
+    {
+        'folke/lazydev.nvim',
+        ft = 'lua',
+    },
+    {
+        'williamboman/mason.nvim',
+        config = load_config('lang.mason'),
+        cmd = 'Mason',
     },
     {
         'saghen/blink.cmp',
@@ -157,7 +157,6 @@ local plugins = {
         'echasnovski/mini.files',
         version = '*',
         config = load_config('tools.files'),
-        event = { 'BufReadPost', 'BufNewFile' },
         keys = {
             {
                 '<leader>ee',
