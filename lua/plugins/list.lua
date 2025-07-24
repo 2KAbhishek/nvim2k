@@ -278,7 +278,7 @@ local plugins = {
     {
         '2kabhishek/exercism.nvim',
         cmd = { 'Exercism' },
-        keys = { '<leader>exa', '<leader>exl' },
+        keys = { '<leader>exa', '<leader>exl', '<leader>exr' },
         dependencies = {
             '2kabhishek/utils.nvim',
             '2kabhishek/termim.nvim',
