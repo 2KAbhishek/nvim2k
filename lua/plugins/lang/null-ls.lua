@@ -6,7 +6,7 @@ local diag = null_ls.builtins.diagnostics
 local format = null_ls.builtins.formatting
 local hover = null_ls.builtins.hover
 
--- Buily in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+-- Built-in sources: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 null_ls.setup({
     debug = false,
     border = 'rounded',
@@ -14,27 +14,22 @@ null_ls.setup({
     diagnostics_format = '#{c} #{m} (#{s})',
     sources = {
         action.proselint, -- markdown actions
-        -- action.ts_node_action, -- treesitter node actions, buggy, causes repeated notifications
         comp.spell, -- spell completion
         comp.tags, -- tags completion
         diag.actionlint, -- github action lint
         diag.credo, -- elixir diagnostics
         diag.golangci_lint,
         diag.hadolint, -- docker lint
-        diag.proselint, -- markdown lint
         diag.reek, -- ruby code smell
-        -- diag.rubocop, -- ruby diagnostics
-        -- diag.todo_comments, -- causes highlighter errors on J
         diag.trail_space, -- trailing space check
         diag.vint, -- vim lint
-        diag.write_good, -- english writing style
         format.mix, -- elixir formatter
         format.prettier, -- js, md, css, etc formatter
-        -- format.rubocop, -- ruby formatter
         format.shfmt, -- shell formatter
         format.stylua, -- lua formatter
         hover.dictionary, -- show word dictionary on hover
         hover.printenv, -- show env on hover
+        -- diag.todo_comments, -- causes highlighter errors on J
     },
 })
 
