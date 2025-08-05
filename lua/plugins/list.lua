@@ -263,7 +263,7 @@ local plugins = {
     {
         '2kabhishek/tdo.nvim',
         cmd = { 'Tdo' },
-        keys = { '<leader>nn', '<leader>nx', '[t', ']t' },
+        keys = { '<leader>nn', '<leader>nt', '<leader>nx', '[t', ']t' },
         config = load_config('tools.tdo'),
     },
     {
