@@ -195,30 +195,10 @@ local normal_mappings = {
     { '<leader>lT', ':Lspsaga peek_type_definition<cr>', desc = 'Peek Type Definition' },
 
     { '<leader>m', group = ' Marks' },
-    {
-        '<leader>mb',
-        ":lua require('telescope').extensions.markit.bookmarks_list_all()<cr>",
-        desc = 'Bookmarks',
-    },
-    {
-        '<leader>mB',
-        ":lua require('telescope').extensions.markit.bookmarks_list_all({project_only = true})<cr>",
-        desc = 'Bookmarks In Project',
-    },
-    { '<leader>md', ":lua require('markit').delete_line()<cr>", desc = 'Delete Marks In Line' },
-    { '<leader>mD', ":lua require('markit').delete_buf()<cr>", desc = 'Delete Marks In Buffer' },
     { '<leader>mg', group = 'Group Bookmarks' },
     { '<leader>mG', group = 'Group Bookmarks In Project' },
-    { '<leader>mh', ":lua require('markit').prev_bookmark()<cr>", desc = 'Previous Bookmark' },
-    { '<leader>mj', ":lua require('markit').next()<cr>", desc = 'Next' },
-    { '<leader>mk', ":lua require('markit').prev()<cr>", desc = 'Previous' },
-    { '<leader>ml', ":lua require('markit').next_bookmark()<cr>", desc = 'Next Bookmark' },
     { '<leader>mn', group = 'Next Bookmark In Group' },
     { '<leader>mp', group = 'Previous Bookmark In Group' },
-    { '<leader>mP', ":lua require('markit').preview()<cr>", desc = 'Preview' },
-    { '<leader>ms', ":lua require('markit').set_next()<cr>", desc = 'Set Next' },
-    { '<leader>mt', ":lua require('markit').toggle()<cr>", desc = 'Toggle' },
-    { '<leader>mx', ":lua require('markit').delete_bookmark()<cr>", desc = 'Delete Bookmark' },
 
     { '<leader>n', group = ' Notes' },
     { '<leader>na', ':lua Snacks.scratch.select()<cr>', desc = 'Select Scratch' },
@@ -332,39 +312,6 @@ for i = 1, 9 do
         string.format('<leader>f%d', i),
         string.format(':LualineBuffersJump%d<cr>', i),
         desc = string.format('File %d', i),
-    })
-
-    table.insert(normal_mappings, {
-        string.format('<leader>m%d', i),
-        string.format(':lua require("markit").toggle_bookmark%d()<cr>', i),
-        desc = string.format('Toggle Group %d Bookmark', i),
-    })
-
-    table.insert(normal_mappings, {
-        string.format('<leader>mp%d', i),
-        string.format(':lua require("markit").prev_bookmark%d()<cr>', i),
-        desc = string.format('Previous Group %d Bookmarks', i),
-    })
-
-    table.insert(normal_mappings, {
-        string.format('<leader>mn%d', i),
-        string.format(':lua require("markit").next_bookmark%d()<cr>', i),
-        desc = string.format('Next Group %d Bookmarks', i),
-    })
-
-    table.insert(normal_mappings, {
-        string.format('<leader>mg%d', i),
-        string.format(':lua require("telescope").extensions.markit.bookmarks_list_all({group = %d})<cr>', i),
-        desc = string.format('Group %d Bookmarks', i),
-    })
-
-    table.insert(normal_mappings, {
-        string.format('<leader>mG%d', i),
-        string.format(
-            ':lua require("telescope").extensions.markit.bookmarks_list_all({group = %d, project_only = true})<cr>',
-            i
-        ),
-        desc = string.format('Group %d Bookmarks In Project', i),
     })
 end
 
