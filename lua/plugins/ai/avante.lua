@@ -29,7 +29,6 @@ avante.setup({
                 extra_request_body = {
                     temperature = 0,
                     max_completion_tokens = 1000000,
-                    reasoning_effort = 'high',
                 },
             },
         }
@@ -160,7 +159,7 @@ avante.setup({
     },
     system_prompt = function()
         local hub = require('mcphub').get_hub_instance()
-        return hub:get_active_servers_prompt()
+        return hub and hub:get_active_servers_prompt() or ''
     end,
     custom_tools = function()
         return {
