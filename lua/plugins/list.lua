@@ -363,7 +363,6 @@ local null_ls_sources = {
 
 local lsp_servers = {
     'bashls',
-    'harper_ls',
     'jsonls',
     'lua_ls',
     'typos_lsp',
