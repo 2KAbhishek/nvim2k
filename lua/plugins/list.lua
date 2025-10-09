@@ -114,7 +114,6 @@ local plugins = {
         'saghen/blink.cmp',
         dependencies = {
             'rafamadriz/friendly-snippets',
-            'Kaiser-Yang/blink-cmp-avante',
         },
         version = '*',
         config = load_config('lang.blink'),
@@ -130,27 +129,10 @@ local plugins = {
         event = 'InsertEnter',
     },
     {
-        'yetone/avante.nvim',
-        version = false,
-        config = load_config('ai.avante'),
-        build = 'make',
-        -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-            'nvim-lua/plenary.nvim',
-            'ravitemer/mcphub.nvim',
-        },
-        cmd = 'AvanteAsk',
-        keys = { '<leader>aa' },
-    },
-    {
-        'ravitemer/mcphub.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        cmd = 'MCPHub',
-        keys = { '<leader>am' },
-        -- build = 'npm install -g mcp-hub@latest', -- use this if you want to use the global mcp-hub
-        build = 'bundled_build.lua',
-        config = load_config('ai.mcphub'),
+        'folke/sidekick.nvim',
+        config = load_config('ai.sidekick'),
+        event = 'InsertEnter',
+        cmd = 'Sidekick',
     },
 
     -- Tools
