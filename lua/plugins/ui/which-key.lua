@@ -73,6 +73,12 @@ local normal_mappings = {
     { '<leader>apo', prompts.add_prompt('optimize'), desc = 'Optimize' },
     { '<leader>apr', prompts.add_prompt('review'), desc = 'Review' },
     { '<leader>apt', prompts.add_prompt('tests'), desc = 'Tests' },
+    { '<leader>aa', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Copilot' },
+    { '<leader>ac', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Claude' },
+    { '<leader>aP', ':Sidekick cli prompt<cr>', desc = 'AI Prompt Picker' },
+    { '<leader>as', ':Sidekick cli toggle<cr>', desc = 'Select AI CLI' },
+    { '<leader>al', ':Sidekick cli send msg="{this}"<cr>', desc = 'Send Line' },
+    { '<leader>av', ':Sidekick cli send msg="{selection}"<cr>', desc = 'Send Selection' },
 
     { '<leader>c', group = ' Code' },
     { '<leader>cF', ':retab<cr>', desc = 'Fix Tabs' },
@@ -364,6 +370,7 @@ local visual_mappings = {
 
 local no_leader_mappings = {
     mode = 'n',
+    { '<C-.>', ':Sidekick cli focus<cr>', mode = { 'n', 'x', 'i', 't' }, desc = 'Sidekick Switch Focus' },
     { '<C-Down>', ':resize -10<cr>', desc = 'Decrease window height' },
     { '<C-Left>', ':vertical resize -10<cr>', desc = 'Decrease window width' },
     { '<C-Right>', ':vertical resize +10<cr>', desc = 'Increase window width' },
