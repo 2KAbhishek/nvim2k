@@ -9,6 +9,7 @@ markit.setup({
     sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
     excluded_filetypes = {},
     excluded_buftypes = { 'nofile' },
+    enable_bookmarks = true,
     bookmarks = {
         { sign = icons.ui.Neovim, virt_text = 'flag', annotate = false },
         { sign = icons.ui.Eye, virt_text = 'watch', annotate = false },
