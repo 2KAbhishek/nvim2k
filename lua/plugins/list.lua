@@ -38,6 +38,7 @@ local plugins = {
     },
     {
         '2kabhishek/markit.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
         config = load_config('ui.markit'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
@@ -292,7 +293,7 @@ local plugins = {
         -- dependencies = { '2kabhishek/utils.nvim', },
         -- config = load_config('tools.template'),
         -- opts = {},
-        -- dir = '~/Projects/2KAbhishek/exercism.nvim/',
+        -- dir = '~/Projects/2KAbhishek/template.nvim/',
     },
 
     -- Optional
