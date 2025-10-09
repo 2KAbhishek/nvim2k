@@ -26,7 +26,6 @@ null_ls.setup({
         format.mix, -- elixir formatter
         format.prettier, -- js, md, css, etc formatter
         format.shfmt, -- shell formatter
-        format.stylua, -- lua formatter
         hover.dictionary, -- show word dictionary on hover
         hover.printenv, -- show env on hover
         -- diag.todo_comments, -- causes highlighter errors on J
