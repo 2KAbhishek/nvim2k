@@ -52,7 +52,7 @@ local setup = {
     show_help = false,
     show_keys = true,
     triggers = {
-        { '<auto>', mode = 'nvisoct' },
+        { '<auto>',   mode = 'nvisoct' },
         { '<leader>', mode = { 'n', 'v' } },
     },
 }
@@ -62,9 +62,13 @@ local normal_mappings = {
     { '<leader>x', ':x<cr>', desc = ' Save and Quit' },
 
     { '<leader>a', group = ' AI' },
-    { '<leader>aC', ':AvanteClear<cr>', desc = 'avante: clear' },
-    { '<leader>am', ':MCPHub<cr>', desc = 'MCPHub' },
-    { '<leader>an', ':AvanteChatNew<cr>', desc = 'avante: new' },
+    { '<leader>aa', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Copilot' },
+    { '<leader>ac', ':Sidekick cli toggle name=claude<cr>', desc = 'AI Claude' },
+    { '<leader>af', ':Sidekick cli send msg="{file}"<cr>', mode = { 'n', 'x', }, desc = 'Send File' },
+    { '<leader>al', ':Sidekick cli send msg="{this}"<cr>', mode = { 'n', 'x', }, desc = 'Send Line' },
+    { '<leader>as', ':Sidekick cli toggle<cr>', desc = 'Select AI CLI' },
+    { '<leader>av', ':Sidekick cli send msg="{selection}"<cr', mode = { 'n', 'x', }, desc = 'Send Selection' },
+    { '<leader>aP', ':Sidekick cli prompt<cr>', desc = 'AI Prompt Picker' },
     { '<leader>ap', group = 'Insert Prompt' },
     { '<leader>apd', prompts.add_prompt('docs'), desc = 'Docs' },
     { '<leader>ape', prompts.add_prompt('explain'), desc = 'Explain' },
@@ -73,12 +77,6 @@ local normal_mappings = {
     { '<leader>apo', prompts.add_prompt('optimize'), desc = 'Optimize' },
     { '<leader>apr', prompts.add_prompt('review'), desc = 'Review' },
     { '<leader>apt', prompts.add_prompt('tests'), desc = 'Tests' },
-    { '<leader>aa', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Copilot' },
-    { '<leader>ac', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Claude' },
-    { '<leader>aP', ':Sidekick cli prompt<cr>', desc = 'AI Prompt Picker' },
-    { '<leader>as', ':Sidekick cli toggle<cr>', desc = 'Select AI CLI' },
-    { '<leader>al', ':Sidekick cli send msg="{this}"<cr>', desc = 'Send Line' },
-    { '<leader>av', ':Sidekick cli send msg="{selection}"<cr>', desc = 'Send Selection' },
 
     { '<leader>c', group = ' Code' },
     { '<leader>cF', ':retab<cr>', desc = 'Fix Tabs' },
@@ -173,14 +171,14 @@ local normal_mappings = {
         desc = 'Search Forward',
     },
     {
-        '<leader>jN',
-        ":lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Backward',
-    },
-    {
         '<leader>jw',
         ':lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>',
         desc = 'Current Word',
+    },
+    {
+        '<leader>jN',
+        ":lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
+        desc = 'Search Backward',
     },
 
     { '<leader>l', group = ' LSP' },
@@ -339,19 +337,9 @@ local visual_mappings = {
     { '<leader>gu', ":'<,'>Gitsigns undo_stage_hunk<cr>", desc = 'Undo Stage Hunk' },
 
     { '<leader>j', group = ' Jump' },
-    {
-        '<leader>jN',
-        ":lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Backward',
-    },
     { '<leader>jd', ':FlashDiagnostics<cr>', desc = 'Diagnostics' },
     { '<leader>jj', ":lua require('flash').remote()<cr>", desc = 'Remote' },
     { '<leader>jk', ":lua require('flash').treesitter()<cr>", desc = 'Treesitter' },
-    {
-        '<leader>jn',
-        ":lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Forward',
-    },
     { '<leader>jp', ":lua require('flash').jump({continue = true})<cr>", desc = 'Previous Jump' },
     { '<leader>js', ":lua require('flash').jump()<cr>", desc = 'Search' },
     { '<leader>jt', ":lua require('flash').treesitter_search()<cr>", desc = 'Remote Treesitter' },
@@ -359,6 +347,16 @@ local visual_mappings = {
         '<leader>jw',
         ':lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>',
         desc = 'Current Word',
+    },
+    {
+        '<leader>jN',
+        ":lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
+        desc = 'Search Backward',
+    },
+    {
+        '<leader>jn',
+        ":lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
+        desc = 'Search Forward',
     },
 
     { '<leader>l', group = ' LSP' },
