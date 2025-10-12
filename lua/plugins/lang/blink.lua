@@ -5,14 +5,7 @@ blink.setup({
     -- 'default', 'super-tab', 'enter'
     keymap = {
         preset = 'enter',
-        ["<Tab>"] = {
-            function()
-                return require("sidekick").nes_jump_or_apply()
-            end,
-            'select_next',
-            'snippet_forward',
-            'fallback',
-        },
+        ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
         ['<C-space>'] = { 'show', 'hide' },
         ['<C-y>'] = { 'show_documentation', 'hide_documentation' },

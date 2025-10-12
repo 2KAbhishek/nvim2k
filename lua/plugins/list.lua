@@ -133,6 +133,16 @@ local plugins = {
         config = load_config('ai.sidekick'),
         event = 'InsertEnter',
         cmd = 'Sidekick',
+        keys = { {
+            "<tab>",
+            function()
+                if not require("sidekick").nes_jump_or_apply() then
+                    return "<Tab>"
+                end
+            end,
+            expr = true,
+            desc = "Next Edit Suggestion",
+        }, },
     },
 
     -- Tools
