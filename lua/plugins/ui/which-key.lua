@@ -117,6 +117,7 @@ local normal_mappings = {
     { '<leader>en', ':enew<cr>', desc = 'New File' },
 
     { '<leader>f', group = ' Find' },
+    { '<leader>ff', ':Seeker<cr>', desc = 'Seek Files' },
     { '<leader>fx', ':%bd|e#|bd#<cr>', desc = 'Close except current' },
 
     { '<leader>g', group = ' Git' },

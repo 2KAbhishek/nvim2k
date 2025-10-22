@@ -279,6 +279,13 @@ local plugins = {
         config = load_config('tools.exercism'),
     },
     {
+        '2kabhishek/seeker.nvim',
+        cmd = { 'Seeker' },
+        keys = { '<leader>ff' },
+        dependencies = { 'folke/snacks.nvim', },
+        opts = {},
+    },
+    {
         -- '2kabhishek/template.nvim',
         -- cmd = { 'Template' },
         -- keys = { '<leader>th' },
