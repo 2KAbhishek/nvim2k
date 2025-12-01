@@ -194,11 +194,6 @@ local plugins = {
         },
     },
     {
-        'numToStr/Navigator.nvim',
-        config = load_config('tools.navigator'),
-        event = 'VeryLazy',
-    },
-    {
         'iamcco/markdown-preview.nvim',
         build = function()
             vim.fn['mkdp#util#install']()
