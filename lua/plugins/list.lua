@@ -36,12 +36,6 @@ local plugins = {
         cmd = 'Gitsigns',
         event = { 'BufReadPost', 'BufNewFile' },
     },
-    {
-        '2kabhishek/markit.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        config = load_config('ui.markit'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
 
     -- Editor
     {
@@ -133,16 +127,18 @@ local plugins = {
         config = load_config('ai.sidekick'),
         event = 'InsertEnter',
         cmd = 'Sidekick',
-        keys = { {
-            "<tab>",
-            function()
-                if not require("sidekick").nes_jump_or_apply() then
-                    return "<Tab>"
-                end
-            end,
-            expr = true,
-            desc = "Next Edit Suggestion",
-        }, },
+        keys = {
+            {
+                '<tab>',
+                function()
+                    if not require('sidekick').nes_jump_or_apply() then
+                        return '<Tab>'
+                    end
+                end,
+                expr = true,
+                desc = 'Next Edit Suggestion',
+            },
+        },
     },
 
     -- Tools
@@ -223,6 +219,12 @@ local plugins = {
 
     -- Homegrown :)
     {
+        '2kabhishek/markit.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = load_config('ui.markit'),
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
         '2kabhishek/pickme.nvim',
         cmd = 'PickMe',
         event = 'VeryLazy',
@@ -246,8 +248,11 @@ local plugins = {
     {
         '2kabhishek/nerdy.nvim',
         cmd = { 'Nerdy' },
-        keys = { '<leader>in', '<leader>iN' },
         config = load_config('tools.nerdy'),
+        keys = {
+            { '<leader>in', ':Nerdy list<CR>', desc = 'Browse nerd icons', noremap = true, silent = true },
+            { '<leader>iN', ':Nerdy recents<CR>', desc = 'Browse recent nerd icons', noremap = true, silent = true },
+        },
     },
     {
         '2kabhishek/termim.nvim',
