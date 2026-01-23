@@ -52,7 +52,7 @@ local setup = {
     show_help = false,
     show_keys = true,
     triggers = {
-        { '<auto>',   mode = 'nvisoct' },
+        { '<auto>', mode = 'nvisoct' },
         { '<leader>', mode = { 'n', 'v' } },
     },
 }
@@ -64,10 +64,10 @@ local normal_mappings = {
     { '<leader>a', group = ' AI' },
     { '<leader>aa', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Copilot' },
     { '<leader>ac', ':Sidekick cli toggle name=claude<cr>', desc = 'AI Claude' },
-    { '<leader>af', ':Sidekick cli send msg="{file}"<cr>', mode = { 'n', 'x', }, desc = 'Send File' },
-    { '<leader>al', ':Sidekick cli send msg="{this}"<cr>', mode = { 'n', 'x', }, desc = 'Send Line' },
+    { '<leader>af', ':Sidekick cli send msg="{file}"<cr>', mode = { 'n', 'x' }, desc = 'Send File' },
+    { '<leader>al', ':Sidekick cli send msg="{this}"<cr>', mode = { 'n', 'x' }, desc = 'Send Line' },
     { '<leader>as', ':Sidekick cli toggle<cr>', desc = 'Select AI CLI' },
-    { '<leader>av', ':Sidekick cli send msg="{selection}"<cr', mode = { 'n', 'x', }, desc = 'Send Selection' },
+    { '<leader>av', ':Sidekick cli send msg="{selection}"<cr', mode = { 'n', 'x' }, desc = 'Send Selection' },
     { '<leader>aP', ':Sidekick cli prompt<cr>', desc = 'AI Prompt Picker' },
     { '<leader>ap', group = 'Insert Prompt' },
     { '<leader>apd', prompts.add_prompt('docs'), desc = 'Docs' },
@@ -118,6 +118,9 @@ local normal_mappings = {
 
     { '<leader>f', group = ' Find' },
     { '<leader>fx', ':%bd|e#|bd#<cr>', desc = 'Close except current' },
+    { '<leader>fa', ':Seeker files<CR>', desc = 'Seeker files' },
+    { '<leader>ff', ':Seeker git_files<CR>', desc = 'Seeker git_files' },
+    { '<leader>fg', ':Seeker grep<CR>', desc = 'Seeker grep' },
 
     { '<leader>g', group = ' Git' },
     { '<leader>gA', ':Gitsigns stage_buffer<cr>', desc = 'Stage Buffer' },
