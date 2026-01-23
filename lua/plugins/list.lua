@@ -225,6 +225,17 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
+        '2kabhishek/seeker.nvim',
+        dependencies = { 'folke/snacks.nvim' },
+        cmd = { 'Seeker' },
+        keys = {
+            { '<leader>fa', ':Seeker files<CR>', desc = 'Seek Files' },
+            { '<leader>ff', ':Seeker git_files<CR>', desc = 'Seek Git Files' },
+            { '<leader>fg', ':Seeker grep<CR>', desc = 'Seek Grep' },
+        },
+        opts = {},
+    },
+    {
         '2kabhishek/pickme.nvim',
         cmd = 'PickMe',
         event = 'VeryLazy',
@@ -250,8 +261,8 @@ local plugins = {
         cmd = { 'Nerdy' },
         config = load_config('tools.nerdy'),
         keys = {
-            { '<leader>in', ':Nerdy list<CR>', desc = 'Browse nerd icons', noremap = true, silent = true },
-            { '<leader>iN', ':Nerdy recents<CR>', desc = 'Browse recent nerd icons', noremap = true, silent = true },
+            { '<leader>in', ':Nerdy list<CR>', desc = 'Browse nerd icons' },
+            { '<leader>iN', ':Nerdy recents<CR>', desc = 'Browse recent nerd icons' },
         },
     },
     {
