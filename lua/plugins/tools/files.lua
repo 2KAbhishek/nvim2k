@@ -28,8 +28,8 @@ files.setup({
     windows = {
         max_number = math.huge,
         preview = false,
-        width_focus = 30,
-        width_nofocus = 20,
+        width_focus = 50,
+        width_nofocus = 30,
         width_preview = 80,
     },
 })
