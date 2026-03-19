@@ -107,7 +107,6 @@ local user = {
 
     enable_debugger = false, -- enable dap.nvim support
     enable_test_runner = false, -- enable neotest.nvim support
-    enable_trainer = false, -- enable hardtime.nvim support
     user_plugins = {
         -- Add your lazy plugin spec here
     },

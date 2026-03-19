@@ -277,13 +277,6 @@ local plugins = {
 
     -- Optional
     {
-        'm4xshen/hardtime.nvim',
-        dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-        opts = {},
-        cmd = 'Hardtime',
-        enabled = util.get_user_config('enable_trainer', false),
-    },
-    {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
         config = load_config('tools.dap'),
