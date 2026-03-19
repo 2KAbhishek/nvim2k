@@ -184,41 +184,6 @@ local plugins = {
 
     -- Homegrown :)
     {
-        '2kabhishek/markit.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        config = load_config('ui.markit'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
-    {
-        '2kabhishek/seeker.nvim',
-        dependencies = { 'folke/snacks.nvim' },
-        cmd = { 'Seeker' },
-        keys = {
-            { '<leader>fa', ':Seeker files<CR>', desc = 'Seek Files' },
-            { '<leader>ff', ':Seeker git_files<CR>', desc = 'Seek Git Files' },
-            { '<leader>fg', ':Seeker grep<CR>', desc = 'Seek Grep' },
-            { '<leader>fw', ':Seeker grep_word<CR>', desc = 'Seek Grep Word' },
-        },
-        opts = {},
-    },
-    {
-        '2kabhishek/pickme.nvim',
-        cmd = 'PickMe',
-        event = 'VeryLazy',
-        dependencies = {
-            'folke/snacks.nvim',
-            -- 'nvim-telescope/telescope.nvim',
-            -- 'ibhagwan/fzf-lua',
-        },
-        opts = {
-            picker_provider = 'snacks',
-        },
-    },
-    {
-        '2kabhishek/utils.nvim',
-        cmd = 'UtilsClearCache',
-    },
-    {
         '2kabhishek/co-author.nvim',
         cmd = 'CoAuthor',
     },
@@ -259,6 +224,35 @@ local plugins = {
             '2kabhishek/termim.nvim',
         },
         config = load_config('tools.exercism'),
+    },
+    {
+        '2kabhishek/seeker.nvim',
+        dependencies = { 'folke/snacks.nvim' },
+        cmd = { 'Seeker' },
+        keys = {
+            { '<leader>fa', ':Seeker files<CR>', desc = 'Seek Files' },
+            { '<leader>ff', ':Seeker git_files<CR>', desc = 'Seek Git Files' },
+            { '<leader>fg', ':Seeker grep<CR>', desc = 'Seek Grep' },
+            { '<leader>fw', ':Seeker grep_word<CR>', desc = 'Seek Grep Word' },
+        },
+        opts = {},
+    },
+    {
+        '2kabhishek/pickme.nvim',
+        cmd = 'PickMe',
+        event = 'VeryLazy',
+        dependencies = {
+            'folke/snacks.nvim',
+            -- 'nvim-telescope/telescope.nvim',
+            -- 'ibhagwan/fzf-lua',
+        },
+        opts = {
+            picker_provider = 'snacks',
+        },
+    },
+    {
+        '2kabhishek/utils.nvim',
+        cmd = 'UtilsClearCache',
     },
     {
         -- '2kabhishek/template.nvim',
