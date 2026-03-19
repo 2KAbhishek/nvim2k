@@ -105,7 +105,6 @@ local user = {
         -- Auto installed Treesitter parsers defined by user
     },
 
-    enable_db_explorer = false, -- enable dbee.nvim support
     enable_debugger = false, -- enable dap.nvim support
     enable_test_runner = false, -- enable neotest.nvim support
     enable_trainer = false, -- enable hardtime.nvim support
