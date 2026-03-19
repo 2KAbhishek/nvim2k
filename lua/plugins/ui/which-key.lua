@@ -62,13 +62,6 @@ local normal_mappings = {
     { '<leader>x', ':x<cr>', desc = ' Save and Quit' },
 
     { '<leader>a', group = ' AI' },
-    { '<leader>aa', ':Sidekick cli toggle name=copilot<cr>', desc = 'AI Copilot' },
-    { '<leader>ac', ':Sidekick cli toggle name=claude<cr>', desc = 'AI Claude' },
-    { '<leader>af', ':Sidekick cli send msg="{file}"<cr>', mode = { 'n', 'x' }, desc = 'Send File' },
-    { '<leader>al', ':Sidekick cli send msg="{this}"<cr>', mode = { 'n', 'x' }, desc = 'Send Line' },
-    { '<leader>as', ':Sidekick cli toggle<cr>', desc = 'Select AI CLI' },
-    { '<leader>av', ':Sidekick cli send msg="{selection}"<cr', mode = { 'n', 'x' }, desc = 'Send Selection' },
-    { '<leader>aP', ':Sidekick cli prompt<cr>', desc = 'AI Prompt Picker' },
     { '<leader>ap', group = 'Insert Prompt' },
     { '<leader>apd', prompts.add_prompt('docs'), desc = 'Docs' },
     { '<leader>ape', prompts.add_prompt('explain'), desc = 'Explain' },
@@ -371,7 +364,6 @@ local visual_mappings = {
 
 local no_leader_mappings = {
     mode = 'n',
-    { '<C-.>', ':Sidekick cli focus<cr>', mode = { 'n', 'x', 'i', 't' }, desc = 'Sidekick Switch Focus' },
     { '<C-Down>', ':resize -10<cr>', desc = 'Decrease window height' },
     { '<C-Left>', ':vertical resize -10<cr>', desc = 'Decrease window width' },
     { '<C-Right>', ':vertical resize +10<cr>', desc = 'Increase window width' },
