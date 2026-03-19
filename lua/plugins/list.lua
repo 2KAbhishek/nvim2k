@@ -279,19 +279,9 @@ local plugins = {
     {
         'm4xshen/hardtime.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+        opts = {},
         cmd = 'Hardtime',
         enabled = util.get_user_config('enable_trainer', false),
-    },
-    {
-        'kndndrj/nvim-dbee',
-        dependencies = { 'MunifTanjim/nui.nvim' },
-        build = function()
-            --    "curl", "wget", "bitsadmin", "go"
-            require('dbee').install('curl')
-        end,
-        config = load_config('tools.dbee'),
-        cmd = 'DBToggle',
-        enabled = util.get_user_config('enable_db_explorer', false),
     },
     {
         'mfussenegger/nvim-dap',
