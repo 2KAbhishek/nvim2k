@@ -16,8 +16,8 @@ local colors = {
 }
 
 local mode_color = {
-    n = colors.green,
-    i = colors.blue,
+    n = colors.blue,
+    i = colors.green,
     v = colors.magenta,
     [''] = colors.magenta,
     V = colors.magenta,
