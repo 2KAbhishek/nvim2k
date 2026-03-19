@@ -34,7 +34,7 @@ local setup = {
     win = {
         no_overlap = true,
         border = 'rounded',
-        width = 0.8,
+        width = 0.5,
         height = { min = 5, max = 25 },
         padding = { 1, 2 },
         title = true,
