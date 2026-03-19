@@ -29,29 +29,7 @@ blink.setup({
         kind_icons = icons.kind,
     },
     sources = {
-        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
-        providers = {
-            copilot = {
-                name = 'copilot',
-                module = 'blink-cmp-copilot',
-                score_offset = 90,
-                async = true,
-                transform_items = function(_, items)
-                    local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
-                    local kind_idx = #CompletionItemKind + 1
-                    CompletionItemKind[kind_idx] = 'Copilot'
-                    for _, item in ipairs(items) do
-                        item.kind = kind_idx
-                    end
-                    return items
-                end,
-            },
-            lazydev = {
-                name = 'LazyDev',
-                module = 'lazydev.integrations.blink',
-                -- make lazydev completions top priority (see `:h blink.cmp`)
-                score_offset = 100,
-            },
-        },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        providers = {},
     },
 })
