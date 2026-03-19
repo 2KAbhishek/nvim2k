@@ -96,10 +96,6 @@ local plugins = {
         event = { 'InsertEnter' },
     },
     {
-        'folke/lazydev.nvim',
-        ft = 'lua',
-    },
-    {
         'williamboman/mason.nvim',
         config = load_config('lang.mason'),
         cmd = 'Mason',
