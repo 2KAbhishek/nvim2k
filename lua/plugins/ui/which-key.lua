@@ -399,6 +399,24 @@ which_key.add(normal_mappings)
 which_key.add(visual_mappings)
 which_key.add(no_leader_mappings)
 
+if util.get_user_config('enable_debugger', false) then
+    local debugger_bindings = {
+        mode = 'n',
+        { '<leader>d', group = ' Debug' },
+        { '<leader>db', ':DapToggleBreakpoint<cr>', desc = 'Breakpoint' },
+        { '<leader>dc', ':DapContinue<cr>', desc = 'Continue' },
+        { '<leader>di', ':DapStepInto<cr>', desc = 'Into' },
+        { '<leader>dl', ":lua require'dap'.run_last()<cr>", desc = 'Last' },
+        { '<leader>dn', ':DapStepOver<cr>', desc = 'Over' },
+        { '<leader>do', ':DapStepOut<cr>', desc = 'Out' },
+        { '<leader>dr', ':DapRestartFrame<cr>', desc = 'Restart Frame' },
+        { '<leader>dt', ':DapToggleRepl<cr>', desc = 'Repl' },
+        { '<leader>du', ':DapUIToggle<cr>', desc = 'Debugger' },
+        { '<leader>dx', ':DapTerminate<cr>', desc = 'Exit' },
+    }
+    which_key.add(debugger_bindings)
+end
+
 if util.get_user_config('enable_test_runner', false) then
     local test_runner_bindings = {
         mode = 'n',
@@ -409,38 +427,6 @@ if util.get_user_config('enable_test_runner', false) then
         { '<leader>us', ':Neotest summary<cr>', desc = 'Test Summary' },
     }
     which_key.add(test_runner_bindings)
-end
-
-if util.get_user_config('enable_db_explorer', false) then
-    local db_explorer_bindings = {
-        mode = 'n',
-        { '<leader>d', group = ' Database' },
-        { '<leader>dS', ':lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', desc = 'To JSON' },
-        { '<leader>db', ':DBToggle<cr>', desc = 'DB Explorer' },
-        { '<leader>dj', ':lua require("dbee").next()<cr>', desc = 'DB Next' },
-        { '<leader>dk', ':lua require("dbee").prev()<cr>', desc = 'DB Prev' },
-        { '<leader>ds', ':lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', desc = 'To CSV' },
-        { '<leader>dt', ':lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', desc = 'To Table' },
-    }
-    which_key.add(db_explorer_bindings)
-end
-
-if util.get_user_config('enable_debugger', false) then
-    local debugger_bindings = {
-        mode = 'n',
-        { '<leader>b', group = ' Debug' },
-        { '<leader>bO', ':DapStepOut<cr>', desc = 'Out' },
-        { '<leader>bR', ':DapRestartFrame<cr>', desc = 'Restart Frame' },
-        { '<leader>bb', ':DapToggleBreakpoint<cr>', desc = 'Breakpoint' },
-        { '<leader>bc', ':DapContinue<cr>', desc = 'Continue' },
-        { '<leader>bi', ':DapStepInto<cr>', desc = 'Into' },
-        { '<leader>bl', ":lua require'dap'.run_last()<cr>", desc = 'Last' },
-        { '<leader>bo', ':DapStepOver<cr>', desc = 'Over' },
-        { '<leader>br', ':DapToggleRepl<cr>', desc = 'Repl' },
-        { '<leader>bt', ':DapUIToggle<cr>', desc = 'Debugger' },
-        { '<leader>bx', ':DapTerminate<cr>', desc = 'Exit' },
-    }
-    which_key.add(debugger_bindings)
 end
 
 local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
