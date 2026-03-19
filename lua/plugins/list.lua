@@ -41,11 +41,6 @@ local plugins = {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-refactor',
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            'RRethy/nvim-treesitter-textsubjects',
-        },
         config = load_config('editor.treesitter'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
@@ -91,7 +86,7 @@ local plugins = {
     },
     {
         'nvimtools/none-ls.nvim',
-        dependencies = { 'jay-babu/mason-null-ls.nvim' },
+        dependencies = { 'jay-babu/mason-null-ls.nvim', 'nvim-lua/plenary.nvim' },
         config = load_config('lang.null-ls'),
         event = { 'InsertEnter' },
     },
