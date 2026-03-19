@@ -36,7 +36,7 @@ Here's a [YouTube playlist](https://www.youtube.com/watch?v=Pj7jJnOcW9I&list=PL5
 
 ## ✨ Features
 
-- **Fully configured LSP**: Out of the box LSP and completions, including Copilot (optional)
+- **Fully configured LSP**: Out of the box LSP and completions
 - **Awesome keybindings**: Intuitive and well documented keybindings with which-key
 - **Blazingly fast**: Starts up in less than 30ms thanks to extensive lazy loading
 - **Batteries included**: Has all the necessary plugins included out of the box
