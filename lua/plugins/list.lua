@@ -111,32 +111,6 @@ local plugins = {
         event = { 'InsertEnter' },
     },
 
-    -- AI
-    {
-        'zbirenbaum/copilot.lua',
-        dependencies = { 'giuxtaposition/blink-cmp-copilot' },
-        config = load_config('ai.copilot'),
-        event = 'InsertEnter',
-    },
-    {
-        'folke/sidekick.nvim',
-        config = load_config('ai.sidekick'),
-        event = 'InsertEnter',
-        cmd = 'Sidekick',
-        keys = {
-            {
-                '<tab>',
-                function()
-                    if not require('sidekick').nes_jump_or_apply() then
-                        return '<Tab>'
-                    end
-                end,
-                expr = true,
-                desc = 'Next Edit Suggestion',
-            },
-        },
-    },
-
     -- Tools
     {
         'echasnovski/mini.files',
