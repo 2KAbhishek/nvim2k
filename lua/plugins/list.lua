@@ -335,14 +335,6 @@ if util.is_present('go') then
     table.insert(lsp_servers, 'gopls')
 end
 
-if util.is_present('dart') then
-    table.insert(lsp_servers, 'dartls')
-end
-
-if util.is_present('java') then
-    table.insert(lsp_servers, 'jdtls')
-end
-
 if util.is_present('pip') then
     table.insert(lsp_servers, 'ruff')
     table.insert(lsp_servers, 'pylsp')
