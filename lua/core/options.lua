@@ -81,11 +81,25 @@ vim.cmd([[
      setlocal spell spelllang=en "Set spellcheck language to en
      setlocal spell! "Disable spell checks by default
      filetype plugin indent on
-     if has('win32')
-        let g:python3_host_prog = $HOME . '/scoop/apps/python/current/python.exe'
-     endif
     let &t_Cs = "\e[4:3m" "Undercurl
     let &t_Ce = "\e[4:0m"
     set whichwrap+=<,>,[,],h,l
     set iskeyword+=-
  ]])
+
+local is_windows_or_wsl = vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 or vim.fn.has('wsl') == 1
+
+if is_windows_or_wsl then
+    vim.g.clipboard = {
+        name = "win32yank",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = 0,
+    }
+end
