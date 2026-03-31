@@ -42,22 +42,6 @@ util.get_file_path = function()
     return vim.loop.cwd()
 end
 
-util.get_file_type_cmd = function(extension)
-    local root = util.get_root_dir()
-
-    if extension == 'arb' and root then
-        local gemfile_exists = vim.fn.filereadable(root .. '/Gemfile') == 1
-        local pubspec_exists = vim.fn.filereadable(root .. '/pubspec.yaml') == 1
-        if gemfile_exists then
-            return 'setfiletype ruby'
-        end
-        if pubspec_exists then
-            return 'setfiletype json'
-        end
-    end
-    return ''
-end
-
 util.is_present = function(bin)
     return vim.fn.executable(bin) == 1
 end
