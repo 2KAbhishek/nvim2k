@@ -109,20 +109,6 @@ local plugins = {
 
     -- Tools
     {
-        'echasnovski/mini.files',
-        version = '*',
-        config = load_config('tools.files'),
-        keys = {
-            {
-                '<leader>ee',
-                function()
-                    require('mini.files').open(util.get_file_path(), true)
-                end,
-                desc = 'Explorer',
-            },
-        },
-    },
-    {
         'michaelb/sniprun',
         build = 'bash ./install.sh',
         config = load_config('tools.sniprun'),
@@ -249,6 +235,20 @@ local plugins = {
         },
         opts = {
             picker_provider = 'snacks',
+        },
+    },
+    {
+        '2kabhishek/mini.files',
+        branch = 'collapse-files',
+        config = load_config('tools.files'),
+        keys = {
+            {
+                '<leader>ee',
+                function()
+                    require('mini.files').open(util.get_file_path(), true)
+                end,
+                desc = 'Explorer',
+            },
         },
     },
     {

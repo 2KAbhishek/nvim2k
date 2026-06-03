@@ -5,6 +5,7 @@ files.setup({
         filter = nil,
         prefix = nil,
         sort = nil,
+        collapse_single_child = true,
     },
     mappings = {
         close = 'q',
