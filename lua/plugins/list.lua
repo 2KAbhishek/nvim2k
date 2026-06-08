@@ -41,7 +41,7 @@ local plugins = {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        commit = "42fc28b",
+        branch = 'main',
         config = load_config('editor.treesitter'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
@@ -290,8 +290,6 @@ local plugins = {
 local treesitter_parsers = {
     'bash',
     'css',
-    'dart',
-    'elixir',
     'gitcommit',
     'go',
     'html',
