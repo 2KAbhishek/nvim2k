@@ -120,3 +120,25 @@ vim.api.nvim_create_user_command('WriteNoFormat', function()
     -- Re-enable the autoformat autocmd
     enable_autoformat()
 end, {})
+
+-- Highlight references of the word under the cursor on pause
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = augroup('lsp_highlight'),
+    callback = function(event)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client:supports_method('textDocument/documentHighlight') then
+            local group = vim.api.nvim_create_augroup('nvim2k_lsp_document_highlight', { clear = false })
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+                group = group,
+                buffer = event.buf,
+                callback = vim.lsp.buf.document_highlight,
+            })
+            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+                group = group,
+                buffer = event.buf,
+                callback = vim.lsp.buf.clear_references,
+            })
+        end
+    end,
+})
+
