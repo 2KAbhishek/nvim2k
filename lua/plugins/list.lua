@@ -81,11 +81,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'nvimdev/lspsaga.nvim',
-        config = load_config('lang.lspsaga'),
-        event = 'LspAttach',
-    },
-    {
         'nvimtools/none-ls.nvim',
         dependencies = { 'jay-babu/mason-null-ls.nvim', 'nvim-lua/plenary.nvim' },
         config = load_config('lang.null-ls'),

@@ -52,7 +52,7 @@ local setup = {
     show_help = false,
     show_keys = true,
     triggers = {
-        { '<auto>', mode = 'nvisoct' },
+        { '<auto>',   mode = 'nvisoct' },
         { '<leader>', mode = { 'n', 'v' } },
     },
 }
@@ -176,21 +176,18 @@ local normal_mappings = {
     },
 
     { '<leader>l', group = ' LSP' },
-    { '<leader>la', ':Lspsaga code_action<cr>', desc = 'Code Action' },
-    { '<leader>ld', ':Lspsaga goto_definition<cr>', desc = 'Goto Definition' },
-    { '<leader>lf', ':Lspsaga finder<cr>', desc = 'Finder' },
-    { '<leader>lh', ':Lspsaga hover_doc<cr>', desc = 'Hover' },
-    { '<leader>lI', ':LspInfo<cr>', desc = 'LSP Info' },
-    { '<leader>lj', ':Lspsaga diagnostic_jump_next<cr>', desc = 'Next Diagnostic' },
-    { '<leader>lk', ':Lspsaga diagnostic_jump_prev<cr>', desc = 'Prev Diagnostic' },
-    { '<leader>lo', ':Lspsaga outline<cr>', desc = 'Outline' },
-    { '<leader>lp', ':Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
-    { '<leader>lq', ':LspStop<cr>', desc = 'Stop LSP' },
-    { '<leader>lQ', ':LspRestart<cr>', desc = 'Restart LSP' },
-    { '<leader>lr', ':Lspsaga rename<cr>', desc = 'Rename' },
-    { '<leader>lR', ':Lspsaga project_replace<cr>', desc = 'Replace' },
-    { '<leader>lt', ':Lspsaga goto_type_definition<cr>', desc = 'Goto Type Definition' },
-    { '<leader>lT', ':Lspsaga peek_type_definition<cr>', desc = 'Peek Type Definition' },
+    { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
+    { '<leader>ld', ':lua Snacks.picker.lsp_definitions()<cr>', desc = 'Goto Definition' },
+    { '<leader>lf', ':lua Snacks.picker.lsp_references()<cr>', desc = 'References Finder' },
+    { '<leader>lh', ':lua vim.lsp.buf.hover()<cr>', desc = 'Hover Documentation' },
+    { '<leader>lj', ':lua vim.diagnostic.jump({ count = 1 })<cr>', desc = 'Next Diagnostic' },
+    { '<leader>lk', ':lua vim.diagnostic.jump({ count = -1 })<cr>', desc = 'Prev Diagnostic' },
+    { '<leader>lo', ':lua Snacks.picker.lsp_symbols()<cr>', desc = 'Symbol Outline' },
+    { '<leader>lp', ':lua Snacks.picker.lsp_definitions({ jump = { reuse_win = true } })<cr>', desc = 'Peek Definition' },
+    { '<leader>lr', ':lua vim.lsp.buf.rename()<cr>', desc = 'Rename' },
+    { '<leader>lR', ':lua Snacks.picker.lsp_references()<cr>', desc = 'Project Replace (via References)' },
+    { '<leader>lt', ':lua Snacks.picker.lsp_type_definitions()<cr>', desc = 'Goto Type Definition' },
+    { '<leader>lT', ':lua Snacks.picker.lsp_type_definitions({ jump = { reuse_win = true } })<cr>', desc = 'Peek Type Definition' },
 
     { '<leader>m', group = ' Marks' },
     { '<leader>mg', group = 'Group Bookmarks' },
@@ -354,7 +351,7 @@ local visual_mappings = {
     },
 
     { '<leader>l', group = ' LSP' },
-    { '<leader>la', ':<C-U>Lspsaga range_code_action<cr>', desc = 'Code Action' },
+    { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
 
     { '<leader>y', group = ' Yank' },
     { '<leader>yg', ':lua require"gitlinker".get_buf_range_url("v")<cr>', desc = 'Copy Git URL' },
@@ -374,13 +371,6 @@ local no_leader_mappings = {
     { '<C-l>', ':NavigatorRight<cr>', desc = 'Move Right' },
     { '<C-\\>', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
 
-    { '<S-h>', ':bprevious<cr>', desc = 'Previous Buffer' },
-    { '<S-l>', ':bnext<cr>', desc = 'Next Buffer' },
-
-    { 'K', ':Lspsaga hover_doc<cr>', desc = 'LSP Hover' },
-    { 'Q', ':qall!<cr>', desc = 'Force Quit!' },
-    { 'U', ':redo<cr>', desc = 'Redo' },
-
     { '[', group = ' Previous' },
     { '[g', ':Gitsigns prev_hunk<cr>', desc = 'Git Hunk' },
     { '[o', group = 'Textobjects' },
@@ -389,7 +379,12 @@ local no_leader_mappings = {
     { ']g', ':Gitsigns next_hunk<cr>', desc = 'Git Hunk' },
     { ']o', group = 'Textobjects' },
 
-    { 'gd', ':Lspsaga goto_definition<cr>', desc = 'Goto Definition' },
+    { 'gd', ':lua Snacks.picker.lsp_definitions()<cr>', desc = 'Goto Definition' },
+    { 'H', ':bprevious<cr>', desc = 'Previous Buffer' },
+    { 'K', ':lua vim.lsp.buf.hover()<cr>', desc = 'LSP Hover' },
+    { 'L', ':bnext<cr>', desc = 'Next Buffer' },
+    { 'Q', ':qall!<cr>', desc = 'Force Quit!' },
+    { 'U', ':redo<cr>', desc = 'Redo' },
 }
 
 which_key.setup(setup)
