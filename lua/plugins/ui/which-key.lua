@@ -177,18 +177,10 @@ local normal_mappings = {
 
     { '<leader>l', group = ' LSP' },
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
-    { '<leader>ld', ':lua Snacks.picker.lsp_definitions()<cr>', desc = 'Goto Definition' },
-    { '<leader>lf', ':lua Snacks.picker.lsp_references()<cr>', desc = 'References Finder' },
     { '<leader>lh', ':lua vim.lsp.buf.hover()<cr>', desc = 'Hover Documentation' },
-    { '<leader>lI', ':lua require("lib.util").show_active_lsps()<cr>', desc = 'LSP Info' },
     { '<leader>lj', ':lua vim.diagnostic.jump({ count = 1 })<cr>', desc = 'Next Diagnostic' },
     { '<leader>lk', ':lua vim.diagnostic.jump({ count = -1 })<cr>', desc = 'Prev Diagnostic' },
-    { '<leader>lo', ':lua Snacks.picker.lsp_symbols()<cr>', desc = 'Symbol Outline' },
-    { '<leader>lp', ':lua Snacks.picker.lsp_definitions({ jump = { reuse_win = true } })<cr>', desc = 'Peek Definition' },
     { '<leader>lr', ':lua vim.lsp.buf.rename()<cr>', desc = 'Rename' },
-    { '<leader>lR', ':lua Snacks.picker.lsp_references()<cr>', desc = 'Project Replace (via References)' },
-    { '<leader>lt', ':lua Snacks.picker.lsp_type_definitions()<cr>', desc = 'Goto Type Definition' },
-    { '<leader>lT', ':lua Snacks.picker.lsp_type_definitions({ jump = { reuse_win = true } })<cr>', desc = 'Peek Type Definition' },
 
     { '<leader>m', group = ' Marks' },
     { '<leader>mg', group = 'Group Bookmarks' },
