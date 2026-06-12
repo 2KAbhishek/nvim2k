@@ -385,23 +385,7 @@ which_key.add(normal_mappings)
 which_key.add(visual_mappings)
 which_key.add(no_leader_mappings)
 
-if util.get_user_config('enable_debugger', false) then
-    local debugger_bindings = {
-        mode = 'n',
-        { '<leader>d', group = ' Debug' },
-        { '<leader>db', ':DapToggleBreakpoint<cr>', desc = 'Breakpoint' },
-        { '<leader>dc', ':DapContinue<cr>', desc = 'Continue' },
-        { '<leader>di', ':DapStepInto<cr>', desc = 'Into' },
-        { '<leader>dl', ":lua require'dap'.run_last()<cr>", desc = 'Last' },
-        { '<leader>dn', ':DapStepOver<cr>', desc = 'Over' },
-        { '<leader>do', ':DapStepOut<cr>', desc = 'Out' },
-        { '<leader>dr', ':DapRestartFrame<cr>', desc = 'Restart Frame' },
-        { '<leader>dt', ':DapToggleRepl<cr>', desc = 'Repl' },
-        { '<leader>du', ':DapUIToggle<cr>', desc = 'Debugger' },
-        { '<leader>dx', ':DapTerminate<cr>', desc = 'Exit' },
-    }
-    which_key.add(debugger_bindings)
-end
+
 
 
 

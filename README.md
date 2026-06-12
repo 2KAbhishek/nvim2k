@@ -44,7 +44,6 @@ Here's a [YouTube playlist](https://www.youtube.com/watch?v=Pj7jJnOcW9I&list=PL5
 - **Pretty colors**: Comes with treesitter and onedark preconfigured with full transparency support
 - **Goto for notes**: Comes with powerful note-taking capabilities, thanks to [tdo](https://github.com/2kabhishek/tdo)
 - **Tmux integration**: Works with your tmux configurations out of the box
-- **Dev tools**: Comes with debugging, testing, database and REPL support, pick and choose
 - **Auto install**: All necessary LSPs, Treesitter Parsers etc. are auto installed
 - **User module**: Configure nvim2k according to your needs by using the `user` module!
 - and some more
@@ -102,7 +101,6 @@ local user = {
         -- Auto installed Treesitter parsers defined by user
     },
 
-    enable_debugger = false, -- enable dap.nvim support
     user_plugins = {
         -- Add your lazy plugin spec here
     },

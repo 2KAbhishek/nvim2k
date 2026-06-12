@@ -265,14 +265,7 @@ local plugins = {
         -- dir = '~/Projects/2KAbhishek/template.nvim/',
     },
 
-    -- Optional
-    {
-        'mfussenegger/nvim-dap',
-        dependencies = { 'rcarriga/nvim-dap-ui' },
-        config = load_config('tools.dap'),
-        cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
-        enabled = util.get_user_config('enable_debugger', false),
-    },
+
 
 }
 
