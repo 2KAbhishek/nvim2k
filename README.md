@@ -45,7 +45,7 @@ Here's a [YouTube playlist](https://www.youtube.com/watch?v=Pj7jJnOcW9I&list=PL5
 - **Goto for notes**: Comes with powerful note-taking capabilities, thanks to [tdo](https://github.com/2kabhishek/tdo)
 - **Tmux integration**: Works with your tmux configurations out of the box
 - **Dev tools**: Comes with debugging, testing, database and REPL support, pick and choose
-- **Auto install**: All necessary LSPs, Null LS sources, Treesitter Parsers etc. are auto installed
+- **Auto install**: All necessary LSPs, Treesitter Parsers etc. are auto installed
 - **User module**: Configure nvim2k according to your needs by using the `user` module!
 - and some more
 
@@ -97,9 +97,6 @@ local user = {
     auto_install = true, -- enable auto install of LSPs, Treesitter parsers etc.
     user_lsp_servers = {
         -- Auto installed LSPs defined by user
-    },
-    user_null_ls_sources = {
-        -- Auto installed Null LS sources defined by user
     },
     user_treesitter_parsers = {
         -- Auto installed Treesitter parsers defined by user

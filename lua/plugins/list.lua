@@ -81,9 +81,14 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'nvimtools/none-ls.nvim',
-        dependencies = { 'jay-babu/mason-null-ls.nvim', 'nvim-lua/plenary.nvim' },
-        config = load_config('lang.null-ls'),
+        'stevearc/conform.nvim',
+        config = load_config('lang.conform'),
+        event = { 'BufWritePre' },
+        cmd = { 'ConformInfo' },
+    },
+    {
+        'mfussenegger/nvim-lint',
+        config = load_config('lang.lint'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
@@ -303,10 +308,6 @@ local treesitter_parsers = {
     'yaml',
 }
 
-local null_ls_sources = {
-    'shellcheck',
-}
-
 local lsp_servers = {
     'bashls',
     'jsonls',
@@ -344,12 +345,10 @@ end
 
 plugins = vim.tbl_extend('force', plugins, util.get_user_config('user_plugins', {}))
 lsp_servers = vim.tbl_extend('force', lsp_servers, util.get_user_config('user_lsp_servers', {}))
-null_ls_sources = vim.tbl_extend('force', null_ls_sources, util.get_user_config('user_null_ls_sources', {}))
 treesitter_parsers = vim.tbl_extend('force', treesitter_parsers, util.get_user_config('user_tresitter_parsers', {}))
 
 return {
     plugins = plugins,
     lsp_servers = lsp_servers,
-    null_ls_sources = null_ls_sources,
     ts_parsers = treesitter_parsers,
 }
