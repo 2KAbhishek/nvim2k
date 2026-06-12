@@ -78,7 +78,7 @@ local plugins = {
         'neovim/nvim-lspconfig',
         dependencies = { 'williamboman/mason-lspconfig.nvim' },
         config = load_config('lang.lspconfig'),
-        event = { 'InsertEnter' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'nvimdev/lspsaga.nvim',
@@ -89,7 +89,7 @@ local plugins = {
         'nvimtools/none-ls.nvim',
         dependencies = { 'jay-babu/mason-null-ls.nvim', 'nvim-lua/plenary.nvim' },
         config = load_config('lang.null-ls'),
-        event = { 'InsertEnter' },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     {
         'williamboman/mason.nvim',
