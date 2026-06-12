@@ -10,38 +10,29 @@ vim.api.nvim_create_user_command('ReloadConfig', function()
     vim.notify('Nvim configuration reloaded!', vim.log.levels.INFO)
 end, {})
 
-local function copy_to_clipboard(content, message)
+local function copy_to_clipboard(content)
     vim.fn.setreg('+', content)
     vim.notify('Copied "' .. content .. '" to the clipboard!', vim.log.levels.INFO)
 end
 
 vim.api.nvim_create_user_command('CopyRelativePath', function()
-    local path = vim.fn.expand('%')
-    copy_to_clipboard(path, 'Copied "' .. path .. '" to the clipboard!')
+    copy_to_clipboard(vim.fn.expand('%'))
 end, {})
 
 vim.api.nvim_create_user_command('CopyAbsolutePath', function()
-    local path = vim.fn.expand('%:p')
-    copy_to_clipboard(path, 'Copied "' .. path .. '" to the clipboard!')
+    copy_to_clipboard(vim.fn.expand('%:p'))
 end, {})
 
 vim.api.nvim_create_user_command('CopyRelativePathWithLine', function()
-    local path = vim.fn.expand('%')
-    local line = vim.fn.line('.')
-    local result = path .. ':' .. line
-    copy_to_clipboard(result, 'Copied "' .. result .. '" to the clipboard!')
+    copy_to_clipboard(vim.fn.expand('%') .. ':' .. vim.fn.line('.'))
 end, {})
 
 vim.api.nvim_create_user_command('CopyAbsolutePathWithLine', function()
-    local path = vim.fn.expand('%:p')
-    local line = vim.fn.line('.')
-    local result = path .. ':' .. line
-    copy_to_clipboard(result, 'Copied "' .. result .. '" to the clipboard!')
+    copy_to_clipboard(vim.fn.expand('%:p') .. ':' .. vim.fn.line('.'))
 end, {})
 
 vim.api.nvim_create_user_command('CopyFileName', function()
-    local path = vim.fn.expand('%:t')
-    copy_to_clipboard(path, 'Copied "' .. path .. '" to the clipboard!')
+    copy_to_clipboard(vim.fn.expand('%:t'))
 end, {})
 
 -- Switch to git root or file parent dir
