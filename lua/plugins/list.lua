@@ -46,6 +46,11 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
+        'windwp/nvim-ts-autotag',
+        event = { 'BufReadPost', 'BufNewFile' },
+        opts = {},
+    },
+    {
         'echasnovski/mini.bracketed',
         config = load_config('editor.bracketed'),
         event = { 'BufReadPost', 'BufNewFile' },
@@ -264,9 +269,6 @@ local plugins = {
         -- opts = {},
         -- dir = '~/Projects/2KAbhishek/template.nvim/',
     },
-
-
-
 }
 
 local treesitter_parsers = {
