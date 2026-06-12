@@ -273,18 +273,7 @@ local plugins = {
         cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
         enabled = util.get_user_config('enable_debugger', false),
     },
-    {
-        'nvim-neotest/neotest',
-        dependencies = {
-            'nvim-neotest/nvim-nio',
-            'olimorris/neotest-rspec',
-            'nvim-neotest/neotest-jest',
-            'nvim-neotest/neotest-python',
-        },
-        config = load_config('tools.neotest'),
-        cmd = 'Neotest',
-        enabled = util.get_user_config('enable_test_runner', false),
-    },
+
 }
 
 local treesitter_parsers = {

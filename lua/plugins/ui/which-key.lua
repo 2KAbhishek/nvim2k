@@ -403,17 +403,7 @@ if util.get_user_config('enable_debugger', false) then
     which_key.add(debugger_bindings)
 end
 
-if util.get_user_config('enable_test_runner', false) then
-    local test_runner_bindings = {
-        mode = 'n',
-        { '<leader>u', group = ' Test' },
-        { '<leader>uc', ':lua require("neotest").run.run()<cr>', desc = 'Run Current Test' },
-        { '<leader>uf', ':lua require("neotest").run.run(vim.fn.expand("%"))<cr>', desc = 'Run Test File' },
-        { '<leader>uo', ':Neotest output-panel<cr>', desc = 'Test Output' },
-        { '<leader>us', ':Neotest summary<cr>', desc = 'Test Summary' },
-    }
-    which_key.add(test_runner_bindings)
-end
+
 
 local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
 which_key.add(user_keybindings)
