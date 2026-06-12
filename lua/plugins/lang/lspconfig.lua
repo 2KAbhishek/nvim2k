@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
-local icons = require('lib.icons').diagnostics
+local icons = require('lib.icons')
+local diag_icons = icons.diagnostics
 
 local auto_install = require('lib.util').get_user_config('auto_install', true)
 local installed_servers = {}
@@ -19,7 +20,7 @@ require('mason-lspconfig').setup({
     handlers = { default_setup },
 })
 
-local signs = { Error = icons.Error, Warn = icons.Warning, Hint = icons.Hint, Info = icons.Information }
+local signs = { Error = diag_icons.Error, Warn = diag_icons.Warning, Hint = diag_icons.Hint, Info = diag_icons.Information }
 vim.diagnostic.config({
     underline = true,
     update_in_insert = false,
@@ -27,7 +28,7 @@ vim.diagnostic.config({
     virtual_text = {
         spacing = 4,
         source = 'if_many',
-        prefix = '●',
+        prefix = icons.ui.CircleSmall,
     },
     float = {
         border = 'rounded',

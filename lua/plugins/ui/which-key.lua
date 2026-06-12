@@ -180,6 +180,7 @@ local normal_mappings = {
     { '<leader>ld', ':lua Snacks.picker.lsp_definitions()<cr>', desc = 'Goto Definition' },
     { '<leader>lf', ':lua Snacks.picker.lsp_references()<cr>', desc = 'References Finder' },
     { '<leader>lh', ':lua vim.lsp.buf.hover()<cr>', desc = 'Hover Documentation' },
+    { '<leader>lI', ':lua require("lib.util").show_active_lsps()<cr>', desc = 'LSP Info' },
     { '<leader>lj', ':lua vim.diagnostic.jump({ count = 1 })<cr>', desc = 'Next Diagnostic' },
     { '<leader>lk', ':lua vim.diagnostic.jump({ count = -1 })<cr>', desc = 'Prev Diagnostic' },
     { '<leader>lo', ':lua Snacks.picker.lsp_symbols()<cr>', desc = 'Symbol Outline' },
