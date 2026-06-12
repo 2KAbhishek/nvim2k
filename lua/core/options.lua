@@ -75,17 +75,19 @@ vim.opt.path:append({ '**' })
 vim.opt.shortmess:append({ W = true, I = true, c = true })
 
 -- hides `~` at the end of the buffer
-vim.cmd([[set fillchars+=eob:\ ]])
+vim.opt.fillchars:append({ eob = ' ' })
 
+vim.opt.spelllang = 'en'
+vim.opt.spell = false
+
+vim.opt.whichwrap:append('<,>,[,],h,l')
+vim.opt.iskeyword:append('-')
+
+-- Terminal undercurl settings
 vim.cmd([[
-     setlocal spell spelllang=en "Set spellcheck language to en
-     setlocal spell! "Disable spell checks by default
-     filetype plugin indent on
-    let &t_Cs = "\e[4:3m" "Undercurl
+    let &t_Cs = "\e[4:3m"
     let &t_Ce = "\e[4:0m"
-    set whichwrap+=<,>,[,],h,l
-    set iskeyword+=-
- ]])
+]])
 
 local is_windows_or_wsl = vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 or vim.fn.has('wsl') == 1
 
