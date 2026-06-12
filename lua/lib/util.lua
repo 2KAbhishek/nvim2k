@@ -1,4 +1,3 @@
-local icons = require('lib.icons')
 local util = {}
 
 util.get_user_config = function(key, default)
@@ -47,19 +46,4 @@ util.is_present = function(bin)
     return vim.fn.executable(bin) == 1
 end
 
-util.show_active_lsps = function()
-    local clients = vim.lsp.get_clients({ bufnr = 0 })
-    if #clients == 0 then
-        vim.notify('No active LSP clients attached to this buffer', vim.log.levels.WARN, { title = 'LSP Status' })
-        return
-    end
-
-    local msg = {}
-    for _, client in ipairs(clients) do
-        table.insert(msg, string.format('%s%s (ID: %d)', icons.ui.CircleSmall, client.name, client.id))
-    end
-    vim.notify(table.concat(msg, '\n'), vim.log.levels.INFO, { title = 'Attached LSP Clients' })
-end
-
 return util
-
