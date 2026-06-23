@@ -57,3 +57,9 @@ end, { nargs = '*' })
 vim.api.nvim_create_user_command('Runner', function(opts)
     require('plugins.custom.runner').run(opts.line1, opts.line2)
 end, { range = '%' })
+
+-- Markdown preview command
+vim.api.nvim_create_user_command('MDPreview', function()
+    require('plugins.custom.md-preview').start()
+end, {})
+

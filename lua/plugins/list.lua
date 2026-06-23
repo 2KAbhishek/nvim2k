@@ -105,14 +105,6 @@ local plugins = {
         cmd = 'Spectre',
     },
     {
-        'iamcco/markdown-preview.nvim',
-        build = function()
-            vim.fn['mkdp#util#install']()
-        end,
-        ft = 'markdown',
-        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
-    },
-    {
         'uga-rosa/ccc.nvim',
         config = load_config('tools.ccc'),
         cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
