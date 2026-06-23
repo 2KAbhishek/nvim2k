@@ -28,7 +28,6 @@
   "pickme.nvim": { "branch": "main", "commit": "80a2540cda81be76c8c80b47dc37f87738ddf696" },
   "seeker.nvim": { "branch": "main", "commit": "c0ec94116bb6c603ad5780bc433cb09b8ae84041" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
-  "sniprun": { "branch": "master", "commit": "6416f98924018385f7f5ebfe8dc773a4482426e4" },
   "tdo.nvim": { "branch": "main", "commit": "3e067afe8687517e205588dacf818648a163a5a4" },
   "termim.nvim": { "branch": "main", "commit": "0bb39e30d2a1c05448f8eaeb9f5a09c742370490" },
   "utils.nvim": { "branch": "main", "commit": "8950622bd6861f2257364e5027c5613f29225e17" },

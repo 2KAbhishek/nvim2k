@@ -263,7 +263,7 @@ Snacks.setup({
                 ['execute'] = {
                     '<cr>',
                     function(_)
-                        vim.cmd('%SnipRun')
+                        vim.cmd('%Runner')
                     end,
                     desc = 'Execute buffer',
                     mode = { 'n', 'x' },

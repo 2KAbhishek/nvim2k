@@ -67,7 +67,7 @@ local normal_mappings = {
     { '<leader>cR', ':ReloadConfig<cr>', desc = 'Reload Configs' },
     { '<leader>cc', ':CccHighlighterToggle<cr>', desc = 'Highlight Colors' },
     { '<leader>cd', ':RootDir<cr>', desc = 'Root Directory' },
-    { '<leader>ce', ':%SnipRun<cr>', desc = 'Execute File' },
+    { '<leader>ce', ':%Runner<cr>', desc = 'Execute File' },
     { '<leader>cf', ':lua vim.lsp.buf.format({async = true})<cr>', desc = 'Format File' },
     { '<leader>cl', '::g/^\\s*$/d<cr>', desc = 'Clean Empty Lines' },
     { '<leader>cm', ':MarkdownPreviewToggle<cr>', desc = 'Markdown Preview' },
@@ -304,7 +304,7 @@ local visual_mappings = {
     { '<leader>a', group = ' AI' },
 
     { '<leader>c', group = ' Code' },
-    { '<leader>ce', "<esc>:'<,'>SnipRun<cr>", desc = 'Execute Selection' },
+    { '<leader>ce', "<esc>:'<,'>Runner<cr>", desc = 'Execute Selection' },
     { '<leader>cS', ':sort!<cr>', desc = 'Sort Desc' },
     { '<leader>ci', ':sort i<cr>', desc = 'Sort Case Insensitive' },
     { '<leader>cs', ':sort<cr>', desc = 'Sort Asc' },

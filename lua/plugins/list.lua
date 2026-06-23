@@ -105,12 +105,6 @@ local plugins = {
 
     -- Tools
     {
-        'michaelb/sniprun',
-        build = 'bash ./install.sh',
-        config = load_config('tools.sniprun'),
-        cmd = 'SnipRun',
-    },
-    {
         'windwp/nvim-spectre',
         config = load_config('tools.spectre'),
         cmd = 'Spectre',

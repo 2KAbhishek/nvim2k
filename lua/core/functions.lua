@@ -81,3 +81,10 @@ vim.api.nvim_create_user_command('Git', function(opts)
     local output = vim.fn.system('git ' .. opts.args)
     vim.notify(output, vim.log.levels.INFO)
 end, { nargs = '*' })
+
+-- Runner command that lazy-loads the runner module on demand
+vim.api.nvim_create_user_command('Runner', function(opts)
+    require('plugins.custom.runner').run(opts.line1, opts.line2)
+end, { range = '%' })
+
+
