@@ -44,7 +44,7 @@ end, {})
 -- Copy Git URL command that lazy-loads the logic on demand
 vim.api.nvim_create_user_command('CopyGitUrl', function(opts)
     local mode = (opts.range > 0) and 'v' or 'n'
-    require('plugins.custom.giturl').copy(mode, opts.line1, opts.line2)
+    require('plugins.custom.git-url').copy(mode, opts.line1, opts.line2)
 end, { range = '%' })
 
 -- Runs generic git commands in the background and prints output
