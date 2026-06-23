@@ -263,7 +263,7 @@ local normal_mappings = {
     { '<leader>yP', ':CopyAbsolutePath<cr>', desc = 'Absolute Path' },
     { '<leader>ya', ':%y+<cr>', desc = 'Copy Whole File' },
     { '<leader>yf', ':CopyFileName<cr>', desc = 'File Name' },
-    { '<leader>yg', ':lua CopyGitUrl("n")<cr>', desc = 'Copy Git URL' },
+    { '<leader>yg', ':CopyGitUrl<cr>', desc = 'Copy Git URL' },
     { '<leader>yl', ':CopyRelativePathWithLine<cr>', desc = 'Relative Path with Line' },
     { '<leader>yp', ':CopyRelativePath<cr>', desc = 'Relative Path' },
 }
@@ -298,7 +298,7 @@ local visual_mappings = {
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
 
     { '<leader>y', group = ' Yank' },
-    { '<leader>yg', ':lua CopyGitUrl("v")<cr>', desc = 'Copy Git URL' },
+    { '<leader>yg', ':CopyGitUrl<cr>', desc = 'Copy Git URL' },
 }
 
 local no_leader_mappings = {

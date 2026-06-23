@@ -46,4 +46,9 @@ util.is_present = function(bin)
     return vim.fn.executable(bin) == 1
 end
 
+util.copy_to_clipboard = function(content)
+    vim.fn.setreg('+', content)
+    vim.notify('Copied "' .. content .. '" to the clipboard!', vim.log.levels.INFO)
+end
+
 return util
