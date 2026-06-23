@@ -51,11 +51,6 @@ end
 
 vim.keymap.set('i', '>', close_tag, { expr = true, silent = true, desc = 'Autoclose HTML tag' })
 
--- Autoclose opening brackets
-vim.keymap.set('i', '(', '()<Left>', { noremap = true, silent = true, desc = 'Autoclose (' })
-vim.keymap.set('i', '[', '[]<Left>', { noremap = true, silent = true, desc = 'Autoclose [' })
-vim.keymap.set('i', '{', '{}<Left>', { noremap = true, silent = true, desc = 'Autoclose {' })
-
 -- Skip over closing brackets if typed
 local function close_pair(char)
     local col = vim.fn.col('.')
@@ -63,16 +58,6 @@ local function close_pair(char)
     local next_char = line:sub(col, col)
     return next_char == char and '<Right>' or char
 end
-
-vim.keymap.set('i', ')', function()
-    return close_pair(')')
-end, { expr = true, silent = true, desc = 'Autopair skip )' })
-vim.keymap.set('i', ']', function()
-    return close_pair(']')
-end, { expr = true, silent = true, desc = 'Autopair skip ]' })
-vim.keymap.set('i', '}', function()
-    return close_pair('}')
-end, { expr = true, silent = true, desc = 'Autopair skip }' })
 
 -- Smart quotes: close/skip and handle text contractions (e.g. don't, I'll)
 local function close_quote(char)
@@ -88,16 +73,6 @@ local function close_quote(char)
     return char .. char .. '<Left>'
 end
 
-vim.keymap.set('i', '"', function()
-    return close_quote('"')
-end, { expr = true, silent = true, desc = 'Autopair "' })
-vim.keymap.set('i', "'", function()
-    return close_quote("'")
-end, { expr = true, silent = true, desc = "Autopair '" })
-vim.keymap.set('i', '`', function()
-    return close_quote('`')
-end, { expr = true, silent = true, desc = 'Autopair `' })
-
 -- Smart backspace (deletes pair if cursor is inside an empty bracket/quote)
 local function backspace_pair()
     local col = vim.fn.col('.')
@@ -111,6 +86,28 @@ local function backspace_pair()
         end
     end
     return '<BS>'
+end
+
+-- Autoclose opening brackets and register skip-close helpers
+local brackets = { ['('] = ')', ['['] = ']', ['{'] = '}' }
+for open_char, close_char in pairs(brackets) do
+    vim.keymap.set(
+        'i',
+        open_char,
+        open_char .. close_char .. '<Left>',
+        { noremap = true, silent = true, desc = 'Autoclose ' .. open_char }
+    )
+    vim.keymap.set('i', close_char, function()
+        return close_pair(close_char)
+    end, { expr = true, silent = true, desc = 'Autopair skip ' .. close_char })
+end
+
+-- Auto-close quotes
+local quotes = { '"', "'", '`' }
+for _, char in ipairs(quotes) do
+    vim.keymap.set('i', char, function()
+        return close_quote(char)
+    end, { expr = true, silent = true, desc = 'Autopair ' .. char })
 end
 
 vim.keymap.set('i', '<BS>', backspace_pair, { expr = true, silent = true, desc = 'Autopair Backspace' })

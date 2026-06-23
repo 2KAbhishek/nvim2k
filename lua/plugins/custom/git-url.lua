@@ -14,6 +14,9 @@ function M.copy(mode, line1, line2)
     repo_url = repo_url:gsub('ssh://git@', 'https://')
 
     local branch = vim.fn.system('git branch --show-current'):gsub('\n', '')
+    if branch == '' then
+        branch = vim.fn.system('git rev-parse --short HEAD'):gsub('\n', '')
+    end
     local start_line = line1
     local end_line = line2
     if mode == 'n' then
