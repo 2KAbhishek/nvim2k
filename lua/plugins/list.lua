@@ -98,11 +98,6 @@ local plugins = {
         config = load_config('tools.spectre'),
         cmd = 'Spectre',
     },
-    {
-        'uga-rosa/ccc.nvim',
-        config = load_config('tools.ccc'),
-        cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
-    },
 
     -- Homegrown :)
     {

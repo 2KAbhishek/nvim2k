@@ -62,14 +62,12 @@ local normal_mappings = {
 
     { '<leader>c', group = ' Code' },
     { '<leader>cF', ':retab<cr>', desc = 'Fix Tabs' },
-    { '<leader>cP', ':CccConvert<cr>', desc = 'Convert Color' },
     { '<leader>cR', ':ReloadConfig<cr>', desc = 'Reload Configs' },
-    { '<leader>cc', ':CccHighlighterToggle<cr>', desc = 'Highlight Colors' },
+    { '<leader>cc', ':ColorHighlighterToggle<cr>', desc = 'Highlight Colors' },
     { '<leader>cd', ':RootDir<cr>', desc = 'Root Directory' },
     { '<leader>ce', ':%Runner<cr>', desc = 'Execute File' },
     { '<leader>cl', '::g/^\\s*$/d<cr>', desc = 'Clean Empty Lines' },
     { '<leader>cm', ':MDPreview<cr>', desc = 'Markdown Preview' },
-    { '<leader>cp', ':CccPick<cr>', desc = 'Pick Color' },
     { '<leader>cs', ':source %<cr>', desc = 'Source File' },
 
     { '<leader>e', group = ' Edit' },

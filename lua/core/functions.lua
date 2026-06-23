@@ -63,3 +63,8 @@ vim.api.nvim_create_user_command('MDPreview', function()
     require('plugins.custom.md-preview').start()
 end, {})
 
+-- Color Highlighter toggle command
+vim.api.nvim_create_user_command('ColorHighlighterToggle', function()
+    require('plugins.custom.color-highlighter').toggle()
+end, {})
+
