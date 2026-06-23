@@ -46,12 +46,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'windwp/nvim-ts-autotag',
-        event = { 'BufReadPost', 'BufNewFile' },
-        opts = {},
-    },
-
-    {
         'echasnovski/mini.surround',
         version = '*',
         config = load_config('editor.surround'),
