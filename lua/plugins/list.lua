@@ -50,11 +50,7 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
         opts = {},
     },
-    {
-        'echasnovski/mini.bracketed',
-        config = load_config('editor.bracketed'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
+
     {
         'echasnovski/mini.surround',
         version = '*',
