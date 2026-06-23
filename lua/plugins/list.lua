@@ -150,15 +150,6 @@ local plugins = {
         config = load_config('tools.ccc'),
         cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     },
-    {
-        'ruifm/gitlinker.nvim',
-        config = load_config('tools.gitlinker'),
-        keys = '<leader>yg',
-    },
-    {
-        'tpope/vim-fugitive',
-        cmd = 'Git',
-    },
 
     -- Homegrown :)
     {

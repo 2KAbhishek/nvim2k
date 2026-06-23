@@ -52,7 +52,7 @@ local setup = {
     show_help = false,
     show_keys = true,
     triggers = {
-        { '<auto>',   mode = 'nvisoct' },
+        { '<auto>', mode = 'nvisoct' },
         { '<leader>', mode = { 'n', 'v' } },
     },
 }
@@ -108,20 +108,17 @@ local normal_mappings = {
     { '<leader>g', group = ' Git' },
     { '<leader>gA', ':Gitsigns stage_buffer<cr>', desc = 'Stage Buffer' },
     { '<leader>gC', ':CoAuthor<cr>', desc = 'Co-Authors' },
-    { '<leader>gP', ':Git push<cr>', desc = 'Push' },
     { '<leader>gR', ':Gitsigns reset_buffer<cr>', desc = 'Reset Buffer' },
     { '<leader>ga', ':Gitsigns stage_hunk<cr>', desc = 'Stage Hunk' },
     { '<leader>gb', ":lua require('gitsigns').blame_line({full = true})<cr>", desc = 'Blame' },
-    { '<leader>gc', ':Git commit<cr>', desc = 'Commit Staged' },
+    { '<leader>gc', ':STerm git commit<cr>', desc = 'Commit Staged' },
     { '<leader>gB', ":lua require('snacks').git.blame_line()<cr>", desc = 'Detailed Blame' },
     { '<leader>gd', ':Gitsigns diffthis HEAD<cr>', desc = 'Git Diff' },
-    { '<leader>gF', ':Git<cr>', desc = 'Fugitive Panel' },
     { '<leader>gg', ':lua require("snacks").lazygit()<cr>', desc = 'Lazygit' },
     { '<leader>gi', ':Gitsigns preview_hunk<cr>', desc = 'Hunk Info' },
     { '<leader>gj', ':Gitsigns next_hunk<cr>', desc = 'Next Hunk' },
     { '<leader>gk', ':Gitsigns prev_hunk<cr>', desc = 'Prev Hunk' },
     { '<leader>go', group = 'Octohub' },
-    { '<leader>gp', ':Git pull<cr>', desc = 'Pull' },
     { '<leader>gr', ':Gitsigns reset_hunk<cr>', desc = 'Reset Hunk' },
     { '<leader>gt', group = 'Toggle' },
     { '<leader>gtb', ':Gitsigns toggle_current_line_blame<cr>', desc = 'Blame' },
@@ -288,7 +285,7 @@ local normal_mappings = {
     { '<leader>yP', ':CopyAbsolutePath<cr>', desc = 'Absolute Path' },
     { '<leader>ya', ':%y+<cr>', desc = 'Copy Whole File' },
     { '<leader>yf', ':CopyFileName<cr>', desc = 'File Name' },
-    { '<leader>yg', ':lua require"gitlinker".get_buf_range_url()<cr>', desc = 'Copy Git URL' },
+    { '<leader>yg', ':lua CopyGitUrl("n")<cr>', desc = 'Copy Git URL' },
     { '<leader>yl', ':CopyRelativePathWithLine<cr>', desc = 'Relative Path with Line' },
     { '<leader>yp', ':CopyRelativePath<cr>', desc = 'Relative Path' },
 }
@@ -346,7 +343,7 @@ local visual_mappings = {
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
 
     { '<leader>y', group = ' Yank' },
-    { '<leader>yg', ':lua require"gitlinker".get_buf_range_url("v")<cr>', desc = 'Copy Git URL' },
+    { '<leader>yg', ':lua CopyGitUrl("v")<cr>', desc = 'Copy Git URL' },
 }
 
 local no_leader_mappings = {
