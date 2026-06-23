@@ -32,3 +32,8 @@ end, { desc = 'Prev Conflict' })
 vim.keymap.set('n', ']x', function()
     jump_conflict(true)
 end, { desc = 'Next Conflict' })
+
+-- Jump List
+vim.keymap.set('n', '[j', '<C-o>', { desc = 'Prev Jump' })
+vim.keymap.set('n', ']j', '<C-i>', { desc = 'Next Jump' })
+
