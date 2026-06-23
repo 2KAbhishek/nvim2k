@@ -136,11 +136,17 @@ vim.api.nvim_create_autocmd('InsertEnter', {
     end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
+    once = true,
+    callback = function()
+        require('plugins.custom.bracket-nav')
+    end,
+})
+
 vim.api.nvim_create_autocmd('User', {
     pattern = 'VeryLazy',
     once = true,
     callback = function()
         require('plugins.custom.tmux')
-        require('plugins.custom.brackets')
     end,
 })
