@@ -63,11 +63,6 @@ local plugins = {
         config = load_config('editor.ai'),
         event = { 'BufReadPost', 'BufNewFile' },
     },
-    {
-        'chrisgrieser/nvim-spider',
-        config = load_config('editor.spider'),
-        event = { 'BufReadPost', 'BufNewFile' },
-    },
 
     -- Language
     {
