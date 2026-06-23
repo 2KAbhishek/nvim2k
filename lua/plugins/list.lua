@@ -110,28 +110,6 @@ local plugins = {
         cmd = 'Spectre',
     },
     {
-        'folke/flash.nvim',
-        config = load_config('tools.flash'),
-        keys = {
-            {
-                's',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    require('flash').jump()
-                end,
-                desc = 'Flash',
-            },
-            {
-                'S',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    require('flash').treesitter()
-                end,
-                desc = 'Flash Treesitter',
-            },
-        },
-    },
-    {
         'iamcco/markdown-preview.nvim',
         build = function()
             vim.fn['mkdp#util#install']()

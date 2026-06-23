@@ -4,7 +4,6 @@
   "co-author.nvim": { "branch": "main", "commit": "f07e2ec7b4267c1c38cecf5f209c0844373bc1cc" },
   "conform.nvim": { "branch": "master", "commit": "619363c30309d29ffa631e67c8183f2a72caa373" },
   "exercism.nvim": { "branch": "main", "commit": "dee4f1844555a15d0d343e0e88b65dbf20be337e" },
-  "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "gitsigns.nvim": { "branch": "main", "commit": "2038c666bd9d8a0b7349a0b6ee00dc83104b9ecf" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },

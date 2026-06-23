@@ -1,6 +1,5 @@
 local which_key = require('which-key')
 local icons = require('lib.icons')
-local util = require('lib.util')
 local prompts = require('lib.prompts')
 
 local setup = {
@@ -148,29 +147,8 @@ local normal_mappings = {
 
     { '<leader>j', group = ' Jump' },
     { '<leader>jc', '*', desc = 'Word' },
-    { '<leader>jd', ':FlashDiagnostics<cr>', desc = 'Diagnostics' },
     { '<leader>jh', '<C-o>', desc = 'Backward' },
-    { '<leader>jj', ":lua require('flash').remote()<cr>", desc = 'Remote' },
-    { '<leader>jk', ":lua require('flash').treesitter()<cr>", desc = 'Treesitter' },
     { '<leader>jl', '<C-i>', desc = 'Forward' },
-    { '<leader>jp', ":lua require('flash').jump({continue = true})<cr>", desc = 'Previous Jump' },
-    { '<leader>js', ":lua require('flash').jump()<cr>", desc = 'Search' },
-    { '<leader>jt', ":lua require('flash').treesitter_search()<cr>", desc = 'Remote Treesitter' },
-    {
-        '<leader>jn',
-        ":lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Forward',
-    },
-    {
-        '<leader>jw',
-        ':lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>',
-        desc = 'Current Word',
-    },
-    {
-        '<leader>jN',
-        ":lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Backward',
-    },
 
     { '<leader>l', group = ' LSP' },
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
@@ -315,29 +293,6 @@ local visual_mappings = {
     { '<leader>ga', ":'<,'>Gitsigns stage_hunk<cr>", desc = 'Stage Hunk' },
     { '<leader>gr', ":'<,'>Gitsigns reset_hunk<cr>", desc = 'Reset Hunk' },
     { '<leader>gu', ":'<,'>Gitsigns undo_stage_hunk<cr>", desc = 'Undo Stage Hunk' },
-
-    { '<leader>j', group = ' Jump' },
-    { '<leader>jd', ':FlashDiagnostics<cr>', desc = 'Diagnostics' },
-    { '<leader>jj', ":lua require('flash').remote()<cr>", desc = 'Remote' },
-    { '<leader>jk', ":lua require('flash').treesitter()<cr>", desc = 'Treesitter' },
-    { '<leader>jp', ":lua require('flash').jump({continue = true})<cr>", desc = 'Previous Jump' },
-    { '<leader>js', ":lua require('flash').jump()<cr>", desc = 'Search' },
-    { '<leader>jt', ":lua require('flash').treesitter_search()<cr>", desc = 'Remote Treesitter' },
-    {
-        '<leader>jw',
-        ':lua require("flash").jump({ pattern = vim.fn.expand("<cword>")})<cr>',
-        desc = 'Current Word',
-    },
-    {
-        '<leader>jN',
-        ":lua require('flash').jump({search = { forward = false, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Backward',
-    },
-    {
-        '<leader>jn',
-        ":lua require('flash').jump({search = { forward = true, wrap = false, multi_window = false },})<cr>",
-        desc = 'Search Forward',
-    },
 
     { '<leader>l', group = ' LSP' },
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
