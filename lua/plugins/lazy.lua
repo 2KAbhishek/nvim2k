@@ -106,6 +106,8 @@ lazy.setup({
                 'logipat',
                 'rrhelper',
                 'spellfile_plugin',
+                'net',
+                'rplugin',
             },
         },
     },
