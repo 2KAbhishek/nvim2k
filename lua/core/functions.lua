@@ -68,3 +68,7 @@ vim.api.nvim_create_user_command('ColorHighlighterToggle', function()
     require('plugins.custom.color-highlighter').toggle()
 end, {})
 
+-- Project-wide search and replace via quickfix
+vim.api.nvim_create_user_command('Replace', function(opts)
+    require('plugins.custom.replace').run(opts.args)
+end, { nargs = '?' })

@@ -92,13 +92,6 @@ local plugins = {
         event = { 'InsertEnter' },
     },
 
-    -- Tools
-    {
-        'windwp/nvim-spectre',
-        config = load_config('tools.spectre'),
-        cmd = 'Spectre',
-    },
-
     -- Homegrown :)
     {
         '2kabhishek/co-author.nvim',

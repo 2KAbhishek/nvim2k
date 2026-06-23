@@ -195,8 +195,8 @@ local normal_mappings = {
     { '<leader>qw', ':wq<cr>', desc = 'Write and Quit' },
 
     { '<leader>r', group = ' Refactor' },
-    { '<leader>ra', ":lua require('spectre').open()<cr>", desc = 'Replace All' },
-    { '<leader>rb', ":lua require('spectre').open_file_search()<cr>", desc = 'Replace Buffer' },
+    { '<leader>ra', ':Replace<cr>', desc = 'Replace All' },
+    { '<leader>rb', ':%s///gc<Left><Left><Left><Left>', desc = 'Replace Buffer' },
     { '<leader>rd', '', desc = 'Go To Definition' }, -- treesitter navigation
     { '<leader>rh', '', desc = 'List Definition Head' },
     { '<leader>rj', '', desc = 'Next Usage' },
@@ -206,7 +206,7 @@ local normal_mappings = {
     { '<leader>rp', '', desc = 'Swap Previous' },
     { '<leader>rr', '', desc = 'Smart Rename' },
     { '<leader>rs', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', desc = 'Replace Word Buffer' },
-    { '<leader>rw', ":lua require('spectre').open_visual({select_word=true})<cr>", desc = 'Replace Word Everywhere' },
+    { '<leader>rw', ':Replace <C-r><C-w><cr>', desc = 'Replace Word Everywhere' },
 
     { '<leader>s', group = ' Split' },
     { '<leader>s+', ':resize +10<cr>', desc = 'Increase window height' },

@@ -15,7 +15,6 @@
   "nerdy.nvim": { "branch": "main", "commit": "8fd18f0075c480b4e0865464dcd4fb7a42c6889e" },
   "nvim-lint": { "branch": "master", "commit": "01c9842c089069ab497430159312b2c8868a4590" },
   "nvim-lspconfig": { "branch": "master", "commit": "bfcc0171a43f22afa61d927ffe9fcb6cb85dc99e" },
-  "nvim-spectre": { "branch": "master", "commit": "72f56f7585903cd7bf92c665351aa585e150af0f" },
   "nvim-treesitter": { "branch": "main", "commit": "4916d6592ede8c07973490d9322f187e07dfefac" },
   "nvim-web-devicons": { "branch": "master", "commit": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c" },
   "octohub.nvim": { "branch": "main", "commit": "03b50d28a61583387616c04ba08cee53379049b2" },
