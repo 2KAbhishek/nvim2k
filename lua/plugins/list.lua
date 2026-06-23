@@ -56,11 +56,6 @@ local plugins = {
         event = { 'BufReadPost', 'BufNewFile' },
     },
     {
-        'echasnovski/mini.pairs',
-        config = load_config('editor.pairs'),
-        event = 'InsertEnter',
-    },
-    {
         'echasnovski/mini.surround',
         version = '*',
         config = load_config('editor.surround'),

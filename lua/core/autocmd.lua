@@ -127,3 +127,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
     end,
 })
+
+-- Lazy load custom plugins on demand
+vim.api.nvim_create_autocmd('InsertEnter', {
+    once = true,
+    callback = function()
+        require('plugins.custom.pairs')
+    end,
+})
+
+vim.api.nvim_create_autocmd('User', {
+    pattern = 'VeryLazy',
+    once = true,
+    callback = function()
+        require('plugins.custom.tmux')
+    end,
+})
+
