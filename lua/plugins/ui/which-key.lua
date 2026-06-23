@@ -255,7 +255,6 @@ local normal_mappings = {
     { '<leader>sj', '<C-w>j', desc = 'Move Down' },
     { '<leader>sk', '<C-w>k', desc = 'Move Up' },
     { '<leader>sl', '<C-w>l', desc = 'Move Right' },
-    { '<leader>sp', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
     { '<leader>sq', '<C-w>c', desc = 'Close Split' },
     { '<leader>ss', ':vsplit<cr>', desc = 'Vertical Split' },
 
@@ -358,12 +357,6 @@ local no_leader_mappings = {
     { '<C-Up>', ':resize +10<cr>', desc = 'Increase window height' },
     { '<C-g>', ':Fterm lazygit<cr>', desc = 'Lazygit' },
 
-    { '<C-h>', ':NavigatorLeft<cr>', desc = 'Move Left' },
-    { '<C-j>', ':NavigatorDown<cr>', desc = 'Move Down' },
-    { '<C-k>', ':NavigatorUp<cr>', desc = 'Move Up' },
-    { '<C-l>', ':NavigatorRight<cr>', desc = 'Move Right' },
-    { '<C-\\>', ':NavigatorPrevious<cr>', desc = 'Previous Pane' },
-
     { '[', group = ' Previous' },
     { '[g', ':Gitsigns prev_hunk<cr>', desc = 'Git Hunk' },
     { '[o', group = 'Textobjects' },
@@ -384,10 +377,6 @@ which_key.setup(setup)
 which_key.add(normal_mappings)
 which_key.add(visual_mappings)
 which_key.add(no_leader_mappings)
-
-
-
-
 
 local user_keybindings = require('lib.util').get_user_config('user_keybindings', {})
 which_key.add(user_keybindings)
