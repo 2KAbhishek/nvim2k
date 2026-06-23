@@ -16,6 +16,7 @@ conform.setup({
         bash = { 'shfmt' },
         elixir = { 'mix' },
         ruby = { 'rubocop' },
+        ['_'] = { lsp_fallback = true },
     },
     format_on_save = function(bufnr)
         -- Disable autoformat if globally disabled or disabled for this buffer
