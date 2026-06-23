@@ -67,10 +67,8 @@ local normal_mappings = {
     { '<leader>cc', ':CccHighlighterToggle<cr>', desc = 'Highlight Colors' },
     { '<leader>cd', ':RootDir<cr>', desc = 'Root Directory' },
     { '<leader>ce', ':%Runner<cr>', desc = 'Execute File' },
-    { '<leader>cf', ':lua vim.lsp.buf.format({async = true})<cr>', desc = 'Format File' },
     { '<leader>cl', '::g/^\\s*$/d<cr>', desc = 'Clean Empty Lines' },
     { '<leader>cm', ':MDPreview<cr>', desc = 'Markdown Preview' },
-    { '<leader>co', ':Dashboard<cr>', desc = 'Dashboard' },
     { '<leader>cp', ':CccPick<cr>', desc = 'Pick Color' },
     { '<leader>cs', ':source %<cr>', desc = 'Source File' },
 
@@ -152,6 +150,7 @@ local normal_mappings = {
 
     { '<leader>l', group = ' LSP' },
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
+    { '<leader>lc', ':lua vim.lsp.buf.format({async = true})<cr>', desc = 'Code Format' },
     { '<leader>lh', ':lua vim.lsp.buf.hover()<cr>', desc = 'Hover Documentation' },
     { '<leader>lj', ':lua vim.diagnostic.jump({ count = 1 })<cr>', desc = 'Next Diagnostic' },
     { '<leader>lk', ':lua vim.diagnostic.jump({ count = -1 })<cr>', desc = 'Prev Diagnostic' },
