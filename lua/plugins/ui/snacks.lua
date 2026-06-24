@@ -317,7 +317,7 @@ Snacks.setup({
     terminal = { enabled = false },
     toggle = { enabled = false },
     win = { enabled = true },
-    words = { enabled = false },
+    words = { enabled = true },
     zen = {
         enabled = true,
         toggles = {

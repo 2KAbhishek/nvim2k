@@ -306,10 +306,12 @@ local no_leader_mappings = {
     { '<C-g>', ':Fterm lazygit<cr>', desc = 'Lazygit' },
 
     { '[', group = ' Previous' },
+    { '[[', ':lua Snacks.words.jump(-vim.v.count1)<cr>', desc = 'Prev Reference' },
     { '[g', ':Gitsigns prev_hunk<cr>', desc = 'Git Hunk' },
     { '[o', group = 'Textobjects' },
 
     { ']', group = ' Next' },
+    { ']]', ':lua Snacks.words.jump(vim.v.count1)<cr>', desc = 'Next Reference' },
     { ']g', ':Gitsigns next_hunk<cr>', desc = 'Git Hunk' },
     { ']o', group = 'Textobjects' },
 
