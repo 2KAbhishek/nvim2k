@@ -99,7 +99,10 @@ Snacks.setup({
             siblings = true,
         },
     },
-    explorer = { enabled = false },
+    explorer = {
+        enabled = true,
+        replace_netrw = true,
+    },
     git = { enabled = true },
     gitbrowse = { enabled = true },
     image = { enabled = true },
@@ -167,6 +170,17 @@ Snacks.setup({
             buffers = { layout = files_layout() },
             commands = { layout = palette_layout() },
             command_history = { layout = palette_layout() },
+            explorer = {
+                hidden = true,
+                auto_close = true,
+                win = {
+                    list = {
+                        keys = {
+                            ['l'] = 'confirm',
+                        },
+                    },
+                },
+            },
             files = {
                 hidden = true,
                 layout = files_layout(),

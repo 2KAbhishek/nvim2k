@@ -161,20 +161,6 @@ local plugins = {
         },
     },
     {
-        '2kabhishek/mini.files',
-        branch = 'collapse-files',
-        config = load_config('tools.files'),
-        keys = {
-            {
-                '<leader>ee',
-                function()
-                    require('mini.files').open(util.get_file_path(), true)
-                end,
-                desc = 'Explorer',
-            },
-        },
-    },
-    {
         '2kabhishek/utils.nvim',
         cmd = 'UtilsClearCache',
     },
