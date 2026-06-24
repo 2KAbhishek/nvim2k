@@ -133,7 +133,13 @@ Snacks.setup({
         expand = true,
     },
     layout = { enabled = true },
-    lazygit = { enabled = true },
+    lazygit = {
+        enabled = true,
+        configure = true,
+        win = {
+            border = 'rounded',
+        },
+    },
     notifier = {
         enabled = true,
         timeout = 2000,
@@ -163,7 +169,16 @@ Snacks.setup({
         icon_hl = 'SnacksPickerIcon',
         icon_pos = 'left',
         prompt_pos = 'title',
-        win = { style = 'picker' },
+        win = {
+            style = 'picker',
+            input = {
+                keys = {
+                    ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+                    ['<C-d>'] = { 'preview_scroll_down', mode = { 'n', 'i' } },
+                    ['<C-u>'] = { 'preview_scroll_up', mode = { 'n', 'i' } },
+                },
+            },
+        },
         expand = true,
         sources = {
             -- layout options: dropdown, horizontal, vertical, vscode, ivy, ivy_split, telescope, top, left, right, bottom, sidebar
