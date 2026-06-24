@@ -72,3 +72,21 @@ end, {})
 vim.api.nvim_create_user_command('Replace', function(opts)
     require('plugins.custom.replace').run(opts.args)
 end, { nargs = '?' })
+
+-- Ranger file picker floating window
+vim.api.nvim_create_user_command('RangerPicker', function()
+    local temp = vim.fn.tempname()
+    require('termim').open('ranger --choosefile=' .. temp, 'float')
+    vim.api.nvim_create_autocmd('TermClose', {
+        buffer = vim.api.nvim_get_current_buf(),
+        once = true,
+        callback = function()
+            vim.schedule(function()
+                if vim.fn.filereadable(temp) == 1 then
+                    vim.cmd('edit ' .. vim.fn.fnameescape(vim.fn.readfile(temp)[1]))
+                    vim.fn.delete(temp)
+                end
+            end)
+        end
+    })
+end, {})

@@ -93,6 +93,7 @@ local normal_mappings = {
     { '<leader>ef', 'gf', desc = 'File Under Cursor' },
     { '<leader>em', ':e README.md<cr>', desc = 'Readme' },
     { '<leader>en', ':enew<cr>', desc = 'New File' },
+    { '<leader>er', ':RangerPicker<cr>', desc = 'Ranger File Picker' },
 
     { '<leader>f', group = ' Find' },
     { '<leader>fx', ':%bd|e#|bd#<cr>', desc = 'Close except current' },
