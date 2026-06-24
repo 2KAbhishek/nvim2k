@@ -314,7 +314,12 @@ Snacks.setup({
         },
         refresh = 50,
     },
-    terminal = { enabled = false },
+    terminal = {
+        enabled = true,
+        win = {
+            border = 'rounded',
+        },
+    },
     toggle = { enabled = false },
     win = { enabled = true },
     words = { enabled = true },

@@ -121,5 +121,6 @@ vim.api.nvim_create_autocmd('User', {
     once = true,
     callback = function()
         require('plugins.custom.tmux')
+        require('plugins.custom.terminal')
     end,
 })

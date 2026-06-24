@@ -107,10 +107,6 @@ local plugins = {
         },
     },
     {
-        '2kabhishek/termim.nvim',
-        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-    },
-    {
         '2kabhishek/tdo.nvim',
         cmd = { 'Tdo' },
         keys = { '<leader>nn', '<leader>nf', '<leader>nh', '<leader>nl', '<leader>nt', '<leader>nx', '[t', ']t' },
@@ -131,7 +127,6 @@ local plugins = {
         keys = { '<leader>exa', '<leader>exl', '<leader>exr' },
         dependencies = {
             '2kabhishek/utils.nvim',
-            '2kabhishek/termim.nvim',
         },
         config = load_config('tools.exercism'),
     },

@@ -76,9 +76,9 @@ end, { nargs = '?' })
 -- Ranger file picker floating window
 vim.api.nvim_create_user_command('RangerPicker', function()
     local temp = vim.fn.tempname()
-    require('termim').open('ranger --choosefile=' .. temp, 'float')
+    local terminal = Snacks.terminal.open('ranger --choosefile=' .. temp)
     vim.api.nvim_create_autocmd('TermClose', {
-        buffer = vim.api.nvim_get_current_buf(),
+        buffer = terminal.buf,
         once = true,
         callback = function()
             vim.schedule(function()
