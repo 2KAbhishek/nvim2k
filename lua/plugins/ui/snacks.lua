@@ -320,7 +320,7 @@ Snacks.setup({
             border = 'rounded',
         },
     },
-    toggle = { enabled = false },
+    toggle = { enabled = true },
     win = { enabled = true },
     words = { enabled = true },
     zen = {
