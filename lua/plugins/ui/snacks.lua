@@ -1,6 +1,30 @@
 local Snacks = require('snacks')
 local icons = require('lib.icons')
 
+-- HACKS: Overrides and custom highlights to fix snacks.gh crashes and UI issues under transparent/onedark theme:
+-- 1. Snacks.util.blend wrapper:
+--    Avoid nil-fg errors on DiffAdd under transparent configs by defaulting fg/bg to theme-adaptive fallbacks.
+local original_blend = Snacks.util.blend
+Snacks.util.blend = function(fg, bg, alpha)
+    local d = vim.o.background == 'dark'
+    local fix = function(c, def)
+        return (type(c) == 'string' and #c == 7 and c:sub(1, 1) == '#') and c or def
+    end
+    return original_blend(fix(fg, d and '#ffffff' or '#000000'), fix(bg, d and '#000000' or '#ffffff'), alpha)
+end
+
+-- 2. set_dimmed_hl:
+--    Link SnacksPickerDimmed dynamically to a blended Normal/Comment fg to bypass onedark's non-transparent Conceal bg.
+local function set_dimmed_hl()
+    local fg = Snacks.util.blend(Snacks.util.color('Normal') or '#abb2bf', Snacks.util.color('Comment') or '#5c6370', 1)
+    vim.api.nvim_set_hl(0, 'SnacksPickerDimmed', { fg = fg })
+end
+set_dimmed_hl()
+vim.api.nvim_create_autocmd('ColorScheme', {
+    pattern = '*',
+    callback = set_dimmed_hl,
+})
+
 local function files_layout(preview_width, height, width)
     preview_width = preview_width or 0.6
     height = height or 0.8
@@ -47,6 +71,20 @@ local function palette_layout(height, width)
             { win = 'preview', title = '{preview}', border = 'rounded' },
         },
     }
+end
+
+-- 3. gh_format:
+--    De-couple issue/PR hash from padded trailing spaces so the spaces do not inherit the dimmed background block.
+local function gh_format(item, picker)
+    local format = require('snacks.picker.source.gh').format(item, picker)
+    for i, hl in ipairs(format) do
+        if type(hl[1]) == 'string' and hl[1]:match('^#%d+') then
+            hl[1] = item.hash
+            table.insert(format, i + 1, { (' '):rep(8 - #hl[1]) })
+            break
+        end
+    end
+    return format
 end
 
 Snacks.setup({
@@ -103,6 +141,7 @@ Snacks.setup({
         enabled = true,
         replace_netrw = true,
     },
+    gh = { enabled = true },
     git = { enabled = true },
     gitbrowse = { enabled = true },
     image = { enabled = true },
@@ -204,6 +243,8 @@ Snacks.setup({
                 icon_sources = { 'nerd_fonts', 'emoji' },
                 layout = palette_layout(),
             },
+            gh_issue = { format = gh_format },
+            gh_pr = { format = gh_format },
             git_files = { layout = files_layout() },
             git_branches = { layout = { preset = 'vertical' } },
             git_status = { layout = files_layout() },
