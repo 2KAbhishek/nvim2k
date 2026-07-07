@@ -94,6 +94,23 @@ local plugins = {
 
     -- Homegrown :)
     {
+        '2kabhishek/homegrown.nvim',
+        opts = {
+            bracket_nav = true,
+            highlighter = true,
+            copy = true,
+            md_preview = true,
+            pairs = true,
+            replace = true,
+            runner = true,
+            terminal = true,
+            tmux = true,
+            dir = true,
+            tiling = true,
+        },
+        event = { 'BufReadPost', 'BufNewFile' },
+    },
+    {
         '2kabhishek/co-author.nvim',
         cmd = 'CoAuthor',
     },

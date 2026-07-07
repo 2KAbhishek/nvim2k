@@ -13,42 +13,8 @@ util.get_user_config = function(key, default)
     return user_config
 end
 
-util.get_root_dir = function()
-    local bufname = vim.fn.expand('%:p')
-    if vim.fn.filereadable(bufname) == 0 then
-        return
-    end
-
-    local parent = vim.fn.fnamemodify(bufname, ':h')
-    local git_root = vim.fn.systemlist('git -C ' .. parent .. ' rev-parse --show-toplevel')
-    if #git_root > 0 and git_root[1] ~= '' then
-        return git_root[1]
-    else
-        return parent
-    end
-end
-
-util.get_file_path = function()
-    local buf_name = vim.api.nvim_buf_get_name(0)
-    if vim.fn.filereadable(buf_name) == 1 then
-        return buf_name
-    end
-
-    local dir_name = vim.fn.fnamemodify(buf_name, ':p:h')
-    if vim.fn.isdirectory(dir_name) == 1 then
-        return dir_name
-    end
-
-    return vim.loop.cwd()
-end
-
 util.is_present = function(bin)
     return vim.fn.executable(bin) == 1
-end
-
-util.copy_to_clipboard = function(content)
-    vim.fn.setreg('+', content)
-    vim.notify('Copied "' .. content .. '" to the clipboard!', vim.log.levels.INFO)
 end
 
 return util
