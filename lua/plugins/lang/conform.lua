@@ -29,3 +29,11 @@ conform.setup({
         }
     end,
 })
+
+-- Save without formatting
+vim.api.nvim_create_user_command('WriteNoFormat', function()
+    vim.b.disable_autoformat = true
+    vim.cmd('write')
+    vim.b.disable_autoformat = false
+end, {})
+
