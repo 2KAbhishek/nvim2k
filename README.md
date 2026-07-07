@@ -45,6 +45,7 @@ Here's a [YouTube playlist](https://www.youtube.com/watch?v=Pj7jJnOcW9I&list=PL5
 - **Goto for notes**: Comes with powerful note-taking capabilities, thanks to [tdo](https://github.com/2kabhishek/tdo)
 - **Tmux integration**: Works with your tmux configurations out of the box
 - **Auto install**: All necessary LSPs, Treesitter Parsers etc. are auto installed
+- **Homegrown components**: Employs a custom lightweight plugin suite for navigation, autopairing, autotiling, terminal splits, code running, and color highlighting via [homegrown.nvim](https://github.com/2kabhishek/homegrown.nvim)
 - **User module**: Configure nvim2k according to your needs by using the `user` module!
 - and some more
 
@@ -158,10 +159,14 @@ I have been using vim/neovim for 7+ years now, I wanted to share my config for e
 
 ### 🔍 More Info
 
+- [homegrown.nvim](https://github.com/2kabhishek/homegrown.nvim) — lightweight replacements for standard plugins (pairs, terminal, runner, tiling, etc.)
 - [tdo.nvim](https://github.com/2kabhishek/tdo.nvim) — note taking system in neovim
-- [termim.nvim](https://github.com/2kabhishek/termim.nvim) — enhanced neovim terminal
+- [termim.nvim](https://github.com/2kabhishek/termim.nvim) — enhanced neovim terminal (succeeded by homegrown.nvim's terminal module)
 - [nerdy.nvim](https://github.com/2kabhishek/nerdy.nvim) — search nerdfont glyphs from inside neovim
 - [co-author.nvim](https://github.com/2kabhishek/co-author.nvim) — add co authors to your git commits
+- [octohub.nvim](https://github.com/2kabhishek/octohub.nvim) — manage and explore github repositories from inside neovim
+- [pickme.nvim](https://github.com/2kabhishek/pickme.nvim) — interactive picker interface for fuzzy search plugins
+- [utils.nvim](https://github.com/2kabhishek/utils.nvim) — helper functions for 2kabhishek's neovim ecosystem
 
 <hr>
 
