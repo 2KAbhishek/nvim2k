@@ -9,11 +9,6 @@ vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'Folded', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
 
--- transparent background for nvim-tree
-vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NvimTreeVertSplit', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { bg = 'none' })
-
 -- set hlsearch color
 vim.api.nvim_set_hl(0, 'Search', { bg = '#8BCD5B', fg = '#202020' })
 vim.api.nvim_set_hl(0, 'CurSearch', { bg = '#EFBD5D', fg = '#000000' })
@@ -25,4 +20,3 @@ vim.api.nvim_set_hl(0, 'CursorColumn', { bg = '#1A1A1F' })
 
 -- set visual highlight
 vim.api.nvim_set_hl(0, 'Visual', { bg = '#103070' })
-
