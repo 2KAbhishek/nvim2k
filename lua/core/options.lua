@@ -93,14 +93,14 @@ local is_windows_or_wsl = vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 o
 
 if is_windows_or_wsl and (vim.fn.executable('win32yank.exe') == 1 or vim.fn.executable('win32yank') == 1) then
     vim.g.clipboard = {
-        name = "win32yank",
+        name = 'win32yank',
         copy = {
-            ["+"] = "win32yank.exe -i --crlf",
-            ["*"] = "win32yank.exe -i --crlf",
+            ['+'] = 'win32yank.exe -i --crlf',
+            ['*'] = 'win32yank.exe -i --crlf',
         },
         paste = {
-            ["+"] = "win32yank.exe -o --lf",
-            ["*"] = "win32yank.exe -o --lf",
+            ['+'] = 'win32yank.exe -o --lf',
+            ['*'] = 'win32yank.exe -o --lf',
         },
         cache_enabled = 0,
     }
