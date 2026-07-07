@@ -144,7 +144,7 @@ Snacks.setup({
     gh = { enabled = true },
     git = { enabled = true },
     gitbrowse = { enabled = true },
-    image = { enabled = true },
+    image = { enabled = false },
     indent = {
         enabled = true,
         priority = 1,
