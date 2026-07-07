@@ -1,6 +1,5 @@
 local which_key = require('which-key')
 local icons = require('lib.icons')
-local prompts = require('lib.prompts')
 
 local setup = {
     preset = 'modern',
@@ -131,14 +130,6 @@ local normal_mappings = {
     { '<leader>gw', ':lua require("snacks").gitbrowse()<cr>', desc = 'Git Browse' },
 
     { '<leader>i', group = ' Insert' },
-    { '<leader>ia', group = ' AI Prompt' },
-    { '<leader>iad', prompts.add_prompt('docs'), desc = 'Docs' },
-    { '<leader>iae', prompts.add_prompt('explain'), desc = 'Explain' },
-    { '<leader>iaf', prompts.add_prompt('fix'), desc = 'Fix' },
-    { '<leader>iag', prompts.add_prompt('commit'), desc = 'Commit' },
-    { '<leader>iao', prompts.add_prompt('optimize'), desc = 'Optimize' },
-    { '<leader>iar', prompts.add_prompt('review'), desc = 'Review' },
-    { '<leader>iat', prompts.add_prompt('tests'), desc = 'Tests' },
     { '<leader>id', ":put =strftime('## %a, %d %b, %Y, %r')<cr>", desc = 'Date' },
     { '<leader>if', ":put =expand('%:t')<cr>", desc = 'File Name' },
     { '<leader>ip', ':put %<cr>', desc = 'Relative Path' },
@@ -295,8 +286,6 @@ end
 
 local visual_mappings = {
     mode = 'v',
-    { '<leader>a', group = ' AI' },
-
     { '<leader>c', group = ' Code' },
     { '<leader>ce', "<esc>:'<,'>Runner<cr>", desc = 'Execute Selection' },
     { '<leader>cS', ':sort!<cr>', desc = 'Sort Desc' },
