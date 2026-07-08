@@ -238,8 +238,8 @@ local normal_mappings = {
     { '<leader>tv', ':Vterm<cr>', desc = 'Vertical Terminal' },
 
     { '<leader>u', group = ' Toggle' },
+    { '<leader>ub', ':lua Snacks.toggle.dim():toggle()<cr>', desc = 'Dim' },
     { '<leader>ud', ':lua Snacks.toggle.diagnostics():toggle()<cr>', desc = 'Diagnostics' },
-    { '<leader>uD', ':lua Snacks.toggle.dim():toggle()<cr>', desc = 'Dim' },
     { '<leader>uh', ':lua Snacks.toggle.inlay_hints():toggle()<cr>', desc = 'Inlay Hints' },
     { '<leader>ul', ':lua Snacks.toggle.line_number():toggle()<cr>', desc = 'Line Numbers' },
     {
