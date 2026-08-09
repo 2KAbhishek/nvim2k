@@ -192,14 +192,6 @@ local normal_mappings = {
     { '<leader>r', group = ' Refactor' },
     { '<leader>ra', ':Replace<cr>', desc = 'Replace All' },
     { '<leader>rb', ':%s///gc<Left><Left><Left><Left>', desc = 'Replace Buffer' },
-    { '<leader>rd', '', desc = 'Go To Definition' }, -- treesitter navigation
-    { '<leader>rh', '', desc = 'List Definition Head' },
-    { '<leader>rj', '', desc = 'Next Usage' },
-    { '<leader>rk', '', desc = 'Previous Usage' },
-    { '<leader>rl', '', desc = 'List Definition' },
-    { '<leader>rn', '', desc = 'Swap Next' },
-    { '<leader>rp', '', desc = 'Swap Previous' },
-    { '<leader>rr', '', desc = 'Smart Rename' },
     { '<leader>rs', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', desc = 'Replace Word Buffer' },
     { '<leader>rw', ':Replace <C-r><C-w><cr>', desc = 'Replace Word Everywhere' },
 
