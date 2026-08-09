@@ -161,8 +161,11 @@ local tdo = {
         local update_frequency = 300
         if not vim.g.tdo_last_update or (os.time() - vim.g.tdo_last_update) > update_frequency then
             vim.g.tdo_last_update = os.time()
-            local result = vim.fn.system('tdo pending')
-            vim.g.tdo_count = tonumber(result:match('%d+')) or 0
+            vim.system({ 'tdo', 'pending' }, { text = true }, function(out)
+                if out.code == 0 and out.stdout then
+                    vim.g.tdo_count = tonumber(out.stdout:match('%d+')) or 0
+                end
+            end)
         end
         return vim.g.tdo_count or 0
     end,
