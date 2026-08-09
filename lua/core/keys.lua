@@ -6,9 +6,9 @@ end
 local opts = { noremap = true, silent = true }
 
 -- Space as leader
-map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+map({ 'n', 'v' }, '<Space>', '<Nop>', opts)
 
 -- Modes
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v",
