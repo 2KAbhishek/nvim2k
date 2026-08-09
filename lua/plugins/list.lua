@@ -200,6 +200,7 @@ local treesitter_parsers = {
     'markdown',
     'markdown_inline',
     'python',
+    'regex',
     'ruby',
     'rust',
     'typescript',
