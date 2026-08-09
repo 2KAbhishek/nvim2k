@@ -25,6 +25,11 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     callback = set_dimmed_hl,
 })
 
+-- Disable Snacks.image healthcheck to prevent tmux pane split during checkhealth
+pcall(function()
+    require('snacks.image').health = nil
+end)
+
 local function files_layout(preview_width, height, width)
     preview_width = preview_width or 0.6
     height = height or 0.8
