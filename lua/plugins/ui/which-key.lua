@@ -156,7 +156,8 @@ local normal_mappings = {
     { '<leader>mp', group = 'Previous Bookmark In Group' },
 
     { '<leader>n', group = ' Notes' },
-    { '<leader>na', ':lua Snacks.scratch.select()<cr>', desc = 'Select Scratch' },
+    { '<leader>na', ':lua Snacks.scratch()<cr>', desc = 'Toggle Scratch' },
+    { '<leader>nA', ':lua Snacks.scratch.select()<cr>', desc = 'Select Scratch' },
 
     { '<leader>o', group = ' Options' },
     { '<leader>oi', 'vim.show_pos', desc = 'Inspect Position' },
