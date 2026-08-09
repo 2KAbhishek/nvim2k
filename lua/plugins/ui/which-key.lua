@@ -164,6 +164,7 @@ local normal_mappings = {
     { '<leader>oi', 'vim.show_pos', desc = 'Inspect Position' },
     { '<leader>oN', ':lua Snacks.notifier.show_history()<cr>', desc = 'Notification History' },
     { '<leader>or', ':set relativenumber!<cr>', desc = 'Relative Numbers' },
+    { '<leader>oT', desc = 'Toggle Onedark Style' },
 
     { '<leader>p', group = ' Packages' },
     { '<leader>pc', ':Lazy check<cr>', desc = 'Check' },
