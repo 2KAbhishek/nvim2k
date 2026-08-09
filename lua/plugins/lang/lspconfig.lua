@@ -20,7 +20,8 @@ require('mason-lspconfig').setup({
     handlers = { default_setup },
 })
 
-local signs = { Error = diag_icons.Error, Warn = diag_icons.Warning, Hint = diag_icons.Hint, Info = diag_icons.Information }
+local signs =
+    { Error = diag_icons.Error, Warn = diag_icons.Warning, Hint = diag_icons.Hint, Info = diag_icons.Information }
 vim.diagnostic.config({
     underline = true,
     update_in_insert = false,
@@ -53,15 +54,15 @@ vim.diagnostic.config({
     },
 })
 
--- Add rounded borders to floating LSP windows (Neovim 0.11+ compatible)
-vim.lsp.handlers['textDocument/hover'] = function(err, result, ctx, config)
-    config = config or {}
-    config.border = 'rounded'
-    return vim.lsp.handlers.hover(err, result, ctx, config)
+-- Add rounded borders to floating LSP hover & signature help (Neovim 0.12+ compatible)
+local orig_hover = vim.lsp.buf.hover
+vim.lsp.buf.hover = function(opts)
+    opts = vim.tbl_extend('force', { border = 'rounded' }, opts or {})
+    return orig_hover(opts)
 end
 
-vim.lsp.handlers['textDocument/signatureHelp'] = function(err, result, ctx, config)
-    config = config or {}
-    config.border = 'rounded'
-    return vim.lsp.handlers.signature_help(err, result, ctx, config)
+local orig_signature_help = vim.lsp.buf.signature_help
+vim.lsp.buf.signature_help = function(opts)
+    opts = vim.tbl_extend('force', { border = 'rounded' }, opts or {})
+    return orig_signature_help(opts)
 end
