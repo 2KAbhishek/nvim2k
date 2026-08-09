@@ -160,6 +160,7 @@ local normal_mappings = {
     { '<leader>nA', ':lua Snacks.scratch.select()<cr>', desc = 'Select Scratch' },
 
     { '<leader>o', group = ' Options' },
+    { '<leader>of', ':SelectFileType<cr>', desc = 'Change Filetype' },
     { '<leader>oi', 'vim.show_pos', desc = 'Inspect Position' },
     { '<leader>oN', ':lua Snacks.notifier.show_history()<cr>', desc = 'Notification History' },
     { '<leader>or', ':set relativenumber!<cr>', desc = 'Relative Numbers' },
