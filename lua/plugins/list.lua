@@ -69,7 +69,7 @@ local plugins = {
         'stevearc/conform.nvim',
         config = load_config('lang.conform'),
         event = { 'BufWritePre' },
-        cmd = { 'ConformInfo' },
+        cmd = { 'ConformInfo', 'WriteNoFormat' },
     },
     {
         'mfussenegger/nvim-lint',
