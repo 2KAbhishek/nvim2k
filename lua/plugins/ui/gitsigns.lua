@@ -30,7 +30,7 @@ gitsigns.setup({
     max_file_length = 40000,
     preview_config = { border = 'rounded', style = 'minimal', relative = 'cursor', row = 0, col = 1 },
     on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
+        local gs = require('gitsigns')
 
         local function map(mode, l, r, opts)
             opts = opts or {}
