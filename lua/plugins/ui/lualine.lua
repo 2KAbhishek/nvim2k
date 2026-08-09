@@ -133,19 +133,24 @@ local diagnostics = {
 
 local lsp = {
     function()
-        local msg = 'No LSP'
-        local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
-        local clients = vim.lsp.get_clients()
-        if next(clients) == nil then
-            return msg
-        end
+        local max_lsps = 3
+        local excluded_lsps = { 'typos_lsp' }
+
+        local clients = vim.lsp.get_clients({ bufnr = 0 })
+        local names = {}
         for _, client in ipairs(clients) do
-            local filetypes = client.config and client.config.filetypes or nil
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                return client.name
+            if not vim.list_contains(excluded_lsps, client.name) then
+                table.insert(names, client.name)
+                if #names >= max_lsps then
+                    break
+                end
             end
         end
-        return msg
+
+        if #names == 0 then
+            return 'No LSP'
+        end
+        return table.concat(names, ', ')
     end,
     icon = icons.ui.Gear,
     color = { fg = colors.fg, gui = 'bold' },
