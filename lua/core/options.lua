@@ -77,7 +77,6 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
 
-vim.opt.path:append({ '**' })
 vim.opt.shortmess:append({ W = true, I = true, c = true })
 
 -- hides `~` at the end of the buffer
