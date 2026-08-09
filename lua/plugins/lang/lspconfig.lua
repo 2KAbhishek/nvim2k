@@ -66,3 +66,19 @@ vim.lsp.buf.signature_help = function(opts)
     opts = vim.tbl_extend('force', { border = 'rounded' }, opts or {})
     return orig_signature_help(opts)
 end
+
+local orig_rename = vim.lsp.buf.rename
+vim.lsp.buf.rename = function(new_name, opts)
+    if new_name then
+        return orig_rename(new_name, opts)
+    end
+    local current_name = vim.fn.expand('<cword>')
+    vim.ui.input({
+        prompt = 'Rename Symbol: ',
+        default = current_name,
+    }, function(input)
+        if input and #input > 0 and input ~= current_name then
+            orig_rename(input, opts)
+        end
+    end)
+end
