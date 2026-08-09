@@ -145,6 +145,7 @@ local normal_mappings = {
     { '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
     { '<leader>lc', ':lua vim.lsp.buf.format({async = true})<cr>', desc = 'Code Format' },
     { '<leader>lh', ':lua vim.lsp.buf.hover()<cr>', desc = 'Hover Documentation' },
+    { '<leader>lg', ':lua Snacks.toggle.inlay_hints():toggle()<cr>', desc = 'Toggle Inlay Hints' },
     { '<leader>lj', ':lua vim.diagnostic.jump({ count = 1 })<cr>', desc = 'Next Diagnostic' },
     { '<leader>lk', ':lua vim.diagnostic.jump({ count = -1 })<cr>', desc = 'Prev Diagnostic' },
     { '<leader>lr', ':lua vim.lsp.buf.rename()<cr>', desc = 'Rename' },
