@@ -38,8 +38,6 @@ map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
 map('n', 'J', 'mzJ`z', opts)
 map('n', '<C-d>', '<C-d>zz', opts)
 map('n', '<C-u>', '<C-u>zz', opts)
-map('n', 'n', 'nzzzv', opts)
-map('n', 'N', 'Nzzzv', opts)
 
 -- Better up/down
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -52,13 +50,13 @@ map({ 'v', 'x' }, 'K', ":move '<-2<cr>gv-gv", opts)
 -- Clear search, diff update and redraw
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 
--- Consistent n/N search navigation
-map('n', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
-map('x', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
-map('o', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next search result' })
-map('n', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result' })
-map('x', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result' })
-map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev search result' })
+-- Consistent n/N search navigation with centered cursor
+map('n', 'n', "'Nn'[v:searchforward] . 'zzzv'", { expr = true, desc = 'Next search result' })
+map('x', 'n', "'Nn'[v:searchforward] . 'zzzv'", { expr = true, desc = 'Next search result' })
+map('o', 'n', "'Nn'[v:searchforward] . 'zzzv'", { expr = true, desc = 'Next search result' })
+map('n', 'N', "'nN'[v:searchforward] . 'zzzv'", { expr = true, desc = 'Prev search result' })
+map('x', 'N', "'nN'[v:searchforward] . 'zzzv'", { expr = true, desc = 'Prev search result' })
+map('o', 'N', "'nN'[v:searchforward] . 'zzzv'", { expr = true, desc = 'Prev search result' })
 
 -- Better indenting
 map('v', '<', '<gv')
