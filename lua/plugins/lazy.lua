@@ -27,7 +27,7 @@ lazy.setup({
     concurrency = 8,
     dev = { path = '~/Projects/2KAbhishek/', patterns = { '2kabhishek' }, fallback = true },
     install = { missing = true, colorscheme = { 'onedark' } },
-
+    rocks = { enabled = false },
     git = {
         log = { '--since=3 days ago' },
         timeout = 120,
