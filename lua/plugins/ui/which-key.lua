@@ -97,6 +97,7 @@ local normal_mappings = {
     { '<leader>fa', ':Seeker files<CR>', desc = 'Seeker files' },
     { '<leader>ff', ':Seeker git_files<CR>', desc = 'Seeker git_files' },
     { '<leader>fg', ':Seeker grep<CR>', desc = 'Seeker grep' },
+    { '<leader>fw', ':Seeker grep_word<CR>', desc = 'Seeker grep word' },
 
     { '<leader>g', group = ' Git' },
     { '<leader>gA', ':Gitsigns stage_buffer<cr>', desc = 'Stage Buffer' },
@@ -290,6 +291,7 @@ local visual_mappings = {
     { '<leader>cu', ':!uniq<cr>', desc = 'Unique' },
     { '<leader>cx', ':lua<cr>', desc = 'Execute Lua' },
 
+    { '<leader>fw', ':Seeker grep_word<CR>', desc = 'Seeker grep word' },
     { '<leader>g', group = ' Git' },
     { '<leader>ga', ":'<,'>Gitsigns stage_hunk<cr>", desc = 'Stage Hunk' },
     { '<leader>gr', ":'<,'>Gitsigns reset_hunk<cr>", desc = 'Reset Hunk' },
