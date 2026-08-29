@@ -13,6 +13,14 @@ case "${OSTYPE:-$(uname -s)}" in
 esac
 readonly HOST_OS
 
+cmd_sudo() {
+    if [[ "$EUID" -ne 0 ]] && command -v sudo &>/dev/null; then
+        sudo "$@"
+    else
+        "$@"
+    fi
+}
+
 get_system_info() {
     case "$HOST_OS" in
         darwin) echo "mac" && return ;;
@@ -54,18 +62,18 @@ install_packages() {
     case "$sys_kind" in
         arch|cachyos|archarm|manjaro|steamos|holo)
             if command -v pacman &>/dev/null; then
-                sudo pacman -S --needed --noconfirm neovim ripgrep fd tree-sitter-cli git
+                cmd_sudo pacman -S --needed --noconfirm neovim ripgrep fd tree-sitter-cli git
             fi
             ;;
         debian|ubuntu|pop|kali)
             if command -v apt-get &>/dev/null; then
-                sudo apt-get update
-                sudo apt-get install -y neovim ripgrep fd-find git
+                cmd_sudo apt-get update
+                cmd_sudo apt-get install -y neovim ripgrep fd-find git
             fi
             ;;
         fedora|fedora-asahi-remix)
             if command -v dnf &>/dev/null; then
-                sudo dnf install -y neovim ripgrep fd-find git
+                cmd_sudo dnf install -y neovim ripgrep fd-find git
             fi
             ;;
         mac)
