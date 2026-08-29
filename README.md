@@ -65,19 +65,29 @@ Before you begin, ensure you have met the following requirements:
 
 ### 💻 Installation
 
-To install `nvim2k` clone the repo and setup the symlink
+#### Automated (Linux & macOS)
+
+```bash
+git clone https://github.com/2kabhishek/nvim2k
+cd nvim2k
+./setup.sh
+```
+
+#### Manual
+
+Clone the repo:
 
 ```bash
 git clone https://github.com/2kabhishek/nvim2k
 ```
 
-On Linux and Mac
+On Linux and macOS:
 
 ```bash
-ln -sfnv $PWD/nvim2k $HOME/.config/nvim
+ln -sfnv "$PWD/nvim2k" "$HOME/.config/nvim"
 ```
 
-On Windows Powershell
+On Windows PowerShell:
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path "$env:LOCALAPPDATA\nvim" -Target "$PWD\nvim2k" -Force
